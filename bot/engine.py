@@ -48,6 +48,7 @@ def save_json(path, obj):
 
 def append_jsonl(path, rows):
     if rows:
+        path.parent.mkdir(parents=True, exist_ok=True)
         with path.open("a", encoding="utf-8") as f:
             f.writelines(json.dumps(r) + "\n" for r in rows)
 
@@ -194,6 +195,7 @@ def predict_rows(frame, ts_list, bundle):
 
 def run(now_ms=None):
     started = time.time()
+    config.DATA_DIR.mkdir(parents=True, exist_ok=True)
     candles = data.update_all(now_ms)
     t_max = min(int(df.ts.iloc[-1]) for df in candles.values())
     state = load_json(STATE)

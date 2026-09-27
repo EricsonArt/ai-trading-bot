@@ -11,7 +11,6 @@ import pytest
 _tmp = Path(tempfile.mkdtemp(prefix="botdata-"))
 os.environ["BOT_DATA_DIR"] = str(_tmp / "data")
 os.environ["BOT_CACHE_DIR"] = str(_tmp / "cache")
-(_tmp / "data").mkdir()
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 STEP = 15 * 60_000

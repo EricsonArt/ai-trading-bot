@@ -212,6 +212,7 @@ def run(model_name, source):
         "directives": directives, "reasoning": str(raw.get("reasoning", ""))[:1200],
         "new_lessons": lessons, "lessons": memory, "equity_at": equity,
     }
+    BRAIN.parent.mkdir(parents=True, exist_ok=True)
     BRAIN.write_text(json.dumps(entry, indent=1), encoding="utf-8")
     with JOURNAL.open("a", encoding="utf-8") as f:
         f.write(json.dumps({k: entry[k] for k in ("created_at", "source", "model", "directives",
