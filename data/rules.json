@@ -1,0 +1,143 @@
+{
+ "rules": [
+  {
+   "id": "6c63aa6296",
+   "name": "avoid vol_16 <= 0.004732",
+   "why": "Losing signals differed most in: volatility of 15-min returns over the last 4 hours",
+   "source": "own mistakes (auto)",
+   "conditions": [
+    {
+     "feature": "vol_16",
+     "op": ">",
+     "value": 0.00473
+    }
+   ],
+   "test": {
+    "before": {
+     "trades": 535,
+     "avg": 0.00215,
+     "win_rate": 0.48224,
+     "score": -0.24541
+    },
+    "after": {
+     "trades": 234,
+     "avg": 0.0052,
+     "win_rate": 0.51709,
+     "score": 0.02292
+    },
+    "recent_before": {
+     "trades": 118,
+     "avg": -0.00294,
+     "win_rate": 0.4661,
+     "score": -0.7915
+    },
+    "recent_after": {
+     "trades": 23,
+     "avg": -0.00532,
+     "win_rate": 0.47826,
+     "score": -0.4041
+    },
+    "gain": 0.00304
+   },
+   "tested_at": 1790502176456,
+   "model_version": 2,
+   "status": "rejected"
+  },
+  {
+   "id": "4d9dbf975b",
+   "name": "avoid r_288 >= -0.004324",
+   "why": "Losing signals differed most in: return over the last 3 days",
+   "source": "own mistakes (auto)",
+   "conditions": [
+    {
+     "feature": "r_288",
+     "op": "<",
+     "value": -0.00432
+    }
+   ],
+   "test": {
+    "before": {
+     "trades": 535,
+     "avg": 0.00215,
+     "win_rate": 0.48224,
+     "score": -0.24541
+    },
+    "after": {
+     "trades": 374,
+     "avg": 0.00426,
+     "win_rate": 0.52406,
+     "score": 0.34288
+    },
+    "recent_before": {
+     "trades": 118,
+     "avg": -0.00294,
+     "win_rate": 0.4661,
+     "score": -0.7915
+    },
+    "recent_after": {
+     "trades": 56,
+     "avg": -0.00514,
+     "win_rate": 0.51786,
+     "score": -0.61608
+    },
+    "gain": 0.00211
+   },
+   "tested_at": 1790502176456,
+   "model_version": 2,
+   "status": "rejected"
+  },
+  {
+   "id": "df44b40c88",
+   "name": "avoid vol_96 <= 0.003094",
+   "why": "Losing signals differed most in: volatility of 15-min returns over 24 hours",
+   "source": "own mistakes (auto)",
+   "conditions": [
+    {
+     "feature": "vol_96",
+     "op": ">",
+     "value": 0.00309
+    }
+   ],
+   "test": {
+    "before": {
+     "trades": 535,
+     "avg": 0.00215,
+     "win_rate": 0.48224,
+     "score": -0.24541
+    },
+    "after": {
+     "trades": 354,
+     "avg": 0.00313,
+     "win_rate": 0.49435,
+     "score": -0.22608
+    },
+    "recent_before": {
+     "trades": 118,
+     "avg": -0.00294,
+     "win_rate": 0.4661,
+     "score": -0.7915
+    },
+    "recent_after": {
+     "trades": 62,
+     "avg": -0.00653,
+     "win_rate": 0.45161,
+     "score": -0.78966
+    },
+    "gain": 0.00097
+   },
+   "tested_at": 1790502176456,
+   "model_version": 2,
+   "status": "rejected"
+  }
+ ],
+ "strategy": {
+  "edge": false,
+  "rules": 0,
+  "baseline_avg": -0.00224,
+  "trades": 535,
+  "avg": 0.00215,
+  "win_rate": 0.48224,
+  "score": -0.24541,
+  "model_version": 2
+ }
+}

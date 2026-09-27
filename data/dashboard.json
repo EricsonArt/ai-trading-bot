@@ -1,15 +1,33 @@
 {
- "generated_at": 1790499732090,
- "last_candle": 1790497800000,
+ "generated_at": 1790502176792,
+ "last_candle": 1790500500000,
  "start_ts": 1790497800000,
  "start_cash": 1000.0,
- "benchmark_return": 0.0,
+ "benchmark_return": -0.0005700000000000705,
  "series": [
   [
    1790497800000,
    1000.0,
    1000.0,
    1000.0
+  ],
+  [
+   1790498700000,
+   1000.0,
+   1000.6,
+   999.03
+  ],
+  [
+   1790499600000,
+   1000.0,
+   998.93,
+   998.38
+  ],
+  [
+   1790500500000,
+   1000.0,
+   999.43,
+   998.38
   ]
  ],
  "main": {
@@ -33,13 +51,24 @@
   "max_drawdown": 0.0
  },
  "practice": {
-  "equity": 1000.0,
-  "return": 0.0,
-  "cash": 1000.0,
-  "positions": [],
-  "pending": [
-   "ADA"
+  "equity": 998.38,
+  "return": -0.0016199999999999548,
+  "cash": 790.11,
+  "positions": [
+   {
+    "symbol": "ADA",
+    "entry_ts": 1790498700000,
+    "entry_px": 0.25702845,
+    "price": 0.2553,
+    "value": 208.27,
+    "pnl_pct": -0.006724741949772461,
+    "tp_px": 0.28916055562235443,
+    "sl_px": 0.24160503930126992,
+    "held": 3,
+    "horizon": 192
+   }
   ],
+  "pending": [],
   "trades": [],
   "stats": {
    "all": {
@@ -52,100 +81,100 @@
   "trust": {},
   "benched_until": {},
   "paused_until": 0,
-  "max_drawdown": 0.0
+  "max_drawdown": -0.0016199999999999548
  },
  "signals": {
   "BTC": {
-   "p": 0.3915,
-   "threshold": 0.8,
+   "p": 0.3752,
+   "threshold": 0.81,
    "action": "wait",
-   "ts": 1790497800000
+   "ts": 1790500500000
   },
   "ETH": {
-   "p": 0.4999,
-   "threshold": 0.8,
+   "p": 0.5058,
+   "threshold": 0.81,
    "action": "wait",
-   "ts": 1790497800000
+   "ts": 1790500500000
   },
   "SOL": {
-   "p": 0.2747,
-   "threshold": 0.8,
+   "p": 0.2874,
+   "threshold": 0.81,
    "action": "wait",
-   "ts": 1790497800000
+   "ts": 1790500500000
   },
   "XRP": {
-   "p": 0.3131,
-   "threshold": 0.8,
+   "p": 0.167,
+   "threshold": 0.81,
    "action": "wait",
-   "ts": 1790497800000
+   "ts": 1790500500000
   },
   "DOGE": {
-   "p": 0.4918,
-   "threshold": 0.8,
+   "p": 0.2628,
+   "threshold": 0.81,
    "action": "wait",
-   "ts": 1790497800000
+   "ts": 1790500500000
   },
   "ADA": {
-   "p": 0.8124,
-   "threshold": 0.8,
-   "action": "wait: no proven edge yet (practice account takes it)",
-   "ts": 1790497800000
+   "p": 0.7401,
+   "threshold": 0.81,
+   "action": "wait",
+   "ts": 1790500500000
   }
  },
  "prices": {
-  "BTC": 84749.0,
-  "ETH": 2716.33,
-  "SOL": 124.2,
-  "XRP": 1.5372,
-  "DOGE": 0.09809,
-  "ADA": 0.2569
+  "BTC": 84700.59,
+  "ETH": 2710.83,
+  "SOL": 123.97,
+  "XRP": 1.5306,
+  "DOGE": 0.09744,
+  "ADA": 0.2553
  },
  "model": {
-  "version": 1,
+  "version": 2,
   "variant": "position",
-  "threshold": 0.8,
+  "threshold": 0.76,
   "edge": false,
-  "trained_at": 1790499491389,
-  "data_until": 1790323200000,
-  "train_seconds": 175.0,
+  "trained_at": 1790502174531,
+  "data_until": 1790325000000,
+  "train_seconds": 176.9,
   "metrics": {
    "trend": {
-    "auc": 0.5083,
-    "threshold": 0.7,
+    "auc": 0.5098,
+    "threshold": 0.78,
     "base_rate": 0.3944,
-    "trades": 988,
-    "win_rate": 0.44534,
-    "avg": -0.00086,
-    "total": -0.84892,
-    "profit_factor": 0.93287,
-    "score": -1.94835,
-    "baseline_avg": -0.00289,
-    "baseline_trades": 6638
+    "trades": 402,
+    "win_rate": 0.45522,
+    "avg": -0.00101,
+    "total": -0.40563,
+    "profit_factor": 0.92612,
+    "score": -1.10153,
+    "baseline_avg": -0.00288,
+    "baseline_trades": 6637
    },
    "position": {
-    "auc": 0.5122,
-    "threshold": 0.8,
+    "auc": 0.5123,
+    "threshold": 0.76,
     "base_rate": 0.4411,
-    "trades": 402,
-    "win_rate": 0.49502,
-    "avg": 0.00287,
-    "total": 1.15399,
-    "profit_factor": 1.13504,
-    "score": -0.1304,
-    "baseline_avg": -0.00228,
-    "baseline_trades": 1901
+    "trades": 535,
+    "win_rate": 0.48224,
+    "avg": 0.00215,
+    "total": 1.15181,
+    "profit_factor": 1.10686,
+    "score": -0.24541,
+    "baseline_avg": -0.00224,
+    "baseline_trades": 1903
    },
    "long": {
-    "auc": 0.4944,
-    "threshold": 0.8,
+    "auc": 0.4928,
+    "threshold": 0.78,
     "base_rate": 0.4391,
-    "trades": 312,
-    "win_rate": 0.47115,
-    "avg": -0.00321,
-    "total": -1.00149,
-    "profit_factor": 0.89157,
-    "score": -2.33184,
-    "baseline_avg": -0.00217,
+    "trades": 361,
+    "win_rate": 0.49307,
+    "avg": 0.00249,
+    "total": 0.89872,
+    "profit_factor": 1.09476,
+    "score": -0.47025,
+    "baseline_avg": -0.00211,
     "baseline_trades": 908
    }
   }
@@ -160,18 +189,27 @@
    "avg": 0.00287,
    "auc": 0.5122,
    "baseline_avg": -0.00228
+  },
+  {
+   "version": 2,
+   "trained_at": 1790502174531,
+   "variant": "position",
+   "threshold": 0.76,
+   "edge": false,
+   "avg": 0.00215,
+   "auc": 0.5123,
+   "baseline_avg": -0.00224
   }
  ],
  "directives": {
   "risk_level": 0.5,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
-   "BTC": "reduce",
-   "ETH": "reduce",
-   "ADA": "avoid",
-   "SOL": "avoid"
+   "SOL": "reduce",
+   "XRP": "reduce",
+   "ADA": "avoid"
   },
-  "regime": "bull"
+  "regime": "volatile"
  },
  "brain": {
   "created_at": 1790499732089,
@@ -263,6 +301,141 @@
   "seconds": 24.6,
   "question": "Buying {sym} now and holding it for about two days will end in a profit.",
   "track_record": null
+ },
+ "clm_test": {
+  "created_at": 1790500677119,
+  "days": 60,
+  "calls": 432,
+  "accuracy": 0.5023148148148148,
+  "base_rate": 0.4513888888888889,
+  "always_no_accuracy": 0.5486111111111112,
+  "auc": 0.43862382343395,
+  "avg_p_when_up": 0.33161419980786816,
+  "avg_p_when_down": 0.36256549623829326,
+  "seconds": 824
+ },
+ "learning": {
+  "strategy": {
+   "edge": false,
+   "rules": 0,
+   "baseline_avg": -0.00224,
+   "trades": 535,
+   "avg": 0.00215,
+   "win_rate": 0.48224,
+   "score": -0.24541,
+   "model_version": 2
+  },
+  "counts": {
+   "active": 0,
+   "rejected": 3,
+   "retired": 0
+  },
+  "active": [],
+  "recent": [
+   {
+    "name": "avoid vol_96 <= 0.003094",
+    "source": "own mistakes (auto)",
+    "status": "rejected",
+    "why": "Losing signals differed most in: volatility of 15-min returns over 24 hours",
+    "rule": "vol_96 > 0.00309",
+    "gain": 0.00097,
+    "tested_at": 1790502176456
+   },
+   {
+    "name": "avoid r_288 >= -0.004324",
+    "source": "own mistakes (auto)",
+    "status": "rejected",
+    "why": "Losing signals differed most in: return over the last 3 days",
+    "rule": "r_288 < -0.00432",
+    "gain": 0.00211,
+    "tested_at": 1790502176456
+   },
+   {
+    "name": "avoid vol_16 <= 0.004732",
+    "source": "own mistakes (auto)",
+    "status": "rejected",
+    "why": "Losing signals differed most in: volatility of 15-min returns over the last 4 hours",
+    "rule": "vol_16 > 0.00473",
+    "gain": 0.00304,
+    "tested_at": 1790502176456
+   }
+  ],
+  "mistakes": {
+   "created_at": 1790502174805,
+   "model_version": 2,
+   "signals": 16224,
+   "losers": 9428,
+   "patterns": [
+    {
+     "feature": "vol_96",
+     "meaning": "volatility of 15-min returns over 24 hours",
+     "strength": 0.371,
+     "losers_avg": 0.00414,
+     "winners_avg": 0.00555
+    },
+    {
+     "feature": "atr",
+     "meaning": "average true range as a fraction of price",
+     "strength": 0.328,
+     "losers_avg": 0.00601,
+     "winners_avg": 0.00751
+    },
+    {
+     "feature": "r_288",
+     "meaning": "return over the last 3 days",
+     "strength": 0.312,
+     "losers_avg": -0.02548,
+     "winners_avg": -0.05191
+    },
+    {
+     "feature": "btc_vol96",
+     "meaning": "Bitcoin 24h volatility",
+     "strength": 0.291,
+     "losers_avg": 0.0028,
+     "winners_avg": 0.00332
+    },
+    {
+     "feature": "ema_trend",
+     "meaning": "50-candle average vs 200-candle average (positive = uptrend)",
+     "strength": 0.273,
+     "losers_avg": -0.00697,
+     "winners_avg": -0.01418
+    }
+   ],
+   "candidates": [
+    {
+     "name": "avoid vol_16 <= 0.004732",
+     "conditions": [
+      {
+       "feature": "vol_16",
+       "op": ">",
+       "value": 0.00473
+      }
+     ]
+    },
+    {
+     "name": "avoid r_288 >= -0.004324",
+     "conditions": [
+      {
+       "feature": "r_288",
+       "op": "<",
+       "value": -0.00432
+      }
+     ]
+    },
+    {
+     "name": "avoid vol_96 <= 0.003094",
+     "conditions": [
+      {
+       "feature": "vol_96",
+       "op": ">",
+       "value": 0.00309
+      }
+     ]
+    }
+   ]
+  },
+  "research": null
  },
  "backtest": {
   "created_at": 1790499093232,
