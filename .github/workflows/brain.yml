@@ -18,7 +18,13 @@ concurrency:
   cancel-in-progress: false
 env:
   OLLAMA_VERSION: "0.34.4"
-  MODEL: "qwen3:4b"
+  # Free by default. To use a frontier model instead, set repository variables BRAIN_PROVIDER
+  # (anthropic | openai) and BRAIN_MODEL, plus the matching secret (ANTHROPIC_API_KEY / OPENAI_API_KEY).
+  BRAIN_PROVIDER: ${{ vars.BRAIN_PROVIDER || 'ollama' }}
+  BRAIN_MODEL: ${{ vars.BRAIN_MODEL || 'qwen3:4b' }}
+  OPENAI_BASE_URL: ${{ vars.OPENAI_BASE_URL }}
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 jobs:
   think:
     runs-on: ubuntu-latest
@@ -36,19 +42,19 @@ jobs:
           if [ "${{ inputs.force }}" = "true" ]; then echo "fresh=no" >> "$GITHUB_OUTPUT"; echo "research=yes" >> "$GITHUB_OUTPUT"; exit 0; fi
           python -c "from bot import brain, research; print('research=' + ('no' if research.fresh(20) else 'yes')); print('fresh=' + ('yes' if brain.fresh(3) and research.fresh(20) else 'no'))" >> "$GITHUB_OUTPUT"
       - name: Cache Ollama (CPU build)
-        if: steps.fresh.outputs.fresh == 'no'
+        if: steps.fresh.outputs.fresh == 'no' && env.BRAIN_PROVIDER == 'ollama'
         uses: actions/cache@v4
         with:
           path: ~/ollama
           key: ollama-${{ env.OLLAMA_VERSION }}-cpu
       - name: Cache model weights
-        if: steps.fresh.outputs.fresh == 'no'
+        if: steps.fresh.outputs.fresh == 'no' && env.BRAIN_PROVIDER == 'ollama'
         uses: actions/cache@v4
         with:
           path: ~/.ollama/models
-          key: ollama-model-${{ env.MODEL }}
+          key: ollama-model-${{ env.BRAIN_MODEL }}
       - name: Start Ollama
-        if: steps.fresh.outputs.fresh == 'no'
+        if: steps.fresh.outputs.fresh == 'no' && env.BRAIN_PROVIDER == 'ollama'
         run: |
           if [ ! -x ~/ollama/bin/ollama ]; then
             mkdir -p ~/ollama
@@ -57,7 +63,7 @@ jobs:
           fi
           ~/ollama/bin/ollama serve > /tmp/ollama.log 2>&1 &
           for i in $(seq 1 60); do curl -sf http://127.0.0.1:11434/api/tags > /dev/null && break; sleep 1; done
-          ~/ollama/bin/ollama pull "$MODEL"
+          ~/ollama/bin/ollama pull "$BRAIN_MODEL"
       - name: Restore price history
         if: steps.fresh.outputs.fresh == 'no'
         uses: actions/cache/restore@v4
@@ -67,10 +73,10 @@ jobs:
           restore-keys: bot-
       - name: Daily internet research
         if: steps.fresh.outputs.research == 'yes'
-        run: python -c "from bot import research; research.run('$MODEL', 'cloud')"
+        run: python -c "from bot import llm, research; research.run(llm.model_for('cloud'), 'cloud')"
       - name: Brain review
         if: steps.fresh.outputs.fresh == 'no'
-        run: python -m bot brain --model "$MODEL" --source cloud
+        run: python -m bot brain --source cloud
       - name: Commit results
         if: steps.fresh.outputs.fresh == 'no'
         run: |

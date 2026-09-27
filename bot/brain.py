@@ -13,9 +13,8 @@ import json
 import time
 
 import numpy as np
-import requests
 
-from . import config, data
+from . import config, data, llm
 
 BRAIN = config.DATA_DIR / "brain.json"
 JOURNAL = config.DATA_DIR / "brain_journal.jsonl"
@@ -45,6 +44,7 @@ Rules:
 - Do not avoid a symbol without a concrete reason from the data.
 - Lessons must be specific and actionable (max 3, each under 25 words).
 - Reasoning: 2-4 plain sentences a beginner can understand.
+- Write "reasoning" and "lessons" in Polish (the owner reads them on a Polish dashboard).
 Reply with JSON only."""
 
 
@@ -132,22 +132,23 @@ def build_report():
     prev = _load(BRAIN, {})
     main = state.get("main", {})
     acct = main.get("acct", {})
-    last_eq = practice_eq = config.START_CASH
+    cash0 = float(state.get("start_cash") or config.START_CASH)
+    last_eq = practice_eq = cash0
     eq_file = config.DATA_DIR / "equity.csv"
     if eq_file.exists():
         tail = eq_file.read_text(encoding="utf-8").strip().splitlines()[-1].split(",")
         if tail[0] != "ts":
             last_eq, practice_eq = float(tail[1]), float(tail[4])
     lines = ["# Main account (paper money; trades only while the model has a proven edge)",
-             f"Start ${config.START_CASH:.0f} -> now ${last_eq:.2f} ({100 * (last_eq / config.START_CASH - 1):+.2f}%), "
+             f"Start ${cash0:,.0f} -> now ${last_eq:,.2f} ({100 * (last_eq / cash0 - 1):+.2f}%), "
              f"peak ${main.get('peak', last_eq):.2f}, cash ${acct.get('cash', last_eq):.2f}"]
     for s, p in acct.get("positions", {}).items():
         lines.append(f"Open: {s} bought {_fmt_ts(p['entry_ts'])} at {p['entry_px']:.6g}, "
                      f"stop {p['sl_px']:.6g}, target {p['tp_px']:.6g}, held {p['held']} candles")
     lines += _trade_lines(_read_jsonl(config.DATA_DIR / "trades.jsonl"), "Main account")
     lines += ["\n# Practice account (takes every model signal, ignores your advice; measures the raw model)",
-              f"Start ${config.START_CASH:.0f} -> now ${practice_eq:.2f} "
-              f"({100 * (practice_eq / config.START_CASH - 1):+.2f}%)"]
+              f"Start ${cash0:,.0f} -> now ${practice_eq:,.2f} "
+              f"({100 * (practice_eq / cash0 - 1):+.2f}%)"]
     lines += _trade_lines(_read_jsonl(config.DATA_DIR / "practice_trades.jsonl"), "Practice account")
     m = state.get("model", {})
     if m:
@@ -173,14 +174,14 @@ def build_report():
         if prev.get("lessons"):
             lines.append("Your lessons so far: " + " | ".join(prev["lessons"]))
     strat = state.get("strategy") or {}
-    book = _load(config.DATA_DIR / "rules.json", {})
-    act = [r for r in book.get("rules", []) if r["status"] == "active"]
-    lines.append("\n# What the bot has learned (rules tested on unseen data)")
-    lines.append(f"{len(book.get('rules', []))} ideas tested so far, {len(act)} active: "
-                 + ("; ".join(f"{r['name']} (+{100 * r['test']['gain']:.2f}%/trade)" for r in act) or "none yet"))
+    world = _load(config.DATA_DIR / "evolution" / "map.json", {})
     if strat:
-        lines.append(f"Model + rules on unseen data: {strat['trades']} trades, avg {100 * strat['avg']:+.2f}%/trade, "
-                     f"edge proven: {strat['edge']}")
+        h = strat["stats"]["holdout"]
+        lines += ["\n# Strategy evolution (the bot replays history under many recipes and keeps the best)",
+                  f"{world.get('total_evaluated', 0)} recipes tried so far over {len(world.get('generations', []))} "
+                  f"generations. Current champion: {strat['description']}",
+                  f"Champion on the newest unseen data: {h['trades']} trades, avg {100 * h['avg']:+.2f}%/trade "
+                  f"(always-buy {100 * strat['baseline']['holdout']:+.2f}%), edge proven: {strat['edge']}"]
     mistakes = _load(config.DATA_DIR / "research" / "mistakes.json", {})
     if mistakes.get("patterns"):
         lines.append("What losing signals had in common: " + "; ".join(
@@ -211,14 +212,7 @@ def build_report():
 
 
 def ask(model_name, report, system=SYSTEM, schema=SCHEMA, timeout=900):
-    r = requests.post(f"{config.OLLAMA_URL}/api/chat", json={
-        "model": model_name, "stream": False, "think": False, "format": schema, "keep_alive": "2m",
-        "options": {"temperature": 0.3, "num_ctx": 12288},
-        "messages": [{"role": "system", "content": system}, {"role": "user", "content": report}],
-    }, timeout=timeout)
-    r.raise_for_status()
-    content = r.json()["message"]["content"]
-    return json.loads(content[content.find("{"): content.rfind("}") + 1])
+    return llm.chat_json(system, report, schema, model_name, timeout)
 
 
 def run(model_name, source):

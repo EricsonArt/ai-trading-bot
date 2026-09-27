@@ -7,11 +7,11 @@ buying and holding BTC, and an equal mix of all coins, over the same period.
 
 import time
 
-from . import brain, config, data, features, model
-from .engine import DAY, Trader, predict_rows, save_json
+from . import brain, config, data, evolution, features, model
+from .engine import DAY, Trader, plan, predict_rows, save_json
 
 
-def run(days=180, retrain_days=30):
+def run(days=180, retrain_days=30, evolve=True, evolve_seconds=90):
     started = time.time()
     candles = {s: data.load(s) for s in config.SYMBOLS}
     frame = features.build_frame(candles)
@@ -20,18 +20,26 @@ def run(days=180, retrain_days=30):
     closes = {s: df.set_index("ts").close for s, df in candles.items()}
     trader = Trader(Trader.new_state(t_start), practice=True)  # raw model: every signal is traded
     trades, series, blocks = [], [], []
+    champ = None
     t = t_start
     while t <= t_end:
         block_end = min(t + retrain_days * DAY, t_end + data.STEP_MS)
-        bundle = model.train(frame[frame.ts <= t - data.STEP_MS])
-        blocks.append({"from": t, "variant": bundle["variant"], "threshold": bundle["threshold"], "edge": bundle["edge"]})
-        print(f"[backtest] block from {time.strftime('%Y-%m-%d', time.gmtime(t / 1000))}: "
-              f"{bundle['variant']} thr={bundle['threshold']} edge={bundle['edge']}")
+        past = frame[frame.ts <= t - data.STEP_MS]
+        bundle = model.train(past)
+        if evolve:  # dream only on candles that existed at that moment
+            champ = evolution.run(bundle, {s: df[df.ts < t] for s, df in candles.items()}, (),
+                                  budget_s=evolve_seconds, persist=False, champion=champ)
+            recipe, edge = champ["genome"], champ["edge"]
+        else:
+            recipe, edge = evolution.default_recipe(bundle, bundle["variant"]), bundle["edge"]
+        blocks.append({"from": t, "recipe": evolution.describe(recipe), "edge": edge})
+        print(f"[backtest] block from {time.strftime('%Y-%m-%d', time.gmtime(t / 1000))}: {evolution.describe(recipe)}")
         ts_list = list(range(t, block_end, data.STEP_MS))
-        by_ts = predict_rows(frame, ts_list, bundle)
+        by_ts = predict_rows(frame, ts_list, bundle, recipe["style"])
+        trade_plan = plan(recipe, edge)
         for ts in ts_list:
             if ts in by_ts:
-                closed, eq = trader.step(ts, by_ts[ts], bundle, brain.DEFAULTS)
+                closed, eq = trader.step(ts, by_ts[ts], trade_plan, brain.DEFAULTS)
                 trades += closed
                 series.append((ts, eq))
         t = block_end
@@ -45,7 +53,7 @@ def run(days=180, retrain_days=30):
     step = max(1, len(series) // 800)
     b0 = closes[config.BENCHMARK][t_start]
     result = {
-        "created_at": int(time.time() * 1000), "days": days, "from": t_start, "to": t_end,
+        "created_at": int(time.time() * 1000), "days": days, "from": t_start, "to": t_end, "evolved": evolve,
         "final_equity": round(eq_end, 2), "return": eq_end / config.START_CASH - 1, "max_drawdown": mdd,
         "trades": len(trades), "win_rate": sum(x["net"] > 0 for x in trades) / len(trades) if trades else 0,
         "avg_trade": sum(x["net"] for x in trades) / len(trades) if trades else 0,

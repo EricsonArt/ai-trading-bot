@@ -87,11 +87,15 @@ def build_frame(candles: dict) -> pd.DataFrame:
     return out
 
 
-def barriers(vol_96, variant):
-    """Take-profit / stop-loss distances (as fractions) for a given style."""
+def barriers(vol_96, horizon, tp_mult, sl_mult):
+    """Take-profit / stop-loss distances (fractions) as multiples of the expected move."""
+    move = np.asarray(vol_96, dtype=float) * np.sqrt(horizon)
+    return np.maximum(config.MIN_TP, tp_mult * move), np.maximum(config.MIN_SL, sl_mult * move)
+
+
+def variant_barriers(vol_96, variant):
     v = config.VARIANTS[variant]
-    move = np.asarray(vol_96, dtype=float) * np.sqrt(v["horizon"])
-    return np.maximum(config.MIN_TP, v["tp"] * move), np.maximum(config.MIN_SL, v["sl"] * move)
+    return barriers(vol_96, v["horizon"], v["tp"], v["sl"])
 
 
 def net_return(entry_fill, exit_price):
@@ -100,22 +104,19 @@ def net_return(entry_fill, exit_price):
     return exit_fill * (1 - config.FEE) / (entry_fill * (1 + config.FEE)) - 1
 
 
-def label_symbol(f: pd.DataFrame, variant: str):
-    """Triple-barrier outcome of buying at the next candle's open, for every row of one symbol.
+def triple_barrier(o, h, l, c, idx, tp, sl, H):
+    """Outcome of buying at the open after each decision candle in `idx` (numpy arrays of one symbol).
 
-    Returns (net_return, exit_offset, resolved). exit_offset counts candles after the
-    decision candle (1 = exited during the entry candle).
-    """
-    H = config.VARIANTS[variant]["horizon"]
-    o, h, l, c = (f[k].to_numpy(float) for k in ("open", "high", "low", "close"))
-    n = len(f)
-    tp, sl = barriers(f.vol_96.to_numpy(float), variant)
-    entry = np.full(n, np.nan)
-    entry[:-1] = o[1:] * (1 + config.SLIPPAGE)
+    Exits at the stop (checked first: pessimistic), the target, or the close of the H-th candle.
+    Returns (net_return, exit_offset, resolved); exit_offset counts candles after the decision."""
+    n = len(c)
+    idx = np.asarray(idx)
+    entry = np.full(len(idx), np.nan)
+    has_next = idx + 1 < n
+    entry[has_next] = o[idx[has_next] + 1] * (1 + config.SLIPPAGE)
     tp_px, sl_px = entry * (1 + tp), entry * (1 - sl)
-    exit_px = np.full(n, np.nan)
-    exit_off = np.full(n, np.nan)
-    idx = np.arange(n)
+    exit_px = np.full(len(idx), np.nan)
+    exit_off = np.full(len(idx), np.nan)
     for j in range(1, H + 1):
         k = idx + j
         ok = (k < n) & np.isnan(exit_px) & ~np.isnan(entry)
@@ -128,8 +129,14 @@ def label_symbol(f: pd.DataFrame, variant: str):
         timeout = ok & ~hit_sl & ~hit_tp & (j == H)
         exit_px = np.where(hit_sl, sl_fill, np.where(hit_tp, tp_fill, np.where(timeout, c[kk], exit_px)))
         exit_off = np.where(hit_sl | hit_tp | timeout, j, exit_off)
-    resolved = idx + H < n
-    return net_return(entry, exit_px), exit_off, resolved
+    return net_return(entry, exit_px), exit_off, idx + H < n
+
+
+def label_symbol(f: pd.DataFrame, variant: str):
+    """Triple-barrier outcome for every row of one symbol, using the style's default exits."""
+    o, h, l, c = (f[k].to_numpy(float) for k in ("open", "high", "low", "close"))
+    tp, sl = variant_barriers(f.vol_96.to_numpy(float), variant)
+    return triple_barrier(o, h, l, c, np.arange(len(f)), tp, sl, config.VARIANTS[variant]["horizon"])
 
 
 def add_labels(frame: pd.DataFrame, variant: str) -> pd.DataFrame:

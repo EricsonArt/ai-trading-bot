@@ -9,20 +9,24 @@ on GitHub changes.
 """
 
 import ctypes
+import json
 import os
 import socket
 import subprocess
 import sys
 import time
 import traceback
+from datetime import datetime
 
 import requests
 
-from . import brain, clm, config, research
+from . import brain, clm, config, llm, research
 
 LOG = config.CACHE_DIR / "local.log"
 BRAIN_EVERY_S = 3600
 CLM_EVERY_S = 4 * 3600
+WATCHDOG_EVERY_S = 300
+CLOUD_STALE_MIN = 25   # if GitHub's scheduler hasn't run a cycle for this long, start one from here
 PUSH = ["data/brain.json", "data/brain_journal.jsonl", "data/clm.json", "data/clm_log.jsonl",
         "data/research/digest.json", "data/research/digests.jsonl", "data/research/proposals.jsonl"]
 NO_WINDOW = getattr(subprocess, "CREATE_NO_WINDOW", 0)
@@ -84,6 +88,22 @@ def restart_if_code_changed(code_before):
         sys.exit(0)
 
 
+def cloud_watchdog():
+    """GitHub's cron can lag (hours for new repos); while the PC is on, make sure cycles keep coming."""
+    r = subprocess.run(["gh", "run", "list", "-w", "bot.yml", "-L", "1", "--json", "createdAt,status"],
+                       cwd=config.ROOT, capture_output=True, text=True, timeout=60, creationflags=NO_WINDOW)
+    if r.returncode:
+        return
+    runs = json.loads(r.stdout or "[]")
+    if runs and runs[0]["status"] in ("queued", "in_progress", "waiting", "pending", "requested"):
+        return
+    last = datetime.fromisoformat(runs[0]["createdAt"].replace("Z", "+00:00")).timestamp() if runs else 0
+    if time.time() - last > CLOUD_STALE_MIN * 60:
+        subprocess.run(["gh", "workflow", "run", "bot.yml"], cwd=config.ROOT, capture_output=True,
+                       timeout=60, creationflags=NO_WINDOW)
+        log("cloud cycle overdue; started one from the PC")
+
+
 def keep_cloud_schedule_alive():
     # GitHub pauses scheduled workflows in repos without activity for 60 days; re-enable just in case.
     for wf in ("bot.yml", "brain.yml"):
@@ -102,7 +122,7 @@ def main():
         return
     if os.name == "nt":
         ctypes.windll.kernel32.SetPriorityClass(ctypes.windll.kernel32.GetCurrentProcess(), 0x4000)  # below normal
-    log(f"started (brain model {config.LOCAL_BRAIN_MODEL}, CLM {'on' if config.CLM_ENABLED else 'off'})")
+    log(f"started (brain {config.BRAIN_PROVIDER}/{llm.model_for('local')}, CLM {'on' if config.CLM_ENABLED else 'off'})")
     code = head("bot")  # the code this process has loaded; restart when GitHub has newer code
     while True:  # wait for network after boot
         try:
@@ -113,9 +133,15 @@ def main():
             time.sleep(60)
     restart_if_code_changed(code)
     keep_cloud_schedule_alive()
-    last_brain = last_clm = 0.0
+    last_brain = last_clm = last_watch = 0.0
     while True:
         now = time.time()
+        if now - last_watch >= WATCHDOG_EVERY_S:
+            last_watch = now
+            try:
+                cloud_watchdog()
+            except Exception as exc:
+                log(f"watchdog: {exc}")
         if now - last_brain >= BRAIN_EVERY_S:
             last_brain = now
             try:
@@ -126,11 +152,11 @@ def main():
                     if ollama_ready():
                         break
                     time.sleep(10)
-                if ollama_ready():
+                if config.BRAIN_PROVIDER != "ollama" or ollama_ready():
                     if not research.fresh(20):  # once a day: read the internet, propose rules
-                        research.run(config.LOCAL_BRAIN_MODEL, "local")
+                        research.run(llm.model_for("local"), "local")
                         did.append("research")
-                    brain.run(config.LOCAL_BRAIN_MODEL, "local")
+                    brain.run(llm.model_for("local"), "local")
                     did.append("brain")
                 else:
                     log("Ollama is not running; skipping the brain this hour")

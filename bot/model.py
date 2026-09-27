@@ -120,45 +120,66 @@ def _evaluate_variant(frame, variant):
 
 
 def train(frame, version=1):
-    """Train all styles, keep the best one, return the model bundle."""
+    """Train every style, return the bundle: one final model per style + the out-of-sample
+    evidence (walk-forward predictions) the strategy evolution replays."""
     started = time.time()
     results = [_evaluate_variant(frame, v) for v in config.VARIANTS]
     proven = [r for r in results if r["val"]["score"] > 0]
-    # prefer a statistically proven style; otherwise the one that earned the most on unseen data
+    # default style: a statistically proven one, otherwise the one that earned the most on unseen data
     best = max(proven, key=lambda r: r["val"]["score"]) if proven else max(results, key=lambda r: r["val"]["total"])
-    lab = _thin(best["labeled"])
-    ref_ts = lab.ts.max()
-    final = _classifier(max_iter=max(best["n_iter"], 50), early_stopping=False)
-    final.fit(lab[FEATURES], lab.y, sample_weight=_weights(lab.ts.to_numpy(), ref_ts))
+    clfs, data_until = {}, 0
+    for r in results:
+        lab = _thin(r["labeled"])
+        data_until = max(data_until, int(lab.ts.max()))
+        clf = _classifier(max_iter=max(r["n_iter"], 50), early_stopping=False)
+        clf.fit(lab[FEATURES], lab.y, sample_weight=_weights(lab.ts.to_numpy(), lab.ts.max()))
+        clfs[r["variant"]] = clf
     v = best["val"]
     edge = v["score"] > 0 and v["avg"] > 0 and v["avg"] > v["baseline_avg"] + 0.001
-    bundle = {
-        "clf": final,
+    return {
+        "clfs": clfs,
+        "symbols": list(config.SYMBOLS),
         "version": version,
         "variant": best["variant"],
         "threshold": best["threshold"],
         "edge": bool(edge),
         "trained_at": int(time.time() * 1000),
-        "data_until": int(ref_ts),
+        "data_until": data_until,
         "train_seconds": round(time.time() - started, 1),
-        # the chosen style's out-of-sample signals: the evidence new rules are tested against
-        "oos": _oos_signals(best),
+        "oos": {r["variant"]: _oos_signals(r) for r in results},
+        "baselines": {r["variant"]: _baselines(r) for r in results},
         "feature_ranges": {f: [round(float(q), 5) for q in best["val_df"][f].quantile([0.1, 0.5, 0.9])]
                            for f in RULE_FEATURES},
         "metrics": {r["variant"]: {"auc": round(r["auc"], 4), "threshold": r["threshold"],
                                    "base_rate": round(r["base_rate"], 4), **{k: round(v, 5) for k, v in r["val"].items()}}
                     for r in results},
     }
-    return bundle
+
+
+def split_edges(ts):
+    """Time boundaries of the evidence: older 60% = search, next 20% = select, newest 20% = holdout."""
+    t0, t1 = float(np.min(ts)), float(np.max(ts))
+    return t0 + (t1 - t0) * config.SPLITS[0], t0 + (t1 - t0) * config.SPLITS[1]
+
+
+def _baselines(result):
+    """Always-buy average per trade in each evidence period (what 'no skill' earns)."""
+    val = result["val_df"]
+    a, b = split_edges(val.ts.to_numpy())
+    out = {}
+    for name, part in (("search", val[val.ts < a]), ("select", val[(val.ts >= a) & (val.ts < b)]),
+                       ("holdout", val[val.ts >= b])):
+        out[name] = round(trade_stats(simulate_df(part, np.ones(len(part)), 0.0))["avg"], 5)
+    return out
 
 
 def _oos_signals(result):
     val = result["val_df"].assign(p=result["proba"])
-    val = val[val.p >= result["threshold"] - 0.04]
+    val = val[val.p >= config.EVOLUTION["min_threshold"]]
     cols = ["ts", "symbol", "net", "exit_off", "p"] + RULE_FEATURES
     out = val[cols].copy()
     out[RULE_FEATURES] = out[RULE_FEATURES].astype("float32")
-    return out.reset_index(drop=True)
+    return out.sort_values("ts").reset_index(drop=True)
 
 
 def save(bundle):
@@ -178,8 +199,8 @@ def load():
         return None
 
 
-def predict(bundle, rows):
-    return bundle["clf"].predict_proba(rows[FEATURES])[:, 1]
+def predict(bundle, rows, style=None):
+    return bundle["clfs"][style or bundle["variant"]].predict_proba(rows[FEATURES])[:, 1]
 
 
 def summary(bundle):

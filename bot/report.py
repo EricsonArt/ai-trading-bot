@@ -1,10 +1,11 @@
 """Collect everything the dashboard shows into data/dashboard.json."""
 
+import json
 import time
 
 from . import config
 from .engine import (EQUITY, MODEL_HISTORY, PRACTICE_TRADES, STATE, TRADES, load_json, read_jsonl, save_json,
-                     trust)
+                     start_cash, trust)
 
 OUT = config.DATA_DIR / "dashboard.json"
 MAX_POINTS = 1500
@@ -18,7 +19,7 @@ def _equity_series(state):
     step = max(1, len(rows) // MAX_POINTS)
     picked = rows[::step] + ([rows[-1]] if rows and (len(rows) - 1) % step else [])
     bench0 = state.get("bench_start_px") or 1
-    return [[int(r[0]), float(r[1]), round(config.START_CASH * float(r[3]) / bench0, 2), float(r[4])]
+    return [[int(r[0]), float(r[1]), round(start_cash(state) * float(r[3]) / bench0, 2), float(r[4])]
             for r in picked]
 
 
@@ -44,7 +45,7 @@ def _stats(trades):
     }
 
 
-def _account(acc, trades, prices, equity, week_ago):
+def _account(acc, trades, prices, equity, week_ago, cash0):
     acct = acc.get("acct", {})
     positions = []
     for s, p in acct.get("positions", {}).items():
@@ -53,7 +54,7 @@ def _account(acc, trades, prices, equity, week_ago):
                           "value": round(p["qty"] * px, 2), "pnl_pct": px / p["entry_px"] - 1,
                           "tp_px": p["tp_px"], "sl_px": p["sl_px"], "held": p["held"], "horizon": p["horizon"]})
     return {
-        "equity": round(equity, 2), "return": equity / config.START_CASH - 1,
+        "equity": round(equity, 2), "return": equity / cash0 - 1,
         "cash": round(acct.get("cash", equity), 2), "positions": positions,
         "pending": sorted(acct.get("pending", {})),
         "trades": trades[-40:][::-1],
@@ -64,18 +65,49 @@ def _account(acc, trades, prices, equity, week_ago):
     }
 
 
+def _map_points(world):
+    """Dots for the dream map: [generation, avg profit/trade on the 'select' period, went live?]."""
+    pts = [[g["gen"], v, 0] for g in world.get("generations", [])[-60:] for v in g.get("sample", [])]
+    path = config.DATA_DIR / "evolution" / "archive.jsonl"
+    if path.exists():
+        for line in path.read_text(encoding="utf-8").splitlines():
+            r = json.loads(line)
+            if r["deployed"]:
+                pts.append([r["gen"], r["stats"]["select"]["avg"], 1])
+    return pts
+
+
+def _readiness(state, main, benchmark_return):
+    """When has the strategy earned a (small!) real-money test? All of these must hold."""
+    start = state.get("main", {}).get("acct", {}).get("start_ts") or time.time() * 1000
+    days = (time.time() * 1000 - start) / 86_400_000
+    trades = main["stats"]["all"].get("trades", 0)
+    strat = state.get("strategy") or {}
+    checks = [  # shown on the (Polish) dashboard
+        ("Strategia ma potwierdzoną przewagę na niewidzianej historii", bool(strat.get("edge")),
+         "tak" if strat.get("edge") else "nie"),
+        ("Konto główne handlowało na papierze 90+ dni", days >= 90, f"{days:.0f} dni"),
+        ("Co najmniej 100 zamkniętych transakcji", trades >= 100, f"{trades} transakcji"),
+        ("Zysk po opłatach", main["return"] > 0, f"{100 * main['return']:+.1f}%"),
+        ("Lepiej niż samo trzymanie BTC", main["return"] > benchmark_return,
+         f"{100 * (main['return'] - benchmark_return):+.1f} pkt"),
+        ("Największy spadek mniejszy niż 20%", main["max_drawdown"] > -0.20, f"{100 * main['max_drawdown']:.1f}%"),
+    ]
+    return {"ready": all(ok for _, ok, _ in checks),
+            "checks": [{"name": n, "ok": bool(ok), "value": v} for n, ok, v in checks]}
+
+
 def _learning(state):
-    """Mistakes found, rules tested (from mistakes and from internet research), today's reading."""
-    book = load_json(config.DATA_DIR / "rules.json", {}) or {}
-    tested = book.get("rules", [])
-    pick = lambda r: {"name": r["name"], "source": r["source"], "status": r["status"], "why": r.get("why", ""),
-                      "rule": " and ".join(f"{c['feature']} {c['op']} {c['value']:g}" for c in r["conditions"]),
-                      "gain": (r.get("test") or {}).get("gain"), "tested_at": r.get("tested_at")}
+    """The evolution map, the champion recipe, mistakes found, ideas tested, today's reading."""
+    world = load_json(config.DATA_DIR / "evolution" / "map.json", {}) or {}
+    ideas = load_json(config.DATA_DIR / "evolution" / "ideas.json", {}) or {}
     return {
         "strategy": state.get("strategy"),
-        "counts": {s: sum(r["status"] == s for r in tested) for s in ("active", "rejected", "retired")},
-        "active": [pick(r) for r in tested if r["status"] == "active"],
-        "recent": [pick(r) for r in tested[-12:]][::-1],
+        "total_evaluated": world.get("total_evaluated", 0),
+        "generations": world.get("generations", [])[-120:],
+        "deployments": world.get("deployments", [])[-10:][::-1],
+        "points": _map_points(world),
+        "ideas": sorted(ideas.values(), key=lambda v: v["tested_at"], reverse=True)[:14],
         "mistakes": load_json(config.DATA_DIR / "research" / "mistakes.json", None),
         "research": load_json(config.DATA_DIR / "research" / "digest.json", None),
     }
@@ -86,19 +118,23 @@ def write():
     series = _equity_series(state)
     prices = state.get("prices", {})
     week_ago = time.time() * 1000 - 7 * 86_400_000
-    last = series[-1] if series else [0, config.START_CASH, config.START_CASH, config.START_CASH]
+    cash0 = start_cash(state)
+    last = series[-1] if series else [0, cash0, cash0, cash0]
     history = read_jsonl(MODEL_HISTORY)[-40:]
     brain = load_json(config.DATA_DIR / "brain.json", {})
+    main = {**_account(state.get("main", {}), read_jsonl(TRADES), prices, last[1], week_ago, cash0),
+            "max_drawdown": _max_drawdown([p[1] for p in series])}
+    benchmark_return = last[2] / cash0 - 1
     save_json(OUT, {
         "generated_at": int(time.time() * 1000),
         "last_candle": state.get("last_ts"),
         "start_ts": state.get("main", {}).get("acct", {}).get("start_ts"),
-        "start_cash": config.START_CASH,
-        "benchmark_return": last[2] / config.START_CASH - 1,
+        "start_cash": cash0,
+        "benchmark_return": benchmark_return,
         "series": series,
-        "main": {**_account(state.get("main", {}), read_jsonl(TRADES), prices, last[1], week_ago),
-                 "max_drawdown": _max_drawdown([p[1] for p in series])},
-        "practice": {**_account(state.get("practice", {}), read_jsonl(PRACTICE_TRADES), prices, last[3], week_ago),
+        "main": main,
+        "readiness": _readiness(state, main, benchmark_return),
+        "practice": {**_account(state.get("practice", {}), read_jsonl(PRACTICE_TRADES), prices, last[3], week_ago, cash0),
                      "max_drawdown": _max_drawdown([p[3] for p in series])},
         "signals": state.get("main", {}).get("signals", {}),
         "prices": prices,

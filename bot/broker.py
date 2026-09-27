@@ -9,9 +9,9 @@ hit first (pessimistic). These rules mirror features.label_symbol exactly.
 from . import config
 
 
-def new_account(start_ts):
+def new_account(start_ts, cash=None):
     return {
-        "cash": config.START_CASH,
+        "cash": float(cash or config.START_CASH),
         "positions": {},
         "pending": {},
         "start_ts": start_ts,
@@ -73,7 +73,7 @@ def close(acct, symbol, price, ts, reason):
         "cost": round(pos["cost"], 2), "proceeds": round(proceeds, 2),
         "pnl": round(proceeds - pos["cost"], 2), "net": round(proceeds / pos["cost"] - 1, 5),
         "reason": reason, "held": pos["held"],
-        **{k: pos[k] for k in ("prob", "variant", "threshold", "mode", "ctx") if k in pos},
+        **{k: pos[k] for k in ("prob", "variant", "threshold", "mode", "ctx", "recipe") if k in pos},
     }
 
 

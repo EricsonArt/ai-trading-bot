@@ -3,6 +3,11 @@ import pytest
 
 from bot import brain, broker, config, features
 from bot.engine import Trader
+
+
+def plan(edge=True, **kw):
+    return {"id": "test", "style": "trend", "threshold": 0.5, "tp": 1.8, "sl": 0.9, "horizon": 64, "size": 0.25,
+            "rules": [], "edge": edge, **kw}
 from conftest import make_candles
 
 
@@ -12,7 +17,7 @@ def test_labels_match_broker(candles):
     for variant in config.VARIANTS:
         net, off, resolved = features.label_symbol(f, variant)
         H = config.VARIANTS[variant]["horizon"]
-        tp, sl = features.barriers(f.vol_96, variant)
+        tp, sl = features.variant_barriers(f.vol_96, variant)
         checked = 0
         for i in range(300, len(f) - H - 1, 97):
             acct = broker.new_account(0)
@@ -68,9 +73,8 @@ def _rows(t, price, p):
 
 def test_trader_never_exceeds_cash_or_exposure():
     trader = Trader(Trader.new_state(0))
-    bundle = {"threshold": 0.5, "edge": True, "variant": "trend"}
     for k in range(40):
-        trader.step(k * 900_000, _rows(k * 900_000, 100.0, 0.99), bundle, brain.DEFAULTS)
+        trader.step(k * 900_000, _rows(k * 900_000, 100.0, 0.99), plan(), brain.DEFAULTS)
         acct = trader.s["acct"]
         assert acct["cash"] >= -1e-6
         prices = {s: 100.0 for s in config.SYMBOLS}
@@ -79,10 +83,9 @@ def test_trader_never_exceeds_cash_or_exposure():
 
 
 def test_main_waits_without_edge_but_practice_trades():
-    bundle = {"threshold": 0.5, "edge": False, "variant": "trend"}
     main, practice = Trader(Trader.new_state(0)), Trader(Trader.new_state(0), practice=True)
-    main.step(0, _rows(0, 100.0, 0.99), bundle, brain.DEFAULTS)
-    practice.step(0, _rows(0, 100.0, 0.99), bundle, brain.DEFAULTS)
+    main.step(0, _rows(0, 100.0, 0.99), plan(edge=False), brain.DEFAULTS)
+    practice.step(0, _rows(0, 100.0, 0.99), plan(edge=False), brain.DEFAULTS)
     assert not main.s["acct"]["pending"] and main.s["signals"]["BTC"]["action"].startswith("wait")
     assert set(practice.s["acct"]["pending"]) and all(o["mode"] == "practice"
                                                       for o in practice.s["acct"]["pending"].values())
@@ -93,8 +96,7 @@ def test_symbol_gets_benched_after_repeated_losses():
     for k in range(8):
         trader._learn_from({"symbol": "SOL", "net": -0.02}, t=k)
     assert trader.s["benched_until"]["SOL"] > 0
-    bundle = {"threshold": 0.5, "edge": True, "variant": "trend"}
-    trader.step(10, _rows(10, 100.0, 0.99), bundle, brain.DEFAULTS)
+    trader.step(10, _rows(10, 100.0, 0.99), plan(), brain.DEFAULTS)
     assert "SOL" not in trader.s["acct"]["pending"]
     assert trader.s["signals"]["SOL"]["action"].startswith("blocked")
 
@@ -107,6 +109,8 @@ def test_full_cycle_offline(monkeypatch):
     feed = {"n": 4000}
     monkeypatch.setattr(data, "update_all", lambda now=None: {s: df.head(feed["n"]).copy() for s, df in history.items()})
     monkeypatch.setattr(config, "MIN_VALIDATION_TRADES", 5)
+    monkeypatch.setitem(config.EVOLUTION, "budget_seconds", 3)
+    monkeypatch.setitem(config.EVOLUTION, "min_trades", {"search": 5, "select": 2, "holdout": 2})
     s1 = engine.run()
     assert s1["model"]["version"] == 1 and s1["last_ts"] == history["BTC"].ts.iloc[3999]
     feed["n"] = 4200  # 200 new candles arrive: the bot replays all of them
@@ -116,3 +120,19 @@ def test_full_cycle_offline(monkeypatch):
     assert dash["main"]["equity"] > 0 and dash["practice"]["equity"] > 0 and len(dash["series"]) >= 200
     assert set(dash["signals"]) == set(config.SYMBOLS)
     assert brain.build_report()[0].count("account") >= 2  # the brain's report renders from the saved state
+    assert dash["learning"]["strategy"]["description"] and dash["learning"]["total_evaluated"] > 10
+
+
+def test_changing_the_fake_money_archives_old_results(monkeypatch):
+    import pandas as pd
+    from bot import data, engine
+    engine.save_json(engine.STATE, {"start_cash": 1000.0, "model": {"version": 3}, "main": {}, "practice": {}})
+    engine.append_jsonl(engine.TRADES, [{"symbol": "BTC", "net": 0.01}])
+    monkeypatch.setattr(data, "fetch", lambda *a: pd.DataFrame({"ts": [1_000_000 * 900], "close": [50_000.0]}))
+    engine.reset(5000)
+    st = engine.load_json(engine.STATE)
+    assert st["start_cash"] == 5000 and st["main"]["acct"]["cash"] == 5000 and st["practice"]["peak"] == 5000
+    assert st["model"] == {"version": 3} and not engine.TRADES.exists()
+    assert list((config.DATA_DIR / "archive").glob("*/trades.jsonl"))
+    dash = engine.load_json(config.DATA_DIR / "dashboard.json")
+    assert dash["start_cash"] == 5000 and dash["main"]["equity"] == 5000

@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="pl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Trading Bot</title>
-<meta name="description" content="Live dashboard of a self-learning crypto paper-trading bot (fake money).">
+<title>Bot AI do tradingu</title>
+<meta name="description" content="Panel na żywo samouczącego się bota do tradingu kryptowalut (wirtualne pieniądze).">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232a78d6'/><path d='M6 22l6-7 5 4 9-11' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 <style>
 :root {
@@ -95,91 +95,94 @@ footer { margin-top: 28px; color: var(--muted); font-size: 12px; }
 <div class="wrap">
   <header>
     <div>
-      <h1>AI Trading Bot</h1>
-      <div class="sub">Self-learning crypto trader · paper money · runs 24/7 in the cloud</div>
+      <h1>Bot AI do tradingu</h1>
+      <div class="sub">Samouczący się trader kryptowalut · wirtualne pieniądze · działa 24/7 w chmurze</div>
     </div>
     <div style="display:flex;gap:8px;align-items:center">
-      <span class="pill" id="status"><span class="dot"></span><span>Loading…</span></span>
-      <button class="theme" id="themeBtn" aria-label="Toggle light or dark theme">Theme</button>
+      <span class="pill" id="status"><span class="dot"></span><span>Ładowanie…</span></span>
+      <button class="theme" id="themeBtn" aria-label="Przełącz jasny lub ciemny motyw">Motyw</button>
     </div>
   </header>
 
-  <div class="note">Fake money only ($1,000 per account). Nothing here is financial advice, and paper results
-    do not predict real results. Real trading has extra risks this simulation cannot show.</div>
+  <div class="note" id="note">Tylko wirtualne pieniądze. Nic tutaj nie jest poradą finansową, a wyniki na papierze nie przewidują
+    prawdziwych wyników. Prawdziwy handel ma dodatkowe ryzyka, których ta symulacja nie pokazuje.</div>
 
   <div class="grid kpis" id="kpis"></div>
 
   <section class="card">
-    <h2>Account value since start</h2>
+    <h2>Wartość kont od startu</h2>
     <div class="legend" id="legend"></div>
-    <div class="chartbox"><canvas id="equity" aria-label="Account value over time"></canvas></div>
+    <div class="chartbox"><canvas id="equity" aria-label="Wartość kont w czasie"></canvas></div>
   </section>
 
   <section class="grid two">
     <div class="card">
-      <h2>What the AI sees right now</h2>
+      <h2>Co AI widzi teraz</h2>
       <div class="scroll"><table id="signals"></table></div>
-      <div class="sub" style="margin-top:8px">Bar = model's probability that buying now ends in profit after fees.
-        Black mark = the confidence it needs before it buys.</div>
+      <div class="sub" style="margin-top:8px">Pasek = szansa według modelu, że kupno teraz da zysk po opłatach.
+        Czarny znacznik = pewność, której potrzebuje, zanim kupi.</div>
     </div>
     <div class="card">
-      <h2>Brain (LLM review)</h2>
+      <h2>Mózg (ocena przez LLM)</h2>
       <div id="brain"></div>
     </div>
   </section>
 
   <section class="grid two">
     <div class="card">
-      <h2>Open positions</h2>
+      <h2>Otwarte pozycje</h2>
       <div class="scroll"><table id="positions"></table></div>
     </div>
     <div class="card">
-      <h2>How the model is learning</h2>
+      <h2>Jak uczy się model</h2>
       <div id="model"></div>
     </div>
   </section>
 
   <section class="card">
-    <h2>What it learned: its own mistakes + the internet</h2>
-    <div class="sub" style="margin-bottom:10px">Every idea (from its losing trades or from what it reads online) is tested on ~1.5 years of
-      data the model never saw. It is used only if it raises the profit per trade, and dropped again when it stops working.</div>
+    <h2>Mapa snów: każda strategia, którą wypróbował</h2>
+    <div class="sub" style="margin-bottom:10px">Po każdym treningu AI odtwarza ~1,5 roku prawdziwej historii pod setkami przepisów na
+      strategię (bez handlowania nimi), mutuje najlepsze i zapisuje mapę tego, co zadziałało. Nowy przepis wchodzi do gry tylko wtedy,
+      gdy wygrywa też na najnowszych miesiącach, których poszukiwanie nigdy nie widziało.</div>
+    <div class="legend" id="mapLegend"></div>
+    <div class="chartbox" style="height:260px"><canvas id="dreamMap" aria-label="Strategie wypróbowane w każdym pokoleniu"></canvas></div>
+    <div class="grid two" id="evolution" style="margin-top:14px"></div>
+  </section>
+
+  <section class="card">
+    <h2>Czego się nauczył: własne błędy + internet</h2>
     <div class="grid two" id="learning"></div>
   </section>
 
   <section class="card">
-    <h2>Closed trades</h2>
+    <h2>Gotowość na prawdziwe pieniądze</h2>
+    <div id="readiness"></div>
+  </section>
+
+  <section class="card">
+    <h2>Zamknięte transakcje</h2>
     <div class="tabs" role="tablist">
-      <button role="tab" aria-selected="true" data-acct="main">Main account</button>
-      <button role="tab" aria-selected="false" data-acct="practice">Practice account</button>
+      <button role="tab" aria-selected="true" data-acct="main">Konto główne</button>
+      <button role="tab" aria-selected="false" data-acct="practice">Konto treningowe</button>
     </div>
     <div class="scroll"><table id="trades"></table></div>
   </section>
 
   <section class="grid two">
     <div class="card">
-      <h2>CLM second opinion</h2>
+      <h2>Druga opinia CLM</h2>
       <div id="clm"></div>
     </div>
     <div class="card">
-      <h2>Replay of the last months</h2>
+      <h2>Powtórka ostatnich miesięcy</h2>
       <div id="backtest"></div>
     </div>
   </section>
 
   <section class="card">
     <details>
-      <summary>How this works</summary>
-      <ul>
-        <li><b>Every 15 minutes</b> (GitHub's free cloud, so your PC can be off) the bot downloads real prices for BTC, ETH, SOL, XRP, DOGE and ADA and lets the fast model decide.</li>
-        <li><b>The fast model</b> learns from 3 years of real market data what happens after each situation, and retrains itself every 12 hours on the newest outcomes. It is tested on data it never saw. It only counts as having an "edge" if its picks beat simply buying every time.</li>
-        <li><b>Main account</b> trades only while that edge is proven. <b>Practice account</b> trades every signal so the AI keeps practising and its real skill is measured live.</li>
-        <li><b>The brain</b> is an LLM (your local <i>mimo2.6</i> when your PC is on, a small free model in the cloud otherwise). It reviews results, writes lessons into its memory, and can lower risk or skip coins.</li>
-        <li><b>Learning from mistakes:</b> after every retrain it compares its losing and winning signals, finds what the losers had in common, and turns that into candidate rules.</li>
-        <li><b>Learning from the internet:</b> once a day the brain reads new trading research (arXiv), crypto news (CoinDesk, Cointelegraph, Decrypt), trading lessons (Babypips) and the Fear &amp; Greed index, and proposes rules.</li>
-        <li><b>The judge:</b> a rule is used only if it raises the profit per trade on data the model never saw, including the most recent months. It is re-checked after every retrain and retired when it stops working.</li>
-        <li><b>CLM</b> (your Contrastive Language Model) gives an independent second opinion every 4 hours while the PC is on. Its accuracy is tracked here before anyone trusts it.</li>
-        <li><b>Costs are simulated:</b> 0.1% fee + 0.05% slippage per trade, stop-loss, take-profit and a time limit on every position.</li>
-      </ul>
+      <summary>Jak to działa</summary>
+      <ul id="howto"></ul>
     </details>
   </section>
   <footer id="footer"></footer>
@@ -188,51 +191,105 @@ footer { margin-top: 28px; color: var(--muted); font-size: 12px; }
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 <script>
 const REPO = "EricsonArt/ai-trading-bot";
+const MONEY_URL = `https://github.com/${REPO}/actions/workflows/reset-money.yml`;
 const params = new URLSearchParams(location.search);
 const DATA_URL = params.has("local") ? "../data/dashboard.json" : `https://raw.githubusercontent.com/${REPO}/main/data/dashboard.json`;
 const $ = id => document.getElementById(id);
 const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
-const money = v => "$" + Number(v).toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
-const pct = (v, d = 2) => (v >= 0 ? "+" : "−") + Math.abs(100 * v).toFixed(d) + "%";
+const usd = new Intl.NumberFormat("pl-PL", {style: "currency", currency: "USD"});
+const money = v => usd.format(Number(v));
+const num = (v, d = 0) => Number(v).toLocaleString("pl-PL", {maximumFractionDigits: d});
+const pct = (v, d = 2) => (v >= 0 ? "+" : "−") + Math.abs(100 * v).toFixed(d).replace(".", ",") + "%";
 const cls = v => v > 0 ? "up" : v < 0 ? "down" : "";
-const price = v => v >= 100 ? v.toLocaleString("en-US", {maximumFractionDigits: 2}) : Number(v).toPrecision(5);
-const when = ms => new Date(ms).toLocaleString(undefined, {month: "short", day: "numeric", hour: "2-digit", minute: "2-digit"});
+const price = v => v >= 100 ? num(v, 2) : Number(v).toPrecision(5).replace(".", ",");
+const when = ms => new Date(ms).toLocaleString("pl-PL", {month: "short", day: "numeric", hour: "2-digit", minute: "2-digit"});
 const ago = ms => { const m = Math.round((Date.now() - ms) / 60000);
-  return m < 1 ? "just now" : m < 60 ? m + " min ago" : m < 1440 ? Math.round(m / 60) + " h ago" : Math.round(m / 1440) + " d ago"; };
+  return m < 1 ? "przed chwilą" : m < 60 ? m + " min temu" : m < 1440 ? Math.round(m / 60) + " godz. temu" : Math.round(m / 1440) + " dni temu"; };
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
-let D = null, chart = null, tradesAcct = "main";
+let D = null, chart = null, mapChart = null, tradesAcct = "main";
 
-// theme toggle (remembered per browser)
+// ---------- Polish names for what the bot produces as codes ----------
+const STYLE = {trend: "trendowy (do 16 godz.)", position: "pozycyjny (do 2 dni)", long: "długi (do 4 dni)"};
+const REGIME = {bull: "wzrostowy (hossa)", bear: "spadkowy (bessa)", sideways: "boczny", volatile: "zmienny", unknown: "nieznany"};
+const BIAS = {reduce: "mniejsze pozycje", avoid: "unikać"};
+const REASON = {"stop-loss": "stop-loss", "take-profit": "cel osiągnięty", "time-limit": "koniec czasu"};
+const FNG = {"Extreme Fear": "skrajny strach", "Fear": "strach", "Neutral": "neutralnie", "Greed": "chciwość", "Extreme Greed": "skrajna chciwość"};
+const P = "pct", R = "raw";
+const FEAT = {
+  r_1: ["zmiana ceny w 15 min", P], r_2: ["zmiana ceny w 30 min", P], r_4: ["zmiana ceny w 1 godz.", P],
+  r_8: ["zmiana ceny w 2 godz.", P], r_16: ["zmiana ceny w 4 godz.", P], r_32: ["zmiana ceny w 8 godz.", P],
+  r_96: ["zmiana ceny w 24 godz.", P], r_288: ["zmiana ceny w 3 dni", P], r_672: ["zmiana ceny w 7 dni", P],
+  r_2016: ["zmiana ceny w 21 dni", P], vol_16: ["zmienność z 4 godz.", P], vol_96: ["zmienność z 24 godz.", P],
+  vol_ratio: ["zmienność krótka / długa", R], atr: ["średni zakres świecy (ATR)", P], rsi: ["RSI (0-1)", R],
+  macd_hist: ["MACD (impet)", P], bb: ["pozycja we wstęgach Bollingera", R], d_ema50: ["cena vs średnia 12,5 godz.", P],
+  d_ema200: ["cena vs średnia 50 godz.", P], ema_trend: ["trend (średnia 50 vs 200 świec)", P],
+  d_ema800: ["cena vs średnia ~8 dni", P], dd_7d: ["odległość od szczytu z 7 dni", P], vz: ["wolumen vs średnia dnia", R],
+  range_pos: ["miejsce w zakresie 24 godz. (0 dołek, 1 szczyt)", R], body: ["korpus ostatniej świecy", R],
+  upper_wick: ["górny knot świecy", R], lower_wick: ["dolny knot świecy", R], btc_r4: ["zmiana BTC w 1 godz.", P],
+  btc_r16: ["zmiana BTC w 4 godz.", P], btc_r96: ["zmiana BTC w 24 godz.", P], btc_vol96: ["zmienność BTC", P],
+  rel_r96: ["moneta vs BTC w 24 godz.", P], rel_r672: ["moneta vs BTC w 7 dni", P],
+  rank_r96: ["ranking siły w 24 godz. (0-1)", R], rank_r672: ["ranking siły w 7 dni (0-1)", R],
+};
+const featName = f => (FEAT[f] || [f])[0];
+const featVal = (f, v) => (FEAT[f] || [f, R])[1] === P ? pct(v, 2) : Number(v).toPrecision(3).replace(".", ",");
+const cond = c => `${featName(c.feature)} ${c.op} ${featVal(c.feature, c.value)}`;
+const conds = cs => cs.map(cond).join(" i ");
+function recipe(g) {
+  if (!g) return "";
+  const hours = Math.max(8, Math.round({trend: 64, position: 192, long: 384}[g.style] * g.hold)) * 15 / 60;
+  return [`styl ${STYLE[g.style] || g.style}`, `kupuje, gdy model jest pewny co najmniej na ${Math.round(100 * g.threshold)}%`,
+    `cel ${String(g.tp).replace(".", ",")}× / stop ${String(g.sl).replace(".", ",")}× oczekiwanego ruchu`,
+    `trzyma do ${Math.round(hours)} godz.`, `${Math.round(100 * g.size)}% kapitału na transakcję`]
+    .concat(g.rules && g.rules.length ? [`tylko gdy ${conds(g.rules)}`] : []).join(", ");
+}
+function action(a) {
+  a = String(a || "");
+  let m;
+  if (a === "wait") return "czeka";
+  if (a === "holding") return "trzyma pozycję";
+  if ((m = a.match(/^buy \$(\d+) \((\w+)\)/))) return `kupno ${money(m[1])} (${m[2] === "practice" ? "treningowe" : "główne"})`;
+  if (a.startsWith("wait: no proven edge")) return "czeka: brak potwierdzonej przewagi (kupuje konto treningowe)";
+  if (a.startsWith("blocked: learned rule")) return "zablokowane: wyuczona reguła";
+  if (a.includes("daily-loss")) return "zablokowane: pauza po stracie dnia";
+  if (a.includes("benched")) return "zablokowane: odsunięta po stratach";
+  if (a.includes("brain says avoid")) return "zablokowane: mózg każe unikać";
+  if (a.includes("no free cash")) return "zablokowane: brak wolnej gotówki";
+  return a;
+}
+
+// ---------- theme toggle (remembered per browser) ----------
 try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 $("themeBtn").onclick = () => {
   const dark = document.documentElement.dataset.theme ? document.documentElement.dataset.theme === "dark"
     : matchMedia("(prefers-color-scheme: dark)").matches;
   document.documentElement.dataset.theme = dark ? "light" : "dark";
   try { localStorage.setItem("theme", document.documentElement.dataset.theme); } catch (e) {}
-  if (D) renderChart();
+  if (D) { renderChart(); renderEvolution(); }
 };
-matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => D && renderChart());
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => { if (D) { renderChart(); renderEvolution(); } });
 
 function tile(label, value, delta, extra = "") {
   return `<div class="card tile ${extra}"><div class="label">${label}</div><div class="value">${value}</div><div class="delta">${delta}</div></div>`;
 }
 
 function renderKpis() {
-  const m = D.main, p = D.practice, edge = D.model && D.model.edge;
+  const m = D.main, p = D.practice, s = D.learning && D.learning.strategy, edge = s ? s.edge : D.model && D.model.edge;
+  $("note").innerHTML = `Tylko wirtualne pieniądze (${money(D.start_cash)} na każde konto, <a href="${MONEY_URL}" target="_blank" rel="noopener" style="color:inherit">zmień kwotę</a>).
+    Nic tutaj nie jest poradą finansową, a wyniki na papierze nie przewidują prawdziwych wyników. Prawdziwy handel ma dodatkowe ryzyka, których ta symulacja nie pokazuje.`;
   $("kpis").innerHTML =
-    tile("Main account", money(m.equity), `<span class="${cls(m.return)}">${pct(m.return)}</span> since start`, "hero") +
-    tile("Practice account", money(p.equity), `<span class="${cls(p.return)}">${pct(p.return)}</span> · ${p.stats.all.trades || 0} trades`) +
-    tile("If you just held BTC", money(D.start_cash * (1 + D.benchmark_return)), `<span class="${cls(D.benchmark_return)}">${pct(D.benchmark_return)}</span> same period`) +
-    tile("Model edge", `<span class="status">${edge ? "✓ Proven" : "✕ Not yet"}</span>`,
-      edge ? "Main account is trading" : "Main account waits in cash; practice account learns");
+    tile("Konto główne", money(m.equity), `<span class="${cls(m.return)}">${pct(m.return)}</span> od startu`, "hero") +
+    tile("Konto treningowe", money(p.equity), `<span class="${cls(p.return)}">${pct(p.return)}</span> · ${p.stats.all.trades || 0} transakcji`) +
+    tile("Gdybyś tylko trzymał BTC", money(D.start_cash * (1 + D.benchmark_return)), `<span class="${cls(D.benchmark_return)}">${pct(D.benchmark_return)}</span> w tym samym czasie`) +
+    tile("Przewaga strategii", `<span class="status">${edge ? "✓ Potwierdzona" : "✕ Jeszcze nie"}</span>`,
+      edge ? "Konto główne handluje" : "Konto główne czeka w gotówce; treningowe się uczy");
 }
 
 function renderChart() {
   const s = D.series;
   const series = [
-    {label: "Main account", color: css("--s1"), idx: 1},
-    {label: "Practice account", color: css("--s2"), idx: 3},
-    {label: "BTC buy & hold", color: css("--s3"), idx: 2},
+    {label: "Konto główne", color: css("--s1"), idx: 1},
+    {label: "Konto treningowe", color: css("--s2"), idx: 3},
+    {label: "Trzymanie BTC", color: css("--s3"), idx: 2},
   ];
   const last = s[s.length - 1] || [];
   $("legend").innerHTML = series.map(x => `<span><i class="key" style="background:${x.color}"></i>${x.label}${last.length ? " · " + money(last[x.idx]) : ""}</span>`).join("");
@@ -249,9 +306,9 @@ function renderChart() {
       callbacks: {title: it => when(it[0].parsed.x), label: it => ` ${it.dataset.label}: ${money(it.parsed.y)}`}}},
     scales: {
       x: {type: "linear", grid: {display: false}, border: {color: css("--axis")},
-        ticks: {color: css("--muted"), maxTicksLimit: 6, callback: v => new Date(v).toLocaleDateString(undefined, {month: "short", day: "numeric"})}},
+        ticks: {color: css("--muted"), maxTicksLimit: 6, callback: v => new Date(v).toLocaleDateString("pl-PL", {month: "short", day: "numeric"})}},
       y: {grid: {color: css("--grid")}, border: {display: false},
-        ticks: {color: css("--muted"), maxTicksLimit: 6, callback: v => "$" + Number(v).toLocaleString("en-US")}}}};
+        ticks: {color: css("--muted"), maxTicksLimit: 6, callback: v => num(v) + " $"}}}};
   if (s.length) { opts.scales.x.min = s[0][0]; opts.scales.x.max = s[s.length - 1][0]; }
   if (s.length < 2) { opts.scales.y.suggestedMin = D.start_cash * 0.98; opts.scales.y.suggestedMax = D.start_cash * 1.02; }
   if (chart) chart.destroy();
@@ -260,129 +317,191 @@ function renderChart() {
 
 function renderSignals() {
   const rows = Object.entries(D.signals || {});
-  if (!rows.length) { $("signals").innerHTML = `<tr><td class="empty">Waiting for the first cycle…</td></tr>`; return; }
-  $("signals").innerHTML = `<tr><th>Coin</th><th>Price</th><th style="width:40%">Chance of profit</th><th>Decision</th></tr>` +
+  if (!rows.length) { $("signals").innerHTML = `<tr><td class="empty">Czekam na pierwszy cykl…</td></tr>`; return; }
+  $("signals").innerHTML = `<tr><th>Moneta</th><th>Cena</th><th style="width:40%">Szansa na zysk</th><th>Decyzja</th></tr>` +
     rows.map(([sym, v]) => `<tr><td><b>${sym}</b></td><td>${D.prices && D.prices[sym] != null ? price(D.prices[sym]) : "—"}</td>
-      <td><div style="display:flex;align-items:center;gap:8px"><div class="meter" style="flex:1" title="${(100 * v.p).toFixed(0)}% (needs ${(100 * v.threshold).toFixed(0)}%)">
+      <td><div style="display:flex;align-items:center;gap:8px"><div class="meter" style="flex:1" title="${(100 * v.p).toFixed(0)}% (potrzeba ${(100 * v.threshold).toFixed(0)}%)">
         <i style="width:${Math.min(100, 100 * v.p)}%"></i><b style="left:calc(${Math.min(100, 100 * v.threshold)}% - 1px)"></b></div>
         <span>${(100 * v.p).toFixed(0)}%</span></div></td>
-      <td class="muted">${esc(v.action)}</td></tr>`).join("");
+      <td class="muted">${esc(action(v.action))}</td></tr>`).join("");
 }
 
 function renderPositions() {
-  const rows = [...D.main.positions.map(p => ({...p, acct: "Main"})), ...D.practice.positions.map(p => ({...p, acct: "Practice"}))];
-  if (!rows.length) { $("positions").innerHTML = `<tr><td class="empty">No open positions right now.</td></tr>`; return; }
-  $("positions").innerHTML = `<tr><th>Coin</th><th>Account</th><th>Bought</th><th>Now</th><th>P/L</th><th>Stop / target</th><th>Time left</th></tr>` +
+  const rows = [...D.main.positions.map(p => ({...p, acct: "Główne"})), ...D.practice.positions.map(p => ({...p, acct: "Treningowe"}))];
+  if (!rows.length) { $("positions").innerHTML = `<tr><td class="empty">Brak otwartych pozycji.</td></tr>`; return; }
+  $("positions").innerHTML = `<tr><th>Moneta</th><th>Konto</th><th>Kupno</th><th>Teraz</th><th>Wynik</th><th>Stop / cel</th><th>Zostało</th></tr>` +
     rows.map(p => `<tr><td><b>${p.symbol}</b></td><td><span class="tag">${p.acct}</span></td><td>${price(p.entry_px)}</td><td>${price(p.price)}</td>
       <td class="${cls(p.pnl_pct)}">${pct(p.pnl_pct)}</td><td class="muted">${price(p.sl_px)} / ${price(p.tp_px)}</td>
-      <td class="muted">${Math.max(0, (p.horizon - p.held) * 15 / 60).toFixed(0)} h</td></tr>`).join("");
+      <td class="muted">${Math.max(0, (p.horizon - p.held) * 15 / 60).toFixed(0)} godz.</td></tr>`).join("");
 }
 
 function renderBrain() {
   const b = D.brain;
-  if (!b || !b.created_at) { $("brain").innerHTML = `<div class="empty">The brain has not reviewed the bot yet. First review within a few hours.</div>`; return; }
+  if (!b || !b.created_at) { $("brain").innerHTML = `<div class="empty">Mózg jeszcze nie ocenił bota. Pierwsza ocena w ciągu kilku godzin.</div>`; return; }
   const d = b.directives || {}, bias = Object.entries(d.symbol_bias || {});
-  $("brain").innerHTML = `<div class="sub">${b.source === "local" ? "Your PC" : "Cloud"} · ${esc(b.model)} · ${ago(b.created_at)}</div>
+  $("brain").innerHTML = `<div class="sub">${b.source === "local" ? "Twój komputer" : "Chmura"} · ${esc(b.model)} · ${ago(b.created_at)}</div>
     <p style="margin:8px 0">${esc(b.reasoning)}</p>
-    <dl class="kv"><dt>Market regime</dt><dd>${esc(d.regime)}</dd>
-      <dt>Risk level</dt><dd>${Math.round(100 * d.risk_level)}% of normal size</dd>
-      <dt>Entry strictness</dt><dd>${d.min_confidence_adj > 0 ? "+" : ""}${Math.round(100 * d.min_confidence_adj)} pts</dd>
-      <dt>Coin notes</dt><dd>${bias.length ? bias.map(([s, v]) => `${s}: ${v}`).join(", ") : "none"}</dd></dl>
-    ${b.lessons && b.lessons.length ? `<div class="sub" style="margin-top:10px">Lessons in memory</div><ul class="lessons">${b.lessons.slice(0, 6).map(l => `<li>${esc(l)}</li>`).join("")}</ul>` : ""}`;
+    <dl class="kv"><dt>Rynek</dt><dd>${esc(REGIME[d.regime] || d.regime)}</dd>
+      <dt>Poziom ryzyka</dt><dd>${Math.round(100 * d.risk_level)}% normalnej wielkości</dd>
+      <dt>Ostrożność wejść</dt><dd>${d.min_confidence_adj > 0 ? "+" : ""}${Math.round(100 * d.min_confidence_adj)} pkt</dd>
+      <dt>Uwagi do monet</dt><dd>${bias.length ? bias.map(([s, v]) => `${s}: ${BIAS[v] || v}`).join(", ") : "brak"}</dd></dl>
+    ${b.lessons && b.lessons.length ? `<div class="sub" style="margin-top:10px">Lekcje w pamięci</div><ul class="lessons">${b.lessons.slice(0, 6).map(l => `<li>${esc(l)}</li>`).join("")}</ul>` : ""}`;
 }
 
 function renderModel() {
   const m = D.model;
-  if (!m) { $("model").innerHTML = `<div class="empty">Training the first model…</div>`; return; }
+  if (!m) { $("model").innerHTML = `<div class="empty">Trenuję pierwszy model…</div>`; return; }
   const mm = m.metrics[m.variant];
   const hist = (D.model_history || []).slice(-8).reverse();
   $("model").innerHTML = `<dl class="kv">
-      <dt>Version</dt><dd>v${m.version} · trained ${ago(m.trained_at)} (every ${D.config.retrain_hours} h)</dd>
-      <dt>Trading style</dt><dd>${esc(m.variant)} · buys above ${Math.round(100 * m.threshold)}% confidence</dd>
-      <dt>Tested on unseen data</dt><dd>${mm.trades} trades · <span class="${cls(mm.avg)}">${pct(mm.avg)}</span> avg per trade
-        vs always-buy <span class="${cls(mm.baseline_avg)}">${pct(mm.baseline_avg)}</span></dd>
-      <dt>Edge</dt><dd><span class="status">${m.edge ? "✓ proven" : "✕ not proven yet"}</span></dd></dl>
-    ${hist.length > 1 ? `<div class="scroll" style="margin-top:10px"><table><tr><th>Ver.</th><th>When</th><th>Style</th><th>Avg/trade (unseen)</th><th>Edge</th></tr>
-      ${hist.map(h => `<tr><td>v${h.version}</td><td class="muted">${when(h.trained_at)}</td><td>${esc(h.variant)}</td>
-        <td class="${cls(h.avg)}">${pct(h.avg)}</td><td>${h.edge ? "✓" : "✕"}</td></tr>`).join("")}</table></div>` : ""}`;
+      <dt>Wersja</dt><dd>v${m.version} · trening ${ago(m.trained_at)} (co ${D.config.retrain_hours} godz.)</dd>
+      <dt>Monety</dt><dd>${(D.config.symbols || []).join(", ")}</dd>
+      <dt>Domyślny styl</dt><dd>${esc(STYLE[m.variant] || m.variant)}</dd>
+      <dt>Test na niewidzianych danych</dt><dd>${mm.trades} transakcji · <span class="${cls(mm.avg)}">${pct(mm.avg)}</span> średnio na transakcję
+        vs zawsze-kupuj <span class="${cls(mm.baseline_avg)}">${pct(mm.baseline_avg)}</span></dd></dl>
+    ${hist.length > 1 ? `<div class="scroll" style="margin-top:10px"><table><tr><th>Wer.</th><th>Kiedy</th><th>Styl</th><th>Średnio (niewidziane)</th></tr>
+      ${hist.map(h => `<tr><td>v${h.version}</td><td class="muted">${when(h.trained_at)}</td><td>${esc(STYLE[h.variant] || h.variant)}</td>
+        <td class="${cls(h.avg)}">${pct(h.avg)}</td></tr>`).join("")}</table></div>` : ""}`;
 }
 
 function renderTrades() {
   document.querySelectorAll(".tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.acct === tradesAcct));
   const acct = D[tradesAcct], t = acct.trades, st = acct.stats.all;
-  if (!t.length) { $("trades").innerHTML = `<tr><td class="empty">${tradesAcct === "main" ? "No trades yet. The main account only trades once the model proves an edge." : "No closed practice trades yet."}</td></tr>`; return; }
-  $("trades").innerHTML = `<tr><td colspan="7" class="sub">${st.trades} trades · win rate ${Math.round(100 * st.win_rate)}% · total ${money(st.pnl)} · profit factor ${st.profit_factor ?? "—"}</td></tr>
-    <tr><th>Closed</th><th>Coin</th><th>Size</th><th>Result</th><th>P/L</th><th>Why it closed</th><th>Confidence</th></tr>` +
+  if (!t.length) { $("trades").innerHTML = `<tr><td class="empty">${tradesAcct === "main" ? "Brak transakcji. Konto główne handluje dopiero, gdy strategia potwierdzi przewagę." : "Brak zamkniętych transakcji treningowych."}</td></tr>`; return; }
+  $("trades").innerHTML = `<tr><td colspan="7" class="sub">${st.trades} transakcji · trafność ${Math.round(100 * st.win_rate)}% · razem ${money(st.pnl)} · profit factor ${st.profit_factor ?? "—"}</td></tr>
+    <tr><th>Zamknięto</th><th>Moneta</th><th>Kwota</th><th>Wynik</th><th>Zysk/strata</th><th>Powód zamknięcia</th><th>Pewność</th></tr>` +
     t.map(x => `<tr><td class="muted">${when(x.exit_ts)}</td><td><b>${x.symbol}</b></td><td>${money(x.cost)}</td>
-      <td class="${cls(x.net)}">${pct(x.net)}</td><td class="${cls(x.pnl)}">${money(x.pnl)}</td><td class="muted">${esc(x.reason)}</td>
+      <td class="${cls(x.net)}">${pct(x.net)}</td><td class="${cls(x.pnl)}">${money(x.pnl)}</td><td class="muted">${esc(REASON[x.reason] || x.reason)}</td>
       <td class="muted">${x.prob != null ? Math.round(100 * x.prob) + "%" : "—"}</td></tr>`).join("");
 }
 document.querySelectorAll(".tabs button").forEach(b => b.onclick = () => { tradesAcct = b.dataset.acct; renderTrades(); });
 
 function renderClm() {
   const c = D.clm;
-  if (!c || !c.latest) { $("clm").innerHTML = `<div class="empty">CLM answers while your PC is on (every 4 hours).</div>`; return; }
+  if (!c || !c.latest) { $("clm").innerHTML = `<div class="empty">CLM odpowiada, gdy Twój komputer jest włączony (co 4 godziny).</div>`; return; }
   const tr = c.track_record;
-  $("clm").innerHTML = `<div class="sub">Asked ${ago(c.updated_at)} · “${esc(c.question.replace("{sym}", "this coin"))}”</div>
-    <div class="scroll"><table style="margin-top:6px"><tr><th>Coin</th><th style="width:60%">CLM says “yes”</th></tr>
+  $("clm").innerHTML = `<div class="sub">Pytanie ${ago(c.updated_at)} · „Czy kupno tej monety teraz i trzymanie ok. 2 dni da zysk?”</div>
+    <div class="scroll"><table style="margin-top:6px"><tr><th>Moneta</th><th style="width:60%">CLM mówi „tak”</th></tr>
     ${Object.entries(c.latest).map(([s, p]) => `<tr><td><b>${s}</b></td><td><div style="display:flex;align-items:center;gap:8px">
       <div class="meter" style="flex:1"><i style="width:${100 * p}%"></i><b style="left:calc(50% - 1px)"></b></div><span>${Math.round(100 * p)}%</span></div></td></tr>`).join("")}
     </table></div>
-    <div class="sub" style="margin-top:8px">${tr ? `Live track record: ${tr.n} calls checked · right ${Math.round(100 * tr.accuracy)}% of the time (prices rose after ${Math.round(100 * tr.base_rate)}% of calls)`
-      : "Live track record: each call is checked 2 days later. Not enough history yet."}</div>
-    ${D.clm_test ? `<div class="sub" style="margin-top:4px">Historical test (${D.clm_test.calls} calls, last ${D.clm_test.days} days): right ${Math.round(100 * D.clm_test.accuracy)}%
-      vs ${Math.round(100 * D.clm_test.always_no_accuracy)}% for always saying “no” · ranking skill ${D.clm_test.auc.toFixed(2)} (0.50 = no skill)</div>` : ""}`;
+    <div class="sub" style="margin-top:8px">${tr ? `Wyniki na żywo: ${tr.n} sprawdzonych odpowiedzi · trafnych ${Math.round(100 * tr.accuracy)}% (ceny rosły po ${Math.round(100 * tr.base_rate)}% z nich)`
+      : "Wyniki na żywo: każda odpowiedź jest sprawdzana po 2 dniach. Za mało historii."}</div>
+    ${D.clm_test ? `<div class="sub" style="margin-top:4px">Test historyczny (${D.clm_test.calls} odpowiedzi, ostatnie ${D.clm_test.days} dni): trafnych ${Math.round(100 * D.clm_test.accuracy)}%
+      vs ${Math.round(100 * D.clm_test.always_no_accuracy)}% przy zawsze „nie” · umiejętność rankingu ${D.clm_test.auc.toFixed(2).replace(".", ",")} (0,50 = brak umiejętności)</div>` : ""}`;
 }
 
 function renderBacktest() {
   const b = D.backtest;
-  if (!b) { $("backtest").innerHTML = `<div class="empty">No replay yet.</div>`; return; }
-  $("backtest").innerHTML = `<div class="sub">If the practice account (every AI signal) had run for the last ${b.days} days, retraining monthly, never seeing the future:</div>
+  if (!b) { $("backtest").innerHTML = `<div class="empty">Brak powtórki.</div>`; return; }
+  $("backtest").innerHTML = `<div class="sub">Gdyby konto treningowe działało przez ostatnie ${b.days} dni${b.evolved ? ", co miesiąc trenując się i ewoluując strategię" : ", co miesiąc się trenując"}, bez podglądania przyszłości:</div>
     <dl class="kv" style="margin-top:8px">
-      <dt>Result</dt><dd>${money(b.final_equity)} <span class="${cls(b.return)}">(${pct(b.return)})</span></dd>
-      <dt>Worst drop</dt><dd class="down">${pct(b.max_drawdown, 1)}</dd>
-      <dt>Trades</dt><dd>${b.trades} · win rate ${Math.round(100 * b.win_rate)}%</dd>
-      <dt>BTC held instead</dt><dd class="${cls(b.btc_hold)}">${pct(b.btc_hold, 1)}</dd>
-      <dt>All 6 coins held</dt><dd class="${cls(b.all_coins_hold)}">${pct(b.all_coins_hold, 1)}</dd></dl>
-    <div class="sub" style="margin-top:8px">This is why the main account waits for a proven edge.</div>`;
+      <dt>Wynik</dt><dd>${money(b.final_equity)} <span class="${cls(b.return)}">(${pct(b.return)})</span></dd>
+      <dt>Największy spadek</dt><dd class="down">${pct(b.max_drawdown, 1)}</dd>
+      <dt>Transakcje</dt><dd>${b.trades} · trafność ${Math.round(100 * b.win_rate)}%</dd>
+      <dt>Samo trzymanie BTC</dt><dd class="${cls(b.btc_hold)}">${pct(b.btc_hold, 1)}</dd>
+      <dt>Trzymanie wszystkich monet</dt><dd class="${cls(b.all_coins_hold)}">${pct(b.all_coins_hold, 1)}</dd></dl>
+    <div class="sub" style="margin-top:8px">Dlatego konto główne czeka na potwierdzoną przewagę.</div>`;
+}
+
+function renderEvolution() {
+  const L = D.learning || {}, s = L.strategy;
+  const pts = L.points || [];
+  const jit = i => ((i * 37) % 100 / 100 - 0.5) * 0.5;  // stable sideways spread so dots don't overlap
+  const tried = pts.filter(p => !p[2]).map((p, i) => ({x: p[0] + jit(i), y: 100 * p[1]}));
+  const live = pts.filter(p => p[2]).map(p => ({x: p[0], y: 100 * p[1]}));
+  const c1 = css("--s1"), c2 = css("--s2");
+  $("mapLegend").innerHTML = `<span><i class="key" style="background:${c1};height:8px;width:8px;border-radius:50%"></i>Wypróbowane przepisy · łącznie ${num(L.total_evaluated || 0)}</span>
+    <span><i class="key" style="background:${c2};height:8px;width:8px;border-radius:50%"></i>Weszły do gry (nowy mistrz)</span>`;
+  if (mapChart) mapChart.destroy();
+  mapChart = new Chart($("dreamMap"), {type: "scatter", data: {datasets: [
+      {label: "Nowy mistrz", data: live, backgroundColor: c2, pointRadius: 6, pointHoverRadius: 8, borderColor: css("--surface"), borderWidth: 2},
+      {label: "Wypróbowany", data: tried, backgroundColor: c1 + "55", pointRadius: 3, pointHoverRadius: 5, borderWidth: 0}]},
+    options: {responsive: true, maintainAspectRatio: false, animation: false,
+      plugins: {legend: {display: false}, tooltip: {backgroundColor: css("--raised"), titleColor: css("--ink"), bodyColor: css("--ink-2"),
+        borderColor: css("--ring"), borderWidth: 1, callbacks: {title: it => `Pokolenie ${Math.round(it[0].parsed.x)}`,
+        label: it => ` ${it.dataset.label}: ${it.parsed.y >= 0 ? "+" : ""}${it.parsed.y.toFixed(2).replace(".", ",")}% na transakcję (niewidziane dane)`}}},
+      scales: {x: {type: "linear", grid: {display: false}, border: {color: css("--axis")}, title: {display: true, text: "Pokolenie (jedno na trening)", color: css("--muted")},
+          ticks: {color: css("--muted"), precision: 0}},
+        y: {grid: {color: css("--grid")}, border: {display: false}, title: {display: true, text: "Średni zysk na transakcję", color: css("--muted")},
+          ticks: {color: css("--muted"), callback: v => String(v).replace(".", ",") + "%"}}}}});
+  if (!s) { $("evolution").innerHTML = `<div class="empty">Pierwsze śnienie odbędzie się przy następnym treningu.</div>`; return; }
+  const row = (name, st, base) => `<tr><td>${name}</td><td>${st.trades}</td><td class="${cls(st.avg)}">${pct(st.avg)}</td><td class="${cls(base)}">${pct(base)}</td></tr>`;
+  $("evolution").innerHTML = `<div>
+      <div class="sub" style="font-weight:600;color:var(--ink)">Obecny mistrz ${s.edge ? "· ✓ potwierdzona przewaga" : "· ✕ przewaga niepotwierdzona"}</div>
+      <p style="margin:6px 0;font-size:14px">${esc(recipe(s.genome) || s.description)}</p>
+      <div class="sub">Działa od ${when(s.since)} · pokolenie ${s.generation}</div>
+      <div class="scroll"><table style="margin-top:8px"><tr><th>Okres historii</th><th>Transakcje</th><th>Średnio</th><th>Zawsze-kupuj</th></tr>
+        ${row("Starsze 60% (poszukiwanie)", s.stats.search, s.baseline.search)}${row("Kolejne 20% (wybór)", s.stats.select, s.baseline.select)}
+        ${row("Najnowsze 20% (nigdy nie przeszukiwane)", s.stats.holdout, s.baseline.holdout)}</table></div>
+    </div>
+    <div>
+      <div class="sub" style="font-weight:600;color:var(--ink)">Zmiany mistrza</div>
+      ${(L.deployments || []).length ? `<ul class="lessons">${L.deployments.slice(0, 5).map(d => `<li>${when(d.ts)} · pokolenie ${d.gen}: ${esc(d.genome ? recipe(d.genome) : d.description)}
+        <span class="${cls(d.holdout_avg)}">(${pct(d.holdout_avg)} na transakcję na najnowszych danych)</span></li>`).join("")}</ul>` : `<div class="empty">Jeszcze żadnych.</div>`}
+    </div>`;
+}
+
+function renderReadiness() {
+  const R = D.readiness;
+  if (!R) { $("readiness").innerHTML = ""; return; }
+  $("readiness").innerHTML = `<div class="sub" style="margin-bottom:8px">Zysków na papierze nie da się wypłacić. Jedyna droga do prawdziwych pieniędzy to uruchomienie
+      tej samej strategii na prawdziwych środkach, co jest ryzykowne. Ta lista zmieni się na zieloną dopiero, gdy strategia zasłuży na <b>mały</b> test
+      na prawdziwych pieniądzach. Nawet wtedy: nigdy pieniądze potrzebne na rachunki.</div>
+    <div class="scroll"><table>${R.checks.map(c => `<tr><td>${c.ok ? "✓" : "✕"}</td><td>${esc(c.name)}</td><td class="muted">${esc(c.value)}</td></tr>`).join("")}</table></div>
+    <div class="sub" style="margin-top:8px;font-weight:600;color:var(--ink)">${R.ready ? "✓ Gotowe na mały, ostrożny test na prawdziwych pieniądzach" : "✕ Jeszcze nie: dalej handluj na papierze"}</div>`;
 }
 
 function renderLearning() {
   const L = D.learning;
-  if (!L) { $("learning").innerHTML = `<div class="empty">Learning starts after the first retrain.</div>`; return; }
-  const m = L.mistakes, r = L.research, s = L.strategy, c = L.counts || {};
-  const statusIcon = st => st === "active" ? "✓ in use" : st === "retired" ? "↺ retired" : "✕ rejected";
+  if (!L) { $("learning").innerHTML = `<div class="empty">Nauka zaczyna się po pierwszym treningu.</div>`; return; }
+  const m = L.mistakes, r = L.research;
   const left = `<div>
-      <div class="sub" style="font-weight:600;color:var(--ink)">Mistakes it found</div>
-      ${m && m.patterns && m.patterns.length ? `<div class="sub">Out of ${m.signals.toLocaleString()} past signals, ${m.losers.toLocaleString()} lost money. Losing ones differed most in:</div>
-        <ul class="lessons">${m.patterns.slice(0, 4).map(p => `<li>${esc(p.meaning)}: losers ${p.losers_avg.toPrecision(3)} vs winners ${p.winners_avg.toPrecision(3)}</li>`).join("")}</ul>`
-        : `<div class="empty">Not enough losing signals analysed yet.</div>`}
-      <div class="sub" style="font-weight:600;color:var(--ink);margin-top:14px">Rules tested · ${c.active || 0} in use · ${c.rejected || 0} rejected · ${c.retired || 0} retired</div>
-      ${L.recent && L.recent.length ? `<div class="scroll"><table style="margin-top:6px"><tr><th>Rule</th><th>From</th><th>Effect</th><th>Verdict</th></tr>
-        ${L.recent.map(x => `<tr><td title="${esc(x.why)}">${esc(x.name)}<div class="muted">${esc(x.rule)}</div></td>
-          <td class="muted">${x.source.startsWith("own") ? "own mistakes" : "internet"}</td>
-          <td class="${cls(x.gain)}">${x.gain != null ? pct(x.gain) + "/trade" : "—"}</td><td>${statusIcon(x.status)}</td></tr>`).join("")}</table></div>`
-        : `<div class="empty">No ideas tested yet.</div>`}
-      ${s ? `<div class="sub" style="margin-top:8px">Model + ${s.rules} rule(s) on unseen data: ${s.trades} trades, ${pct(s.avg)} per trade
-        vs always-buy ${pct(s.baseline_avg)} · edge ${s.edge ? "✓ proven" : "✕ not yet"}</div>` : ""}
+      <div class="sub" style="font-weight:600;color:var(--ink)">Znalezione błędy</div>
+      ${m && m.patterns && m.patterns.length ? `<div class="sub">Z ${num(m.signals)} dawnych sygnałów ${num(m.losers)} przyniosło stratę. Stratne różniły się najbardziej tym:</div>
+        <ul class="lessons">${m.patterns.slice(0, 4).map(p => `<li>${esc(featName(p.feature))}: stratne ${featVal(p.feature, p.losers_avg)} vs zyskowne ${featVal(p.feature, p.winners_avg)}</li>`).join("")}</ul>`
+        : `<div class="empty">Za mało przeanalizowanych stratnych sygnałów.</div>`}
+      <div class="sub" style="font-weight:600;color:var(--ink);margin-top:14px">Pomysły sprawdzone na niewidzianych danych</div>
+      ${L.ideas && L.ideas.length ? `<div class="scroll"><table style="margin-top:6px"><tr><th>Pomysł</th><th>Skąd</th><th>Efekt</th><th>Użyty</th></tr>
+        ${L.ideas.map(x => `<tr><td title="${esc(x.why)}">${esc(x.name)}</td>
+          <td class="muted">${x.source.startsWith("own") ? "własne błędy" : "internet"}</td>
+          <td class="${cls(x.gain)}">${pct(x.gain)}</td><td>${x.adopted ? "✓ w mistrzu" : "✕"}</td></tr>`).join("")}</table></div>`
+        : `<div class="empty">Jeszcze nie sprawdzono pomysłów.</div>`}
     </div>`;
   const right = `<div>
-      <div class="sub" style="font-weight:600;color:var(--ink)">Today's internet research</div>
-      ${r ? `<div class="sub">${r.source === "local" ? "Your PC" : "Cloud"} · ${esc(r.model)} · ${ago(r.created_at)}
-          ${r.fng && r.fng.length ? ` · Fear &amp; Greed ${r.fng[0].value} (${esc(r.fng[0].label)})` : ""}</div>
+      <div class="sub" style="font-weight:600;color:var(--ink)">Dzisiejsze czytanie internetu</div>
+      ${r ? `<div class="sub">${r.source === "local" ? "Twój komputer" : "Chmura"} · ${esc(r.model)} · ${ago(r.created_at)}
+          ${r.fng && r.fng.length ? ` · indeks strachu i chciwości ${r.fng[0].value} (${esc(FNG[r.fng[0].label] || r.fng[0].label)})` : ""}</div>
         <p style="margin:8px 0;font-size:14px">${esc(r.digest)}</p>
-        ${r.ideas && r.ideas.length ? `<div class="sub">Ideas it proposed (sent to the judge):</div><ul class="lessons">${r.ideas.map(i => `<li>${esc(i.name)}</li>`).join("")}</ul>` : ""}
-        <details style="margin-top:8px"><summary>What it read (${r.items.length})</summary><ul class="lessons">
-          ${r.items.map(i => `<li><span class="tag">${esc(i.kind)}</span> <a href="${esc(i.url)}" target="_blank" rel="noopener" style="color:var(--ink-2)">${esc(i.title)}</a></li>`).join("")}</ul></details>`
-        : `<div class="empty">First daily reading happens within 24 hours.</div>`}
+        ${r.ideas && r.ideas.length ? `<div class="sub">Zaproponowane pomysły (wysłane na mapę snów):</div><ul class="lessons">${r.ideas.map(i => `<li>${esc(i.name)}</li>`).join("")}</ul>` : ""}
+        <details style="margin-top:8px"><summary>Co przeczytał (${r.items.length})</summary><ul class="lessons">
+          ${r.items.map(i => `<li><span class="tag">${esc(i.kind === "arXiv research" ? "badania arXiv" : i.kind)}</span> <a href="${esc(i.url)}" target="_blank" rel="noopener" style="color:var(--ink-2)">${esc(i.title)}</a></li>`).join("")}</ul></details>`
+        : `<div class="empty">Pierwsze codzienne czytanie w ciągu 24 godzin.</div>`}
     </div>`;
   $("learning").innerHTML = left + right;
 }
 
+function renderHowto() {
+  const coins = (D.config.symbols || []).join(", ");
+  $("howto").innerHTML = [
+    `<b>Co 15 minut</b> (darmowa chmura GitHub, więc komputer może być wyłączony) bot pobiera prawdziwe ceny ${coins} i szybki model podejmuje decyzje.`,
+    `<b>Szybki model</b> uczy się na 3 latach prawdziwych danych, co dzieje się po każdej sytuacji, i trenuje się od nowa co ${D.config.retrain_hours} godzin na najnowszych wynikach. Jest sprawdzany na danych, których nigdy nie widział.`,
+    `<b>Mapa snów:</b> po każdym treningu AI odtwarza historię pod setkami przepisów na strategię (pewność wejścia, cel, stop, czas trzymania, wielkość pozycji, reguły), krzyżuje i mutuje najlepsze, a nowy przepis wchodzi do gry tylko, gdy wygrywa na najnowszych miesiącach.`,
+    `<b>Konto główne</b> handluje tylko przy potwierdzonej przewadze. <b>Konto treningowe</b> bierze każdy sygnał, żeby AI ćwiczyło, a jego prawdziwa umiejętność była mierzona na żywo.`,
+    `<b>Mózg</b> to model językowy (Twój lokalny <i>mimo2.6</i>, gdy komputer jest włączony, mały darmowy model w chmurze w pozostałym czasie; można go podmienić na model z API). Ocenia wyniki, zapisuje lekcje w pamięci i może obniżyć ryzyko lub pominąć monety.`,
+    `<b>Nauka na błędach:</b> porównuje stratne i zyskowne sygnały, szuka, co łączyło straty, i zamienia to w pomysły na reguły.`,
+    `<b>Nauka z internetu:</b> raz dziennie czyta nowe badania (arXiv), wiadomości krypto (CoinDesk, Cointelegraph, Decrypt), lekcje tradingu (Babypips) i indeks strachu i chciwości, i proponuje reguły.`,
+    `<b>CLM</b> (Twój Contrastive Language Model) daje niezależną drugą opinię co 4 godziny, gdy komputer jest włączony. Jego trafność jest mierzona, zanim ktokolwiek mu zaufa.`,
+    `<b>Koszty są symulowane:</b> 0,1% opłaty + 0,05% poślizgu na każdej transakcji, stop-loss, cel i limit czasu na każdej pozycji.`,
+    `<b>Wirtualne pieniądze</b> możesz zmienić w dowolnej chwili: <a href="${MONEY_URL}" target="_blank" rel="noopener" style="color:inherit">GitHub → „Run workflow”</a> i wpisz kwotę (stare wyniki zostają w archiwum).`,
+  ].map(x => `<li>${x}</li>`).join("");
+}
+
 function renderStatus() {
   const age = Date.now() - D.generated_at, late = age > 45 * 60000;
-  $("status").innerHTML = `<span class="dot ${late ? "stale" : "live"}"></span><span>${late ? "Delayed · updated " : "Live · updated "}${ago(D.generated_at)}</span>`;
-  $("footer").textContent = `Started ${D.start_ts ? when(D.start_ts) : "—"} · last candle ${D.last_candle ? when(D.last_candle + 15 * 60000) : "—"} · data: github.com/${REPO}`;
+  $("status").innerHTML = `<span class="dot ${late ? "stale" : "live"}"></span><span>${late ? "Opóźnienie · aktualizacja " : "Na żywo · aktualizacja "}${ago(D.generated_at)}</span>`;
+  $("footer").innerHTML = `Start ${D.start_ts ? when(D.start_ts) : "—"} · ostatnia świeca ${D.last_candle ? when(D.last_candle + 15 * 60000) : "—"} ·
+    <a href="https://github.com/${REPO}" target="_blank" rel="noopener" style="color:inherit">github.com/${REPO}</a>`;
 }
 
 async function load() {
@@ -390,9 +509,10 @@ async function load() {
     const r = await fetch(DATA_URL + (DATA_URL.includes("?") ? "&" : "?") + "t=" + Date.now(), {cache: "no-store"});
     if (!r.ok) throw new Error(r.status);
     D = await r.json();
-    renderStatus(); renderKpis(); renderChart(); renderSignals(); renderBrain(); renderPositions(); renderModel(); renderTrades(); renderClm(); renderBacktest(); renderLearning();
+    renderStatus(); renderKpis(); renderChart(); renderSignals(); renderBrain(); renderPositions(); renderModel(); renderTrades();
+    renderClm(); renderBacktest(); renderLearning(); renderEvolution(); renderReadiness(); renderHowto();
   } catch (e) {
-    $("status").innerHTML = `<span class="dot stale"></span><span>Could not load data (${esc(e.message)}) · retrying</span>`;
+    $("status").innerHTML = `<span class="dot stale"></span><span>Nie udało się pobrać danych (${esc(e.message)}) · ponawiam</span>`;
   }
 }
 load();

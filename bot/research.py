@@ -5,7 +5,7 @@ Cointelegraph, Decrypt), Babypips trading lessons, and the Crypto Fear & Greed i
 The LLM also sees what the bot's own losing trades had in common (rules.mine_mistakes).
 It writes a short digest and up to 3 testable rules. Nothing read online is applied
 directly: proposals go to data/research/proposals.jsonl, and the cloud bot judges each one
-on ~1.5 years of unseen data (rules.judge) before it can influence a single trade.
+through the strategy evolution (evolution.py) before it can influence a single trade.
 """
 
 import json
@@ -15,7 +15,7 @@ import xml.etree.ElementTree as ET
 
 import requests
 
-from . import brain, config, rules
+from . import brain, config, evolution, rules
 
 DIR = config.DATA_DIR / "research"
 DIGEST = DIR / "digest.json"
@@ -41,6 +41,7 @@ Rules:
 - Ground every rule in something you read or in the bot's mistakes; say which in "source" and "why".
 - Do not repeat rules that are already active or were rejected.
 - The digest: 3-5 plain sentences on what matters for crypto traders today.
+- Write "digest" and every idea's "name" and "why" in Polish (the owner reads them on a Polish dashboard).
 Reply with JSON only."""
 
 SCHEMA = {
@@ -123,7 +124,6 @@ def build_prompt(material):
     state = brain._load(config.DATA_DIR / "state.json", {})
     ranges = state.get("feature_ranges") or {}
     mistakes = brain._load(rules.MISTAKES, {})
-    book = rules.load()
     lines = ["# What you read today"]
     for it in material["items"]:
         lines.append(f"- [{it['kind']}] {it['title']}" + (f": {it['summary']}" if it["summary"] else ""))
@@ -138,14 +138,13 @@ def build_prompt(material):
     for f, meaning in rules.FEATURE_INFO.items():
         q = ranges.get(f)
         lines.append(f"- {f}: {meaning}" + (f" ({q[0]:.4g} / {q[1]:.4g} / {q[2]:.4g})" if q else ""))
-    act = rules.active(book)
-    rej = [r for r in book["rules"] if r["status"] != "active"][-10:]
-    if act:
-        lines.append("\n# Active rules (already in use)")
-        lines += [f"- {r['name']}: {rules.describe(r['conditions'])}" for r in act]
-    if rej:
-        lines.append("\n# Recently rejected or retired rules (they did not help on unseen data)")
-        lines += [f"- {rules.describe(r['conditions'])}" for r in rej]
+    champ = evolution.load_champion()
+    if champ:
+        lines.append(f"\n# Current best strategy (found by evolution)\n{champ['description']}")
+    tried = [v for v in brain._load(evolution.IDEAS, {}).values() if not v.get("adopted")][-10:]
+    if tried:
+        lines.append("\n# Recent ideas that did NOT help on unseen data (don't repeat them)")
+        lines += [f"- {v['rule']}" for v in tried]
     lines.append("\n# Task\nReturn JSON: digest, mood (fear/neutral/greed), ideas (0-3 rules).")
     return "\n".join(lines)
 

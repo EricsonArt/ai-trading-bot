@@ -18,7 +18,7 @@ from collections import deque
 
 import pandas as pd
 
-from . import brain, broker, config, data, features, model, rules
+from . import brain, broker, config, data, evolution, features, model, rules
 
 STEP = data.STEP_MS
 DAY = 86_400_000
@@ -82,15 +82,16 @@ class Trader:
         self.recent_eq = deque(state.get("recent_equity", []), maxlen=97)
 
     @staticmethod
-    def new_state(start_ts):
+    def new_state(start_ts, cash=None):
+        cash = float(cash or config.START_CASH)
         return {
-            "acct": broker.new_account(start_ts), "last_ts": start_ts - STEP,
-            "peak": config.START_CASH, "paused_until": 0,
+            "acct": broker.new_account(start_ts, cash), "last_ts": start_ts - STEP,
+            "peak": cash, "paused_until": 0,
             "sym_perf": {}, "benched_until": {}, "signals": {}, "recent_equity": [],
             "counters": {"trades": 0, "wins": 0},
         }
 
-    def step(self, t, rows, bundle, directives):
+    def step(self, t, rows, plan, directives):
         """Process one candle close for every symbol. rows: {symbol: dict with prices, vol_96, p}."""
         acct, closed = self.s["acct"], []
         for sym, row in rows.items():
@@ -109,7 +110,7 @@ class Trader:
         if len(self.recent_eq) == self.recent_eq.maxlen and eq < day_ago * (1 - config.DAILY_LOSS_PAUSE):
             self.s["paused_until"] = max(self.s["paused_until"], t + config.PAUSE_HOURS * 3_600_000)
         for sym, row in rows.items():
-            self._decide(t, sym, row, eq, prices, bundle, directives)
+            self._decide(t, sym, row, eq, prices, plan, directives)
         self.s["last_ts"] = t
         self.s["recent_equity"] = list(self.recent_eq)
         return closed, eq
@@ -124,9 +125,9 @@ class Trader:
         if len(perf) >= 5 and trust(perf) < config.SYMBOL_BENCH_TRUST:
             self.s["benched_until"][sym] = t + DAY  # keeps losing here: sit this symbol out for a day
 
-    def _decide(self, t, sym, row, eq, prices, bundle, directives):
+    def _decide(self, t, sym, row, eq, prices, plan, directives):
         acct = self.s["acct"]
-        thr = round(bundle["threshold"] + directives["min_confidence_adj"], 4)
+        thr = round(plan["threshold"] + directives["min_confidence_adj"], 4)
         sig = {"p": round(float(row["p"]), 4), "threshold": thr, "action": "wait", "ts": t}
         self.s["signals"][sym] = sig
         if sym in acct["positions"] or sym in acct["pending"]:
@@ -134,11 +135,11 @@ class Trader:
             return
         if row["p"] < thr:
             return
-        rule = rules.blocking(bundle.get("rules", []), row)
+        rule = rules.blocking(plan["rules"], row)
         if rule:
             sig["action"] = f"blocked: learned rule '{rule}'"
             return
-        if not bundle["edge"] and not self.practice:
+        if not plan["edge"] and not self.practice:
             sig["action"] = "wait: no proven edge yet (practice account takes it)"
             return
         bias = directives["symbol_bias"].get(sym, "normal")
@@ -153,7 +154,7 @@ class Trader:
             return
         tr = trust(self.s["sym_perf"].get(sym, []))
         conf = min(1.5, max(0.75, 1 + (row["p"] - thr) * 4))
-        size = eq * config.BASE_POSITION * directives["risk_level"] * tr * conf
+        size = eq * plan["size"] * directives["risk_level"] * tr * conf
         mode = "practice" if self.practice else "live"
         if eq < self.s["peak"] * (1 - config.DRAWDOWN_HALF_RISK):
             size *= 0.5
@@ -165,10 +166,10 @@ class Trader:
         if amount < config.MIN_ORDER:
             sig["action"] = "blocked: no free cash"
             return
-        variant = bundle["variant"]
-        tp, sl = features.barriers([row["vol_96"]], variant)
-        broker.place(acct, sym, amount, float(tp[0]), float(sl[0]), config.VARIANTS[variant]["horizon"], {
-            "prob": round(float(row["p"]), 4), "variant": variant, "threshold": thr, "mode": mode,
+        tp, sl = features.barriers([row["vol_96"]], plan["horizon"], plan["tp"], plan["sl"])
+        broker.place(acct, sym, amount, float(tp[0]), float(sl[0]), plan["horizon"], {
+            "prob": round(float(row["p"]), 4), "variant": plan["style"], "threshold": thr, "mode": mode,
+            "recipe": plan.get("id"),
             "ctx": {f: round(float(row[f]), 4) for f in CONTEXT if f in row},
         })
         sig["action"] = f"buy ${amount:.0f} ({mode})"
@@ -191,22 +192,66 @@ def retrain(frame, cutoff, state):
     return bundle
 
 
-def learn(bundle, retrained, state):
-    """Learning from mistakes + research: mine losing signals after a retrain, judge all new
-    ideas on unseen data, and return the bundle the traders use (model + active rules)."""
-    mined = rules.mine_mistakes(bundle) if retrained else []
-    book, _ = rules.review(bundle, mined)
-    state["strategy"] = book["strategy"]
-    return {**bundle, "edge": book["strategy"]["edge"], "rules": rules.active(book)}
+def plan(recipe, edge):
+    """What the traders follow: a strategy recipe from the evolution + whether it has a proven edge."""
+    return {"id": recipe["id"], "style": recipe["style"], "threshold": recipe["threshold"], "tp": recipe["tp"],
+            "sl": recipe["sl"], "horizon": evolution.horizon(recipe), "size": recipe["size"],
+            "rules": evolution.as_rules(recipe), "edge": bool(edge)}
 
 
-def predict_rows(frame, ts_list, bundle):
+def learn(bundle, candles, retrained, state):
+    """Dream after every retrain (and when research brings new ideas); return the champion's plan."""
+    champ = evolution.load_champion()
+    ideas = rules.recent_ideas()
+    tested = evolution._load(evolution.IDEAS, {})
+    fresh_ideas = [i for i in ideas if tested.get(i["id"], {}).get("model_version") != bundle["version"]]
+    if retrained or champ is None or champ["model_version"] != bundle["version"] or fresh_ideas:
+        full = retrained or champ is None or champ["model_version"] != bundle["version"]
+        champ = evolution.run(bundle, candles, ideas, budget_s=None if full else 45)
+    state["strategy"] = {"id": champ["genome"]["id"], "genome": champ["genome"], **{k: champ[k] for k in (
+        "description", "stats", "edge", "baseline", "generation", "since", "model_version")}}
+    return plan(champ["genome"], champ["edge"])
+
+
+def predict_rows(frame, ts_list, bundle, style=None):
     rows = frame[frame.ts.isin(ts_list) & features.usable(frame)].copy()
-    rows["p"] = model.predict(bundle, rows) if len(rows) else []
+    rows["p"] = model.predict(bundle, rows, style) if len(rows) else []
     return {t: {r["symbol"]: r for r in g.to_dict("records")} for t, g in rows.groupby("ts")}
 
 
 # ---------- live cycle ----------
+
+def start_cash(state):
+    return float(state.get("start_cash") or config.START_CASH)
+
+
+def new_accounts(t, bench_px, cash, keep=None):
+    """Fresh main + practice accounts with `cash` fake dollars each (keeps model/strategy info)."""
+    state = {**{k: v for k, v in (keep or {}).items() if k in ("model", "strategy", "feature_ranges", "prices")},
+             "last_ts": t - STEP, "bench_start_px": bench_px, "start_cash": float(cash),
+             "main": Trader.new_state(t, cash), "practice": Trader.new_state(t, cash)}
+    print(f"[engine] new paper accounts: ${cash:,.0f} main + ${cash:,.0f} practice")
+    return state
+
+
+def reset(cash):
+    """Change the fake money: archive the old results, restart both accounts with `cash` each."""
+    if not 10 <= cash <= 10_000_000:
+        raise SystemExit("amount must be between 10 and 10,000,000")
+    old = load_json(STATE, {})
+    stamp = time.strftime("%Y%m%d-%H%M%S", time.gmtime())
+    archive = config.DATA_DIR / "archive" / stamp
+    for path in (STATE, TRADES, PRACTICE_TRADES, EQUITY):
+        if path.exists():
+            archive.mkdir(parents=True, exist_ok=True)
+            path.replace(archive / path.name)
+    end = data.now_ms() // STEP * STEP
+    btc = data.fetch(config.BENCHMARK, end - 4 * STEP, end)
+    t = int(btc.ts.iloc[-1])
+    save_json(STATE, new_accounts(t, float(btc.close.iloc[-1]), cash, keep=old))
+    from . import report
+    report.write()
+    print(f"[engine] old results archived in data/archive/{stamp}")
 
 def run(now_ms=None):
     started = time.time()
@@ -215,30 +260,29 @@ def run(now_ms=None):
     t_max = min(int(df.ts.iloc[-1]) for df in candles.values())
     state = load_json(STATE)
     if state is None:
-        state = {"last_ts": t_max - STEP, "bench_start_px": float(candles[config.BENCHMARK].close.iloc[-1]),
-                 "main": Trader.new_state(t_max), "practice": Trader.new_state(t_max)}
-        print(f"[engine] new paper accounts: ${config.START_CASH:.0f} main + ${config.START_CASH:.0f} practice")
+        state = new_accounts(t_max, float(candles[config.BENCHMARK].close.iloc[-1]), config.START_CASH)
     last = max(state["last_ts"], t_max - 7 * DAY)  # after a long outage replay at most a week
     ts_list = list(range(last + STEP, t_max + STEP, STEP))
 
     bundle = model.load()
-    retrained = bundle is None or bundle.get("features") != features.FEATURES or "oos" not in bundle
+    retrained = (bundle is None or bundle.get("features") != features.FEATURES or "clfs" not in bundle
+                 or bundle.get("symbols") != config.SYMBOLS)
     if retrained:
         bundle = retrain(features.build_frame(candles), last, state)
     state["model"] = model.summary(bundle)
     state["feature_ranges"] = bundle["feature_ranges"]  # lets the researcher suggest sensible thresholds
-    trade_bundle = learn(bundle, retrained, state)
+    trade_plan = learn(bundle, candles, retrained, state)
 
     live = features.build_frame({s: df.tail(LIVE_TAIL) for s, df in candles.items()})
-    by_ts = predict_rows(live, ts_list, bundle)
+    by_ts = predict_rows(live, ts_list, bundle, trade_plan["style"])
     directives = brain.active_directives()
     main, practice = Trader(state["main"]), Trader(state["practice"], practice=True)
     closed, closed_practice, equity_rows = [], [], []
     for t in ts_list:
         if t not in by_ts:
             continue
-        c, eq = main.step(t, by_ts[t], trade_bundle, directives)
-        cp, eq_p = practice.step(t, by_ts[t], trade_bundle, brain.DEFAULTS)  # practice ignores the brain
+        c, eq = main.step(t, by_ts[t], trade_plan, directives)
+        cp, eq_p = practice.step(t, by_ts[t], trade_plan, brain.DEFAULTS)  # practice ignores the brain
         closed += c
         closed_practice += cp
         equity_rows.append(f"{t},{eq:.2f},{state['main']['acct']['cash']:.2f},"
@@ -247,7 +291,7 @@ def run(now_ms=None):
     state["prices"] = {s: float(df.close.iloc[-1]) for s, df in candles.items()}
 
     if (time.time() * 1000 - bundle["trained_at"]) > config.RETRAIN_HOURS * 3_600_000:
-        learn(retrain(features.build_frame(candles), t_max, state), True, state)
+        learn(retrain(features.build_frame(candles), t_max, state), candles, True, state)
 
     append_jsonl(TRADES, closed)
     append_jsonl(PRACTICE_TRADES, closed_practice)
