@@ -3,7 +3,7 @@
 Trading itself runs 24/7 in the cloud (GitHub Actions). While this PC is on, this loop
 adds the stronger local brain: every hour it pulls the bot's latest state from GitHub,
 lets the local LLM review it, asks CLM for a second opinion every few hours, and pushes
-the results back. It runs from its own clone of the repo (in %LOCALAPPDATA%), so git
+the results back. It runs from its own clone of the repo (<project>\.runner), so git
 operations here never touch the project folder, and it restarts itself when the code
 on GitHub changes.
 """

@@ -32,5 +32,5 @@ python -m bot backtest     # replay the last 180 days honestly
 python -m pytest -q        # tests
 ```
 
-PC side (auto-start at login, hidden): `powershell -ExecutionPolicy Bypass -File local\install.ps1`
-(remove with `local\uninstall.ps1`). Log: `%LOCALAPPDATA%\TradingBotRunner\.cache\local.log`.
+PC side (Task Scheduler, starts hidden at every login): `powershell -ExecutionPolicy Bypass -File local\install.ps1`
+(remove with `local\uninstall.ps1`). Log: `.runner\.cache\local.log`.

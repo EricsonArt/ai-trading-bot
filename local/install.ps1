@@ -1,12 +1,13 @@
 # Installs the PC side of the trading bot (the hourly local brain + CLM second opinion).
-# - makes a private copy of the repo in %LOCALAPPDATA%\TradingBotRunner with its own Python venv
-# - adds a hidden auto-start entry to your Startup folder (runs at every Windows login)
+# - makes a private copy of the repo in "<project>\.runner" with its own Python venv
+# - registers a hidden Task Scheduler task that starts it at every Windows login
 # - starts it right away
 # Safe to re-run. To remove: run local\uninstall.ps1
 param([string]$Repo = "https://github.com/EricsonArt/ai-trading-bot.git")
 $ErrorActionPreference = "Stop"
 $Project = Split-Path -Parent $PSScriptRoot
-$Runner = Join-Path $env:LOCALAPPDATA "TradingBotRunner"
+$Runner = Join-Path $Project ".runner"
+$TaskName = "AI Trading Bot (brain)"
 
 if (-not (Test-Path (Join-Path $Runner ".git"))) {
     git clone -q $Repo $Runner
@@ -32,15 +33,15 @@ if (Test-Path $Candles) {
     Copy-Item "$Candles\*" (Join-Path $Runner ".cache\candles") -Force
 }
 
-$Startup = [Environment]::GetFolderPath("Startup")
-$Link = Join-Path $Startup "AI Trading Bot (brain).lnk"
-$Shell = New-Object -ComObject WScript.Shell
-$Sc = $Shell.CreateShortcut($Link)
-$Sc.TargetPath = Join-Path $Runner ".venv\Scripts\pythonw.exe"
-$Sc.Arguments = "-m bot local"
-$Sc.WorkingDirectory = $Runner
-$Sc.Description = "AI trading bot: local brain (Ollama) + CLM, syncs with GitHub"
-$Sc.Save()
+$Pyw = Join-Path $Runner ".venv\Scripts\pythonw.exe"
+$Action = New-ScheduledTaskAction -Execute $Pyw -Argument "-m bot local" -WorkingDirectory $Runner
+$Trigger = New-ScheduledTaskTrigger -AtLogOn -User "$env:USERDOMAIN\$env:USERNAME"
+$Trigger.Delay = "PT1M"  # give Ollama and the network a minute after login
+$Settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries `
+    -ExecutionTimeLimit ([TimeSpan]::Zero) -MultipleInstances IgnoreNew -Hidden
+$Principal = New-ScheduledTaskPrincipal -UserId "$env:USERDOMAIN\$env:USERNAME" -LogonType Interactive -RunLevel Limited
+Register-ScheduledTask -TaskName $TaskName -Action $Action -Trigger $Trigger -Settings $Settings `
+    -Principal $Principal -Description "AI trading bot: local brain (Ollama) + CLM, syncs with GitHub" -Force | Out-Null
 
-Start-Process -FilePath $Sc.TargetPath -ArgumentList $Sc.Arguments -WorkingDirectory $Runner -WindowStyle Hidden
-Write-Host "Installed. Runner: $Runner  |  Auto-start: $Link  |  Log: $Runner\.cache\local.log"
+Start-ScheduledTask -TaskName $TaskName
+Write-Host "Installed. Runner: $Runner  |  Auto-start task: $TaskName  |  Log: $Runner\.cache\local.log"
