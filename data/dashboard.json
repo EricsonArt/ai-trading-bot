@@ -1,5 +1,5 @@
 {
- "generated_at": 1790536641407,
+ "generated_at": 1790536843081,
  "last_candle": 1790535600000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
@@ -662,10 +662,10 @@
    "LTC": "avoid",
    "DOT": "avoid"
   },
-  "regime": "bull"
+  "regime": "sideways"
  },
  "brain": {
-  "created_at": 1790533081432,
+  "created_at": 1790536714866,
   "source": "local",
   "model": "mimo2.6:9b",
   "directives": {
@@ -676,18 +676,18 @@
     "LTC": "avoid",
     "DOT": "avoid"
    },
-   "regime": "bull"
+   "regime": "sideways"
   },
-  "reasoning": "Rynek jest w re\u017cimie Greed (Fear & Greed 70), ale model ma zero zamkni\u0119tych transakcji, wi\u0119c edge nie jest udowodniony. Wszystkie sygna\u0142y modelowe s\u0105 poni\u017cej progu 0.84, wi\u0119c nie ma \u017cadnego legalnego wej\u015bcia. Zmienno\u015b\u0107 DOT (5.0%), AVAX (4.4%) i ADA (3.9%) jest najwy\u017csza, wi\u0119c unika tych symbol\u00f3w.",
+  "reasoning": "Rynek jest w fazie Greed (70) z szerok\u0105 zmienno\u015bci\u0105, ale model ma zero zamkni\u0119tych transakcji, wi\u0119c edge nie jest udowodniony. Wszystkie sygna\u0142y modelowe s\u0105 poni\u017cej progu 0.84, wi\u0119c nie ma \u017cadnego legalnego wej\u015bcia. CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje. Trzymamy zero ryzyka i zero wej\u015b\u0107.",
   "new_lessons": [
    "Model ma 0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
-   "AVAX (48.9% 7d, 4.7% vol), LTC (46.4% 7d, 3.0% vol) i DOT (43.5% 7d, 5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj.",
-   "CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje."
+   "CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje.",
+   "AVAX (48.9% 7d, 4.7% vol), LTC (46.4% 7d, 3.0% vol) i DOT (43.5% 7d, 5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj."
   ],
   "lessons": [
    "Model ma 0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
-   "AVAX (48.9% 7d, 4.7% vol), LTC (46.4% 7d, 3.0% vol) i DOT (43.5% 7d, 5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj.",
    "CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje.",
+   "AVAX (48.9% 7d, 4.7% vol), LTC (46.4% 7d, 3.0% vol) i DOT (43.5% 7d, 5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj.",
    "Model ma 0 zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107.",
    "Model ma zero zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107.",
    "Model ma zero zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 nie zwi\u0119ksza\u0107 ryzyka.",
@@ -698,9 +698,31 @@
    "Model edge is False on newest data; keep entries strict until proven.",
    "Practice account lost 0.11% with zero trades; no live edge exists."
   ],
-  "seconds": 7.7
+  "seconds": 7.5
  },
  "brain_journal": [
+  {
+   "created_at": 1790536714866,
+   "source": "local",
+   "model": "mimo2.6:9b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.1,
+    "symbol_bias": {
+     "AVAX": "avoid",
+     "LTC": "avoid",
+     "DOT": "avoid"
+    },
+    "regime": "sideways"
+   },
+   "reasoning": "Rynek jest w fazie Greed (70) z szerok\u0105 zmienno\u015bci\u0105, ale model ma zero zamkni\u0119tych transakcji, wi\u0119c edge nie jest udowodniony. Wszystkie sygna\u0142y modelowe s\u0105 poni\u017cej progu 0.84, wi\u0119c nie ma \u017cadnego legalnego wej\u015bcia. CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje. Trzymamy zero ryzyka i zero wej\u015b\u0107.",
+   "new_lessons": [
+    "Model ma 0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
+    "CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje.",
+    "AVAX (48.9% 7d, 4.7% vol), LTC (46.4% 7d, 3.0% vol) i DOT (43.5% 7d, 5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj."
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1790533081432,
    "source": "local",
@@ -898,29 +920,6 @@
     "Model edge is False on newest data; keep entries strict until proven.",
     "Practice account lost 0.11% with zero trades; no live edge exists.",
     "ADA 3.5% vol and SOL 2.6% vol need strict entry thresholds."
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1790505652759,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.05,
-    "symbol_bias": {
-     "ETH": "reduce",
-     "ADA": "avoid",
-     "SOL": "avoid",
-     "XRP": "avoid"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "The model has no proven edge: 535 trades, 48% win rate, avg +0.21%/trade vs always-buy -0.22%/trade, and edge proven: False. The practice account is down 0.16% with 0 closed trades, so there is no evidence of a working strategy. The market is in a Greed regime with Fear & Greed at 70, and the news cycle is dominated by regulatory and custody headlines, which increases tail risk. The model's current probabilities are all below the 0.81 threshold, with ADA at 0.74, the closest but still below. The losing signals show that losers have lower volatility and better recent returns, which is counterintuitive and suggests the model may be overfitting to noise. Given all these factors, I recommend reducing risk and avoiding the highest-risk symbols.",
-   "new_lessons": [
-    "No closed trades yet; keep entries strict until the model shows a proven edge.",
-    "ADA's 3.5% daily volatility and 22.2% 30d return require strict entry thresholds.",
-    "SOL's 2.6% volatility and 14.4% 7d return need reduced exposure to avoid overexposure."
    ],
    "equity_at": 1000.0
   }
