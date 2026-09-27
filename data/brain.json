@@ -1,27 +1,28 @@
 {
- "created_at": 1790509663139,
- "source": "cloud",
- "model": "qwen3:4b",
- "seconds": 179.6,
+ "created_at": 1790511314416,
+ "source": "local",
+ "model": "mimo2.6:9b",
+ "seconds": 23.2,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
-   "SOL": "reduce",
-   "ADA": "reduce",
    "AVAX": "avoid",
    "LTC": "avoid",
    "TRX": "avoid"
   },
-  "regime": "volatile"
+  "regime": "bull"
  },
- "reasoning": "Model nie ma potwierdzonego edge na nowych danych (26 trades, avg +3.16%/trade vs always-buy +0.37%), a wszystkie symbole maj\u0105 poni\u017cej 79% progu. Wysoka volatylno\u015b\u0107 (AVAX 4.7%, LTC 3.0%) i brak zysk\u00f3w w ostatnich 24h wskazuj\u0105 na niepewno\u015b\u0107 rynku. Zmniejszono ryzyko dla SOL i ADA, a AVAX, LTC i TRX s\u0105 unikane ze wzgl\u0119du na wysok\u0105 volatylno\u015b\u0107 i nisk\u0105 pewno\u015b\u0107 modelu.",
+ "reasoning": "Rynek jest w fazie wzrostowej, ale model ma zero zamkni\u0119tych transakcji i edge nie jest udowodniony. Wszystkie sygna\u0142y s\u0105 poni\u017cej progu 0.79, wi\u0119c nie ma \u017cadnych wej\u015b\u0107. AVAX i LTC maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107, wi\u0119c powinny by\u0107 unikane. TRX ma negatywny trend 24h i 30d, wi\u0119c r\u00f3wnie\u017c unikamy. CLM model jest bezu\u017cyteczny, wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje.",
  "new_lessons": [
-  "Wyniki modelu s\u0105 niepewne; zwi\u0119ksz sztywko\u015b\u0107 wej\u015bcia do 74% progu dla pewno\u015bci.",
-  "AVAX i LTC maj\u0105 wysok\u0105 volatylno\u015b\u0107 (4.7% i 3.0%) i wymagaj\u0105 stricznego wej\u015bcia.",
-  "TRX jest niepewny (30% CLM) i powinien by\u0107 unikany ze wzgl\u0119du na brak stabilno\u015bci."
+  "Model ma zero zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 nie zwi\u0119ksza\u0107 ryzyka.",
+  "AVAX (4.7% vol) i LTC (3.0% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj, dop\u00f3ki nie ma dowodu przewagi.",
+  "CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje."
  ],
  "lessons": [
+  "Model ma zero zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 nie zwi\u0119ksza\u0107 ryzyka.",
+  "AVAX (4.7% vol) i LTC (3.0% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj, dop\u00f3ki nie ma dowodu przewagi.",
+  "CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje.",
   "Wyniki modelu s\u0105 niepewne; zwi\u0119ksz sztywko\u015b\u0107 wej\u015bcia do 74% progu dla pewno\u015bci.",
   "AVAX i LTC maj\u0105 wysok\u0105 volatylno\u015b\u0107 (4.7% i 3.0%) i wymagaj\u0105 stricznego wej\u015bcia.",
   "TRX jest niepewny (30% CLM) i powinien by\u0107 unikany ze wzgl\u0119du na brak stabilno\u015bci.",
@@ -30,10 +31,7 @@
   "ADA 3.5% vol and SOL 2.6% vol need strict entry thresholds.",
   "No closed trades yet; keep entries strict until the model shows a proven edge.",
   "ADA's 3.5% daily volatility and 22.2% 30d return require strict entry thresholds.",
-  "SOL's 2.6% volatility and 14.4% 7d return need reduced exposure to avoid overexposure.",
-  "ADA's 3.5% daily volatility and 22.6% 30d return require strict entry thresholds until the model shows edge",
-  "SOL's 2.6% volatility and 15.0% 7d return need reduced exposure to avoid overexposure",
-  "XRP's 59% CLM favourable but low 24h return (-1.2%) suggests caution despite high CLM score"
+  "SOL's 2.6% volatility and 14.4% 7d return need reduced exposure to avoid overexposure."
  ],
  "equity_at": 1000.0
 }
