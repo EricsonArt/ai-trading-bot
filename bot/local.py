@@ -102,6 +102,7 @@ def main():
     if os.name == "nt":
         ctypes.windll.kernel32.SetPriorityClass(ctypes.windll.kernel32.GetCurrentProcess(), 0x4000)  # below normal
     log(f"started (brain model {config.LOCAL_BRAIN_MODEL}, CLM {'on' if config.CLM_ENABLED else 'off'})")
+    code = head("bot")  # the code this process has loaded; restart when GitHub has newer code
     while True:  # wait for network after boot
         try:
             pull()
@@ -109,7 +110,7 @@ def main():
         except Exception as exc:
             log(f"waiting for network/GitHub: {exc}")
             time.sleep(60)
-    code = head("bot")
+    restart_if_code_changed(code)
     keep_cloud_schedule_alive()
     last_brain = last_clm = 0.0
     while True:
