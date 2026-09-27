@@ -318,8 +318,10 @@ function renderClm() {
     ${Object.entries(c.latest).map(([s, p]) => `<tr><td><b>${s}</b></td><td><div style="display:flex;align-items:center;gap:8px">
       <div class="meter" style="flex:1"><i style="width:${100 * p}%"></i><b style="left:calc(50% - 1px)"></b></div><span>${Math.round(100 * p)}%</span></div></td></tr>`).join("")}
     </table></div>
-    <div class="sub" style="margin-top:8px">${tr ? `Track record: ${tr.n} calls checked · right ${Math.round(100 * tr.accuracy)}% of the time (prices rose after ${Math.round(100 * tr.base_rate)}% of calls)`
-      : "Track record: each call is checked 2 days later. Not enough history yet."}</div>`;
+    <div class="sub" style="margin-top:8px">${tr ? `Live track record: ${tr.n} calls checked · right ${Math.round(100 * tr.accuracy)}% of the time (prices rose after ${Math.round(100 * tr.base_rate)}% of calls)`
+      : "Live track record: each call is checked 2 days later. Not enough history yet."}</div>
+    ${D.clm_test ? `<div class="sub" style="margin-top:4px">Historical test (${D.clm_test.calls} calls, last ${D.clm_test.days} days): right ${Math.round(100 * D.clm_test.accuracy)}%
+      vs ${Math.round(100 * D.clm_test.always_no_accuracy)}% for always saying “no” · ranking skill ${D.clm_test.auc.toFixed(2)} (0.50 = no skill)</div>` : ""}`;
 }
 
 function renderBacktest() {

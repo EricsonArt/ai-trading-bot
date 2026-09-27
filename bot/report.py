@@ -95,6 +95,7 @@ def write():
                                             "new_lessons", "lessons", "seconds")} if brain else None,
         "brain_journal": read_jsonl(config.DATA_DIR / "brain_journal.jsonl")[-10:][::-1],
         "clm": load_json(config.DATA_DIR / "clm.json", None),
+        "clm_test": load_json(config.DATA_DIR / "clm_test.json", None),
         "backtest": {k: v for k, v in (load_json(config.DATA_DIR / "backtest.json", {}) or {}).items()
                      if k != "trade_log"} or None,
         "config": {"symbols": config.SYMBOLS, "interval_min": config.INTERVAL_MIN, "fee": config.FEE,

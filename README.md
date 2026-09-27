@@ -20,7 +20,7 @@ State lives in `data/` (committed by the bot); price history and the trained mod
 ## Honest status
 
 Short-term crypto prediction is hard: after fees, the model has **not** shown a reliable edge on unseen data yet
-(backtest of the practice account over the last 180 days: -4.7% while BTC rose +26%). That is exactly why the
+(replay of the practice account over the last 180 days: -13% while BTC rose +26%). That is exactly why the
 main account waits in cash. Don't put real money on a strategy that hasn't proven itself on paper first.
 
 ## Commands

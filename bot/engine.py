@@ -211,7 +211,7 @@ def run(now_ms=None):
         bundle = retrain(features.build_frame(candles), last, state)
     state["model"] = model.summary(bundle)
 
-    live =features.build_frame({s: df.tail(LIVE_TAIL) for s, df in candles.items()})
+    live = features.build_frame({s: df.tail(LIVE_TAIL) for s, df in candles.items()})
     by_ts = predict_rows(live, ts_list, bundle)
     directives = brain.active_directives()
     main, practice = Trader(state["main"]), Trader(state["practice"], practice=True)

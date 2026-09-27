@@ -176,6 +176,11 @@ def build_report():
     if clm.get("latest") and data.now_ms() - clm.get("updated_at", 0) < 6 * 3_600_000:
         lines.append("\n# Second opinion from the CLM model (fast text judge, still being evaluated)")
         lines += [f"{s}: {100 * p:.0f}% favourable" for s, p in clm["latest"].items()]
+        test = _load(config.DATA_DIR / "clm_test.json", {})
+        if test:
+            lines.append(f"CLM historical test ({test['calls']} calls over {test['days']} days): accuracy "
+                         f"{100 * test['accuracy']:.0f}% vs {100 * test['always_no_accuracy']:.0f}% for always saying no; "
+                         f"ranking skill (AUC) {test['auc']:.2f} where 0.50 = no skill")
         if clm.get("track_record"):
             tr = clm["track_record"]
             lines.append(f"CLM track record: {tr['n']} checked calls, accuracy {100 * tr['accuracy']:.0f}% "
