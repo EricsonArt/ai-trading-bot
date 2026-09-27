@@ -236,7 +236,8 @@ def learn(bundle, candles, retrained, state):
     ideas = rules.recent_ideas()
     tested = evolution._load(evolution.IDEAS, {})
     fresh_ideas = [i for i in ideas if tested.get(i["id"], {}).get("model_version") != bundle["version"]]
-    if retrained or champ is None or champ["model_version"] != bundle["version"] or fresh_ideas:
+    if (retrained or champ is None or champ["model_version"] != bundle["version"] or fresh_ideas
+            or "challengers" not in champ):  # (older champion files had no challengers for the league)
         full = retrained or champ is None or champ["model_version"] != bundle["version"]
         live = {rid: live_record(a) for rid, a in state.get("league", {}).items()}
         champ = evolution.run(bundle, candles, ideas, budget_s=None if full else 45, live=live)
