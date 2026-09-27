@@ -63,6 +63,7 @@ EVOLUTION = {
     "population": 30, "offspring": 90,
     "min_trades": {"search": 60, "select": 15, "holdout": 15},
 }
+LEAGUE_SIZE = 5                   # agents trading different top recipes live at the same time
 
 # Brain (LLM strategist)
 BRAIN_DIRECTIVE_TTL_HOURS = 12    # stale advice expires, so a dead brain cannot freeze settings

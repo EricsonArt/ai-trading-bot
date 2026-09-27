@@ -216,10 +216,12 @@ def _archive_elites(n):
     return [r["genome"] for r in ranked[:n]]
 
 
-def run(bundle, candles, ideas=(), budget_s=None, seed=None, persist=True, champion=None):
+def run(bundle, candles, ideas=(), budget_s=None, seed=None, persist=True, champion=None, live=None):
     """One dreaming session: replay, evolve, maybe deploy a new champion. Returns the champion.
 
+    live: {recipe_id: {"trades", "avg"}} from the agent league (real forward-test results).
     persist=False keeps everything in memory (used by the backtest; pass the previous champion)."""
+    live = live or {}
     t0 = time.time()
     budget = E["budget_seconds"] if budget_s is None else budget_s
     dreamer = Dreamer(bundle, candles)
@@ -269,26 +271,42 @@ def run(bundle, candles, ideas=(), budget_s=None, seed=None, persist=True, champ
         rounds += 1
 
     ranked = sorted(scored.values(), key=_fitness, reverse=True)
-    finalists = [x for x in ranked[:12] if x[1]["select"]["trades"] >= E["min_trades"]["select"]] or ranked[:1]
+    failed_live = {rid for rid, r in live.items() if r["trades"] >= 15 and r["avg"] < 0}
+    finalists = [x for x in ranked[:12] if x[1]["select"]["trades"] >= E["min_trades"]["select"]
+                 and x[0]["id"] not in failed_live] or ranked[:1]
     cand = max(finalists, key=lambda x: _fitness(x, "select"))
     champ = scored[champ_recipe["id"]]
     ch, hh = cand[1]["holdout"], champ[1]["holdout"]
+    reason = ""
     if old is None:
-        deploy = True  # first run: the best recipe found becomes the champion
+        deploy, reason = True, "first champion"
     elif cand[0]["id"] == champ[0]["id"]:
         deploy = False
     else:  # a challenger must beat the champion on data the search never looked at
         deploy = (ch["trades"] >= E["min_trades"]["holdout"] and ch["score"] > hh["score"]
                   and ch["avg"] >= hh["avg"] + 0.0005 and _fitness(cand, "select") > _fitness(champ, "select"))
+        reason = "won on the newest history" if deploy else ""
+    # the league: an agent that clearly beats the champion in live paper trading takes over
+    champ_live = live.get(champ[0]["id"], {"trades": 0, "avg": 0.0})
+    for rid, r in sorted(live.items(), key=lambda kv: kv[1]["avg"], reverse=True):
+        if (not deploy and rid != champ[0]["id"] and rid in scored and r["trades"] >= 20
+                and r["avg"] > champ_live["avg"] + 0.005 and scored[rid][1]["holdout"]["avg"] > 0):
+            cand, deploy, reason = scored[rid], True, "won the live agent league"
+            break
     winner = cand if deploy else champ
     g, st = winner
     base = bundle["baselines"][g["style"]]
     edge = (st["select"]["score"] > 0 and st["holdout"]["score"] > 0 and st["holdout"]["trades"] >= E["min_trades"]["holdout"]
             and st["holdout"]["avg"] > max(0.0, base["holdout"]) + 0.001)
     now = int(time.time() * 1000)
+    challengers = [x[0] for x in ranked if x[0]["id"] != g["id"] and x[0]["id"] not in failed_live
+                   and x[1]["select"]["trades"] >= E["min_trades"]["select"]]
+    challengers = sorted(challengers[:30], key=lambda r: _fitness(scored[r["id"]], "select"),
+                         reverse=True)[:config.LEAGUE_SIZE - 1]
     champion = {
         "genome": g, "stats": st, "edge": bool(edge), "baseline": base, "description": describe(g),
-        "model_version": bundle["version"], "generation": gen,
+        "model_version": bundle["version"], "generation": gen, "reason": reason,
+        "challengers": challengers,
         "since": now if deploy or old is None or old["genome"]["id"] != g["id"] else old.get("since", now),
     }
     if not persist:
@@ -313,7 +331,7 @@ def run(bundle, candles, ideas=(), budget_s=None, seed=None, persist=True, champ
     world["generations"] = world["generations"][-400:]
     if deploy:
         world["deployments"] = (world["deployments"] + [{"gen": gen, "ts": now, "id": g["id"], "description": describe(g),
-                                                         "genome": g,
+                                                         "genome": g, "reason": reason,
                                                          "holdout_avg": st["holdout"]["avg"]}])[-50:]
     world["total_evaluated"] = world.get("total_evaluated", 0) + len(scored)
     _save(MAP, world)

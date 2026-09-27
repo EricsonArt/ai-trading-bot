@@ -121,6 +121,8 @@ def test_full_cycle_offline(monkeypatch):
     assert set(dash["signals"]) == set(config.SYMBOLS)
     assert brain.build_report()[0].count("account") >= 2  # the brain's report renders from the saved state
     assert dash["learning"]["strategy"]["description"] and dash["learning"]["total_evaluated"] > 10
+    roles = [a["role"] for a in dash["league"]]
+    assert roles.count("champion") == 1 and 1 <= len(roles) <= config.LEAGUE_SIZE + 3
 
 
 def test_changing_the_fake_money_archives_old_results(monkeypatch):

@@ -150,6 +150,14 @@ footer { margin-top: 28px; color: var(--muted); font-size: 12px; }
   </section>
 
   <section class="card">
+    <h2>Liga agentów: kilka AI handluje naraz</h2>
+    <div class="sub" style="margin-bottom:10px">Każdy agent to osobne konto na papierze, które handluje na żywo innym najlepszym przepisem z mapy snów.
+      Dzięki temu system zbiera prawdziwe wyniki dla kilku strategii jednocześnie. Agenci, którzy wygrywają na żywo, zostają;
+      pretendent, który wyraźnie pokona mistrza, przejmuje jego miejsce.</div>
+    <div class="scroll"><table id="league"></table></div>
+  </section>
+
+  <section class="card">
     <h2>Czego się nauczył: własne błędy + internet</h2>
     <div class="grid two" id="learning"></div>
   </section>
@@ -442,6 +450,18 @@ function renderEvolution() {
     </div>`;
 }
 
+function renderLeague() {
+  const L = D.league || [];
+  if (!L.length) { $("league").innerHTML = `<tr><td class="empty">Agenci dołączą po pierwszym śnieniu.</td></tr>`; return; }
+  const short = g => `${STYLE[g.style] || g.style}, pewność ≥${Math.round(100 * g.threshold)}%, ${g.rules.length} ${g.rules.length === 1 ? "reguła" : "reguł"}`;
+  $("league").innerHTML = `<tr><th>Agent</th><th>Przepis</th><th>Wynik na żywo</th><th>Transakcje</th><th>Średnio</th><th>Trafność</th><th>Otwarte</th></tr>` +
+    L.map((a, i) => `<tr><td>${a.role === "champion" ? "🏆 mistrz" : "pretendent " + i}</td>
+      <td title="${esc(recipe(a.recipe))}">${esc(short(a.recipe))}</td>
+      <td class="${cls(a.return)}">${money(a.equity)} (${pct(a.return)})</td><td>${a.trades}</td>
+      <td class="${cls(a.avg)}">${a.trades ? pct(a.avg) : "—"}</td><td>${a.trades ? Math.round(100 * a.win_rate) + "%" : "—"}</td>
+      <td class="muted">${a.open.length ? a.open.join(", ") : "—"}</td></tr>`).join("");
+}
+
 function renderReadiness() {
   const R = D.readiness;
   if (!R) { $("readiness").innerHTML = ""; return; }
@@ -487,6 +507,7 @@ function renderHowto() {
     `<b>Co 15 minut</b> (darmowa chmura GitHub, więc komputer może być wyłączony) bot pobiera prawdziwe ceny ${coins} i szybki model podejmuje decyzje.`,
     `<b>Szybki model</b> uczy się na 3 latach prawdziwych danych, co dzieje się po każdej sytuacji, i trenuje się od nowa co ${D.config.retrain_hours} godzin na najnowszych wynikach. Jest sprawdzany na danych, których nigdy nie widział.`,
     `<b>Mapa snów:</b> po każdym treningu AI odtwarza historię pod setkami przepisów na strategię (pewność wejścia, cel, stop, czas trzymania, wielkość pozycji, reguły), krzyżuje i mutuje najlepsze, a nowy przepis wchodzi do gry tylko, gdy wygrywa na najnowszych miesiącach.`,
+    `<b>Liga agentów:</b> kilka agentów handluje na żywo różnymi najlepszymi przepisami naraz, więc prawdziwe wyniki zbierają się kilka razy szybciej. Wygrani zostają, przegrani są wymieniani, a zwycięzca ligi może zostać mistrzem.`,
     `<b>Konto główne</b> handluje tylko przy potwierdzonej przewadze. <b>Konto treningowe</b> bierze każdy sygnał, żeby AI ćwiczyło, a jego prawdziwa umiejętność była mierzona na żywo.`,
     `<b>Mózg</b> to model językowy (Twój lokalny <i>mimo2.6</i>, gdy komputer jest włączony, mały darmowy model w chmurze w pozostałym czasie; można go podmienić na model z API). Ocenia wyniki, zapisuje lekcje w pamięci i może obniżyć ryzyko lub pominąć monety.`,
     `<b>Nauka na błędach:</b> porównuje stratne i zyskowne sygnały, szuka, co łączyło straty, i zamienia to w pomysły na reguły.`,
@@ -510,7 +531,7 @@ async function load() {
     if (!r.ok) throw new Error(r.status);
     D = await r.json();
     renderStatus(); renderKpis(); renderChart(); renderSignals(); renderBrain(); renderPositions(); renderModel(); renderTrades();
-    renderClm(); renderBacktest(); renderLearning(); renderEvolution(); renderReadiness(); renderHowto();
+    renderClm(); renderBacktest(); renderLearning(); renderEvolution(); renderLeague(); renderReadiness(); renderHowto();
   } catch (e) {
     $("status").innerHTML = `<span class="dot stale"></span><span>Nie udało się pobrać danych (${esc(e.message)}) · ponawiam</span>`;
   }

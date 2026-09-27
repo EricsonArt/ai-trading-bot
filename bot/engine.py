@@ -27,6 +27,7 @@ TRADES = config.DATA_DIR / "trades.jsonl"
 PRACTICE_TRADES = config.DATA_DIR / "practice_trades.jsonl"
 EQUITY = config.DATA_DIR / "equity.csv"
 MODEL_HISTORY = config.DATA_DIR / "model_history.jsonl"
+LEAGUE_HISTORY = config.DATA_DIR / "league_history.jsonl"
 LIVE_TAIL = 5000  # candles per symbol needed to compute current features (21-day lags + EMA warm-up)
 CONTEXT = ["rsi", "d_ema200", "vol_ratio", "range_pos", "r_96", "btc_r16"]  # saved with each trade for post-mortems
 
@@ -122,6 +123,7 @@ class Trader:
         del perf[:-20]
         self.s["counters"]["trades"] += 1
         self.s["counters"]["wins"] += int(trade["net"] > 0)
+        self.s["counters"]["net_sum"] = self.s["counters"].get("net_sum", 0.0) + trade["net"]
         if len(perf) >= 5 and trust(perf) < config.SYMBOL_BENCH_TRUST:
             self.s["benched_until"][sym] = t + DAY  # keeps losing here: sit this symbol out for a day
 
@@ -199,6 +201,35 @@ def plan(recipe, edge):
             "rules": evolution.as_rules(recipe), "edge": bool(edge)}
 
 
+# ---------- the agent league ----------
+
+def live_record(agent):
+    c = agent["trader"]["counters"]
+    n = c.get("trades", 0)
+    return {"trades": n, "avg": c.get("net_sum", 0.0) / n if n else 0.0, "win_rate": c.get("wins", 0) / n if n else 0.0}
+
+
+def refresh_league(state, champ, t):
+    """Champion + the best challengers from the latest dream session each trade their own paper
+    account live. Agents that are winning live stay even when the dreams move on; the rest retire."""
+    league = state.setdefault("league", {})
+    wanted = [champ["genome"]] + list(champ.get("challengers", []))
+    wanted_ids = [g["id"] for g in wanted]
+    for g in wanted:
+        if g["id"] not in league:
+            league[g["id"]] = {"recipe": g, "joined": t, "trader": Trader.new_state(t, start_cash(state))}
+    winning = lambda a: live_record(a)["trades"] >= 10 and live_record(a)["avg"] > 0
+    order = sorted(league, key=lambda rid: (rid in wanted_ids, winning(league[rid]), live_record(league[rid])["avg"]),
+                   reverse=True)
+    keep = set([rid for rid in order if rid in wanted_ids or winning(league[rid])][:config.LEAGUE_SIZE + 3])
+    for rid in list(league):
+        league[rid]["role"] = "champion" if rid == champ["genome"]["id"] else "challenger"
+        if rid not in keep:
+            gone = league.pop(rid)
+            append_jsonl(LEAGUE_HISTORY, [{"id": rid, "recipe": gone["recipe"], "joined": gone["joined"],
+                                           "retired": t, **live_record(gone)}])
+
+
 def learn(bundle, candles, retrained, state):
     """Dream after every retrain (and when research brings new ideas); return the champion's plan."""
     champ = evolution.load_champion()
@@ -207,10 +238,11 @@ def learn(bundle, candles, retrained, state):
     fresh_ideas = [i for i in ideas if tested.get(i["id"], {}).get("model_version") != bundle["version"]]
     if retrained or champ is None or champ["model_version"] != bundle["version"] or fresh_ideas:
         full = retrained or champ is None or champ["model_version"] != bundle["version"]
-        champ = evolution.run(bundle, candles, ideas, budget_s=None if full else 45)
+        live = {rid: live_record(a) for rid, a in state.get("league", {}).items()}
+        champ = evolution.run(bundle, candles, ideas, budget_s=None if full else 45, live=live)
     state["strategy"] = {"id": champ["genome"]["id"], "genome": champ["genome"], **{k: champ[k] for k in (
         "description", "stats", "edge", "baseline", "generation", "since", "model_version")}}
-    return plan(champ["genome"], champ["edge"])
+    return plan(champ["genome"], champ["edge"]), champ
 
 
 def predict_rows(frame, ts_list, bundle, style=None):
@@ -271,10 +303,15 @@ def run(now_ms=None):
         bundle = retrain(features.build_frame(candles), last, state)
     state["model"] = model.summary(bundle)
     state["feature_ranges"] = bundle["feature_ranges"]  # lets the researcher suggest sensible thresholds
-    trade_plan = learn(bundle, candles, retrained, state)
+    trade_plan, champ = learn(bundle, candles, retrained, state)
+    refresh_league(state, champ, t_max)
 
     live = features.build_frame({s: df.tail(LIVE_TAIL) for s, df in candles.items()})
-    by_ts = predict_rows(live, ts_list, bundle, trade_plan["style"])
+    league = state.get("league", {})
+    styles = {trade_plan["style"]} | {a["recipe"]["style"] for a in league.values()}
+    by_style = {st: predict_rows(live, ts_list, bundle, st) for st in styles}
+    by_ts = by_style[trade_plan["style"]]
+    agents = [(a, Trader(a["trader"], practice=True), plan(a["recipe"], True)) for a in league.values()]
     directives = brain.active_directives()
     main, practice = Trader(state["main"]), Trader(state["practice"], practice=True)
     closed, closed_practice, equity_rows = [], [], []
@@ -285,13 +322,19 @@ def run(now_ms=None):
         cp, eq_p = practice.step(t, by_ts[t], trade_plan, brain.DEFAULTS)  # practice ignores the brain
         closed += c
         closed_practice += cp
+        for a, trader, pl in agents:  # every agent trades its own recipe on its own paper account
+            rows = by_style[pl["style"]].get(t)
+            if rows:
+                ca, a["equity"] = trader.step(t, rows, pl, brain.DEFAULTS)
+                a["recent_trades"] = (a.get("recent_trades", []) + ca)[-15:]
         equity_rows.append(f"{t},{eq:.2f},{state['main']['acct']['cash']:.2f},"
                            f"{by_ts[t][config.BENCHMARK]['close']},{eq_p:.2f}")
     state["last_ts"] = t_max
     state["prices"] = {s: float(df.close.iloc[-1]) for s, df in candles.items()}
 
     if (time.time() * 1000 - bundle["trained_at"]) > config.RETRAIN_HOURS * 3_600_000:
-        learn(retrain(features.build_frame(candles), t_max, state), candles, True, state)
+        _, champ = learn(retrain(features.build_frame(candles), t_max, state), candles, True, state)
+        refresh_league(state, champ, t_max)
 
     append_jsonl(TRADES, closed)
     append_jsonl(PRACTICE_TRADES, closed_practice)

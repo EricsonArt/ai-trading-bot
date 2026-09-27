@@ -95,3 +95,20 @@ def test_research_ideas_enter_the_gene_pool(monkeypatch, tmp_path):
     evolution.run(fake_bundle(version=5), {}, ideas, budget_s=1, seed=5)
     verdict = json.loads(evolution.IDEAS.read_text(encoding="utf-8"))[ideas[0]["id"]]
     assert verdict["gain"] > 0  # the idea helps on data the search never used
+
+
+def test_live_league_can_crown_a_challenger_and_block_live_losers(monkeypatch, tmp_path):
+    recorded_exits(monkeypatch)
+    for attr, name in (("CHAMPION", "c.json"), ("MAP", "m.json"), ("ARCHIVE", "a.jsonl"), ("IDEAS", "i.json")):
+        monkeypatch.setattr(evolution, attr, tmp_path / name)
+    first = evolution.run(fake_bundle(version=7), {}, [], budget_s=2, seed=7)
+    assert first["challengers"]
+    rival = first["challengers"][0]
+    # live paper trading: the champion loses, a challenger wins clearly
+    live = {first["genome"]["id"]: {"trades": 25, "avg": -0.01}, rival["id"]: {"trades": 25, "avg": 0.02}}
+    second = evolution.run(fake_bundle(version=7), {}, [], budget_s=1, seed=8, live=live)
+    assert second["genome"]["id"] == rival["id"] and second["reason"] == "won the live agent league"
+    # a recipe that keeps losing live is never picked as the new champion
+    third = evolution.run(fake_bundle(version=7), {}, [], budget_s=1, seed=9,
+                          live={rival["id"]: {"trades": 30, "avg": -0.02}})
+    assert rival["id"] not in [c["id"] for c in third["challengers"]]

@@ -182,6 +182,15 @@ def build_report():
                   f"generations. Current champion: {strat['description']}",
                   f"Champion on the newest unseen data: {h['trades']} trades, avg {100 * h['avg']:+.2f}%/trade "
                   f"(always-buy {100 * strat['baseline']['holdout']:+.2f}%), edge proven: {strat['edge']}"]
+    league = state.get("league", {})
+    if league:
+        lines.append("Agent league (each agent paper-trades a different top recipe live; practice rules, no brain):")
+        for a in league.values():
+            c = a["trader"]["counters"]
+            n = c.get("trades", 0)
+            lines.append(f"- {a.get('role', '')} {a['recipe']['id']}: {n} trades, "
+                         f"avg {100 * (c.get('net_sum', 0) / n if n else 0):+.2f}%/trade, "
+                         f"equity ${a.get('equity', 0):,.2f}")
     mistakes = _load(config.DATA_DIR / "research" / "mistakes.json", {})
     if mistakes.get("patterns"):
         lines.append("What losing signals had in common: " + "; ".join(

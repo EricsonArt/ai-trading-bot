@@ -4,8 +4,8 @@ import json
 import time
 
 from . import config
-from .engine import (EQUITY, MODEL_HISTORY, PRACTICE_TRADES, STATE, TRADES, load_json, read_jsonl, save_json,
-                     start_cash, trust)
+from .engine import (EQUITY, MODEL_HISTORY, PRACTICE_TRADES, STATE, TRADES, live_record, load_json, read_jsonl,
+                     save_json, start_cash, trust)
 
 OUT = config.DATA_DIR / "dashboard.json"
 MAX_POINTS = 1500
@@ -77,6 +77,17 @@ def _map_points(world):
     return pts
 
 
+def _league(state):
+    cash0 = start_cash(state)
+    rows = []
+    for rid, a in state.get("league", {}).items():
+        eq = a.get("equity", cash0)
+        rows.append({"id": rid, "role": a.get("role"), "recipe": a["recipe"], "joined": a["joined"],
+                     "equity": round(eq, 2), "return": eq / cash0 - 1, **live_record(a),
+                     "open": sorted(a["trader"]["acct"]["positions"]), "recent": a.get("recent_trades", [])[-5:][::-1]})
+    return sorted(rows, key=lambda r: (r["role"] != "champion", -r["return"]))
+
+
 def _readiness(state, main, benchmark_return):
     """When has the strategy earned a (small!) real-money test? All of these must hold."""
     start = state.get("main", {}).get("acct", {}).get("start_ts") or time.time() * 1000
@@ -134,6 +145,7 @@ def write():
         "series": series,
         "main": main,
         "readiness": _readiness(state, main, benchmark_return),
+        "league": _league(state),
         "practice": {**_account(state.get("practice", {}), read_jsonl(PRACTICE_TRADES), prices, last[3], week_ago, cash0),
                      "max_drawdown": _max_drawdown([p[3] for p in series])},
         "signals": state.get("main", {}).get("signals", {}),
