@@ -19,8 +19,10 @@ A self-learning crypto trading system that runs 24/7 for free and trades **fake 
 
 ## Honest status
 
-Short-term crypto prediction is hard. A 180-day replay (monthly retrain + evolution, no peeking at the future) ended
-around break-even while BTC rose ~27%. The main account therefore waits until the champion proves an edge on unseen data.
+Short-term crypto prediction is hard. In a 180-day replay (monthly retrain + evolution, no peeking at the future) the
+practice account, which takes every signal, lost ~19% while BTC rose ~27% (another run with a different random seed ended
+near break-even, so results are not stable yet). The edge gate never opened in that period, so the main account would have
+stayed flat. It keeps waiting until the champion proves an edge on unseen data.
 Don't put real money on a strategy that hasn't proven itself on paper first.
 
 ## Change the fake money
