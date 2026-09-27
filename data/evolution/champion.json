@@ -53,6 +53,131 @@
  },
  "description": "position style, buy when the model is at least 74% sure, target 2.8x / stop 1.4x the expected move, hold up to 72 h, 25% of equity per trade, only if btc_vol96 > 0.0024 and d_ema50 < -0.01048",
  "model_version": 3,
- "generation": 1,
+ "generation": 2,
+ "reason": "",
+ "challengers": [
+  {
+   "style": "position",
+   "threshold": 0.68,
+   "tp": 2.8,
+   "sl": 1.4,
+   "hold": 1.5,
+   "size": 0.25,
+   "rules": [
+    {
+     "feature": "btc_vol96",
+     "op": ">",
+     "value": 0.0024
+    },
+    {
+     "feature": "d_ema50",
+     "op": "<",
+     "value": -0.01584
+    }
+   ],
+   "id": "9a0d093f1d",
+   "parent": "1e7ec80d62+e0a30e1831",
+   "origin": "crossover"
+  },
+  {
+   "style": "position",
+   "threshold": 0.67,
+   "tp": 2.8,
+   "sl": 1.4,
+   "hold": 1.5,
+   "size": 0.25,
+   "rules": [
+    {
+     "feature": "btc_r96",
+     "op": "<",
+     "value": 0.00514
+    },
+    {
+     "feature": "atr",
+     "op": ">",
+     "value": 0.00649
+    },
+    {
+     "feature": "btc_vol96",
+     "op": ">",
+     "value": 0.0024
+    },
+    {
+     "feature": "d_ema50",
+     "op": "<",
+     "value": -0.01048
+    }
+   ],
+   "id": "6aece113f0",
+   "parent": "928cd99564",
+   "origin": "mutation: threshold"
+  },
+  {
+   "style": "position",
+   "threshold": 0.67,
+   "tp": 3.6,
+   "sl": 1.4,
+   "hold": 1.5,
+   "size": 0.25,
+   "rules": [
+    {
+     "feature": "btc_r96",
+     "op": "<",
+     "value": 0.00514
+    },
+    {
+     "feature": "atr",
+     "op": ">",
+     "value": 0.00649
+    },
+    {
+     "feature": "btc_vol96",
+     "op": ">",
+     "value": 0.0024
+    },
+    {
+     "feature": "d_ema50",
+     "op": "<",
+     "value": -0.01048
+    }
+   ],
+   "id": "614917c9ac",
+   "parent": "6aece113f0",
+   "origin": "mutation: tp"
+  },
+  {
+   "style": "position",
+   "threshold": 0.67,
+   "tp": 2.4,
+   "sl": 1.4,
+   "hold": 1.5,
+   "size": 0.25,
+   "rules": [
+    {
+     "feature": "btc_r96",
+     "op": "<",
+     "value": 0.00514
+    },
+    {
+     "feature": "atr",
+     "op": ">",
+     "value": 0.00649
+    },
+    {
+     "feature": "btc_vol96",
+     "op": ">",
+     "value": 0.0024
+    },
+    {
+     "feature": "d_ema50",
+     "op": "<",
+     "value": -0.01048
+    }
+   ],
+   "id": "9687800a23",
+   "parent": "6aece113f0",
+   "origin": "mutation: tp"
+  }
+ ],
  "since": 1790507257986
 }
