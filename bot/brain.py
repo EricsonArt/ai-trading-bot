@@ -175,7 +175,7 @@ def build_report():
             lines.append("Your lessons so far: " + " | ".join(prev["lessons"]))
     strat = state.get("strategy") or {}
     world = _load(config.DATA_DIR / "evolution" / "map.json", {})
-    if strat:
+    if strat.get("stats"):  # (state files from before the evolution have no stats)
         h = strat["stats"]["holdout"]
         lines += ["\n# Strategy evolution (the bot replays history under many recipes and keeps the best)",
                   f"{world.get('total_evaluated', 0)} recipes tried so far over {len(world.get('generations', []))} "
