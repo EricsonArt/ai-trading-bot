@@ -145,7 +145,8 @@ def build_prompt(material):
     if tried:
         lines.append("\n# Recent ideas that did NOT help on unseen data (don't repeat them)")
         lines += [f"- {v['rule']}" for v in tried]
-    lines.append("\n# Task\nReturn JSON: digest, mood (fear/neutral/greed), ideas (0-3 rules).")
+    lines.append("\n# Task\nReturn JSON: digest, mood (fear/neutral/greed), ideas (0-3 rules).\n"
+                 "IMPORTANT: write the 'digest' and each idea's 'name' and 'why' in Polish (po polsku).")
     return "\n".join(lines)
 
 

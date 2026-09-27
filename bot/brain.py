@@ -216,7 +216,8 @@ def build_report():
     lines.append(
         "\n# Your task\nReturn JSON with: regime; risk_level (0.2-1.0, default 0.8); "
         "min_confidence_adj (-0.02 to 0.10, positive = stricter entries); avoid (symbols to skip, max 3); "
-        "reduce (symbols at half size); lessons (max 3); reasoning.")
+        "reduce (symbols at half size); lessons (max 3); reasoning.\n"
+        "IMPORTANT: write the 'reasoning' and every 'lesson' in Polish (po polsku), even though this report is in English.")
     return "\n".join(lines), last_eq
 
 
