@@ -20,6 +20,10 @@ FEATURES = (
 )
 
 
+# Features that learned rules may use (numeric, human-readable; no time-of-day or coin id).
+RULE_FEATURES = [f for f in FEATURES if f not in ("sym", "hour_sin", "hour_cos", "dow_sin", "dow_cos")]
+
+
 def indicators(df: pd.DataFrame) -> pd.DataFrame:
     o, h, l, c, v = (df[k].astype(float) for k in ("open", "high", "low", "close", "volume"))
     lr = np.log(c).diff()

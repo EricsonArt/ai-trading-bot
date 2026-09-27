@@ -172,6 +172,24 @@ def build_report():
             lines.append(f"Since then the portfolio moved {100 * (last_eq / prev['equity_at'] - 1):+.2f}%.")
         if prev.get("lessons"):
             lines.append("Your lessons so far: " + " | ".join(prev["lessons"]))
+    strat = state.get("strategy") or {}
+    book = _load(config.DATA_DIR / "rules.json", {})
+    act = [r for r in book.get("rules", []) if r["status"] == "active"]
+    lines.append("\n# What the bot has learned (rules tested on unseen data)")
+    lines.append(f"{len(book.get('rules', []))} ideas tested so far, {len(act)} active: "
+                 + ("; ".join(f"{r['name']} (+{100 * r['test']['gain']:.2f}%/trade)" for r in act) or "none yet"))
+    if strat:
+        lines.append(f"Model + rules on unseen data: {strat['trades']} trades, avg {100 * strat['avg']:+.2f}%/trade, "
+                     f"edge proven: {strat['edge']}")
+    mistakes = _load(config.DATA_DIR / "research" / "mistakes.json", {})
+    if mistakes.get("patterns"):
+        lines.append("What losing signals had in common: " + "; ".join(
+            f"{m['meaning']} (losers {m['losers_avg']:.3g} vs winners {m['winners_avg']:.3g})" for m in mistakes["patterns"][:3]))
+    digest = _load(config.DATA_DIR / "research" / "digest.json", {})
+    if digest.get("digest"):
+        lines.append(f"\n# Today's research digest ({_fmt_ts(digest['created_at'])})\n{digest['digest']}")
+        if digest.get("fng"):
+            lines.append(f"Fear & Greed index: {digest['fng'][0]['value']} ({digest['fng'][0]['label']})")
     clm = _load(config.DATA_DIR / "clm.json", {})
     if clm.get("latest") and data.now_ms() - clm.get("updated_at", 0) < 6 * 3_600_000:
         lines.append("\n# Second opinion from the CLM model (fast text judge, still being evaluated)")
@@ -192,11 +210,11 @@ def build_report():
     return "\n".join(lines), last_eq
 
 
-def ask(model_name, report, timeout=900):
+def ask(model_name, report, system=SYSTEM, schema=SCHEMA, timeout=900):
     r = requests.post(f"{config.OLLAMA_URL}/api/chat", json={
-        "model": model_name, "stream": False, "think": False, "format": SCHEMA, "keep_alive": "2m",
-        "options": {"temperature": 0.3, "num_ctx": 8192},
-        "messages": [{"role": "system", "content": SYSTEM}, {"role": "user", "content": report}],
+        "model": model_name, "stream": False, "think": False, "format": schema, "keep_alive": "2m",
+        "options": {"temperature": 0.3, "num_ctx": 12288},
+        "messages": [{"role": "system", "content": system}, {"role": "user", "content": report}],
     }, timeout=timeout)
     r.raise_for_status()
     content = r.json()["message"]["content"]

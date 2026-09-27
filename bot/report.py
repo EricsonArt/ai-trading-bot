@@ -64,6 +64,23 @@ def _account(acc, trades, prices, equity, week_ago):
     }
 
 
+def _learning(state):
+    """Mistakes found, rules tested (from mistakes and from internet research), today's reading."""
+    book = load_json(config.DATA_DIR / "rules.json", {}) or {}
+    tested = book.get("rules", [])
+    pick = lambda r: {"name": r["name"], "source": r["source"], "status": r["status"], "why": r.get("why", ""),
+                      "rule": " and ".join(f"{c['feature']} {c['op']} {c['value']:g}" for c in r["conditions"]),
+                      "gain": (r.get("test") or {}).get("gain"), "tested_at": r.get("tested_at")}
+    return {
+        "strategy": state.get("strategy"),
+        "counts": {s: sum(r["status"] == s for r in tested) for s in ("active", "rejected", "retired")},
+        "active": [pick(r) for r in tested if r["status"] == "active"],
+        "recent": [pick(r) for r in tested[-12:]][::-1],
+        "mistakes": load_json(config.DATA_DIR / "research" / "mistakes.json", None),
+        "research": load_json(config.DATA_DIR / "research" / "digest.json", None),
+    }
+
+
 def write():
     state = load_json(STATE, {})
     series = _equity_series(state)
@@ -96,6 +113,7 @@ def write():
         "brain_journal": read_jsonl(config.DATA_DIR / "brain_journal.jsonl")[-10:][::-1],
         "clm": load_json(config.DATA_DIR / "clm.json", None),
         "clm_test": load_json(config.DATA_DIR / "clm_test.json", None),
+        "learning": _learning(state),
         "backtest": {k: v for k, v in (load_json(config.DATA_DIR / "backtest.json", {}) or {}).items()
                      if k != "trade_log"} or None,
         "config": {"symbols": config.SYMBOLS, "interval_min": config.INTERVAL_MIN, "fee": config.FEE,

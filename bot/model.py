@@ -19,7 +19,7 @@ from sklearn.ensemble import HistGradientBoostingClassifier
 from sklearn.metrics import roc_auc_score
 
 from . import config
-from .features import FEATURES, add_labels, usable
+from .features import FEATURES, RULE_FEATURES, add_labels, usable
 
 MODEL_PATH = config.CACHE_DIR / "model.pkl"
 STEP_MS = config.INTERVAL_MIN * 60_000
@@ -42,18 +42,26 @@ def _weights(ts, ref_ts):
     return 0.5 ** (age_days / config.RECENCY_HALF_LIFE_DAYS)
 
 
-def simulate(symbols, net, exit_off, proba, threshold):
-    """Net returns of the trades the bot would take: one position per symbol at a time."""
+def simulate(symbols, ts, net, exit_off, proba, threshold):
+    """Net returns of the trades the bot would take: one position per symbol at a time.
+
+    Works on any subset of rows (e.g. only the signals), because "busy until" is tracked
+    by time, not by row position."""
     out = []
     for s in np.unique(symbols):
         m = np.flatnonzero(symbols == s)
-        p, r, off = proba[m], net[m], exit_off[m]
-        nxt = 0
-        for i in range(len(m)):
-            if i >= nxt and p[i] >= threshold:
-                out.append(r[i])
-                nxt = i + int(off[i])
+        m = m[np.argsort(ts[m], kind="stable")]
+        free_at = -np.inf
+        for i in m:
+            if ts[i] >= free_at and proba[i] >= threshold:
+                out.append(net[i])
+                free_at = ts[i] + exit_off[i] * STEP_MS
     return np.array(out)
+
+
+def simulate_df(df, proba, threshold):
+    return simulate(df.symbol.to_numpy(), df.ts.to_numpy(), df.net.to_numpy(), df.exit_off.to_numpy(),
+                    np.asarray(proba), threshold)
 
 
 def trade_stats(rets):
@@ -92,23 +100,22 @@ def _evaluate_variant(frame, variant):
     val = pd.concat(parts)
     proba = np.concatenate(probas)
     auc = float(roc_auc_score(val.y, proba)) if val.y.nunique() > 1 else 0.5
-    sym, net, off = val.symbol.to_numpy(), val.net.to_numpy(), val.exit_off.to_numpy()
     best_t, best = None, None
     for t in config.THRESHOLDS:
-        st = trade_stats(simulate(sym, net, off, proba, t))
+        st = trade_stats(simulate_df(val, proba, t))
         if st["trades"] >= config.MIN_VALIDATION_TRADES and (best is None or st["score"] > best["score"]):
             best_t, best = t, st
     if best is None:  # too few signals anywhere: fall back to the loosest threshold
         best_t = config.THRESHOLDS[0]
-        best = trade_stats(simulate(sym, net, off, proba, best_t))
+        best = trade_stats(simulate_df(val, proba, best_t))
     # What would blindly buying every time have earned in the same period? The model only
     # has real skill if its picks beat this (otherwise it is just riding the market).
-    naive = trade_stats(simulate(sym, net, off, np.ones(len(val)), 0.0))
+    naive = trade_stats(simulate_df(val, np.ones(len(val)), 0.0))
     best = {**best, "baseline_avg": naive["avg"], "baseline_trades": naive["trades"]}
     return {
         "variant": variant, "threshold": best_t, "auc": auc, "val": best,
         "base_rate": float(val.y.mean()), "n_iter": int(np.median(iters)),
-        "val_rows": len(val), "labeled": lab,
+        "val_rows": len(val), "labeled": lab, "val_df": val, "proba": proba,
     }
 
 
@@ -134,11 +141,24 @@ def train(frame, version=1):
         "trained_at": int(time.time() * 1000),
         "data_until": int(ref_ts),
         "train_seconds": round(time.time() - started, 1),
+        # the chosen style's out-of-sample signals: the evidence new rules are tested against
+        "oos": _oos_signals(best),
+        "feature_ranges": {f: [round(float(q), 5) for q in best["val_df"][f].quantile([0.1, 0.5, 0.9])]
+                           for f in RULE_FEATURES},
         "metrics": {r["variant"]: {"auc": round(r["auc"], 4), "threshold": r["threshold"],
                                    "base_rate": round(r["base_rate"], 4), **{k: round(v, 5) for k, v in r["val"].items()}}
                     for r in results},
     }
     return bundle
+
+
+def _oos_signals(result):
+    val = result["val_df"].assign(p=result["proba"])
+    val = val[val.p >= result["threshold"] - 0.04]
+    cols = ["ts", "symbol", "net", "exit_off", "p"] + RULE_FEATURES
+    out = val[cols].copy()
+    out[RULE_FEATURES] = out[RULE_FEATURES].astype("float32")
+    return out.reset_index(drop=True)
 
 
 def save(bundle):

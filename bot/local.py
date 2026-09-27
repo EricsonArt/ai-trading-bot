@@ -18,12 +18,13 @@ import traceback
 
 import requests
 
-from . import brain, clm, config
+from . import brain, clm, config, research
 
 LOG = config.CACHE_DIR / "local.log"
 BRAIN_EVERY_S = 3600
 CLM_EVERY_S = 4 * 3600
-PUSH = ["data/brain.json", "data/brain_journal.jsonl", "data/clm.json", "data/clm_log.jsonl"]
+PUSH = ["data/brain.json", "data/brain_journal.jsonl", "data/clm.json", "data/clm_log.jsonl",
+        "data/research/digest.json", "data/research/digests.jsonl", "data/research/proposals.jsonl"]
 NO_WINDOW = getattr(subprocess, "CREATE_NO_WINDOW", 0)
 _lock = socket.socket()  # holding this port = "an instance is running"
 
@@ -126,6 +127,9 @@ def main():
                         break
                     time.sleep(10)
                 if ollama_ready():
+                    if not research.fresh(20):  # once a day: read the internet, propose rules
+                        research.run(config.LOCAL_BRAIN_MODEL, "local")
+                        did.append("research")
                     brain.run(config.LOCAL_BRAIN_MODEL, "local")
                     did.append("brain")
                 else:

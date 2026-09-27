@@ -140,6 +140,13 @@ footer { margin-top: 28px; color: var(--muted); font-size: 12px; }
   </section>
 
   <section class="card">
+    <h2>What it learned: its own mistakes + the internet</h2>
+    <div class="sub" style="margin-bottom:10px">Every idea (from its losing trades or from what it reads online) is tested on ~1.5 years of
+      data the model never saw. It is used only if it raises the profit per trade, and dropped again when it stops working.</div>
+    <div class="grid two" id="learning"></div>
+  </section>
+
+  <section class="card">
     <h2>Closed trades</h2>
     <div class="tabs" role="tablist">
       <button role="tab" aria-selected="true" data-acct="main">Main account</button>
@@ -167,6 +174,9 @@ footer { margin-top: 28px; color: var(--muted); font-size: 12px; }
         <li><b>The fast model</b> learns from 3 years of real market data what happens after each situation, and retrains itself every 12 hours on the newest outcomes. It is tested on data it never saw. It only counts as having an "edge" if its picks beat simply buying every time.</li>
         <li><b>Main account</b> trades only while that edge is proven. <b>Practice account</b> trades every signal so the AI keeps practising and its real skill is measured live.</li>
         <li><b>The brain</b> is an LLM (your local <i>mimo2.6</i> when your PC is on, a small free model in the cloud otherwise). It reviews results, writes lessons into its memory, and can lower risk or skip coins.</li>
+        <li><b>Learning from mistakes:</b> after every retrain it compares its losing and winning signals, finds what the losers had in common, and turns that into candidate rules.</li>
+        <li><b>Learning from the internet:</b> once a day the brain reads new trading research (arXiv), crypto news (CoinDesk, Cointelegraph, Decrypt), trading lessons (Babypips) and the Fear &amp; Greed index, and proposes rules.</li>
+        <li><b>The judge:</b> a rule is used only if it raises the profit per trade on data the model never saw, including the most recent months. It is re-checked after every retrain and retired when it stops working.</li>
         <li><b>CLM</b> (your Contrastive Language Model) gives an independent second opinion every 4 hours while the PC is on. Its accuracy is tracked here before anyone trusts it.</li>
         <li><b>Costs are simulated:</b> 0.1% fee + 0.05% slippage per trade, stop-loss, take-profit and a time limit on every position.</li>
       </ul>
@@ -337,6 +347,38 @@ function renderBacktest() {
     <div class="sub" style="margin-top:8px">This is why the main account waits for a proven edge.</div>`;
 }
 
+function renderLearning() {
+  const L = D.learning;
+  if (!L) { $("learning").innerHTML = `<div class="empty">Learning starts after the first retrain.</div>`; return; }
+  const m = L.mistakes, r = L.research, s = L.strategy, c = L.counts || {};
+  const statusIcon = st => st === "active" ? "✓ in use" : st === "retired" ? "↺ retired" : "✕ rejected";
+  const left = `<div>
+      <div class="sub" style="font-weight:600;color:var(--ink)">Mistakes it found</div>
+      ${m && m.patterns && m.patterns.length ? `<div class="sub">Out of ${m.signals.toLocaleString()} past signals, ${m.losers.toLocaleString()} lost money. Losing ones differed most in:</div>
+        <ul class="lessons">${m.patterns.slice(0, 4).map(p => `<li>${esc(p.meaning)}: losers ${p.losers_avg.toPrecision(3)} vs winners ${p.winners_avg.toPrecision(3)}</li>`).join("")}</ul>`
+        : `<div class="empty">Not enough losing signals analysed yet.</div>`}
+      <div class="sub" style="font-weight:600;color:var(--ink);margin-top:14px">Rules tested · ${c.active || 0} in use · ${c.rejected || 0} rejected · ${c.retired || 0} retired</div>
+      ${L.recent && L.recent.length ? `<div class="scroll"><table style="margin-top:6px"><tr><th>Rule</th><th>From</th><th>Effect</th><th>Verdict</th></tr>
+        ${L.recent.map(x => `<tr><td title="${esc(x.why)}">${esc(x.name)}<div class="muted">${esc(x.rule)}</div></td>
+          <td class="muted">${x.source.startsWith("own") ? "own mistakes" : "internet"}</td>
+          <td class="${cls(x.gain)}">${x.gain != null ? pct(x.gain) + "/trade" : "—"}</td><td>${statusIcon(x.status)}</td></tr>`).join("")}</table></div>`
+        : `<div class="empty">No ideas tested yet.</div>`}
+      ${s ? `<div class="sub" style="margin-top:8px">Model + ${s.rules} rule(s) on unseen data: ${s.trades} trades, ${pct(s.avg)} per trade
+        vs always-buy ${pct(s.baseline_avg)} · edge ${s.edge ? "✓ proven" : "✕ not yet"}</div>` : ""}
+    </div>`;
+  const right = `<div>
+      <div class="sub" style="font-weight:600;color:var(--ink)">Today's internet research</div>
+      ${r ? `<div class="sub">${r.source === "local" ? "Your PC" : "Cloud"} · ${esc(r.model)} · ${ago(r.created_at)}
+          ${r.fng && r.fng.length ? ` · Fear &amp; Greed ${r.fng[0].value} (${esc(r.fng[0].label)})` : ""}</div>
+        <p style="margin:8px 0;font-size:14px">${esc(r.digest)}</p>
+        ${r.ideas && r.ideas.length ? `<div class="sub">Ideas it proposed (sent to the judge):</div><ul class="lessons">${r.ideas.map(i => `<li>${esc(i.name)}</li>`).join("")}</ul>` : ""}
+        <details style="margin-top:8px"><summary>What it read (${r.items.length})</summary><ul class="lessons">
+          ${r.items.map(i => `<li><span class="tag">${esc(i.kind)}</span> <a href="${esc(i.url)}" target="_blank" rel="noopener" style="color:var(--ink-2)">${esc(i.title)}</a></li>`).join("")}</ul></details>`
+        : `<div class="empty">First daily reading happens within 24 hours.</div>`}
+    </div>`;
+  $("learning").innerHTML = left + right;
+}
+
 function renderStatus() {
   const age = Date.now() - D.generated_at, late = age > 45 * 60000;
   $("status").innerHTML = `<span class="dot ${late ? "stale" : "live"}"></span><span>${late ? "Delayed · updated " : "Live · updated "}${ago(D.generated_at)}</span>`;
@@ -348,7 +390,7 @@ async function load() {
     const r = await fetch(DATA_URL + (DATA_URL.includes("?") ? "&" : "?") + "t=" + Date.now(), {cache: "no-store"});
     if (!r.ok) throw new Error(r.status);
     D = await r.json();
-    renderStatus(); renderKpis(); renderChart(); renderSignals(); renderBrain(); renderPositions(); renderModel(); renderTrades(); renderClm(); renderBacktest();
+    renderStatus(); renderKpis(); renderChart(); renderSignals(); renderBrain(); renderPositions(); renderModel(); renderTrades(); renderClm(); renderBacktest(); renderLearning();
   } catch (e) {
     $("status").innerHTML = `<span class="dot stale"></span><span>Could not load data (${esc(e.message)}) · retrying</span>`;
   }

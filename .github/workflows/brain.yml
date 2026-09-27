@@ -1,6 +1,7 @@
 name: cloud-brain
-# Every 4 hours a small open-source LLM (free, runs on the GitHub runner's CPU) reviews the bot.
-# Skipped when the stronger local brain on the PC has reviewed within the last 3 hours.
+# Every 4 hours a small open-source LLM (free, runs on the GitHub runner's CPU) reviews the bot,
+# and once a day it reads trading research/news and proposes rules for the bot to test.
+# Each part is skipped when the stronger local brain on the PC did it recently.
 on:
   schedule:
     - cron: "41 */4 * * *"
@@ -32,8 +33,8 @@ jobs:
       - name: Did the PC brain run recently?
         id: fresh
         run: |
-          if [ "${{ inputs.force }}" = "true" ]; then echo "fresh=no" >> "$GITHUB_OUTPUT"; exit 0; fi
-          python -c "from bot import brain; print('fresh=' + ('yes' if brain.fresh(3) else 'no'))" >> "$GITHUB_OUTPUT"
+          if [ "${{ inputs.force }}" = "true" ]; then echo "fresh=no" >> "$GITHUB_OUTPUT"; echo "research=yes" >> "$GITHUB_OUTPUT"; exit 0; fi
+          python -c "from bot import brain, research; print('research=' + ('no' if research.fresh(20) else 'yes')); print('fresh=' + ('yes' if brain.fresh(3) and research.fresh(20) else 'no'))" >> "$GITHUB_OUTPUT"
       - name: Cache Ollama (CPU build)
         if: steps.fresh.outputs.fresh == 'no'
         uses: actions/cache@v4
@@ -64,6 +65,9 @@ jobs:
           path: .cache
           key: bot-${{ github.run_id }}
           restore-keys: bot-
+      - name: Daily internet research
+        if: steps.fresh.outputs.research == 'yes'
+        run: python -c "from bot import research; research.run('$MODEL', 'cloud')"
       - name: Brain review
         if: steps.fresh.outputs.fresh == 'no'
         run: python -m bot brain --model "$MODEL" --source cloud

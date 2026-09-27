@@ -73,7 +73,7 @@ def close(acct, symbol, price, ts, reason):
         "cost": round(pos["cost"], 2), "proceeds": round(proceeds, 2),
         "pnl": round(proceeds - pos["cost"], 2), "net": round(proceeds / pos["cost"] - 1, 5),
         "reason": reason, "held": pos["held"],
-        **{k: pos[k] for k in ("prob", "variant", "threshold", "mode") if k in pos},
+        **{k: pos[k] for k in ("prob", "variant", "threshold", "mode", "ctx") if k in pos},
     }
 
 

@@ -18,7 +18,7 @@ from collections import deque
 
 import pandas as pd
 
-from . import brain, broker, config, data, features, model
+from . import brain, broker, config, data, features, model, rules
 
 STEP = data.STEP_MS
 DAY = 86_400_000
@@ -28,6 +28,7 @@ PRACTICE_TRADES = config.DATA_DIR / "practice_trades.jsonl"
 EQUITY = config.DATA_DIR / "equity.csv"
 MODEL_HISTORY = config.DATA_DIR / "model_history.jsonl"
 LIVE_TAIL = 5000  # candles per symbol needed to compute current features (21-day lags + EMA warm-up)
+CONTEXT = ["rsi", "d_ema200", "vol_ratio", "range_pos", "r_96", "btc_r16"]  # saved with each trade for post-mortems
 
 
 # ---------- small file helpers ----------
@@ -133,6 +134,10 @@ class Trader:
             return
         if row["p"] < thr:
             return
+        rule = rules.blocking(bundle.get("rules", []), row)
+        if rule:
+            sig["action"] = f"blocked: learned rule '{rule}'"
+            return
         if not bundle["edge"] and not self.practice:
             sig["action"] = "wait: no proven edge yet (practice account takes it)"
             return
@@ -164,6 +169,7 @@ class Trader:
         tp, sl = features.barriers([row["vol_96"]], variant)
         broker.place(acct, sym, amount, float(tp[0]), float(sl[0]), config.VARIANTS[variant]["horizon"], {
             "prob": round(float(row["p"]), 4), "variant": variant, "threshold": thr, "mode": mode,
+            "ctx": {f: round(float(row[f]), 4) for f in CONTEXT if f in row},
         })
         sig["action"] = f"buy ${amount:.0f} ({mode})"
 
@@ -183,6 +189,15 @@ def retrain(frame, cutoff, state):
     print(f"[engine] model v{version}: style={bundle['variant']} threshold={bundle['threshold']} "
           f"edge={bundle['edge']} ({bundle['train_seconds']}s)")
     return bundle
+
+
+def learn(bundle, retrained, state):
+    """Learning from mistakes + research: mine losing signals after a retrain, judge all new
+    ideas on unseen data, and return the bundle the traders use (model + active rules)."""
+    mined = rules.mine_mistakes(bundle) if retrained else []
+    book, _ = rules.review(bundle, mined)
+    state["strategy"] = book["strategy"]
+    return {**bundle, "edge": book["strategy"]["edge"], "rules": rules.active(book)}
 
 
 def predict_rows(frame, ts_list, bundle):
@@ -207,9 +222,12 @@ def run(now_ms=None):
     ts_list = list(range(last + STEP, t_max + STEP, STEP))
 
     bundle = model.load()
-    if bundle is None or bundle.get("features") != features.FEATURES:
+    retrained = bundle is None or bundle.get("features") != features.FEATURES or "oos" not in bundle
+    if retrained:
         bundle = retrain(features.build_frame(candles), last, state)
     state["model"] = model.summary(bundle)
+    state["feature_ranges"] = bundle["feature_ranges"]  # lets the researcher suggest sensible thresholds
+    trade_bundle = learn(bundle, retrained, state)
 
     live = features.build_frame({s: df.tail(LIVE_TAIL) for s, df in candles.items()})
     by_ts = predict_rows(live, ts_list, bundle)
@@ -219,8 +237,8 @@ def run(now_ms=None):
     for t in ts_list:
         if t not in by_ts:
             continue
-        c, eq = main.step(t, by_ts[t], bundle, directives)
-        cp, eq_p = practice.step(t, by_ts[t], bundle, brain.DEFAULTS)  # practice = the raw model, no brain
+        c, eq = main.step(t, by_ts[t], trade_bundle, directives)
+        cp, eq_p = practice.step(t, by_ts[t], trade_bundle, brain.DEFAULTS)  # practice ignores the brain
         closed += c
         closed_practice += cp
         equity_rows.append(f"{t},{eq:.2f},{state['main']['acct']['cash']:.2f},"
@@ -229,7 +247,7 @@ def run(now_ms=None):
     state["prices"] = {s: float(df.close.iloc[-1]) for s, df in candles.items()}
 
     if (time.time() * 1000 - bundle["trained_at"]) > config.RETRAIN_HOURS * 3_600_000:
-        retrain(features.build_frame(candles), t_max, state)
+        learn(retrain(features.build_frame(candles), t_max, state), True, state)
 
     append_jsonl(TRADES, closed)
     append_jsonl(PRACTICE_TRADES, closed_practice)
