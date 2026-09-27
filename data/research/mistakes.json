@@ -1,75 +1,49 @@
 {
- "created_at": 1790502174805,
- "model_version": 2,
- "signals": 16224,
- "losers": 9428,
+ "created_at": 1790507108280,
+ "model_version": 3,
+ "signals": 26939,
+ "losers": 15995,
  "patterns": [
   {
-   "feature": "vol_96",
-   "meaning": "volatility of 15-min returns over 24 hours",
-   "strength": 0.371,
-   "losers_avg": 0.00414,
-   "winners_avg": 0.00555
-  },
-  {
-   "feature": "atr",
-   "meaning": "average true range as a fraction of price",
-   "strength": 0.328,
-   "losers_avg": 0.00601,
-   "winners_avg": 0.00751
-  },
-  {
-   "feature": "r_288",
-   "meaning": "return over the last 3 days",
-   "strength": 0.312,
-   "losers_avg": -0.02548,
-   "winners_avg": -0.05191
-  },
-  {
-   "feature": "btc_vol96",
-   "meaning": "Bitcoin 24h volatility",
-   "strength": 0.291,
-   "losers_avg": 0.0028,
-   "winners_avg": 0.00332
+   "feature": "btc_r96",
+   "meaning": "Bitcoin return over the last 24 hours",
+   "strength": 0.324,
+   "losers_avg": -0.00443,
+   "winners_avg": -0.016
   },
   {
    "feature": "ema_trend",
    "meaning": "50-candle average vs 200-candle average (positive = uptrend)",
-   "strength": 0.273,
-   "losers_avg": -0.00697,
-   "winners_avg": -0.01418
+   "strength": 0.295,
+   "losers_avg": -0.01034,
+   "winners_avg": -0.01689
+  },
+  {
+   "feature": "r_288",
+   "meaning": "return over the last 3 days",
+   "strength": 0.278,
+   "losers_avg": -0.04146,
+   "winners_avg": -0.06175
+  },
+  {
+   "feature": "atr",
+   "meaning": "average true range as a fraction of price",
+   "strength": 0.27,
+   "losers_avg": 0.00597,
+   "winners_avg": 0.0073
+  },
+  {
+   "feature": "r_96",
+   "meaning": "return over the last 24 hours",
+   "strength": 0.261,
+   "losers_avg": -0.01227,
+   "winners_avg": -0.02529
   }
  ],
  "candidates": [
   {
-   "name": "avoid vol_16 <= 0.004732",
-   "conditions": [
-    {
-     "feature": "vol_16",
-     "op": ">",
-     "value": 0.00473
-    }
-   ]
-  },
-  {
-   "name": "avoid r_288 >= -0.004324",
-   "conditions": [
-    {
-     "feature": "r_288",
-     "op": "<",
-     "value": -0.00432
-    }
-   ]
-  },
-  {
-   "name": "avoid vol_96 <= 0.003094",
-   "conditions": [
-    {
-     "feature": "vol_96",
-     "op": ">",
-     "value": 0.00309
-    }
-   ]
+   "name": "unikaj r_96 <= -0.03209",
+   "gain_on_old_data": 0.00102
   }
  ]
 }

@@ -1,0 +1,58 @@
+{
+ "genome": {
+  "style": "position",
+  "threshold": 0.74,
+  "tp": 2.8,
+  "sl": 1.4,
+  "hold": 1.5,
+  "size": 0.25,
+  "rules": [
+   {
+    "feature": "btc_vol96",
+    "op": ">",
+    "value": 0.0024
+   },
+   {
+    "feature": "d_ema50",
+    "op": "<",
+    "value": -0.01048
+   }
+  ],
+  "id": "dc779806ba",
+  "parent": "eacd15ce6f",
+  "origin": "mutation: add_rule"
+ },
+ "stats": {
+  "search": {
+   "trades": 251,
+   "avg": 0.02891,
+   "win_rate": 0.5817,
+   "growth": 1.71814,
+   "score": 1.29778
+  },
+  "select": {
+   "trades": 72,
+   "avg": 0.00374,
+   "win_rate": 0.6944,
+   "growth": 0.05887,
+   "score": -0.07149
+  },
+  "holdout": {
+   "trades": 26,
+   "avg": 0.03163,
+   "win_rate": 0.5769,
+   "growth": 0.20053,
+   "score": 0.1068
+  }
+ },
+ "edge": false,
+ "baseline": {
+  "search": -0.00293,
+  "select": -0.00547,
+  "holdout": 0.00368
+ },
+ "description": "position style, buy when the model is at least 74% sure, target 2.8x / stop 1.4x the expected move, hold up to 72 h, 25% of equity per trade, only if btc_vol96 > 0.0024 and d_ema50 < -0.01048",
+ "model_version": 3,
+ "generation": 1,
+ "since": 1790507257986
+}

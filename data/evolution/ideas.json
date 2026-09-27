@@ -1,0 +1,42 @@
+{
+ "7e033d1230": {
+  "name": "Reject crowded, expanding-volatility signals",
+  "source": "internet research: Crypto Fear & Greed index at 70\u201378 'Greed' plus the Decrypt report that Bitcoin ETFs have a seven-day winning streak with nearly $3B of inflows; the Babypips recap noting the week's",
+  "rule": "rsi < 0.7 and vol_ratio < 1 and vz < 1",
+  "why": "In a Greed regime with a crowded ETF inflow streak, the bot's momentum signals are likely riding a crowded trade. Requiring RSI below 0.7 (not overbought), short volatility below long volatility (volatility not rising), and volume below the 24h average (no unusual participation) removes signals that",
+  "gain": 0.00419,
+  "tested_at": 1790507257986,
+  "model_version": 3,
+  "adopted": false
+ },
+ "193275c297": {
+  "name": "Reject momentum that is Bitcoin-led but not relative",
+  "source": "internet research: The Decrypt report on Bitcoin ETFs' seven-day winning streak and the Cointelegraph note that Treasury yields hit multi-decade highs, dragging the dollar up and stocks lower.",
+  "rule": "btc_r96 > 0 and rel_r96 < 0",
+  "why": "If Bitcoin is rallying on ETF inflows while the altcoin is underperforming it, the bot's signal is likely chasing the Bitcoin beta rather than coin-specific alpha. Requiring the coin's 24h return to be positive while its relative-to-Bitcoin return is negative filters out signals that are just riding",
+  "gain": 0.00165,
+  "tested_at": 1790507257986,
+  "model_version": 3,
+  "adopted": false
+ },
+ "18364120b4": {
+  "name": "Reject short-term trend against the long-term trend",
+  "source": "internet research: The Babypips TA Alert on LTC/USD making a huge move after a steady climb, and the Decrypt report on the Clarity Act failing in the Senate with the SEC, CFTC, and Fed moving to write",
+  "rule": "d_ema50 > 0 and d_ema200 < 0",
+  "why": "A short-term uptrend against a downtrend is a classic reversal trap, especially when regulatory headlines are dominating the news cycle. Requiring the price to be above its 50-candle average while below its 200-candle average rejects signals that are chasing a short-term bounce in a longer-term down",
+  "gain": 0.01243,
+  "tested_at": 1790507257986,
+  "model_version": 3,
+  "adopted": false
+ },
+ "2445ef8fc5": {
+  "name": "unikaj r_96 <= -0.03209",
+  "source": "own mistakes (auto)",
+  "rule": "r_96 > -0.03209",
+  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
+  "gain": 0.00604,
+  "tested_at": 1790507257986,
+  "model_version": 3,
+  "adopted": false
+ }
+}
