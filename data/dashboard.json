@@ -1,9 +1,9 @@
 {
- "generated_at": 1790514367461,
- "last_candle": 1790513100000,
+ "generated_at": 1790515905663,
+ "last_candle": 1790514900000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
- "benchmark_return": -0.0012999999999999678,
+ "benchmark_return": 0.00038000000000004697,
  "series": [
   [
    1790508600000,
@@ -39,6 +39,18 @@
    1790513100000,
    1000.0,
    998.7,
+   1000.0
+  ],
+  [
+   1790514000000,
+   1000.0,
+   996.91,
+   1000.0
+  ],
+  [
+   1790514900000,
+   1000.0,
+   1000.38,
    1000.0
   ]
  ],
@@ -87,8 +99,8 @@
    },
    {
     "name": "Lepiej ni\u017c samo trzymanie BTC",
-    "ok": true,
-    "value": "+0.1 pkt"
+    "ok": false,
+    "value": "-0.0 pkt"
    },
    {
     "name": "Najwi\u0119kszy spadek mniejszy ni\u017c 20%",
@@ -336,91 +348,91 @@
  },
  "signals": {
   "BTC": {
-   "p": 0.3567,
+   "p": 0.3418,
    "threshold": 0.79,
    "action": "wait",
-   "ts": 1790513100000
+   "ts": 1790514900000
   },
   "ETH": {
-   "p": 0.6138,
+   "p": 0.5429,
    "threshold": 0.79,
    "action": "wait",
-   "ts": 1790513100000
+   "ts": 1790514900000
   },
   "SOL": {
-   "p": 0.4762,
+   "p": 0.5193,
    "threshold": 0.79,
    "action": "wait",
-   "ts": 1790513100000
+   "ts": 1790514900000
   },
   "XRP": {
-   "p": 0.2575,
+   "p": 0.291,
    "threshold": 0.79,
    "action": "wait",
-   "ts": 1790513100000
+   "ts": 1790514900000
   },
   "DOGE": {
-   "p": 0.3301,
+   "p": 0.2827,
    "threshold": 0.79,
    "action": "wait",
-   "ts": 1790513100000
+   "ts": 1790514900000
   },
   "ADA": {
-   "p": 0.5469,
+   "p": 0.6875,
    "threshold": 0.79,
    "action": "wait",
-   "ts": 1790513100000
+   "ts": 1790514900000
   },
   "BNB": {
-   "p": 0.4735,
+   "p": 0.5041,
    "threshold": 0.79,
    "action": "wait",
-   "ts": 1790513100000
+   "ts": 1790514900000
   },
   "LINK": {
-   "p": 0.7964,
+   "p": 0.7788,
    "threshold": 0.79,
-   "action": "blocked: learned rule 'btc_vol96 > 0.0024'",
-   "ts": 1790513100000
+   "action": "wait",
+   "ts": 1790514900000
   },
   "AVAX": {
-   "p": 0.1157,
+   "p": 0.1125,
    "threshold": 0.79,
    "action": "wait",
-   "ts": 1790513100000
+   "ts": 1790514900000
   },
   "LTC": {
-   "p": 0.7606,
+   "p": 0.5598,
    "threshold": 0.79,
    "action": "wait",
-   "ts": 1790513100000
+   "ts": 1790514900000
   },
   "DOT": {
-   "p": 0.7808,
+   "p": 0.6459,
    "threshold": 0.79,
    "action": "wait",
-   "ts": 1790513100000
+   "ts": 1790514900000
   },
   "TRX": {
-   "p": 0.5163,
+   "p": 0.4826,
    "threshold": 0.79,
    "action": "wait",
-   "ts": 1790513100000
+   "ts": 1790514900000
   }
  },
  "prices": {
-  "BTC": 84802.01,
-  "ETH": 2707.36,
-  "SOL": 123.37,
-  "XRP": 1.5352,
-  "DOGE": 0.09819,
-  "ADA": 0.2562,
-  "BNB": 780.5,
-  "LINK": 14.19,
-  "AVAX": 10.909,
-  "LTC": 71.41,
-  "DOT": 1.242,
-  "TRX": 0.3341
+  "BTC": 84945.01,
+  "ETH": 2709.15,
+  "SOL": 123.06,
+  "XRP": 1.5307,
+  "DOGE": 0.09763,
+  "ADA": 0.256,
+  "BNB": 780.11,
+  "LINK": 14.197,
+  "AVAX": 10.9,
+  "LTC": 71.15,
+  "DOT": 1.239,
+  "TRX": 0.334
  },
  "model": {
   "version": 3,
@@ -510,12 +522,12 @@
   "symbol_bias": {
    "AVAX": "avoid",
    "LTC": "avoid",
-   "TRX": "avoid"
+   "DOT": "avoid"
   },
   "regime": "bull"
  },
  "brain": {
-  "created_at": 1790511314416,
+  "created_at": 1790514942120,
   "source": "local",
   "model": "mimo2.6:9b",
   "directives": {
@@ -524,33 +536,55 @@
    "symbol_bias": {
     "AVAX": "avoid",
     "LTC": "avoid",
-    "TRX": "avoid"
+    "DOT": "avoid"
    },
    "regime": "bull"
   },
-  "reasoning": "Rynek jest w fazie wzrostowej, ale model ma zero zamkni\u0119tych transakcji i edge nie jest udowodniony. Wszystkie sygna\u0142y s\u0105 poni\u017cej progu 0.79, wi\u0119c nie ma \u017cadnych wej\u015b\u0107. AVAX i LTC maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107, wi\u0119c powinny by\u0107 unikane. TRX ma negatywny trend 24h i 30d, wi\u0119c r\u00f3wnie\u017c unikamy. CLM model jest bezu\u017cyteczny, wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje.",
+  "reasoning": "Rynek jest w fazie wzrostowej, ale bez dowodu przewagi modelu. Zero zamkni\u0119tych transakcji i edge False na najnowszych danych to silny sygna\u0142 do utrzymania ostro\u017cnej postawy. Najwy\u017csz\u0105 zmienno\u015b\u0107 maj\u0105 AVAX, LTC i DOT, wi\u0119c je pomijamy.",
   "new_lessons": [
-   "Model ma zero zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 nie zwi\u0119ksza\u0107 ryzyka.",
-   "AVAX (4.7% vol) i LTC (3.0% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj, dop\u00f3ki nie ma dowodu przewagi.",
+   "Model ma 0 zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107.",
+   "AVAX (48.9% 7d, 4.7% vol), LTC (46.4% 7d, 3.0% vol) i DOT (43.5% 7d, 5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj.",
    "CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje."
   ],
   "lessons": [
+   "Model ma 0 zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107.",
+   "AVAX (48.9% 7d, 4.7% vol), LTC (46.4% 7d, 3.0% vol) i DOT (43.5% 7d, 5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj.",
+   "CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje.",
    "Model ma zero zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 nie zwi\u0119ksza\u0107 ryzyka.",
    "AVAX (4.7% vol) i LTC (3.0% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj, dop\u00f3ki nie ma dowodu przewagi.",
-   "CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje.",
    "Wyniki modelu s\u0105 niepewne; zwi\u0119ksz sztywko\u015b\u0107 wej\u015bcia do 74% progu dla pewno\u015bci.",
    "AVAX i LTC maj\u0105 wysok\u0105 volatylno\u015b\u0107 (4.7% i 3.0%) i wymagaj\u0105 stricznego wej\u015bcia.",
    "TRX jest niepewny (30% CLM) i powinien by\u0107 unikany ze wzgl\u0119du na brak stabilno\u015bci.",
    "Model edge is False on newest data; keep entries strict until proven.",
    "Practice account lost 0.11% with zero trades; no live edge exists.",
    "ADA 3.5% vol and SOL 2.6% vol need strict entry thresholds.",
-   "No closed trades yet; keep entries strict until the model shows a proven edge.",
-   "ADA's 3.5% daily volatility and 22.2% 30d return require strict entry thresholds.",
-   "SOL's 2.6% volatility and 14.4% 7d return need reduced exposure to avoid overexposure."
+   "No closed trades yet; keep entries strict until the model shows a proven edge."
   ],
-  "seconds": 23.2
+  "seconds": 5.6
  },
  "brain_journal": [
+  {
+   "created_at": 1790514942120,
+   "source": "local",
+   "model": "mimo2.6:9b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.05,
+    "symbol_bias": {
+     "AVAX": "avoid",
+     "LTC": "avoid",
+     "DOT": "avoid"
+    },
+    "regime": "bull"
+   },
+   "reasoning": "Rynek jest w fazie wzrostowej, ale bez dowodu przewagi modelu. Zero zamkni\u0119tych transakcji i edge False na najnowszych danych to silny sygna\u0142 do utrzymania ostro\u017cnej postawy. Najwy\u017csz\u0105 zmienno\u015b\u0107 maj\u0105 AVAX, LTC i DOT, wi\u0119c je pomijamy.",
+   "new_lessons": [
+    "Model ma 0 zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107.",
+    "AVAX (48.9% 7d, 4.7% vol), LTC (46.4% 7d, 3.0% vol) i DOT (43.5% 7d, 5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj.",
+    "CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje."
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1790511314416,
    "source": "local",
