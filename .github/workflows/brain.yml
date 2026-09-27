@@ -5,6 +5,11 @@ on:
   schedule:
     - cron: "41 */4 * * *"
   workflow_dispatch:
+    inputs:
+      force:
+        description: "Run even if the PC brain reviewed recently"
+        type: boolean
+        default: false
 permissions:
   contents: write
 concurrency:
@@ -26,7 +31,9 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Did the PC brain run recently?
         id: fresh
-        run: python -c "from bot import brain; print('fresh=' + ('yes' if brain.fresh(3) else 'no'))" >> "$GITHUB_OUTPUT"
+        run: |
+          if [ "${{ inputs.force }}" = "true" ]; then echo "fresh=no" >> "$GITHUB_OUTPUT"; exit 0; fi
+          python -c "from bot import brain; print('fresh=' + ('yes' if brain.fresh(3) else 'no'))" >> "$GITHUB_OUTPUT"
       - name: Cache Ollama (CPU build)
         if: steps.fresh.outputs.fresh == 'no'
         uses: actions/cache@v4
