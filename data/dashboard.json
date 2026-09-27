@@ -1,5 +1,5 @@
 {
- "generated_at": 1790499573567,
+ "generated_at": 1790499732090,
  "last_candle": 1790497800000,
  "start_ts": 1790497800000,
  "start_cash": 1000.0,
@@ -174,34 +174,58 @@
   "regime": "bull"
  },
  "brain": {
-  "created_at": 1790499321058,
-  "source": "local",
-  "model": "mimo2.6:9b",
+  "created_at": 1790499732089,
+  "source": "cloud",
+  "model": "qwen3:4b",
   "directives": {
    "risk_level": 0.5,
    "min_confidence_adj": 0.05,
    "symbol_bias": {
-    "BTC": "reduce",
-    "ETH": "reduce",
-    "ADA": "avoid",
-    "SOL": "avoid"
+    "SOL": "reduce",
+    "XRP": "reduce",
+    "ADA": "avoid"
    },
-   "regime": "bull"
+   "regime": "volatile"
   },
-  "reasoning": "The market is in a bullish regime with all major assets showing positive 7d and 30d returns, but the model has no proven edge because both accounts have zero closed trades. I am setting a strict minimum confidence adjustment of 0.05 to avoid false positives. I am avoiding ADA and SOL due to their high daily volatility and strong recent gains, which may indicate a crowded trade. I am reducing exposure to BTC and ETH, which have lower volatility and more stable trends, to protect capital while the model is still unproven.",
+  "reasoning": "Model has no proven edge (win rate 50%), all symbols below 0.8 confidence threshold. Avoid ADA due to high volatility; reduce SOL and XRP to mitigate risk from high volatility and uncertain model performance.",
   "new_lessons": [
-   "No closed trades yet, so no proven edge exists; keep entries strict until the model shows positive results.",
-   "ADA has the highest daily volatility (3.5%) and 30d return (22.8%); avoid it until the model demonstrates an edge.",
-   "SOL has high volatility (2.6%) and a 30d return of 16.8%; reduce exposure or avoid until the model shows an edge."
+   "ADA's 3.5% daily volatility and 22.8% 30d return require strict entry thresholds until model shows edge",
+   "SOL's 2.6% volatility and 16.8% 30d return need reduced exposure to avoid overexposure",
+   "XRP's 59% CLM favourable but low 24h return (-1.2%) suggests caution despite high CLM score"
   ],
   "lessons": [
+   "ADA's 3.5% daily volatility and 22.8% 30d return require strict entry thresholds until model shows edge",
+   "SOL's 2.6% volatility and 16.8% 30d return need reduced exposure to avoid overexposure",
+   "XRP's 59% CLM favourable but low 24h return (-1.2%) suggests caution despite high CLM score",
    "No closed trades yet, so no proven edge exists; keep entries strict until the model shows positive results.",
    "ADA has the highest daily volatility (3.5%) and 30d return (22.8%); avoid it until the model demonstrates an edge.",
    "SOL has high volatility (2.6%) and a 30d return of 16.8%; reduce exposure or avoid until the model shows an edge."
   ],
-  "seconds": 6.0
+  "seconds": 86.1
  },
  "brain_journal": [
+  {
+   "created_at": 1790499732089,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "directives": {
+    "risk_level": 0.5,
+    "min_confidence_adj": 0.05,
+    "symbol_bias": {
+     "SOL": "reduce",
+     "XRP": "reduce",
+     "ADA": "avoid"
+    },
+    "regime": "volatile"
+   },
+   "reasoning": "Model has no proven edge (win rate 50%), all symbols below 0.8 confidence threshold. Avoid ADA due to high volatility; reduce SOL and XRP to mitigate risk from high volatility and uncertain model performance.",
+   "new_lessons": [
+    "ADA's 3.5% daily volatility and 22.8% 30d return require strict entry thresholds until model shows edge",
+    "SOL's 2.6% volatility and 16.8% 30d return need reduced exposure to avoid overexposure",
+    "XRP's 59% CLM favourable but low 24h return (-1.2%) suggests caution despite high CLM score"
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1790499321058,
    "source": "local",
