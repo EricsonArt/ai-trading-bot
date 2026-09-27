@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Trading Bot</title>
+<meta name="description" content="Live dashboard of a self-learning crypto paper-trading bot (fake money).">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232a78d6'/><path d='M6 22l6-7 5 4 9-11' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7; --surface: #fcfcfb; --raised: #ffffff;
+  --ink: #0b0b0b; --ink-2: #52514e; --muted: #898781;
+  --grid: #e1e0d9; --axis: #c3c2b7; --ring: rgba(11,11,11,0.10);
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a;
+  --good: #006300; --bad: #d03b3b; --warn-bg: #fff6e0; --warn-ink: #7a5200;
+  --meter-track: #cde2fb; --meter-fill: #2a78d6; --meter-mark: #0b0b0b;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface: #1a1a19; --raised: #222221;
+    --ink: #ffffff; --ink-2: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10);
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70;
+    --good: #0ca30c; --bad: #e66767; --warn-bg: #2e2510; --warn-ink: #fab219;
+    --meter-track: #104281; --meter-fill: #5598e7; --meter-mark: #ffffff;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d; --surface: #1a1a19; --raised: #222221;
+  --ink: #ffffff; --ink-2: #c3c2b7; --muted: #898781;
+  --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10);
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70;
+  --good: #0ca30c; --bad: #e66767; --warn-bg: #2e2510; --warn-ink: #fab219;
+  --meter-track: #104281; --meter-fill: #5598e7; --meter-mark: #ffffff;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 20px 16px 48px; }
+header { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+h1 { font-size: 20px; margin: 0; font-weight: 650; }
+h2 { font-size: 15px; margin: 0 0 12px; font-weight: 650; }
+.sub { color: var(--ink-2); font-size: 13px; }
+.pill { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; padding: 4px 10px;
+  border-radius: 999px; background: var(--surface); box-shadow: inset 0 0 0 1px var(--ring); color: var(--ink-2); }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); }
+.dot.live { background: var(--good); } .dot.stale { background: var(--bad); }
+button.theme { border: 0; background: var(--surface); color: var(--ink-2); box-shadow: inset 0 0 0 1px var(--ring);
+  border-radius: 999px; padding: 4px 10px; font: inherit; font-size: 13px; cursor: pointer; }
+.note { margin: 14px 0 18px; padding: 10px 14px; border-radius: 10px; background: var(--warn-bg); color: var(--warn-ink); font-size: 13px; }
+.grid { display: grid; gap: 14px; }
+.kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 860px) { .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } .two { grid-template-columns: 1fr; } }
+.card { background: var(--surface); border-radius: 14px; box-shadow: inset 0 0 0 1px var(--ring); padding: 16px; min-width: 0; }
+.tile .label { color: var(--ink-2); font-size: 13px; }
+.tile .value { font-size: 26px; font-weight: 650; margin-top: 2px; }
+.tile .delta { font-size: 13px; margin-top: 2px; color: var(--ink-2); }
+.up { color: var(--good); } .down { color: var(--bad); }
+.hero .value { font-size: 34px; }
+@media (max-width: 520px) { .tile .value { font-size: 21px; } .hero .value { font-size: 24px; } .card { padding: 14px; } }
+section { margin-top: 14px; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 10px; font-size: 13px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.key { width: 14px; height: 3px; border-radius: 2px; display: inline-block; }
+.chartbox { position: relative; height: 300px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 8px; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+td { padding: 7px 8px; border-bottom: 1px solid var(--grid); font-variant-numeric: tabular-nums; vertical-align: middle; }
+tr:last-child td { border-bottom: 0; }
+.scroll { overflow-x: auto; }
+.meter { position: relative; height: 8px; border-radius: 4px; background: var(--meter-track); min-width: 90px; }
+.meter i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; background: var(--meter-fill); }
+.meter b { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--meter-mark); border-radius: 1px; }
+.tag { font-size: 11px; padding: 1px 7px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--ring); color: var(--ink-2); white-space: nowrap; }
+.status { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; }
+.lessons { margin: 8px 0 0; padding-left: 18px; color: var(--ink-2); font-size: 14px; }
+.lessons li { margin: 3px 0; }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; font-size: 13px; }
+.kv dt { color: var(--muted); } .kv dd { margin: 0; }
+.muted { color: var(--muted); } .empty { color: var(--muted); font-size: 13px; padding: 6px 0; }
+.tabs { display: flex; gap: 6px; margin-bottom: 10px; }
+.tabs button { border: 0; font: inherit; font-size: 13px; padding: 4px 12px; border-radius: 999px; cursor: pointer;
+  background: transparent; color: var(--ink-2); box-shadow: inset 0 0 0 1px var(--ring); }
+.tabs button[aria-selected="true"] { background: var(--ink); color: var(--page); box-shadow: none; }
+details summary { cursor: pointer; color: var(--ink-2); font-size: 14px; }
+details p, details li { color: var(--ink-2); font-size: 14px; }
+footer { margin-top: 28px; color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>AI Trading Bot</h1>
+      <div class="sub">Self-learning crypto trader · paper money · runs 24/7 in the cloud</div>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center">
+      <span class="pill" id="status"><span class="dot"></span><span>Loading…</span></span>
+      <button class="theme" id="themeBtn" aria-label="Toggle light or dark theme">Theme</button>
+    </div>
+  </header>
+
+  <div class="note">Fake money only ($1,000 per account). Nothing here is financial advice, and paper results
+    do not predict real results. Real trading has extra risks this simulation cannot show.</div>
+
+  <div class="grid kpis" id="kpis"></div>
+
+  <section class="card">
+    <h2>Account value since start</h2>
+    <div class="legend" id="legend"></div>
+    <div class="chartbox"><canvas id="equity" aria-label="Account value over time"></canvas></div>
+  </section>
+
+  <section class="grid two">
+    <div class="card">
+      <h2>What the AI sees right now</h2>
+      <div class="scroll"><table id="signals"></table></div>
+      <div class="sub" style="margin-top:8px">Bar = model's probability that buying now ends in profit after fees.
+        Black mark = the confidence it needs before it buys.</div>
+    </div>
+    <div class="card">
+      <h2>Brain (LLM review)</h2>
+      <div id="brain"></div>
+    </div>
+  </section>
+
+  <section class="grid two">
+    <div class="card">
+      <h2>Open positions</h2>
+      <div class="scroll"><table id="positions"></table></div>
+    </div>
+    <div class="card">
+      <h2>How the model is learning</h2>
+      <div id="model"></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Closed trades</h2>
+    <div class="tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-acct="main">Main account</button>
+      <button role="tab" aria-selected="false" data-acct="practice">Practice account</button>
+    </div>
+    <div class="scroll"><table id="trades"></table></div>
+  </section>
+
+  <section class="grid two">
+    <div class="card">
+      <h2>CLM second opinion</h2>
+      <div id="clm"></div>
+    </div>
+    <div class="card">
+      <h2>Replay of the last months</h2>
+      <div id="backtest"></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <details>
+      <summary>How this works</summary>
+      <ul>
+        <li><b>Every 15 minutes</b> (GitHub's free cloud, so your PC can be off) the bot downloads real prices for BTC, ETH, SOL, XRP, DOGE and ADA and lets the fast model decide.</li>
+        <li><b>The fast model</b> learns from 3 years of real market data what happens after each situation, and retrains itself every 12 hours on the newest outcomes. It is tested on data it never saw. It only counts as having an "edge" if its picks beat simply buying every time.</li>
+        <li><b>Main account</b> trades only while that edge is proven. <b>Practice account</b> trades every signal so the AI keeps practising and its real skill is measured live.</li>
+        <li><b>The brain</b> is an LLM (your local <i>mimo2.6</i> when your PC is on, a small free model in the cloud otherwise). It reviews results, writes lessons into its memory, and can lower risk or skip coins.</li>
+        <li><b>CLM</b> (your Contrastive Language Model) gives an independent second opinion every 4 hours while the PC is on. Its accuracy is tracked here before anyone trusts it.</li>
+        <li><b>Costs are simulated:</b> 0.1% fee + 0.05% slippage per trade, stop-loss, take-profit and a time limit on every position.</li>
+      </ul>
+    </details>
+  </section>
+  <footer id="footer"></footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script>
+const REPO = "EricsonArt/ai-trading-bot";
+const params = new URLSearchParams(location.search);
+const DATA_URL = params.has("local") ? "../data/dashboard.json" : `https://raw.githubusercontent.com/${REPO}/main/data/dashboard.json`;
+const $ = id => document.getElementById(id);
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const money = v => "$" + Number(v).toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
+const pct = (v, d = 2) => (v >= 0 ? "+" : "−") + Math.abs(100 * v).toFixed(d) + "%";
+const cls = v => v > 0 ? "up" : v < 0 ? "down" : "";
+const price = v => v >= 100 ? v.toLocaleString("en-US", {maximumFractionDigits: 2}) : Number(v).toPrecision(5);
+const when = ms => new Date(ms).toLocaleString(undefined, {month: "short", day: "numeric", hour: "2-digit", minute: "2-digit"});
+const ago = ms => { const m = Math.round((Date.now() - ms) / 60000);
+  return m < 1 ? "just now" : m < 60 ? m + " min ago" : m < 1440 ? Math.round(m / 60) + " h ago" : Math.round(m / 1440) + " d ago"; };
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+let D = null, chart = null, tradesAcct = "main";
+
+// theme toggle (remembered per browser)
+try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+$("themeBtn").onclick = () => {
+  const dark = document.documentElement.dataset.theme ? document.documentElement.dataset.theme === "dark"
+    : matchMedia("(prefers-color-scheme: dark)").matches;
+  document.documentElement.dataset.theme = dark ? "light" : "dark";
+  try { localStorage.setItem("theme", document.documentElement.dataset.theme); } catch (e) {}
+  if (D) renderChart();
+};
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => D && renderChart());
+
+function tile(label, value, delta, extra = "") {
+  return `<div class="card tile ${extra}"><div class="label">${label}</div><div class="value">${value}</div><div class="delta">${delta}</div></div>`;
+}
+
+function renderKpis() {
+  const m = D.main, p = D.practice, edge = D.model && D.model.edge;
+  $("kpis").innerHTML =
+    tile("Main account", money(m.equity), `<span class="${cls(m.return)}">${pct(m.return)}</span> since start`, "hero") +
+    tile("Practice account", money(p.equity), `<span class="${cls(p.return)}">${pct(p.return)}</span> · ${p.stats.all.trades || 0} trades`) +
+    tile("If you just held BTC", money(D.start_cash * (1 + D.benchmark_return)), `<span class="${cls(D.benchmark_return)}">${pct(D.benchmark_return)}</span> same period`) +
+    tile("Model edge", `<span class="status">${edge ? "✓ Proven" : "✕ Not yet"}</span>`,
+      edge ? "Main account is trading" : "Main account waits in cash; practice account learns");
+}
+
+function renderChart() {
+  const s = D.series;
+  const series = [
+    {label: "Main account", color: css("--s1"), idx: 1},
+    {label: "Practice account", color: css("--s2"), idx: 3},
+    {label: "BTC buy & hold", color: css("--s3"), idx: 2},
+  ];
+  const last = s[s.length - 1] || [];
+  $("legend").innerHTML = series.map(x => `<span><i class="key" style="background:${x.color}"></i>${x.label}${last.length ? " · " + money(last[x.idx]) : ""}</span>`).join("");
+  const data = {datasets: series.map(x => ({
+    label: x.label, data: s.map(r => ({x: r[0], y: r[x.idx]})), borderColor: x.color, backgroundColor: x.color,
+    borderWidth: 2, pointRadius: 0, pointHoverRadius: 5, pointHoverBorderWidth: 2, pointHoverBorderColor: css("--surface"),
+    tension: 0, borderJoinStyle: "round", borderCapStyle: "round"}))};
+  const opts = {
+    responsive: true, maintainAspectRatio: false, animation: false,
+    interaction: {mode: "index", intersect: false},
+    plugins: {legend: {display: false}, tooltip: {
+      backgroundColor: css("--raised"), titleColor: css("--ink"), bodyColor: css("--ink-2"), borderColor: css("--ring"), borderWidth: 1,
+      padding: 10, usePointStyle: true, boxPadding: 4,
+      callbacks: {title: it => when(it[0].parsed.x), label: it => ` ${it.dataset.label}: ${money(it.parsed.y)}`}}},
+    scales: {
+      x: {type: "linear", grid: {display: false}, border: {color: css("--axis")},
+        ticks: {color: css("--muted"), maxTicksLimit: 6, callback: v => new Date(v).toLocaleDateString(undefined, {month: "short", day: "numeric"})}},
+      y: {grid: {color: css("--grid")}, border: {display: false},
+        ticks: {color: css("--muted"), maxTicksLimit: 6, callback: v => "$" + Number(v).toLocaleString("en-US")}}}};
+  if (s.length) { opts.scales.x.min = s[0][0]; opts.scales.x.max = s[s.length - 1][0]; }
+  if (s.length < 2) { opts.scales.y.suggestedMin = D.start_cash * 0.98; opts.scales.y.suggestedMax = D.start_cash * 1.02; }
+  if (chart) chart.destroy();
+  chart = new Chart($("equity"), {type: "line", data, options: opts});
+}
+
+function renderSignals() {
+  const rows = Object.entries(D.signals || {});
+  if (!rows.length) { $("signals").innerHTML = `<tr><td class="empty">Waiting for the first cycle…</td></tr>`; return; }
+  $("signals").innerHTML = `<tr><th>Coin</th><th>Price</th><th style="width:40%">Chance of profit</th><th>Decision</th></tr>` +
+    rows.map(([sym, v]) => `<tr><td><b>${sym}</b></td><td>${D.prices && D.prices[sym] != null ? price(D.prices[sym]) : "—"}</td>
+      <td><div style="display:flex;align-items:center;gap:8px"><div class="meter" style="flex:1" title="${(100 * v.p).toFixed(0)}% (needs ${(100 * v.threshold).toFixed(0)}%)">
+        <i style="width:${Math.min(100, 100 * v.p)}%"></i><b style="left:calc(${Math.min(100, 100 * v.threshold)}% - 1px)"></b></div>
+        <span>${(100 * v.p).toFixed(0)}%</span></div></td>
+      <td class="muted">${esc(v.action)}</td></tr>`).join("");
+}
+
+function renderPositions() {
+  const rows = [...D.main.positions.map(p => ({...p, acct: "Main"})), ...D.practice.positions.map(p => ({...p, acct: "Practice"}))];
+  if (!rows.length) { $("positions").innerHTML = `<tr><td class="empty">No open positions right now.</td></tr>`; return; }
+  $("positions").innerHTML = `<tr><th>Coin</th><th>Account</th><th>Bought</th><th>Now</th><th>P/L</th><th>Stop / target</th><th>Time left</th></tr>` +
+    rows.map(p => `<tr><td><b>${p.symbol}</b></td><td><span class="tag">${p.acct}</span></td><td>${price(p.entry_px)}</td><td>${price(p.price)}</td>
+      <td class="${cls(p.pnl_pct)}">${pct(p.pnl_pct)}</td><td class="muted">${price(p.sl_px)} / ${price(p.tp_px)}</td>
+      <td class="muted">${Math.max(0, (p.horizon - p.held) * 15 / 60).toFixed(0)} h</td></tr>`).join("");
+}
+
+function renderBrain() {
+  const b = D.brain;
+  if (!b || !b.created_at) { $("brain").innerHTML = `<div class="empty">The brain has not reviewed the bot yet. First review within a few hours.</div>`; return; }
+  const d = b.directives || {}, bias = Object.entries(d.symbol_bias || {});
+  $("brain").innerHTML = `<div class="sub">${b.source === "local" ? "Your PC" : "Cloud"} · ${esc(b.model)} · ${ago(b.created_at)}</div>
+    <p style="margin:8px 0">${esc(b.reasoning)}</p>
+    <dl class="kv"><dt>Market regime</dt><dd>${esc(d.regime)}</dd>
+      <dt>Risk level</dt><dd>${Math.round(100 * d.risk_level)}% of normal size</dd>
+      <dt>Entry strictness</dt><dd>${d.min_confidence_adj > 0 ? "+" : ""}${Math.round(100 * d.min_confidence_adj)} pts</dd>
+      <dt>Coin notes</dt><dd>${bias.length ? bias.map(([s, v]) => `${s}: ${v}`).join(", ") : "none"}</dd></dl>
+    ${b.lessons && b.lessons.length ? `<div class="sub" style="margin-top:10px">Lessons in memory</div><ul class="lessons">${b.lessons.slice(0, 6).map(l => `<li>${esc(l)}</li>`).join("")}</ul>` : ""}`;
+}
+
+function renderModel() {
+  const m = D.model;
+  if (!m) { $("model").innerHTML = `<div class="empty">Training the first model…</div>`; return; }
+  const mm = m.metrics[m.variant];
+  const hist = (D.model_history || []).slice(-8).reverse();
+  $("model").innerHTML = `<dl class="kv">
+      <dt>Version</dt><dd>v${m.version} · trained ${ago(m.trained_at)} (every ${D.config.retrain_hours} h)</dd>
+      <dt>Trading style</dt><dd>${esc(m.variant)} · buys above ${Math.round(100 * m.threshold)}% confidence</dd>
+      <dt>Tested on unseen data</dt><dd>${mm.trades} trades · <span class="${cls(mm.avg)}">${pct(mm.avg)}</span> avg per trade
+        vs always-buy <span class="${cls(mm.baseline_avg)}">${pct(mm.baseline_avg)}</span></dd>
+      <dt>Edge</dt><dd><span class="status">${m.edge ? "✓ proven" : "✕ not proven yet"}</span></dd></dl>
+    ${hist.length > 1 ? `<div class="scroll" style="margin-top:10px"><table><tr><th>Ver.</th><th>When</th><th>Style</th><th>Avg/trade (unseen)</th><th>Edge</th></tr>
+      ${hist.map(h => `<tr><td>v${h.version}</td><td class="muted">${when(h.trained_at)}</td><td>${esc(h.variant)}</td>
+        <td class="${cls(h.avg)}">${pct(h.avg)}</td><td>${h.edge ? "✓" : "✕"}</td></tr>`).join("")}</table></div>` : ""}`;
+}
+
+function renderTrades() {
+  document.querySelectorAll(".tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.acct === tradesAcct));
+  const acct = D[tradesAcct], t = acct.trades, st = acct.stats.all;
+  if (!t.length) { $("trades").innerHTML = `<tr><td class="empty">${tradesAcct === "main" ? "No trades yet. The main account only trades once the model proves an edge." : "No closed practice trades yet."}</td></tr>`; return; }
+  $("trades").innerHTML = `<tr><td colspan="7" class="sub">${st.trades} trades · win rate ${Math.round(100 * st.win_rate)}% · total ${money(st.pnl)} · profit factor ${st.profit_factor ?? "—"}</td></tr>
+    <tr><th>Closed</th><th>Coin</th><th>Size</th><th>Result</th><th>P/L</th><th>Why it closed</th><th>Confidence</th></tr>` +
+    t.map(x => `<tr><td class="muted">${when(x.exit_ts)}</td><td><b>${x.symbol}</b></td><td>${money(x.cost)}</td>
+      <td class="${cls(x.net)}">${pct(x.net)}</td><td class="${cls(x.pnl)}">${money(x.pnl)}</td><td class="muted">${esc(x.reason)}</td>
+      <td class="muted">${x.prob != null ? Math.round(100 * x.prob) + "%" : "—"}</td></tr>`).join("");
+}
+document.querySelectorAll(".tabs button").forEach(b => b.onclick = () => { tradesAcct = b.dataset.acct; renderTrades(); });
+
+function renderClm() {
+  const c = D.clm;
+  if (!c || !c.latest) { $("clm").innerHTML = `<div class="empty">CLM answers while your PC is on (every 4 hours).</div>`; return; }
+  const tr = c.track_record;
+  $("clm").innerHTML = `<div class="sub">Asked ${ago(c.updated_at)} · “${esc(c.question.replace("{sym}", "this coin"))}”</div>
+    <div class="scroll"><table style="margin-top:6px"><tr><th>Coin</th><th style="width:60%">CLM says “yes”</th></tr>
+    ${Object.entries(c.latest).map(([s, p]) => `<tr><td><b>${s}</b></td><td><div style="display:flex;align-items:center;gap:8px">
+      <div class="meter" style="flex:1"><i style="width:${100 * p}%"></i><b style="left:calc(50% - 1px)"></b></div><span>${Math.round(100 * p)}%</span></div></td></tr>`).join("")}
+    </table></div>
+    <div class="sub" style="margin-top:8px">${tr ? `Track record: ${tr.n} calls checked · right ${Math.round(100 * tr.accuracy)}% of the time (prices rose after ${Math.round(100 * tr.base_rate)}% of calls)`
+      : "Track record: each call is checked 2 days later. Not enough history yet."}</div>`;
+}
+
+function renderBacktest() {
+  const b = D.backtest;
+  if (!b) { $("backtest").innerHTML = `<div class="empty">No replay yet.</div>`; return; }
+  $("backtest").innerHTML = `<div class="sub">If the practice account (every AI signal) had run for the last ${b.days} days, retraining monthly, never seeing the future:</div>
+    <dl class="kv" style="margin-top:8px">
+      <dt>Result</dt><dd>${money(b.final_equity)} <span class="${cls(b.return)}">(${pct(b.return)})</span></dd>
+      <dt>Worst drop</dt><dd class="down">${pct(b.max_drawdown, 1)}</dd>
+      <dt>Trades</dt><dd>${b.trades} · win rate ${Math.round(100 * b.win_rate)}%</dd>
+      <dt>BTC held instead</dt><dd class="${cls(b.btc_hold)}">${pct(b.btc_hold, 1)}</dd>
+      <dt>All 6 coins held</dt><dd class="${cls(b.all_coins_hold)}">${pct(b.all_coins_hold, 1)}</dd></dl>
+    <div class="sub" style="margin-top:8px">This is why the main account waits for a proven edge.</div>`;
+}
+
+function renderStatus() {
+  const age = Date.now() - D.generated_at, late = age > 45 * 60000;
+  $("status").innerHTML = `<span class="dot ${late ? "stale" : "live"}"></span><span>${late ? "Delayed · updated " : "Live · updated "}${ago(D.generated_at)}</span>`;
+  $("footer").textContent = `Started ${D.start_ts ? when(D.start_ts) : "—"} · last candle ${D.last_candle ? when(D.last_candle + 15 * 60000) : "—"} · data: github.com/${REPO}`;
+}
+
+async function load() {
+  try {
+    const r = await fetch(DATA_URL + (DATA_URL.includes("?") ? "&" : "?") + "t=" + Date.now(), {cache: "no-store"});
+    if (!r.ok) throw new Error(r.status);
+    D = await r.json();
+    renderStatus(); renderKpis(); renderChart(); renderSignals(); renderBrain(); renderPositions(); renderModel(); renderTrades(); renderClm(); renderBacktest();
+  } catch (e) {
+    $("status").innerHTML = `<span class="dot stale"></span><span>Could not load data (${esc(e.message)}) · retrying</span>`;
+  }
+}
+load();
+setInterval(load, 60000);
+</script>
+</body>
+</html>

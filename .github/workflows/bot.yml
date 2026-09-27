@@ -1,0 +1,47 @@
+name: trading-bot
+# One trading cycle every 15 minutes, 24/7, on GitHub's free runners (public repo = unlimited minutes).
+on:
+  schedule:
+    - cron: "4,19,34,49 * * * *"   # off the busy :00 mark; GitHub may still delay runs a few minutes
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: state-writer
+  cancel-in-progress: false
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Restore price history and trained model
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache
+          key: bot-${{ github.run_id }}
+          restore-keys: bot-
+      - name: Trading cycle
+        run: |
+          rm -f .cache/save-me
+          python -m bot run
+      - name: Save price history and model (after a retrain)
+        if: hashFiles('.cache/save-me') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: .cache
+          key: bot-${{ github.run_id }}
+      - name: Commit results
+        run: |
+          git config user.name "trading-bot"
+          git config user.email "trading-bot@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet && exit 0
+          git commit -q -m "cycle $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3 4 5; do git pull -q --rebase && git push -q && exit 0; sleep $((i * 5)); done
+          exit 1

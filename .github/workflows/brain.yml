@@ -1,0 +1,72 @@
+name: cloud-brain
+# Every 4 hours a small open-source LLM (free, runs on the GitHub runner's CPU) reviews the bot.
+# Skipped when the stronger local brain on the PC has reviewed within the last 3 hours.
+on:
+  schedule:
+    - cron: "41 */4 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: state-writer
+  cancel-in-progress: false
+env:
+  OLLAMA_VERSION: "0.34.4"
+  MODEL: "qwen3:4b"
+jobs:
+  think:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Did the PC brain run recently?
+        id: fresh
+        run: python -c "from bot import brain; print('fresh=' + ('yes' if brain.fresh(3) else 'no'))" >> "$GITHUB_OUTPUT"
+      - name: Cache Ollama (CPU build)
+        if: steps.fresh.outputs.fresh == 'no'
+        uses: actions/cache@v4
+        with:
+          path: ~/ollama
+          key: ollama-${{ env.OLLAMA_VERSION }}-cpu
+      - name: Cache model weights
+        if: steps.fresh.outputs.fresh == 'no'
+        uses: actions/cache@v4
+        with:
+          path: ~/.ollama/models
+          key: ollama-model-${{ env.MODEL }}
+      - name: Start Ollama
+        if: steps.fresh.outputs.fresh == 'no'
+        run: |
+          if [ ! -x ~/ollama/bin/ollama ]; then
+            mkdir -p ~/ollama
+            curl -fsSL "https://github.com/ollama/ollama/releases/download/v${OLLAMA_VERSION}/ollama-linux-amd64.tar.zst" \
+              | zstd -d | tar -x -C ~/ollama --exclude='*cuda*' --exclude='*rocm*' --exclude='*vulkan*' --exclude='*mlx*'
+          fi
+          ~/ollama/bin/ollama serve > /tmp/ollama.log 2>&1 &
+          for i in $(seq 1 60); do curl -sf http://127.0.0.1:11434/api/tags > /dev/null && break; sleep 1; done
+          ~/ollama/bin/ollama pull "$MODEL"
+      - name: Restore price history
+        if: steps.fresh.outputs.fresh == 'no'
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache
+          key: bot-${{ github.run_id }}
+          restore-keys: bot-
+      - name: Brain review
+        if: steps.fresh.outputs.fresh == 'no'
+        run: python -m bot brain --model "$MODEL" --source cloud
+      - name: Commit results
+        if: steps.fresh.outputs.fresh == 'no'
+        run: |
+          git config user.name "trading-bot"
+          git config user.email "trading-bot@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet && exit 0
+          git commit -q -m "cloud brain $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3 4 5; do git pull -q --rebase && git push -q && exit 0; sleep $((i * 5)); done
+          exit 1
