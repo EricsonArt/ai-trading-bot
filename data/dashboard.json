@@ -1,9 +1,9 @@
 {
- "generated_at": 1790507258340,
- "last_candle": 1790505000000,
+ "generated_at": 1790507343040,
+ "last_candle": 1790505900000,
  "start_ts": 1790497800000,
  "start_cash": 1000.0,
- "benchmark_return": 0.0012900000000000134,
+ "benchmark_return": 0.0015800000000001369,
  "series": [
   [
    1790497800000,
@@ -58,6 +58,12 @@
    1000.0,
    1001.29,
    999.03
+  ],
+  [
+   1790505900000,
+   1000.0,
+   1001.58,
+   998.87
   ]
  ],
  "main": {
@@ -106,7 +112,7 @@
    {
     "name": "Lepiej ni\u017c samo trzymanie BTC",
     "ok": false,
-    "value": "-0.1 pkt"
+    "value": "-0.2 pkt"
    },
    {
     "name": "Najwi\u0119kszy spadek mniejszy ni\u017c 20%",
@@ -115,21 +121,58 @@
    }
   ]
  },
+ "league": [
+  {
+   "id": "dc779806ba",
+   "role": "champion",
+   "recipe": {
+    "style": "position",
+    "threshold": 0.74,
+    "tp": 2.8,
+    "sl": 1.4,
+    "hold": 1.5,
+    "size": 0.25,
+    "rules": [
+     {
+      "feature": "btc_vol96",
+      "op": ">",
+      "value": 0.0024
+     },
+     {
+      "feature": "d_ema50",
+      "op": "<",
+      "value": -0.01048
+     }
+    ],
+    "id": "dc779806ba",
+    "parent": "eacd15ce6f",
+    "origin": "mutation: add_rule"
+   },
+   "joined": 1790505900000,
+   "equity": 1000.0,
+   "return": 0.0,
+   "trades": 0,
+   "avg": 0.0,
+   "win_rate": 0.0,
+   "open": [],
+   "recent": []
+  }
+ ],
  "practice": {
-  "equity": 999.03,
-  "return": -0.0009700000000000264,
+  "equity": 998.87,
+  "return": -0.0011299999999999644,
   "cash": 790.11,
   "positions": [
    {
     "symbol": "ADA",
     "entry_ts": 1790498700000,
     "entry_px": 0.25702845,
-    "price": 0.2561,
-    "value": 208.92,
-    "pnl_pct": -0.0036122460373551046,
+    "price": 0.2559,
+    "value": 208.76,
+    "pnl_pct": -0.004390370015459388,
     "tp_px": 0.28916055562235443,
     "sl_px": 0.24160503930126992,
-    "held": 8,
+    "held": 9,
     "horizon": 192
    }
   ],
@@ -150,91 +193,91 @@
  },
  "signals": {
   "BTC": {
-   "p": 0.3573,
+   "p": 0.3606,
    "threshold": 0.79,
    "action": "wait",
-   "ts": 1790505000000
+   "ts": 1790505900000
   },
   "ETH": {
-   "p": 0.5303,
+   "p": 0.5306,
    "threshold": 0.79,
    "action": "wait",
-   "ts": 1790505000000
+   "ts": 1790505900000
   },
   "SOL": {
-   "p": 0.555,
+   "p": 0.5471,
    "threshold": 0.79,
    "action": "wait",
-   "ts": 1790505000000
+   "ts": 1790505900000
   },
   "XRP": {
-   "p": 0.3481,
+   "p": 0.2565,
    "threshold": 0.79,
    "action": "wait",
-   "ts": 1790505000000
+   "ts": 1790505900000
   },
   "DOGE": {
-   "p": 0.3413,
+   "p": 0.3871,
    "threshold": 0.79,
    "action": "wait",
-   "ts": 1790505000000
+   "ts": 1790505900000
   },
   "ADA": {
-   "p": 0.6568,
+   "p": 0.643,
    "threshold": 0.79,
    "action": "wait",
-   "ts": 1790505000000
+   "ts": 1790505900000
   },
   "BNB": {
-   "p": 0.4524,
+   "p": 0.487,
    "threshold": 0.79,
    "action": "wait",
-   "ts": 1790505000000
+   "ts": 1790505900000
   },
   "LINK": {
-   "p": 0.655,
+   "p": 0.6171,
    "threshold": 0.79,
    "action": "wait",
-   "ts": 1790505000000
+   "ts": 1790505900000
   },
   "AVAX": {
-   "p": 0.1066,
+   "p": 0.1061,
    "threshold": 0.79,
    "action": "wait",
-   "ts": 1790505000000
+   "ts": 1790505900000
   },
   "LTC": {
-   "p": 0.6712,
+   "p": 0.6899,
    "threshold": 0.79,
    "action": "wait",
-   "ts": 1790505000000
+   "ts": 1790505900000
   },
   "DOT": {
-   "p": 0.7237,
+   "p": 0.6965,
    "threshold": 0.79,
    "action": "wait",
-   "ts": 1790505000000
+   "ts": 1790505900000
   },
   "TRX": {
-   "p": 0.4879,
+   "p": 0.4706,
    "threshold": 0.79,
    "action": "wait",
-   "ts": 1790505000000
+   "ts": 1790505900000
   }
  },
  "prices": {
-  "BTC": 84858.01,
-  "ETH": 2709.42,
-  "SOL": 124.0,
-  "XRP": 1.5364,
-  "DOGE": 0.09768,
-  "ADA": 0.2561,
-  "BNB": 779.56,
-  "LINK": 14.342,
-  "AVAX": 11.015,
-  "LTC": 71.65,
-  "DOT": 1.25,
-  "TRX": 0.3337
+  "BTC": 84883.0,
+  "ETH": 2710.28,
+  "SOL": 124.04,
+  "XRP": 1.5383,
+  "DOGE": 0.09769,
+  "ADA": 0.2559,
+  "BNB": 778.85,
+  "LINK": 14.354,
+  "AVAX": 11.023,
+  "LTC": 71.57,
+  "DOT": 1.249,
+  "TRX": 0.3339
  },
  "model": {
   "version": 3,
