@@ -1,26 +1,28 @@
 {
- "created_at": 1790505652759,
+ "created_at": 1790507671308,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 7.5,
+ "seconds": 7.0,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
    "ETH": "reduce",
    "ADA": "avoid",
-   "SOL": "avoid",
-   "XRP": "avoid"
+   "SOL": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "The model has no proven edge: 535 trades, 48% win rate, avg +0.21%/trade vs always-buy -0.22%/trade, and edge proven: False. The practice account is down 0.16% with 0 closed trades, so there is no evidence of a working strategy. The market is in a Greed regime with Fear & Greed at 70, and the news cycle is dominated by regulatory and custody headlines, which increases tail risk. The model's current probabilities are all below the 0.81 threshold, with ADA at 0.74, the closest but still below. The losing signals show that losers have lower volatility and better recent returns, which is counterintuitive and suggests the model may be overfitting to noise. Given all these factors, I recommend reducing risk and avoiding the highest-risk symbols.",
+ "reasoning": "Regime: Greed (Fear & Greed 70), crowded positioning with regulatory tail risk. Model edge is False on newest data (26 trades, avg +3.16%/trade vs always-buy +0.37%), so no live edge exists. Practice account lost 0.11% with zero trades. Reduce risk: keep entries strict, avoid high-volatility symbols ADA (3.5% daily vol) and SOL (2.6% daily vol).",
  "new_lessons": [
-  "No closed trades yet; keep entries strict until the model shows a proven edge.",
-  "ADA's 3.5% daily volatility and 22.2% 30d return require strict entry thresholds.",
-  "SOL's 2.6% volatility and 14.4% 7d return need reduced exposure to avoid overexposure."
+  "Model edge is False on newest data; keep entries strict until proven.",
+  "Practice account lost 0.11% with zero trades; no live edge exists.",
+  "ADA 3.5% vol and SOL 2.6% vol need strict entry thresholds."
  ],
  "lessons": [
+  "Model edge is False on newest data; keep entries strict until proven.",
+  "Practice account lost 0.11% with zero trades; no live edge exists.",
+  "ADA 3.5% vol and SOL 2.6% vol need strict entry thresholds.",
   "No closed trades yet; keep entries strict until the model shows a proven edge.",
   "ADA's 3.5% daily volatility and 22.2% 30d return require strict entry thresholds.",
   "SOL's 2.6% volatility and 14.4% 7d return need reduced exposure to avoid overexposure.",
@@ -29,9 +31,7 @@
   "XRP's 59% CLM favourable but low 24h return (-1.2%) suggests caution despite high CLM score",
   "ADA's 3.5% daily volatility and 22.8% 30d return require strict entry thresholds until model shows edge",
   "SOL's 2.6% volatility and 16.8% 30d return need reduced exposure to avoid overexposure",
-  "No closed trades yet, so no proven edge exists; keep entries strict until the model shows positive results.",
-  "ADA has the highest daily volatility (3.5%) and 30d return (22.8%); avoid it until the model demonstrates an edge.",
-  "SOL has high volatility (2.6%) and a 30d return of 16.8%; reduce exposure or avoid until the model shows an edge."
+  "No closed trades yet, so no proven edge exists; keep entries strict until the model shows positive results."
  ],
  "equity_at": 1000.0
 }
