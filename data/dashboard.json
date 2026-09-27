@@ -1,5 +1,5 @@
 {
- "generated_at": 1790508984299,
+ "generated_at": 1790509663141,
  "last_candle": 1790507700000,
  "start_ts": 1790497800000,
  "start_cash": 1000.0,
@@ -554,26 +554,31 @@
   "regime": "bear"
  },
  "brain": {
-  "created_at": 1790507671308,
-  "source": "local",
-  "model": "mimo2.6:9b",
+  "created_at": 1790509663139,
+  "source": "cloud",
+  "model": "qwen3:4b",
   "directives": {
    "risk_level": 0.2,
    "min_confidence_adj": 0.05,
    "symbol_bias": {
-    "ETH": "reduce",
-    "ADA": "avoid",
-    "SOL": "avoid"
+    "SOL": "reduce",
+    "ADA": "reduce",
+    "AVAX": "avoid",
+    "LTC": "avoid",
+    "TRX": "avoid"
    },
-   "regime": "bear"
+   "regime": "volatile"
   },
-  "reasoning": "Regime: Greed (Fear & Greed 70), crowded positioning with regulatory tail risk. Model edge is False on newest data (26 trades, avg +3.16%/trade vs always-buy +0.37%), so no live edge exists. Practice account lost 0.11% with zero trades. Reduce risk: keep entries strict, avoid high-volatility symbols ADA (3.5% daily vol) and SOL (2.6% daily vol).",
+  "reasoning": "Model nie ma potwierdzonego edge na nowych danych (26 trades, avg +3.16%/trade vs always-buy +0.37%), a wszystkie symbole maj\u0105 poni\u017cej 79% progu. Wysoka volatylno\u015b\u0107 (AVAX 4.7%, LTC 3.0%) i brak zysk\u00f3w w ostatnich 24h wskazuj\u0105 na niepewno\u015b\u0107 rynku. Zmniejszono ryzyko dla SOL i ADA, a AVAX, LTC i TRX s\u0105 unikane ze wzgl\u0119du na wysok\u0105 volatylno\u015b\u0107 i nisk\u0105 pewno\u015b\u0107 modelu.",
   "new_lessons": [
-   "Model edge is False on newest data; keep entries strict until proven.",
-   "Practice account lost 0.11% with zero trades; no live edge exists.",
-   "ADA 3.5% vol and SOL 2.6% vol need strict entry thresholds."
+   "Wyniki modelu s\u0105 niepewne; zwi\u0119ksz sztywko\u015b\u0107 wej\u015bcia do 74% progu dla pewno\u015bci.",
+   "AVAX i LTC maj\u0105 wysok\u0105 volatylno\u015b\u0107 (4.7% i 3.0%) i wymagaj\u0105 stricznego wej\u015bcia.",
+   "TRX jest niepewny (30% CLM) i powinien by\u0107 unikany ze wzgl\u0119du na brak stabilno\u015bci."
   ],
   "lessons": [
+   "Wyniki modelu s\u0105 niepewne; zwi\u0119ksz sztywko\u015b\u0107 wej\u015bcia do 74% progu dla pewno\u015bci.",
+   "AVAX i LTC maj\u0105 wysok\u0105 volatylno\u015b\u0107 (4.7% i 3.0%) i wymagaj\u0105 stricznego wej\u015bcia.",
+   "TRX jest niepewny (30% CLM) i powinien by\u0107 unikany ze wzgl\u0119du na brak stabilno\u015bci.",
    "Model edge is False on newest data; keep entries strict until proven.",
    "Practice account lost 0.11% with zero trades; no live edge exists.",
    "ADA 3.5% vol and SOL 2.6% vol need strict entry thresholds.",
@@ -582,14 +587,35 @@
    "SOL's 2.6% volatility and 14.4% 7d return need reduced exposure to avoid overexposure.",
    "ADA's 3.5% daily volatility and 22.6% 30d return require strict entry thresholds until the model shows edge",
    "SOL's 2.6% volatility and 15.0% 7d return need reduced exposure to avoid overexposure",
-   "XRP's 59% CLM favourable but low 24h return (-1.2%) suggests caution despite high CLM score",
-   "ADA's 3.5% daily volatility and 22.8% 30d return require strict entry thresholds until model shows edge",
-   "SOL's 2.6% volatility and 16.8% 30d return need reduced exposure to avoid overexposure",
-   "No closed trades yet, so no proven edge exists; keep entries strict until the model shows positive results."
+   "XRP's 59% CLM favourable but low 24h return (-1.2%) suggests caution despite high CLM score"
   ],
-  "seconds": 7.0
+  "seconds": 179.6
  },
  "brain_journal": [
+  {
+   "created_at": 1790509663139,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.05,
+    "symbol_bias": {
+     "SOL": "reduce",
+     "ADA": "reduce",
+     "AVAX": "avoid",
+     "LTC": "avoid",
+     "TRX": "avoid"
+    },
+    "regime": "volatile"
+   },
+   "reasoning": "Model nie ma potwierdzonego edge na nowych danych (26 trades, avg +3.16%/trade vs always-buy +0.37%), a wszystkie symbole maj\u0105 poni\u017cej 79% progu. Wysoka volatylno\u015b\u0107 (AVAX 4.7%, LTC 3.0%) i brak zysk\u00f3w w ostatnich 24h wskazuj\u0105 na niepewno\u015b\u0107 rynku. Zmniejszono ryzyko dla SOL i ADA, a AVAX, LTC i TRX s\u0105 unikane ze wzgl\u0119du na wysok\u0105 volatylno\u015b\u0107 i nisk\u0105 pewno\u015b\u0107 modelu.",
+   "new_lessons": [
+    "Wyniki modelu s\u0105 niepewne; zwi\u0119ksz sztywko\u015b\u0107 wej\u015bcia do 74% progu dla pewno\u015bci.",
+    "AVAX i LTC maj\u0105 wysok\u0105 volatylno\u015b\u0107 (4.7% i 3.0%) i wymagaj\u0105 stricznego wej\u015bcia.",
+    "TRX jest niepewny (30% CLM) i powinien by\u0107 unikany ze wzgl\u0119du na brak stabilno\u015bci."
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1790507671308,
    "source": "local",
@@ -1959,11 +1985,11 @@
    ]
   },
   "research": {
-   "created_at": 1790502014560,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "seconds": 9.7,
-   "digest": "Crypto Fear & Greed is stuck in the 70\u201378 'Greed' band, so the market is complacent and the bot's recent misses are likely being amplified by crowded positioning rather than fresh alpha. The news cycle is dominated by regulatory and custody headlines \u2014 SEC Commissioner Hester Peirce departing Oct 2, a CFTC suit over a $950M crypto-linked forex scheme, and an $83M XRP theft that cannot be frozen \u2014 all of which are tail-risk events that can blow up a long position in a single session. Bitcoin ETFs have had a seven-day winning streak with nearly $3B of inflows, which is a crowded, high-volatility setup where momentum can reverse fast. The takeaway for a paper-trading bot: in a Greed regime, the highest-value filter is not another momentum rule but a regime check that refuses to add risk when the market is already crowded and the news is regulatory.",
+   "created_at": 1790509481302,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "seconds": 418.2,
+   "digest": "W dzisiejszych rynkach kryminalnych i regulacyjnych, Bitcoin ETFs zyskuj\u0105 7 dni podci\u0105gi, ale krytyczne s\u0105 ryzyka zwi\u0105zane z regulacj\u0105 i zabezpieczeniami. Wskaz\u00f3wka: zabezpiecz si\u0119 przed zbyt du\u017c\u0105 volatylno\u015bci\u0105 i brakiem konsystencji w trendach.",
    "mood": "greed",
    "fng": [
     {
@@ -2044,6 +2070,11 @@
     },
     {
      "kind": "Cointelegraph",
+     "title": "Riot Platforms repays $200M credit facility, releases collateral",
+     "url": "https://cointelegraph.com/news/riot-platforms-repays-200m-credit-facility-releases-collateral?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+    },
+    {
+     "kind": "Cointelegraph",
      "title": "Saylor outlines \u2018bill of digital rights\u2019 to help build prosperity in future economy",
      "url": "https://cointelegraph.com/news/saylor-outlines-bill-of-digital-rights-to-help-build-prosperity-in-future-economy?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
@@ -2066,11 +2097,6 @@
      "kind": "Cointelegraph",
      "title": "CFTC sues Cash FX, alleges $950M crypto-linked forex scheme",
      "url": "https://cointelegraph.com/news/cftc-sues-cash-fx-alleges-950m-crypto-linked-forex-scheme?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-    },
-    {
-     "kind": "Cointelegraph",
-     "title": "OG.com seeks CFTC approval for single-stock perpetual futures",
-     "url": "https://cointelegraph.com/news/og-com-seeks-cftc-approval-single-stock-perpetual-futures?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Decrypt",
@@ -2130,71 +2156,71 @@
    ],
    "ideas": [
     {
-     "name": "Reject crowded, expanding-volatility signals",
-     "rule": "rsi < 0.7 and vol_ratio < 1 and vz < 1",
-     "why": "In a Greed regime with a crowded ETF inflow streak, the bot's momentum signals are likely riding a crowded trade. Requiring RSI below 0.7 (not overbought), short volatility below long volatility (volatility not rising), and volume below the 24h average (no unusual participation) removes signals that"
+     "name": "Wysoka volatylno\u015b\u0107 BTC",
+     "rule": "btc_vol96 > 0.0024",
+     "why": "W ostatnich 24 godzinach Bitcoin straci\u0142 2.4% (btc_r96 = -0.02468), a jego volatylno\u015b\u0107 (btc_vol96) jest wysoka (0.00106). Z botem, straty w 24h by\u0142y \u015brednio -0.00501, co sugeruje, \u017ce wysoka volatylno\u015b\u0107 zwi\u0119ksza ryzyko strat w sytuacji, gdy bot nie ma wystarczaj\u0105cej konsystencji w trendach."
     },
     {
-     "name": "Reject momentum that is Bitcoin-led but not relative",
-     "rule": "btc_r96 > 0 and rel_r96 < 0",
-     "why": "If Bitcoin is rallying on ETF inflows while the altcoin is underperforming it, the bot's signal is likely chasing the Bitcoin beta rather than coin-specific alpha. Requiring the coin's 24h return to be positive while its relative-to-Bitcoin return is negative filters out signals that are just riding"
+     "name": "Niski trend 50-candle",
+     "rule": "d_ema50 < -0.01048",
+     "why": "Dla 50-candle (d_ema50 = -0.01262) i 200-candle (d_ema200 = -0.02687) bot straci\u0142 wi\u0119cej ni\u017c 1.5% w 24h. Wskaz\u00f3wka: gdy cena jest poni\u017cej \u015bredniej 50-candle, ryzyko strat wzrasta, co zgodnie z danymi botu (straty w 24h = -0.01327) sugeruje, \u017ce bot powinien unikn\u0105\u0107 sygna\u0142\u00f3w w tym zakresie."
     },
     {
-     "name": "Reject short-term trend against the long-term trend",
-     "rule": "d_ema50 > 0 and d_ema200 < 0",
-     "why": "A short-term uptrend against a downtrend is a classic reversal trap, especially when regulatory headlines are dominating the news cycle. Requiring the price to be above its 50-candle average while below its 200-candle average rejects signals that are chasing a short-term bounce in a longer-term down"
+     "name": "Niska konsystencja trendu",
+     "rule": "d_ema50 < -0.01048",
+     "why": "W ostatnich 7 dniach (r_672 = -0.1084) Bitcoin straci\u0142 10.8%, a bot straci\u0142 \u015brednio 1.3% w 24h. Wskaz\u00f3wka: gdy trend jest niski (d_ema50 < 0), bot powinien unikn\u0105\u0107 sygna\u0142\u00f3w, aby unikn\u0105\u0107 strat w sytuacji, gdy cena nie jest w trendzie."
     }
    ]
   }
  },
  "backtest": {
-  "created_at": 1790505093977,
+  "created_at": 1790508722937,
   "days": 180,
   "from": 1774949400000,
   "to": 1790501400000,
   "evolved": true,
-  "final_equity": 1003.38,
-  "return": 0.0033750556763787465,
-  "max_drawdown": -0.25423286595601213,
-  "trades": 183,
-  "win_rate": 0.5027322404371585,
-  "avg_trade": 0.0038392349726775955,
+  "final_equity": 814.15,
+  "return": -0.1858470659151794,
+  "max_drawdown": -0.2540669358806972,
+  "trades": 215,
+  "win_rate": 0.4,
+  "avg_trade": -0.00658953488372093,
   "btc_hold": 0.2751782867242383,
   "all_coins_hold": 0.2558225978245485,
   "blocks": [
    {
     "from": 1774949400000,
-    "recipe": "position style, buy when the model is at least 67% sure, target 3.2x / stop 1.4x the expected move, hold up to 48 h, 35% of equity per trade, only if r_288 < 0.07689 and upper_wick < 0.56812 and rel_r672 < 0.00866",
+    "recipe": "position style, buy when the model is at least 66% sure, target 4x / stop 3x the expected move, hold up to 48 h, 25% of equity per trade, only if r_96 < 0.01877 and vol_16 > 0.00133 and vol_ratio < 1.12745 and range_pos > 0.13324",
     "edge": false
    },
    {
     "from": 1777541400000,
-    "recipe": "position style, buy when the model is at least 68% sure, target 3.4x / stop 1x the expected move, hold up to 72 h, 35% of equity per trade, only if rel_r672 < 0.00564 and r_8 < 0.00219 and d_ema200 < 0.00116 and upper_wick < 0.78263",
+    "recipe": "position style, buy when the model is at least 66% sure, target 4x / stop 3x the expected move, hold up to 48 h, 25% of equity per trade, only if r_96 < 0.01877 and vol_16 > 0.00133 and vol_ratio < 1.12745 and range_pos > 0.13324",
     "edge": false
    },
    {
     "from": 1780133400000,
-    "recipe": "position style, buy when the model is at least 68% sure, target 3.4x / stop 1x the expected move, hold up to 72 h, 35% of equity per trade, only if rel_r672 < 0.00564 and r_8 < 0.00219 and d_ema200 < 0.00116 and upper_wick < 0.78263",
+    "recipe": "position style, buy when the model is at least 66% sure, target 4x / stop 3x the expected move, hold up to 48 h, 25% of equity per trade, only if r_96 < 0.01877 and vol_16 > 0.00133 and vol_ratio < 1.12745 and range_pos > 0.13324",
     "edge": false
    },
    {
     "from": 1782725400000,
-    "recipe": "position style, buy when the model is at least 66% sure, target 4x / stop 1x the expected move, hold up to 72 h, 35% of equity per trade, only if rel_r672 < -0.01084 and r_2016 < 0.15527 and r_8 < 0.0001",
+    "recipe": "position style, buy when the model is at least 72% sure, target 4x / stop 3x the expected move, hold up to 48 h, 25% of equity per trade, only if range_pos > 0.05455 and vol_ratio < 1.11092 and lower_wick > 0.11495 and rel_r672 < 0.03769",
     "edge": false
    },
    {
     "from": 1785317400000,
-    "recipe": "position style, buy when the model is at least 66% sure, target 4x / stop 1x the expected move, hold up to 72 h, 35% of equity per trade, only if rel_r672 < -0.01084 and r_2016 < 0.15527 and r_8 < 0.0001",
+    "recipe": "position style, buy when the model is at least 73% sure, target 4x / stop 3x the expected move, hold up to 48 h, 25% of equity per trade, only if rel_r672 < 0.02726 and btc_r4 < 0.0057 and vol_ratio < 1.13624",
     "edge": false
    },
    {
     "from": 1787909400000,
-    "recipe": "position style, buy when the model is at least 66% sure, target 4x / stop 1x the expected move, hold up to 72 h, 35% of equity per trade, only if rel_r672 < -0.01084 and r_2016 < 0.15527 and r_8 < 0.0001",
+    "recipe": "position style, buy when the model is at least 73% sure, target 4x / stop 3x the expected move, hold up to 48 h, 25% of equity per trade, only if vol_96 > 0.00227 and range_pos > 0.15314 and rel_r672 < -0.01024 and vol_16 > 0.00135",
     "edge": false
    },
    {
     "from": 1790501400000,
-    "recipe": "position style, buy when the model is at least 66% sure, target 4x / stop 1x the expected move, hold up to 72 h, 35% of equity per trade, only if rel_r672 < -0.01084 and r_2016 < 0.15527 and r_8 < 0.0001",
+    "recipe": "position style, buy when the model is at least 73% sure, target 4x / stop 3x the expected move, hold up to 48 h, 25% of equity per trade, only if vol_96 > 0.00227 and range_pos > 0.15314 and rel_r672 < -0.01024 and vol_16 > 0.00135",
     "edge": false
    }
   ],
@@ -2206,4116 +2232,4116 @@
    ],
    [
     1774968300000,
-    1000.0,
+    998.08,
     1001.26
    ],
    [
     1774987200000,
-    999.43,
+    1003.44,
     1024.71
    ],
    [
     1775006100000,
-    997.06,
+    1001.54,
     1023.19
    ],
    [
     1775025000000,
-    1028.04,
+    1018.22,
     1040.68
    ],
    [
     1775043900000,
-    1015.44,
+    1009.74,
     1033.21
    ],
    [
     1775062800000,
-    1019.41,
+    1017.62,
     1033.73
    ],
    [
     1775081700000,
-    1007.67,
+    1000.15,
     1025.28
    ],
    [
     1775100600000,
-    970.06,
+    974.64,
     1001.55
    ],
    [
     1775119500000,
-    963.19,
+    972.97,
     999.03
    ],
    [
     1775138400000,
-    959.93,
+    963.78,
     998.41
    ],
    [
     1775157300000,
-    968.03,
+    970.77,
     1007.99
    ],
    [
     1775176200000,
-    968.82,
+    972.12,
     1004.63
    ],
    [
     1775195100000,
-    969.09,
+    972.32,
     1001.45
    ],
    [
     1775214000000,
-    971.59,
+    974.19,
     1005.24
    ],
    [
     1775232900000,
-    973.13,
+    975.34,
     1007.36
    ],
    [
     1775251800000,
-    973.13,
+    975.34,
     1006.56
    ],
    [
     1775270700000,
-    972.04,
+    974.52,
     1005.13
    ],
    [
     1775289600000,
-    971.86,
+    974.8,
     1007.48
    ],
    [
     1775308500000,
-    971.54,
+    974.36,
     1009.17
    ],
    [
     1775327400000,
-    976.48,
+    976.2,
     1011.76
    ],
    [
     1775346300000,
-    975.6,
+    975.77,
     1011.98
    ],
    [
     1775365200000,
-    972.68,
+    974.15,
     1009.15
    ],
    [
     1775384100000,
-    969.09,
+    971.94,
     1007.35
    ],
    [
     1775403000000,
-    973.31,
+    973.71,
     1014.03
    ],
    [
     1775421900000,
-    973.85,
+    973.49,
     1017.36
    ],
    [
     1775440800000,
-    1006.13,
+    987.81,
     1039.23
    ],
    [
     1775459700000,
-    1006.49,
+    984.72,
     1038.73
    ],
    [
     1775478600000,
-    1009.77,
+    985.16,
     1044.95
    ],
    [
     1775497500000,
-    1007.14,
+    983.18,
     1046.17
    ],
    [
     1775516400000,
-    999.75,
+    974.15,
     1031.56
    ],
    [
     1775535300000,
-    999.15,
+    968.57,
     1031.55
    ],
    [
     1775554200000,
-    1002.42,
+    968.57,
     1040.33
    ],
    [
     1775573100000,
-    993.81,
+    968.57,
     1020.4
    ],
    [
     1775592000000,
-    998.26,
+    968.57,
     1044.12
    ],
    [
     1775610900000,
-    1013.77,
+    968.57,
     1074.85
    ],
    [
     1775629800000,
-    1014.44,
+    968.57,
     1079.79
    ],
    [
     1775648700000,
-    1015.86,
+    968.57,
     1077.76
    ],
    [
     1775667600000,
-    1016.03,
+    968.57,
     1079.4
    ],
    [
     1775686500000,
-    1015.75,
+    965.46,
     1070.09
    ],
    [
     1775705400000,
-    1010.65,
+    956.33,
     1066.16
    ],
    [
     1775724300000,
-    1010.62,
+    957.19,
     1071.36
    ],
    [
     1775743200000,
-    1011.13,
+    956.51,
     1064.42
    ],
    [
     1775762100000,
-    1021.98,
+    971.55,
     1080.01
    ],
    [
     1775781000000,
-    1018.26,
+    966.31,
     1081.63
    ],
    [
     1775799900000,
-    1018.16,
+    967.13,
     1084.57
    ],
    [
     1775818800000,
-    1018.06,
+    965.5,
     1084.48
    ],
    [
     1775837700000,
-    1022.48,
+    976.11,
     1094.21
    ],
    [
     1775856600000,
-    1023.21,
+    979.1,
     1098.64
    ],
    [
     1775875500000,
-    1020.86,
+    976.77,
     1097.18
    ],
    [
     1775894400000,
-    1019.55,
+    973.79,
     1094.23
    ],
    [
     1775913300000,
-    1016.87,
+    971.43,
     1091.92
    ],
    [
     1775932200000,
-    1029.73,
+    988.62,
     1104.65
    ],
    [
     1775951100000,
-    1024.09,
+    981.22,
     1098.33
    ],
    [
     1775970000000,
-    1007.72,
+    957.07,
     1075.25
    ],
    [
     1775988900000,
-    1004.15,
+    958.25,
     1076.81
    ],
    [
     1776007800000,
-    996.2,
+    949.61,
     1065.69
    ],
    [
     1776026700000,
-    1003.58,
+    958.17,
     1072.65
    ],
    [
     1776045600000,
-    997.0,
+    951.37,
     1067.63
    ],
    [
     1776064500000,
-    997.44,
+    950.05,
     1063.16
    ],
    [
     1776083400000,
-    999.54,
+    950.86,
     1065.15
    ],
    [
     1776102300000,
-    1004.99,
+    955.33,
     1084.88
    ],
    [
     1776121200000,
-    1038.83,
+    971.2,
     1122.54
    ],
    [
     1776140100000,
-    1031.18,
+    965.43,
     1120.15
    ],
    [
     1776159000000,
-    1028.11,
+    962.74,
     1120.4
    ],
    [
     1776177900000,
-    1027.71,
+    963.56,
     1127.96
    ],
    [
     1776196800000,
-    1020.99,
+    959.77,
     1118.94
    ],
    [
     1776215700000,
-    1019.27,
+    957.21,
     1122.9
    ],
    [
     1776234600000,
-    1017.85,
+    957.21,
     1112.72
    ],
    [
     1776253500000,
-    1020.22,
+    957.21,
     1115.75
    ],
    [
     1776272400000,
-    1024.66,
+    957.21,
     1113.3
    ],
    [
     1776291300000,
-    1026.58,
+    957.21,
     1127.61
    ],
    [
     1776310200000,
-    1025.15,
+    957.21,
     1127.24
    ],
    [
     1776329100000,
-    1026.44,
+    957.21,
     1122.91
    ],
    [
     1776348000000,
-    1025.2,
+    957.21,
     1110.25
    ],
    [
     1776366900000,
-    1031.67,
+    957.21,
     1128.03
    ],
    [
     1776385800000,
-    1031.28,
+    957.21,
     1127.14
    ],
    [
     1776404700000,
-    1025.57,
+    957.21,
     1122.31
    ],
    [
     1776423600000,
-    1023.87,
+    957.21,
     1132.5
    ],
    [
     1776442500000,
-    1025.0,
+    957.21,
     1175.3
    ],
    [
     1776461400000,
-    1027.38,
+    957.21,
     1164.04
    ],
    [
     1776480300000,
-    1026.39,
+    957.21,
     1162.23
    ],
    [
     1776499200000,
-    1026.39,
+    957.21,
     1154.87
    ],
    [
     1776518100000,
-    1020.95,
+    956.97,
     1144.13
    ],
    [
     1776537000000,
-    1017.28,
+    954.56,
     1136.39
    ],
    [
     1776555900000,
-    1018.01,
+    954.18,
     1138.16
    ],
    [
     1776574800000,
-    1010.62,
+    950.61,
     1136.11
    ],
    [
     1776593700000,
-    1010.58,
+    946.24,
     1128.93
    ],
    [
     1776612600000,
-    1020.31,
+    951.05,
     1138.65
    ],
    [
     1776631500000,
-    1010.11,
+    944.88,
     1122.19
    ],
    [
     1776650400000,
-    1005.64,
+    940.78,
     1118.64
    ],
    [
     1776669300000,
-    1020.17,
+    954.68,
     1130.93
    ],
    [
     1776688200000,
-    1014.07,
+    950.49,
     1130.99
    ],
    [
     1776707100000,
-    1014.4,
+    955.47,
     1141.26
    ],
    [
     1776726000000,
-    1011.86,
+    955.28,
     1139.08
    ],
    [
     1776744900000,
-    1011.02,
+    954.77,
     1137.28
    ],
    [
     1776763800000,
-    1021.41,
+    962.94,
     1147.32
    ],
    [
     1776782700000,
-    1017.88,
+    956.47,
     1137.91
    ],
    [
     1776801600000,
-    1013.64,
+    953.94,
     1136.42
    ],
    [
     1776820500000,
-    1020.0,
+    956.45,
     1145.21
    ],
    [
     1776839400000,
-    1036.42,
+    963.89,
     1172.43
    ],
    [
     1776858300000,
-    1038.58,
+    964.3,
     1177.38
    ],
    [
     1776877200000,
-    1032.1,
+    959.53,
     1187.6
    ],
    [
     1776896100000,
-    1031.53,
+    960.07,
     1181.01
    ],
    [
     1776915000000,
-    1029.75,
+    958.66,
     1167.26
    ],
    [
     1776933900000,
-    1029.48,
+    958.5,
     1170.73
    ],
    [
     1776952800000,
-    1028.88,
+    958.12,
     1165.7
    ],
    [
     1776971700000,
-    1030.41,
+    959.1,
     1170.65
    ],
    [
     1776990600000,
-    1031.06,
+    959.55,
     1178.63
    ],
    [
     1777009500000,
-    1028.14,
+    957.44,
     1172.17
    ],
    [
     1777028400000,
-    1029.25,
+    958.18,
     1176.14
    ],
    [
     1777047300000,
-    1029.38,
+    958.27,
     1168.77
    ],
    [
     1777066200000,
-    1029.25,
+    958.18,
     1166.21
    ],
    [
     1777085100000,
-    1028.89,
+    957.7,
     1166.97
    ],
    [
     1777104000000,
-    1028.89,
+    957.7,
     1166.26
    ],
    [
     1777122900000,
-    1028.89,
+    957.7,
     1167.08
    ],
    [
     1777141800000,
-    1028.89,
+    957.7,
     1162.51
    ],
    [
     1777160700000,
-    1028.89,
+    957.7,
     1167.23
    ],
    [
     1777179600000,
-    1028.89,
+    957.7,
     1174.95
    ],
    [
     1777198500000,
-    1028.89,
+    957.7,
     1172.99
    ],
    [
     1777217400000,
-    1028.89,
+    957.7,
     1173.56
    ],
    [
     1777236300000,
-    1028.01,
+    956.73,
     1175.79
    ],
    [
     1777255200000,
-    1036.17,
+    960.68,
     1190.67
    ],
    [
     1777274100000,
-    1011.84,
+    949.74,
     1168.22
    ],
    [
     1777293000000,
-    1009.98,
+    949.58,
     1168.93
    ],
    [
     1777311900000,
-    1002.18,
+    945.79,
     1153.97
    ],
    [
     1777330800000,
-    1002.18,
+    948.25,
     1158.42
    ],
    [
     1777349700000,
-    1002.18,
+    948.91,
     1154.78
    ],
    [
     1777368600000,
-    1002.18,
+    947.33,
     1152.68
    ],
    [
     1777387500000,
-    1002.18,
+    946.37,
     1142.04
    ],
    [
     1777406400000,
-    1002.18,
+    947.86,
     1148.77
    ],
    [
     1777425300000,
-    1000.27,
+    946.8,
     1146.34
    ],
    [
     1777444200000,
-    1008.78,
+    947.05,
     1158.0
    ],
    [
     1777463100000,
-    1016.23,
+    947.53,
     1166.7
    ],
    [
     1777482000000,
-    991.0,
+    943.55,
     1141.83
    ],
    [
     1777500900000,
-    979.34,
+    943.39,
     1140.38
    ],
    [
     1777519800000,
-    981.91,
+    943.55,
     1142.03
    ],
    [
     1777538700000,
-    980.87,
+    943.19,
     1143.67
    ],
    [
     1777557600000,
-    980.68,
+    943.75,
     1148.21
    ],
    [
     1777576500000,
-    980.68,
+    944.32,
     1149.88
    ],
    [
     1777595400000,
-    979.91,
+    943.73,
     1150.74
    ],
    [
     1777614300000,
-    982.44,
+    945.97,
     1160.32
    ],
    [
     1777633200000,
-    982.52,
+    946.02,
     1162.71
    ],
    [
     1777652100000,
-    985.03,
+    948.03,
     1177.8
    ],
    [
     1777671000000,
-    983.21,
+    947.99,
     1174.62
    ],
    [
     1777689900000,
-    985.03,
+    947.07,
     1178.19
    ],
    [
     1777708800000,
-    984.8,
+    945.48,
     1176.81
    ],
    [
     1777727700000,
-    984.52,
+    945.52,
     1177.48
    ],
    [
     1777746600000,
-    984.52,
+    946.67,
     1179.05
    ],
    [
     1777765500000,
-    984.52,
+    946.75,
     1183.19
    ],
    [
     1777784400000,
-    984.52,
+    945.85,
     1176.47
    ],
    [
     1777803300000,
-    984.52,
+    945.89,
     1179.34
    ],
    [
     1777822200000,
-    984.52,
+    944.95,
     1183.42
    ],
    [
     1777841100000,
-    984.52,
+    944.95,
     1186.64
    ],
    [
     1777860000000,
-    991.96,
+    944.95,
     1201.93
    ],
    [
     1777878900000,
-    994.06,
+    944.95,
     1200.76
    ],
    [
     1777897800000,
-    989.77,
+    944.95,
     1187.77
    ],
    [
     1777916700000,
-    1003.01,
+    954.48,
     1208.81
    ],
    [
     1777935600000,
-    994.44,
+    947.11,
     1201.89
    ],
    [
     1777954500000,
-    1004.23,
+    956.0,
     1214.87
    ],
    [
     1777973400000,
-    1005.39,
+    956.07,
     1211.8
    ],
    [
     1777992300000,
-    1016.29,
+    964.49,
     1223.04
    ],
    [
     1778011200000,
-    1020.95,
+    968.8,
     1228.5
    ],
    [
     1778030100000,
-    1021.22,
+    968.82,
     1221.73
    ],
    [
     1778049000000,
-    1028.35,
+    974.51,
     1225.08
    ],
    [
     1778067900000,
-    1049.42,
+    992.15,
     1240.87
    ],
    [
     1778086800000,
-    1039.5,
+    972.43,
     1228.14
    ],
    [
     1778105700000,
-    1034.84,
+    971.27,
     1221.73
    ],
    [
     1778124600000,
-    1026.77,
+    969.31,
     1217.67
    ],
    [
     1778143500000,
-    1036.05,
+    980.09,
     1221.45
    ],
    [
     1778162400000,
-    1027.95,
+    973.85,
     1212.96
    ],
    [
     1778181300000,
-    1019.29,
+    965.28,
     1202.53
    ],
    [
     1778200200000,
-    1019.2,
+    964.93,
     1201.96
    ],
    [
     1778219100000,
-    1016.77,
+    963.08,
     1196.92
    ],
    [
     1778238000000,
-    1020.49,
+    968.61,
     1206.37
    ],
    [
     1778256900000,
-    1023.48,
+    977.47,
     1202.19
    ],
    [
     1778275800000,
-    1035.36,
+    994.16,
     1206.58
    ],
    [
     1778294700000,
-    1039.58,
+    1000.89,
     1209.22
    ],
    [
     1778313600000,
-    1038.2,
+    998.13,
     1208.95
    ],
    [
     1778332500000,
-    1034.57,
+    997.74,
     1208.15
    ],
    [
     1778351400000,
-    1040.25,
+    999.2,
     1216.5
    ],
    [
     1778370300000,
-    1037.99,
+    998.78,
     1213.14
    ],
    [
     1778389200000,
-    1036.69,
+    998.94,
     1214.46
    ],
    [
     1778408100000,
-    1039.27,
+    998.78,
     1215.17
    ],
    [
     1778427000000,
-    1041.17,
+    1000.07,
     1220.1
    ],
    [
     1778445900000,
-    1039.69,
+    998.98,
     1213.99
    ],
    [
     1778464800000,
-    1042.13,
+    1001.19,
     1224.08
    ],
    [
     1778483700000,
-    1039.7,
+    999.21,
     1214.03
    ],
    [
     1778502600000,
-    1041.25,
+    999.21,
     1220.43
    ],
    [
     1778521500000,
-    1041.25,
+    999.21,
     1232.13
    ],
    [
     1778540400000,
-    1041.25,
+    997.25,
     1228.93
    ],
    [
     1778559300000,
-    1041.25,
+    993.74,
     1221.16
    ],
    [
     1778578200000,
-    1041.25,
+    992.81,
     1216.85
    ],
    [
     1778597100000,
-    1041.25,
+    986.64,
     1211.06
    ],
    [
     1778616000000,
-    1041.25,
+    990.33,
     1214.47
    ],
    [
     1778634900000,
-    1041.25,
+    992.8,
     1218.95
    ],
    [
     1778653800000,
-    1041.25,
+    993.35,
     1218.84
    ],
    [
     1778672700000,
-    1041.25,
+    986.43,
     1210.47
    ],
    [
     1778691600000,
-    1041.25,
+    967.26,
     1191.41
    ],
    [
     1778710500000,
-    1041.25,
+    966.71,
     1192.68
    ],
    [
     1778729400000,
-    1041.25,
+    965.16,
     1190.99
    ],
    [
     1778748300000,
-    1041.25,
+    968.23,
     1200.26
    ],
    [
     1778767200000,
-    1041.25,
+    972.8,
     1202.31
    ],
    [
     1778786100000,
-    1041.25,
+    994.79,
     1223.23
    ],
    [
     1778805000000,
-    1041.25,
+    986.72,
     1223.13
    ],
    [
     1778823900000,
-    1041.25,
+    970.8,
     1208.35
    ],
    [
     1778842800000,
-    1040.8,
+    977.94,
     1213.12
    ],
    [
     1778861700000,
-    1040.38,
+    968.67,
     1192.59
    ],
    [
     1778880600000,
-    1040.7,
+    967.5,
     1189.94
    ],
    [
     1778899500000,
-    1040.28,
+    966.58,
     1190.24
    ],
    [
     1778918400000,
-    1035.09,
+    959.59,
     1179.18
    ],
    [
     1778937300000,
-    1032.01,
+    951.2,
     1172.33
    ],
    [
     1778956200000,
-    1036.09,
+    952.9,
     1176.71
    ],
    [
     1778975100000,
-    1036.95,
+    952.59,
     1175.09
    ],
    [
     1778994000000,
-    1037.36,
+    954.46,
     1176.57
    ],
    [
     1779012900000,
-    1039.28,
+    955.21,
     1180.79
    ],
    [
     1779031800000,
-    1039.56,
+    952.8,
     1173.38
    ],
    [
     1779050700000,
-    1039.0,
+    953.36,
     1177.04
    ],
    [
     1779069600000,
-    1035.78,
+    946.35,
     1160.39
    ],
    [
     1779088500000,
-    1028.76,
+    935.98,
     1158.36
    ],
    [
     1779107400000,
-    1036.37,
+    945.43,
     1168.75
    ],
    [
     1779126300000,
-    1025.53,
+    931.43,
     1153.41
    ],
    [
     1779145200000,
-    1039.55,
+    944.11,
     1159.09
    ],
    [
     1779164100000,
-    1035.89,
+    942.09,
     1153.86
    ],
    [
     1779183000000,
-    1032.03,
+    938.41,
     1154.77
    ],
    [
     1779201900000,
-    1022.84,
+    929.33,
     1148.69
    ],
    [
     1779220800000,
-    1027.32,
+    932.9,
     1157.06
    ],
    [
     1779239700000,
-    1020.31,
+    925.01,
     1151.49
    ],
    [
     1779258600000,
-    1034.59,
+    932.0,
     1162.64
    ],
    [
     1779277500000,
-    1031.25,
+    930.54,
     1163.58
    ],
    [
     1779296400000,
-    1041.09,
+    930.55,
     1163.79
    ],
    [
     1779315300000,
-    1034.5,
+    930.55,
     1164.35
    ],
    [
     1779334200000,
-    1039.93,
+    930.55,
     1173.15
    ],
    [
     1779353100000,
-    1038.93,
+    930.55,
     1171.73
    ],
    [
     1779372000000,
-    1032.82,
+    930.55,
     1159.12
    ],
    [
     1779390900000,
-    1032.82,
+    930.55,
     1165.97
    ],
    [
     1779409800000,
-    1032.82,
+    930.55,
     1164.94
    ],
    [
     1779428700000,
-    1032.82,
+    930.55,
     1165.18
    ],
    [
     1779447600000,
-    1032.82,
+    930.55,
     1162.4
    ],
    [
     1779466500000,
-    1032.82,
+    930.55,
     1156.91
    ],
    [
     1779485400000,
-    1032.82,
+    930.55,
     1142.67
    ],
    [
     1779504300000,
-    1032.82,
+    930.55,
     1136.36
    ],
    [
     1779523200000,
-    1025.89,
+    930.55,
     1122.62
    ],
    [
     1779542100000,
-    1031.09,
+    930.55,
     1127.57
    ],
    [
     1779561000000,
-    1041.57,
+    932.99,
     1141.23
    ],
    [
     1779579900000,
-    1052.37,
+    937.32,
     1154.1
    ],
    [
     1779598800000,
-    1051.66,
+    936.52,
     1153.96
    ],
    [
     1779617700000,
-    1055.08,
+    937.99,
     1161.44
    ],
    [
     1779636600000,
-    1044.76,
+    930.95,
     1149.58
    ],
    [
     1779655500000,
-    1043.01,
+    929.42,
     1152.84
    ],
    [
     1779674400000,
-    1047.24,
+    931.61,
     1163.89
    ],
    [
     1779693300000,
-    1049.46,
+    935.08,
     1161.03
    ],
    [
     1779712200000,
-    1053.13,
+    939.41,
     1163.22
    ],
    [
     1779731100000,
-    1057.8,
+    946.04,
     1166.31
    ],
    [
     1779750000000,
-    1046.95,
+    932.9,
     1162.13
    ],
    [
     1779768900000,
-    1043.03,
+    926.45,
     1153.95
    ],
    [
     1779787800000,
-    1042.14,
+    927.35,
     1153.19
    ],
    [
     1779806700000,
-    1048.89,
+    937.17,
     1156.44
    ],
    [
     1779825600000,
-    1035.27,
+    922.72,
     1144.53
    ],
    [
     1779844500000,
-    1034.72,
+    924.37,
     1140.99
    ],
    [
     1779863400000,
-    1035.89,
+    922.64,
     1140.18
    ],
    [
     1779882300000,
-    1034.74,
+    921.89,
     1139.32
    ],
    [
     1779901200000,
-    1030.48,
+    919.54,
     1127.28
    ],
    [
     1779920100000,
-    1028.13,
+    918.58,
     1121.83
    ],
    [
     1779939000000,
-    1020.36,
+    917.47,
     1104.15
    ],
    [
     1779957900000,
-    1016.88,
+    917.47,
     1102.58
    ],
    [
     1779976800000,
-    1016.88,
+    917.47,
     1102.41
    ],
    [
     1779995700000,
-    1016.88,
+    917.47,
     1106.1
    ],
    [
     1780014600000,
-    1016.88,
+    917.47,
     1110.45
    ],
    [
     1780033500000,
-    1016.88,
+    917.47,
     1108.3
    ],
    [
     1780052400000,
-    1016.88,
+    917.47,
     1107.5
    ],
    [
     1780071300000,
-    1016.88,
+    917.47,
     1107.44
    ],
    [
     1780090200000,
-    1016.88,
+    917.47,
     1106.7
    ],
    [
     1780109100000,
-    1016.88,
+    917.47,
     1109.51
    ],
    [
     1780128000000,
-    1016.88,
+    917.47,
     1106.22
    ],
    [
     1780146900000,
-    1016.88,
+    917.38,
     1109.31
    ],
    [
     1780165800000,
-    1016.88,
+    918.15,
     1114.16
    ],
    [
     1780184700000,
-    1016.28,
+    915.75,
     1110.98
    ],
    [
     1780203600000,
-    1017.79,
+    916.95,
     1115.37
    ],
    [
     1780222500000,
-    1015.85,
+    914.98,
     1109.74
    ],
    [
     1780241400000,
-    1015.01,
+    913.59,
     1107.28
    ],
    [
     1780260300000,
-    1015.53,
+    913.48,
     1108.8
    ],
    [
     1780279200000,
-    1014.54,
+    912.13,
     1105.93
    ],
    [
     1780298100000,
-    1011.04,
+    905.99,
     1097.38
    ],
    [
     1780317000000,
-    1011.04,
+    906.2,
     1086.78
    ],
    [
     1780335900000,
-    1022.77,
+    907.84,
     1077.32
    ],
    [
     1780354800000,
-    1025.93,
+    909.65,
     1073.11
    ],
    [
     1780373700000,
-    1016.68,
+    902.93,
     1067.25
    ],
    [
     1780392600000,
-    996.81,
+    889.18,
     1044.9
    ],
    [
     1780411500000,
-    979.49,
+    878.88,
     1022.79
    ],
    [
     1780430400000,
-    970.06,
+    868.75,
     1013.2
    ],
    [
     1780449300000,
-    962.57,
+    863.48,
     1007.82
    ],
    [
     1780468200000,
-    962.57,
+    864.73,
     1012.22
    ],
    [
     1780487100000,
-    962.57,
+    865.39,
     1008.47
    ],
    [
     1780506000000,
-    962.57,
+    864.87,
     988.14
    ],
    [
     1780524900000,
-    958.74,
+    864.87,
     979.91
    ],
    [
     1780543800000,
-    943.07,
+    864.87,
     968.2
    ],
    [
     1780562700000,
-    933.35,
+    861.97,
     956.79
    ],
    [
     1780581600000,
-    938.63,
+    864.15,
     967.85
    ],
    [
     1780600500000,
-    934.69,
+    862.52,
     964.28
    ],
    [
     1780619400000,
-    932.87,
+    861.98,
     957.81
    ],
    [
     1780638300000,
-    893.83,
+    835.18,
     937.23
    ],
    [
     1780657200000,
-    885.32,
+    829.75,
     937.19
    ],
    [
     1780676100000,
-    870.22,
+    810.81,
     916.14
    ],
    [
     1780695000000,
-    879.43,
+    819.47,
     930.38
    ],
    [
     1780713900000,
-    865.45,
+    800.94,
     916.51
    ],
    [
     1780732800000,
-    860.98,
+    800.66,
     919.41
    ],
    [
     1780751700000,
-    859.8,
+    801.41,
     915.41
    ],
    [
     1780770600000,
-    858.94,
+    794.79,
     911.32
    ],
    [
     1780789500000,
-    857.8,
+    797.57,
     915.51
    ],
    [
     1780808400000,
-    865.44,
+    801.43,
     930.53
    ],
    [
     1780827300000,
-    873.33,
+    805.22,
     939.96
    ],
    [
     1780846200000,
-    868.81,
+    803.03,
     933.94
    ],
    [
     1780865100000,
-    865.81,
+    801.0,
     930.44
    ],
    [
     1780884000000,
-    880.13,
+    804.14,
     949.24
    ],
    [
     1780902900000,
-    878.58,
+    805.77,
     950.16
    ],
    [
     1780921800000,
-    886.43,
+    812.63,
     956.92
    ],
    [
     1780940700000,
-    888.51,
+    814.9,
     955.58
    ],
    [
     1780959600000,
-    890.57,
+    817.27,
     956.15
    ],
    [
     1780978500000,
-    879.91,
+    808.91,
     944.21
    ],
    [
     1780997400000,
-    880.82,
+    809.55,
     942.4
    ],
    [
     1781016300000,
-    878.63,
+    804.94,
     925.39
    ],
    [
     1781035200000,
-    880.92,
+    808.39,
     935.48
    ],
    [
     1781054100000,
-    879.44,
+    805.6,
     929.66
    ],
    [
     1781073000000,
-    876.1,
+    800.78,
     923.76
    ],
    [
     1781091900000,
-    873.52,
+    800.63,
     917.75
    ],
    [
     1781110800000,
-    876.09,
+    800.55,
     933.67
    ],
    [
     1781129700000,
-    873.74,
+    800.46,
     921.06
    ],
    [
     1781148600000,
-    883.66,
+    803.82,
     937.81
    ],
    [
     1781167500000,
-    889.1,
+    805.49,
     946.68
    ],
    [
     1781186400000,
-    886.3,
+    804.26,
     944.22
    ],
    [
     1781205300000,
-    898.22,
+    810.64,
     956.24
    ],
    [
     1781224200000,
-    897.93,
+    810.66,
     957.1
    ],
    [
     1781243100000,
-    893.98,
+    809.41,
     952.7
    ],
    [
     1781262000000,
-    902.63,
+    813.24,
     959.81
    ],
    [
     1781280900000,
-    898.9,
+    812.56,
     960.85
    ],
    [
     1781299800000,
-    897.8,
+    811.34,
     955.4
    ],
    [
     1781318700000,
-    900.91,
+    812.18,
     957.03
    ],
    [
     1781337600000,
-    906.46,
+    814.69,
     959.22
    ],
    [
     1781356500000,
-    911.7,
+    815.97,
     965.81
    ],
    [
     1781375400000,
-    910.07,
+    814.24,
     966.35
    ],
    [
     1781394300000,
-    909.89,
+    813.56,
     969.24
    ],
    [
     1781413200000,
-    907.37,
+    812.17,
     967.97
    ],
    [
     1781432100000,
-    907.92,
+    810.73,
     971.34
    ],
    [
     1781451000000,
-    901.92,
+    806.94,
     962.86
    ],
    [
     1781469900000,
-    902.01,
+    807.26,
     962.48
    ],
    [
     1781488800000,
-    923.25,
+    817.75,
     987.23
    ],
    [
     1781507700000,
-    923.99,
+    817.62,
     991.79
    ],
    [
     1781526600000,
-    941.11,
+    823.27,
     999.49
    ],
    [
     1781545500000,
-    942.66,
+    821.64,
     1005.23
    ],
    [
     1781564400000,
-    940.76,
+    820.89,
     996.49
    ],
    [
     1781583300000,
-    940.05,
+    820.56,
     992.12
    ],
    [
     1781602200000,
-    940.64,
+    820.83,
     1002.98
    ],
    [
     1781621100000,
-    938.76,
+    819.97,
     987.23
    ],
    [
     1781640000000,
-    940.11,
+    820.17,
     988.82
    ],
    [
     1781658900000,
-    938.42,
+    819.8,
     986.19
    ],
    [
     1781677800000,
-    938.06,
+    820.07,
     987.0
    ],
    [
     1781696700000,
-    934.27,
+    819.83,
     974.53
    ],
    [
     1781715600000,
-    937.49,
+    819.94,
     990.38
    ],
    [
     1781734500000,
-    934.06,
+    819.53,
     967.83
    ],
    [
     1781753400000,
-    930.61,
+    818.0,
     967.28
    ],
    [
     1781772300000,
-    927.52,
+    817.41,
     968.36
    ],
    [
     1781791200000,
-    917.91,
+    814.45,
     959.04
    ],
    [
     1781810100000,
-    897.61,
+    809.34,
     943.96
    ],
    [
     1781829000000,
-    900.54,
+    812.78,
     948.19
    ],
    [
     1781847900000,
-    886.03,
+    802.86,
     943.39
    ],
    [
     1781866800000,
-    883.61,
+    799.0,
     939.83
    ],
    [
     1781885700000,
-    889.27,
+    809.23,
     952.01
    ],
    [
     1781904600000,
-    881.75,
+    802.51,
     948.63
    ],
    [
     1781923500000,
-    884.34,
+    805.52,
     952.43
    ],
    [
     1781942400000,
-    890.29,
+    812.82,
     955.52
    ],
    [
     1781961300000,
-    885.91,
+    808.55,
     952.56
    ],
    [
     1781980200000,
-    886.54,
+    811.43,
     959.55
    ],
    [
     1781999100000,
-    892.57,
+    814.22,
     966.83
    ],
    [
     1782018000000,
-    892.43,
+    812.33,
     965.93
    ],
    [
     1782036900000,
-    893.75,
+    814.05,
     967.01
    ],
    [
     1782055800000,
-    894.51,
+    814.67,
     966.86
    ],
    [
     1782074700000,
-    891.65,
+    811.69,
     960.07
    ],
    [
     1782093600000,
-    892.62,
+    810.79,
     970.65
    ],
    [
     1782112500000,
-    892.71,
+    810.96,
     966.3
    ],
    [
     1782131400000,
-    892.71,
+    811.7,
     978.27
    ],
    [
     1782150300000,
-    892.71,
+    810.83,
     971.4
    ],
    [
     1782169200000,
-    890.79,
+    809.49,
     961.47
    ],
    [
     1782188100000,
-    891.9,
+    809.93,
     961.97
    ],
    [
     1782207000000,
-    867.8,
+    803.61,
     937.87
    ],
    [
     1782225900000,
-    869.5,
+    804.71,
     939.7
    ],
    [
     1782244800000,
-    868.1,
+    804.72,
     938.87
    ],
    [
     1782263700000,
-    873.78,
+    805.43,
     945.96
    ],
    [
     1782282600000,
-    872.65,
+    805.41,
     944.07
    ],
    [
     1782301500000,
-    872.39,
+    805.91,
     946.13
    ],
    [
     1782320400000,
-    836.27,
+    795.65,
     899.79
    ],
    [
     1782339300000,
-    833.45,
+    798.77,
     915.53
    ],
    [
     1782358200000,
-    831.09,
+    796.33,
     913.44
    ],
    [
     1782377100000,
-    843.36,
+    804.08,
     927.95
    ],
    [
     1782396000000,
-    804.59,
+    776.03,
     891.2
    ],
    [
     1782414900000,
-    804.35,
+    774.47,
     892.4
    ],
    [
     1782433800000,
-    812.32,
+    783.52,
     899.04
    ],
    [
     1782452700000,
-    812.35,
+    780.9,
     901.5
    ],
    [
     1782471600000,
-    813.22,
+    781.46,
     894.47
    ],
    [
     1782490500000,
-    822.75,
+    796.5,
     902.85
    ],
    [
     1782509400000,
-    824.27,
+    797.99,
     902.56
    ],
    [
     1782528300000,
-    826.35,
+    800.15,
     906.56
    ],
    [
     1782547200000,
-    825.88,
+    798.56,
     909.42
    ],
    [
     1782566100000,
-    827.61,
+    798.37,
     909.25
    ],
    [
     1782585000000,
-    825.81,
+    798.1,
     910.66
    ],
    [
     1782603900000,
-    819.04,
+    796.84,
     902.64
    ],
    [
     1782622800000,
-    819.49,
+    796.3,
     902.4
    ],
    [
     1782641700000,
-    819.49,
+    795.52,
     903.78
    ],
    [
     1782660600000,
-    820.46,
+    795.63,
     901.84
    ],
    [
     1782679500000,
-    818.99,
+    796.31,
     897.09
    ],
    [
     1782698400000,
-    816.17,
+    796.48,
     887.53
    ],
    [
     1782717300000,
-    822.42,
+    797.64,
     903.8
    ],
    [
     1782736200000,
-    821.83,
+    797.18,
     901.48
    ],
    [
     1782755100000,
-    827.63,
+    800.69,
     908.43
    ],
    [
     1782774000000,
-    825.58,
+    799.98,
     907.41
    ],
    [
     1782792900000,
-    820.06,
+    797.59,
     895.45
    ],
    [
     1782811800000,
-    818.74,
+    796.98,
     892.58
    ],
    [
     1782830700000,
-    812.5,
+    794.75,
     879.39
    ],
    [
     1782849600000,
-    814.21,
+    795.24,
     885.15
    ],
    [
     1782868500000,
-    812.13,
+    794.9,
     877.44
    ],
    [
     1782887400000,
-    813.73,
+    796.4,
     882.66
    ],
    [
     1782906300000,
-    813.27,
+    796.46,
     881.48
    ],
    [
     1782925200000,
-    816.82,
+    797.39,
     900.73
    ],
    [
     1782944100000,
-    818.49,
+    797.97,
     910.55
    ],
    [
     1782963000000,
-    817.97,
+    797.97,
     914.42
    ],
    [
     1782981900000,
-    818.61,
+    797.97,
     909.9
    ],
    [
     1783000800000,
-    819.45,
+    797.97,
     933.5
    ],
    [
     1783019700000,
-    817.8,
+    797.8,
     926.48
    ],
    [
     1783038600000,
-    817.3,
+    797.76,
     922.32
    ],
    [
     1783057500000,
-    819.35,
+    798.07,
     927.77
    ],
    [
     1783076400000,
-    822.18,
+    798.37,
     932.58
    ],
    [
     1783095300000,
-    823.42,
+    798.24,
     933.4
    ],
    [
     1783114200000,
-    826.56,
+    798.97,
     941.48
    ],
    [
     1783133100000,
-    826.65,
+    799.22,
     940.38
    ],
    [
     1783152000000,
-    826.19,
+    799.48,
     940.57
    ],
    [
     1783170900000,
-    828.28,
+    801.15,
     942.11
    ],
    [
     1783189800000,
-    830.81,
+    807.48,
     949.03
    ],
    [
     1783208700000,
-    828.58,
+    803.8,
     949.48
    ],
    [
     1783227600000,
-    825.46,
+    798.06,
     943.56
    ],
    [
     1783246500000,
-    826.77,
+    797.66,
     942.71
    ],
    [
     1783265400000,
-    832.55,
+    802.15,
     942.86
    ],
    [
     1783284300000,
-    832.59,
+    803.3,
     943.26
    ],
    [
     1783303200000,
-    831.98,
+    803.64,
     954.17
    ],
    [
     1783322100000,
-    830.66,
+    802.22,
     946.89
    ],
    [
     1783341000000,
-    828.91,
+    800.57,
     929.33
    ],
    [
     1783359900000,
-    832.42,
+    800.63,
     956.15
    ],
    [
     1783378800000,
-    835.4,
+    800.82,
     966.4
    ],
    [
     1783397700000,
-    825.95,
+    796.67,
     951.3
    ],
    [
     1783416600000,
-    826.13,
+    796.8,
     951.74
    ],
    [
     1783435500000,
-    826.22,
+    797.51,
     955.77
    ],
    [
     1783454400000,
-    827.31,
+    797.8,
     959.01
    ],
    [
     1783473300000,
-    821.38,
+    795.48,
     953.71
    ],
    [
     1783492200000,
-    810.46,
+    789.85,
     940.44
    ],
    [
     1783511100000,
-    812.46,
+    790.3,
     936.79
    ],
    [
     1783530000000,
-    811.85,
+    789.88,
     933.26
    ],
    [
     1783548900000,
-    812.62,
+    790.21,
     936.79
    ],
    [
     1783567800000,
-    812.91,
+    789.93,
     932.08
    ],
    [
     1783586700000,
-    822.77,
+    792.53,
     945.87
    ],
    [
     1783605600000,
-    822.87,
+    792.25,
     946.29
    ],
    [
     1783624500000,
-    822.75,
+    792.29,
     951.29
    ],
    [
     1783643400000,
-    818.8,
+    791.77,
     948.06
    ],
    [
     1783662300000,
-    830.91,
+    795.14,
     964.09
    ],
    [
     1783681200000,
-    835.05,
+    796.76,
     969.11
    ],
    [
     1783700100000,
-    832.51,
+    796.51,
     962.53
    ],
    [
     1783719000000,
-    832.09,
+    796.41,
     962.95
    ],
    [
     1783737900000,
-    831.39,
+    796.06,
     964.73
    ],
    [
     1783756800000,
-    831.74,
+    795.67,
     965.82
    ],
    [
     1783775700000,
-    832.95,
+    796.29,
     965.22
    ],
    [
     1783794600000,
-    832.88,
+    796.4,
     967.66
    ],
    [
     1783813500000,
-    831.89,
+    795.54,
     959.63
    ],
    [
     1783832400000,
-    831.89,
+    795.69,
     962.22
    ],
    [
     1783851300000,
-    832.16,
+    795.71,
     960.61
    ],
    [
     1783870200000,
-    832.69,
+    796.15,
     964.65
    ],
    [
     1783889100000,
-    832.81,
+    796.32,
     965.34
    ],
    [
     1783908000000,
-    830.84,
+    795.62,
     953.51
    ],
    [
     1783926900000,
-    830.71,
+    794.96,
     946.77
    ],
    [
     1783945800000,
-    830.58,
+    794.4,
     941.51
    ],
    [
     1783964700000,
-    824.18,
+    794.22,
     930.85
    ],
    [
     1783983600000,
-    823.41,
+    794.02,
     933.19
    ],
    [
     1784002500000,
-    826.07,
+    794.06,
     941.98
    ],
    [
     1784021400000,
-    826.49,
+    794.04,
     940.76
    ],
    [
     1784040300000,
-    835.74,
+    794.18,
     966.94
    ],
    [
     1784059200000,
-    834.74,
+    794.09,
     969.27
    ],
    [
     1784078100000,
-    836.88,
+    794.26,
     974.84
    ],
    [
     1784097000000,
-    838.36,
+    794.42,
     977.96
    ],
    [
     1784115900000,
-    836.29,
+    794.44,
     973.36
    ],
    [
     1784134800000,
-    836.71,
+    794.44,
     977.84
    ],
    [
     1784153700000,
-    837.01,
+    794.44,
     975.83
    ],
    [
     1784172600000,
-    835.51,
+    794.19,
     972.38
    ],
    [
     1784191500000,
-    832.31,
+    792.87,
     964.26
    ],
    [
     1784210400000,
-    835.19,
+    794.68,
     971.91
    ],
    [
     1784229300000,
-    830.6,
+    792.75,
     966.28
    ],
    [
     1784248200000,
-    825.09,
+    790.34,
     959.14
    ],
    [
     1784267100000,
-    821.43,
+    788.71,
     944.9
    ],
    [
     1784286000000,
-    822.73,
+    789.29,
     948.64
    ],
    [
     1784304900000,
-    824.19,
+    789.92,
     954.53
    ],
    [
     1784323800000,
-    825.93,
+    791.15,
     963.82
    ],
    [
     1784342700000,
-    827.29,
+    791.52,
     961.86
    ],
    [
     1784361600000,
-    826.13,
+    790.96,
     962.05
    ],
    [
     1784380500000,
-    824.19,
+    790.39,
     963.17
    ],
    [
     1784399400000,
-    826.73,
+    790.39,
     969.5
    ],
    [
     1784418300000,
-    828.08,
+    790.36,
     974.89
    ],
    [
     1784437200000,
-    828.66,
+    791.03,
     974.29
    ],
    [
     1784456100000,
-    826.44,
+    790.48,
     971.78
    ],
    [
     1784475000000,
-    825.24,
+    790.1,
     970.9
    ],
    [
     1784493900000,
-    822.72,
+    789.42,
     970.41
    ],
    [
     1784512800000,
-    823.58,
+    789.82,
     974.77
    ],
    [
     1784531700000,
-    821.46,
+    788.39,
     964.32
    ],
    [
     1784550600000,
-    823.23,
+    789.73,
     971.37
    ],
    [
     1784569500000,
-    828.92,
+    791.68,
     986.23
    ],
    [
     1784588400000,
-    826.58,
+    790.4,
     979.81
    ],
    [
     1784607300000,
-    829.92,
+    790.9,
     985.12
    ],
    [
     1784626200000,
-    838.08,
+    791.93,
     997.04
    ],
    [
     1784645100000,
-    836.01,
+    790.94,
     1005.09
    ],
    [
     1784664000000,
-    835.21,
+    790.48,
     998.74
    ],
    [
     1784682900000,
-    834.32,
+    790.09,
     997.69
    ],
    [
     1784701800000,
-    829.02,
+    788.29,
     991.77
    ],
    [
     1784720700000,
-    829.94,
+    788.58,
     992.62
    ],
    [
     1784739600000,
-    835.36,
+    790.99,
     994.95
    ],
    [
     1784758500000,
-    832.29,
+    789.42,
     992.82
    ],
    [
     1784777400000,
-    826.77,
+    786.49,
     987.79
    ],
    [
     1784796300000,
-    827.16,
+    785.93,
     986.91
    ],
    [
     1784815200000,
-    819.51,
+    781.85,
     978.14
    ],
    [
     1784834100000,
-    817.5,
+    777.67,
     975.83
    ],
    [
     1784853000000,
-    818.44,
+    777.52,
     975.22
    ],
    [
     1784871900000,
-    819.09,
+    778.21,
     982.27
    ],
    [
     1784890800000,
-    819.48,
+    778.03,
     977.39
    ],
    [
     1784909700000,
-    812.1,
+    774.34,
     963.74
    ],
    [
     1784928600000,
-    813.61,
+    774.5,
     964.97
    ],
    [
     1784947500000,
-    816.02,
+    774.9,
     963.13
    ],
    [
     1784966400000,
-    812.69,
+    773.66,
     961.77
    ],
    [
     1784985300000,
-    817.28,
+    774.36,
     964.34
    ],
    [
     1785004200000,
-    832.63,
+    775.25,
     968.31
    ],
    [
     1785023100000,
-    832.68,
+    775.27,
     967.99
    ],
    [
     1785042000000,
-    836.62,
+    776.07,
     970.17
    ],
    [
     1785060900000,
-    834.05,
+    776.08,
     970.14
    ],
    [
     1785079800000,
-    834.24,
+    776.49,
     974.39
    ],
    [
     1785098700000,
-    833.03,
+    776.12,
     972.11
    ],
    [
     1785117600000,
-    836.55,
+    777.07,
     980.49
    ],
    [
     1785136500000,
-    836.26,
+    776.56,
     983.56
    ],
    [
     1785155400000,
-    836.23,
+    775.67,
     978.09
    ],
    [
     1785174300000,
-    836.07,
+    772.68,
     977.69
    ],
    [
     1785193200000,
-    836.07,
+    764.95,
     959.34
    ],
    [
     1785212100000,
-    836.07,
+    762.67,
     951.75
    ],
    [
     1785231000000,
-    836.07,
+    763.57,
     955.12
    ],
    [
     1785249900000,
-    836.07,
+    763.04,
     953.52
    ],
    [
     1785268800000,
-    836.07,
+    765.8,
     962.2
    ],
    [
     1785287700000,
-    836.07,
+    765.15,
     961.0
    ],
    [
     1785306600000,
-    836.07,
+    765.74,
     969.31
    ],
    [
     1785325500000,
-    836.07,
+    765.47,
     969.98
    ],
    [
     1785344400000,
-    836.07,
+    765.47,
     960.45
    ],
    [
     1785363300000,
-    836.07,
+    765.47,
     963.04
    ],
    [
     1785382200000,
-    836.48,
+    765.56,
     964.76
    ],
    [
     1785401100000,
-    836.83,
+    766.08,
     966.98
    ],
    [
     1785420000000,
-    837.41,
+    766.35,
     973.39
    ],
    [
     1785438900000,
-    839.48,
+    766.92,
     975.71
    ],
    [
     1785457800000,
-    838.06,
+    766.25,
     974.3
    ],
    [
     1785476700000,
-    837.23,
+    766.29,
     967.81
    ],
    [
     1785495600000,
-    834.63,
+    765.45,
     960.93
    ],
    [
     1785514500000,
-    833.59,
+    764.84,
     946.13
    ],
    [
     1785533400000,
-    834.34,
+    764.98,
     947.89
    ],
    [
     1785552300000,
-    833.99,
+    764.78,
     948.44
    ],
    [
     1785571200000,
-    833.08,
+    764.52,
     948.82
    ],
    [
     1785590100000,
-    834.11,
+    764.12,
     948.57
    ],
    [
     1785609000000,
-    832.56,
+    759.79,
     937.84
    ],
    [
     1785627900000,
-    836.98,
+    762.22,
     944.66
    ],
    [
     1785646800000,
-    837.78,
+    766.59,
     954.57
    ],
    [
     1785665700000,
-    837.78,
+    765.81,
     949.42
    ],
    [
     1785684600000,
-    837.78,
+    765.43,
     949.57
    ],
    [
     1785703500000,
-    837.78,
+    766.49,
     954.75
    ],
    [
     1785722400000,
-    837.78,
+    764.78,
     950.4
    ],
    [
     1785741300000,
-    837.78,
+    764.77,
     941.9
    ],
    [
     1785760200000,
-    837.78,
+    764.77,
     943.82
    ],
    [
     1785779100000,
-    837.78,
+    764.77,
     960.94
    ],
    [
     1785798000000,
-    837.78,
+    764.77,
     955.47
    ],
    [
     1785816900000,
-    837.78,
+    764.77,
     959.85
    ],
    [
     1785835800000,
-    837.78,
+    764.77,
     955.98
    ],
    [
     1785854700000,
-    837.78,
+    764.77,
     964.29
    ],
    [
     1785873600000,
-    837.78,
+    764.77,
     964.99
    ],
    [
     1785892500000,
-    837.78,
+    764.77,
     964.05
    ],
    [
     1785911400000,
-    837.78,
+    764.77,
     966.8
    ],
    [
     1785930300000,
-    837.78,
+    764.77,
     963.48
    ],
    [
     1785949200000,
-    837.78,
+    764.77,
     971.23
    ],
    [
     1785968100000,
-    837.46,
+    764.77,
     973.33
    ],
    [
     1785987000000,
-    837.74,
+    764.8,
     969.95
    ],
    [
     1786005900000,
-    837.18,
+    764.63,
     976.52
    ],
    [
     1786024800000,
-    837.6,
+    764.75,
     969.39
    ],
    [
     1786043700000,
-    837.08,
+    764.6,
     968.45
    ],
    [
     1786062600000,
-    837.39,
+    764.63,
     967.22
    ],
    [
     1786081500000,
-    835.23,
+    764.22,
     967.41
    ],
    [
     1786100400000,
-    837.16,
+    764.79,
     976.83
    ],
    [
     1786119300000,
-    836.55,
+    764.61,
     976.37
    ],
    [
     1786138200000,
-    835.69,
+    764.35,
     977.76
    ],
    [
     1786157100000,
-    837.06,
+    764.66,
     976.24
    ],
    [
     1786176000000,
-    837.43,
+    764.81,
     976.88
    ],
    [
     1786194900000,
-    839.07,
+    765.11,
     977.66
    ],
    [
     1786213800000,
-    839.24,
+    765.17,
     978.11
    ],
    [
     1786232700000,
-    838.52,
+    765.03,
     976.82
    ],
    [
     1786251600000,
-    838.23,
+    764.86,
     974.17
    ],
    [
     1786270500000,
-    838.2,
+    764.86,
     976.94
    ],
    [
     1786289400000,
-    839.11,
+    764.86,
     980.79
    ],
    [
     1786308300000,
-    838.84,
+    764.86,
     979.46
    ],
    [
     1786327200000,
-    837.7,
+    764.86,
     978.94
    ],
    [
     1786346100000,
-    837.7,
+    764.86,
     982.25
    ],
    [
     1786365000000,
-    837.7,
+    764.86,
     977.66
    ],
    [
     1786383900000,
-    837.7,
+    764.86,
     961.64
    ],
    [
     1786402800000,
-    836.45,
+    764.71,
     962.11
    ],
    [
     1786421700000,
-    836.57,
+    764.83,
     963.98
    ],
    [
     1786440600000,
-    835.46,
+    764.84,
     966.01
    ],
    [
     1786459500000,
-    833.81,
+    764.7,
     958.89
    ],
    [
     1786478400000,
-    840.56,
+    765.2,
     957.44
    ],
    [
     1786497300000,
-    840.33,
+    765.02,
     958.62
    ],
    [
     1786516200000,
-    838.59,
+    764.71,
     957.14
    ],
    [
     1786535100000,
-    840.63,
+    765.86,
     965.96
    ],
    [
     1786554000000,
-    839.58,
+    765.55,
     955.44
    ],
    [
     1786572900000,
-    839.02,
+    765.17,
     954.69
    ],
    [
     1786591800000,
-    843.68,
+    766.43,
     955.98
    ],
    [
     1786610700000,
-    844.94,
+    766.76,
     958.84
    ],
    [
     1786629600000,
-    842.98,
+    766.65,
     959.52
    ],
    [
     1786648500000,
-    842.3,
+    766.04,
     953.6
    ],
    [
     1786667400000,
-    843.23,
+    766.0,
     955.22
    ],
    [
     1786686300000,
-    840.19,
+    765.36,
     953.03
    ],
    [
     1786705200000,
-    837.04,
+    764.91,
     945.21
    ],
    [
     1786724100000,
-    838.94,
+    765.42,
     949.1
    ],
    [
     1786743000000,
-    837.07,
+    764.78,
     945.64
    ],
    [
     1786761900000,
-    840.62,
+    766.0,
     949.33
    ],
    [
     1786780800000,
-    840.06,
+    765.8,
     948.24
    ],
    [
     1786799700000,
-    841.37,
+    766.32,
     947.86
    ],
    [
     1786818600000,
-    839.87,
+    765.69,
     948.07
    ],
    [
     1786837500000,
-    838.38,
+    765.44,
     948.61
    ],
    [
     1786856400000,
-    837.63,
+    765.43,
     948.73
    ],
    [
     1786875300000,
-    837.6,
+    765.34,
     947.52
    ],
    [
     1786894200000,
-    837.6,
+    765.46,
     949.03
    ],
    [
     1786913100000,
-    837.6,
+    765.41,
     948.33
    ],
    [
     1786932000000,
-    837.6,
+    765.6,
     948.55
    ],
    [
     1786950900000,
-    837.6,
+    766.3,
     956.29
    ],
    [
     1786969800000,
-    837.6,
+    765.99,
     955.88
    ],
    [
     1786988700000,
-    837.6,
+    766.3,
     967.25
    ],
    [
     1787007600000,
-    837.6,
+    766.3,
     967.84
    ],
    [
     1787026500000,
-    837.6,
+    766.3,
     964.69
    ],
    [
     1787045400000,
-    837.6,
+    766.3,
     964.61
    ],
    [
     1787064300000,
-    837.6,
+    766.3,
     973.09
    ],
    [
     1787083200000,
-    837.11,
+    766.13,
     972.17
    ],
    [
     1787102100000,
-    838.34,
+    766.74,
     969.68
    ],
    [
     1787121000000,
-    840.29,
+    767.94,
     966.41
    ],
    [
     1787139900000,
-    842.46,
+    768.63,
     970.1
    ],
    [
     1787158800000,
-    844.41,
+    770.9,
     1026.14
    ],
    [
     1787177700000,
-    851.74,
+    777.55,
     1039.7
    ],
    [
     1787196600000,
-    846.89,
+    773.4,
     1040.4
    ],
    [
     1787215500000,
-    854.55,
+    778.67,
     1076.51
    ],
    [
     1787234400000,
-    863.28,
+    784.33,
     1079.97
    ],
    [
     1787253300000,
-    863.27,
+    786.05,
     1091.82
    ],
    [
     1787272200000,
-    867.81,
+    785.96,
     1108.06
    ],
    [
     1787291100000,
-    870.12,
+    785.93,
     1134.86
    ],
    [
     1787310000000,
-    877.72,
+    786.21,
     1166.12
    ],
    [
     1787328900000,
-    880.09,
+    786.24,
     1163.6
    ],
    [
     1787347800000,
-    880.37,
+    786.43,
     1176.48
    ],
    [
     1787366700000,
-    881.2,
+    786.49,
     1179.93
    ],
    [
     1787385600000,
-    881.2,
+    786.49,
     1164.21
    ],
    [
     1787404500000,
-    881.2,
+    786.49,
     1160.4
    ],
    [
     1787423400000,
-    881.2,
+    786.49,
     1161.25
    ],
    [
     1787442300000,
-    881.2,
+    786.49,
     1158.95
    ],
    [
     1787461200000,
-    881.2,
+    786.49,
     1141.13
    ],
    [
     1787480100000,
-    881.2,
+    786.49,
     1154.18
    ],
    [
     1787499000000,
-    881.2,
+    786.49,
     1162.07
    ],
    [
     1787517900000,
-    881.2,
+    786.49,
     1163.87
    ],
    [
     1787536800000,
-    880.86,
+    786.49,
     1163.42
    ],
    [
     1787555700000,
-    881.34,
+    786.49,
     1166.75
    ],
    [
     1787574600000,
-    881.48,
+    786.49,
     1183.83
    ],
    [
     1787593500000,
-    880.91,
+    786.49,
     1184.31
    ],
    [
     1787612400000,
-    881.39,
+    786.49,
     1184.0
    ],
    [
     1787631300000,
-    881.58,
+    786.49,
     1206.79
    ],
    [
     1787650200000,
-    880.76,
+    786.32,
     1199.15
    ],
    [
     1787669100000,
-    880.28,
+    786.16,
     1191.45
    ],
    [
     1787688000000,
-    878.94,
+    785.5,
     1186.13
    ],
    [
     1787706900000,
-    878.66,
+    785.1,
     1183.57
    ],
    [
     1787725800000,
-    880.11,
+    785.53,
     1186.93
    ],
    [
     1787744700000,
-    878.66,
+    785.1,
     1180.19
    ],
    [
     1787763600000,
-    877.87,
+    784.87,
     1174.8
    ],
    [
     1787782500000,
-    879.1,
+    785.23,
     1185.21
    ],
    [
     1787801400000,
-    878.32,
+    785.0,
     1186.04
    ],
    [
     1787820300000,
-    879.05,
+    785.02,
     1199.27
    ],
    [
     1787839200000,
-    880.11,
+    785.02,
     1194.78
    ],
    [
     1787858100000,
-    880.09,
+    785.02,
     1205.6
    ],
    [
     1787877000000,
-    880.26,
+    785.02,
     1209.23
    ],
    [
     1787895900000,
-    878.76,
+    785.02,
     1198.22
    ],
    [
     1787914800000,
-    879.49,
+    785.02,
     1198.34
    ],
    [
     1787933700000,
-    876.7,
+    785.02,
     1165.81
    ],
    [
     1787952600000,
-    880.6,
+    785.02,
     1164.99
    ],
    [
     1787971500000,
-    878.98,
+    785.02,
     1167.92
    ],
    [
     1787990400000,
-    878.45,
+    785.02,
     1165.74
    ],
    [
     1788009300000,
-    878.07,
+    785.02,
     1167.74
    ],
    [
     1788028200000,
-    878.63,
+    785.02,
     1175.06
    ],
    [
     1788047100000,
-    880.89,
+    785.02,
     1176.32
    ],
    [
     1788066000000,
-    879.92,
+    785.02,
     1175.06
    ],
    [
     1788084900000,
-    880.63,
+    785.02,
     1173.62
    ],
    [
     1788103800000,
-    884.91,
+    785.02,
     1185.8
    ],
    [
     1788122700000,
-    882.04,
+    785.02,
     1181.85
    ],
    [
     1788141600000,
-    876.11,
+    785.06,
     1172.16
    ],
    [
     1788160500000,
-    881.53,
+    786.63,
     1176.07
    ],
    [
     1788179400000,
-    876.86,
+    786.46,
     1171.14
    ],
    [
     1788198300000,
-    882.04,
+    788.27,
     1186.36
    ],
    [
     1788217200000,
-    881.84,
+    788.38,
     1179.74
    ],
    [
     1788236100000,
-    889.07,
+    790.45,
     1185.34
    ],
    [
     1788255000000,
-    888.16,
+    787.76,
     1173.8
    ],
    [
     1788273900000,
-    892.71,
+    788.96,
     1175.39
    ],
    [
     1788292800000,
-    889.27,
+    786.66,
     1164.23
    ],
    [
     1788311700000,
-    885.75,
+    786.16,
     1160.08
    ],
    [
     1788330600000,
-    888.29,
+    787.63,
     1167.06
    ],
    [
     1788349500000,
-    880.01,
+    787.63,
     1155.25
    ],
    [
     1788368400000,
-    881.94,
+    787.63,
     1159.77
    ],
    [
     1788387300000,
-    885.32,
+    787.63,
     1158.2
    ],
    [
     1788406200000,
-    893.32,
+    787.63,
     1167.91
    ],
    [
     1788425100000,
-    895.01,
+    787.63,
     1170.51
    ],
    [
     1788444000000,
-    898.16,
+    787.63,
     1187.75
    ],
    [
     1788462900000,
-    905.46,
+    787.63,
     1226.2
    ],
    [
     1788481800000,
-    904.05,
+    783.11,
     1221.34
    ],
    [
     1788500700000,
-    903.4,
+    782.18,
     1217.92
    ],
    [
     1788519600000,
-    903.13,
+    784.37,
     1220.79
    ],
    [
     1788538500000,
-    899.85,
+    774.18,
     1196.16
    ],
    [
     1788557400000,
-    898.1,
+    774.38,
     1199.36
    ],
    [
     1788576300000,
-    898.16,
+    774.36,
     1196.46
    ],
    [
     1788595200000,
-    898.86,
+    776.51,
     1197.86
    ],
    [
     1788614100000,
-    899.07,
+    780.25,
     1199.24
    ],
    [
     1788633000000,
-    899.67,
+    785.9,
     1202.43
    ],
    [
     1788651900000,
-    899.45,
+    784.79,
     1200.41
    ],
    [
     1788670800000,
-    899.23,
+    784.79,
     1199.99
    ],
    [
     1788689700000,
-    899.67,
+    784.79,
     1202.54
    ],
    [
     1788708600000,
-    900.26,
+    784.79,
     1198.31
    ],
    [
     1788727500000,
-    900.69,
+    784.79,
     1201.62
    ],
    [
     1788746400000,
-    900.1,
+    784.79,
     1200.49
    ],
    [
     1788765300000,
-    901.01,
+    784.79,
     1194.28
    ],
    [
     1788784200000,
-    900.53,
+    784.79,
     1195.01
    ],
    [
     1788803100000,
-    899.56,
+    784.79,
     1190.69
    ],
    [
     1788822000000,
-    899.66,
+    784.79,
     1189.89
    ],
    [
     1788840900000,
-    899.66,
+    784.79,
     1185.12
    ],
    [
     1788859800000,
-    899.66,
+    784.79,
     1184.32
    ],
    [
     1788878700000,
-    899.66,
+    784.79,
     1181.4
    ],
    [
     1788897600000,
-    899.66,
+    784.79,
     1182.04
    ],
    [
     1788916500000,
-    899.66,
+    784.79,
     1183.9
    ],
    [
     1788935400000,
-    899.66,
+    784.79,
     1190.72
    ],
    [
     1788954300000,
-    899.66,
+    784.79,
     1192.78
    ],
    [
     1788973200000,
-    899.66,
+    784.79,
     1185.97
    ],
    [
     1788992100000,
-    899.66,
+    784.79,
     1173.34
    ],
    [
     1789011000000,
-    899.66,
+    784.79,
     1178.41
    ],
    [
     1789029900000,
-    899.66,
+    784.79,
     1174.52
    ],
    [
     1789048800000,
-    899.66,
+    784.79,
     1159.12
    ],
    [
     1789067700000,
-    899.66,
+    784.79,
     1160.69
    ],
    [
     1789086600000,
-    900.07,
+    784.79,
     1154.25
    ],
    [
     1789105500000,
-    901.99,
+    785.0,
     1161.63
    ],
    [
     1789124400000,
-    898.23,
+    784.16,
     1154.61
    ],
    [
     1789143300000,
-    905.83,
+    785.86,
     1167.88
    ],
    [
     1789162200000,
-    903.63,
+    785.37,
     1162.94
    ],
    [
     1789181100000,
-    904.07,
+    785.47,
     1162.16
    ],
    [
     1789200000000,
-    904.52,
+    785.57,
     1162.28
    ],
    [
     1789218900000,
-    904.77,
+    785.62,
     1162.62
    ],
    [
     1789237800000,
-    904.14,
+    785.48,
     1160.53
    ],
    [
     1789256700000,
-    904.45,
+    785.55,
     1162.02
    ],
    [
     1789275600000,
-    904.42,
+    785.47,
     1161.53
    ],
    [
     1789294500000,
-    901.25,
+    785.47,
     1154.15
    ],
    [
     1789313400000,
-    901.39,
+    785.47,
     1160.41
    ],
    [
     1789332300000,
-    903.7,
+    785.47,
     1163.06
    ],
    [
     1789351200000,
-    900.29,
+    785.47,
     1163.56
    ],
    [
     1789370100000,
-    900.29,
+    785.47,
     1168.53
    ],
    [
     1789389000000,
-    900.29,
+    785.47,
     1171.63
    ],
    [
     1789407900000,
-    900.29,
+    785.47,
     1186.97
    ],
    [
     1789426800000,
-    900.29,
+    785.47,
     1179.27
    ],
    [
     1789445700000,
-    900.79,
+    785.47,
     1167.21
    ],
    [
     1789464600000,
-    902.03,
+    785.47,
     1157.7
    ],
    [
     1789483500000,
-    886.73,
+    784.61,
     1141.92
    ],
    [
     1789502400000,
-    870.74,
+    781.58,
     1143.42
    ],
    [
     1789521300000,
-    864.77,
+    780.26,
     1140.86
    ],
    [
     1789540200000,
-    865.05,
+    779.85,
     1141.77
    ],
    [
     1789559100000,
-    870.0,
+    782.07,
     1146.55
    ],
    [
     1789578000000,
-    864.92,
+    778.23,
     1138.69
    ],
    [
     1789596900000,
-    877.07,
+    784.34,
     1139.16
    ],
    [
     1789615800000,
-    892.98,
+    794.28,
     1150.04
    ],
    [
     1789634700000,
-    897.33,
+    798.08,
     1151.43
    ],
    [
     1789653600000,
-    907.14,
+    802.82,
     1157.31
    ],
    [
     1789672500000,
-    909.95,
+    804.14,
     1151.53
    ],
    [
     1789691400000,
-    916.16,
+    806.08,
     1149.28
    ],
    [
     1789710300000,
-    946.44,
+    813.71,
     1165.25
    ],
    [
     1789729200000,
-    947.96,
+    814.12,
     1174.64
    ],
    [
     1789748100000,
-    969.1,
+    814.35,
     1218.75
    ],
    [
     1789767000000,
-    975.65,
+    814.83,
     1221.29
    ],
    [
     1789785900000,
-    980.52,
+    814.98,
     1222.56
    ],
    [
     1789804800000,
-    976.24,
+    814.39,
     1221.61
    ],
    [
     1789823700000,
-    979.62,
+    815.4,
     1221.48
    ],
    [
     1789842600000,
-    984.03,
+    816.28,
     1225.34
    ],
    [
     1789861500000,
-    979.66,
+    814.72,
     1221.73
    ],
    [
     1789880400000,
-    972.91,
+    812.41,
     1211.96
    ],
    [
     1789899300000,
-    973.33,
+    811.67,
     1208.65
    ],
    [
     1789918200000,
-    978.89,
+    812.31,
     1215.56
    ],
    [
     1789937100000,
-    982.5,
+    812.92,
     1219.36
    ],
    [
     1789956000000,
-    985.8,
+    812.92,
     1223.51
    ],
    [
     1789974900000,
-    988.31,
+    812.92,
     1227.21
    ],
    [
     1789993800000,
-    1003.79,
+    813.13,
     1282.49
    ],
    [
     1790012700000,
-    1012.34,
+    813.23,
     1291.61
    ],
    [
     1790031600000,
-    1035.54,
+    815.83,
     1302.92
    ],
    [
     1790050500000,
-    1027.0,
+    813.69,
     1286.63
    ],
    [
     1790069400000,
-    1030.38,
+    814.44,
     1293.82
    ],
    [
     1790088300000,
-    1026.06,
+    815.41,
     1297.04
    ],
    [
     1790107200000,
-    1028.54,
+    816.05,
     1296.29
    ],
    [
     1790126100000,
-    1032.22,
+    816.76,
     1302.67
    ],
    [
     1790145000000,
-    1041.23,
+    818.36,
     1301.62
    ],
    [
     1790163900000,
-    1029.23,
+    815.5,
     1287.89
    ],
    [
     1790182800000,
-    1011.01,
+    813.88,
     1260.24
    ],
    [
     1790201700000,
-    1012.72,
+    814.15,
     1270.36
    ],
    [
     1790220600000,
-    1011.46,
+    814.15,
     1263.24
    ],
    [
     1790239500000,
-    1009.5,
+    814.15,
     1257.97
    ],
    [
     1790258400000,
-    1007.24,
+    814.15,
     1266.54
    ],
    [
     1790277300000,
-    1007.24,
+    814.15,
     1272.77
    ],
    [
     1790296200000,
-    1007.24,
+    814.15,
     1272.09
    ],
    [
     1790315100000,
-    1007.24,
+    814.15,
     1266.0
    ],
    [
     1790334000000,
-    1007.24,
+    814.15,
     1281.46
    ],
    [
     1790352900000,
-    1006.33,
+    814.15,
     1262.66
    ],
    [
     1790371800000,
-    1007.92,
+    814.15,
     1260.3
    ],
    [
     1790390700000,
-    1007.81,
+    814.15,
     1263.24
    ],
    [
     1790409600000,
-    1007.35,
+    814.15,
     1264.29
    ],
    [
     1790428500000,
-    1006.67,
+    814.15,
     1262.06
    ],
    [
     1790447400000,
-    1006.1,
+    814.15,
     1263.18
    ],
    [
     1790466300000,
-    1004.06,
+    814.15,
     1269.6
    ],
    [
     1790485200000,
-    1002.69,
+    814.15,
     1268.97
    ]
   ],
-  "seconds": 1250
+  "seconds": 1179
  },
  "config": {
   "symbols": [

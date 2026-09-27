@@ -1,25 +1,30 @@
 {
- "created_at": 1790507671308,
- "source": "local",
- "model": "mimo2.6:9b",
- "seconds": 7.0,
+ "created_at": 1790509663139,
+ "source": "cloud",
+ "model": "qwen3:4b",
+ "seconds": 179.6,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
-   "ETH": "reduce",
-   "ADA": "avoid",
-   "SOL": "avoid"
+   "SOL": "reduce",
+   "ADA": "reduce",
+   "AVAX": "avoid",
+   "LTC": "avoid",
+   "TRX": "avoid"
   },
-  "regime": "bear"
+  "regime": "volatile"
  },
- "reasoning": "Regime: Greed (Fear & Greed 70), crowded positioning with regulatory tail risk. Model edge is False on newest data (26 trades, avg +3.16%/trade vs always-buy +0.37%), so no live edge exists. Practice account lost 0.11% with zero trades. Reduce risk: keep entries strict, avoid high-volatility symbols ADA (3.5% daily vol) and SOL (2.6% daily vol).",
+ "reasoning": "Model nie ma potwierdzonego edge na nowych danych (26 trades, avg +3.16%/trade vs always-buy +0.37%), a wszystkie symbole maj\u0105 poni\u017cej 79% progu. Wysoka volatylno\u015b\u0107 (AVAX 4.7%, LTC 3.0%) i brak zysk\u00f3w w ostatnich 24h wskazuj\u0105 na niepewno\u015b\u0107 rynku. Zmniejszono ryzyko dla SOL i ADA, a AVAX, LTC i TRX s\u0105 unikane ze wzgl\u0119du na wysok\u0105 volatylno\u015b\u0107 i nisk\u0105 pewno\u015b\u0107 modelu.",
  "new_lessons": [
-  "Model edge is False on newest data; keep entries strict until proven.",
-  "Practice account lost 0.11% with zero trades; no live edge exists.",
-  "ADA 3.5% vol and SOL 2.6% vol need strict entry thresholds."
+  "Wyniki modelu s\u0105 niepewne; zwi\u0119ksz sztywko\u015b\u0107 wej\u015bcia do 74% progu dla pewno\u015bci.",
+  "AVAX i LTC maj\u0105 wysok\u0105 volatylno\u015b\u0107 (4.7% i 3.0%) i wymagaj\u0105 stricznego wej\u015bcia.",
+  "TRX jest niepewny (30% CLM) i powinien by\u0107 unikany ze wzgl\u0119du na brak stabilno\u015bci."
  ],
  "lessons": [
+  "Wyniki modelu s\u0105 niepewne; zwi\u0119ksz sztywko\u015b\u0107 wej\u015bcia do 74% progu dla pewno\u015bci.",
+  "AVAX i LTC maj\u0105 wysok\u0105 volatylno\u015b\u0107 (4.7% i 3.0%) i wymagaj\u0105 stricznego wej\u015bcia.",
+  "TRX jest niepewny (30% CLM) i powinien by\u0107 unikany ze wzgl\u0119du na brak stabilno\u015bci.",
   "Model edge is False on newest data; keep entries strict until proven.",
   "Practice account lost 0.11% with zero trades; no live edge exists.",
   "ADA 3.5% vol and SOL 2.6% vol need strict entry thresholds.",
@@ -28,10 +33,7 @@
   "SOL's 2.6% volatility and 14.4% 7d return need reduced exposure to avoid overexposure.",
   "ADA's 3.5% daily volatility and 22.6% 30d return require strict entry thresholds until the model shows edge",
   "SOL's 2.6% volatility and 15.0% 7d return need reduced exposure to avoid overexposure",
-  "XRP's 59% CLM favourable but low 24h return (-1.2%) suggests caution despite high CLM score",
-  "ADA's 3.5% daily volatility and 22.8% 30d return require strict entry thresholds until model shows edge",
-  "SOL's 2.6% volatility and 16.8% 30d return need reduced exposure to avoid overexposure",
-  "No closed trades yet, so no proven edge exists; keep entries strict until the model shows positive results."
+  "XRP's 59% CLM favourable but low 24h return (-1.2%) suggests caution despite high CLM score"
  ],
  "equity_at": 1000.0
 }
