@@ -1,28 +1,30 @@
 {
- "created_at": 1790499732089,
- "source": "cloud",
- "model": "qwen3:4b",
- "seconds": 86.1,
+ "created_at": 1790502017608,
+ "source": "local",
+ "model": "mimo2.6:9b",
+ "seconds": 2.7,
  "directives": {
   "risk_level": 0.5,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
-   "SOL": "reduce",
    "XRP": "reduce",
-   "ADA": "avoid"
+   "ADA": "avoid",
+   "SOL": "avoid"
   },
-  "regime": "volatile"
+  "regime": "bear"
  },
- "reasoning": "Model has no proven edge (win rate 50%), all symbols below 0.8 confidence threshold. Avoid ADA due to high volatility; reduce SOL and XRP to mitigate risk from high volatility and uncertain model performance.",
+ "reasoning": "The market is in a complacent Greed regime with regulatory tail-risk headlines, so the model's unproven edge should be protected. ADA and SOL have the highest volatility and recent returns, making them the riskiest entries. XRP's CLM score is high but its 24h return is negative, so caution is warranted.",
  "new_lessons": [
-  "ADA's 3.5% daily volatility and 22.8% 30d return require strict entry thresholds until model shows edge",
-  "SOL's 2.6% volatility and 16.8% 30d return need reduced exposure to avoid overexposure",
+  "ADA's 3.5% daily volatility and 22.6% 30d return require strict entry thresholds until the model shows edge",
+  "SOL's 2.6% volatility and 15.0% 7d return need reduced exposure to avoid overexposure",
   "XRP's 59% CLM favourable but low 24h return (-1.2%) suggests caution despite high CLM score"
  ],
  "lessons": [
+  "ADA's 3.5% daily volatility and 22.6% 30d return require strict entry thresholds until the model shows edge",
+  "SOL's 2.6% volatility and 15.0% 7d return need reduced exposure to avoid overexposure",
+  "XRP's 59% CLM favourable but low 24h return (-1.2%) suggests caution despite high CLM score",
   "ADA's 3.5% daily volatility and 22.8% 30d return require strict entry thresholds until model shows edge",
   "SOL's 2.6% volatility and 16.8% 30d return need reduced exposure to avoid overexposure",
-  "XRP's 59% CLM favourable but low 24h return (-1.2%) suggests caution despite high CLM score",
   "No closed trades yet, so no proven edge exists; keep entries strict until the model shows positive results.",
   "ADA has the highest daily volatility (3.5%) and 30d return (22.8%); avoid it until the model demonstrates an edge.",
   "SOL has high volatility (2.6%) and a 30d return of 16.8%; reduce exposure or avoid until the model shows an edge."
