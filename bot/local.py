@@ -25,6 +25,7 @@ BRAIN_EVERY_S = 3600
 CLM_EVERY_S = 4 * 3600
 PUSH = ["data/brain.json", "data/brain_journal.jsonl", "data/clm.json", "data/clm_log.jsonl"]
 NO_WINDOW = getattr(subprocess, "CREATE_NO_WINDOW", 0)
+_lock = socket.socket()  # holding this port = "an instance is running"
 
 
 def log(msg):
@@ -77,6 +78,7 @@ def ollama_ready():
 def restart_if_code_changed(code_before):
     if head("bot") != code_before:
         log("new code on GitHub; restarting")
+        _lock.close()  # free the single-instance port before the new copy starts
         subprocess.Popen([sys.executable, "-m", "bot", "local"], cwd=config.ROOT, creationflags=NO_WINDOW)
         sys.exit(0)
 
@@ -92,9 +94,8 @@ def main():
     if LOG.exists() and LOG.stat().st_size > 5_000_000:
         LOG.write_text("", encoding="utf-8")
     sys.stdout = sys.stderr = open(LOG, "a", encoding="utf-8", buffering=1)
-    lock = socket.socket()
     try:
-        lock.bind(("127.0.0.1", 47291))  # single instance
+        _lock.bind(("127.0.0.1", 47291))  # single instance
     except OSError:
         log("already running; exiting")
         return
