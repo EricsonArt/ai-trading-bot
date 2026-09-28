@@ -128,5 +128,35 @@
   "tested_at": 1790605037781,
   "model_version": 5,
   "adopted": false
+ },
+ "71afb5b4ac": {
+  "name": "Wysoka volatywno\u015b\u0107 Bitcoin",
+  "source": "internet research: CoinDesk, arXiv: How Much Must a Private Mempool Hide?",
+  "rule": "btc_vol96 > 0.003",
+  "why": "Bot straci\u0142 pieni\u0105dze w sytuacjach gdy Bitcoin mia\u0142 wysok\u0105 volatywno\u015b\u0107 (btc_vol96 > 0.003). Wczoraj w CoinDesk zauwa\u017cono, \u017ce Bitcoin spada z powodu negatywnych sygna\u0142\u00f3w z Iranu, co zwi\u0119ksza ryzyko sandwich attack\u00f3w zgodnie z arXivem o mempools.",
+  "gain": 0.0,
+  "tested_at": 1790622291646,
+  "model_version": 5,
+  "adopted": false
+ },
+ "c500c72ca0": {
+  "name": "Spadek Bitcoin w ci\u0105gu 24h",
+  "source": "internet research: CoinDesk, arXiv: How Much Must a Private Mempool Hide?",
+  "rule": "btc_r96 < -0.024",
+  "why": "Losing trades wskazuj\u0105 na spadek Bitcoin (btc_r96 < -0.024). Wczoraj w CoinDesk zauwa\u017cono, \u017ce Bitcoin spada z powodu negatywnych sygna\u0142\u00f3w z Iranu, co zwi\u0119ksza ryzyko sandwich attack\u00f3w zgodnie z arXivem o mempools.",
+  "gain": -0.00922,
+  "tested_at": 1790622291646,
+  "model_version": 5,
+  "adopted": false
+ },
+ "159bf858ac": {
+  "name": "Niski RSI",
+  "source": "internet research: CoinDesk, arXiv: How Much Must a Private Mempool Hide?",
+  "rule": "rsi < 0.5",
+  "why": "Bot straci\u0142 pieni\u0105dze w sytuacjach gdy RSI by\u0142 niski (rsi < 0.5). Wczoraj w CoinDesk zauwa\u017cono, \u017ce Bitcoin spada z powodu negatywnych sygna\u0142\u00f3w z Iranu, co zwi\u0119ksza ryzyko sandwich attack\u00f3w zgodnie z arXivem o mempools.",
+  "gain": 0.00243,
+  "tested_at": 1790622291646,
+  "model_version": 5,
+  "adopted": false
  }
 }
