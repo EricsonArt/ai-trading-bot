@@ -1,5 +1,5 @@
 {
- "generated_at": 1790557528803,
+ "generated_at": 1790575087217,
  "last_candle": 1790555400000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
@@ -807,7 +807,7 @@
   "regime": "volatile"
  },
  "brain": {
-  "created_at": 1790551718206,
+  "created_at": 1790575087216,
   "source": "cloud",
   "model": "qwen3:4b",
   "directives": {
@@ -820,16 +820,17 @@
    },
    "regime": "volatile"
   },
-  "reasoning": "Model nie ma wygrywaj\u0105cych transakcji (0 zamkni\u0119tych) i edge nie jest udowodniony. Wszystkie sygna\u0142y maj\u0105 poni\u017cej 0.84 progu. Najwy\u017csza volatylno\u015b\u0107 u AVAX, LTC, DOT. Zmniejsz ryzyko do 0.2, unikaj tych symboli, zwi\u0119ksz sztywko\u015b\u0107 wej\u015bcia do 74% progu.",
+  "reasoning": "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony. Wszystkie sygna\u0142y maj\u0105 poni\u017cej 74% pewno\u015bci, a najwi\u0119cej zmienno\u015bci u AVAX, LTC i DOT. Zwi\u0119kszenie sztywko\u015bci wej\u015bcia do 74% i unikanie wysokiej volatylno\u015bci.",
   "new_lessons": [
-   "Model ma 0 zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107.",
+   "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107.",
    "AVAX (4.7% vol), LTC (3.0% vol) i DOT (5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj.",
    "Model edge jest False na nowych danych; zwi\u0119ksz sztywko\u015b\u0107 wej\u015bcia do 74% progu dla pewno\u015bci."
   ],
   "lessons": [
-   "Model ma 0 zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107.",
+   "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107.",
    "AVAX (4.7% vol), LTC (3.0% vol) i DOT (5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj.",
    "Model edge jest False na nowych danych; zwi\u0119ksz sztywko\u015b\u0107 wej\u015bcia do 74% progu dla pewno\u015bci.",
+   "Model ma 0 zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107.",
    "Model ma 0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
    "CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje.",
    "AVAX (48.9% 7d, 4.7% vol), LTC (46.4% 7d, 3.0% vol) i DOT (43.5% 7d, 5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj.",
@@ -837,12 +838,33 @@
    "Model ma zero zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 nie zwi\u0119ksza\u0107 ryzyka.",
    "AVAX (4.7% vol) i LTC (3.0% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj, dop\u00f3ki nie ma dowodu przewagi.",
    "Wyniki modelu s\u0105 niepewne; zwi\u0119ksz sztywko\u015b\u0107 wej\u015bcia do 74% progu dla pewno\u015bci.",
-   "AVAX i LTC maj\u0105 wysok\u0105 volatylno\u015b\u0107 (4.7% i 3.0%) i wymagaj\u0105 stricznego wej\u015bcia.",
-   "TRX jest niepewny (30% CLM) i powinien by\u0107 unikany ze wzgl\u0119du na brak stabilno\u015bci."
+   "AVAX i LTC maj\u0105 wysok\u0105 volatylno\u015b\u0107 (4.7% i 3.0%) i wymagaj\u0105 stricznego wej\u015bcia."
   ],
-  "seconds": 176.0
+  "seconds": 173.2
  },
  "brain_journal": [
+  {
+   "created_at": 1790575087216,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.05,
+    "symbol_bias": {
+     "AVAX": "avoid",
+     "LTC": "avoid",
+     "DOT": "avoid"
+    },
+    "regime": "volatile"
+   },
+   "reasoning": "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony. Wszystkie sygna\u0142y maj\u0105 poni\u017cej 74% pewno\u015bci, a najwi\u0119cej zmienno\u015bci u AVAX, LTC i DOT. Zwi\u0119kszenie sztywko\u015bci wej\u015bcia do 74% i unikanie wysokiej volatylno\u015bci.",
+   "new_lessons": [
+    "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107.",
+    "AVAX (4.7% vol), LTC (3.0% vol) i DOT (5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj.",
+    "Model edge jest False na nowych danych; zwi\u0119ksz sztywko\u015b\u0107 wej\u015bcia do 74% progu dla pewno\u015bci."
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1790551718206,
    "source": "cloud",
@@ -1038,30 +1060,6 @@
     "Model ma zero zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 nie zwi\u0119ksza\u0107 ryzyka.",
     "AVAX (4.7% vol) i LTC (3.0% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj, dop\u00f3ki nie ma dowodu przewagi.",
     "CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje."
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1790509663139,
-   "source": "cloud",
-   "model": "qwen3:4b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.05,
-    "symbol_bias": {
-     "SOL": "reduce",
-     "ADA": "reduce",
-     "AVAX": "avoid",
-     "LTC": "avoid",
-     "TRX": "avoid"
-    },
-    "regime": "volatile"
-   },
-   "reasoning": "Model nie ma potwierdzonego edge na nowych danych (26 trades, avg +3.16%/trade vs always-buy +0.37%), a wszystkie symbole maj\u0105 poni\u017cej 79% progu. Wysoka volatylno\u015b\u0107 (AVAX 4.7%, LTC 3.0%) i brak zysk\u00f3w w ostatnich 24h wskazuj\u0105 na niepewno\u015b\u0107 rynku. Zmniejszono ryzyko dla SOL i ADA, a AVAX, LTC i TRX s\u0105 unikane ze wzgl\u0119du na wysok\u0105 volatylno\u015b\u0107 i nisk\u0105 pewno\u015b\u0107 modelu.",
-   "new_lessons": [
-    "Wyniki modelu s\u0105 niepewne; zwi\u0119ksz sztywko\u015b\u0107 wej\u015bcia do 74% progu dla pewno\u015bci.",
-    "AVAX i LTC maj\u0105 wysok\u0105 volatylno\u015b\u0107 (4.7% i 3.0%) i wymagaj\u0105 stricznego wej\u015bcia.",
-    "TRX jest niepewny (30% CLM) i powinien by\u0107 unikany ze wzgl\u0119du na brak stabilno\u015bci."
    ],
    "equity_at": 1000.0
   }
