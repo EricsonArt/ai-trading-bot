@@ -1,5 +1,5 @@
 {
- "generated_at": 1790607915297,
+ "generated_at": 1790615621407,
  "last_candle": 1790606700000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
@@ -1159,7 +1159,7 @@
   "regime": "volatile"
  },
  "brain": {
-  "created_at": 1790575087216,
+  "created_at": 1790615621405,
   "source": "cloud",
   "model": "qwen3:4b",
   "directives": {
@@ -1172,7 +1172,7 @@
    },
    "regime": "volatile"
   },
-  "reasoning": "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony. Wszystkie sygna\u0142y maj\u0105 poni\u017cej 74% pewno\u015bci, a najwi\u0119cej zmienno\u015bci u AVAX, LTC i DOT. Zwi\u0119kszenie sztywko\u015bci wej\u015bcia do 74% i unikanie wysokiej volatylno\u015bci.",
+  "reasoning": "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony. Wszystkie sygna\u0142y modelu s\u0105 poni\u017cej 79% progu. Najwy\u017csza volatylno\u015b\u0107 u AVAX, LTC i DOT. Wskaz\u00f3wka: unikaj wysokiej volatylno\u015bci i spadku BTC.",
   "new_lessons": [
    "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107.",
    "AVAX (4.7% vol), LTC (3.0% vol) i DOT (5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj.",
@@ -1192,9 +1192,31 @@
    "Wyniki modelu s\u0105 niepewne; zwi\u0119ksz sztywko\u015b\u0107 wej\u015bcia do 74% progu dla pewno\u015bci.",
    "AVAX i LTC maj\u0105 wysok\u0105 volatylno\u015b\u0107 (4.7% i 3.0%) i wymagaj\u0105 stricznego wej\u015bcia."
   ],
-  "seconds": 173.2
+  "seconds": 184.4
  },
  "brain_journal": [
+  {
+   "created_at": 1790615621405,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.05,
+    "symbol_bias": {
+     "AVAX": "avoid",
+     "LTC": "avoid",
+     "DOT": "avoid"
+    },
+    "regime": "volatile"
+   },
+   "reasoning": "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony. Wszystkie sygna\u0142y modelu s\u0105 poni\u017cej 79% progu. Najwy\u017csza volatylno\u015b\u0107 u AVAX, LTC i DOT. Wskaz\u00f3wka: unikaj wysokiej volatylno\u015bci i spadku BTC.",
+   "new_lessons": [
+    "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107.",
+    "AVAX (4.7% vol), LTC (3.0% vol) i DOT (5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj.",
+    "Model edge jest False na nowych danych; zwi\u0119ksz sztywko\u015b\u0107 wej\u015bcia do 74% progu dla pewno\u015bci."
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1790575087216,
    "source": "cloud",
@@ -1389,28 +1411,6 @@
    "new_lessons": [
     "Model ma 0 zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107.",
     "AVAX (48.9% 7d, 4.7% vol), LTC (46.4% 7d, 3.0% vol) i DOT (43.5% 7d, 5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj.",
-    "CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje."
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1790511314416,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.05,
-    "symbol_bias": {
-     "AVAX": "avoid",
-     "LTC": "avoid",
-     "TRX": "avoid"
-    },
-    "regime": "bull"
-   },
-   "reasoning": "Rynek jest w fazie wzrostowej, ale model ma zero zamkni\u0119tych transakcji i edge nie jest udowodniony. Wszystkie sygna\u0142y s\u0105 poni\u017cej progu 0.79, wi\u0119c nie ma \u017cadnych wej\u015b\u0107. AVAX i LTC maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107, wi\u0119c powinny by\u0107 unikane. TRX ma negatywny trend 24h i 30d, wi\u0119c r\u00f3wnie\u017c unikamy. CLM model jest bezu\u017cyteczny, wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje.",
-   "new_lessons": [
-    "Model ma zero zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 nie zwi\u0119ksza\u0107 ryzyka.",
-    "AVAX (4.7% vol) i LTC (3.0% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj, dop\u00f3ki nie ma dowodu przewagi.",
     "CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje."
    ],
    "equity_at": 1000.0
@@ -4220,17 +4220,17 @@
    ]
   },
   "research": {
-   "created_at": 1790509481302,
+   "created_at": 1790615434763,
    "source": "cloud",
    "model": "qwen3:4b",
-   "seconds": 418.2,
-   "digest": "W dzisiejszych rynkach kryminalnych i regulacyjnych, Bitcoin ETFs zyskuj\u0105 7 dni podci\u0105gi, ale krytyczne s\u0105 ryzyka zwi\u0105zane z regulacj\u0105 i zabezpieczeniami. Wskaz\u00f3wka: zabezpiecz si\u0119 przed zbyt du\u017c\u0105 volatylno\u015bci\u0105 i brakiem konsystencji w trendach.",
-   "mood": "greed",
+   "seconds": 443.2,
+   "digest": "Dzi\u015b w krypty wskazuje na zwi\u0119kszenie ryzyka sandwich attack\u00f3w z powodu niepe\u0142nej kryptyzacji transakcji w mempools, co mo\u017ce spowodowa\u0107 du\u017ce straty dla bot\u00f3w. Tether jest kluczowym narz\u0119dziem dla Iranu, co zwi\u0119ksza regulacyjne obawy. Traders s\u0105 bardziej selektywni w altseason, ale Bitcoin traci na warto\u015bci z powodu negatywnych sygna\u0142\u00f3w z Iranu i wyceny ropy. Wskaz\u00f3wka dla bot\u00f3w: unikaj transakcji w czasie wysokiej volatylno\u015bci i kiedy Bitcoin jest w spadku.",
+   "mood": "fear",
    "fng": [
     {
-     "value": 70,
+     "value": 74,
      "label": "Greed",
-     "ts": 1790467200000
+     "ts": 1790553600000
     }
    ],
    "used": [
@@ -4243,6 +4243,11 @@
    ],
    "failed": [],
    "items": [
+    {
+     "kind": "arXiv research",
+     "title": "How Much Must a Private Mempool Hide? Exact Leakage Thresholds for Sandwich Attacks",
+     "url": "http://arxiv.org/abs/2609.31379v1"
+    },
     {
      "kind": "arXiv research",
      "title": "Functional Architecture of European Electricity Trading Markets: Requirements for AI Supported Trading Systems under Regulatory Constraints",
@@ -4269,54 +4274,49 @@
      "url": "http://arxiv.org/abs/2609.23703v1"
     },
     {
-     "kind": "arXiv research",
-     "title": "Stealing profits: Spread-based temporal hierarchy forecasting for day-ahead electricity markets",
-     "url": "http://arxiv.org/abs/2609.23223v1"
+     "kind": "CoinDesk",
+     "title": "The restaking gold rush is over, and top protocols are barely making a profit",
+     "url": "https://www.coindesk.com/business/2026/09/28/the-restaking-gold-rush-is-over-and-top-protocols-are-barely-making-a-profit"
     },
     {
      "kind": "CoinDesk",
-     "title": "Kraken\u2019s parent Payward is betting billions on becoming financial infrastructure, not just a crypto exchange",
-     "url": "https://www.coindesk.com/business/2026/09/26/kraken-s-parent-payward-is-betting-billions-on-becoming-financial-infrastructure-not-just-a-crypto-exchange"
+     "title": "Tether is a \u2018lifeline\u2019 for Iranian regime, Senate Dems say in new report",
+     "url": "https://www.coindesk.com/policy/2026/09/28/tether-is-a-lifeline-for-iranian-regime-senate-dems-say-in-new-report"
     },
     {
      "kind": "CoinDesk",
-     "title": "Binance deal gives Circle a boost in stablecoin race with Tether, analysts say",
-     "url": "https://www.coindesk.com/business/2026/09/26/binance-deal-gives-circle-a-boost-in-stablecoin-race-with-tether-analysts-say"
+     "title": "AI agents could drain cheap bank deposits, Apollo's Torsten Slok warns",
+     "url": "https://www.coindesk.com/markets/2026/09/28/ai-agents-could-drain-cheap-bank-deposits-apollo-s-torsten-slok-warns"
     },
     {
      "kind": "CoinDesk",
-     "title": "Bitget hacker moves $83 million in stolen XRP that Ripple cannot freeze",
-     "url": "https://www.coindesk.com/markets/2026/09/26/bitget-hacker-moves-usd83-million-in-stolen-xrp-that-ripple-cannot-freeze"
+     "title": "Chainlink launches new version of its crypto bridge tech 'CCIP' to give apps more control over their security",
+     "url": "https://www.coindesk.com/business/2026/09/28/chainlink-updates-its-crypto-bridge-tech-months-after-a-usd292-million-hack-shook-the-industry"
     },
     {
      "kind": "CoinDesk",
-     "title": "Bitcoin could soon get Zcash-style 'shielded' privacy without changing its rules",
-     "url": "https://www.coindesk.com/tech/2026/09/25/bitcoin-could-soon-get-zcash-style-shielded-privacy-without-changing-its-rules"
+     "title": "THORChain rejects Bitget request to block hacker as $6 million moves to bitcoin",
+     "url": "https://www.coindesk.com/tech/2026/09/28/thorchain-rejects-bitget-request-to-block-hacker-as-usd6-million-moves-to-bitcoin"
     },
     {
      "kind": "CoinDesk",
-     "title": "Solana\u2019s 150-millisecond settlement upgrade reaches second public test network",
-     "url": "https://www.coindesk.com/tech/2026/09/26/solana-s-150-millisecond-settlement-upgrade-reaches-second-public-test-network"
-    },
-    {
-     "kind": "CoinDesk",
-     "title": "XRP Ledger\u2019s Batch upgrade slips to Oct. 9 after validator support resets",
-     "url": "https://www.coindesk.com/tech/2026/09/26/xrp-ledger-s-batch-upgrade-slips-to-oct-9-after-validator-support-resets"
+     "title": "Traders aren't panicking yet despite cooling crypto sentiment",
+     "url": "https://www.coindesk.com/daybook-us/2026/09/28/bitcoin-traders-aren-t-panicking-yet-despite-cooling-sentiment"
     },
     {
      "kind": "Cointelegraph",
-     "title": "Riot Platforms repays $200M credit facility, releases collateral",
-     "url": "https://cointelegraph.com/news/riot-platforms-repays-200m-credit-facility-releases-collateral?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "Crypto PAC spends $11M to oppose Sherrod Brown in Ohio",
+     "url": "https://cointelegraph.com/news/crypto-industry-spending-ohio-senate-race-sherrod-brown?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Cointelegraph",
-     "title": "Saylor outlines \u2018bill of digital rights\u2019 to help build prosperity in future economy",
-     "url": "https://cointelegraph.com/news/saylor-outlines-bill-of-digital-rights-to-help-build-prosperity-in-future-economy?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "Bitget CEO says $388M hack exploited third-party security vulnerability",
+     "url": "https://cointelegraph.com/news/bitget-388m-hack-third-party-security-vulnerability?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Cointelegraph",
-     "title": "Kalshi loses appeal, setting up potential Supreme Court case",
-     "url": "https://cointelegraph.com/news/kalshi-loses-appeal-setting-up-potential-supreme-court-case?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "MiCA focus shifts from rulemaking to supervision, ESMA chair says",
+     "url": "https://cointelegraph.com/news/mica-shift-rulemaking-to-supervision-esma-chair?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Cointelegraph",
@@ -4325,85 +4325,85 @@
     },
     {
      "kind": "Cointelegraph",
-     "title": "SEC Commissioner Hester Peirce to leave post on Oct. 2",
-     "url": "https://cointelegraph.com/news/sec-commissioner-hester-peirce-to-leave-post-on-oct-2?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "Altseason is coming \u2014 and traders are more discerning this time",
+     "url": "https://cointelegraph.com/magazine/altseason-is-coming-and-traders-are-more-discerning-this-time?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Cointelegraph",
-     "title": "CFTC sues Cash FX, alleges $950M crypto-linked forex scheme",
-     "url": "https://cointelegraph.com/news/cftc-sues-cash-fx-alleges-950m-crypto-linked-forex-scheme?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "Strategy buys 1,665 Bitcoin for $143M as BTC stack hits 847,666",
+     "url": "https://cointelegraph.com/news/strategy-1665-bitcoin-buy-holdings-847666-btc?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Decrypt",
-     "title": "Bitcoin ETFs Notch Seven-Day Winning Streak as 2026 Flows Turn Green",
-     "url": "https://decrypt.co/379391/bitcoin-etfs-notch-seven-day-winning-streak-as-2026-flows-turn-green"
+     "title": "Vitalik Buterin Outlines 'Cryptographic World Computer' Plan for Ethereum",
+     "url": "https://decrypt.co/379461/vitalik-buterin-outlines-cryptographic-world-computer-plan-for-ethereum"
     },
     {
      "kind": "Decrypt",
-     "title": "How Crypto Stopped Waiting for Congress and Learned to Love the Regulators",
-     "url": "https://decrypt.co/379383/how-crypto-stopped-waiting-congress-learned-love-regulators"
+     "title": "Bitcoin Falls Lower as Trump's Iran Snub Sends Oil, Yields Higher",
+     "url": "https://decrypt.co/379438/bitcoin-price-falls-trump-iran-oil-yields"
     },
     {
      "kind": "Decrypt",
-     "title": "AI Agents Are Racing to Make Quantum-Safe Bitcoin Cheap\u2014And Winning",
-     "url": "https://decrypt.co/379378/ai-agents-racing-make-quantum-safe-bitcoin-cheap"
+     "title": "Tom Lee's Bitmine Buys Another $47M of ETH, Taking It to 4.9% of Ethereum Supply",
+     "url": "https://decrypt.co/379418/tom-lees-bitmine-buys-another-47m-of-eth-taking-it-to-4-9-of-ethereum-supply"
     },
     {
      "kind": "Decrypt",
-     "title": "Google Just Made Free 1080p AI Video Generation Available to Anyone",
-     "url": "https://decrypt.co/379353/google-free-1080p-ai-video-generation"
+     "title": "Strategy Sets New BTC Holdings Record After $143M Bitcoin Purchase",
+     "url": "https://decrypt.co/379415/strategy-sets-new-btc-holdings-record-after-143m-bitcoin-purchase"
     },
     {
      "kind": "Decrypt",
-     "title": "US Prosecutors Want $84.2 Million From a Bank Tied to Tether",
-     "url": "https://decrypt.co/379380/us-prosecutors-84-million-bank-tether-and-bitfinex"
+     "title": "Morning Minute: SEC Clears Token Buybacks for Crypto Networks",
+     "url": "https://decrypt.co/379412/morning-minute-sec-clears-token-buybacks-for-crypto-networks"
     },
     {
      "kind": "Decrypt",
-     "title": "AI Agents Hacked Their Own Test Environment to Cheat, Cybersecurity Firm Finds",
-     "url": "https://decrypt.co/379369/ai-agents-hacked-test-environment-cheat-darktrace"
+     "title": "California Bans Public Officials From Issuing Meme Coins Under New Newsom Law",
+     "url": "https://decrypt.co/379404/california-bans-public-officials-from-issuing-meme-coins-under-new-newsom-law"
     },
     {
      "kind": "Babypips",
-     "title": "Fundies Cheat Sheet Recap: Sept. 21\u201325, 2026",
-     "url": "https://www.babypips.com/analysis/fundies-cheat-sheet-recap-2026-09-21-25-hawkish-rates-oil-split-board-graded"
+     "title": "The Mastery of Trading Begins with Enjoyment",
+     "url": "https://www.babypips.com/trading/psychology-mastery-trading-begins-enjoyment-2026-09-28"
     },
     {
      "kind": "Babypips",
-     "title": "AI Trading Platforms Explained: Part 4",
-     "url": "https://www.babypips.com/news/ai-trading-platforms-explained-part-4"
+     "title": "Chart Art: EUR/GBP Tests Channel Top, Another Pullback Due?",
+     "url": "https://www.babypips.com/trading/chart-art-forex-eurgbp-channel-top-pullback-2026-09-28"
     },
     {
      "kind": "Babypips",
-     "title": "Financial & Forex Weekly Recap: September 21 \u2013 25, 2026",
-     "url": "https://www.babypips.com/analysis/financial-forex-market-weekly-recap-september-25-2026"
+     "title": "Why the RBA Keeps Hiking While Other Central Banks Stay Cautious",
+     "url": "https://www.babypips.com/analysis/explainer-why-rba-keeps-hiking-2026-09-28"
     },
     {
      "kind": "Babypips",
-     "title": "TA Alert of the Day: LTC/USD Makes a Huge Move. Can It Hold?",
-     "url": "https://www.babypips.com/trading/ta-alert-ltcusd-2026-09-25"
+     "title": "FX Watch: EUR/AUD and AUD/JPY Setups for a Dovish RBA Hike",
+     "url": "https://www.babypips.com/analysis/fx-watch-euraud-audjpy-setups-dovish-rba-hike-2026-09-28"
     },
     {
      "kind": "Babypips",
-     "title": "Why You Should Focus on the Process Instead of the Profits",
-     "url": "https://www.babypips.com/trading/psychology-why-you-should-focus-process-instead-profits-2026-09-25"
+     "title": "FX Watch: Hawkish RBA Scenarios for AUD/JPY and AUD/NZD",
+     "url": "https://www.babypips.com/analysis/fx-watch-audjpy-audnzd-hawkish-rba-scenarios-2026-09-28"
     }
    ],
    "ideas": [
     {
-     "name": "Wysoka volatylno\u015b\u0107 BTC",
-     "rule": "btc_vol96 > 0.0024",
-     "why": "W ostatnich 24 godzinach Bitcoin straci\u0142 2.4% (btc_r96 = -0.02468), a jego volatylno\u015b\u0107 (btc_vol96) jest wysoka (0.00106). Z botem, straty w 24h by\u0142y \u015brednio -0.00501, co sugeruje, \u017ce wysoka volatylno\u015b\u0107 zwi\u0119ksza ryzyko strat w sytuacji, gdy bot nie ma wystarczaj\u0105cej konsystencji w trendach."
+     "name": "Wysoka volatywno\u015b\u0107 Bitcoin",
+     "rule": "btc_vol96 > 0.003",
+     "why": "Bot straci\u0142 pieni\u0105dze w sytuacjach gdy Bitcoin mia\u0142 wysok\u0105 volatywno\u015b\u0107 (btc_vol96 > 0.003). Wczoraj w CoinDesk zauwa\u017cono, \u017ce Bitcoin spada z powodu negatywnych sygna\u0142\u00f3w z Iranu, co zwi\u0119ksza ryzyko sandwich attack\u00f3w zgodnie z arXivem o mempools."
     },
     {
-     "name": "Niski trend 50-candle",
-     "rule": "d_ema50 < -0.01048",
-     "why": "Dla 50-candle (d_ema50 = -0.01262) i 200-candle (d_ema200 = -0.02687) bot straci\u0142 wi\u0119cej ni\u017c 1.5% w 24h. Wskaz\u00f3wka: gdy cena jest poni\u017cej \u015bredniej 50-candle, ryzyko strat wzrasta, co zgodnie z danymi botu (straty w 24h = -0.01327) sugeruje, \u017ce bot powinien unikn\u0105\u0107 sygna\u0142\u00f3w w tym zakresie."
+     "name": "Spadek Bitcoin w ci\u0105gu 24h",
+     "rule": "btc_r96 < -0.024",
+     "why": "Losing trades wskazuj\u0105 na spadek Bitcoin (btc_r96 < -0.024). Wczoraj w CoinDesk zauwa\u017cono, \u017ce Bitcoin spada z powodu negatywnych sygna\u0142\u00f3w z Iranu, co zwi\u0119ksza ryzyko sandwich attack\u00f3w zgodnie z arXivem o mempools."
     },
     {
-     "name": "Niska konsystencja trendu",
-     "rule": "d_ema50 < -0.01048",
-     "why": "W ostatnich 7 dniach (r_672 = -0.1084) Bitcoin straci\u0142 10.8%, a bot straci\u0142 \u015brednio 1.3% w 24h. Wskaz\u00f3wka: gdy trend jest niski (d_ema50 < 0), bot powinien unikn\u0105\u0107 sygna\u0142\u00f3w, aby unikn\u0105\u0107 strat w sytuacji, gdy cena nie jest w trendzie."
+     "name": "Niski RSI",
+     "rule": "rsi < 0.5",
+     "why": "Bot straci\u0142 pieni\u0105dze w sytuacjach gdy RSI by\u0142 niski (rsi < 0.5). Wczoraj w CoinDesk zauwa\u017cono, \u017ce Bitcoin spada z powodu negatywnych sygna\u0142\u00f3w z Iranu, co zwi\u0119ksza ryzyko sandwich attack\u00f3w zgodnie z arXivem o mempools."
     }
    ]
   }
