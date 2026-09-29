@@ -178,5 +178,35 @@
   "tested_at": 1790662762561,
   "model_version": 6,
   "adopted": false
+ },
+ "d477a99600": {
+  "name": "Ostro\u017cno\u015b\u0107 przy rozszerzaj\u0105cej si\u0119 zmienno\u015bci i s\u0142abym trendzie",
+  "source": "internet research: Analiza b\u0142\u0119d\u00f3w botu pokaza\u0142a, \u017ce przy r_96 < 0.01223 i btc_r96 < 0.02449 straty przewy\u017csza\u0142y zyski; dzi\u015b BTC jest w w\u0105skim zakresie przy wysokim 10-letnim yieldu, co sugeruje, \u017ce kr",
+  "rule": "r_96 < 0.008 and vol_ratio > 1 and d_ema50 < -0.005",
+  "why": "Regu\u0142a odrzuca sygna\u0142y kupna, gdy 24-godzinny zwrot BTC jest s\u0142aby (< 0.8%), zmienno\u015b\u0107 kr\u00f3tkoterminowa ro\u015bnie (vol_ratio > 1) i cena jest poni\u017cej \u015bredniej 50-cz\u0142onkowej. To chroni przed wej\u015bciami w fazie rozszerzania zmienno\u015bci, gdy kr\u00f3tkie sygna\u0142y momentum s\u0105 najs\u0142absze.",
+  "gain": -0.01682,
+  "tested_at": 1790692695750,
+  "model_version": 6,
+  "adopted": false
+ },
+ "38dbb8c4ad": {
+  "name": "Unikaj sygna\u0142\u00f3w kupna z dolnej cz\u0119\u015bci zakresu",
+  "source": "internet research: Analiza b\u0142\u0119d\u00f3w botu pokaza\u0142a, \u017ce przy r_96 < 0.02449 i btc_r96 < 0.02449 straty przewy\u017csza\u0142y zyski; dzi\u015b BTC jest w w\u0105skim zakresie przy wysokim 10-letnim yieldu, co sugeruje, \u017ce kr",
+  "rule": "bb < -0.2 and r_4 < -0.002 and r_16 < -0.006",
+  "why": "Regu\u0142a odrzuca sygna\u0142y kupna, gdy cena znajduje si\u0119 poni\u017cej dolnej \u0107wiartki zakresu 24-godzinnego (bb < -0.2), a kr\u00f3tkoterminowe zwroty (r_4, r_16) s\u0105 ujemne. To chroni przed wej\u015bciami w fazie spadkowej, gdy kr\u00f3tkie sygna\u0142y momentum s\u0105 najs\u0142absze.",
+  "gain": 0.00191,
+  "tested_at": 1790692695750,
+  "model_version": 6,
+  "adopted": false
+ },
+ "6dd8c5796d": {
+  "name": "Ostro\u017cno\u015b\u0107 przy s\u0142abym momentum i negatywnym relatywnym zwrocie",
+  "source": "internet research: Analiza b\u0142\u0119d\u00f3w botu pokaza\u0142a, \u017ce przy r_96 < 0.01223 i btc_r96 < 0.02449 straty przewy\u017csza\u0142y zyski; dzi\u015b BTC jest w w\u0105skim zakresie przy wysokim 10-letnim yieldu, co sugeruje, \u017ce kr",
+  "rule": "rank_r96 < 0.4 and rank_r672 < 0.5 and rel_r96 < -0.005",
+  "why": "Regu\u0142a odrzuca sygna\u0142y kupna, gdy momentum 24-godzinne i 7-dniowe s\u0105 s\u0142abe (rank < 0.4 i < 0.5) oraz relatywny zwrot wzgl\u0119dem BTC jest ujemny. To chroni przed wej\u015bciami w fazie spadkowej, gdy kr\u00f3tkie sygna\u0142y momentum s\u0105 najs\u0142absze.",
+  "gain": -0.0011,
+  "tested_at": 1790692695750,
+  "model_version": 6,
+  "adopted": false
  }
 }
