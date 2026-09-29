@@ -1,67 +1,67 @@
 {
  "model": {
-  "version": 6,
+  "version": 7,
   "variant": "position",
   "threshold": 0.78,
   "edge": true,
-  "trained_at": 1790662615101,
-  "data_until": 1790602200000,
-  "train_seconds": 384.1,
+  "trained_at": 1790707330296,
+  "data_until": 1790647200000,
+  "train_seconds": 382.6,
   "metrics": {
    "trend": {
-    "auc": 0.4959,
+    "auc": 0.5009,
     "threshold": 0.8,
-    "base_rate": 0.3989,
-    "trades": 400,
-    "win_rate": 0.4075,
-    "avg": 4e-05,
-    "total": 0.0145,
-    "profit_factor": 1.00232,
-    "score": -1.05548,
-    "baseline_avg": -0.00291,
-    "baseline_trades": 13171
+    "base_rate": 0.3994,
+    "trades": 424,
+    "win_rate": 0.41274,
+    "avg": -0.00044,
+    "total": -0.18566,
+    "profit_factor": 0.97073,
+    "score": -1.2466,
+    "baseline_avg": -0.00285,
+    "baseline_trades": 13172
    },
    "position": {
-    "auc": 0.5019,
+    "auc": 0.5023,
     "threshold": 0.78,
-    "base_rate": 0.4464,
-    "trades": 741,
-    "win_rate": 0.50742,
-    "avg": 0.0048,
-    "total": 3.55925,
-    "profit_factor": 1.25127,
-    "score": 1.78533,
-    "baseline_avg": -0.00219,
-    "baseline_trades": 3781
+    "base_rate": 0.4457,
+    "trades": 739,
+    "win_rate": 0.49391,
+    "avg": 0.00488,
+    "total": 3.60285,
+    "profit_factor": 1.25442,
+    "score": 1.82026,
+    "baseline_avg": -0.00249,
+    "baseline_trades": 3779
    },
    "long": {
-    "auc": 0.496,
-    "threshold": 0.8,
-    "base_rate": 0.4494,
-    "trades": 532,
-    "win_rate": 0.47556,
-    "avg": -7e-05,
-    "total": -0.03661,
-    "profit_factor": 0.99729,
-    "score": -1.60176,
-    "baseline_avg": -0.00128,
+    "auc": 0.4948,
+    "threshold": 0.78,
+    "base_rate": 0.4488,
+    "trades": 599,
+    "win_rate": 0.49082,
+    "avg": 0.00086,
+    "total": 0.51321,
+    "profit_factor": 1.03456,
+    "score": -1.14521,
+    "baseline_avg": -0.00101,
     "baseline_trades": 1785
    }
   }
  },
  "prices": {
-  "BTC": 83179.58,
-  "ETH": 2681.39,
-  "SOL": 118.5,
-  "XRP": 1.5179,
-  "DOGE": 0.09398,
-  "ADA": 0.2458,
-  "BNB": 755.62,
-  "LINK": 14.818,
-  "AVAX": 11.28,
-  "LTC": 67.63,
-  "DOT": 1.188,
-  "TRX": 0.3342
+  "BTC": 83427.65,
+  "ETH": 2685.53,
+  "SOL": 118.65,
+  "XRP": 1.4909,
+  "DOGE": 0.09389,
+  "ADA": 0.2438,
+  "BNB": 754.51,
+  "LINK": 14.591,
+  "AVAX": 11.2,
+  "LTC": 67.26,
+  "DOT": 1.181,
+  "TRX": 0.3349
  },
  "feature_ranges": {
   "r_1": [
@@ -268,38 +268,38 @@
   "description": "position style, buy when the model is at least 74% sure, target 2.8x / stop 1.4x the expected move, hold up to 72 h, 25% of equity per trade, only if btc_vol96 > 0.0024 and d_ema50 < -0.01048",
   "stats": {
    "search": {
-    "trades": 237,
-    "avg": 0.0161,
-    "win_rate": 0.5274,
-    "growth": 0.85416,
-    "score": 0.41338
+    "trades": 235,
+    "avg": 0.02486,
+    "win_rate": 0.5532,
+    "growth": 1.36921,
+    "score": 0.9553
    },
    "select": {
-    "trades": 63,
-    "avg": -0.00914,
-    "win_rate": 0.6032,
-    "growth": -0.14994,
-    "score": -0.25845
+    "trades": 72,
+    "avg": -0.00011,
+    "win_rate": 0.6528,
+    "growth": -0.00898,
+    "score": -0.12798
    },
    "holdout": {
-    "trades": 20,
-    "avg": 0.03443,
-    "win_rate": 0.65,
-    "growth": 0.16807,
-    "score": 0.08433
+    "trades": 28,
+    "avg": 0.03485,
+    "win_rate": 0.6786,
+    "growth": 0.2393,
+    "score": 0.1527
    }
   },
   "edge": false,
   "baseline": {
-   "search": -0.00298,
-   "select": -0.00464,
-   "holdout": 0.0033
+   "search": -0.00312,
+   "select": -0.0051,
+   "holdout": 0.00321
   },
-  "generation": 8,
+  "generation": 9,
   "since": 1790507257986,
-  "model_version": 6
+  "model_version": 7
  },
- "last_ts": 1790695800000,
+ "last_ts": 1790705700000,
  "bench_start_px": 84912.34,
  "start_cash": 1000.0,
  "main": {
@@ -309,130 +309,86 @@
    "pending": {},
    "start_ts": 1790508600000
   },
-  "last_ts": 1790695800000,
+  "last_ts": 1790705700000,
   "peak": 1000.0,
   "paused_until": 0,
   "sym_perf": {},
   "benched_until": {},
   "signals": {
    "BTC": {
-    "p": 0.4267,
+    "p": 0.4191,
     "threshold": 0.84,
     "action": "wait",
-    "ts": 1790695800000
+    "ts": 1790705700000
    },
    "ETH": {
-    "p": 0.4433,
+    "p": 0.4954,
     "threshold": 0.84,
     "action": "wait",
-    "ts": 1790695800000
+    "ts": 1790705700000
    },
    "SOL": {
-    "p": 0.3383,
+    "p": 0.3649,
     "threshold": 0.84,
     "action": "wait",
-    "ts": 1790695800000
+    "ts": 1790705700000
    },
    "XRP": {
-    "p": 0.415,
+    "p": 0.3992,
     "threshold": 0.84,
     "action": "wait",
-    "ts": 1790695800000
+    "ts": 1790705700000
    },
    "DOGE": {
-    "p": 0.4906,
+    "p": 0.5155,
     "threshold": 0.84,
     "action": "wait",
-    "ts": 1790695800000
+    "ts": 1790705700000
    },
    "ADA": {
-    "p": 0.5702,
+    "p": 0.5722,
     "threshold": 0.84,
     "action": "wait",
-    "ts": 1790695800000
+    "ts": 1790705700000
    },
    "BNB": {
-    "p": 0.405,
+    "p": 0.5834,
     "threshold": 0.84,
     "action": "wait",
-    "ts": 1790695800000
+    "ts": 1790705700000
    },
    "LINK": {
-    "p": 0.4057,
+    "p": 0.2641,
     "threshold": 0.84,
     "action": "wait",
-    "ts": 1790695800000
+    "ts": 1790705700000
    },
    "AVAX": {
-    "p": 0.1845,
+    "p": 0.1895,
     "threshold": 0.84,
     "action": "wait",
-    "ts": 1790695800000
+    "ts": 1790705700000
    },
    "LTC": {
-    "p": 0.5363,
+    "p": 0.5783,
     "threshold": 0.84,
     "action": "wait",
-    "ts": 1790695800000
+    "ts": 1790705700000
    },
    "DOT": {
-    "p": 0.2962,
+    "p": 0.2439,
     "threshold": 0.84,
     "action": "wait",
-    "ts": 1790695800000
+    "ts": 1790705700000
    },
    "TRX": {
-    "p": 0.4251,
+    "p": 0.4598,
     "threshold": 0.84,
     "action": "wait",
-    "ts": 1790695800000
+    "ts": 1790705700000
    }
   },
   "recent_equity": [
-   [
-    1790609400000,
-    1000.0
-   ],
-   [
-    1790610300000,
-    1000.0
-   ],
-   [
-    1790611200000,
-    1000.0
-   ],
-   [
-    1790612100000,
-    1000.0
-   ],
-   [
-    1790613000000,
-    1000.0
-   ],
-   [
-    1790613900000,
-    1000.0
-   ],
-   [
-    1790614800000,
-    1000.0
-   ],
-   [
-    1790615700000,
-    1000.0
-   ],
-   [
-    1790616600000,
-    1000.0
-   ],
-   [
-    1790617500000,
-    1000.0
-   ],
-   [
-    1790618400000,
-    1000.0
-   ],
    [
     1790619300000,
     1000.0
@@ -775,6 +731,50 @@
    ],
    [
     1790695800000,
+    1000.0
+   ],
+   [
+    1790696700000,
+    1000.0
+   ],
+   [
+    1790697600000,
+    1000.0
+   ],
+   [
+    1790698500000,
+    1000.0
+   ],
+   [
+    1790699400000,
+    1000.0
+   ],
+   [
+    1790700300000,
+    1000.0
+   ],
+   [
+    1790701200000,
+    1000.0
+   ],
+   [
+    1790702100000,
+    1000.0
+   ],
+   [
+    1790703000000,
+    1000.0
+   ],
+   [
+    1790703900000,
+    1000.0
+   ],
+   [
+    1790704800000,
+    1000.0
+   ],
+   [
+    1790705700000,
     1000.0
    ]
   ],
@@ -790,130 +790,86 @@
    "pending": {},
    "start_ts": 1790508600000
   },
-  "last_ts": 1790695800000,
+  "last_ts": 1790705700000,
   "peak": 1000.0,
   "paused_until": 0,
   "sym_perf": {},
   "benched_until": {},
   "signals": {
    "BTC": {
-    "p": 0.4267,
+    "p": 0.4191,
     "threshold": 0.74,
     "action": "wait",
-    "ts": 1790695800000
+    "ts": 1790705700000
    },
    "ETH": {
-    "p": 0.4433,
+    "p": 0.4954,
     "threshold": 0.74,
     "action": "wait",
-    "ts": 1790695800000
+    "ts": 1790705700000
    },
    "SOL": {
-    "p": 0.3383,
+    "p": 0.3649,
     "threshold": 0.74,
     "action": "wait",
-    "ts": 1790695800000
+    "ts": 1790705700000
    },
    "XRP": {
-    "p": 0.415,
+    "p": 0.3992,
     "threshold": 0.74,
     "action": "wait",
-    "ts": 1790695800000
+    "ts": 1790705700000
    },
    "DOGE": {
-    "p": 0.4906,
+    "p": 0.5155,
     "threshold": 0.74,
     "action": "wait",
-    "ts": 1790695800000
+    "ts": 1790705700000
    },
    "ADA": {
-    "p": 0.5702,
+    "p": 0.5722,
     "threshold": 0.74,
     "action": "wait",
-    "ts": 1790695800000
+    "ts": 1790705700000
    },
    "BNB": {
-    "p": 0.405,
+    "p": 0.5834,
     "threshold": 0.74,
     "action": "wait",
-    "ts": 1790695800000
+    "ts": 1790705700000
    },
    "LINK": {
-    "p": 0.4057,
+    "p": 0.2641,
     "threshold": 0.74,
     "action": "wait",
-    "ts": 1790695800000
+    "ts": 1790705700000
    },
    "AVAX": {
-    "p": 0.1845,
+    "p": 0.1895,
     "threshold": 0.74,
     "action": "wait",
-    "ts": 1790695800000
+    "ts": 1790705700000
    },
    "LTC": {
-    "p": 0.5363,
+    "p": 0.5783,
     "threshold": 0.74,
     "action": "wait",
-    "ts": 1790695800000
+    "ts": 1790705700000
    },
    "DOT": {
-    "p": 0.2962,
+    "p": 0.2439,
     "threshold": 0.74,
     "action": "wait",
-    "ts": 1790695800000
+    "ts": 1790705700000
    },
    "TRX": {
-    "p": 0.4251,
+    "p": 0.4598,
     "threshold": 0.74,
     "action": "wait",
-    "ts": 1790695800000
+    "ts": 1790705700000
    }
   },
   "recent_equity": [
-   [
-    1790609400000,
-    1000.0
-   ],
-   [
-    1790610300000,
-    1000.0
-   ],
-   [
-    1790611200000,
-    1000.0
-   ],
-   [
-    1790612100000,
-    1000.0
-   ],
-   [
-    1790613000000,
-    1000.0
-   ],
-   [
-    1790613900000,
-    1000.0
-   ],
-   [
-    1790614800000,
-    1000.0
-   ],
-   [
-    1790615700000,
-    1000.0
-   ],
-   [
-    1790616600000,
-    1000.0
-   ],
-   [
-    1790617500000,
-    1000.0
-   ],
-   [
-    1790618400000,
-    1000.0
-   ],
    [
     1790619300000,
     1000.0
@@ -1256,6 +1212,50 @@
    ],
    [
     1790695800000,
+    1000.0
+   ],
+   [
+    1790696700000,
+    1000.0
+   ],
+   [
+    1790697600000,
+    1000.0
+   ],
+   [
+    1790698500000,
+    1000.0
+   ],
+   [
+    1790699400000,
+    1000.0
+   ],
+   [
+    1790700300000,
+    1000.0
+   ],
+   [
+    1790701200000,
+    1000.0
+   ],
+   [
+    1790702100000,
+    1000.0
+   ],
+   [
+    1790703000000,
+    1000.0
+   ],
+   [
+    1790703900000,
+    1000.0
+   ],
+   [
+    1790704800000,
+    1000.0
+   ],
+   [
+    1790705700000,
     1000.0
    ]
   ],
@@ -1297,130 +1297,86 @@
      "pending": {},
      "start_ts": 1790508600000
     },
-    "last_ts": 1790695800000,
+    "last_ts": 1790705700000,
     "peak": 1000.0,
     "paused_until": 0,
     "sym_perf": {},
     "benched_until": {},
     "signals": {
      "BTC": {
-      "p": 0.4267,
+      "p": 0.4191,
       "threshold": 0.74,
       "action": "wait",
-      "ts": 1790695800000
+      "ts": 1790705700000
      },
      "ETH": {
-      "p": 0.4433,
+      "p": 0.4954,
       "threshold": 0.74,
       "action": "wait",
-      "ts": 1790695800000
+      "ts": 1790705700000
      },
      "SOL": {
-      "p": 0.3383,
+      "p": 0.3649,
       "threshold": 0.74,
       "action": "wait",
-      "ts": 1790695800000
+      "ts": 1790705700000
      },
      "XRP": {
-      "p": 0.415,
+      "p": 0.3992,
       "threshold": 0.74,
       "action": "wait",
-      "ts": 1790695800000
+      "ts": 1790705700000
      },
      "DOGE": {
-      "p": 0.4906,
+      "p": 0.5155,
       "threshold": 0.74,
       "action": "wait",
-      "ts": 1790695800000
+      "ts": 1790705700000
      },
      "ADA": {
-      "p": 0.5702,
+      "p": 0.5722,
       "threshold": 0.74,
       "action": "wait",
-      "ts": 1790695800000
+      "ts": 1790705700000
      },
      "BNB": {
-      "p": 0.405,
+      "p": 0.5834,
       "threshold": 0.74,
       "action": "wait",
-      "ts": 1790695800000
+      "ts": 1790705700000
      },
      "LINK": {
-      "p": 0.4057,
+      "p": 0.2641,
       "threshold": 0.74,
       "action": "wait",
-      "ts": 1790695800000
+      "ts": 1790705700000
      },
      "AVAX": {
-      "p": 0.1845,
+      "p": 0.1895,
       "threshold": 0.74,
       "action": "wait",
-      "ts": 1790695800000
+      "ts": 1790705700000
      },
      "LTC": {
-      "p": 0.5363,
+      "p": 0.5783,
       "threshold": 0.74,
       "action": "wait",
-      "ts": 1790695800000
+      "ts": 1790705700000
      },
      "DOT": {
-      "p": 0.2962,
+      "p": 0.2439,
       "threshold": 0.74,
       "action": "wait",
-      "ts": 1790695800000
+      "ts": 1790705700000
      },
      "TRX": {
-      "p": 0.4251,
+      "p": 0.4598,
       "threshold": 0.74,
       "action": "wait",
-      "ts": 1790695800000
+      "ts": 1790705700000
      }
     },
     "recent_equity": [
-     [
-      1790609400000,
-      1000.0
-     ],
-     [
-      1790610300000,
-      1000.0
-     ],
-     [
-      1790611200000,
-      1000.0
-     ],
-     [
-      1790612100000,
-      1000.0
-     ],
-     [
-      1790613000000,
-      1000.0
-     ],
-     [
-      1790613900000,
-      1000.0
-     ],
-     [
-      1790614800000,
-      1000.0
-     ],
-     [
-      1790615700000,
-      1000.0
-     ],
-     [
-      1790616600000,
-      1000.0
-     ],
-     [
-      1790617500000,
-      1000.0
-     ],
-     [
-      1790618400000,
-      1000.0
-     ],
      [
       1790619300000,
       1000.0
@@ -1764,6 +1720,50 @@
      [
       1790695800000,
       1000.0
+     ],
+     [
+      1790696700000,
+      1000.0
+     ],
+     [
+      1790697600000,
+      1000.0
+     ],
+     [
+      1790698500000,
+      1000.0
+     ],
+     [
+      1790699400000,
+      1000.0
+     ],
+     [
+      1790700300000,
+      1000.0
+     ],
+     [
+      1790701200000,
+      1000.0
+     ],
+     [
+      1790702100000,
+      1000.0
+     ],
+     [
+      1790703000000,
+      1000.0
+     ],
+     [
+      1790703900000,
+      1000.0
+     ],
+     [
+      1790704800000,
+      1000.0
+     ],
+     [
+      1790705700000,
+      1000.0
      ]
     ],
     "counters": {
@@ -1775,24 +1775,19 @@
    "equity": 1000.0,
    "recent_trades": []
   },
-  "4fbf7132d0": {
+  "553a2f8e07": {
    "recipe": {
     "style": "position",
-    "threshold": 0.71,
-    "tp": 2.8,
-    "sl": 0.8,
+    "threshold": 0.7,
+    "tp": 4.0,
+    "sl": 1.2,
     "hold": 1.5,
     "size": 0.25,
     "rules": [
      {
-      "feature": "btc_r96",
-      "op": "<",
-      "value": 0.01152
-     },
-     {
-      "feature": "rel_r672",
-      "op": "<",
-      "value": 0.00121
+      "feature": "atr",
+      "op": ">",
+      "value": 0.00721
      },
      {
       "feature": "btc_vol96",
@@ -1800,470 +1795,56 @@
       "value": 0.0024
      },
      {
-      "feature": "atr",
-      "op": ">",
-      "value": 0.00636
+      "feature": "rel_r672",
+      "op": "<",
+      "value": 0.00169
+     },
+     {
+      "feature": "macd_hist",
+      "op": "<",
+      "value": 0.0006
      }
     ],
-    "id": "4fbf7132d0",
-    "parent": "8346a62971",
+    "id": "553a2f8e07",
+    "parent": "4f0a3c2601",
     "origin": "mutation: tweak_rule"
    },
-   "joined": 1790691300000,
+   "joined": 1790705700000,
    "trader": {
     "acct": {
      "cash": 1000.0,
      "positions": {},
      "pending": {},
-     "start_ts": 1790691300000
+     "start_ts": 1790705700000
     },
-    "last_ts": 1790695800000,
+    "last_ts": 1790704800000,
     "peak": 1000.0,
     "paused_until": 0,
     "sym_perf": {},
     "benched_until": {},
-    "signals": {
-     "BTC": {
-      "p": 0.4267,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "ETH": {
-      "p": 0.4433,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "SOL": {
-      "p": 0.3383,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "XRP": {
-      "p": 0.415,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "DOGE": {
-      "p": 0.4906,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "ADA": {
-      "p": 0.5702,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "BNB": {
-      "p": 0.405,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "LINK": {
-      "p": 0.4057,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "AVAX": {
-      "p": 0.1845,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "LTC": {
-      "p": 0.5363,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "DOT": {
-      "p": 0.2962,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "TRX": {
-      "p": 0.4251,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     }
-    },
-    "recent_equity": [
-     [
-      1790690400000,
-      1000.0
-     ],
-     [
-      1790691300000,
-      1000.0
-     ],
-     [
-      1790692200000,
-      1000.0
-     ],
-     [
-      1790693100000,
-      1000.0
-     ],
-     [
-      1790694000000,
-      1000.0
-     ],
-     [
-      1790694900000,
-      1000.0
-     ],
-     [
-      1790695800000,
-      1000.0
-     ]
-    ],
+    "signals": {},
+    "recent_equity": [],
     "counters": {
      "trades": 0,
      "wins": 0
     }
    },
-   "role": "challenger",
-   "equity": 1000.0,
-   "recent_trades": []
+   "role": "challenger"
   },
-  "45185bffe0": {
+  "4f0a3c2601": {
    "recipe": {
     "style": "position",
-    "threshold": 0.71,
-    "tp": 2.8,
-    "sl": 0.8,
+    "threshold": 0.7,
+    "tp": 4.0,
+    "sl": 1.2,
     "hold": 1.5,
     "size": 0.25,
     "rules": [
-     {
-      "feature": "btc_vol96",
-      "op": ">",
-      "value": 0.0024
-     },
-     {
-      "feature": "btc_r96",
-      "op": "<",
-      "value": 0.01131
-     },
-     {
-      "feature": "rel_r672",
-      "op": "<",
-      "value": 0.00121
-     },
      {
       "feature": "atr",
       "op": ">",
-      "value": 0.00636
-     }
-    ],
-    "id": "45185bffe0",
-    "parent": "9126965655+4fbf7132d0",
-    "origin": "crossover"
-   },
-   "joined": 1790691300000,
-   "trader": {
-    "acct": {
-     "cash": 1000.0,
-     "positions": {},
-     "pending": {},
-     "start_ts": 1790691300000
-    },
-    "last_ts": 1790695800000,
-    "peak": 1000.0,
-    "paused_until": 0,
-    "sym_perf": {},
-    "benched_until": {},
-    "signals": {
-     "BTC": {
-      "p": 0.4267,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
+      "value": 0.00733
      },
-     "ETH": {
-      "p": 0.4433,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "SOL": {
-      "p": 0.3383,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "XRP": {
-      "p": 0.415,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "DOGE": {
-      "p": 0.4906,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "ADA": {
-      "p": 0.5702,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "BNB": {
-      "p": 0.405,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "LINK": {
-      "p": 0.4057,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "AVAX": {
-      "p": 0.1845,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "LTC": {
-      "p": 0.5363,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "DOT": {
-      "p": 0.2962,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "TRX": {
-      "p": 0.4251,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     }
-    },
-    "recent_equity": [
-     [
-      1790690400000,
-      1000.0
-     ],
-     [
-      1790691300000,
-      1000.0
-     ],
-     [
-      1790692200000,
-      1000.0
-     ],
-     [
-      1790693100000,
-      1000.0
-     ],
-     [
-      1790694000000,
-      1000.0
-     ],
-     [
-      1790694900000,
-      1000.0
-     ],
-     [
-      1790695800000,
-      1000.0
-     ]
-    ],
-    "counters": {
-     "trades": 0,
-     "wins": 0
-    }
-   },
-   "role": "challenger",
-   "equity": 1000.0,
-   "recent_trades": []
-  },
-  "5fbd6a0b25": {
-   "recipe": {
-    "style": "position",
-    "threshold": 0.71,
-    "tp": 2.8,
-    "sl": 0.8,
-    "hold": 1.5,
-    "size": 0.25,
-    "rules": [
-     {
-      "feature": "btc_r96",
-      "op": "<",
-      "value": 0.01168
-     },
-     {
-      "feature": "rel_r672",
-      "op": "<",
-      "value": 0.00121
-     },
-     {
-      "feature": "btc_vol96",
-      "op": ">",
-      "value": 0.0024
-     },
-     {
-      "feature": "atr",
-      "op": ">",
-      "value": 0.00636
-     }
-    ],
-    "id": "5fbd6a0b25",
-    "parent": "71f7d7e60e+45185bffe0",
-    "origin": "crossover"
-   },
-   "joined": 1790691300000,
-   "trader": {
-    "acct": {
-     "cash": 1000.0,
-     "positions": {},
-     "pending": {},
-     "start_ts": 1790691300000
-    },
-    "last_ts": 1790695800000,
-    "peak": 1000.0,
-    "paused_until": 0,
-    "sym_perf": {},
-    "benched_until": {},
-    "signals": {
-     "BTC": {
-      "p": 0.4267,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "ETH": {
-      "p": 0.4433,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "SOL": {
-      "p": 0.3383,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "XRP": {
-      "p": 0.415,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "DOGE": {
-      "p": 0.4906,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "ADA": {
-      "p": 0.5702,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "BNB": {
-      "p": 0.405,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "LINK": {
-      "p": 0.4057,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "AVAX": {
-      "p": 0.1845,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "LTC": {
-      "p": 0.5363,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "DOT": {
-      "p": 0.2962,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "TRX": {
-      "p": 0.4251,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     }
-    },
-    "recent_equity": [
-     [
-      1790690400000,
-      1000.0
-     ],
-     [
-      1790691300000,
-      1000.0
-     ],
-     [
-      1790692200000,
-      1000.0
-     ],
-     [
-      1790693100000,
-      1000.0
-     ],
-     [
-      1790694000000,
-      1000.0
-     ],
-     [
-      1790694900000,
-      1000.0
-     ],
-     [
-      1790695800000,
-      1000.0
-     ]
-    ],
-    "counters": {
-     "trades": 0,
-     "wins": 0
-    }
-   },
-   "role": "challenger",
-   "equity": 1000.0,
-   "recent_trades": []
-  },
-  "eb65ad36ce": {
-   "recipe": {
-    "style": "position",
-    "threshold": 0.71,
-    "tp": 2.8,
-    "sl": 0.8,
-    "hold": 1.5,
-    "size": 0.25,
-    "rules": [
      {
       "feature": "btc_vol96",
       "op": ">",
@@ -2272,151 +1853,154 @@
      {
       "feature": "rel_r672",
       "op": "<",
-      "value": 0.00121
+      "value": 0.00169
      },
      {
-      "feature": "atr",
-      "op": ">",
-      "value": 0.00636
-     },
-     {
-      "feature": "btc_r96",
+      "feature": "macd_hist",
       "op": "<",
-      "value": 0.01207
+      "value": 0.0006
      }
     ],
-    "id": "eb65ad36ce",
-    "parent": "45185bffe0+a24c00b6f2",
-    "origin": "crossover"
+    "id": "4f0a3c2601",
+    "parent": "85b4eda6e6",
+    "origin": "mutation: add_rule"
    },
-   "joined": 1790691300000,
+   "joined": 1790705700000,
    "trader": {
     "acct": {
      "cash": 1000.0,
      "positions": {},
      "pending": {},
-     "start_ts": 1790691300000
+     "start_ts": 1790705700000
     },
-    "last_ts": 1790695800000,
+    "last_ts": 1790704800000,
     "peak": 1000.0,
     "paused_until": 0,
     "sym_perf": {},
     "benched_until": {},
-    "signals": {
-     "BTC": {
-      "p": 0.4267,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "ETH": {
-      "p": 0.4433,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "SOL": {
-      "p": 0.3383,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "XRP": {
-      "p": 0.415,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "DOGE": {
-      "p": 0.4906,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "ADA": {
-      "p": 0.5702,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "BNB": {
-      "p": 0.405,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "LINK": {
-      "p": 0.4057,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "AVAX": {
-      "p": 0.1845,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "LTC": {
-      "p": 0.5363,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "DOT": {
-      "p": 0.2962,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     },
-     "TRX": {
-      "p": 0.4251,
-      "threshold": 0.71,
-      "action": "wait",
-      "ts": 1790695800000
-     }
-    },
-    "recent_equity": [
-     [
-      1790690400000,
-      1000.0
-     ],
-     [
-      1790691300000,
-      1000.0
-     ],
-     [
-      1790692200000,
-      1000.0
-     ],
-     [
-      1790693100000,
-      1000.0
-     ],
-     [
-      1790694000000,
-      1000.0
-     ],
-     [
-      1790694900000,
-      1000.0
-     ],
-     [
-      1790695800000,
-      1000.0
-     ]
-    ],
+    "signals": {},
+    "recent_equity": [],
     "counters": {
      "trades": 0,
      "wins": 0
     }
    },
-   "role": "challenger",
-   "equity": 1000.0,
-   "recent_trades": []
+   "role": "challenger"
+  },
+  "bf277ae25a": {
+   "recipe": {
+    "style": "position",
+    "threshold": 0.7,
+    "tp": 4.0,
+    "sl": 1.2,
+    "hold": 1.5,
+    "size": 0.25,
+    "rules": [
+     {
+      "feature": "atr",
+      "op": ">",
+      "value": 0.00734
+     },
+     {
+      "feature": "btc_vol96",
+      "op": ">",
+      "value": 0.0024
+     },
+     {
+      "feature": "rel_r672",
+      "op": "<",
+      "value": 0.00169
+     },
+     {
+      "feature": "macd_hist",
+      "op": "<",
+      "value": 0.0006
+     }
+    ],
+    "id": "bf277ae25a",
+    "parent": "a5a5e2d8b2+4f0a3c2601",
+    "origin": "crossover"
+   },
+   "joined": 1790705700000,
+   "trader": {
+    "acct": {
+     "cash": 1000.0,
+     "positions": {},
+     "pending": {},
+     "start_ts": 1790705700000
+    },
+    "last_ts": 1790704800000,
+    "peak": 1000.0,
+    "paused_until": 0,
+    "sym_perf": {},
+    "benched_until": {},
+    "signals": {},
+    "recent_equity": [],
+    "counters": {
+     "trades": 0,
+     "wins": 0
+    }
+   },
+   "role": "challenger"
+  },
+  "7b4696587b": {
+   "recipe": {
+    "style": "position",
+    "threshold": 0.7,
+    "tp": 4.0,
+    "sl": 1.2,
+    "hold": 1.5,
+    "size": 0.25,
+    "rules": [
+     {
+      "feature": "atr",
+      "op": ">",
+      "value": 0.00733
+     },
+     {
+      "feature": "btc_vol96",
+      "op": ">",
+      "value": 0.0024
+     },
+     {
+      "feature": "rel_r672",
+      "op": "<",
+      "value": 0.00169
+     },
+     {
+      "feature": "macd_hist",
+      "op": "<",
+      "value": 0.00102
+     }
+    ],
+    "id": "7b4696587b",
+    "parent": "4f0a3c2601",
+    "origin": "mutation: tweak_rule"
+   },
+   "joined": 1790705700000,
+   "trader": {
+    "acct": {
+     "cash": 1000.0,
+     "positions": {},
+     "pending": {},
+     "start_ts": 1790705700000
+    },
+    "last_ts": 1790704800000,
+    "peak": 1000.0,
+    "paused_until": 0,
+    "sym_perf": {},
+    "benched_until": {},
+    "signals": {},
+    "recent_equity": [],
+    "counters": {
+     "trades": 0,
+     "wins": 0
+    }
+   },
+   "role": "challenger"
   }
  },
- "updated_at": 1790697243222,
+ "updated_at": 1790707459700,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.1,

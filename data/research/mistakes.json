@@ -1,57 +1,57 @@
 {
- "created_at": 1790692660280,
- "model_version": 6,
- "signals": 25705,
- "losers": 15978,
+ "created_at": 1790707333758,
+ "model_version": 7,
+ "signals": 25486,
+ "losers": 15782,
  "patterns": [
   {
    "feature": "btc_r96",
    "meaning": "Bitcoin return over the last 24 hours",
-   "strength": 0.299,
-   "losers_avg": -0.00523,
-   "winners_avg": -0.0162
+   "strength": 0.28,
+   "losers_avg": -0.00445,
+   "winners_avg": -0.01475
   },
   {
    "feature": "atr",
    "meaning": "average true range as a fraction of price",
-   "strength": 0.252,
-   "losers_avg": 0.00607,
-   "winners_avg": 0.00751
-  },
-  {
-   "feature": "r_96",
-   "meaning": "return over the last 24 hours",
-   "strength": 0.236,
-   "losers_avg": -0.01368,
-   "winners_avg": -0.02596
+   "strength": 0.228,
+   "losers_avg": 0.0062,
+   "winners_avg": 0.00757
   },
   {
    "feature": "vol_16",
    "meaning": "volatility of 15-min returns over the last 4 hours",
-   "strength": 0.23,
-   "losers_avg": 0.00388,
-   "winners_avg": 0.00515
+   "strength": 0.207,
+   "losers_avg": 0.00396,
+   "winners_avg": 0.00521
   },
   {
-   "feature": "ema_trend",
-   "meaning": "50-candle average vs 200-candle average (positive = uptrend)",
-   "strength": 0.221,
-   "losers_avg": -0.01124,
-   "winners_avg": -0.01615
+   "feature": "r_96",
+   "meaning": "return over the last 24 hours",
+   "strength": 0.185,
+   "losers_avg": -0.01302,
+   "winners_avg": -0.02294
+  },
+  {
+   "feature": "vol_96",
+   "meaning": "volatility of 15-min returns over 24 hours",
+   "strength": 0.178,
+   "losers_avg": 0.00437,
+   "winners_avg": 0.00508
   }
  ],
  "candidates": [
   {
-   "name": "unikaj vol_96 >= 0.005099",
-   "gain_on_old_data": 0.00263
+   "name": "unikaj r_672 <= -0.1546",
+   "gain_on_old_data": 0.00433
   },
   {
-   "name": "unikaj btc_r96 >= 0.01168",
-   "gain_on_old_data": 0.00243
+   "name": "unikaj vol_96 >= 0.005126",
+   "gain_on_old_data": 0.00272
   },
   {
-   "name": "unikaj r_96 <= -0.03308",
-   "gain_on_old_data": 0.00181
+   "name": "unikaj vz <= 0.404",
+   "gain_on_old_data": 0.00265
   }
  ]
 }
