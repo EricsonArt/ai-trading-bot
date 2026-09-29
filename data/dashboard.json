@@ -1,5 +1,5 @@
 {
- "generated_at": 1790628327641,
+ "generated_at": 1790642322035,
  "last_candle": 1790627400000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
@@ -835,7 +835,7 @@
    {
     "name": "Konto g\u0142\u00f3wne handlowa\u0142o na papierze 90+ dni",
     "ok": false,
-    "value": "1 dni"
+    "value": "2 dni"
    },
    {
     "name": "Co najmniej 100 zamkni\u0119tych transakcji",
@@ -1287,9 +1287,9 @@
   "regime": "bear"
  },
  "brain": {
-  "created_at": 1790622206545,
-  "source": "local",
-  "model": "mimo2.6:9b",
+  "created_at": 1790642322034,
+  "source": "cloud",
+  "model": "qwen3:4b",
   "directives": {
    "risk_level": 0.2,
    "min_confidence_adj": 0.05,
@@ -1298,19 +1298,19 @@
     "LTC": "avoid",
     "DOT": "avoid"
    },
-   "regime": "bear"
+   "regime": "volatile"
   },
-  "reasoning": "Model ma zero zamkni\u0119tych transakcji i edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107. AVAX (4.7% vol), LTC (3.0% vol) i DOT (5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj. Model edge jest False na nowych danych; zwi\u0119ksz sztywko\u015b\u0107 wej\u015bcia do 74% progu dla pewno\u015bci.",
+  "reasoning": "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony. Wszystkie sygna\u0142y s\u0105 poni\u017cej 79% progu. Najwy\u017csza volatylno\u015b\u0107 u AVAX, LTC i DOT. Wskaz\u00f3wka: unikaj wysokiej volatylno\u015bci i spadku BTC.",
   "new_lessons": [
-   "Model ma 0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
+   "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107.",
    "AVAX (4.7% vol), LTC (3.0% vol) i DOT (5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj.",
    "Model edge jest False na nowych danych; zwi\u0119ksz sztywko\u015b\u0107 wej\u015bcia do 74% progu dla pewno\u015bci."
   ],
   "lessons": [
-   "Model ma 0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
+   "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107.",
    "AVAX (4.7% vol), LTC (3.0% vol) i DOT (5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj.",
    "Model edge jest False na nowych danych; zwi\u0119ksz sztywko\u015b\u0107 wej\u015bcia do 74% progu dla pewno\u015bci.",
-   "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107.",
+   "Model ma 0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
    "Model ma 0 zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107.",
    "CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje.",
    "AVAX (48.9% 7d, 4.7% vol), LTC (46.4% 7d, 3.0% vol) i DOT (43.5% 7d, 5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj.",
@@ -1320,9 +1320,31 @@
    "Wyniki modelu s\u0105 niepewne; zwi\u0119ksz sztywko\u015b\u0107 wej\u015bcia do 74% progu dla pewno\u015bci.",
    "AVAX i LTC maj\u0105 wysok\u0105 volatylno\u015b\u0107 (4.7% i 3.0%) i wymagaj\u0105 stricznego wej\u015bcia."
   ],
-  "seconds": 7.8
+  "seconds": 190.4
  },
  "brain_journal": [
+  {
+   "created_at": 1790642322034,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.05,
+    "symbol_bias": {
+     "AVAX": "avoid",
+     "LTC": "avoid",
+     "DOT": "avoid"
+    },
+    "regime": "volatile"
+   },
+   "reasoning": "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony. Wszystkie sygna\u0142y s\u0105 poni\u017cej 79% progu. Najwy\u017csza volatylno\u015b\u0107 u AVAX, LTC i DOT. Wskaz\u00f3wka: unikaj wysokiej volatylno\u015bci i spadku BTC.",
+   "new_lessons": [
+    "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107.",
+    "AVAX (4.7% vol), LTC (3.0% vol) i DOT (5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj.",
+    "Model edge jest False na nowych danych; zwi\u0119ksz sztywko\u015b\u0107 wej\u015bcia do 74% progu dla pewno\u015bci."
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1790622206545,
    "source": "local",
@@ -1517,28 +1539,6 @@
    "new_lessons": [
     "Model ma 0 zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107.",
     "AVAX (48.9% 7d, 4.7% vol), LTC (46.4% 7d, 3.0% vol) i DOT (43.5% 7d, 5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj.",
-    "CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje."
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1790518547427,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.05,
-    "symbol_bias": {
-     "AVAX": "avoid",
-     "LTC": "avoid",
-     "DOT": "avoid"
-    },
-    "regime": "bull"
-   },
-   "reasoning": "Rynek jest w fazie wzrost\u00f3w (BTC +1.0%, ETH +1.0%, SOL +2.5%), ale Fear & Greed na 70 wskazuje na nadmiern\u0105 eufori\u0119, co zwi\u0119ksza ryzyko korekty. Model ma zero zamkni\u0119tych transakcji, wi\u0119c edge nie jest udowodniony i ryzyko powinno pozosta\u0107 na niskim poziomie. Najwy\u017csz\u0105 zmienno\u015b\u0107 maj\u0105 AVAX (4.7%), LTC (3.0%) i DOT (5.4%), dlatego powinny by\u0107 unika\u0107. CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje.",
-   "new_lessons": [
-    "AVAX (48.9% 7d, 4.7% vol), LTC (46.4% 7d, 3.0% vol) i DOT (43.5% 7d, 5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj.",
-    "Model ma zero zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107.",
     "CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje."
    ],
    "equity_at": 1000.0
