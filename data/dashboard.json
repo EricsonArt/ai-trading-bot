@@ -1,5 +1,5 @@
 {
- "generated_at": 1790795769927,
+ "generated_at": 1790802329140,
  "last_candle": 1790793900000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
@@ -2457,42 +2457,64 @@
   "regime": "bear"
  },
  "brain": {
-  "created_at": 1790784464992,
-  "source": "local",
-  "model": "mimo2.6:9b",
+  "created_at": 1790802329138,
+  "source": "cloud",
+  "model": "qwen3:4b",
   "directives": {
    "risk_level": 0.2,
-   "min_confidence_adj": 0.1,
+   "min_confidence_adj": 0.05,
    "symbol_bias": {
     "AVAX": "avoid",
     "LTC": "avoid",
     "DOT": "avoid"
    },
-   "regime": "bear"
+   "regime": "sideways"
   },
-  "reasoning": "Rynek jest w stanie Greed (71), a momentum na kr\u00f3tki horyzont bywa pu\u0142apk\u0105. Wszystkie 12 symboli s\u0105 poni\u017cej progu 0.84, wi\u0119c nie ma \u017cadnego sygna\u0142u do wykonania. Model ma 0 zamkni\u0119tych transakcji i edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
+  "reasoning": "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony (0 zamkni\u0119tych transakcji). Wszystkie sygna\u0142y poni\u017cej 0.84 progu. Najwy\u017csza zmienno\u015b\u0107 u AVAX, LTC i DOT. Rynek w stanie Greed (71) \u2014 sygna\u0142y momentum mog\u0105 by\u0107 pu\u0142apkami. Zmniejsz ryzyko do 20% (risk_level 0.2) po braku potwierdzonego edge.",
   "new_lessons": [
-   "Model ma 0 zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka i zero wej\u015b\u0107.",
-   "CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje.",
-   "AVAX, LTC i DOT maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj, dop\u00f3ki nie ma dowodu przewagi."
+   "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka i zero wej\u015b\u0107.",
+   "AVAX, LTC i DOT maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj, dop\u00f3ki nie ma dowodu przewagi.",
+   "Wszystkie sygna\u0142y poni\u017cej progu 0.84 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania."
   ],
   "lessons": [
+   "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka i zero wej\u015b\u0107.",
+   "AVAX, LTC i DOT maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj, dop\u00f3ki nie ma dowodu przewagi.",
+   "Wszystkie sygna\u0142y poni\u017cej progu 0.84 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
    "Model ma 0 zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka i zero wej\u015b\u0107.",
    "CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje.",
-   "AVAX, LTC i DOT maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj, dop\u00f3ki nie ma dowodu przewagi.",
    "Edge nie jest udowodniony (0 zamkni\u0119tych transakcji) \u2014 zero ryzyka i zero wej\u015b\u0107.",
    "Wszystkie 12 symboli poni\u017cej progu 0.84 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
    "Model ma 0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
    "Model ma 0 zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107.",
    "AVAX (4.7% vol), LTC (3.0% vol) i DOT (5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj.",
    "Model edge jest False na nowych danych; zwi\u0119ksz sztywko\u015b\u0107 wej\u015bcia do 74% progu dla pewno\u015bci.",
-   "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107.",
-   "AVAX (48.9% 7d, 4.7% vol), LTC (46.4% 7d, 3.0% vol) i DOT (43.5% 7d, 5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj.",
-   "Model ma zero zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107."
+   "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka, zero wej\u015b\u0107."
   ],
-  "seconds": 5.4
+  "seconds": 189.8
  },
  "brain_journal": [
+  {
+   "created_at": 1790802329138,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.05,
+    "symbol_bias": {
+     "AVAX": "avoid",
+     "LTC": "avoid",
+     "DOT": "avoid"
+    },
+    "regime": "sideways"
+   },
+   "reasoning": "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony (0 zamkni\u0119tych transakcji). Wszystkie sygna\u0142y poni\u017cej 0.84 progu. Najwy\u017csza zmienno\u015b\u0107 u AVAX, LTC i DOT. Rynek w stanie Greed (71) \u2014 sygna\u0142y momentum mog\u0105 by\u0107 pu\u0142apkami. Zmniejsz ryzyko do 20% (risk_level 0.2) po braku potwierdzonego edge.",
+   "new_lessons": [
+    "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka i zero wej\u015b\u0107.",
+    "AVAX, LTC i DOT maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj, dop\u00f3ki nie ma dowodu przewagi.",
+    "Wszystkie sygna\u0142y poni\u017cej progu 0.84 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania."
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1790784464992,
    "source": "local",
@@ -2688,28 +2710,6 @@
     "Model ma 0 zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka i zero wej\u015b\u0107.",
     "CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje.",
     "AVAX, LTC i DOT maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj, dop\u00f3ki nie ma dowodu przewagi."
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1790751762836,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.1,
-    "symbol_bias": {
-     "AVAX": "avoid",
-     "LTC": "avoid",
-     "DOT": "avoid"
-    },
-    "regime": "sideways"
-   },
-   "reasoning": "Rynek jest w strefie Greed (Fear & Greed 73), co zwi\u0119ksza ryzyko fa\u0142szywych sygna\u0142\u00f3w. Model ma 0 zamkni\u0119tych transakcji i edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107. Wszystkie 12 symboli poni\u017cej progu 0.84 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
-   "new_lessons": [
-    "Edge nie jest udowodniony (0 zamkni\u0119tych transakcji) \u2014 zero ryzyka i zero wej\u015b\u0107.",
-    "Wszystkie 12 symboli poni\u017cej progu 0.84 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
-    "CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje."
    ],
    "equity_at": 1000.0
   }
