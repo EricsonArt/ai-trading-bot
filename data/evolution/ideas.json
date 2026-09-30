@@ -258,5 +258,35 @@
   "tested_at": 1790751088318,
   "model_version": 8,
   "adopted": false
+ },
+ "d0334e98fa": {
+  "name": "Kr\u00f3tkie momentum bez potwierdzenia d\u0142ugoterminowego",
+  "source": "internet research: B\u0142\u0105d botu: r_96 < 0.008 i vol_ratio > 1 oraz wcze\u015bniejsze odrzucenie r_96 > -0.03229; dzi\u015b vol_ratio jest w okolicy 0.9025 (median), a BTC stoi w okolicy $83k pod presj\u0105 rentowno\u015bci",
+  "rule": "vol_ratio < 0.85 and r_16 > 0.004 and r_96 < 0.008",
+  "why": "Sygna\u0142 kr\u00f3tkoterminowego momentum bez potwierdzenia 24h jest dok\u0142adnie kombinacj\u0105, kt\u00f3ra ju\u017c nie przesz\u0142a testu na danych widocznych; dzi\u015b rynek jest w Greed, wi\u0119c kr\u00f3tkie wybicia bez wsparcia z 24h maj\u0105 wi\u0119ksze ryzyko odwr\u00f3cenia.",
+  "gain": 0.03198,
+  "tested_at": 1790766729753,
+  "model_version": 8,
+  "adopted": false
+ },
+ "1b713ef2bd": {
+  "name": "NiskiATR i spokojny BTC jako warunek wej\u015bcia",
+  "source": "internet research: B\u0142\u0105d botu: atr (losing 0.00608 vs winning 0.00741) oraz btc_vol96 > 0.0024 odrzucone; dzi\u015b BTC stoi w okolicy $83k z wysok\u0105 rentowno\u015bci\u0105 30-letni\u0105.",
+  "rule": "atr < 0.00422 and btc_vol96 < 0.0024 and r_4 > 0.001",
+  "why": "Bot wymaga\u0142 dzi\u015b btc_vol96 > 0.0024, ale jego w\u0142asne straty mia\u0142y ni\u017cszy ATR ni\u017c wygrane; dzi\u015b rynek jest spokojny, wi\u0119c wej\u015bcie tylko w wysok\u0105 zmienno\u015b\u0107 BTC zwi\u0119ksza ryzyko fa\u0142szywych sygna\u0142\u00f3w.",
+  "gain": 0.00527,
+  "tested_at": 1790766729753,
+  "model_version": 8,
+  "adopted": false
+ },
+ "e48c73cce1": {
+  "name": "RSI nadkupione z odwr\u00f3conym momentum",
+  "source": "internet research: B\u0142\u0105d botu: rsi < 0.5 odrzucone, ale RSI 0.646 to 90. percentyl, a dzi\u015b BTC stoi pod presj\u0105 rentowno\u015bci i danych o inflacji.",
+  "rule": "rsi > 0.646 and r_8 < 0.002 and d_ema50 < -0.005",
+  "why": "RSI w okolicy 0.646 to sygna\u0142 nadkupu, ale po\u0142\u0105czone z kr\u00f3tkoterminowym spadkiem i spadkiem wzgl\u0119dem EMA50 to dok\u0142adnie obraz, kt\u00f3ry bot ju\u017c odrzuci\u0142; dzi\u015b rynek w Greed zwi\u0119ksza ryzyko pu\u0142apki RSI.",
+  "gain": 0.00527,
+  "tested_at": 1790766729753,
+  "model_version": 8,
+  "adopted": false
  }
 }

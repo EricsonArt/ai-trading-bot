@@ -53,7 +53,7 @@
  },
  "description": "position style, buy when the model is at least 74% sure, target 2.8x / stop 1.4x the expected move, hold up to 72 h, 25% of equity per trade, only if btc_vol96 > 0.0024 and d_ema50 < -0.01048",
  "model_version": 8,
- "generation": 10,
+ "generation": 11,
  "reason": "",
  "challengers": [
   {
@@ -92,15 +92,15 @@
   {
    "style": "position",
    "threshold": 0.67,
-   "tp": 4.0,
+   "tp": 2.6,
    "sl": 0.8,
    "hold": 1.5,
    "size": 0.25,
    "rules": [
     {
-     "feature": "btc_r96",
+     "feature": "rel_r672",
      "op": "<",
-     "value": -0.00663
+     "value": -0.00943
     },
     {
      "feature": "btc_vol96",
@@ -108,9 +108,9 @@
      "value": 0.00228
     },
     {
-     "feature": "rel_r672",
+     "feature": "btc_r96",
      "op": "<",
-     "value": -0.00943
+     "value": -0.00677
     },
     {
      "feature": "atr",
@@ -118,9 +118,9 @@
      "value": 0.00647
     }
    ],
-   "id": "34584a97d8",
-   "parent": "69036f1743",
-   "origin": "mutation: threshold"
+   "id": "07d7cbacaf",
+   "parent": "d22f55a9f4+ede47787b2",
+   "origin": "crossover"
   },
   {
    "style": "position",
@@ -133,7 +133,7 @@
     {
      "feature": "btc_r96",
      "op": "<",
-     "value": -0.00709
+     "value": -0.00667
     },
     {
      "feature": "btc_vol96",
@@ -151,14 +151,14 @@
      "value": 0.00647
     }
    ],
-   "id": "166cf8cdac",
-   "parent": "4fd2e090d2+f5718d6f85",
+   "id": "41d65cb8b3",
+   "parent": "3d24951571+d22f55a9f4",
    "origin": "crossover"
   },
   {
    "style": "position",
    "threshold": 0.67,
-   "tp": 2.8,
+   "tp": 2.4,
    "sl": 0.8,
    "hold": 1.5,
    "size": 0.25,
@@ -184,9 +184,9 @@
      "value": -0.00663
     }
    ],
-   "id": "9ebde1546c",
-   "parent": "cd96d11c4c+b51f3ad35e",
-   "origin": "crossover"
+   "id": "1f9791cd36",
+   "parent": "9ebde1546c",
+   "origin": "mutation: tp"
   }
  ],
  "since": 1790507257986
