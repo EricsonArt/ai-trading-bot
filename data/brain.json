@@ -1,19 +1,20 @@
 {
- "created_at": 1790869946833,
+ "created_at": 1790890005625,
  "source": "cloud",
  "model": "qwen3:4b",
- "seconds": 181.2,
+ "seconds": 130.2,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
+   "LINK": "reduce",
    "AVAX": "avoid",
    "LTC": "avoid",
    "DOT": "avoid"
   },
-  "regime": "volatile"
+  "regime": "sideways"
  },
- "reasoning": "Model nie ma udowodnionego edge (0 zamkni\u0119tych transakcji) i wszystkie sygna\u0142y poni\u017cej 0.77 progu. Wszystkie symbole maj\u0105 zmienno\u015b\u0107 powy\u017cej 3%, co zwi\u0119ksza ryzyko. Zmniejszenie ryzyka nie jest konieczne, bo brak aktywnych transakcji.",
+ "reasoning": "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony (0 zamkni\u0119tych transakcji). Wszystkie sygna\u0142y poni\u017cej 0.75 progu. Najwy\u017csza zmienno\u015b\u0107 w AVAX (4.7%), LTC (3.0%) i DOT (5.4%) \u2014 unikaj. Zmniejsz ryzyko dla LINK (22% prawdopodobie\u0144stwo zysku).",
  "new_lessons": [
   "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka i zero wej\u015b\u0107.",
   "Wszystkie sygna\u0142y poni\u017cej progu 0.84 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
