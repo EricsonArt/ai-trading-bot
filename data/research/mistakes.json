@@ -1,57 +1,57 @@
 {
- "created_at": 1790900190012,
- "model_version": 11,
- "signals": 37551,
- "losers": 22535,
+ "created_at": 1790955752699,
+ "model_version": 12,
+ "signals": 37991,
+ "losers": 22443,
  "patterns": [
   {
    "feature": "btc_r96",
    "meaning": "Bitcoin return over the last 24 hours",
-   "strength": 0.214,
-   "losers_avg": -0.00551,
-   "winners_avg": -0.01273
+   "strength": 0.211,
+   "losers_avg": -0.0043,
+   "winners_avg": -0.01136
   },
   {
    "feature": "atr",
    "meaning": "average true range as a fraction of price",
-   "strength": 0.21,
-   "losers_avg": 0.00583,
-   "winners_avg": 0.00706
+   "strength": 0.163,
+   "losers_avg": 0.00571,
+   "winners_avg": 0.0066
   },
   {
    "feature": "vol_16",
    "meaning": "volatility of 15-min returns over the last 4 hours",
-   "strength": 0.192,
-   "losers_avg": 0.00371,
-   "winners_avg": 0.00485
-  },
-  {
-   "feature": "vol_96",
-   "meaning": "volatility of 15-min returns over 24 hours",
-   "strength": 0.185,
-   "losers_avg": 0.0042,
-   "winners_avg": 0.0051
+   "strength": 0.163,
+   "losers_avg": 0.00363,
+   "winners_avg": 0.00448
   },
   {
    "feature": "r_96",
    "meaning": "return over the last 24 hours",
-   "strength": 0.157,
-   "losers_avg": -0.01353,
-   "winners_avg": -0.02178
+   "strength": 0.136,
+   "losers_avg": -0.01187,
+   "winners_avg": -0.01858
+  },
+  {
+   "feature": "dd_7d",
+   "meaning": "distance below the 7-day high (0 = at the high)",
+   "strength": 0.135,
+   "losers_avg": -0.11407,
+   "winners_avg": -0.10414
   }
  ],
  "candidates": [
   {
-   "name": "unikaj r_672 <= -0.1363",
-   "gain_on_old_data": 0.00312
+   "name": "unikaj dd_7d <= -0.1509",
+   "gain_on_old_data": 0.00359
   },
   {
-   "name": "unikaj range_pos <= 0.2405",
-   "gain_on_old_data": 0.00149
+   "name": "unikaj r_672 <= -0.1329",
+   "gain_on_old_data": 0.00324
   },
   {
-   "name": "unikaj btc_r96 >= 0.01131",
-   "gain_on_old_data": 0.00134
+   "name": "unikaj r_2016 <= -0.2652",
+   "gain_on_old_data": 0.00297
   }
  ]
 }
