@@ -1,20 +1,19 @@
 {
- "created_at": 1790958965853,
+ "created_at": 1790962592183,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 5.3,
+ "seconds": 6.0,
  "directives": {
-  "risk_level": 0.8,
+  "risk_level": 0.2,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
-   "DOT": "reduce",
    "TRX": "avoid",
    "AVAX": "avoid",
    "LTC": "avoid"
   },
   "regime": "bull"
  },
- "reasoning": "Rynek jest w trybie risk-on (BTC +1.7%, Fear & Greed 72), ale wszystkie 12 symboli maj\u0105 prawdopodobie\u0144stwo poni\u017cej progu 0.75, wi\u0119c model nie ma \u017cadnego sygna\u0142u do wykonania. Edge nie jest udowodniony (0 zamkni\u0119tych transakcji), wi\u0119c utrzymuj\u0119 zero ryzyka i zero wej\u015b\u0107. TRX, AVAX i LTC wykluczam dodatkowo z powodu regu\u0142 zmienno\u015bci i moich wcze\u015bniejszych decyzji.",
+ "reasoning": "Rynek jest w trybie risk-on z Fear & Greed 72, ale model ma 0 zamkni\u0119tych transakcji i edge nie jest udowodniony, wi\u0119c utrzymuj\u0119 zero ryzyka i zero wej\u015b\u0107. Wszystkie 12 symboli poni\u017cej progu 0.84 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania. TRX jest zablokowane regu\u0142\u0105 btc_vol96 > 0.0024, wi\u0119c nie wchodz\u0119 mimo wysokiego prawdopodobie\u0144stwa.",
  "new_lessons": [
   "Model ma 0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
   "Wszystkie 12 symboli poni\u017cej progu 0.84 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
