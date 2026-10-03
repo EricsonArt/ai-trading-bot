@@ -1,26 +1,31 @@
 {
- "created_at": 1791049466367,
+ "created_at": 1791056700952,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 44.3,
+ "seconds": 9.1,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.08,
   "symbol_bias": {
+   "AVAX": "reduce",
+   "LTC": "reduce",
+   "DOT": "reduce",
    "BTC": "avoid",
    "ETH": "avoid",
    "SOL": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w Greed (67), ale newsy pokazuj\u0105 wyra\u017ane ryzyko: zamkni\u0119cie L2 Blast po spadku o 98%, ci\u0119cia w Anchrage i sza\u0142 regulatorowy (OCC, MiCA) \u2014 to presja na korekt\u0119 i wygaszanie narracji. Bot traci na sygna\u0142ach z wysok\u0105 pewno\u015bci\u0105 w warunkach spadkowej presji BTC (btc_r96 < -0.01231), wi\u0119c filtr powinien wymaga\u0107 potwierdzenia momentum, nie samej pewno\u015bci modelu. Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.7 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
+ "reasoning": "Rynek jest w Greed (67), ale newsy o korekcie L2 Blast i presji regulatorowej sugeruj\u0105 ryzyko spadkowe. Model ma 0 zamkni\u0119tych transakcji, wi\u0119c edge nie jest udowodniony \u2014 zero ryzyka i zero wej\u015b\u0107. Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.78, wi\u0119c brak sygna\u0142u do wykonania. CLM ma AUC 0.44 i 57% dok\u0142adno\u015bci, wi\u0119c drugie zdanie nie ma przewagi nad zawsze-nie.",
  "new_lessons": [
   "Model ma 0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
-  "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.7 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
-  "TRX zablokowane regu\u0142\u0105 btc_vol96 > 0.0024, wi\u0119c nie wchodz\u0119 mimo wysokiego prawdopodobie\u0144stwa."
+  "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.78 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
+  "CLM ma AUC 0.44 i 57% dok\u0142adno\u015bci \u2014 drugie zdanie nie ma przewagi nad zawsze-nie."
  ],
  "lessons": [
   "Model ma 0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
+  "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.78 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
+  "CLM ma AUC 0.44 i 57% dok\u0142adno\u015bci \u2014 drugie zdanie nie ma przewagi nad zawsze-nie.",
   "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.7 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
   "TRX zablokowane regu\u0142\u0105 btc_vol96 > 0.0024, wi\u0119c nie wchodz\u0119 mimo wysokiego prawdopodobie\u0144stwa.",
   "Zero closed trades \u2014 edge remains unproven, keep zero risk and zero entries.",
@@ -29,9 +34,7 @@
   "Model ma 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
   "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.7 \u2014 brak sygna\u0142u do wykonania.",
   "TRX jest zablokowane regu\u0142\u0105 btc_vol96 > 0.0024, wi\u0119c nie wchodz\u0119 mimo wysokiego prawdopodobie\u0144stwa.",
-  "All 12 signals below 0.7 threshold \u2014 no trade signal exists right now.",
-  "BTC 24h -2.1% with Fear & Greed 67 (Greed) \u2014 avoid signals in this regime.",
-  "AVAX, LTC, DOT have highest volatility \u2014 avoid until edge proven."
+  "All 12 signals below 0.7 threshold \u2014 no trade signal exists right now."
  ],
  "equity_at": 1000.0
 }
