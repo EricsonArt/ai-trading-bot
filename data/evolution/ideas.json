@@ -488,5 +488,35 @@
   "tested_at": 1791006525584,
   "model_version": 13,
   "adopted": false
+ },
+ "fa1e985cb8": {
+  "name": "Wymagaj spadkowego momentum BTC zamiast samej presji",
+  "source": "internet research: Bot traci na sygna\u0142ach, gdy btc_r96 < -0.01231 i btc_vol96 < 0.0024 (najlepsza strategia), a dzi\u015b newsy o zamkni\u0119ciu Blast i ci\u0119ciach w Anchrage sugeruj\u0105 presj\u0119 na korekt\u0119.",
+  "rule": "r_16 < 0.003 and r_96 < -0.008 and btc_vol96 < 0.0024",
+  "why": "Sygna\u0142 modelowy oparty na pewno\u015bci 70% bez spadkowego momentum BTC by\u0142by w warunkach Greed i spadkowej presji \u2014 dok\u0142adnie tam, gdzie bot traci\u0142. Wymaganie r_16 < 0.003 i r_96 < -0.008 odrzuca sygna\u0142y, kt\u00f3re model interpretuje jako okazj\u0119, ale kt\u00f3re s\u0105 tylko reakcj\u0105 na krach.",
+  "gain": 0.0,
+  "tested_at": 1791028774742,
+  "model_version": 13,
+  "adopted": false
+ },
+ "acf5436d2e": {
+  "name": "Wymagaj spadkowego trendu i niskiej wolumenu",
+  "source": "internet research: Bot traci na sygna\u0142ach, gdy r_672 > -0.12837 i dd_7d > -0.14959 (najlepsza strategia), a dzi\u015b newsy o ci\u0119ciach w Anchrage i zamkni\u0119ciu Blast sugeruj\u0105 presj\u0119 na korekt\u0119.",
+  "rule": "r_672 < -0.02 and dd_7d < -0.03 and vz < 0.6",
+  "why": "Sygna\u0142 modelowy oparty na pewno\u015bci 70% bez spadkowego trendu by\u0142by w warunkach Greed i spadkowej presji \u2014 dok\u0142adnie tam, gdzie bot traci\u0142. Wymaganie r_672 < -0.02 i dd_7d < -0.03 odrzuca sygna\u0142y, kt\u00f3re model interpretuje jako okazj\u0119, ale kt\u00f3re s\u0105 tylko reakcj\u0105 na krach.",
+  "gain": 0.0,
+  "tested_at": 1791028774742,
+  "model_version": 13,
+  "adopted": false
+ },
+ "fee4a30cac": {
+  "name": "Wymagaj spadkowego trendu i niskiej wolumenu",
+  "source": "internet research: Bot traci na sygna\u0142ach, gdy rsi > 0.646 i r_8 < 0.002 i d_ema50 < -0.005 (najlepsza strategia), a dzi\u015b newsy o ci\u0119ciach w Anchrage i zamkni\u0119ciu Blast sugeruj\u0105 presj\u0119 na korekt\u0119.",
+  "rule": "rsi < 0.55 and bb < 0.2 and r_4 < 0.001",
+  "why": "Sygna\u0142 modelowy oparty na pewno\u015bci 70% bez spadkowego trendu by\u0142by w warunkach Greed i spadkowej presji \u2014 dok\u0142adnie tam, gdzie bot traci\u0142. Wymaganie rsi < 0.55 i bb < 0.2 odrzuca sygna\u0142y, kt\u00f3re model interpretuje jako okazj\u0119, ale kt\u00f3re s\u0105 tylko reakcj\u0105 na krach.",
+  "gain": 0.0,
+  "tested_at": 1791028774742,
+  "model_version": 13,
+  "adopted": false
  }
 }
