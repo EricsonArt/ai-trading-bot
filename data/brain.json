@@ -1,25 +1,28 @@
 {
- "created_at": 1791009627313,
+ "created_at": 1791013060656,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 32.8,
+ "seconds": 5.6,
  "directives": {
   "risk_level": 0.2,
-  "min_confidence_adj": 0.05,
+  "min_confidence_adj": 0.1,
   "symbol_bias": {
    "AVAX": "avoid",
    "LTC": "avoid",
    "DOT": "avoid"
   },
-  "regime": "bull"
+  "regime": "sideways"
  },
- "reasoning": "Rynek jest w trybie risk-on (Fear & Greed 72), ale wszystkie 12 symboli s\u0105 poni\u017cej progu wej\u015bcia 0.75, wi\u0119c model nie ma \u017cadnego sygna\u0142u do wykonania. Historyczne dane pokazuj\u0105, \u017ce model ma 0 zamkni\u0119tych transakcji, wi\u0119c edge nie jest udowodniony i zero ryzyka jest w\u0142a\u015bciw\u0105 decyzj\u0105. AVAX, LTC i DOT maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107, wi\u0119c unikam ich, dop\u00f3ki nie ma dowodu przewagi.",
+ "reasoning": "Rynek jest w trybie risk-on (Fear & Greed 72), ale wszystkie 12 sygna\u0142\u00f3w modelowych s\u0105 poni\u017cej progu 0.75, wi\u0119c nie ma \u017cadnego sygna\u0142u do wykonania. Model ma 0 zamkni\u0119tych transakcji, wi\u0119c edge nie jest udowodniony \u2014 utrzymuj\u0119 zero ryzyka i zero wej\u015b\u0107. BTC ma 24h -1.6% i 30d +8.9%, ale zmienno\u015b\u0107 1.6% jest niska; wysokie prawdopodobie\u0144stwo TRX (0.59) nie wystarczy, by \u0142ama\u0107 zasad\u0119 braku dowodu przewagi.",
  "new_lessons": [
-  "Model ma 0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
-  "AVAX, LTC i DOT maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj, dop\u00f3ki nie ma dowodu przewagi.",
-  "TRX jest zablokowane regu\u0142\u0105 btc_vol96 > 0.0024, wi\u0119c nie wchodz\u0119 mimo wysokiego prawdopodobie\u0144stwa."
+  "Zero closed trades \u2014 edge remains unproven, keep zero risk and zero entries.",
+  "All 12 signals below 0.75 threshold \u2014 no trade signal exists right now.",
+  "AVAX, LTC, DOT have highest volatility \u2014 avoid until edge proven."
  ],
  "lessons": [
+  "Zero closed trades \u2014 edge remains unproven, keep zero risk and zero entries.",
+  "All 12 signals below 0.75 threshold \u2014 no trade signal exists right now.",
+  "AVAX, LTC, DOT have highest volatility \u2014 avoid until edge proven.",
   "Model ma 0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
   "AVAX, LTC i DOT maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj, dop\u00f3ki nie ma dowodu przewagi.",
   "TRX jest zablokowane regu\u0142\u0105 btc_vol96 > 0.0024, wi\u0119c nie wchodz\u0119 mimo wysokiego prawdopodobie\u0144stwa.",
@@ -28,10 +31,7 @@
   "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka i zero wej\u015b\u0107.",
   "Wszystkie sygna\u0142y poni\u017cej progu 0.84 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
   "AVAX (4.7% vol), LTC (3.0% vol) i DOT (5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj, dop\u00f3ki nie ma dowodu przewagi.",
-  "AVAX (4.7% vol), LTC (3.0% vol) i DOT (5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj.",
-  "Model ma 0 zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka i zero wej\u015b\u0107.",
-  "CLM model jest bezu\u017cyteczny (AUC 0.44), wi\u0119c jego sygna\u0142y nie powinny wp\u0142ywa\u0107 na decyzje.",
-  "Edge nie jest udowodniony (0 zamkni\u0119tych transakcji) \u2014 zero ryzyka i zero wej\u015b\u0107."
+  "AVAX (4.7% vol), LTC (3.0% vol) i DOT (5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj."
  ],
  "equity_at": 1000.0
 }
