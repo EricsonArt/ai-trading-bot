@@ -1,9 +1,9 @@
 {
- "generated_at": 1791020147187,
- "last_candle": 1791018900000,
+ "generated_at": 1791021667027,
+ "last_candle": 1791020700000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
- "benchmark_return": -0.0037000000000000366,
+ "benchmark_return": -0.0036799999999999056,
  "series": [
   [
    1790508600000,
@@ -3412,6 +3412,18 @@
    1000.0,
    996.3,
    1000.0
+  ],
+  [
+   1791019800000,
+   1000.0,
+   996.2,
+   1000.0
+  ],
+  [
+   1791020700000,
+   1000.0,
+   996.32,
+   1000.0
   ]
  ],
  "main": {
@@ -3718,90 +3730,90 @@
  },
  "signals": {
   "BTC": {
-   "p": 0.3951,
-   "threshold": 0.8,
+   "p": 0.3854,
+   "threshold": 0.7,
    "action": "wait",
-   "ts": 1791018900000
+   "ts": 1791020700000
   },
   "ETH": {
-   "p": 0.5317,
-   "threshold": 0.8,
+   "p": 0.5106,
+   "threshold": 0.7,
    "action": "wait",
-   "ts": 1791018900000
+   "ts": 1791020700000
   },
   "SOL": {
-   "p": 0.3489,
-   "threshold": 0.8,
+   "p": 0.35,
+   "threshold": 0.7,
    "action": "wait",
-   "ts": 1791018900000
+   "ts": 1791020700000
   },
   "XRP": {
-   "p": 0.4036,
-   "threshold": 0.8,
+   "p": 0.4062,
+   "threshold": 0.7,
    "action": "wait",
-   "ts": 1791018900000
+   "ts": 1791020700000
   },
   "DOGE": {
-   "p": 0.4522,
-   "threshold": 0.8,
+   "p": 0.4634,
+   "threshold": 0.7,
    "action": "wait",
-   "ts": 1791018900000
+   "ts": 1791020700000
   },
   "ADA": {
-   "p": 0.445,
-   "threshold": 0.8,
+   "p": 0.4402,
+   "threshold": 0.7,
    "action": "wait",
-   "ts": 1791018900000
+   "ts": 1791020700000
   },
   "BNB": {
-   "p": 0.5532,
-   "threshold": 0.8,
+   "p": 0.5505,
+   "threshold": 0.7,
    "action": "wait",
-   "ts": 1791018900000
+   "ts": 1791020700000
   },
   "LINK": {
-   "p": 0.3504,
-   "threshold": 0.8,
+   "p": 0.3508,
+   "threshold": 0.7,
    "action": "wait",
-   "ts": 1791018900000
+   "ts": 1791020700000
   },
   "AVAX": {
-   "p": 0.5453,
-   "threshold": 0.8,
+   "p": 0.5404,
+   "threshold": 0.7,
    "action": "wait",
-   "ts": 1791018900000
+   "ts": 1791020700000
   },
   "LTC": {
-   "p": 0.3311,
-   "threshold": 0.8,
+   "p": 0.3505,
+   "threshold": 0.7,
    "action": "wait",
-   "ts": 1791018900000
+   "ts": 1791020700000
   },
   "DOT": {
-   "p": 0.5374,
-   "threshold": 0.8,
+   "p": 0.4777,
+   "threshold": 0.7,
    "action": "wait",
-   "ts": 1791018900000
+   "ts": 1791020700000
   },
   "TRX": {
-   "p": 0.5653,
-   "threshold": 0.8,
+   "p": 0.558,
+   "threshold": 0.7,
    "action": "wait",
-   "ts": 1791018900000
+   "ts": 1791020700000
   }
  },
  "prices": {
-  "BTC": 84598.06,
-  "ETH": 2684.7,
-  "SOL": 119.23,
-  "XRP": 1.4825,
-  "DOGE": 0.09261,
-  "ADA": 0.2431,
-  "BNB": 767.89,
-  "LINK": 13.94,
-  "AVAX": 10.883,
-  "LTC": 68.96,
-  "DOT": 1.15,
+  "BTC": 84600.01,
+  "ETH": 2680.73,
+  "SOL": 119.34,
+  "XRP": 1.4832,
+  "DOGE": 0.09276,
+  "ADA": 0.2442,
+  "BNB": 767.61,
+  "LINK": 13.932,
+  "AVAX": 10.952,
+  "LTC": 68.59,
+  "DOT": 1.163,
   "TRX": 0.336
  },
  "model": {
@@ -3988,29 +4000,29 @@
  ],
  "directives": {
   "risk_level": 0.2,
-  "min_confidence_adj": 0.1,
+  "min_confidence_adj": 0.0,
   "symbol_bias": {
    "AVAX": "avoid",
    "LTC": "avoid",
    "DOT": "avoid"
   },
-  "regime": "bear"
+  "regime": "bull"
  },
  "brain": {
-  "created_at": 1791016714574,
+  "created_at": 1791020345370,
   "source": "local",
   "model": "mimo2.6:9b",
   "directives": {
    "risk_level": 0.2,
-   "min_confidence_adj": 0.1,
+   "min_confidence_adj": 0.0,
    "symbol_bias": {
     "AVAX": "avoid",
     "LTC": "avoid",
     "DOT": "avoid"
    },
-   "regime": "bear"
+   "regime": "bull"
   },
-  "reasoning": "Zero closed trades means the model has no proven edge, so the main account stays at zero risk with zero entries. All 12 current signals are below the 0.8 threshold, and the champion recipe's 23-trade test still shows edge: False, so no new exposure is justified. AVAX, LTC and DOT carry the highest volatility and are the least attractive names to revisit first.",
+  "reasoning": "Rynek jest w trybie risk-on (Fear & Greed 72, BTC +8.9% na 30 dni), ale wszystkie 12 sygna\u0142\u00f3w modela s\u0105 poni\u017cej progu 0.8, wi\u0119c nie ma \u017cadnego sygna\u0142u do wykonania. Edge nie jest udowodniony \u2014 0 zamkni\u0119tych transakcji na g\u0142\u00f3wnym i praktycznym koncie, wi\u0119c zero ryzyka i zero wej\u015b\u0107. AVAX, LTC i DOT maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 (4.7%, 4.5%, 4.7%) i s\u0105 blokowane jako avoid.",
   "new_lessons": [
    "Zero closed trades \u2014 edge remains unproven, keep zero risk and zero entries.",
    "All 12 signals below 0.75 threshold \u2014 no trade signal exists right now.",
@@ -4030,9 +4042,31 @@
    "AVAX (4.7% vol), LTC (3.0% vol) i DOT (5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj, dop\u00f3ki nie ma dowodu przewagi.",
    "AVAX (4.7% vol), LTC (3.0% vol) i DOT (5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj."
   ],
-  "seconds": 30.4
+  "seconds": 6.4
  },
  "brain_journal": [
+  {
+   "created_at": 1791020345370,
+   "source": "local",
+   "model": "mimo2.6:9b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.0,
+    "symbol_bias": {
+     "AVAX": "avoid",
+     "LTC": "avoid",
+     "DOT": "avoid"
+    },
+    "regime": "bull"
+   },
+   "reasoning": "Rynek jest w trybie risk-on (Fear & Greed 72, BTC +8.9% na 30 dni), ale wszystkie 12 sygna\u0142\u00f3w modela s\u0105 poni\u017cej progu 0.8, wi\u0119c nie ma \u017cadnego sygna\u0142u do wykonania. Edge nie jest udowodniony \u2014 0 zamkni\u0119tych transakcji na g\u0142\u00f3wnym i praktycznym koncie, wi\u0119c zero ryzyka i zero wej\u015b\u0107. AVAX, LTC i DOT maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 (4.7%, 4.5%, 4.7%) i s\u0105 blokowane jako avoid.",
+   "new_lessons": [
+    "Zero closed trades \u2014 edge remains unproven, keep zero risk and zero entries.",
+    "All 12 signals below 0.75 threshold \u2014 no trade signal exists right now.",
+    "AVAX, LTC, DOT have highest volatility \u2014 avoid until edge proven."
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1791016714574,
    "source": "local",
@@ -4229,28 +4263,6 @@
     "Model ma 0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
     "Wszystkie 12 symboli poni\u017cej progu 0.84 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
     "TRX jest zablokowane regu\u0142\u0105 btc_vol96 > 0.0024, wi\u0119c nie wchodz\u0119 mimo wysokiego prawdopodobie\u0144stwa."
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1790953877684,
-   "source": "cloud",
-   "model": "qwen3:4b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.05,
-    "symbol_bias": {
-     "AVAX": "avoid",
-     "LTC": "avoid",
-     "DOT": "avoid"
-    },
-    "regime": "volatile"
-   },
-   "reasoning": "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony (0 zamkni\u0119tych transakcji). Wszystkie sygna\u0142y poni\u017cej 0.84 progu. Najwy\u017csza zmienno\u015b\u0107 u AVAX, LTC i DOT \u2014 unikaj. Brak aktywnych sygna\u0142\u00f3w do wej\u015bcia.",
-   "new_lessons": [
-    "Model nie ma zamkni\u0119tych transakcji i edge nie jest udowodniony \u2014 zero ryzyka i zero wej\u015b\u0107.",
-    "Wszystkie sygna\u0142y poni\u017cej progu 0.84 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
-    "AVAX (4.7% vol), LTC (3.0% vol) i DOT (5.4% vol) maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 \u2014 unikaj, dop\u00f3ki nie ma dowodu przewagi."
    ],
    "equity_at": 1000.0
   }
