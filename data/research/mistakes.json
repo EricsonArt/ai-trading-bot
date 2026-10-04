@@ -1,57 +1,57 @@
 {
- "created_at": 1791050973952,
- "model_version": 14,
- "signals": 38592,
- "losers": 22677,
+ "created_at": 1791095656731,
+ "model_version": 15,
+ "signals": 38556,
+ "losers": 22639,
  "patterns": [
   {
    "feature": "btc_r96",
    "meaning": "Bitcoin return over the last 24 hours",
-   "strength": 0.255,
-   "losers_avg": -0.00386,
-   "winners_avg": -0.0121
+   "strength": 0.232,
+   "losers_avg": -0.00443,
+   "winners_avg": -0.01197
+  },
+  {
+   "feature": "dd_7d",
+   "meaning": "distance below the 7-day high (0 = at the high)",
+   "strength": 0.175,
+   "losers_avg": -0.11491,
+   "winners_avg": -0.10198
   },
   {
    "feature": "r_96",
    "meaning": "return over the last 24 hours",
-   "strength": 0.172,
-   "losers_avg": -0.01105,
-   "winners_avg": -0.01919
+   "strength": 0.17,
+   "losers_avg": -0.01155,
+   "winners_avg": -0.01982
   },
   {
-   "feature": "atr",
-   "meaning": "average true range as a fraction of price",
-   "strength": 0.153,
-   "losers_avg": 0.00567,
-   "winners_avg": 0.00646
+   "feature": "r_672",
+   "meaning": "return over the last 7 days",
+   "strength": 0.167,
+   "losers_avg": -0.08434,
+   "winners_avg": -0.06738
   },
   {
    "feature": "vol_16",
    "meaning": "volatility of 15-min returns over the last 4 hours",
-   "strength": 0.148,
-   "losers_avg": 0.00362,
-   "winners_avg": 0.00435
-  },
-  {
-   "feature": "ema_trend",
-   "meaning": "50-candle average vs 200-candle average (positive = uptrend)",
    "strength": 0.138,
-   "losers_avg": -0.0097,
-   "winners_avg": -0.01259
+   "losers_avg": 0.0037,
+   "winners_avg": 0.00443
   }
  ],
  "candidates": [
   {
-   "name": "unikaj dd_7d <= -0.1445",
-   "gain_on_old_data": 0.00355
+   "name": "unikaj dd_7d <= -0.1484",
+   "gain_on_old_data": 0.00449
   },
   {
-   "name": "unikaj btc_r96 >= 0.01171",
-   "gain_on_old_data": 0.00235
+   "name": "unikaj r_672 <= -0.1297",
+   "gain_on_old_data": 0.004
   },
   {
-   "name": "unikaj ema_trend <= -0.01723",
-   "gain_on_old_data": 0.0016
+   "name": "unikaj ema_trend <= -0.0172",
+   "gain_on_old_data": 0.00256
   }
  ]
 }
