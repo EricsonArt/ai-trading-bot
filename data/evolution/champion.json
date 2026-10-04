@@ -63,77 +63,11 @@
  },
  "description": "position style, buy when the model is at least 70% sure, target 2.2x / stop 1.2x the expected move, hold up to 72 h, 25% of equity per trade, only if btc_vol96 > 0.0024 and btc_r96 < -0.01231 and rel_r672 < -0.01085 and btc_r16 < 0.0061",
  "model_version": 15,
- "generation": 21,
+ "generation": 22,
  "reason": "",
  "challengers": [
   {
    "style": "position",
-   "threshold": 0.72,
-   "tp": 2.4,
-   "sl": 1.8,
-   "hold": 1.5,
-   "size": 0.25,
-   "rules": [
-    {
-     "feature": "btc_r16",
-     "op": "<",
-     "value": 0.00429
-    },
-    {
-     "feature": "rel_r672",
-     "op": "<",
-     "value": -0.01002
-    },
-    {
-     "feature": "btc_r96",
-     "op": "<",
-     "value": -0.01231
-    },
-    {
-     "feature": "btc_vol96",
-     "op": ">",
-     "value": 0.00282
-    }
-   ],
-   "id": "14271188e6",
-   "parent": "6d2975324d",
-   "origin": "mutation: threshold"
-  },
-  {
-   "style": "position",
-   "threshold": 0.72,
-   "tp": 2.4,
-   "sl": 1.8,
-   "hold": 1.5,
-   "size": 0.25,
-   "rules": [
-    {
-     "feature": "btc_r16",
-     "op": "<",
-     "value": 0.00429
-    },
-    {
-     "feature": "btc_r96",
-     "op": "<",
-     "value": -0.01231
-    },
-    {
-     "feature": "btc_vol96",
-     "op": ">",
-     "value": 0.00281
-    },
-    {
-     "feature": "rel_r672",
-     "op": "<",
-     "value": -0.01002
-    }
-   ],
-   "id": "d4a2798f19",
-   "parent": "50d9ce643d",
-   "origin": "mutation: threshold"
-  },
-  {
-   "style": "position",
    "threshold": 0.73,
    "tp": 2.4,
    "sl": 1.2,
@@ -141,29 +75,29 @@
    "size": 0.25,
    "rules": [
     {
-     "feature": "btc_r16",
-     "op": "<",
-     "value": 0.00645
-    },
-    {
      "feature": "btc_r96",
      "op": "<",
      "value": -0.01231
     },
     {
-     "feature": "btc_vol96",
-     "op": ">",
-     "value": 0.00281
+     "feature": "btc_r16",
+     "op": "<",
+     "value": 0.00406
     },
     {
      "feature": "rel_r672",
      "op": "<",
-     "value": -0.01002
+     "value": -0.01085
+    },
+    {
+     "feature": "btc_vol96",
+     "op": ">",
+     "value": 0.00281
     }
    ],
-   "id": "cd607d5cee",
-   "parent": "00d4791ae4",
-   "origin": "mutation: sl"
+   "id": "106ca8cb10",
+   "parent": "081913335b",
+   "origin": "mutation: tweak_rule"
   },
   {
    "style": "position",
@@ -179,24 +113,90 @@
      "value": 0.00281
     },
     {
-     "feature": "btc_r16",
+     "feature": "btc_r96",
      "op": "<",
-     "value": 0.00537
+     "value": -0.01231
     },
     {
      "feature": "rel_r672",
      "op": "<",
-     "value": -0.01002
+     "value": -0.01085
+    },
+    {
+     "feature": "btc_r16",
+     "op": "<",
+     "value": 0.00403
+    }
+   ],
+   "id": "899a789f9c",
+   "parent": "ea102a43e3+1685500183",
+   "origin": "crossover"
+  },
+  {
+   "style": "position",
+   "threshold": 0.73,
+   "tp": 2.4,
+   "sl": 1.2,
+   "hold": 1.5,
+   "size": 0.25,
+   "rules": [
+    {
+     "feature": "btc_vol96",
+     "op": ">",
+     "value": 0.00281
     },
     {
      "feature": "btc_r96",
      "op": "<",
      "value": -0.01231
+    },
+    {
+     "feature": "rel_r672",
+     "op": "<",
+     "value": -0.01052
+    },
+    {
+     "feature": "btc_r16",
+     "op": "<",
+     "value": 0.00403
     }
    ],
-   "id": "e0a2bdfa93",
-   "parent": "901cda075a",
-   "origin": "mutation: sl"
+   "id": "d8cf05e26f",
+   "parent": "899a789f9c",
+   "origin": "mutation: tweak_rule"
+  },
+  {
+   "style": "position",
+   "threshold": 0.73,
+   "tp": 2.4,
+   "sl": 1.2,
+   "hold": 1.5,
+   "size": 0.25,
+   "rules": [
+    {
+     "feature": "btc_r96",
+     "op": "<",
+     "value": -0.01231
+    },
+    {
+     "feature": "rel_r672",
+     "op": "<",
+     "value": -0.01085
+    },
+    {
+     "feature": "btc_r16",
+     "op": "<",
+     "value": 0.0061
+    },
+    {
+     "feature": "btc_vol96",
+     "op": ">",
+     "value": 0.00281
+    }
+   ],
+   "id": "e385d903db",
+   "parent": "4855eb7040",
+   "origin": "mutation: tp"
   }
  ],
  "since": 1790886945332
