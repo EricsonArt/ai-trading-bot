@@ -1,11 +1,11 @@
 {
- "created_at": 1791130706525,
+ "created_at": 1791134352471,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 7.7,
+ "seconds": 8.9,
  "directives": {
   "risk_level": 0.2,
-  "min_confidence_adj": 0.05,
+  "min_confidence_adj": 0.1,
   "symbol_bias": {
    "BTC": "avoid",
    "ETH": "avoid",
@@ -13,19 +13,19 @@
   },
   "regime": "sideways"
  },
- "reasoning": "Rynek jest w stanie Greed, ale wszystkie 12 sygna\u0142\u00f3w modela s\u0105 poni\u017cej progu 0.75, wi\u0119c nie ma \u017cadnych wej\u015b\u0107 do wykonania. Edge nie jest udowodniony \u2014 champion ma 26 trades z edge False, wi\u0119c zero ryzyka i zero wej\u015b\u0107. CLM ma AUC 0.44 i 57% dok\u0142adno\u015bci \u2014 drugie zdanie nie ma przewagi nad zawsze-nie.",
+ "reasoning": "Rynek jest w stanie Greed (indeks 72-74), ale bot straci\u0142 na sygna\u0142ach w warunkach spadkowych BTC \u2014 kluczowe jest odrzucanie sygna\u0142\u00f3w, gdy kr\u00f3tkoterminowa si\u0142a i kr\u00f3tkoterminowa zmienno\u015b\u0107 s\u0105 sprzeczne. Nale\u017cy unika\u0107 wej\u015b\u0107 przy s\u0142abym momentum 24h i wysokiej zmienno\u015bci, a tak\u017ce sprawdza\u0107, czy cena nie jest w g\u00f3rnej cz\u0119\u015bci dzisiejszego zakresu z d\u0142ugim g\u00f3rnym cieniem. Trzymaj si\u0119 sygna\u0142\u00f3w tylko wtedy, gdy kr\u00f3tkoterminowa si\u0142a jest wyra\u017anie negatywna, a kr\u00f3tkoterminowa zmienno\u015b\u0107 nie ro\u015bnie.",
  "new_lessons": [
-  "Zero closed trades \u2014 edge remains unproven, keep zero risk and zero entries.",
-  "All 12 signals below 0.75 threshold \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
-  "Model's out-of-sample edge is False on newest data \u2014 zero risk and zero entries."
+  "Model ma 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
+  "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.75 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
+  "CLM ma AUC 0.44 i 57% dok\u0142adno\u015bci \u2014 drugie zdanie nie ma przewagi nad zawsze-nie."
  ],
  "lessons": [
-  "Zero closed trades \u2014 edge remains unproven, keep zero risk and zero entries.",
-  "All 12 signals below 0.75 threshold \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
-  "Model's out-of-sample edge is False on newest data \u2014 zero risk and zero entries.",
   "Model ma 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
   "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.75 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
   "CLM ma AUC 0.44 i 57% dok\u0142adno\u015bci \u2014 drugie zdanie nie ma przewagi nad zawsze-nie.",
+  "Zero closed trades \u2014 edge remains unproven, keep zero risk and zero entries.",
+  "All 12 signals below 0.75 threshold \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
+  "Model's out-of-sample edge is False on newest data \u2014 zero risk and zero entries.",
   "Model ma 0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
   "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.78 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
   "All 12 signals below 0.78 threshold \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
