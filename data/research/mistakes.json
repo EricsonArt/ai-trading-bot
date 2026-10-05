@@ -1,57 +1,57 @@
 {
- "created_at": 1791139422535,
- "model_version": 16,
- "signals": 38373,
- "losers": 22610,
+ "created_at": 1791186742345,
+ "model_version": 17,
+ "signals": 29233,
+ "losers": 17123,
  "patterns": [
   {
    "feature": "btc_r96",
    "meaning": "Bitcoin return over the last 24 hours",
-   "strength": 0.233,
-   "losers_avg": -0.00434,
-   "winners_avg": -0.01199
-  },
-  {
-   "feature": "dd_7d",
-   "meaning": "distance below the 7-day high (0 = at the high)",
-   "strength": 0.188,
-   "losers_avg": -0.11599,
-   "winners_avg": -0.10202
-  },
-  {
-   "feature": "r_672",
-   "meaning": "return over the last 7 days",
-   "strength": 0.182,
-   "losers_avg": -0.08563,
-   "winners_avg": -0.06697
+   "strength": 0.283,
+   "losers_avg": -0.00341,
+   "winners_avg": -0.01344
   },
   {
    "feature": "r_96",
    "meaning": "return over the last 24 hours",
-   "strength": 0.169,
-   "losers_avg": -0.01038,
-   "winners_avg": -0.01862
+   "strength": 0.238,
+   "losers_avg": -0.01036,
+   "winners_avg": -0.02259
   },
   {
-   "feature": "vol_16",
-   "meaning": "volatility of 15-min returns over the last 4 hours",
-   "strength": 0.149,
-   "losers_avg": 0.00371,
-   "winners_avg": 0.00453
+   "feature": "d_ema200",
+   "meaning": "price vs its 200-candle (50 h) average",
+   "strength": 0.163,
+   "losers_avg": -0.01423,
+   "winners_avg": -0.01985
+  },
+  {
+   "feature": "dd_7d",
+   "meaning": "distance below the 7-day high (0 = at the high)",
+   "strength": 0.156,
+   "losers_avg": -0.11765,
+   "winners_avg": -0.10564
+  },
+  {
+   "feature": "ema_trend",
+   "meaning": "50-candle average vs 200-candle average (positive = uptrend)",
+   "strength": 0.147,
+   "losers_avg": -0.01083,
+   "winners_avg": -0.01408
   }
  ],
  "candidates": [
   {
-   "name": "unikaj r_672 <= -0.1303",
-   "gain_on_old_data": 0.00441
+   "name": "unikaj dd_7d <= -0.155",
+   "gain_on_old_data": 0.00359
   },
   {
-   "name": "unikaj dd_7d <= -0.1497",
-   "gain_on_old_data": 0.00427
+   "name": "unikaj r_672 <= -0.14",
+   "gain_on_old_data": 0.00356
   },
   {
-   "name": "unikaj vz <= 0.4052",
-   "gain_on_old_data": 0.00333
+   "name": "unikaj vz <= 0.4053",
+   "gain_on_old_data": 0.0035
   }
  ]
 }
