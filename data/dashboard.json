@@ -1,5 +1,5 @@
 {
- "generated_at": 1791165045953,
+ "generated_at": 1791181645015,
  "last_candle": 1791163800000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
@@ -5002,13 +5002,14 @@
   "regime": "sideways"
  },
  "brain": {
-  "created_at": 1791157110645,
+  "created_at": 1791181645012,
   "source": "cloud",
   "model": "qwen3:4b",
   "directives": {
    "risk_level": 0.2,
    "min_confidence_adj": 0.0,
    "symbol_bias": {
+    "SOL": "reduce",
     "XRP": "reduce",
     "DOGE": "reduce",
     "ADA": "reduce",
@@ -5019,34 +5020,64 @@
     "DOT": "reduce",
     "TRX": "reduce",
     "BTC": "avoid",
-    "ETH": "avoid",
-    "SOL": "avoid"
+    "ETH": "avoid"
    },
-   "regime": "sideways"
+   "regime": "volatile"
   },
-  "reasoning": "Model ma 0 zamkni\u0119tych transakcji i wszystkie sygna\u0142y poni\u017cej progu 0.72. Brak wykrytych sygna\u0142\u00f3w do wykonania, wi\u0119c ryzyko pozostaje 0.2. Edge nie jest udowodniony, wi\u0119c nie zmieniam ryzyka.",
+  "reasoning": "Model nie ma sygna\u0142\u00f3w powy\u017cej progu 0.72, zero zamkni\u0119tych transakcji i edge nie jest udowodniony. Wszystkie sygna\u0142y poni\u017cej 0.75 \u2014 brak sygna\u0142\u00f3w do wykonania. Ryzyko jest minimalne z powodu braku potwierdzonego edge.",
   "new_lessons": [
-   "Model nie ma sygna\u0142\u00f3w powy\u017cej progu 0.72 \u2014 zero ryzyka i zero wej\u015b\u0107",
-   "Wszystkie sygna\u0142y poni\u017cej 0.72 \u2014 model nie ma udowodnionego edge",
-   "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony"
+   "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.72 \u2014 zero ryzyka i zero wej\u015b\u0107",
+   "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony",
+   "Wszystkie sygna\u0142y poni\u017cej 0.75 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania"
   ],
   "lessons": [
+   "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.72 \u2014 zero ryzyka i zero wej\u015b\u0107",
+   "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony",
+   "Wszystkie sygna\u0142y poni\u017cej 0.75 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania",
    "Model nie ma sygna\u0142\u00f3w powy\u017cej progu 0.72 \u2014 zero ryzyka i zero wej\u015b\u0107",
    "Wszystkie sygna\u0142y poni\u017cej 0.72 \u2014 model nie ma udowodnionego edge",
-   "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony",
    "Model ma 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
    "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.78 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
    "CLM ma AUC 0.44 i 57% dok\u0142adno\u015bci \u2014 drugie zdanie nie ma przewagi nad zawsze-nie.",
    "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.75 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
    "Zero closed trades \u2014 edge remains unproven, keep zero risk and zero entries.",
    "All 12 signals below 0.75 threshold \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
-   "Model's out-of-sample edge is False on newest data \u2014 zero risk and zero entries.",
-   "Model ma 0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
-   "All 12 signals below 0.78 threshold \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania."
+   "Model's out-of-sample edge is False on newest data \u2014 zero risk and zero entries."
   ],
-  "seconds": 74.0
+  "seconds": 180.3
  },
  "brain_journal": [
+  {
+   "created_at": 1791181645012,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.0,
+    "symbol_bias": {
+     "SOL": "reduce",
+     "XRP": "reduce",
+     "DOGE": "reduce",
+     "ADA": "reduce",
+     "BNB": "reduce",
+     "LINK": "reduce",
+     "AVAX": "reduce",
+     "LTC": "reduce",
+     "DOT": "reduce",
+     "TRX": "reduce",
+     "BTC": "avoid",
+     "ETH": "avoid"
+    },
+    "regime": "volatile"
+   },
+   "reasoning": "Model nie ma sygna\u0142\u00f3w powy\u017cej progu 0.72, zero zamkni\u0119tych transakcji i edge nie jest udowodniony. Wszystkie sygna\u0142y poni\u017cej 0.75 \u2014 brak sygna\u0142\u00f3w do wykonania. Ryzyko jest minimalne z powodu braku potwierdzonego edge.",
+   "new_lessons": [
+    "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.72 \u2014 zero ryzyka i zero wej\u015b\u0107",
+    "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony",
+    "Wszystkie sygna\u0142y poni\u017cej 0.75 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania"
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1791157110645,
    "source": "cloud",
@@ -5262,28 +5293,6 @@
     "regime": "sideways"
    },
    "reasoning": "Rynek jest w stanie Greed, ale bot ma zero zamkni\u0119tych transakcji, wi\u0119c edge nie jest udowodniony. Wszystkie 12 sygna\u0142\u00f3w s\u0105 poni\u017cej progu 0.7, wi\u0119c nie ma podstaw do wej\u015bcia. CLM ma AUC 0.44, co oznacza brak przewagi nad zawsze-nie.",
-   "new_lessons": [
-    "Model ma 0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
-    "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.78 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
-    "CLM ma AUC 0.44 i 57% dok\u0142adno\u015bci \u2014 drugie zdanie nie ma przewagi nad zawsze-nie."
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1791112556437,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.0,
-    "symbol_bias": {
-     "BTC": "avoid",
-     "ETH": "avoid",
-     "SOL": "avoid"
-    },
-    "regime": "sideways"
-   },
-   "reasoning": "Rynek jest w Greed (indeks 65), ale wszystkie 12 sygna\u0142\u00f3w modela s\u0105 poni\u017cej progu 0.78, wi\u0119c nie ma \u017cadnego sygna\u0142u do wykonania. Edge jest nieudowodniony (0 zamkni\u0119tych transakcji, champion 26 trades edge False), wi\u0119c utrzymuj\u0119 zero ryzyka i zero wej\u015b\u0107. Druga opinia (CLM) ma AUC 0.44 i 57% dok\u0142adno\u015bci, co nie przek\u0142ada si\u0119 na przewag\u0119 nad zawsze-nie.",
    "new_lessons": [
     "Model ma 0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
     "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.78 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
@@ -17140,17 +17149,17 @@
    ]
   },
   "research": {
-   "created_at": 1791101638346,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "seconds": 11.1,
-   "digest": "Dzi\u015b rynek jest w stanie Greed (indeks 72-74), ale bot straci\u0142 na sygna\u0142ach w warunkach spadkowych BTC \u2014 kluczowe jest odrzucanie sygna\u0142\u00f3w, gdy kr\u00f3tkoterminowa si\u0142a i kr\u00f3tkoterminowa zmienno\u015b\u0107 s\u0105 sprzeczne. Nale\u017cy unika\u0107 wej\u015b\u0107 przy s\u0142abym momentum 24h i wysokiej zmienno\u015bci, a tak\u017ce sprawdza\u0107, czy cena nie jest w g\u00f3rnej cz\u0119\u015bci dzisiejszego zakresu z d\u0142ugim g\u00f3rnym cieniem. Trzymaj si\u0119 sygna\u0142\u00f3w tylko wtedy, gdy kr\u00f3tkoterminowa si\u0142a jest wyra\u017anie negatywna, a kr\u00f3tkoterminowa zmienno\u015b\u0107 nie ro\u015bnie.",
-   "mood": "greed",
+   "created_at": 1791181462393,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "seconds": 526.1,
+   "digest": "W dzisiejszych warunkach rynkowych, krytyczne jest zr\u00f3wnowa\u017cenie ryzyka i wra\u017cliwo\u015bci na zmiany w p\u0142ynno\u015bci. Bitcoin i Ethereum zatrzymuj\u0105 si\u0119 na poziomie 86 tys. USD, a zwi\u0119kszenie p\u0142ynno\u015bci w Ethereum pozytywnie wp\u0142ywa na jego rynkowe obecne poziomy. Warto skupi\u0107 si\u0119 na zabezpieczeniu przed zbyt du\u017cym ryzykiem w kr\u00f3tkim terminie, zw\u0142aszcza gdy rynki s\u0105 w stanie zatrzymywania si\u0119 na poziomie 86 tys. USD.",
+   "mood": "fear",
    "fng": [
     {
-     "value": 65,
+     "value": 70,
      "label": "Greed",
-     "ts": 1791072000000
+     "ts": 1791158400000
     }
    ],
    "used": [
@@ -17163,6 +17172,16 @@
    ],
    "failed": [],
    "items": [
+    {
+     "kind": "arXiv research",
+     "title": "When a Correct Reward Is Not Enough: Diagnosing and Guiding PPO in an Analytically Solved Broker-Trader Game",
+     "url": "http://arxiv.org/abs/2610.03598v1"
+    },
+    {
+     "kind": "arXiv research",
+     "title": "MintEval: Do LLMs Implement the Trading Strategy You Asked For? A Behavioural-Equivalence Benchmark for Natural-Language-to-Strategy Code",
+     "url": "http://arxiv.org/abs/2610.03080v1"
+    },
     {
      "kind": "arXiv research",
      "title": "Shared Models, Selective Trading, and Order Flow",
@@ -17184,49 +17203,34 @@
      "url": "http://arxiv.org/abs/2609.39420v1"
     },
     {
-     "kind": "arXiv research",
-     "title": "Say, Echo, Do: Strategic Narratives and Revealed Positioning in Financial Markets",
-     "url": "http://arxiv.org/abs/2609.38545v1"
-    },
-    {
-     "kind": "arXiv research",
-     "title": "Not All LPs Are Equal: The Active-Passive Gap in Automated Market Maker Liquidity Provision",
-     "url": "http://arxiv.org/abs/2609.37963v1"
+     "kind": "CoinDesk",
+     "title": "Joint venture of OKX and NYSE parent ICE files for 24/7 tokenized U.S. stock trading",
+     "url": "https://www.coindesk.com/markets/2026/10/05/okx-and-nyse-s-owner-file-for-round-the-clock-tokenized-trading-in-u-s-stocks"
     },
     {
      "kind": "CoinDesk",
-     "title": "Payments firm OpenPayd targets year-end Nasdaq listing to fund U.S. expansion and acquisitions",
-     "url": "https://www.coindesk.com/business/2026/10/03/openpayd-targets-year-end-nasdaq-listing-to-fund-u-s-expansion-and-acquisitions"
+     "title": "Zcash\u2019s 25-second blocks go live on public testnet ahead of schedule",
+     "url": "https://www.coindesk.com/tech/2026/10/05/zcash-s-25-second-blocks-go-live-on-public-testnet-ahead-of-schedule"
     },
     {
      "kind": "CoinDesk",
-     "title": "Crypto job postings triple to over 1,200 in September, but applications fall",
-     "url": "https://www.coindesk.com/business/2026/10/03/crypto-job-postings-triple-to-over-1-200-in-september-but-applications-fall"
+     "title": "Bitcoin zooms toward $87,000, nearly setting an eight-month high, then reverses",
+     "url": "https://www.coindesk.com/markets/2026/10/05/bitcoin-zooms-toward-usd87-000-nearly-setting-an-eight-month-high-then-reverses"
     },
     {
      "kind": "CoinDesk",
-     "title": "Cathie Wood says smart investors need to start watching where AI agents spend money",
-     "url": "https://www.coindesk.com/markets/2026/10/01/cathie-wood-says-smart-investors-need-to-start-watching-where-ai-agents-spend-money"
+     "title": "Ether's bitcoin-beating Q3 rally came with a catch. Liquidity thinned.",
+     "url": "https://www.coindesk.com/markets/2026/10/05/ether-s-bitcoin-beating-q3-rally-came-with-a-catch-liquidity-thinned"
     },
     {
      "kind": "CoinDesk",
-     "title": "Crypto's Sisyphean struggle",
-     "url": "https://www.coindesk.com/opinion/2026/10/03/crypto-s-sisyphean-struggle"
+     "title": "There's an election next month: State of Crypto",
+     "url": "https://www.coindesk.com/policy/2026/10/04/there-s-an-election-next-month-state-of-crypto"
     },
     {
      "kind": "CoinDesk",
-     "title": "BlackRock offers a glimpse of how tokenization may change your investment portfolio",
-     "url": "https://www.coindesk.com/business/2026/10/03/blackrock-offers-a-glimpse-of-how-tokenization-may-change-your-investment-portfolio"
-    },
-    {
-     "kind": "CoinDesk",
-     "title": "Bank group sues U.S. regulator over granting crypto trust charters",
-     "url": "https://www.coindesk.com/policy/2026/10/02/bank-group-sues-u-s-regulator-over-granting-crypto-trust-charters"
-    },
-    {
-     "kind": "Cointelegraph",
-     "title": "Russia\u2019s Finance Ministry pays wages in digital rubles for first time",
-     "url": "https://cointelegraph.com/news/russias-finance-ministry-pays-wages-in-digital-rubles-for-first-time?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "Crypto poured years into new products. The next challenge is keeping users",
+     "url": "https://www.coindesk.com/business/2026/10/04/crypto-poured-years-into-new-products-the-next-challenge-is-keeping-users"
     },
     {
      "kind": "Cointelegraph",
@@ -17235,23 +17239,48 @@
     },
     {
      "kind": "Cointelegraph",
-     "title": "NEAR Intents recovers entire stolen $3.8M after ultimatum to exploiter",
-     "url": "https://cointelegraph.com/news/near-intents-recovers-entire-stolen-38m-after-ultimatum-to-exploiter?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "Zcash activates NU7 on testnet ahead of November mainnet target",
+     "url": "https://cointelegraph.com/news/zcash-nu7-testnet-activation-november-mainnet?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Cointelegraph",
-     "title": "Community banks sue OCC over trust bank charters of crypto firms",
-     "url": "https://cointelegraph.com/news/community-banks-sue-occ-over-trust-bank-charters-of-crypto-firms?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "OKX, NYSE parent file to launch tokenized US stock platform",
+     "url": "https://cointelegraph.com/news/okx-nyse-parent-file-to-launch-tokenized-us-stock-platform?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Cointelegraph",
-     "title": "Trump is expected to appoint Jay Clayton as new AI czar: Reports",
-     "url": "https://cointelegraph.com/news/trump-is-expected-to-appoint-jay-clayton-as-new-ai-czar-reports?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "Safe investor asks Swiss watchdog to intervene in governance dispute",
+     "url": "https://cointelegraph.com/news/safe-investor-asks-swiss-watchdog-to-intervene-in-governance-dispute?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Cointelegraph",
-     "title": "European crypto users have \u2018more faith\u2019 in regulated firms under MiCA: Bitpanda co-CEO",
-     "url": "https://cointelegraph.com/news/mica-strengthened-retail-trust-regulated-crypto-exchanges-bitpanda-ceo-says?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "Zcash gets a Washington lobbyist to push crypto policy",
+     "url": "https://cointelegraph.com/news/zcash-gets-a-washington-lobbyist-to-push-crypto-policy?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+    },
+    {
+     "kind": "Cointelegraph",
+     "title": "Former SEC boss made AI Czar, Bitcoin may hit $600K this cycle: Hodler\u2019s Digest",
+     "url": "https://cointelegraph.com/magazine/former-sec-boss-made-ai-czar-bitcoin-may-hit-600k-this-cycle-hodlers-digest?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+    },
+    {
+     "kind": "Decrypt",
+     "title": "Trump Taps Jay Clayton, the SEC Chair Who Sued Ripple, to Lead AI Push",
+     "url": "https://decrypt.co/380019/trump-jay-clayton-sec-ripple-ai-push-super-intelligence"
+    },
+    {
+     "kind": "Decrypt",
+     "title": "Banking Group Sues to Block Crypto's 'Side Door' Into the Banking System",
+     "url": "https://decrypt.co/380017/banking-group-sues-block-crypto-side-door-banking"
+    },
+    {
+     "kind": "Decrypt",
+     "title": "'Uptober' Starts Green as Bitcoin ETFs Draw $134 Million",
+     "url": "https://decrypt.co/380007/uptober-starts-green-bitcoin-etfs-draw-134-million"
+    },
+    {
+     "kind": "Decrypt",
+     "title": "'We Have Identified You, Sir': Near Intents Recovers $3.8 Million After 48-Hour Ultimatum",
+     "url": "https://decrypt.co/380014/near-intents-recovers-3-8-million-after-48-hour-ultimatum"
     },
     {
      "kind": "Decrypt",
@@ -17264,66 +17293,46 @@
      "url": "https://decrypt.co/380001/openai-banned-pewdiepie-twice-ajax-uncensored-ai"
     },
     {
-     "kind": "Decrypt",
-     "title": "Trump Is Hosting Yet Another Meme Coin Dinner: Here Are the Details",
-     "url": "https://decrypt.co/380002/trump-third-meme-coin-dinner-details"
-    },
-    {
-     "kind": "Decrypt",
-     "title": "The Pope Has Thoughts on AI Art\u2014And They're Not Flattering",
-     "url": "https://decrypt.co/379983/pope-leo-human-art-ai-creation"
-    },
-    {
-     "kind": "Decrypt",
-     "title": "California Subpoenas OpenAI Over AI Models That Hacked Their Way Out of a Test",
-     "url": "https://decrypt.co/379998/california-subpoena-openai-ai-models-hack"
-    },
-    {
-     "kind": "Decrypt",
-     "title": "Ethereum Now Lets You Pay for AI Without Revealing Who You Are",
-     "url": "https://decrypt.co/379991/ethereum-now-pay-for-ai-without-revealing-identity"
+     "kind": "Babypips",
+     "title": "Oil War Premium Explained: What It All Means for the Loonie",
+     "url": "https://www.babypips.com/analysis/explainer-oil-war-premium-cad-2026-10-05"
     },
     {
      "kind": "Babypips",
-     "title": "Fundies Cheat Sheet Recap: Sep 28\u2013Oct 2, 2026",
-     "url": "https://www.babypips.com/analysis/fundies-cheat-sheet-recap-2026-09-28-10-02-yields-oil-graded"
+     "title": "EUR/JPY Analysis for October 5, 2026: Bearish Pressure Builds Near Key Support",
+     "url": "https://www.babypips.com/analysis/premium-strategy-2026-10-05-eurjpy"
     },
     {
      "kind": "Babypips",
-     "title": "Financial & Forex Weekly Recap: September 28 \u2013 October 2, 2026",
-     "url": "https://www.babypips.com/analysis/financial-forex-market-weekly-recap-october-2-2026"
+     "title": "One Near the Ceiling, One on the Floor: META & EUR/USD",
+     "url": "https://www.babypips.com/trading/one-near-the-ceiling-one-on-the-floor-meta-eur-usd"
     },
     {
      "kind": "Babypips",
-     "title": "U.S. Hiring Stalls at 29,000 Jobs",
-     "url": "https://www.babypips.com/news/headline-us-jobs-report-september-2026-payrolls-miss-fed-hike-odds"
+     "title": "Chart Art: EUR/USD Approaches a Make or Break Support Zone",
+     "url": "https://www.babypips.com/trading/chart-art-forex-eurusd-approaches-a-make-or-break-support-zone-2026-10-05"
     },
     {
      "kind": "Babypips",
-     "title": "5 Physical Habits That Can Improve Your Trading Performance",
-     "url": "https://www.babypips.com/trading/psychology-5-physical-habits-improve-trading-2026-10-02"
-    },
-    {
-     "kind": "Babypips",
-     "title": "Markets Look Past the U.S. Headline PMI as Price Pressures Heat Up",
-     "url": "https://www.babypips.com/news/headline-markets-look-past-us-headline-pmi-as-price-pressures-heat-up-2026-10-02"
+     "title": "Fundies Cheat Sheet: October 5 \u2013 9, 2026",
+     "url": "https://www.babypips.com/analysis/fundies-cheat-sheet-2026-09-28-core-pce-jobs-rba-oil-2"
     }
    ],
    "ideas": [
     {
-     "name": "Odrzu\u0107 sygna\u0142y, gdy kr\u00f3tkoterminowa si\u0142a jest negatywna i zmienno\u015b\u0107 ro\u015bnie",
-     "rule": "r_16 < -0.001 and vol_ratio < 1 and r_96 < -0.01231",
-     "why": "Bot straci\u0142 na sygna\u0142ach, gdy kr\u00f3tkoterminowa si\u0142a by\u0142a negatywna i zmienno\u015b\u0107 ro\u015bnie \u2014 to sygna\u0142, \u017ce model kupuje w warunkach spadkowych i rosn\u0105cej zmienno\u015bci, co jest ryzykowne."
+     "name": "Zmniejszenie ryzyka w kr\u00f3tkim terminie",
+     "rule": "btc_r96 < -0.01231 and vol_96 < 0.0024",
+     "why": "Zmniejszenie ryzyka w kr\u00f3tkim terminie jest kluczowe, poniewa\u017c Bitcoin i Ethereum zatrzymuj\u0105 si\u0119 na poziomie 86 tys. USD, a zwi\u0119kszenie p\u0142ynno\u015bci w Ethereum pozytywnie wp\u0142ywa na jego rynkowe obecne poziomy. Zmniejszenie ryzyka w kr\u00f3tkim terminie pozwala na unikni\u0119cie zbyt du\u017cych straconych warto\u015bci "
     },
     {
-     "name": "Odrzu\u0107 sygna\u0142y, gdy kr\u00f3tkoterminowa si\u0142a jest negatywna i zmienno\u015b\u0107 ro\u015bnie",
-     "rule": "r_16 < -0.001 and r_96 < -0.01231 and rel_r96 < -0.01",
-     "why": "Bot straci\u0142 na sygna\u0142ach, gdy kr\u00f3tkoterminowa si\u0142a by\u0142a negatywna i zmienno\u015b\u0107 ro\u015bnie \u2014 to sygna\u0142, \u017ce model kupuje w warunkach spadkowych i rosn\u0105cej zmienno\u015bci, co jest ryzykowne."
+     "name": "Ograniczenie p\u0142ynno\u015bci w kr\u00f3tkim terminie",
+     "rule": "btc_vol96 < 0.0024",
+     "why": "Ograniczenie p\u0142ynno\u015bci w kr\u00f3tkim terminie jest kluczowe, poniewa\u017c Bitcoin i Ethereum zatrzymuj\u0105 si\u0119 na poziomie 86 tys. USD, a zwi\u0119kszenie p\u0142ynno\u015bci w Ethereum pozytywnie wp\u0142ywa na jego rynkowe obecne poziomy. Ograniczenie p\u0142ynno\u015bci w kr\u00f3tkim terminie pozwala na unikni\u0119cie zbyt du\u017cych straconych war"
     },
     {
-     "name": "Odrzu\u0107 sygna\u0142y, gdy kr\u00f3tkoterminowa si\u0142a jest negatywna i zmienno\u015b\u0107 ro\u015bnie",
-     "rule": "r_16 < -0.001 and r_96 < -0.01231 and rel_r96 < -0.01",
-     "why": "Bot straci\u0142 na sygna\u0142ach, gdy kr\u00f3tkoterminowa si\u0142a by\u0142a negatywna i zmienno\u015b\u0107 ro\u015bnie \u2014 to sygna\u0142, \u017ce model kupuje w warunkach spadkowych i rosn\u0105cej zmienno\u015bci, co jest ryzykowne."
+     "name": "Zmniejszenie ryzyka w d\u0142ugim terminie",
+     "rule": "r_672 < -0.01085",
+     "why": "Zmniejszenie ryzyka w d\u0142ugim terminie jest kluczowe, poniewa\u017c Bitcoin i Ethereum zatrzymuj\u0105 si\u0119 na poziomie 86 tys. USD, a zwi\u0119kszenie p\u0142ynno\u015bci w Ethereum pozytywnie wp\u0142ywa na jego rynkowe obecne poziomy. Zmniejszenie ryzyka w d\u0142ugim terminie pozwala na unikni\u0119cie zbyt du\u017cych straconych warto\u015bci w "
     }
    ]
   }

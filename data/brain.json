@@ -1,12 +1,13 @@
 {
- "created_at": 1791157110645,
+ "created_at": 1791181645012,
  "source": "cloud",
  "model": "qwen3:4b",
- "seconds": 74.0,
+ "seconds": 180.3,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.0,
   "symbol_bias": {
+   "SOL": "reduce",
    "XRP": "reduce",
    "DOGE": "reduce",
    "ADA": "reduce",
@@ -17,30 +18,29 @@
    "DOT": "reduce",
    "TRX": "reduce",
    "BTC": "avoid",
-   "ETH": "avoid",
-   "SOL": "avoid"
+   "ETH": "avoid"
   },
-  "regime": "sideways"
+  "regime": "volatile"
  },
- "reasoning": "Model ma 0 zamkni\u0119tych transakcji i wszystkie sygna\u0142y poni\u017cej progu 0.72. Brak wykrytych sygna\u0142\u00f3w do wykonania, wi\u0119c ryzyko pozostaje 0.2. Edge nie jest udowodniony, wi\u0119c nie zmieniam ryzyka.",
+ "reasoning": "Model nie ma sygna\u0142\u00f3w powy\u017cej progu 0.72, zero zamkni\u0119tych transakcji i edge nie jest udowodniony. Wszystkie sygna\u0142y poni\u017cej 0.75 \u2014 brak sygna\u0142\u00f3w do wykonania. Ryzyko jest minimalne z powodu braku potwierdzonego edge.",
  "new_lessons": [
-  "Model nie ma sygna\u0142\u00f3w powy\u017cej progu 0.72 \u2014 zero ryzyka i zero wej\u015b\u0107",
-  "Wszystkie sygna\u0142y poni\u017cej 0.72 \u2014 model nie ma udowodnionego edge",
-  "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony"
+  "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.72 \u2014 zero ryzyka i zero wej\u015b\u0107",
+  "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony",
+  "Wszystkie sygna\u0142y poni\u017cej 0.75 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania"
  ],
  "lessons": [
+  "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.72 \u2014 zero ryzyka i zero wej\u015b\u0107",
+  "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony",
+  "Wszystkie sygna\u0142y poni\u017cej 0.75 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania",
   "Model nie ma sygna\u0142\u00f3w powy\u017cej progu 0.72 \u2014 zero ryzyka i zero wej\u015b\u0107",
   "Wszystkie sygna\u0142y poni\u017cej 0.72 \u2014 model nie ma udowodnionego edge",
-  "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony",
   "Model ma 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
   "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.78 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
   "CLM ma AUC 0.44 i 57% dok\u0142adno\u015bci \u2014 drugie zdanie nie ma przewagi nad zawsze-nie.",
   "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.75 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
   "Zero closed trades \u2014 edge remains unproven, keep zero risk and zero entries.",
   "All 12 signals below 0.75 threshold \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
-  "Model's out-of-sample edge is False on newest data \u2014 zero risk and zero entries.",
-  "Model ma 0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
-  "All 12 signals below 0.78 threshold \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania."
+  "Model's out-of-sample edge is False on newest data \u2014 zero risk and zero entries."
  ],
  "equity_at": 1000.0
 }
