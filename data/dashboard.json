@@ -1,5 +1,5 @@
 {
- "generated_at": 1791305572539,
+ "generated_at": 1791312095439,
  "last_candle": 1791303300000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
@@ -5962,7 +5962,7 @@
   "regime": "volatile"
  },
  "brain": {
-  "created_at": 1791286642949,
+  "created_at": 1791312095436,
   "source": "cloud",
   "model": "qwen3:4b",
   "directives": {
@@ -5984,15 +5984,16 @@
    },
    "regime": "volatile"
   },
-  "reasoning": "Model nie ma udowodnionego edge (win rate 49%, avg +0.15% vs always-buy -0.25%). Wszystkie sygna\u0142y poni\u017cej 0.78 progu. Zero zamkni\u0119tych transakcji w ostatnim okresie. Wzrost volatylno\u015bci (SOL 2.0%, ADA 5.4%) sugeruje niepewno\u015b\u0107 rynku. Zmniejszono ryzyko do 0.2, unikamy BTC i ETH z powodu negatywnych trend\u00f3w 24h (-0.5% dla BTC).",
+  "reasoning": "Model nie ma sygna\u0142\u00f3w powy\u017cej progu 0.72, 0 zamkni\u0119tych transakcji i edge nie jest udowodniony. Wszystkie sygna\u0142y poni\u017cej 0.78 \u2014 zero ryzyka i zero wej\u015b\u0107.",
   "new_lessons": [
    "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.72 \u2014 zero ryzyka i zero wej\u015b\u0107",
    "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony",
-   "Wszystkie sygna\u0142y poni\u017cej 0.75 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania"
+   "Wszystkie sygna\u0142y poni\u017cej 0.78 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania"
   ],
   "lessons": [
    "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.72 \u2014 zero ryzyka i zero wej\u015b\u0107",
    "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony",
+   "Wszystkie sygna\u0142y poni\u017cej 0.78 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania",
    "Wszystkie sygna\u0142y poni\u017cej 0.75 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania",
    "Model nie ma sygna\u0142\u00f3w powy\u017cej progu 0.72 \u2014 zero ryzyka i zero wej\u015b\u0107",
    "Wszystkie sygna\u0142y poni\u017cej 0.72 \u2014 model nie ma udowodnionego edge",
@@ -6001,12 +6002,42 @@
    "CLM ma AUC 0.44 i 57% dok\u0142adno\u015bci \u2014 drugie zdanie nie ma przewagi nad zawsze-nie.",
    "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.75 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
    "Zero closed trades \u2014 edge remains unproven, keep zero risk and zero entries.",
-   "All 12 signals below 0.75 threshold \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
-   "Model's out-of-sample edge is False on newest data \u2014 zero risk and zero entries."
+   "All 12 signals below 0.75 threshold \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania."
   ],
-  "seconds": 78.3
+  "seconds": 177.1
  },
  "brain_journal": [
+  {
+   "created_at": 1791312095436,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.05,
+    "symbol_bias": {
+     "SOL": "reduce",
+     "XRP": "reduce",
+     "DOGE": "reduce",
+     "ADA": "reduce",
+     "BNB": "reduce",
+     "LINK": "reduce",
+     "AVAX": "reduce",
+     "LTC": "reduce",
+     "DOT": "reduce",
+     "TRX": "reduce",
+     "BTC": "avoid",
+     "ETH": "avoid"
+    },
+    "regime": "volatile"
+   },
+   "reasoning": "Model nie ma sygna\u0142\u00f3w powy\u017cej progu 0.72, 0 zamkni\u0119tych transakcji i edge nie jest udowodniony. Wszystkie sygna\u0142y poni\u017cej 0.78 \u2014 zero ryzyka i zero wej\u015b\u0107.",
+   "new_lessons": [
+    "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.72 \u2014 zero ryzyka i zero wej\u015b\u0107",
+    "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony",
+    "Wszystkie sygna\u0142y poni\u017cej 0.78 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania"
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1791286642949,
    "source": "cloud",
@@ -6256,31 +6287,6 @@
     "Zero closed trades \u2014 edge remains unproven, keep zero risk and zero entries.",
     "All 12 signals below 0.75 threshold \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
     "Model's out-of-sample edge is False on newest data \u2014 zero risk and zero entries."
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1791127076689,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.05,
-    "symbol_bias": {
-     "AVAX": "reduce",
-     "LTC": "reduce",
-     "DOT": "reduce",
-     "BTC": "avoid",
-     "ETH": "avoid",
-     "SOL": "avoid"
-    },
-    "regime": "sideways"
-   },
-   "reasoning": "Rynek jest w stanie Greed (indeks 65), ale wszystkie 12 sygna\u0142\u00f3w modelu s\u0105 poni\u017cej progu 0.75, wi\u0119c nie ma \u017cadnego sygna\u0142u do wykonania. Model ma 0 zamkni\u0119tych transakcji, wi\u0119c przewaga nie jest udowodniona \u2014 zero ryzyka i zero wej\u015b\u0107. CLM ma AUC 0.44 i 57% dok\u0142adno\u015bci \u2014 drugie zdanie nie ma przewagi nad zawsze-nie.",
-   "new_lessons": [
-    "Model ma 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
-    "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.75 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
-    "CLM ma AUC 0.44 i 57% dok\u0142adno\u015bci \u2014 drugie zdanie nie ma przewagi nad zawsze-nie."
    ],
    "equity_at": 1000.0
   }
