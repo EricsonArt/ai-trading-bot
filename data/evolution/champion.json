@@ -34,107 +34,107 @@
  },
  "stats": {
   "search": {
-   "trades": 158,
-   "avg": 0.029,
-   "win_rate": 0.6013,
-   "growth": 1.04475,
-   "score": 0.6039
+   "trades": 159,
+   "avg": 0.02549,
+   "win_rate": 0.5912,
+   "growth": 0.90089,
+   "score": 0.43215
   },
   "select": {
-   "trades": 26,
-   "avg": -0.0,
-   "win_rate": 0.6154,
-   "growth": -0.00347,
-   "score": -0.08831
+   "trades": 24,
+   "avg": -0.00295,
+   "win_rate": 0.5833,
+   "growth": -0.02078,
+   "score": -0.10097
   },
   "holdout": {
-   "trades": 15,
-   "avg": 0.03676,
-   "win_rate": 0.8,
-   "growth": 0.13607,
-   "score": 0.08676
+   "trades": 14,
+   "avg": 0.05224,
+   "win_rate": 0.7143,
+   "growth": 0.18005,
+   "score": 0.12109
   }
  },
  "edge": false,
  "baseline": {
-  "search": -0.00328,
-  "select": -0.00545,
-  "holdout": 0.00357
+  "search": -0.00309,
+  "select": -0.00566,
+  "holdout": 0.00376
  },
  "description": "position style, buy when the model is at least 73% sure, target 2.4x / stop 2x the expected move, hold up to 72 h, 25% of equity per trade, only if btc_vol96 > 0.0024 and btc_r96 < -0.01231 and rel_r672 < -0.01085 and btc_r16 < 0.00602",
- "model_version": 18,
- "generation": 26,
+ "model_version": 19,
+ "generation": 28,
  "reason": "",
  "challengers": [
   {
    "style": "position",
-   "threshold": 0.6,
-   "tp": 2.8,
+   "threshold": 0.58,
+   "tp": 2.2,
    "sl": 0.8,
    "hold": 1.5,
    "size": 0.25,
    "rules": [
     {
-     "feature": "btc_r16",
+     "feature": "btc_r96",
      "op": "<",
-     "value": -0.00344
+     "value": -0.0137
     },
     {
      "feature": "rel_r672",
      "op": "<",
-     "value": -0.01359
+     "value": -0.01083
     },
     {
      "feature": "btc_vol96",
      "op": ">",
-     "value": 0.00228
+     "value": 0.0024
     },
-    {
-     "feature": "btc_r96",
-     "op": "<",
-     "value": -0.01213
-    }
-   ],
-   "id": "61e3f168a3",
-   "parent": "91f4f9a4c0+16ed05a85f",
-   "origin": "crossover"
-  },
-  {
-   "style": "position",
-   "threshold": 0.6,
-   "tp": 2.8,
-   "sl": 0.8,
-   "hold": 1.5,
-   "size": 0.25,
-   "rules": [
     {
      "feature": "btc_r16",
      "op": "<",
-     "value": -0.00301
-    },
-    {
-     "feature": "btc_vol96",
-     "op": ">",
-     "value": 0.00228
-    },
-    {
-     "feature": "rel_r672",
-     "op": "<",
-     "value": -0.01412
-    },
-    {
-     "feature": "btc_r96",
-     "op": "<",
-     "value": -0.01213
+     "value": -0.0038
     }
    ],
-   "id": "71932f92e2",
-   "parent": "bfad42a88d",
+   "id": "1dc25d4842",
+   "parent": "9bce67e877",
    "origin": "mutation: tweak_rule"
   },
   {
    "style": "position",
-   "threshold": 0.6,
+   "threshold": 0.58,
+   "tp": 2.8,
+   "sl": 0.8,
+   "hold": 1.5,
+   "size": 0.25,
+   "rules": [
+    {
+     "feature": "btc_r96",
+     "op": "<",
+     "value": -0.0137
+    },
+    {
+     "feature": "rel_r672",
+     "op": "<",
+     "value": -0.01033
+    },
+    {
+     "feature": "btc_vol96",
+     "op": ">",
+     "value": 0.0024
+    },
+    {
+     "feature": "btc_r16",
+     "op": "<",
+     "value": -0.0038
+    }
+   ],
+   "id": "ff7537fbde",
+   "parent": "76914ebbf2",
+   "origin": "mutation: tp"
+  },
+  {
+   "style": "position",
+   "threshold": 0.58,
    "tp": 2.8,
    "sl": 0.8,
    "hold": 1.5,
@@ -143,17 +143,50 @@
     {
      "feature": "btc_r16",
      "op": "<",
-     "value": -0.00344
+     "value": -0.00369
+    },
+    {
+     "feature": "btc_r96",
+     "op": "<",
+     "value": -0.0137
     },
     {
      "feature": "rel_r672",
      "op": "<",
-     "value": -0.01359
+     "value": -0.01033
     },
     {
      "feature": "btc_vol96",
      "op": ">",
-     "value": 0.00228
+     "value": 0.0024
+    }
+   ],
+   "id": "9c204ce84d",
+   "parent": "fe3c63e005",
+   "origin": "mutation: tp"
+  },
+  {
+   "style": "position",
+   "threshold": 0.58,
+   "tp": 2.2,
+   "sl": 0.8,
+   "hold": 1.5,
+   "size": 0.25,
+   "rules": [
+    {
+     "feature": "btc_r16",
+     "op": "<",
+     "value": -0.00388
+    },
+    {
+     "feature": "btc_vol96",
+     "op": ">",
+     "value": 0.0024
+    },
+    {
+     "feature": "rel_r672",
+     "op": "<",
+     "value": -0.01129
     },
     {
      "feature": "btc_r96",
@@ -161,41 +194,8 @@
      "value": -0.0137
     }
    ],
-   "id": "91f4f9a4c0",
-   "parent": "c143823e30",
-   "origin": "mutation: tweak_rule"
-  },
-  {
-   "style": "position",
-   "threshold": 0.6,
-   "tp": 2.8,
-   "sl": 0.8,
-   "hold": 1.5,
-   "size": 0.25,
-   "rules": [
-    {
-     "feature": "btc_r16",
-     "op": "<",
-     "value": -0.00344
-    },
-    {
-     "feature": "rel_r672",
-     "op": "<",
-     "value": -0.01359
-    },
-    {
-     "feature": "btc_vol96",
-     "op": ">",
-     "value": 0.00228
-    },
-    {
-     "feature": "btc_r96",
-     "op": "<",
-     "value": -0.01354
-    }
-   ],
-   "id": "c1c7cfe1dd",
-   "parent": "91f4f9a4c0+b3d1280d32",
+   "id": "261a06b873",
+   "parent": "8349dc86a2+5cc5982001",
    "origin": "crossover"
   }
  ],
