@@ -1,11 +1,11 @@
 {
- "created_at": 1791221360414,
+ "created_at": 1791250386996,
  "source": "cloud",
  "model": "qwen3:4b",
- "seconds": 177.8,
+ "seconds": 181.9,
  "directives": {
   "risk_level": 0.2,
-  "min_confidence_adj": 0.0,
+  "min_confidence_adj": 0.05,
   "symbol_bias": {
    "SOL": "reduce",
    "XRP": "reduce",
@@ -22,7 +22,7 @@
   },
   "regime": "volatile"
  },
- "reasoning": "Model ma 0 zamkni\u0119tych transakcji i wszystkie sygna\u0142y poni\u017cej 0.73, co oznacza brak udowodnionego edge. Wzrost ryzyka w kr\u00f3tkim terminie wymaga zredukowania poziomu ryzyka do 0.2.",
+ "reasoning": "Model nie ma udowodnionego edge (win rate 49%), wszystkie sygna\u0142y poni\u017cej 0.73, a rynki s\u0105 niepewne (volatility >1.6%). Zero closed trades i brak zysku w ostatnich 1063 transakcjach wskazuje na brak sygna\u0142\u00f3w do wykonania. Zredukuj ryzyko dla wszystkich symboli, unikaj BTC i ETH z powodu niskiej p\u0142ynno\u015bci i zmian w rynkach.",
  "new_lessons": [
   "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.72 \u2014 zero ryzyka i zero wej\u015b\u0107",
   "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony",
