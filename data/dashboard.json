@@ -1,5 +1,5 @@
 {
- "generated_at": 1791381070858,
+ "generated_at": 1791388738599,
  "last_candle": 1791379800000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
@@ -6482,7 +6482,7 @@
   "regime": "volatile"
  },
  "brain": {
-  "created_at": 1791354836077,
+  "created_at": 1791388738596,
   "source": "cloud",
   "model": "qwen3:4b",
   "directives": {
@@ -6502,9 +6502,9 @@
     "BTC": "avoid",
     "ETH": "avoid"
    },
-   "regime": "volatile"
+   "regime": "bear"
   },
-  "reasoning": "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.72, 0 zamkni\u0119tych transakcji i 12 sygna\u0142\u00f3w poni\u017cej 0.78. Edge nie jest udowodniony, wi\u0119c ryzyko jest 0.2. Zmniejszono ryzyko dla wszystkich symboli, unikaj\u0105c BTC i ETH.",
+  "reasoning": "Model nie ma udowodnionego edge (0 zamkni\u0119tych transakcji) i wszystkie sygna\u0142y poni\u017cej progu 0.78. Rynek w stanie bear z Bitcoinem poni\u017cej $83K i wzrostem o\u0142\u00f3wka. Zmniejszono ryzyko do 0.2, unikamy sygna\u0142\u00f3w z nisk\u0105 wra\u017cliwo\u015bci\u0105 na kr\u00f3tkoterminowe ruchy.",
   "new_lessons": [
    "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.72 \u2014 zero ryzyka i zero wej\u015b\u0107",
    "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony",
@@ -6524,9 +6524,40 @@
    "Zero closed trades \u2014 edge remains unproven, keep zero risk and zero entries.",
    "All 12 signals below 0.75 threshold \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania."
   ],
-  "seconds": 124.8
+  "seconds": 189.5
  },
  "brain_journal": [
+  {
+   "created_at": 1791388738596,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.05,
+    "symbol_bias": {
+     "SOL": "reduce",
+     "XRP": "reduce",
+     "DOGE": "reduce",
+     "ADA": "reduce",
+     "BNB": "reduce",
+     "LINK": "reduce",
+     "AVAX": "reduce",
+     "LTC": "reduce",
+     "DOT": "reduce",
+     "TRX": "reduce",
+     "BTC": "avoid",
+     "ETH": "avoid"
+    },
+    "regime": "bear"
+   },
+   "reasoning": "Model nie ma udowodnionego edge (0 zamkni\u0119tych transakcji) i wszystkie sygna\u0142y poni\u017cej progu 0.78. Rynek w stanie bear z Bitcoinem poni\u017cej $83K i wzrostem o\u0142\u00f3wka. Zmniejszono ryzyko do 0.2, unikamy sygna\u0142\u00f3w z nisk\u0105 wra\u017cliwo\u015bci\u0105 na kr\u00f3tkoterminowe ruchy.",
+   "new_lessons": [
+    "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.72 \u2014 zero ryzyka i zero wej\u015b\u0107",
+    "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony",
+    "Wszystkie sygna\u0142y poni\u017cej 0.78 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania"
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1791354836077,
    "source": "cloud",
@@ -6799,28 +6830,6 @@
     "regime": "bear"
    },
    "reasoning": "Rynek jest w stanie Greed (indeks 65), ale bot straci\u0142 na sygna\u0142ach w warunkach spadkowych BTC \u2014 kluczowe jest odrzucanie sygna\u0142\u00f3w, gdy kr\u00f3tkoterminowa si\u0142a i kr\u00f3tkoterminowa zmienno\u015b\u0107 s\u0105 sprzeczne. Nale\u017cy unika\u0107 wej\u015b\u0107 przy s\u0142abym momentum 24h i wysokiej zmienno\u015bci, a tak\u017ce sprawdza\u0107, czy cena nie jest w g\u00f3rnej cz\u0119\u015bci dzisiejszego zakresu z d\u0142ugim g\u00f3rnym cieniem. Trzymaj si\u0119 sygna\u0142\u00f3w tylko wtedy, gdy kr\u00f3tkoterminowa si\u0142a jest wyra\u017anie negatywna, a kr\u00f3tkoterminowa zmienno\u015b\u0107 nie ro\u015bnie.",
-   "new_lessons": [
-    "Model ma 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
-    "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.78 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
-    "CLM ma AUC 0.44 i 57% dok\u0142adno\u015bci \u2014 drugie zdanie nie ma przewagi nad zawsze-nie."
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1791138000575,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.1,
-    "symbol_bias": {
-     "BTC": "avoid",
-     "ETH": "avoid",
-     "SOL": "avoid"
-    },
-    "regime": "bull"
-   },
-   "reasoning": "Rynek jest w Greed, ale wszystkie 12 sygna\u0142\u00f3w modelowych s\u0105 poni\u017cej progu 0.8, wi\u0119c nie ma \u017cadnego do wykonania. Zestawienie out-of-sample pokazuje \u015brednio +0.44%/trade wobec zawsze-kupuj -0.26%/trade, ale zero zamkni\u0119tych transakcji oznacza, \u017ce przewaga nie jest udowodniona. Druga opinia CLM ma AUC 0.44 i 57% dok\u0142adno\u015bci, co nie potwierdza przewagi nad zawsze-nie.",
    "new_lessons": [
     "Model ma 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
     "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.78 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
@@ -21699,17 +21708,17 @@
    ]
   },
   "research": {
-   "created_at": 1791286563286,
+   "created_at": 1791388546956,
    "source": "cloud",
    "model": "qwen3:4b",
-   "seconds": 190.4,
-   "digest": "W dniu 6 pa\u017adziernika 2026 roku w crypto rynku obserwuje si\u0119 mieszane sygna\u0142y: Bitcoin traci na warto\u015bci, a mniejsze altcoins zyskuj\u0105, co sugeruje potencjalne rozproszenie rynku. Wysoki VIX dla bon\u00f3w, bezpieczne zdarzenia w Hongkongu i wzrost aktywno\u015bci w AI wskazuj\u0105 na dynamiczne zmiany w strategiach inwestycyjnych. Kluczowe jest monitorowanie zmian w p\u0142ynno\u015bci i trendach, aby unikn\u0105\u0107 b\u0142\u0119d\u00f3w w sygnalizacji.",
-   "mood": "neutral",
+   "seconds": 466.9,
+   "digest": "W dzisiejszych warunkach rynku krypto, gdzie Bitcoin spada poni\u017cej $83K i wyczuwana jest strona stresu z powodu wzrostu o\u0142\u00f3wka i rynku akcji, kluczowe jest monitorowanie zmian w p\u0142ynno\u015bci i zgodno\u015bci z trendem. Najwa\u017cniejsze s\u0105 sygna\u0142y z nisk\u0105 wra\u017cliwo\u015bci\u0105 na kr\u00f3tkoterminowe ruchy i unikanie sygna\u0142\u00f3w z wysok\u0105 wolumenem bez stabilnego trendu.",
+   "mood": "fear",
    "fng": [
     {
-     "value": 73,
+     "value": 71,
      "label": "Greed",
-     "ts": 1791244800000
+     "ts": 1791331200000
     }
    ],
    "used": [
@@ -21724,13 +21733,18 @@
    "items": [
     {
      "kind": "arXiv research",
+     "title": "Modelling Regime Shifts in Continuous Intraday Electricity Markets with State-dependent Hawkes Processes",
+     "url": "http://arxiv.org/abs/2610.08169v1"
+    },
+    {
+     "kind": "arXiv research",
      "title": "Measuring Trade Direction in a Prediction Market: Settlement Ground Truth and Trading-Cost Measurement on Polymarket",
      "url": "http://arxiv.org/abs/2610.06412v1"
     },
     {
      "kind": "arXiv research",
      "title": "Latent Continuum of Regimes in Limit Order Book Dynamics",
-     "url": "http://arxiv.org/abs/2610.05740v1"
+     "url": "http://arxiv.org/abs/2610.05740v2"
     },
     {
      "kind": "arXiv research",
@@ -21748,109 +21762,104 @@
      "url": "http://arxiv.org/abs/2610.03080v1"
     },
     {
-     "kind": "arXiv research",
-     "title": "Shared Models, Selective Trading, and Order Flow",
-     "url": "http://arxiv.org/abs/2610.01897v1"
+     "kind": "CoinDesk",
+     "title": "Gate bets all-in-one money app is crypto\u2019s biggest consumer trend this year and next",
+     "url": "https://www.coindesk.com/business/2026/10/07/gate-bets-all-in-one-money-app-is-crypto-s-biggest-consumer-trend-this-year-and-next"
     },
     {
      "kind": "CoinDesk",
-     "title": "The VIX of bonds is rising but bitcoin and stocks aren't hearing it yet",
-     "url": "https://www.coindesk.com/daybook-us/2026/10/06/the-vix-of-bonds-is-rising-but-bitcoin-and-stocks-aren-t-hearing-it-yet"
+     "title": "Crypto Long & Short: Zcash and the case for privacy in the age of AI",
+     "url": "https://www.coindesk.com/coindesk-indices/2026/10/07/crypto-long-and-short-zcash-and-the-case-for-privacy-in-the-age-of-ai"
     },
     {
      "kind": "CoinDesk",
-     "title": "Live updates: A drop below $84,000 could put $80,000 in play for bitcoin",
-     "url": "https://www.coindesk.com/markets/2026/10/06/live-updates-a-drop-below-usd84-000-could-put-usd80-000-in-play-for-bitcoin"
+     "title": "Tether tapped by Kazakhstan\u2019s central bank to explore stablecoin and tokenization",
+     "url": "https://www.coindesk.com/business/2026/10/07/tether-tapped-by-kazakhstan-s-central-bank-to-explore-stablecoin-and-tokenization"
     },
     {
      "kind": "CoinDesk",
-     "title": "Smaller altcoins shine as bitcoin stills trades around $85,000",
-     "url": "https://www.coindesk.com/markets/2026/10/06/smaller-altcoins-shine-as-bitcoin-stills-trades-around-usd85-000"
+     "title": "Quantum computers threaten exposed private keys rather than blockchains, Europol warns",
+     "url": "https://www.coindesk.com/tech/2026/10/07/quantum-computers-threaten-exposed-private-keys-rather-than-blockchains-europol-warns"
     },
     {
      "kind": "CoinDesk",
-     "title": "U.S.- China AI race heats up as Chinese rivals secure billions ahead of IPOs",
-     "url": "https://www.coindesk.com/markets/2026/10/06/u-s-china-ai-race-heats-up-as-chinese-rivals-secure-billions-ahead-of-ipos"
+     "title": "Ether is about to lose a steady buyer as Tom Lee says Bitmine will stop token purchases",
+     "url": "https://www.coindesk.com/markets/2026/10/07/ether-is-about-to-lose-a-steady-buyer-as-tom-lee-says-bitmine-will-stop-token-purchases"
     },
     {
      "kind": "CoinDesk",
-     "title": "OKX Money lets users save, earn 10% yield and spend dollar stablecoins in one app",
-     "url": "https://www.coindesk.com/business/2026/10/06/okx-money-lets-users-save-earn-10-yield-and-spend-dollar-stablecoins-in-one-app"
-    },
-    {
-     "kind": "CoinDesk",
-     "title": "Why bitcoin is down 'just' 32% a year after its record high of $126,000",
-     "url": "https://www.coindesk.com/markets/2026/10/06/from-retail-leverage-to-etf-flows-a-year-after-its-record-high-bitcoin-is-down-just-32"
+     "title": "Crypto trading giant GSR's new vault business is a $100M bet on onchain credit",
+     "url": "https://www.coindesk.com/business/2026/10/07/crypto-trading-giant-gsr-s-new-vault-business-is-a-usd100m-bet-on-onchain-credit"
     },
     {
      "kind": "Cointelegraph",
-     "title": "Hong Kong officials double down on end-2026 deadline for crypto licensing bill",
-     "url": "https://cointelegraph.com/news/hong-kong-govt-end-2026-deadline-crypto-licensing-bill?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "Coinbase brings global crypto derivatives liquidity to US with Deribit integration",
+     "url": "https://cointelegraph.com/news/coinbase-deribit-us-crypto-options-perpetual-futures?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Cointelegraph",
-     "title": "Binance BTC outflows hit highest since mid-2023 as whales deposit stablecoins",
-     "url": "https://cointelegraph.com/markets/binance-btc-outflows-hit-highest-since-mid-2023-as-whales-deposit-stablecoins?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "Bitcoin price drops to $82.7K October low as bond sell-off resumes on Iran nerves",
+     "url": "https://cointelegraph.com/markets/bitcoin-price-drops-to-827k-october-low-as-bond-sell-off-resumes-on-iran-nerves?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Cointelegraph",
-     "title": "Ondo opens private markets with tokenized pre-IPO AI exposure",
-     "url": "https://cointelegraph.com/news/ondo-private-markets-tokenized-pre-ipo-ai?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "Here\u2019s what happened in crypto today",
+     "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Cointelegraph",
-     "title": "Solana Foundation targets settlement in seconds with DvP launch",
-     "url": "https://cointelegraph.com/news/solana-foundation-settlement-seconds-dvp?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "Chasing 100x tokens is game of \u2018irrational exuberance,\u2019 says Polymarket CEO",
+     "url": "https://cointelegraph.com/news/chasing-100x-tokens-irrational-exuberance-polymarket-ceo?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Cointelegraph",
-     "title": "Bitcoin ETFs shed $90M as BTC sits 32% below year-old ATH",
-     "url": "https://cointelegraph.com/markets/bitcoin-etf-90-million-outflow-btc-32-below-record-oct-6?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "Crypto card access doesn\u2019t match global demand, Tangem says",
+     "url": "https://cointelegraph.com/news/crypto-card-access-doesnt-match-global-demand-tangem-says?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Cointelegraph",
-     "title": "EEZ tests atomic L1-to-L2 transaction in push to unify Ethereum",
-     "url": "https://cointelegraph.com/news/ethereum-eez-atomic-l1-l2-transaction-mainnet?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "Trump-backed WLFI plans USD1 payments for online businesses",
+     "url": "https://cointelegraph.com/news/trump-backed-wlfi-plans-usd1-payments-for-online-businesses?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Decrypt",
-     "title": "Crypto 'Godfather' Gets Six Years for Hiring Sheriff's Deputies, $37M Meta Fraud",
-     "url": "https://decrypt.co/380138/crypto-godfather-gets-six-years-for-hiring-sheriffs-deputies-37m-meta-fraud"
+     "title": "Bitcoin Dips Below $83K as Oil Shock Rattles Markets: What Happens Next?",
+     "url": "https://decrypt.co/380290/bitcoin-dips-oil-shock-rattles-markets-what-happens-next"
     },
     {
      "kind": "Decrypt",
-     "title": "Solana Debuts Institutional Settlement Standard With J.P. Morgan Input",
-     "url": "https://decrypt.co/380126/solana-institutional-settlement-standard-jp-morgan"
+     "title": "Bitmine's Relentless Ethereum Buying Is About to End, Tom Lee Says",
+     "url": "https://decrypt.co/380287/bitmine-ethereum-buying-will-stop-tom-lee"
     },
     {
      "kind": "Decrypt",
-     "title": "Strive Adds $169M Bitcoin in Its Biggest Buy in Four Months",
-     "url": "https://decrypt.co/380129/strive-adds-169m-bitcoin-biggest-buy-four-months"
+     "title": "Engineer Gets 32 Months for Bitcoin Extortion Plot Against His Own Employer",
+     "url": "https://decrypt.co/380284/engineer-gets-32-months-for-bitcoin-extortion-plot-against-his-own-employer"
     },
     {
      "kind": "Decrypt",
-     "title": "DeFi Development Corp Adds $3 Million in Solana as SOL Buys Slow",
-     "url": "https://decrypt.co/380125/defi-development-corp-adds-3m-solana"
+     "title": "Morning Minute: OKX Raises at $25B From Circle, Ripple, and StanChart",
+     "url": "https://decrypt.co/380281/morning-minute-okx-raises-at-25b-from-circle-ripple-and-stanchart"
     },
     {
      "kind": "Decrypt",
-     "title": "A Florida Woman Used Claude as a Diary. An Anthropic Employee Read It and Reported It to Police",
-     "url": "https://decrypt.co/380119/florida-woman-claude-diary-anthropic-reported-police"
+     "title": "Europol Warns Crypto Wallets Are 'Primary Risk' for Quantum Attacks",
+     "url": "https://decrypt.co/380268/europol-warns-crypto-wallets-are-primary-risk-for-quantum-attacks"
     },
     {
      "kind": "Decrypt",
-     "title": "Why a 4chan Bitcoin Prophecy Says Today Is the End of Crypto Winter",
-     "url": "https://decrypt.co/380113/4chan-bitcoin-prophecy-end-crypto-winter"
+     "title": "Prosecutors Cite Bitcoin Fog Ruling Against Roman Storm's Venue Challenge",
+     "url": "https://decrypt.co/380260/prosecutors-cite-bitcoin-fog-ruling-against-roman-storms-venue-challenge"
     },
     {
      "kind": "Babypips",
-     "title": "Why the Dollar Reversed After the ISM Services Report",
-     "url": "https://www.babypips.com/news/headline-why-the-dollar-reversed-after-the-ism-services-report-2026-10-06"
+     "title": "How To Enter Forex Trade Orders Like a Boss",
+     "url": "https://www.babypips.com/trading/psychology-how-to-enter-forex-trade-orders-like-a-boss-2026-10-07"
     },
     {
      "kind": "Babypips",
-     "title": "Gold (XAU/USD) Analysis for Oct. 6, 2026: Gold Consolidates Ahead of the Fed Minutes",
-     "url": "https://www.babypips.com/analysis/premium-strategy-2026-10-06-gold-xauusd"
+     "title": "The Difference Between a Price Spike and a Real Breakout",
+     "url": "https://www.babypips.com/news/explainer-the-difference-between-a-price-spike-and-a-real-breakout-2026-10-07"
     },
     {
      "kind": "Babypips",
@@ -21859,30 +21868,30 @@
     },
     {
      "kind": "Babypips",
-     "title": "Why the 10-Year Treasury Yield Can Veto a Data Surprise",
-     "url": "https://www.babypips.com/analysis/explainer-how-yields-veto-data-surprise-2026-10-06"
+     "title": "Silver (XAG/USD) Analysis for Oct. 7, 2026: Major Reversal Looming Ahead of FOMC Minutes",
+     "url": "https://www.babypips.com/trading/premium-strategy-2026-10-07-silver-xagusd"
     },
     {
      "kind": "Babypips",
-     "title": "Chart Art: AUD/JPY Retesting Former Support Zone",
-     "url": "https://www.babypips.com/trading/chart-art-forex-audjpy-retesting-former-support-zone-2026-10-06"
+     "title": "Trading Case Study on WTI Oil: Downside Continuation?",
+     "url": "https://www.babypips.com/analysis/trade-case-study-2026-10-06-wti-crude-oil-lower-highs"
     }
    ],
    "ideas": [
     {
-     "name": "Wzrost p\u0142ynno\u015bci w kr\u00f3tkim terminie",
-     "rule": "btc_vol96 < 0.0024",
-     "why": "Z ostatnich b\u0142\u0119d\u00f3w botu wynika, \u017ce sygna\u0142y z nisk\u0105 p\u0142ynno\u015bci\u0105 (btc_vol96 < 0.0024) cz\u0119sto prowadz\u0105 do strat. Badanie arXiv na temat p\u0142ynno\u015bci i rynku wskazuje, \u017ce zmiany w p\u0142ynno\u015bci s\u0105 kluczowe dla precyzji sygna\u0142\u00f3w."
-    },
-    {
-     "name": "Niski trend 7-dniowy wzgl\u0119dem Bitcoin",
-     "rule": "rel_r672 < -0.01085",
-     "why": "Bot straci\u0142 pieni\u0105dze, gdy coin mia\u0142 niski trend 7-dniowy wzgl\u0119dem Bitcoin (rel_r672 < -0.01085). ArXiv wskazuje na istotno\u015b\u0107 trend\u00f3w w rynku dla precyzji sygna\u0142\u00f3w."
-    },
-    {
-     "name": "Niski zysk w ci\u0105gu 24 godzin",
+     "name": "wra\u017cliwo\u015b\u0107 na 24h",
      "rule": "btc_r96 < -0.01231",
-     "why": "Z ostatnich b\u0142\u0119d\u00f3w botu wynika, \u017ce sygna\u0142y z niskim zyskiem w ci\u0105gu 24 godzin (btc_r96 < -0.01231) cz\u0119sto prowadz\u0105 do strat. CoinDesk wskazuje na potencjalne spadki Bitcoinu poni\u017cej $84,000."
+     "why": "W ostatnich 24 godzinach Bitcoin spad\u0142 poni\u017cej $83K, a bot straci\u0142 pieni\u0105dze przy sygnalach z zbyt du\u017cym zatrzymaniem (btc_r96 < -0.01231). Zgodnie z arXiviem o zmianach w p\u0142ynno\u015bci, niskie warto\u015bci btc_r96 wskazuj\u0105 na stres rynkowy, kt\u00f3ry powinien by\u0107 zablokowany przed wej\u015bciem."
+    },
+    {
+     "name": "stabilno\u015b\u0107 wolumenu",
+     "rule": "vz < 0.6",
+     "why": "Wolumen kryptowalut nie odpowiada na wzrosty w p\u0142ynno\u015bci (vz < 0.6), co zgodnie z CoinDesk oznacza, \u017ce rynki s\u0105 bardziej niepewne. Bot powinien unika\u0107 sygna\u0142\u00f3w z niskim wolumenem, aby unikn\u0105\u0107 b\u0142\u0119d\u00f3w z powodu braku p\u0142ynno\u015bci."
+    },
+    {
+     "name": "trend 7d",
+     "rule": "dd_7d < -0.03",
+     "why": "W ostatnich 7 dniach Bitcoin spad\u0142 poni\u017cej 7-dniowego maxa (dd_7d < -0.03), co zgodnie z arXiviem o analizie rynku wskazuje na potencjalne zatrzymanie. Bot powinien unika\u0107 sygna\u0142\u00f3w z takim trendem, aby unikn\u0105\u0107 strat z powodu przewidywanych zmian w p\u0142ynno\u015bci."
     }
    ]
   }
