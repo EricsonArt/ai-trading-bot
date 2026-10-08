@@ -1,14 +1,4 @@
 {
- "090ef4de9f": {
-  "name": "unikaj r_672 <= -0.1545",
-  "source": "own mistakes (auto)",
-  "rule": "r_672 > -0.15452",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 7 days",
-  "gain": -0.00084,
-  "tested_at": 1790557528790,
-  "model_version": 4,
-  "adopted": false
- },
  "ca061c3e1c": {
   "name": "unikaj vol_96 >= 0.005931",
   "source": "own mistakes (auto)",
@@ -796,6 +786,16 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
   "gain": 0.0,
   "tested_at": 1791455551949,
+  "model_version": 22,
+  "adopted": false
+ },
+ "d74c770880": {
+  "name": "Niskie zadowolenie rynku",
+  "source": "internet research: CoinDesk, bot's mistakes",
+  "rule": "ema_trend < -0.01024",
+  "why": "Z ostatnich b\u0142\u0119d\u00f3w botu, sygna\u0142y z ema_trend < -0.01024 by\u0142y zbyt cz\u0119sto b\u0142\u0119dne. Wczoraj na CoinDesk zauwa\u017cono, \u017ce rynki krypto s\u0105 pod wp\u0142ywem AI, co prowadzi do niskiej p\u0142ynno\u015bci. Regu\u0142a ta zabezpiecza przed sygna\u0142ami w czasie spadku rynku.",
+  "gain": 0.0,
+  "tested_at": 1791480929612,
   "model_version": 22,
   "adopted": false
  }
