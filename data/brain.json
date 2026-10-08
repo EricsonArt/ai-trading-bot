@@ -1,13 +1,12 @@
 {
- "created_at": 1791409081156,
+ "created_at": 1791441844456,
  "source": "cloud",
  "model": "qwen3:4b",
- "seconds": 74.0,
+ "seconds": 180.0,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": -0.02,
   "symbol_bias": {
-   "SOL": "reduce",
    "XRP": "reduce",
    "DOGE": "reduce",
    "ADA": "reduce",
@@ -18,11 +17,12 @@
    "DOT": "reduce",
    "TRX": "reduce",
    "BTC": "avoid",
-   "ETH": "avoid"
+   "ETH": "avoid",
+   "SOL": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.72, zero zamkni\u0119tych transakcji i edge nie jest udowodniony. Wszystkie sygna\u0142y poni\u017cej 0.75, wi\u0119c nie ma \u017cadnego sygna\u0142u do wykonania. Zmniejsz ryzyko do 0.2, unikaj BTC i ETH, redukcja dla wszystkich innych symboli.",
+ "reasoning": "Rynkowy regime jest bear z Bitcoinem poni\u017cej $83K i wzrostem o\u0142\u00f3wka. Model ma 0 zamkni\u0119tych transakcji i sygna\u0142y poni\u017cej 0.72. Edge nie jest udowodniony, wi\u0119c ryzyko jest 0.2. Min confidence adjustowany o -0.02 dla bezpiecze\u0144stwa.",
  "new_lessons": [
   "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.72 \u2014 zero ryzyka i zero wej\u015b\u0107",
   "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony",
