@@ -1,9 +1,9 @@
 {
- "generated_at": 1791543192360,
- "last_candle": 1791541800000,
+ "generated_at": 1791544705864,
+ "last_candle": 1791543600000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
- "benchmark_return": -0.029000000000000026,
+ "benchmark_return": -0.028240000000000043,
  "series": [
   [
    1790508600000,
@@ -6898,6 +6898,18 @@
    1000.0,
    971.0,
    1000.0
+  ],
+  [
+   1791542700000,
+   1000.0,
+   972.38,
+   1000.0
+  ],
+  [
+   1791543600000,
+   1000.0,
+   971.76,
+   1000.0
   ]
  ],
  "main": {
@@ -6946,7 +6958,7 @@
    {
     "name": "Lepiej ni\u017c samo trzymanie BTC",
     "ok": true,
-    "value": "+2.9 pkt"
+    "value": "+2.8 pkt"
    },
    {
     "name": "Najwi\u0119kszy spadek mniejszy ni\u017c 20%",
@@ -7204,91 +7216,91 @@
  },
  "signals": {
   "BTC": {
-   "p": 0.4996,
-   "threshold": 0.71,
+   "p": 0.4966,
+   "threshold": 0.73,
    "action": "wait",
-   "ts": 1791541800000
+   "ts": 1791543600000
   },
   "ETH": {
-   "p": 0.5639,
-   "threshold": 0.71,
+   "p": 0.5389,
+   "threshold": 0.73,
    "action": "wait",
-   "ts": 1791541800000
+   "ts": 1791543600000
   },
   "SOL": {
-   "p": 0.4463,
-   "threshold": 0.71,
+   "p": 0.4085,
+   "threshold": 0.73,
    "action": "wait",
-   "ts": 1791541800000
+   "ts": 1791543600000
   },
   "XRP": {
-   "p": 0.4917,
-   "threshold": 0.71,
+   "p": 0.4327,
+   "threshold": 0.73,
    "action": "wait",
-   "ts": 1791541800000
+   "ts": 1791543600000
   },
   "DOGE": {
-   "p": 0.4304,
-   "threshold": 0.71,
+   "p": 0.3722,
+   "threshold": 0.73,
    "action": "wait",
-   "ts": 1791541800000
+   "ts": 1791543600000
   },
   "ADA": {
-   "p": 0.3596,
-   "threshold": 0.71,
+   "p": 0.3445,
+   "threshold": 0.73,
    "action": "wait",
-   "ts": 1791541800000
+   "ts": 1791543600000
   },
   "BNB": {
-   "p": 0.6786,
-   "threshold": 0.71,
+   "p": 0.6889,
+   "threshold": 0.73,
    "action": "wait",
-   "ts": 1791541800000
+   "ts": 1791543600000
   },
   "LINK": {
-   "p": 0.4935,
-   "threshold": 0.71,
+   "p": 0.5131,
+   "threshold": 0.73,
    "action": "wait",
-   "ts": 1791541800000
+   "ts": 1791543600000
   },
   "AVAX": {
-   "p": 0.8255,
-   "threshold": 0.71,
+   "p": 0.8032,
+   "threshold": 0.73,
    "action": "blocked: learned rule 'btc_vol96 > 0.0024'",
-   "ts": 1791541800000
+   "ts": 1791543600000
   },
   "LTC": {
-   "p": 0.6444,
-   "threshold": 0.71,
+   "p": 0.695,
+   "threshold": 0.73,
    "action": "wait",
-   "ts": 1791541800000
+   "ts": 1791543600000
   },
   "DOT": {
-   "p": 0.6299,
-   "threshold": 0.71,
+   "p": 0.6031,
+   "threshold": 0.73,
    "action": "wait",
-   "ts": 1791541800000
+   "ts": 1791543600000
   },
   "TRX": {
-   "p": 0.5284,
-   "threshold": 0.71,
+   "p": 0.5465,
+   "threshold": 0.73,
    "action": "wait",
-   "ts": 1791541800000
+   "ts": 1791543600000
   }
  },
  "prices": {
-  "BTC": 82450.0,
-  "ETH": 2494.09,
-  "SOL": 109.67,
-  "XRP": 1.3894,
-  "DOGE": 0.08432,
+  "BTC": 82514.02,
+  "ETH": 2490.99,
+  "SOL": 109.84,
+  "XRP": 1.3866,
+  "DOGE": 0.08431,
   "ADA": 0.2367,
-  "BNB": 742.12,
-  "LINK": 12.798,
-  "AVAX": 10.329,
-  "LTC": 63.83,
-  "DOT": 1.161,
-  "TRX": 0.3322
+  "BNB": 740.47,
+  "LINK": 12.759,
+  "AVAX": 10.309,
+  "LTC": 63.76,
+  "DOT": 1.162,
+  "TRX": 0.3326
  },
  "model": {
   "version": 23,
@@ -7574,69 +7586,73 @@
  ],
  "directives": {
   "risk_level": 0.2,
-  "min_confidence_adj": -0.02,
+  "min_confidence_adj": 0.0,
   "symbol_bias": {
-   "XRP": "reduce",
-   "DOGE": "reduce",
-   "ADA": "reduce",
-   "BNB": "reduce",
-   "LINK": "reduce",
-   "AVAX": "reduce",
-   "LTC": "reduce",
-   "DOT": "reduce",
-   "TRX": "reduce",
    "BTC": "avoid",
    "ETH": "avoid",
    "SOL": "avoid"
   },
-  "regime": "volatile"
+  "regime": "bear"
  },
  "brain": {
-  "created_at": 1791528629907,
-  "source": "cloud",
-  "model": "qwen3:4b",
+  "created_at": 1791543192993,
+  "source": "local",
+  "model": "mimo2.6:9b",
   "directives": {
    "risk_level": 0.2,
-   "min_confidence_adj": -0.02,
+   "min_confidence_adj": 0.0,
    "symbol_bias": {
-    "XRP": "reduce",
-    "DOGE": "reduce",
-    "ADA": "reduce",
-    "BNB": "reduce",
-    "LINK": "reduce",
-    "AVAX": "reduce",
-    "LTC": "reduce",
-    "DOT": "reduce",
-    "TRX": "reduce",
     "BTC": "avoid",
     "ETH": "avoid",
     "SOL": "avoid"
    },
-   "regime": "volatile"
+   "regime": "bear"
   },
-  "reasoning": "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.72, a ostatnie 0 zamkni\u0119tych transakcji wskazuje na brak udowodnionego edge. Wszystkie sygna\u0142y poni\u017cej 0.75, wi\u0119c nie ma \u017cadnego sygna\u0142u do wykonania. Wszystkie sygna\u0142y poni\u017cej progu 0.78 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
+  "reasoning": "Model ma 0 zamkni\u0119tych transakcji i edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107. Wszystkie 12 symbol\u00f3w poni\u017cej progu 0.71, a rynek jest w trendzie spadkowym z Fear & Greed 64, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
   "new_lessons": [
-   "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.72 \u2014 zero ryzyka i zero wej\u015b\u0107",
-   "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony",
-   "Wszystkie sygna\u0142y poni\u017cej 0.75 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania"
+   "Zero closed trades \u2014 edge remains unproven, keep zero risk and zero entries.",
+   "Model ma 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
+   "Zero closed trades \u2014 edge remains unproven, keep zero risk and zero entries."
   ],
   "lessons": [
+   "Zero closed trades \u2014 edge remains unproven, keep zero risk and zero entries.",
+   "Model ma 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
+   "Zero closed trades \u2014 edge remains unproven, keep zero risk and zero entries.",
    "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.72 \u2014 zero ryzyka i zero wej\u015b\u0107",
    "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony",
    "Wszystkie sygna\u0142y poni\u017cej 0.75 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania",
    "Wszystkie sygna\u0142y poni\u017cej 0.78 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania",
    "Model nie ma sygna\u0142\u00f3w powy\u017cej progu 0.72 \u2014 zero ryzyka i zero wej\u015b\u0107",
    "Wszystkie sygna\u0142y poni\u017cej 0.72 \u2014 model nie ma udowodnionego edge",
-   "Model ma 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
    "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.78 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
    "CLM ma AUC 0.44 i 57% dok\u0142adno\u015bci \u2014 drugie zdanie nie ma przewagi nad zawsze-nie.",
-   "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.75 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
-   "Zero closed trades \u2014 edge remains unproven, keep zero risk and zero entries.",
-   "All 12 signals below 0.75 threshold \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania."
+   "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.75 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania."
   ],
-  "seconds": 179.1
+  "seconds": 15.8
  },
  "brain_journal": [
+  {
+   "created_at": 1791543192993,
+   "source": "local",
+   "model": "mimo2.6:9b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.0,
+    "symbol_bias": {
+     "BTC": "avoid",
+     "ETH": "avoid",
+     "SOL": "avoid"
+    },
+    "regime": "bear"
+   },
+   "reasoning": "Model ma 0 zamkni\u0119tych transakcji i edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107. Wszystkie 12 symbol\u00f3w poni\u017cej progu 0.71, a rynek jest w trendzie spadkowym z Fear & Greed 64, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
+   "new_lessons": [
+    "Zero closed trades \u2014 edge remains unproven, keep zero risk and zero entries.",
+    "Model ma 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
+    "Zero closed trades \u2014 edge remains unproven, keep zero risk and zero entries."
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1791528629907,
    "source": "cloud",
@@ -7913,37 +7929,6 @@
     "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.72 \u2014 zero ryzyka i zero wej\u015b\u0107",
     "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony",
     "Wszystkie sygna\u0142y poni\u017cej 0.78 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania"
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1791286642949,
-   "source": "cloud",
-   "model": "qwen3:4b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.05,
-    "symbol_bias": {
-     "SOL": "reduce",
-     "XRP": "reduce",
-     "DOGE": "reduce",
-     "ADA": "reduce",
-     "BNB": "reduce",
-     "LINK": "reduce",
-     "AVAX": "reduce",
-     "LTC": "reduce",
-     "DOT": "reduce",
-     "TRX": "reduce",
-     "BTC": "avoid",
-     "ETH": "avoid"
-    },
-    "regime": "volatile"
-   },
-   "reasoning": "Model nie ma udowodnionego edge (win rate 49%, avg +0.15% vs always-buy -0.25%). Wszystkie sygna\u0142y poni\u017cej 0.78 progu. Zero zamkni\u0119tych transakcji w ostatnim okresie. Wzrost volatylno\u015bci (SOL 2.0%, ADA 5.4%) sugeruje niepewno\u015b\u0107 rynku. Zmniejszono ryzyko do 0.2, unikamy BTC i ETH z powodu negatywnych trend\u00f3w 24h (-0.5% dla BTC).",
-   "new_lessons": [
-    "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.72 \u2014 zero ryzyka i zero wej\u015b\u0107",
-    "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony",
-    "Wszystkie sygna\u0142y poni\u017cej 0.75 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania"
    ],
    "equity_at": 1000.0
   }
