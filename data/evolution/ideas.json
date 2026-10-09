@@ -1,34 +1,4 @@
 {
- "2fdbdea320": {
-  "name": "unikaj btc_r96 >= 0.01223",
-  "source": "own mistakes (auto)",
-  "rule": "btc_r96 < 0.01223",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
-  "gain": 8e-05,
-  "tested_at": 1790605037781,
-  "model_version": 5,
-  "adopted": false
- },
- "3185fcb31b": {
-  "name": "unikaj r_96 <= -0.03308",
-  "source": "own mistakes (auto)",
-  "rule": "r_96 > -0.03308",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
-  "gain": 0.01111,
-  "tested_at": 1790662762561,
-  "model_version": 6,
-  "adopted": false
- },
- "14a6a0800a": {
-  "name": "unikaj vol_96 >= 0.005126",
-  "source": "own mistakes (auto)",
-  "rule": "vol_96 < 0.00513",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: volatility of 15-min returns over 24 hours",
-  "gain": 0.00288,
-  "tested_at": 1790707459690,
-  "model_version": 7,
-  "adopted": false
- },
  "1911007f20": {
   "name": "unikaj r_672 <= -0.1546",
   "source": "own mistakes (auto)",
@@ -796,6 +766,36 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
   "gain": 0.0,
   "tested_at": 1791513577091,
+  "model_version": 23,
+  "adopted": false
+ },
+ "c5ae736240": {
+  "name": "Sprzeda\u017cowa presja + rosn\u0105ca zmienno\u015b\u0107",
+  "source": "internet research: Analiza b\u0142\u0119d\u00f3w botu pokazuje, \u017ce sygna\u0142y kupna trac\u0105, gdy kr\u00f3tkoterminowe momentum jest ujemne; dzi\u015b BTC -4% w tydzie\u0144 i ETH -9% z outflowami z ETF.",
+  "rule": "btc_r96 < -0.01231 and r_96 < -0.005 and vol_ratio > 1",
+  "why": "Regu\u0142a odrzuca sygna\u0142y kupna, gdy kr\u00f3tkoterminowe momentum jest ujemne i wolumen ro\u015bnie, co sugeruje dalsz\u0105 presj\u0119 popytow\u0105 i ryzyko kolejnych likwidacji.",
+  "gain": 0.0,
+  "tested_at": 1791550841354,
+  "model_version": 23,
+  "adopted": false
+ },
+ "af935d4cc5": {
+  "name": "Trend spadkowy potwierdzony",
+  "source": "internet research: Analiza b\u0142\u0119d\u00f3w botu pokazuje, \u017ce sygna\u0142y kupna trac\u0105, gdy kr\u00f3tkoterminowe momentum jest ujemne; dzi\u015b BTC -4% w tydzie\u0144 i ETH -9% z outflowami z ETF.",
+  "rule": "ema_trend < -0.00038 and d_ema200 < -0.00051 and r_16 < -0.001",
+  "why": "Regu\u0142a odrzuca sygna\u0142y kupna, gdy kr\u00f3tkoterminowe momentum jest ujemne i wolumen ro\u015bnie, co sugeruje dalsz\u0105 presj\u0119 popytow\u0105 i ryzyko kolejnych likwidacji.",
+  "gain": 0.0,
+  "tested_at": 1791550841354,
+  "model_version": 23,
+  "adopted": false
+ },
+ "efc3367fe5": {
+  "name": "S\u0142aba momentum w relacji do BTC",
+  "source": "internet research: Analiza b\u0142\u0119d\u00f3w botu pokazuje, \u017ce sygna\u0142y kupna trac\u0105, gdy kr\u00f3tkoterminowe momentum jest ujemne; dzi\u015b BTC -4% w tydzie\u0144 i ETH -9% z outflowami z ETF.",
+  "rule": "rank_r96 < 0.5417 and rank_r672 < 0.5417 and btc_r96 < -0.01231",
+  "why": "Regu\u0142a odrzuca sygna\u0142y kupna, gdy kr\u00f3tkoterminowe momentum jest ujemne i wolumen ro\u015bnie, co sugeruje dalsz\u0105 presj\u0119 popytow\u0105 i ryzyko kolejnych likwidacji.",
+  "gain": 0.0,
+  "tested_at": 1791550841354,
   "model_version": 23,
   "adopted": false
  }
