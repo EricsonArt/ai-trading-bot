@@ -1,34 +1,4 @@
 {
- "74c920a673": {
-  "name": "unikaj btc_r96 >= 0.01114",
-  "source": "own mistakes (auto)",
-  "rule": "btc_r96 < 0.01114",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
-  "gain": 0.00313,
-  "tested_at": 1790795769907,
-  "model_version": 9,
-  "adopted": false
- },
- "4e73a1112d": {
-  "name": "unikaj r_672 <= -0.1501",
-  "source": "own mistakes (auto)",
-  "rule": "r_672 > -0.15006",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 7 days",
-  "gain": 0.00028,
-  "tested_at": 1790795769907,
-  "model_version": 9,
-  "adopted": false
- },
- "cb72e63061": {
-  "name": "unikaj btc_r96 >= 0.004842",
-  "source": "own mistakes (auto)",
-  "rule": "btc_r96 < 0.00484",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
-  "gain": 0.00167,
-  "tested_at": 1790795769907,
-  "model_version": 9,
-  "adopted": false
- },
  "7aebf4537a": {
   "name": "unikaj r_672 <= -0.1409",
   "source": "own mistakes (auto)",
@@ -796,6 +766,36 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
   "gain": 0.0,
   "tested_at": 1791615910190,
+  "model_version": 25,
+  "adopted": false
+ },
+ "2c36b449a0": {
+  "name": "Zmiana w p\u0142ynno\u015bci",
+  "source": "internet research: CoinDesk",
+  "rule": "vz > 0.6",
+  "why": "Wczoraj Bitcoin i Ethereum odzyska\u0142y p\u0142ynno\u015b\u0107, ale altcoins nadal maj\u0105 nisk\u0105 p\u0142ynno\u015b\u0107. Zgodnie z CoinDesk, altcoins nadal s\u0105 nieskuteczne, co oznacza, \u017ce zbyt wiele zysk\u00f3w w trakcie zakupu mo\u017ce prowadzi\u0107 do strat. Zmiana w p\u0142ynno\u015bci (vz) powinna by\u0107 wi\u0119ksza ni\u017c 0.6, aby unikn\u0105\u0107 nieprzewidywalnych ru",
+  "gain": 0.0,
+  "tested_at": 1791655132961,
+  "model_version": 25,
+  "adopted": false
+ },
+ "4ef2b413a4": {
+  "name": "Niskie RSI",
+  "source": "internet research: Bot's mistakes",
+  "rule": "rsi < 0.3544",
+  "why": "Zgodnie z analiz\u0105 botu, straty w trakcie zakupu by\u0142y zwi\u0105zane z niskim RSI (0.3544). Wczoraj RSI (0.3544) jest w zakresie oversold, co oznacza, \u017ce rynkowe zmiany s\u0105 nieprzewidywalne. Zmniejszenie RSI poni\u017cej 0.35 mo\u017ce zatrzyma\u0107 nieprzewidywalne ruchy.",
+  "gain": 0.0,
+  "tested_at": 1791655132961,
+  "model_version": 25,
+  "adopted": false
+ },
+ "21e49fdd02": {
+  "name": "Niskie zwracanie w stosunku do Bitcoin",
+  "source": "internet research: CoinDesk",
+  "rule": "rel_r96 < -0.02479",
+  "why": "Wczoraj Bitcoin mia\u0142 zwracanie mniejsze ni\u017c -0.01231 (btc_r96), co jest zgodne z analiz\u0105 botu. Zmniejszenie zwracania w stosunku do Bitcoin (rel_r96) poni\u017cej -0.02479 mo\u017ce zatrzyma\u0107 nieprzewidywalne ruchy.",
+  "gain": 0.0,
+  "tested_at": 1791655132961,
   "model_version": 25,
   "adopted": false
  }
