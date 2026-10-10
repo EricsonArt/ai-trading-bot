@@ -1,5 +1,5 @@
 {
- "generated_at": 1791639210092,
+ "generated_at": 1791644188891,
  "last_candle": 1791638100000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
@@ -8248,7 +8248,7 @@
   "regime": "bear"
  },
  "brain": {
-  "created_at": 1791613688498,
+  "created_at": 1791644188886,
   "source": "cloud",
   "model": "qwen3:4b",
   "directives": {
@@ -8262,15 +8262,18 @@
     "ETH": "avoid",
     "SOL": "avoid"
    },
-   "regime": "bear"
+   "regime": "sideways"
   },
-  "reasoning": "Rynek krypto jest w fazie strachu (fear) z obni\u017ckami BTC (-4% w tydzie\u0144) i ETH (-9%). Model nie ma sygna\u0142\u00f3w powy\u017cej progu 0.83 (wszystkie 12 sygna\u0142\u00f3w poni\u017cej). Edge nie jest udowodniony (48% win rate, avg +0.13%/trade). Zalecane jest unikanie sygna\u0142\u00f3w kupna na spadaj\u0105cych trendach z wzrostem wolumenu. Ryzyko nie powinno by\u0107 zwi\u0119kszane, wi\u0119c risk_level pozostaje na 0.2.",
+  "reasoning": "Model nie ma sygna\u0142\u00f3w powy\u017cej progu 0.78 \u2014 ryzyko nie jest udowodnione. Zero zamkni\u0119tych transakcji w 913 testach \u2014 brak edge. Wszystkie sygna\u0142y poni\u017cej 0.8 \u2014 model nie dzia\u0142a.",
   "new_lessons": [
-   "Edge nie jest udowodniony \u2014 0 zamkni\u0119tych transakcji, zero ryzyka i zero wej\u015b\u0107",
-   "Wszystkie sygna\u0142y poni\u017cej progu 0.83 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania",
-   "Model ma 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107"
+   "Model nie ma sygna\u0142\u00f3w powy\u017cej progu 0.78 \u2014 ryzyko nie jest udowodnione",
+   "Zero zamkni\u0119tych transakcji w 913 testach \u2014 brak edge",
+   "Wszystkie sygna\u0142y poni\u017cej 0.8 \u2014 model nie dzia\u0142a"
   ],
   "lessons": [
+   "Model nie ma sygna\u0142\u00f3w powy\u017cej progu 0.78 \u2014 ryzyko nie jest udowodnione",
+   "Zero zamkni\u0119tych transakcji w 913 testach \u2014 brak edge",
+   "Wszystkie sygna\u0142y poni\u017cej 0.8 \u2014 model nie dzia\u0142a",
    "Edge nie jest udowodniony \u2014 0 zamkni\u0119tych transakcji, zero ryzyka i zero wej\u015b\u0107",
    "Wszystkie sygna\u0142y poni\u017cej progu 0.83 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania",
    "Model ma 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107",
@@ -8279,14 +8282,36 @@
    "Edge nie jest udowodniony na 913 transakcjach (48% win rate, avg +0.13%/trade) \u2014 zero ryzyka i zero wej\u015b\u0107",
    "Zero closed trades \u2014 edge nie jest udowodniony, zero ryzyka i zero wej\u015b\u0107.",
    "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.73 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
-   "Model ma 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
-   "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, zero ryzyka i zero wej\u015b\u0107.",
-   "Edge nie jest udowodniony na 913 transakcjach (48% win rate, avg +0.13%/trade) \u2014 zero ryzyka i zero wej\u015b\u0107.",
-   "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, zero ryzyka i zero wej\u015b\u0107"
+   "Model ma 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107."
   ],
-  "seconds": 187.5
+  "seconds": 170.0
  },
  "brain_journal": [
+  {
+   "created_at": 1791644188886,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.05,
+    "symbol_bias": {
+     "XRP": "reduce",
+     "DOGE": "reduce",
+     "ADA": "reduce",
+     "BTC": "avoid",
+     "ETH": "avoid",
+     "SOL": "avoid"
+    },
+    "regime": "sideways"
+   },
+   "reasoning": "Model nie ma sygna\u0142\u00f3w powy\u017cej progu 0.78 \u2014 ryzyko nie jest udowodnione. Zero zamkni\u0119tych transakcji w 913 testach \u2014 brak edge. Wszystkie sygna\u0142y poni\u017cej 0.8 \u2014 model nie dzia\u0142a.",
+   "new_lessons": [
+    "Model nie ma sygna\u0142\u00f3w powy\u017cej progu 0.78 \u2014 ryzyko nie jest udowodnione",
+    "Zero zamkni\u0119tych transakcji w 913 testach \u2014 brak edge",
+    "Wszystkie sygna\u0142y poni\u017cej 0.8 \u2014 model nie dzia\u0142a"
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1791613688498,
    "source": "cloud",
@@ -8503,28 +8528,6 @@
     "Zero closed trades \u2014 edge remains unproven, keep zero risk and zero entries.",
     "Model ma 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107",
     "Wszystkie sygna\u0142y poni\u017cej progu 0.73 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania"
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1791543192993,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.0,
-    "symbol_bias": {
-     "BTC": "avoid",
-     "ETH": "avoid",
-     "SOL": "avoid"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "Model ma 0 zamkni\u0119tych transakcji i edge nie jest udowodniony, wi\u0119c zero ryzyka i zero wej\u015b\u0107. Wszystkie 12 symbol\u00f3w poni\u017cej progu 0.71, a rynek jest w trendzie spadkowym z Fear & Greed 64, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
-   "new_lessons": [
-    "Zero closed trades \u2014 edge remains unproven, keep zero risk and zero entries.",
-    "Model ma 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
-    "Zero closed trades \u2014 edge remains unproven, keep zero risk and zero entries."
    ],
    "equity_at": 1000.0
   }
@@ -27367,17 +27370,17 @@
    ]
   },
   "research": {
-   "created_at": 1791550429938,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "seconds": 12.9,
-   "digest": "Dzi\u015b rynek krypto jest w fazie strachu i obni\u017cek: BTC ok. $82,5 tys. (-4% w tydzie\u0144), ETH -9%, a outflowy z funduszy ETF si\u0119gaj\u0105 $1 mld, co sugeruje dalsze presj\u0119 popytow\u0105 i ryzyko kolejnych likwidacji. Wzrosty wolumenu na gie\u0142dy przy $1,1 mld likwidacji pokazuj\u0105, \u017ce spekulanci rozliczaj\u0105 straty, wi\u0119c sygna\u0142y kupna na momentum s\u0105 tu szczeg\u00f3lnie niebezpieczne. Regulatorzy (UK, ESMA, Francja) zaostrzaj\u0105 wymogi dla exchange'\u00f3w i stablecoin\u00f3w, co podnosi ryzyko p\u0142ynno\u015bci i operacyjne w najbli\u017cszych dniach. Bot powinien unika\u0107 sygna\u0142\u00f3w kupna na spadaj\u0105cych trendach, gdy kr\u00f3tkoterminowe momentum jest ujemne i wolumen ro\u015bnie.",
+   "created_at": 1791644016689,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "seconds": 421.0,
+   "digest": "W dzisiejszym rynku krypto, gdzie Bitcoin i Ethereum odzyska\u0142y p\u0142ynno\u015b\u0107 po flash crashie, ale altcoins nadal s\u0105 nieskuteczne, kluczowe jest monitorowanie zmian w p\u0142ynno\u015bci i wra\u017cliwo\u015bci na informacje. Wzrost wra\u017cliwo\u015bci na rynkowe zmiany oraz niepewno\u015b\u0107 z powodu nowych technologii i regulacji tworz\u0105 warunki, kt\u00f3re mog\u0105 prowadzi\u0107 do nieprzewidywalnych ruch\u00f3w.",
    "mood": "fear",
    "fng": [
     {
-     "value": 59,
+     "value": 64,
      "label": "Greed",
-     "ts": 1791504000000
+     "ts": 1791590400000
     }
    ],
    "used": [
@@ -27422,58 +27425,33 @@
     },
     {
      "kind": "CoinDesk",
-     "title": "DWF Labs subsidiaries sue BitGo for $141 million over alleged token lock-up breach",
-     "url": "https://www.coindesk.com/policy/2026/10/09/dwf-labs-subsidiaries-sue-bitgo-for-usd141-million-over-alleged-token-lock-up-breach"
+     "title": "One year after 10/10 flash crash, bitcoin and ether liquidity have rebuilt, but altcoins still face risks",
+     "url": "https://www.coindesk.com/markets/2026/10/10/one-year-after-10-10-bitcoin-and-ether-liquidity-have-rebuilt-but-other-altcoins-still-face-risks"
     },
     {
      "kind": "CoinDesk",
-     "title": "Zcash developers set January target for quantum-resistant payments after \u2018bunker mode\u2019 scare",
-     "url": "https://www.coindesk.com/tech/2026/10/09/zcash-developers-set-january-target-for-quantum-resistant-payments-after-bunker-mode-scare"
+     "title": "Tokenized commodities look beyond gold as lending and oil open new markets",
+     "url": "https://www.coindesk.com/business/2026/10/05/tokenized-commodities-look-beyond-gold-as-lending-and-oil-open-new-markets"
     },
     {
      "kind": "CoinDesk",
-     "title": "Trump's Iran pledge underpins crypto gains as bitcoin bears face liquidation pressure",
-     "url": "https://www.coindesk.com/daybook-us/2026/10/09/trump-s-iran-pledge-underpins-crypto-gains-as-bitcoin-bears-face-liquidation-pressure"
+     "title": "Bitcoin's $19 billion wake-up call: One-year after flash crash, has crypto learned anything?",
+     "url": "https://www.coindesk.com/markets/2026/10/10/bitcoin-s-usd19-billion-wake-up-call-one-year-later-has-crypto-learned-anything"
     },
     {
      "kind": "CoinDesk",
-     "title": "Bitcoin steadies near $82,500 after Trump rules out Iran strike before midterms",
-     "url": "https://www.coindesk.com/markets/2026/10/09/bitcoin-steadies-near-usd82-500-after-trump-rules-out-iran-strike-before-midterms"
+     "title": "Bitcoin's volatility has plunged, but extreme price swings are more frequent than in 2018",
+     "url": "https://www.coindesk.com/markets/2026/10/09/bitcoin-s-volatility-has-plunged-but-extreme-price-swings-are-more-frequent-than-in-2018"
     },
     {
      "kind": "CoinDesk",
-     "title": "Thailand opens door to locally listed bitcoin and ether ETFs",
-     "url": "https://www.coindesk.com/policy/2026/10/09/thailand-opens-door-to-locally-listed-bitcoin-and-ether-etfs"
+     "title": "Robinhood Chain slowdown spreads from fees to trading as transactions fall more than 40%",
+     "url": "https://www.coindesk.com/markets/2026/10/10/robinhood-chain-slowdown-spreads-from-fees-to-trading-as-transactions-fall-more-than-40"
     },
     {
      "kind": "CoinDesk",
-     "title": "UK slaps sanctions on three crypto exchanges over alleged Russia links",
-     "url": "https://www.coindesk.com/policy/2026/10/09/uk-slaps-sanctions-on-three-crypto-exchanges-over-alleged-russia-links"
-    },
-    {
-     "kind": "Cointelegraph",
-     "title": "ESMA seeks evidence tokenized collateral can be cashed out in crisis",
-     "url": "https://cointelegraph.com/news/esma-tokenized-collateral-eu-clearinghouses?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-    },
-    {
-     "kind": "Cointelegraph",
-     "title": "UK sanctions three crypto exchanges tied to Russian illicit funds",
-     "url": "https://cointelegraph.com/news/uk-sanctions-crypto-exchanges-russian-illicit-funds?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-    },
-    {
-     "kind": "Cointelegraph",
-     "title": "French lawmakers back stablecoin swap tax in 2027 budget bill",
-     "url": "https://cointelegraph.com/news/france-crypto-stablecoin-swap-tax-2027-budget?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-    },
-    {
-     "kind": "Cointelegraph",
-     "title": "Bitcoin speculators move 55K BTC to exchanges amid $1.1B liquidations",
-     "url": "https://cointelegraph.com/markets/bitcoin-speculators-btc-exchanges-crypto-liquidation?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-    },
-    {
-     "kind": "Cointelegraph",
-     "title": "Bitcoin, Ether ETFs\u2019 October outflows swell toward $1B",
-     "url": "https://cointelegraph.com/markets/bitcoin-ether-etfs-october-outflows-billion?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "XRP Ledger patched decade-old bug that could create billions of dollars in XRP from nothing",
+     "url": "https://www.coindesk.com/tech/2026/10/10/xrp-ledger-patched-decade-old-bug-that-could-create-billions-of-dollars-in-xrp-from-nothing"
     },
     {
      "kind": "Cointelegraph",
@@ -27481,76 +27459,101 @@
      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
-     "kind": "Decrypt",
-     "title": "UK Targets Cryptomus and TokenSpot in New Russia Sanctions Package",
-     "url": "https://decrypt.co/380568/uk-targets-cryptomus-and-tokenspot-in-new-russia-sanctions-package"
+     "kind": "Cointelegraph",
+     "title": "Justin Sun says Tron\u2019s post-quantum cryptography has gone live on testnet",
+     "url": "https://cointelegraph.com/news/justin-sun-says-trons-post-quantum-cryptography-has-gone-live-on-testnet?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+    },
+    {
+     "kind": "Cointelegraph",
+     "title": "Tech chief says EU can fend off rogue AI risk: Report",
+     "url": "https://cointelegraph.com/news/tech-chief-says-eu-can-fend-off-rogue-ai-risk-report?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+    },
+    {
+     "kind": "Cointelegraph",
+     "title": "Sam Altman-backed Bitcoin life insurer, Meanwhile, raises more funds",
+     "url": "https://cointelegraph.com/news/sam-altman-backed-bitcoin-life-insurer-meanwhile-raises-more-funds?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+    },
+    {
+     "kind": "Cointelegraph",
+     "title": "US plans to seize $1B in crypto linked to Iran this week: Scott Bessent",
+     "url": "https://cointelegraph.com/news/scott-bessent-us-seize-crypto-iran-sanctions?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+    },
+    {
+     "kind": "Cointelegraph",
+     "title": "New York permanently bars Celsius founder Mashinsky in $35M fraud settlement",
+     "url": "https://cointelegraph.com/news/celsius-founder-alex-mashinsky-permanently-banned-from-crypto-industry-in-ny-settlement?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Decrypt",
-     "title": "Morning Minute: Uptober Turns Sour as Crypto Majors Slide",
-     "url": "https://decrypt.co/380569/morning-minute-uptober-turns-sour-as-crypto-majors-slide"
+     "title": "French Committee Backs Stablecoin Swap Tax and Crypto Exit Tax, Then Rejects the Budget",
+     "url": "https://decrypt.co/380630/france-stablecoin-swap-crypto-exit-tax"
     },
     {
      "kind": "Decrypt",
-     "title": "Empire Market Co-Creator Sentenced to 40 Years Over $430M Dark Web Bazaar",
-     "url": "https://decrypt.co/380561/empire-market-co-creator-sentenced-to-40-years-over-430m-dark-web-bazaar"
+     "title": "OpenAI and Anthropic Are Quietly Rehearsing for the Day After an AI Catastrophe",
+     "url": "https://decrypt.co/380621/openai-anthropic-quietly-rehearsing-ai-catastrophe"
     },
     {
      "kind": "Decrypt",
-     "title": "SIM-Swap Fraudster Who Spent Stolen Crypto on Gold Grills and Dubai Trips Jailed",
-     "url": "https://decrypt.co/380554/sim-swap-fraudster-who-spent-stolen-crypto-on-gold-grills-and-dubai-trips-jailed"
+     "title": "Senate Democrat Presses Cantor Fitzgerald on Tether Ties and Lutnick Family Profits",
+     "url": "https://decrypt.co/380619/senate-democrat-cantor-fitzgerald-tether-lutnick"
     },
     {
      "kind": "Decrypt",
-     "title": "AI Startup Manus Raises $500 Million After China Nixed Meta\u2019s $2 Billion Acquisition",
-     "url": "https://decrypt.co/380546/maus-ai-startup-raises-500m-meta-acquisition-china"
+     "title": "Blockchain.com Seeks Approval for US Prediction Markets and Crypto Derivatives",
+     "url": "https://decrypt.co/380612/blockchain-cftc-prediction-markets-crypto-derivatives"
     },
     {
      "kind": "Decrypt",
-     "title": "Google Wants Gemini to Be Your Next Coworker\u2014Complete With Its Own Email Address",
-     "url": "https://decrypt.co/380545/google-gemini-coworker-own-email-address"
+     "title": "Bitcoin Rebounds After Rough Week, But Traders Are Pricing In More Downside",
+     "url": "https://decrypt.co/380599/bitcoin-rebounds-traders-predict-more-downside"
+    },
+    {
+     "kind": "Decrypt",
+     "title": "Ethereum L2 Starknet Jumps 20% After Saying It Wants to Become an L1",
+     "url": "https://decrypt.co/380585/ethereum-l2-starknet-jumps-20-after-saying-it-wants-to-become-an-l1"
+    },
+    {
+     "kind": "Babypips",
+     "title": "Financial & Forex Weekly Recap: October 5 \u2013 9, 2026",
+     "url": "https://www.babypips.com/analysis/financial-forex-market-weekly-recap-october-9-2026"
+    },
+    {
+     "kind": "Babypips",
+     "title": "TA Alert of the Day: SOL/USD Sharp Drop Creates a Potential Bounce Setup",
+     "url": "https://www.babypips.com/trading/ta-alert-solusd-bollinger-band-breach-2026-10-08"
+    },
+    {
+     "kind": "Babypips",
+     "title": "One Near the Ceiling, One on the Floor: META & EUR/USD",
+     "url": "https://www.babypips.com/trading/one-near-the-ceiling-one-on-the-floor-meta-eur-usd"
+    },
+    {
+     "kind": "Babypips",
+     "title": "Canada Loses 68,300 Jobs in September 2026",
+     "url": "https://www.babypips.com/news/headline-canada-jobs-report-september-2026-job-losses-unemployment-2026-10-09"
     },
     {
      "kind": "Babypips",
      "title": "Trade at Your Own Risk (Tolerance)",
      "url": "https://www.babypips.com/trading/psychology-trade-at-your-own-risk-tolerance-2026-10-09"
-    },
-    {
-     "kind": "Babypips",
-     "title": "Why Bonds and Stocks Are Sending Opposite Signals",
-     "url": "https://www.babypips.com/analysis/explainer-why-bonds-and-stocks-are-sending-opposite-signals-2026-10-09"
-    },
-    {
-     "kind": "Babypips",
-     "title": "Chart Art: EUR/NZD Testing Long-Term Triangle Top",
-     "url": "https://www.babypips.com/trading/chart-art-forex-eurnzd-testing-long-term-triangle-top-2026-10-09"
-    },
-    {
-     "kind": "Babypips",
-     "title": "U.S. Jobless Claims Fall to 197K as Layoffs Stay Near Historic Lows",
-     "url": "https://www.babypips.com/news/headline-us-initial-jobless-claims-layoffs-2026-10-09"
-    },
-    {
-     "kind": "Babypips",
-     "title": "Financial & Forex Market Recap \u2013 Oct. 8, 2026",
-     "url": "https://www.babypips.com/news/financial-forex-market-recap-2026-10-08"
     }
    ],
    "ideas": [
     {
-     "name": "Sprzeda\u017cowa presja + rosn\u0105ca zmienno\u015b\u0107",
-     "rule": "btc_r96 < -0.01231 and r_96 < -0.005 and vol_ratio > 1",
-     "why": "Regu\u0142a odrzuca sygna\u0142y kupna, gdy kr\u00f3tkoterminowe momentum jest ujemne i wolumen ro\u015bnie, co sugeruje dalsz\u0105 presj\u0119 popytow\u0105 i ryzyko kolejnych likwidacji."
+     "name": "Zmiana w p\u0142ynno\u015bci",
+     "rule": "vz > 0.6",
+     "why": "Wczoraj Bitcoin i Ethereum odzyska\u0142y p\u0142ynno\u015b\u0107, ale altcoins nadal maj\u0105 nisk\u0105 p\u0142ynno\u015b\u0107. Zgodnie z CoinDesk, altcoins nadal s\u0105 nieskuteczne, co oznacza, \u017ce zbyt wiele zysk\u00f3w w trakcie zakupu mo\u017ce prowadzi\u0107 do strat. Zmiana w p\u0142ynno\u015bci (vz) powinna by\u0107 wi\u0119ksza ni\u017c 0.6, aby unikn\u0105\u0107 nieprzewidywalnych ru"
     },
     {
-     "name": "Trend spadkowy potwierdzony",
-     "rule": "ema_trend < -0.00038 and d_ema200 < -0.00051 and r_16 < -0.001",
-     "why": "Regu\u0142a odrzuca sygna\u0142y kupna, gdy kr\u00f3tkoterminowe momentum jest ujemne i wolumen ro\u015bnie, co sugeruje dalsz\u0105 presj\u0119 popytow\u0105 i ryzyko kolejnych likwidacji."
+     "name": "Niskie RSI",
+     "rule": "rsi < 0.3544",
+     "why": "Zgodnie z analiz\u0105 botu, straty w trakcie zakupu by\u0142y zwi\u0105zane z niskim RSI (0.3544). Wczoraj RSI (0.3544) jest w zakresie oversold, co oznacza, \u017ce rynkowe zmiany s\u0105 nieprzewidywalne. Zmniejszenie RSI poni\u017cej 0.35 mo\u017ce zatrzyma\u0107 nieprzewidywalne ruchy."
     },
     {
-     "name": "S\u0142aba momentum w relacji do BTC",
-     "rule": "rank_r96 < 0.5417 and rank_r672 < 0.5417 and btc_r96 < -0.01231",
-     "why": "Regu\u0142a odrzuca sygna\u0142y kupna, gdy kr\u00f3tkoterminowe momentum jest ujemne i wolumen ro\u015bnie, co sugeruje dalsz\u0105 presj\u0119 popytow\u0105 i ryzyko kolejnych likwidacji."
+     "name": "Niskie zwracanie w stosunku do Bitcoin",
+     "rule": "rel_r96 < -0.02479",
+     "why": "Wczoraj Bitcoin mia\u0142 zwracanie mniejsze ni\u017c -0.01231 (btc_r96), co jest zgodne z analiz\u0105 botu. Zmniejszenie zwracania w stosunku do Bitcoin (rel_r96) poni\u017cej -0.02479 mo\u017ce zatrzyma\u0107 nieprzewidywalne ruchy."
     }
    ]
   }
