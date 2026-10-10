@@ -1,5 +1,5 @@
 {
- "generated_at": 1791668454493,
+ "generated_at": 1791676481142,
  "last_candle": 1791666900000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
@@ -7765,7 +7765,7 @@
    {
     "name": "Konto g\u0142\u00f3wne handlowa\u0142o na papierze 90+ dni",
     "ok": false,
-    "value": "13 dni"
+    "value": "14 dni"
    },
    {
     "name": "Co najmniej 100 zamkni\u0119tych transakcji",
@@ -8450,7 +8450,7 @@
   "regime": "volatile"
  },
  "brain": {
-  "created_at": 1791663801343,
+  "created_at": 1791676481139,
   "source": "cloud",
   "model": "qwen3:4b",
   "directives": {
@@ -8466,7 +8466,7 @@
    },
    "regime": "volatile"
   },
-  "reasoning": "Model ma 0 zamkni\u0119tych transakcji w 913 testach z win rate 51% i avg +0.68%/trade. Wszystkie sygna\u0142y poni\u017cej 0.78, co oznacza brak udowodnionego edge. Wzrost wra\u017cliwo\u015bci na rynkowe zmiany i brak p\u0142ynno\u015bci w altcoins powoduje nieprzewidywalne ruchy. Zmniejsz ryzyko dla sygna\u0142\u00f3w poni\u017cej 0.83.",
+  "reasoning": "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.78, a 0 zamkni\u0119tych transakcji w 913 testach wskazuje na brak edge. Wzrost wra\u017cliwo\u015bci na rynkowe zmiany i niepewno\u015b\u0107 z powodu nowych technologii tworz\u0105 warunki nieprzewidywalne. Zmniejsz ryzyko dla wszystkich altcoin\u00f3w, unikaj BTC i ETH.",
   "new_lessons": [
    "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.78 \u2014 ryzyko nie jest udowodnione",
    "Zero zamkni\u0119tych transakcji w 913 testach \u2014 brak edge",
@@ -8486,9 +8486,34 @@
    "Zero closed trades \u2014 edge nie jest udowodniony, zero ryzyka i zero wej\u015b\u0107.",
    "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.73 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania."
   ],
-  "seconds": 178.0
+  "seconds": 123.3
  },
  "brain_journal": [
+  {
+   "created_at": 1791676481139,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.05,
+    "symbol_bias": {
+     "XRP": "reduce",
+     "DOGE": "reduce",
+     "ADA": "reduce",
+     "BTC": "avoid",
+     "ETH": "avoid",
+     "SOL": "avoid"
+    },
+    "regime": "volatile"
+   },
+   "reasoning": "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.78, a 0 zamkni\u0119tych transakcji w 913 testach wskazuje na brak edge. Wzrost wra\u017cliwo\u015bci na rynkowe zmiany i niepewno\u015b\u0107 z powodu nowych technologii tworz\u0105 warunki nieprzewidywalne. Zmniejsz ryzyko dla wszystkich altcoin\u00f3w, unikaj BTC i ETH.",
+   "new_lessons": [
+    "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.78 \u2014 ryzyko nie jest udowodnione",
+    "Zero zamkni\u0119tych transakcji w 913 testach \u2014 brak edge",
+    "Wszystkie sygna\u0142y poni\u017cej progu 0.83 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania"
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1791663801343,
    "source": "cloud",
@@ -8711,28 +8736,6 @@
     "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, zero ryzyka i zero wej\u015b\u0107",
     "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.78 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania",
     "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony"
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1791550433505,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.05,
-    "symbol_bias": {
-     "BTC": "avoid",
-     "ETH": "avoid",
-     "SOL": "avoid"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "Rynek jest w fazie strachu i obni\u017cek: BTC -4% w tydzie\u0144, ETH -9%, SOL -9%, DOGE -12%, a outflowy z funduszy ETF si\u0119gaj\u0105 $1 mld, co sugeruje dalsze presj\u0119 popytow\u0105 i ryzyko kolejnych likwidacji. Bot ma zero zamkni\u0119tych transakcji, wi\u0119c edge nie jest udowodniony \u2014 zero ryzyka i zero wej\u015b\u0107. Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.73, wi\u0119c model nie ma \u017cadnego sygna\u0142u do wykonania.",
-   "new_lessons": [
-    "Zero closed trades \u2014 edge remains unproven, keep zero risk and zero entries.",
-    "Model ma 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107",
-    "Wszystkie sygna\u0142y poni\u017cej progu 0.73 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania"
    ],
    "equity_at": 1000.0
   }
