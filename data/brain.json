@@ -1,27 +1,37 @@
 {
- "created_at": 1791725102553,
+ "created_at": 1791728752411,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 9.6,
+ "seconds": 6.4,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.1,
   "symbol_bias": {
    "BTC": "avoid",
    "ETH": "avoid",
-   "SOL": "avoid"
+   "SOL": "avoid",
+   "XRP": "reduce",
+   "DOGE": "reduce",
+   "ADA": "reduce",
+   "BNB": "reduce",
+   "LINK": "reduce",
+   "AVAX": "reduce",
+   "LTC": "reduce",
+   "DOT": "reduce",
+   "TRX": "reduce"
   },
-  "regime": "sideways"
+  "regime": "bear"
  },
- "reasoning": "Rynek jest w fazie konsolidacji po krachu: BTC +0.2% w 24h, ale 7d -2.8%, a altcoiny spadaj\u0105 wyra\u017anie mocniej (SOL -9.9%, DOGE -9.0%, LTC -10.3%). Model ma 0 zamkni\u0119tych transakcji, wi\u0119c jego edge nie jest udowodniony, a wszystkie 12 sygna\u0142\u00f3w s\u0105 poni\u017cej progu 0.83. Druga opinia (CLM) ma s\u0142ab\u0105 historyczn\u0105 dok\u0142adno\u015b\u0107 (47% vs 50% dla zawsze-nie, AUC 0.44), wi\u0119c nie mo\u017ce by\u0107 podstaw\u0105 do wej\u015bcia. Trzymam si\u0119 ostro\u017cnego poziomu ryzyka 0.2 i podnosz\u0119 pr\u00f3g wej\u015bcia o 0.10, aby unikn\u0105\u0107 fa\u0142szywych sygna\u0142\u00f3w.",
+ "reasoning": "Rynek jest w re\u017cimie niskiej zmienno\u015bci z wyra\u017anym spadkowym trendem na wi\u0119kszo\u015bci altcoin\u00f3w (7d od -2.4% do -10.6%), co sugeruje brak silnego trendu wzrostowego. Model ma zero zamkni\u0119tych transakcji i zero sygna\u0142\u00f3w powy\u017cej progu 0.83, wi\u0119c edge nie jest udowodniony. Wszystkie 12 sygna\u0142\u00f3w s\u0105 poni\u017cej progu 0.83, co oznacza, \u017ce model nie ma \u017cadnego sygna\u0142u do wykonania. CLM ma AUC 0.44 i 47% dok\u0142adno\u015b\u0107, co nie ma przewagi nad zawsze-nie.",
  "new_lessons": [
   "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka.",
   "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.83 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
-  "CLM ma AUC 0.44 i 47% dok\u0142adno\u015bci \u2014 drugie zdanie nie ma przewagi nad zawsze-nie."
+  "CLM ma AUC 0.44 i 47% dok\u0142adno\u015b\u0107 \u2014 drugie zdanie nie ma przewagi nad zawsze-nie."
  ],
  "lessons": [
   "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka.",
   "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.83 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
+  "CLM ma AUC 0.44 i 47% dok\u0142adno\u015b\u0107 \u2014 drugie zdanie nie ma przewagi nad zawsze-nie.",
   "CLM ma AUC 0.44 i 47% dok\u0142adno\u015bci \u2014 drugie zdanie nie ma przewagi nad zawsze-nie.",
   "Model ma 0 zamkni\u0119tych transakcji \u2014 zero edge, zero ryzyka i zero wej\u015b\u0107.",
   "Edge nie jest udowodniony \u2014 0 zamkni\u0119tych transakcji, zero ryzyka i zero wej\u015b\u0107.",
@@ -30,8 +40,7 @@
   "Zero zamkni\u0119tych transakcji w 913 testach \u2014 brak edge",
   "Wszystkie sygna\u0142y poni\u017cej progu 0.83 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania",
   "Model nie ma sygna\u0142\u00f3w powy\u017cej progu 0.78 \u2014 ryzyko nie jest udowodnione",
-  "Wszystkie sygna\u0142y poni\u017cej 0.8 \u2014 model nie dzia\u0142a",
-  "Edge nie jest udowodniony \u2014 0 zamkni\u0119tych transakcji, zero ryzyka i zero wej\u015b\u0107"
+  "Wszystkie sygna\u0142y poni\u017cej 0.8 \u2014 model nie dzia\u0142a"
  ],
  "equity_at": 1000.0
 }
