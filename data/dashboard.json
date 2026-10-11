@@ -1,5 +1,5 @@
 {
- "generated_at": 1791699680911,
+ "generated_at": 1791700358828,
  "last_candle": 1791698400000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
@@ -8660,7 +8660,7 @@
   "regime": "volatile"
  },
  "brain": {
-  "created_at": 1791676481139,
+  "created_at": 1791700358825,
   "source": "cloud",
   "model": "qwen3:4b",
   "directives": {
@@ -8676,7 +8676,7 @@
    },
    "regime": "volatile"
   },
-  "reasoning": "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.78, a 0 zamkni\u0119tych transakcji w 913 testach wskazuje na brak edge. Wzrost wra\u017cliwo\u015bci na rynkowe zmiany i niepewno\u015b\u0107 z powodu nowych technologii tworz\u0105 warunki nieprzewidywalne. Zmniejsz ryzyko dla wszystkich altcoin\u00f3w, unikaj BTC i ETH.",
+  "reasoning": "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.78, a w ostatnich 913 testach nie ma zamkni\u0119tych transakcji. Wszystkie sygna\u0142y s\u0105 poni\u017cej progu 0.83, wi\u0119c ryzyko nie jest udowodnione. W zwi\u0105zku z tym obni\u017camy ryzyko do 0.2.",
   "new_lessons": [
    "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.78 \u2014 ryzyko nie jest udowodnione",
    "Zero zamkni\u0119tych transakcji w 913 testach \u2014 brak edge",
@@ -8696,9 +8696,34 @@
    "Zero closed trades \u2014 edge nie jest udowodniony, zero ryzyka i zero wej\u015b\u0107.",
    "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.73 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania."
   ],
-  "seconds": 123.3
+  "seconds": 120.5
  },
  "brain_journal": [
+  {
+   "created_at": 1791700358825,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.05,
+    "symbol_bias": {
+     "XRP": "reduce",
+     "DOGE": "reduce",
+     "ADA": "reduce",
+     "BTC": "avoid",
+     "ETH": "avoid",
+     "SOL": "avoid"
+    },
+    "regime": "volatile"
+   },
+   "reasoning": "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.78, a w ostatnich 913 testach nie ma zamkni\u0119tych transakcji. Wszystkie sygna\u0142y s\u0105 poni\u017cej progu 0.83, wi\u0119c ryzyko nie jest udowodnione. W zwi\u0105zku z tym obni\u017camy ryzyko do 0.2.",
+   "new_lessons": [
+    "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.78 \u2014 ryzyko nie jest udowodnione",
+    "Zero zamkni\u0119tych transakcji w 913 testach \u2014 brak edge",
+    "Wszystkie sygna\u0142y poni\u017cej progu 0.83 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania"
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1791676481139,
    "source": "cloud",
@@ -8915,37 +8940,6 @@
     "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, zero ryzyka i zero wej\u015b\u0107",
     "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.78 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania",
     "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, zero ryzyka i zero wej\u015b\u0107"
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1791557694157,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.05,
-    "symbol_bias": {
-     "BTC": "avoid",
-     "ETH": "avoid",
-     "SOL": "avoid",
-     "XRP": "reduce",
-     "DOGE": "reduce",
-     "ADA": "reduce",
-     "BNB": "reduce",
-     "LINK": "reduce",
-     "AVAX": "reduce",
-     "LTC": "reduce",
-     "DOT": "reduce",
-     "TRX": "reduce"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "Rynek jest w fazie strachu i spadk\u00f3w: BTC -4% w tydzie\u0144, ETH -9%, SOL -11%, DOGE -13%, a outflowy z ETF sugeruj\u0105 dalsz\u0105 presj\u0119 popytow\u0105. Model ma 0 zamkni\u0119tych transakcji, edge nie jest udowodniony, a wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.78 \u2014 zero ryzyka i zero wej\u015b\u0107. Trzymam si\u0119 zero ryzyka i zero wej\u015b\u0107, bo nie ma udowodnionej przewagi.",
-   "new_lessons": [
-    "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, zero ryzyka i zero wej\u015b\u0107",
-    "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.78 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania",
-    "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony"
    ],
    "equity_at": 1000.0
   }
