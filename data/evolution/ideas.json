@@ -1,34 +1,4 @@
 {
- "0de8092ebb": {
-  "name": "unikaj dd_7d <= -0.1509",
-  "source": "own mistakes (auto)",
-  "rule": "dd_7d > -0.15091",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: distance below the 7-day high (0 = at the high)",
-  "gain": 0.0,
-  "tested_at": 1790955794220,
-  "model_version": 12,
-  "adopted": false
- },
- "0a177535e9": {
-  "name": "unikaj r_672 <= -0.1329",
-  "source": "own mistakes (auto)",
-  "rule": "r_672 > -0.13287",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 7 days",
-  "gain": 0.0,
-  "tested_at": 1790955794220,
-  "model_version": 12,
-  "adopted": false
- },
- "759c77e051": {
-  "name": "unikaj r_2016 <= -0.2652",
-  "source": "own mistakes (auto)",
-  "rule": "r_2016 > -0.26518",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 21 days",
-  "gain": 0.0,
-  "tested_at": 1790955794220,
-  "model_version": 12,
-  "adopted": false
- },
  "97942c9189": {
   "name": "unikaj dd_7d <= -0.1496",
   "source": "own mistakes (auto)",
@@ -796,6 +766,36 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
   "gain": 0.0,
   "tested_at": 1791716451246,
+  "model_version": 27,
+  "adopted": false
+ },
+ "a4cb7098e2": {
+  "name": "Wymagaj sp\u00f3jnego spadku w skali 4 h\u201324 h",
+  "source": "internet research: B\u0142\u0119dne sygna\u0142y: btc_r96, r_96, d_ema200, ema_trend, d_ema50 \u2014 wszystkie wskazywa\u0142y na spadki, ale na kr\u00f3tszych horyzontach (15 min\u20134 h) sygna\u0142 by\u0142 s\u0142abszy lub przeciwny.",
+  "rule": "r_96 < -0.005 and r_16 < -0.001 and r_4 < 0.0005",
+  "why": "Je\u015bli bot kupuje na spadku BTC, ale kr\u00f3tkie horyzonty (15 min\u20134 h) nie potwierdzaj\u0105 trendu, sygna\u0142 jest prawdopodobnie fa\u0142szywy. Wymaganie sp\u00f3jnego spadku na wszystkich horyzontach (4 h, 16 h, 96 h) eliminuje przypadkowe sygna\u0142y na kr\u00f3tkich horyzontach.",
+  "gain": 0.0,
+  "tested_at": 1791717678695,
+  "model_version": 27,
+  "adopted": false
+ },
+ "1a0bb6930a": {
+  "name": "Unikaj kupna w rosn\u0105cej zmienno\u015bci",
+  "source": "internet research: B\u0142\u0119dne sygna\u0142y: btc_r96, r_96, d_ema200, ema_trend, d_ema50 \u2014 wszystkie wskazywa\u0142y na spadki, ale na kr\u00f3tszych horyzontach (15 min\u20134 h) sygna\u0142 by\u0142 s\u0142abszy lub przeciwny.",
+  "rule": "vol_ratio < 1 and r_16 < 0.002 and r_4 < 0.001",
+  "why": "Wzrost zmienno\u015bci (vol_ratio > 1) oznacza, \u017ce kr\u00f3tkie horyzonty s\u0105 mniej przewidywalne. Wymaganie, by zmienno\u015b\u0107 spada\u0142a lub by\u0142a stabilna, eliminuje sygna\u0142y w warunkach rosn\u0105cej zmienno\u015bci.",
+  "gain": 0.0,
+  "tested_at": 1791717678695,
+  "model_version": 27,
+  "adopted": false
+ },
+ "047f8a1162": {
+  "name": "Wymagaj spadku na wszystkich horyzontach",
+  "source": "internet research: B\u0142\u0119dne sygna\u0142y: btc_r96, r_96, d_ema200, ema_trend, d_ema50 \u2014 wszystkie wskazywa\u0142y na spadki, ale na kr\u00f3tszych horyzontach (15 min\u20134 h) sygna\u0142 by\u0142 s\u0142abszy lub przeciwny.",
+  "rule": "r_1 < -0.0005 and r_2 < -0.001 and r_4 < -0.002",
+  "why": "Je\u015bli bot kupuje na spadku BTC, ale kr\u00f3tkie horyzonty (15 min\u20134 h) nie potwierdzaj\u0105 trendu, sygna\u0142 jest prawdopodobnie fa\u0142szywy. Wymaganie, by spadki wyst\u0119powa\u0142y na wszystkich horyzontach (15 min, 30 min, 1 h), eliminuje przypadkowe sygna\u0142y na kr\u00f3tkich horyzontach.",
+  "gain": 0.0,
+  "tested_at": 1791717678695,
   "model_version": 27,
   "adopted": false
  }
