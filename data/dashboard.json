@@ -1,9 +1,9 @@
 {
- "generated_at": 1791740213305,
- "last_candle": 1791738900000,
+ "generated_at": 1791741723656,
+ "last_candle": 1791740700000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
- "benchmark_return": -0.010789999999999966,
+ "benchmark_return": -0.012820000000000054,
  "series": [
   [
    1790508600000,
@@ -8212,6 +8212,18 @@
    1000.0,
    989.21,
    1000.0
+  ],
+  [
+   1791739800000,
+   1000.0,
+   989.26,
+   1000.0
+  ],
+  [
+   1791740700000,
+   1000.0,
+   987.18,
+   1000.0
   ]
  ],
  "main": {
@@ -8260,7 +8272,7 @@
    {
     "name": "Lepiej ni\u017c samo trzymanie BTC",
     "ok": true,
-    "value": "+1.1 pkt"
+    "value": "+1.3 pkt"
    },
    {
     "name": "Najwi\u0119kszy spadek mniejszy ni\u017c 20%",
@@ -8518,91 +8530,91 @@
  },
  "signals": {
   "BTC": {
-   "p": 0.2793,
+   "p": 0.3136,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1791738900000
+   "ts": 1791740700000
   },
   "ETH": {
-   "p": 0.3187,
+   "p": 0.2792,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1791738900000
+   "ts": 1791740700000
   },
   "SOL": {
-   "p": 0.2167,
+   "p": 0.2348,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1791738900000
+   "ts": 1791740700000
   },
   "XRP": {
-   "p": 0.2949,
+   "p": 0.2904,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1791738900000
+   "ts": 1791740700000
   },
   "DOGE": {
-   "p": 0.0779,
+   "p": 0.0721,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1791738900000
+   "ts": 1791740700000
   },
   "ADA": {
-   "p": 0.1165,
+   "p": 0.1639,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1791738900000
+   "ts": 1791740700000
   },
   "BNB": {
-   "p": 0.1973,
+   "p": 0.2169,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1791738900000
+   "ts": 1791740700000
   },
   "LINK": {
-   "p": 0.3271,
+   "p": 0.3045,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1791738900000
+   "ts": 1791740700000
   },
   "AVAX": {
-   "p": 0.3558,
+   "p": 0.4289,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1791738900000
+   "ts": 1791740700000
   },
   "LTC": {
-   "p": 0.0927,
+   "p": 0.1011,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1791738900000
+   "ts": 1791740700000
   },
   "DOT": {
-   "p": 0.5985,
+   "p": 0.6074,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1791738900000
+   "ts": 1791740700000
   },
   "TRX": {
-   "p": 0.2976,
+   "p": 0.2936,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1791738900000
+   "ts": 1791740700000
   }
  },
  "prices": {
-  "BTC": 83996.54,
-  "ETH": 2547.0,
-  "SOL": 112.26,
-  "XRP": 1.422,
-  "DOGE": 0.08738,
-  "ADA": 0.255,
-  "BNB": 756.13,
-  "LINK": 13.471,
-  "AVAX": 10.917,
-  "LTC": 64.76,
-  "DOT": 1.253,
-  "TRX": 0.3314
+  "BTC": 83824.0,
+  "ETH": 2538.41,
+  "SOL": 112.14,
+  "XRP": 1.4158,
+  "DOGE": 0.08707,
+  "ADA": 0.2535,
+  "BNB": 754.2,
+  "LINK": 13.411,
+  "AVAX": 10.86,
+  "LTC": 64.62,
+  "DOT": 1.251,
+  "TRX": 0.3313
  },
  "model": {
   "version": 27,
@@ -8934,10 +8946,10 @@
    "ETH": "avoid",
    "SOL": "avoid"
   },
-  "regime": "sideways"
+  "regime": "bull"
  },
  "brain": {
-  "created_at": 1791737164638,
+  "created_at": 1791740776248,
   "source": "local",
   "model": "mimo2.6:9b",
   "directives": {
@@ -8948,18 +8960,19 @@
     "ETH": "avoid",
     "SOL": "avoid"
    },
-   "regime": "sideways"
+   "regime": "bull"
   },
-  "reasoning": "Rynek jest w fazie neutralnej: BTC +0.3% w 24 h, ale altcoiny spadaj\u0105 4-10% w 7 dni, a Fear & Greed wskazuje na Greed 61. Model ma zero zamkni\u0119tych transakcji, wi\u0119c edge nie jest udowodniony i nie wolno zwi\u0119ksza\u0107 ryzyka. Wszystkie 12 sygna\u0142\u00f3w s\u0105 poni\u017cej progu 0.83, co oznacza brak sygna\u0142\u00f3w do wykonania. CLM ma AUC 0.44 i 47% dok\u0142adno\u015b\u0107, co nie ma przewagi nad zawsze-nie.",
+  "reasoning": "Rynek jest w fazie wzrostowej, ale model ma zero zamkni\u0119tych transakcji, wi\u0119c edge nie jest udowodniony. Wszystkie 12 sygna\u0142\u00f3w s\u0105 poni\u017cej progu 0.83, co oznacza brak sygna\u0142\u00f3w do wykonania. CLM ma AUC 0.44 i 47% dok\u0142adno\u015b\u0107, co nie daje przewagi nad zawsze-nie.",
   "new_lessons": [
-   "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka.",
+   "0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka.",
    "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.83 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
    "CLM ma AUC 0.44 i 47% dok\u0142adno\u015b\u0107 \u2014 drugie zdanie nie ma przewagi nad zawsze-nie."
   ],
   "lessons": [
-   "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka.",
+   "0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka.",
    "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.83 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
    "CLM ma AUC 0.44 i 47% dok\u0142adno\u015b\u0107 \u2014 drugie zdanie nie ma przewagi nad zawsze-nie.",
+   "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka.",
    "CLM ma AUC 0.44 i 47% dok\u0142adno\u015bci \u2014 drugie zdanie nie ma przewagi nad zawsze-nie.",
    "Model ma 0 zamkni\u0119tych transakcji \u2014 zero edge, zero ryzyka i zero wej\u015b\u0107.",
    "Edge nie jest udowodniony \u2014 0 zamkni\u0119tych transakcji, zero ryzyka i zero wej\u015b\u0107.",
@@ -8967,12 +8980,33 @@
    "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.78 \u2014 ryzyko nie jest udowodnione",
    "Zero zamkni\u0119tych transakcji w 913 testach \u2014 brak edge",
    "Wszystkie sygna\u0142y poni\u017cej progu 0.83 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania",
-   "Model nie ma sygna\u0142\u00f3w powy\u017cej progu 0.78 \u2014 ryzyko nie jest udowodnione",
-   "Wszystkie sygna\u0142y poni\u017cej 0.8 \u2014 model nie dzia\u0142a"
+   "Model nie ma sygna\u0142\u00f3w powy\u017cej progu 0.78 \u2014 ryzyko nie jest udowodnione"
   ],
-  "seconds": 9.0
+  "seconds": 10.4
  },
  "brain_journal": [
+  {
+   "created_at": 1791740776248,
+   "source": "local",
+   "model": "mimo2.6:9b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.1,
+    "symbol_bias": {
+     "BTC": "avoid",
+     "ETH": "avoid",
+     "SOL": "avoid"
+    },
+    "regime": "bull"
+   },
+   "reasoning": "Rynek jest w fazie wzrostowej, ale model ma zero zamkni\u0119tych transakcji, wi\u0119c edge nie jest udowodniony. Wszystkie 12 sygna\u0142\u00f3w s\u0105 poni\u017cej progu 0.83, co oznacza brak sygna\u0142\u00f3w do wykonania. CLM ma AUC 0.44 i 47% dok\u0142adno\u015b\u0107, co nie daje przewagi nad zawsze-nie.",
+   "new_lessons": [
+    "0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka.",
+    "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.83 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
+    "CLM ma AUC 0.44 i 47% dok\u0142adno\u015b\u0107 \u2014 drugie zdanie nie ma przewagi nad zawsze-nie."
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1791737164638,
    "source": "local",
@@ -9197,31 +9231,6 @@
     "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.78 \u2014 ryzyko nie jest udowodnione",
     "Zero zamkni\u0119tych transakcji w 913 testach \u2014 brak edge",
     "Wszystkie sygna\u0142y poni\u017cej progu 0.83 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania"
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1791644188886,
-   "source": "cloud",
-   "model": "qwen3:4b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.05,
-    "symbol_bias": {
-     "XRP": "reduce",
-     "DOGE": "reduce",
-     "ADA": "reduce",
-     "BTC": "avoid",
-     "ETH": "avoid",
-     "SOL": "avoid"
-    },
-    "regime": "sideways"
-   },
-   "reasoning": "Model nie ma sygna\u0142\u00f3w powy\u017cej progu 0.78 \u2014 ryzyko nie jest udowodnione. Zero zamkni\u0119tych transakcji w 913 testach \u2014 brak edge. Wszystkie sygna\u0142y poni\u017cej 0.8 \u2014 model nie dzia\u0142a.",
-   "new_lessons": [
-    "Model nie ma sygna\u0142\u00f3w powy\u017cej progu 0.78 \u2014 ryzyko nie jest udowodnione",
-    "Zero zamkni\u0119tych transakcji w 913 testach \u2014 brak edge",
-    "Wszystkie sygna\u0142y poni\u017cej 0.8 \u2014 model nie dzia\u0142a"
    ],
    "equity_at": 1000.0
   }
