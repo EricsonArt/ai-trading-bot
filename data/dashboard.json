@@ -1,9 +1,9 @@
 {
- "generated_at": 1791719161710,
- "last_candle": 1791718200000,
+ "generated_at": 1791720689956,
+ "last_candle": 1791719100000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
- "benchmark_return": -0.021889999999999965,
+ "benchmark_return": -0.020589999999999997,
  "series": [
   [
    1790508600000,
@@ -8074,6 +8074,12 @@
    1000.0,
    978.11,
    1000.0
+  ],
+  [
+   1791719100000,
+   1000.0,
+   979.41,
+   1000.0
   ]
  ],
  "main": {
@@ -8122,7 +8128,7 @@
    {
     "name": "Lepiej ni\u017c samo trzymanie BTC",
     "ok": true,
-    "value": "+2.2 pkt"
+    "value": "+2.1 pkt"
    },
    {
     "name": "Najwi\u0119kszy spadek mniejszy ni\u017c 20%",
@@ -8380,89 +8386,89 @@
  },
  "signals": {
   "BTC": {
-   "p": 0.4655,
+   "p": 0.4745,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1791718200000
+   "ts": 1791719100000
   },
   "ETH": {
-   "p": 0.1731,
+   "p": 0.3317,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1791718200000
+   "ts": 1791719100000
   },
   "SOL": {
-   "p": 0.0592,
+   "p": 0.2114,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1791718200000
+   "ts": 1791719100000
   },
   "XRP": {
-   "p": 0.0977,
+   "p": 0.1885,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1791718200000
+   "ts": 1791719100000
   },
   "DOGE": {
-   "p": 0.073,
+   "p": 0.1897,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1791718200000
+   "ts": 1791719100000
   },
   "ADA": {
-   "p": 0.0526,
+   "p": 0.1926,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1791718200000
+   "ts": 1791719100000
   },
   "BNB": {
-   "p": 0.2164,
+   "p": 0.3294,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1791718200000
+   "ts": 1791719100000
   },
   "LINK": {
-   "p": 0.0805,
+   "p": 0.1503,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1791718200000
+   "ts": 1791719100000
   },
   "AVAX": {
-   "p": 0.1821,
+   "p": 0.4285,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1791718200000
+   "ts": 1791719100000
   },
   "LTC": {
-   "p": 0.0951,
+   "p": 0.1323,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1791718200000
+   "ts": 1791719100000
   },
   "DOT": {
-   "p": 0.2448,
+   "p": 0.4252,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1791718200000
+   "ts": 1791719100000
   },
   "TRX": {
-   "p": 0.3421,
+   "p": 0.2171,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1791718200000
+   "ts": 1791719100000
   }
  },
  "prices": {
-  "BTC": 83054.01,
-  "ETH": 2503.85,
-  "SOL": 109.54,
-  "XRP": 1.3926,
-  "DOGE": 0.08531,
-  "ADA": 0.2468,
-  "BNB": 748.43,
-  "LINK": 12.891,
-  "AVAX": 10.383,
-  "LTC": 63.49,
+  "BTC": 83164.0,
+  "ETH": 2506.58,
+  "SOL": 109.63,
+  "XRP": 1.3943,
+  "DOGE": 0.08537,
+  "ADA": 0.2471,
+  "BNB": 749.63,
+  "LINK": 12.893,
+  "AVAX": 10.398,
+  "LTC": 63.51,
   "DOT": 1.231,
   "TRX": 0.3306
  },
@@ -8794,12 +8800,21 @@
   "symbol_bias": {
    "BTC": "avoid",
    "ETH": "avoid",
-   "SOL": "avoid"
+   "SOL": "avoid",
+   "XRP": "reduce",
+   "DOGE": "reduce",
+   "ADA": "reduce",
+   "BNB": "reduce",
+   "LINK": "reduce",
+   "AVAX": "reduce",
+   "LTC": "reduce",
+   "DOT": "reduce",
+   "TRX": "reduce"
   },
   "regime": "sideways"
  },
  "brain": {
-  "created_at": 1791716191107,
+  "created_at": 1791719605442,
   "source": "local",
   "model": "mimo2.6:9b",
   "directives": {
@@ -8808,20 +8823,30 @@
    "symbol_bias": {
     "BTC": "avoid",
     "ETH": "avoid",
-    "SOL": "avoid"
+    "SOL": "avoid",
+    "XRP": "reduce",
+    "DOGE": "reduce",
+    "ADA": "reduce",
+    "BNB": "reduce",
+    "LINK": "reduce",
+    "AVAX": "reduce",
+    "LTC": "reduce",
+    "DOT": "reduce",
+    "TRX": "reduce"
    },
    "regime": "sideways"
   },
-  "reasoning": "Model ma 0 zamkni\u0119tych transakcji, wi\u0119c edge nie jest udowodniony. Wszystkie 12 sygna\u0142\u00f3w s\u0105 poni\u017cej progu 0.78, wi\u0119c nie ma \u017cadnego sygna\u0142u do wykonania. BTC ma dzi\u015b +0.2% w 24 h, co zgodnie z digestem jest g\u0142\u00f3wnym filtrem ryzyka \u2014 dlatego unika\u0107 BTC, ETH i SOL.",
+  "reasoning": "Rynek jest w fazie spokojnej, ale model nie ma udowodnionego edge \u2014 0 zamkni\u0119tych transakcji i zero wej\u015b\u0107. Wszystkie sygna\u0142y s\u0105 poni\u017cej progu 0.83, wi\u0119c nie ma powodu do ryzykowania kapita\u0142u. BTC i ETH maj\u0105 s\u0142ab\u0105 dynamik\u0119, a altcoiny jeszcze gorsze.",
   "new_lessons": [
    "Model ma 0 zamkni\u0119tych transakcji \u2014 zero edge, zero ryzyka i zero wej\u015b\u0107.",
-   "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.78 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
+   "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.83 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
    "Edge nie jest udowodniony \u2014 0 zamkni\u0119tych transakcji, zero ryzyka i zero wej\u015b\u0107."
   ],
   "lessons": [
    "Model ma 0 zamkni\u0119tych transakcji \u2014 zero edge, zero ryzyka i zero wej\u015b\u0107.",
-   "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.78 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
+   "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.83 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
    "Edge nie jest udowodniony \u2014 0 zamkni\u0119tych transakcji, zero ryzyka i zero wej\u015b\u0107.",
+   "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.78 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
    "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.78 \u2014 ryzyko nie jest udowodnione",
    "Zero zamkni\u0119tych transakcji w 913 testach \u2014 brak edge",
    "Wszystkie sygna\u0142y poni\u017cej progu 0.83 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania",
@@ -8829,12 +8854,42 @@
    "Wszystkie sygna\u0142y poni\u017cej 0.8 \u2014 model nie dzia\u0142a",
    "Edge nie jest udowodniony \u2014 0 zamkni\u0119tych transakcji, zero ryzyka i zero wej\u015b\u0107",
    "Model ma 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107",
-   "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.83 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
    "Edge nie jest udowodniony na 913 transakcjach (48% win rate, avg +0.13%/trade) \u2014 zero ryzyka i zero wej\u015b\u0107"
   ],
-  "seconds": 2.9
+  "seconds": 13.1
  },
  "brain_journal": [
+  {
+   "created_at": 1791719605442,
+   "source": "local",
+   "model": "mimo2.6:9b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.1,
+    "symbol_bias": {
+     "BTC": "avoid",
+     "ETH": "avoid",
+     "SOL": "avoid",
+     "XRP": "reduce",
+     "DOGE": "reduce",
+     "ADA": "reduce",
+     "BNB": "reduce",
+     "LINK": "reduce",
+     "AVAX": "reduce",
+     "LTC": "reduce",
+     "DOT": "reduce",
+     "TRX": "reduce"
+    },
+    "regime": "sideways"
+   },
+   "reasoning": "Rynek jest w fazie spokojnej, ale model nie ma udowodnionego edge \u2014 0 zamkni\u0119tych transakcji i zero wej\u015b\u0107. Wszystkie sygna\u0142y s\u0105 poni\u017cej progu 0.83, wi\u0119c nie ma powodu do ryzykowania kapita\u0142u. BTC i ETH maj\u0105 s\u0142ab\u0105 dynamik\u0119, a altcoiny jeszcze gorsze.",
+   "new_lessons": [
+    "Model ma 0 zamkni\u0119tych transakcji \u2014 zero edge, zero ryzyka i zero wej\u015b\u0107.",
+    "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.83 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
+    "Edge nie jest udowodniony \u2014 0 zamkni\u0119tych transakcji, zero ryzyka i zero wej\u015b\u0107."
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1791716191107,
    "source": "local",
@@ -9045,28 +9100,6 @@
     "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, zero ryzyka i zero wej\u015b\u0107.",
     "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.83 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
     "Edge nie jest udowodniony na 913 transakcjach (48% win rate, avg +0.13%/trade) \u2014 zero ryzyka i zero wej\u015b\u0107."
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1791564959570,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.1,
-    "symbol_bias": {
-     "BTC": "avoid",
-     "ETH": "avoid",
-     "SOL": "avoid"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "Rynek jest w fazie strachu i spadk\u00f3w, a model ma zero zamkni\u0119tych transakcji, wi\u0119c edge nie jest udowodniony. Wszystkie sygna\u0142y s\u0105 poni\u017cej progu 0.83, wi\u0119c zero ryzyka i zero wej\u015b\u0107. BTC i ETH maj\u0105 dodatnie 30d, ale spadaj\u0105ce 7d i 24h, wi\u0119c unika\u0107 BTC, ETH, SOL i DOGE.",
-   "new_lessons": [
-    "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, zero ryzyka i zero wej\u015b\u0107",
-    "Model ma 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107",
-    "Wszystkie sygna\u0142y poni\u017cej progu 0.78 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania"
    ],
    "equity_at": 1000.0
   }
