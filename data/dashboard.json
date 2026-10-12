@@ -1,5 +1,5 @@
 {
- "generated_at": 1791766279822,
+ "generated_at": 1791787045725,
  "last_candle": 1791765000000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
@@ -9124,7 +9124,7 @@
   "regime": "volatile"
  },
  "brain": {
-  "created_at": 1791763330560,
+  "created_at": 1791787045721,
   "source": "cloud",
   "model": "qwen3:4b",
   "directives": {
@@ -9140,7 +9140,7 @@
    },
    "regime": "volatile"
   },
-  "reasoning": "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.73, a wczoraj 0 zamkni\u0119tych transakcji. Edge nie jest udowodniony, wi\u0119c ryzyko pozostaje na poziomie 0.2.",
+  "reasoning": "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.73, a 0 zamkni\u0119tych transakcji w 913 testach wskazuje na brak edge. Volatywno\u015b\u0107 BTC spad\u0142a, ale altcoiny trac\u0105 p\u0142ynno\u015b\u0107. Ryzyko nie jest udowodnione, wi\u0119c utrzymujemy minimalne ryzyko.",
   "new_lessons": [
    "Brak zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka.",
    "Wszystkie sygna\u0142y poni\u017cej progu 0.73 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
@@ -9160,9 +9160,34 @@
    "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.78 \u2014 ryzyko nie jest udowodnione",
    "Zero zamkni\u0119tych transakcji w 913 testach \u2014 brak edge"
   ],
-  "seconds": 80.6
+  "seconds": 144.0
  },
  "brain_journal": [
+  {
+   "created_at": 1791787045721,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.0,
+    "symbol_bias": {
+     "XRP": "reduce",
+     "DOGE": "reduce",
+     "ADA": "reduce",
+     "BTC": "avoid",
+     "ETH": "avoid",
+     "SOL": "avoid"
+    },
+    "regime": "volatile"
+   },
+   "reasoning": "Model nie ma sygna\u0142\u00f3w powy\u017cej 0.73, a 0 zamkni\u0119tych transakcji w 913 testach wskazuje na brak edge. Volatywno\u015b\u0107 BTC spad\u0142a, ale altcoiny trac\u0105 p\u0142ynno\u015b\u0107. Ryzyko nie jest udowodnione, wi\u0119c utrzymujemy minimalne ryzyko.",
+   "new_lessons": [
+    "Brak zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka.",
+    "Wszystkie sygna\u0142y poni\u017cej progu 0.73 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
+    "CLM ma AUC 0.44 i 47% dok\u0142adno\u015b\u0107 \u2014 drugie zdanie nie ma przewagi nad zawsze-nie."
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1791763330560,
    "source": "cloud",
@@ -9372,37 +9397,6 @@
     "regime": "sideways"
    },
    "reasoning": "Rynek jest w fazie konsolidacji po krachu z 10.10.2025: BTC +0.2% w 24h, ale altcoiny spadaj\u0105 (ETH -0.2%, SOL -0.2%, XRP -1.0%, DOGE -0.9%, ADA -3.7%), co sugeruje s\u0142ab\u0105 rotacj\u0119 kapita\u0142u. Model ma 0 zamkni\u0119tych transakcji, wi\u0119c edge nie jest udowodniony i ryzyko nie jest jeszcze potwierdzone. Wszystkie 12 sygna\u0142\u00f3w s\u0105 poni\u017cej progu 0.83, co oznacza brak sygna\u0142\u00f3w do wykonania. Zalecam ostro\u017cne podej\u015bcie z minimalnym ryzykiem i unikaniem symboli z najwi\u0119ksz\u0105 zmienno\u015bci\u0105 i negatywn\u0105 dynamik\u0105.",
-   "new_lessons": [
-    "Model ma 0 zamkni\u0119tych transakcji \u2014 zero edge, zero ryzyka i zero wej\u015b\u0107.",
-    "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.83 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
-    "Edge nie jest udowodniony \u2014 0 zamkni\u0119tych transakcji, zero ryzyka i zero wej\u015b\u0107."
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1791719605442,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.1,
-    "symbol_bias": {
-     "BTC": "avoid",
-     "ETH": "avoid",
-     "SOL": "avoid",
-     "XRP": "reduce",
-     "DOGE": "reduce",
-     "ADA": "reduce",
-     "BNB": "reduce",
-     "LINK": "reduce",
-     "AVAX": "reduce",
-     "LTC": "reduce",
-     "DOT": "reduce",
-     "TRX": "reduce"
-    },
-    "regime": "sideways"
-   },
-   "reasoning": "Rynek jest w fazie spokojnej, ale model nie ma udowodnionego edge \u2014 0 zamkni\u0119tych transakcji i zero wej\u015b\u0107. Wszystkie sygna\u0142y s\u0105 poni\u017cej progu 0.83, wi\u0119c nie ma powodu do ryzykowania kapita\u0142u. BTC i ETH maj\u0105 s\u0142ab\u0105 dynamik\u0119, a altcoiny jeszcze gorsze.",
    "new_lessons": [
     "Model ma 0 zamkni\u0119tych transakcji \u2014 zero edge, zero ryzyka i zero wej\u015b\u0107.",
     "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.83 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
