@@ -1,9 +1,9 @@
 {
- "generated_at": 1791901015447,
- "last_candle": 1791900000000,
+ "generated_at": 1791902534112,
+ "last_candle": 1791900900000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
- "benchmark_return": -0.01429999999999998,
+ "benchmark_return": -0.014840000000000075,
  "series": [
   [
    1790508600000,
@@ -9286,6 +9286,12 @@
    1000.0,
    985.7,
    1000.0
+  ],
+  [
+   1791900900000,
+   1000.0,
+   985.16,
+   1000.0
   ]
  ],
  "main": {
@@ -9334,7 +9340,7 @@
    {
     "name": "Lepiej ni\u017c samo trzymanie BTC",
     "ok": true,
-    "value": "+1.4 pkt"
+    "value": "+1.5 pkt"
    },
    {
     "name": "Najwi\u0119kszy spadek mniejszy ni\u017c 20%",
@@ -9592,91 +9598,91 @@
  },
  "signals": {
   "BTC": {
-   "p": 0.4133,
-   "threshold": 0.73,
+   "p": 0.4238,
+   "threshold": 0.75,
    "action": "wait",
-   "ts": 1791900000000
+   "ts": 1791900900000
   },
   "ETH": {
-   "p": 0.3064,
-   "threshold": 0.73,
+   "p": 0.3219,
+   "threshold": 0.75,
    "action": "wait",
-   "ts": 1791900000000
+   "ts": 1791900900000
   },
   "SOL": {
-   "p": 0.6556,
-   "threshold": 0.73,
+   "p": 0.6498,
+   "threshold": 0.75,
    "action": "wait",
-   "ts": 1791900000000
+   "ts": 1791900900000
   },
   "XRP": {
-   "p": 0.4383,
-   "threshold": 0.73,
+   "p": 0.4292,
+   "threshold": 0.75,
    "action": "wait",
-   "ts": 1791900000000
+   "ts": 1791900900000
   },
   "DOGE": {
-   "p": 0.3943,
-   "threshold": 0.73,
+   "p": 0.3923,
+   "threshold": 0.75,
    "action": "wait",
-   "ts": 1791900000000
+   "ts": 1791900900000
   },
   "ADA": {
-   "p": 0.4415,
-   "threshold": 0.73,
+   "p": 0.3989,
+   "threshold": 0.75,
    "action": "wait",
-   "ts": 1791900000000
+   "ts": 1791900900000
   },
   "BNB": {
-   "p": 0.3944,
-   "threshold": 0.73,
+   "p": 0.3906,
+   "threshold": 0.75,
    "action": "wait",
-   "ts": 1791900000000
+   "ts": 1791900900000
   },
   "LINK": {
-   "p": 0.651,
-   "threshold": 0.73,
+   "p": 0.6133,
+   "threshold": 0.75,
    "action": "wait",
-   "ts": 1791900000000
+   "ts": 1791900900000
   },
   "AVAX": {
-   "p": 0.7248,
-   "threshold": 0.73,
+   "p": 0.7162,
+   "threshold": 0.75,
    "action": "wait",
-   "ts": 1791900000000
+   "ts": 1791900900000
   },
   "LTC": {
-   "p": 0.6999,
-   "threshold": 0.73,
+   "p": 0.7,
+   "threshold": 0.75,
    "action": "wait",
-   "ts": 1791900000000
+   "ts": 1791900900000
   },
   "DOT": {
-   "p": 0.7843,
-   "threshold": 0.73,
+   "p": 0.7938,
+   "threshold": 0.75,
    "action": "blocked: learned rule 'btc_vol96 > 0.0024'",
-   "ts": 1791900000000
+   "ts": 1791900900000
   },
   "TRX": {
-   "p": 0.2851,
-   "threshold": 0.73,
+   "p": 0.2883,
+   "threshold": 0.75,
    "action": "wait",
-   "ts": 1791900000000
+   "ts": 1791900900000
   }
  },
  "prices": {
-  "BTC": 83698.01,
-  "ETH": 2520.6,
-  "SOL": 108.02,
+  "BTC": 83652.0,
+  "ETH": 2520.69,
+  "SOL": 108.07,
   "XRP": 1.3755,
-  "DOGE": 0.08484,
-  "ADA": 0.2377,
-  "BNB": 744.82,
-  "LINK": 13.037,
-  "AVAX": 10.348,
-  "LTC": 61.52,
-  "DOT": 1.2,
-  "TRX": 0.3279
+  "DOGE": 0.08479,
+  "ADA": 0.2375,
+  "BNB": 744.69,
+  "LINK": 13.009,
+  "AVAX": 10.347,
+  "LTC": 61.41,
+  "DOT": 1.199,
+  "TRX": 0.3277
  },
  "model": {
   "version": 30,
@@ -10032,41 +10038,40 @@
  ],
  "directives": {
   "risk_level": 0.2,
-  "min_confidence_adj": 0.0,
+  "min_confidence_adj": 0.02,
   "symbol_bias": {
-   "ADA": "reduce",
-   "AVAX": "reduce",
-   "DOT": "reduce",
-   "BTC": "avoid",
-   "ETH": "avoid",
-   "SOL": "avoid"
+   "BTC": "reduce",
+   "DOT": "avoid",
+   "AVAX": "avoid",
+   "ADA": "avoid"
   },
   "regime": "bear"
  },
  "brain": {
-  "created_at": 1791897993135,
+  "created_at": 1791901572526,
   "source": "local",
   "model": "mimo2.6:9b",
   "directives": {
    "risk_level": 0.2,
-   "min_confidence_adj": 0.0,
+   "min_confidence_adj": 0.02,
    "symbol_bias": {
-    "ADA": "reduce",
-    "AVAX": "reduce",
-    "DOT": "reduce",
-    "BTC": "avoid",
-    "ETH": "avoid",
-    "SOL": "avoid"
+    "BTC": "reduce",
+    "DOT": "avoid",
+    "AVAX": "avoid",
+    "ADA": "avoid"
    },
    "regime": "bear"
   },
-  "reasoning": "Rynek jest w fazie spadkowej z wysok\u0105 niepewno\u015bci\u0105: wi\u0119kszo\u015b\u0107 aktywa spada 24h, a Fear & Greed wskazuje na Greed przy spadkach. Model ma 0 zamkni\u0119tych transakcji i edge nie jest udowodniony, wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka. Wszystkie sygna\u0142y s\u0105 poni\u017cej progu 0.73, wi\u0119c nie ma \u017cadnego sygna\u0142u do wykonania. Champion na nowych danych ma avg +7.70%/trade, ale edge proven: False, wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka.",
+  "reasoning": "Rynek jest w stanie wysokiej niepewno\u015bci, z Fear & Greed 57 i spadkami wi\u0119kszo\u015bci aktyw\u00f3w. Model ma udowodnion\u0105 przewag\u0119 na nowych danych, ale wszystkie sygna\u0142y s\u0105 poni\u017cej progu 0.73, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
   "new_lessons": [
-   "Edge nie udowodniony: 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
-   "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.73 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
-   "Champion na nowych danych: 17 trades, avg +7.70%/trade, edge proven: False \u2014 nie wolno zwi\u0119ksza\u0107 ryzyka."
+   "DOT jest zablokowany przez regu\u0142\u0119 btc_vol96 > 0.0024 \u2014 nie ryzykowa\u0107 na tym symbolu.",
+   "AVAX ma najwy\u017csz\u0105 zmienno\u015b\u0107 dzienn\u0105 4.5% i spadki 24h -5.5% \u2014 unika\u0107.",
+   "ADA spad\u0142a 24h -5.4% z wysok\u0105 zmienno\u015bci\u0105 4.2% \u2014 unika\u0107."
   ],
   "lessons": [
+   "DOT jest zablokowany przez regu\u0142\u0119 btc_vol96 > 0.0024 \u2014 nie ryzykowa\u0107 na tym symbolu.",
+   "AVAX ma najwy\u017csz\u0105 zmienno\u015b\u0107 dzienn\u0105 4.5% i spadki 24h -5.5% \u2014 unika\u0107.",
+   "ADA spad\u0142a 24h -5.4% z wysok\u0105 zmienno\u015bci\u0105 4.2% \u2014 unika\u0107.",
    "Edge nie udowodniony: 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
    "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.73 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
    "Champion na nowych danych: 17 trades, avg +7.70%/trade, edge proven: False \u2014 nie wolno zwi\u0119ksza\u0107 ryzyka.",
@@ -10075,14 +10080,34 @@
    "CLM ma AUC 0.44 i 47% dok\u0142adno\u015bci \u2014 drugie zdanie nie ma przewagi nad zawsze-nie.",
    "CLM ma AUC 0.44 i 47% dok\u0142adno\u015b\u0107 \u2014 drugie zdanie nie ma przewagi nad zawsze-nie.",
    "Edge nie udowodniony: 0 zamkni\u0119tych transakcji, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
-   "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka.",
-   "Champion na nowych danych: 19 trades, avg +7.32%/trade, edge proven: False \u2014 nie wolno zwi\u0119ksza\u0107 ryzyka.",
-   "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.83 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
-   "0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka."
+   "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka."
   ],
-  "seconds": 9.3
+  "seconds": 10.5
  },
  "brain_journal": [
+  {
+   "created_at": 1791901572526,
+   "source": "local",
+   "model": "mimo2.6:9b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.02,
+    "symbol_bias": {
+     "BTC": "reduce",
+     "DOT": "avoid",
+     "AVAX": "avoid",
+     "ADA": "avoid"
+    },
+    "regime": "bear"
+   },
+   "reasoning": "Rynek jest w stanie wysokiej niepewno\u015bci, z Fear & Greed 57 i spadkami wi\u0119kszo\u015bci aktyw\u00f3w. Model ma udowodnion\u0105 przewag\u0119 na nowych danych, ale wszystkie sygna\u0142y s\u0105 poni\u017cej progu 0.73, wi\u0119c zero ryzyka i zero wej\u015b\u0107.",
+   "new_lessons": [
+    "DOT jest zablokowany przez regu\u0142\u0119 btc_vol96 > 0.0024 \u2014 nie ryzykowa\u0107 na tym symbolu.",
+    "AVAX ma najwy\u017csz\u0105 zmienno\u015b\u0107 dzienn\u0105 4.5% i spadki 24h -5.5% \u2014 unika\u0107.",
+    "ADA spad\u0142a 24h -5.4% z wysok\u0105 zmienno\u015bci\u0105 4.2% \u2014 unika\u0107."
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1791897993135,
    "source": "local",
@@ -10280,28 +10305,6 @@
     "regime": "sideways"
    },
    "reasoning": "Rynek jest w Greed (Fear & Greed 69), BTC ma dodatnie outflowy z ETF-\u00f3w, a wszystkie 12 sygna\u0142\u00f3w modela s\u0105 poni\u017cej progu 0.73 \u2014 brak \u017cadnego wej\u015bcia. Edge nie jest udowodniony (0 zamkni\u0119tych transakcji), wi\u0119c utrzymuj\u0119 niskie ryzyko i zero wej\u015b\u0107. Nie ma te\u017c \u017cadnego konkretnego sygna\u0142u do zwi\u0119kszenia ryzyka.",
-   "new_lessons": [
-    "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka.",
-    "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.73 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
-    "CLM ma AUC 0.44 i 47% dok\u0142adno\u015b\u0107 \u2014 drugie zdanie nie ma przewagi nad zawsze-nie."
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1791806608923,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.0,
-    "symbol_bias": {
-     "BTC": "avoid",
-     "ETH": "avoid",
-     "SOL": "avoid"
-    },
-    "regime": "bull"
-   },
-   "reasoning": "Rynek jest w fazie Greed z ujemnymi outflowami z ETF-\u00f3w, co sugeruje wyczerpany momentum i wysokie ryzyko. Wszystkie 12 symbol\u00f3w maj\u0105 pewno\u015b\u0107 poni\u017cej progu 0.73, wi\u0119c model nie ma \u017cadnego sygna\u0142u do wykonania. Zero zamkni\u0119tych transakcji oznacza, \u017ce edge nie jest udowodniony, wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka.",
    "new_lessons": [
     "Zero zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka.",
     "Wszystkie 12 sygna\u0142\u00f3w poni\u017cej progu 0.73 \u2014 model nie ma \u017cadnego sygna\u0142u do wykonania.",
