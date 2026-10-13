@@ -1,14 +1,4 @@
 {
- "54b98fa0eb": {
-  "name": "unikaj r_672 <= -0.1303",
-  "source": "own mistakes (auto)",
-  "rule": "r_672 > -0.13034",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 7 days",
-  "gain": 0.0,
-  "tested_at": 1791139479884,
-  "model_version": 16,
-  "adopted": false
- },
  "3608f0ce85": {
   "name": "unikaj dd_7d <= -0.1497",
   "source": "own mistakes (auto)",
@@ -796,6 +786,16 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
   "gain": 0.0,
   "tested_at": 1791862610900,
+  "model_version": 30,
+  "adopted": false
+ },
+ "7705eb8d3b": {
+  "name": "Ryzyko w kryptowalutach z powodu spadku w Korei",
+  "source": "internet research: CoinDesk",
+  "rule": "dd_7d > -0.1361 and btc_r96 < -0.01231",
+  "why": "South Korea zablokowa\u0142a 27 platform, co wskazuje na zwi\u0119kszon\u0105 niepewno\u015b\u0107 rynkow\u0105. Warto zatrzyma\u0107 si\u0119 przed sygna\u0142ami, gdy Bitcoin spada w ci\u0105gu 24h (btc_r96) i cena jest poni\u017cej 7-dniowej wysoko\u015bci (dd_7d).",
+  "gain": 0.0,
+  "tested_at": 1791898007925,
   "model_version": 30,
   "adopted": false
  }
