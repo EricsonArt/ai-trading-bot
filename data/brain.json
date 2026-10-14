@@ -1,19 +1,28 @@
 {
- "created_at": 1792003741360,
+ "created_at": 1792007380119,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 13.9,
+ "seconds": 9.6,
  "directives": {
   "risk_level": 0.2,
-  "min_confidence_adj": 0.05,
+  "min_confidence_adj": 0.1,
   "symbol_bias": {
    "BTC": "avoid",
    "ETH": "avoid",
-   "SOL": "avoid"
+   "SOL": "avoid",
+   "XRP": "reduce",
+   "DOGE": "reduce",
+   "ADA": "reduce",
+   "BNB": "reduce",
+   "LINK": "reduce",
+   "AVAX": "reduce",
+   "LTC": "reduce",
+   "DOT": "reduce",
+   "TRX": "reduce"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w fazie spadkowej i rozdrobnionej: wi\u0119kszo\u015b\u0107 altcoin\u00f3w spada 3-5% w 24h, a BTC -2.2% przy Fear & Greed 62 (Greed), co sugeruje fa\u0142szywe sygna\u0142y. Model ma 0 zamkni\u0119tych transakcji, wi\u0119c edge nie jest udowodniony \u2014 zero ryzyka i zero wej\u015b\u0107. BTC, ETH i SOL maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 i spadki, wi\u0119c je unika\u0107.",
+ "reasoning": "Rynek jest w wyra\u017anym trendzie spadkowym: wi\u0119kszo\u015b\u0107 symboli ma spadki 24h od -1.7% do -4.2%, a Fear & Greed na 62 (Greed) sugeruje fa\u0142szywe sygna\u0142y. Model ma 0 zamkni\u0119tych transakcji, wi\u0119c edge nie jest udowodniony, a CLM model pokazuje brak skillu (AUC 0.44). Dlatego utrzymuj\u0119 ostro\u017cne ryzyko i unika\u0142em wszystkich symbol\u00f3w, kt\u00f3re nie spe\u0142niaj\u0105 pr\u00f3g\u00f3w pewno\u015bci.",
  "new_lessons": [
   "Edge nie udowodniony: 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
   "Model ma 0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c nie ryzykowa\u0107.",
