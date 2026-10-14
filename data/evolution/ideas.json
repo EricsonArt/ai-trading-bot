@@ -1,14 +1,4 @@
 {
- "ec4192c74c": {
-  "name": "unikaj dd_7d <= -0.1558",
-  "source": "own mistakes (auto)",
-  "rule": "dd_7d > -0.15577",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: distance below the 7-day high (0 = at the high)",
-  "gain": 0.0,
-  "tested_at": 1791241244464,
-  "model_version": 18,
-  "adopted": false
- },
  "c5963bc0e1": {
   "name": "unikaj btc_r96 >= 0.006658",
   "source": "own mistakes (auto)",
@@ -796,6 +786,16 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
   "gain": 0.0,
   "tested_at": 1791960415350,
+  "model_version": 32,
+  "adopted": false
+ },
+ "b1f27bb6ec": {
+  "name": "Odbicie bez wolumenu = pu\u0142apka",
+  "source": "internet research: B\u0142\u0105d botu: r_96 < -0.005 i r_16 < -0.001 i r_4 < 0.0005",
+  "rule": "r_96 < -0.004 and r_16 < 0.001 and r_4 < 0.0005",
+  "why": "Ten filtr zosta\u0142 ju\u017c odrzucony, wi\u0119c nie powtarzam go. Zamiast niego dodaj\u0119 warunek wolumenu: je\u015bli r_96 jest negatywne, ale r_16 i r_4 nie spadaj\u0105 poni\u017cej 0, to ruch jest s\u0142aby i nie ma potwierdzenia \u2014 sygna\u0142 powinien zosta\u0107 odrzucony.",
+  "gain": 0.0,
+  "tested_at": 1791968145982,
   "model_version": 32,
   "adopted": false
  }
