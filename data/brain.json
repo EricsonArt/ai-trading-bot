@@ -1,28 +1,29 @@
 {
- "created_at": 1791981924062,
+ "created_at": 1791985558687,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 15.0,
+ "seconds": 7.5,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
-   "ADA": "avoid",
+   "SOL": "reduce",
    "DOT": "avoid",
-   "AVAX": "avoid"
+   "AVAX": "avoid",
+   "ADA": "avoid"
   },
   "regime": "sideways"
  },
- "reasoning": "Rynek jest rozdrobniony i s\u0142aby: BTC +6.9% w 30 dni, ale Fear & Greed 62 (Greed) po d\u0142ugim biegu, a wolumen i struktura s\u0142abe. Model ma 52% win rate i +0.43%/trade na 670 transakcjach, ale zero zamkni\u0119tych transakcji na g\u0142\u00f3wnym koncie \u2014 edge nie jest udowodniony w praktyce. Wszystkie symbole s\u0105 poni\u017cej progu 0.78, wi\u0119c nie ma wej\u015b\u0107. DOT ma najwy\u017csz\u0105 zmienno\u015b\u0107 4.7% i spadki 24h -2.8%, AVAX spadki 7d -8.1%, ADA spadki 7d -8.0% \u2014 trzy symbole do unikni\u0119cia. Zmniejszamy ryzyko po zerowej historii i s\u0142abym rynku.",
+ "reasoning": "Rynek jest rozdrobniony i wyczerpany sentymencie (Fear & Greed 62), a model ma zero zamkni\u0119tych transakcji, wi\u0119c nie ma udowodnionej przewagi. Najwi\u0119ksze ryzyko koncentruje si\u0119 w DOT (24h -2.8%, zmienno\u015b\u0107 4.7%) i AVAX (spadki 7d -8.1%, zmienno\u015b\u0107 3.3%), dlatego je wykluczamy. \u017baden sygna\u0142 nie przekracza progu 0.78, wi\u0119c utrzymujemy pe\u0142ne zabezpieczenie i minimalne wej\u015bcia.",
  "new_lessons": [
-  "Edge nie udowodniony: 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
-  "DOT: 24h -2.8%, zmienno\u015b\u0107 4.7% \u2014 najwy\u017csze ryzyko, unika\u0107.",
-  "AVAX: 24h -0.8%, spadki 7d -8.1%, zmienno\u015b\u0107 3.3% \u2014 unika\u0107."
- ],
- "lessons": [
-  "Edge nie udowodniony: 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
   "DOT: 24h -2.8%, zmienno\u015b\u0107 4.7% \u2014 najwy\u017csze ryzyko, unika\u0107.",
   "AVAX: 24h -0.8%, spadki 7d -8.1%, zmienno\u015b\u0107 3.3% \u2014 unika\u0107.",
+  "Edge nie udowodniony: 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107."
+ ],
+ "lessons": [
+  "DOT: 24h -2.8%, zmienno\u015b\u0107 4.7% \u2014 najwy\u017csze ryzyko, unika\u0107.",
+  "AVAX: 24h -0.8%, spadki 7d -8.1%, zmienno\u015b\u0107 3.3% \u2014 unika\u0107.",
+  "Edge nie udowodniony: 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
   "DOT: 24h -2.8%, zmienno\u015b\u0107 4.7% \u2014 najwy\u017csze ryzyko, unika\u0107. | AVAX: 24h -0.8%, spadki 7d -8.1%, zmienno\u015b\u0107 3.3% \u2014 unika\u0107. | Edge nie udowodniony: 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
   "DOT: 24h -5.0%, zmienno\u015b\u0107 5.1% \u2014 najwy\u017csze ryzyko, unika\u0107.",
   "AVAX: 24h -3.5%, spadki 7d -9.0% \u2014 unika\u0107.",
