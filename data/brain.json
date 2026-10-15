@@ -1,27 +1,29 @@
 {
- "created_at": 1792094985212,
+ "created_at": 1792098620401,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 10.2,
+ "seconds": 5.7,
  "directives": {
-  "risk_level": 0.8,
+  "risk_level": 0.6,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
    "ETH": "reduce",
-   "XRP": "reduce",
    "DOT": "avoid",
    "AVAX": "avoid",
    "DOGE": "avoid"
   },
-  "regime": "sideways"
+  "regime": "bear"
  },
- "reasoning": "Rynek jest spokojny, ale bez wyra\u017anego trendu. Model ma udowodniony edge w backtestach, ale zero zamkni\u0119tych transakcji, wi\u0119c ryzyko pozostaje wysokie. Wykluczam DOT, AVAX i DOGE ze wzgl\u0119du na wysok\u0105 zmienno\u015b\u0107 i spadki.",
+ "reasoning": "Rynek jest w stanie neutralnym, z Fear & Greed na poziomie 53, a BTC ro\u015bnie 24h o 1.0% i 7d o 2.1%. Model ma udowodniony edge na danych historycznych, ale praktyczne wyniki s\u0105 s\u0142abe, z 0 zamkni\u0119tymi transakcjami, wi\u0119c zwi\u0119kszam ostro\u017cno\u015b\u0107 i ograniczam ryzyko. Unikam DOT, AVAX i DOGE ze wzgl\u0119du na wysok\u0105 zmienno\u015b\u0107 i negatywne trendy.",
  "new_lessons": [
-  "DOT: 24h -1.6%, zmienno\u015b\u0107 7.0% \u2014 najwy\u017csze ryzyko, unika\u0107",
-  "AVAX: zmienno\u015b\u0107 6.0%, spadki 7d -32.9% \u2014 unika\u0107",
-  "Edge nie udowodniony: 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107"
+  "DOT: zmienno\u015b\u0107 7.0% i spadki 7d +10.8% \u2014 unikaj, zbyt ryzykowny",
+  "AVAX: zmienno\u015b\u0107 6.0% i spadki 7d -32.9% \u2014 unikaj",
+  "DOGE: spadki 7d -0.3%, zmienno\u015b\u0107 5.0% \u2014 unikaj"
  ],
  "lessons": [
+  "DOT: zmienno\u015b\u0107 7.0% i spadki 7d +10.8% \u2014 unikaj, zbyt ryzykowny",
+  "AVAX: zmienno\u015b\u0107 6.0% i spadki 7d -32.9% \u2014 unikaj",
+  "DOGE: spadki 7d -0.3%, zmienno\u015b\u0107 5.0% \u2014 unikaj",
   "DOT: 24h -1.6%, zmienno\u015b\u0107 7.0% \u2014 najwy\u017csze ryzyko, unika\u0107",
   "AVAX: zmienno\u015b\u0107 6.0%, spadki 7d -32.9% \u2014 unika\u0107",
   "Edge nie udowodniony: 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107",
@@ -30,10 +32,7 @@
   "AVAX: 24h +1.4%, spadki 7d -3.0%, zmienno\u015b\u0107 6.1% \u2014 unika\u0107",
   "DOGE: 24h -1.8%, spadki 7d -6.1%, zmienno\u015b\u0107 4.9% \u2014 unika\u0107",
   "DOT: 24h -2.8%, zmienno\u015b\u0107 4.7% \u2014 najwy\u017csze ryzyko, unika\u0107",
-  "AVAX: 24h -4.1%, spadki 7d -12.6% \u2014 unika\u0107",
-  "DOT: 24h -5.0%, zmienno\u015b\u0107 5.1% \u2014 najwy\u017csze ryzyko, unika\u0107",
-  "AVAX: 24h -3.5%, spadki 7d -9.0% \u2014 unika\u0107",
-  "Edge nie udowodniony: 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107."
+  "AVAX: 24h -4.1%, spadki 7d -12.6% \u2014 unika\u0107"
  ],
  "equity_at": 1000.0
 }
