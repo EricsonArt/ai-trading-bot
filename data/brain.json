@@ -1,37 +1,38 @@
 {
- "created_at": 1792081317026,
+ "created_at": 1792087823587,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 5.5,
+ "seconds": 61.8,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
+   "LTC": "reduce",
    "DOT": "avoid",
    "AVAX": "avoid",
    "DOGE": "avoid"
   },
-  "regime": "sideways"
+  "regime": "volatile"
  },
- "reasoning": "Model ma 0 zamkni\u0119tych transakcji, wi\u0119c edge nie jest udowodniony \u2014 zero ryzyka i zero wej\u015b\u0107. W praktyce konto treningowe wyros\u0142o tylko o 1.87%, a wszystkie sygna\u0142y s\u0105 wstrzymane, wi\u0119c nie ma potrzeby zwi\u0119ksza\u0107 ryzyka. Rynki s\u0105 mieszane: BTC stabilny, ale wiele altcoin\u00f3w ma spadki 7d i wysok\u0105 zmienno\u015b\u0107, wi\u0119c unika\u0107 DOT, AVAX i DOGE.",
+ "reasoning": "Rynek jest neutralny (Fear & Greed 53), a model ma zero zamkni\u0119tych transakcji, wi\u0119c edge nie jest udowodniony. LTC ma najwy\u017csz\u0105 pewno\u015b\u0107 0.81, ale jest zablokowane przez regu\u0142\u0119 BTC, wi\u0119c nie ma powodu do wej\u015bcia. DOT, AVAX i DOGE maj\u0105 wysokie ryzyko i spadki, wi\u0119c je unikamy.",
  "new_lessons": [
   "DOT: 24h -1.6%, zmienno\u015b\u0107 6.9% \u2014 najwy\u017csze ryzyko, unika\u0107",
-  "AVAX: 24h +1.4%, spadki 7d -3.0%, zmienno\u015b\u0107 6.1% \u2014 unika\u0107",
-  "DOGE: 24h -1.8%, spadki 7d -6.1%, zmienno\u015b\u0107 4.9% \u2014 unika\u0107"
+  "AVAX: zmienno\u015b\u0107 6.1%, spadki 7d -3.0% \u2014 unika\u0107",
+  "Edge nie udowodniony: 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107"
  ],
  "lessons": [
   "DOT: 24h -1.6%, zmienno\u015b\u0107 6.9% \u2014 najwy\u017csze ryzyko, unika\u0107",
+  "AVAX: zmienno\u015b\u0107 6.1%, spadki 7d -3.0% \u2014 unika\u0107",
+  "Edge nie udowodniony: 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107",
   "AVAX: 24h +1.4%, spadki 7d -3.0%, zmienno\u015b\u0107 6.1% \u2014 unika\u0107",
   "DOGE: 24h -1.8%, spadki 7d -6.1%, zmienno\u015b\u0107 4.9% \u2014 unika\u0107",
-  "Edge nie udowodniony: 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107",
   "DOT: 24h -2.8%, zmienno\u015b\u0107 4.7% \u2014 najwy\u017csze ryzyko, unika\u0107",
   "AVAX: 24h -4.1%, spadki 7d -12.6% \u2014 unika\u0107",
   "DOT: 24h -5.0%, zmienno\u015b\u0107 5.1% \u2014 najwy\u017csze ryzyko, unika\u0107",
   "AVAX: 24h -3.5%, spadki 7d -9.0% \u2014 unika\u0107",
   "Edge nie udowodniony: 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
   "BTC -2.2% z Fear & Greed 62 (Greed) \u2014 fa\u0142szywe sygna\u0142y, unika\u0107.",
-  "SOL i ADA blokowane przez regu\u0142\u0119 btc_vol96 > 0.0024 \u2014 wolumen BTC za s\u0142aby.",
-  "DOT: 24h -2.8%, zmienno\u015b\u0107 4.7% \u2014 najwy\u017csze ryzyko, unika\u0107."
+  "SOL i ADA blokowane przez regu\u0142\u0119 btc_vol96 > 0.0024 \u2014 wolumen BTC za s\u0142aby."
  ],
  "equity_at": 1000.0
 }
