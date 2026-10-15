@@ -1,5 +1,5 @@
 {
- "generated_at": 1792038324506,
+ "generated_at": 1792042074713,
  "last_candle": 1792036800000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
@@ -11009,7 +11009,7 @@
   "regime": "volatile"
  },
  "brain": {
-  "created_at": 1792020720647,
+  "created_at": 1792042074708,
   "source": "cloud",
   "model": "qwen3:4b",
   "directives": {
@@ -11028,19 +11028,19 @@
    },
    "regime": "volatile"
   },
-  "reasoning": "Model nie ma udowodnionego edge (0 zamkni\u0119tych transakcji). Wszystkie sygna\u0142y mniej ni\u017c 0.83, a rynek jest niepewny (BTC: 62 Greed, 24h -1.8%). Zmniejsz ryzyko dla wszystkich altcoiny, unikaj DOT i AVAX z wysokim ryzykiem.",
+  "reasoning": "Model nie ma udowodnionego edge (0 zamkni\u0119tych transakcji). Wszystkie sygna\u0142y zablokowane przez regu\u0142\u0119 btc_vol96 > 0.0024. Najwy\u017csze ryzyko u DOT, AVAX, TRX z du\u017c\u0105 volatylno\u015bci\u0105 i spadkami w 7d. Brak aktywno\u015bci w modelu \u2014 nie ryzykowa\u0107.",
   "new_lessons": [
    "Edge nie udowodniony: 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
-   "DOT: 24h -2.8%, zmienno\u015b\u0107 4.7% \u2014 najwy\u017csze ryzyko, unika\u0107.",
-   "AVAX: 24h -0.8%, spadki 7d -8.1%, zmienno\u015b\u0107 3.3% \u2014 unika\u0107."
+   "BTC -2.2% z Fear & Greed 62 (Greed) \u2014 fa\u0142szywe sygna\u0142y, unika\u0107.",
+   "SOL i ADA blokowane przez regu\u0142\u0119 btc_vol96 > 0.0024 \u2014 wolumen BTC za s\u0142aby."
   ],
   "lessons": [
    "Edge nie udowodniony: 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
+   "BTC -2.2% z Fear & Greed 62 (Greed) \u2014 fa\u0142szywe sygna\u0142y, unika\u0107.",
+   "SOL i ADA blokowane przez regu\u0142\u0119 btc_vol96 > 0.0024 \u2014 wolumen BTC za s\u0142aby.",
    "DOT: 24h -2.8%, zmienno\u015b\u0107 4.7% \u2014 najwy\u017csze ryzyko, unika\u0107.",
    "AVAX: 24h -0.8%, spadki 7d -8.1%, zmienno\u015b\u0107 3.3% \u2014 unika\u0107.",
    "Model ma 0 zamkni\u0119tych transakcji \u2014 edge nie jest udowodniony, wi\u0119c nie ryzykowa\u0107.",
-   "BTC -2.2% z Fear & Greed 62 (Greed) \u2014 fa\u0142szywe sygna\u0142y, unika\u0107.",
-   "SOL i ADA blokowane przez regu\u0142\u0119 btc_vol96 > 0.0024 \u2014 wolumen BTC za s\u0142aby.",
    "DOT: 24h -6.6%, zmienno\u015b\u0107 4.7% \u2014 najwy\u017csze ryzyko, unika\u0107.",
    "AVAX: 24h -5.4%, spadki 7d -13.0%, zmienno\u015b\u0107 3.8% \u2014 unika\u0107.",
    "DOT: 24h -2.8%, zmienno\u015b\u0107 4.7% \u2014 najwy\u017csze ryzyko, unika\u0107. | AVAX: 24h -0.8%, spadki 7d -8.1%, zmienno\u015b\u0107 3.3% \u2014 unika\u0107. | Edge nie udowodniony: 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
@@ -11048,9 +11048,37 @@
    "AVAX: 24h -3.5%, spadki 7d -9.0% \u2014 unika\u0107.",
    "Edge nie udowodniony: 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107"
   ],
-  "seconds": 209.4
+  "seconds": 192.7
  },
  "brain_journal": [
+  {
+   "created_at": 1792042074708,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.05,
+    "symbol_bias": {
+     "XRP": "reduce",
+     "DOGE": "reduce",
+     "ADA": "reduce",
+     "BNB": "reduce",
+     "LINK": "reduce",
+     "LTC": "reduce",
+     "DOT": "avoid",
+     "AVAX": "avoid",
+     "TRX": "avoid"
+    },
+    "regime": "volatile"
+   },
+   "reasoning": "Model nie ma udowodnionego edge (0 zamkni\u0119tych transakcji). Wszystkie sygna\u0142y zablokowane przez regu\u0142\u0119 btc_vol96 > 0.0024. Najwy\u017csze ryzyko u DOT, AVAX, TRX z du\u017c\u0105 volatylno\u015bci\u0105 i spadkami w 7d. Brak aktywno\u015bci w modelu \u2014 nie ryzykowa\u0107.",
+   "new_lessons": [
+    "Edge nie udowodniony: 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
+    "BTC -2.2% z Fear & Greed 62 (Greed) \u2014 fa\u0142szywe sygna\u0142y, unika\u0107.",
+    "SOL i ADA blokowane przez regu\u0142\u0119 btc_vol96 > 0.0024 \u2014 wolumen BTC za s\u0142aby."
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1792020720647,
    "source": "cloud",
@@ -11269,26 +11297,6 @@
     "Edge nie udowodniony: 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107.",
     "DOT: 24h -2.8%, zmienno\u015b\u0107 4.7% \u2014 najwy\u017csze ryzyko, unika\u0107.",
     "AVAX: 24h -0.8%, spadki 7d -8.1%, zmienno\u015b\u0107 3.3% \u2014 unika\u0107."
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1791978284683,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.05,
-    "symbol_bias": {
-     "DOT": "avoid",
-     "AVAX": "avoid",
-     "ADA": "avoid"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "Rynek jest w fazie konsolidacji po d\u0142ugim biegu wzrostowym, co sugeruje ostro\u017cno\u015b\u0107. Model ma udowodniony edge na danych historycznych, ale zero zamkni\u0119tych transakcji w praktyce, wi\u0119c ryzyko pozostaje wysokie. Kluczowe symbole do unikania to DOT, AVAX i ADA ze wzgl\u0119du na negatywne trendy i wysok\u0105 zmienno\u015b\u0107.",
-   "new_lessons": [
-    "DOT: 24h -2.8%, zmienno\u015b\u0107 4.7% \u2014 najwy\u017csze ryzyko, unika\u0107. | AVAX: 24h -0.8%, spadki 7d -8.1%, zmienno\u015b\u0107 3.3% \u2014 unika\u0107. | Edge nie udowodniony: 0 zamkni\u0119tych transakcji \u2014 zero ryzyka i zero wej\u015b\u0107."
    ],
    "equity_at": 1000.0
   }
@@ -36579,17 +36587,17 @@
    ]
   },
   "research": {
-   "created_at": 1791967375347,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "seconds": 13.9,
-   "digest": "Dzi\u015b Bitcoin wchodzi w okoliczno\u015b\u0107 $84k po komentarzu Williamsa o braku podwy\u017cek w 2027, ale wolumen i struktura pozostaj\u0105 s\u0142abe, wi\u0119c wzrost mo\u017ce by\u0107 tanim odbiciem, a nie prze\u0142omem. Fear & Greed siedzi na 62 (Greed), co po tak d\u0142ugim biegu jest ju\u017c poziomem, na kt\u00f3rym historycznie pojawiaj\u0105 si\u0119 fa\u0142szywe sygna\u0142y. Rynek jest rozdrobniony: Solana, XRP i tokenizowane akcje maj\u0105 w\u0142asne narracje, wi\u0119c sygna\u0142 na BTC nie musi przenosi\u0107 si\u0119 na altcoiny. Z drugiej strony pojawia si\u0119 realny sygna\u0142 sentymentu: Bitwise kupuje 280 mln USD BTC, a wieloryb z 2020 roku wypuszcza 377 mln USD \u2014 to realne przep\u0142ywy, nie tylko wolumen.",
+   "created_at": 1792041879826,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "seconds": 480.5,
+   "digest": "W dzisiejszych warunkach rynku krypto, kluczowe jest monitorowanie zmian w strukturze p\u0142ynno\u015bci i relacji mi\u0119dzy Bitcoin a innymi krypty, szczeg\u00f3lnie w \u015bwietle spadku hashrate i wzrostu niepewno\u015bci Federalnej. Warto skupi\u0107 si\u0119 na sygnalach z trudnymi warunkami p\u0142ynno\u015bci, aby unikn\u0105\u0107 b\u0142\u0119d\u00f3w w sygnalach, kt\u00f3re cz\u0119sto powstaj\u0105 w okresach wysokiej volatylno\u015bci.",
    "mood": "greed",
    "fng": [
     {
-     "value": 62,
-     "label": "Greed",
-     "ts": 1791936000000
+     "value": 53,
+     "label": "Neutral",
+     "ts": 1792022400000
     }
    ],
    "used": [
@@ -36602,6 +36610,11 @@
    ],
    "failed": [],
    "items": [
+    {
+     "kind": "arXiv research",
+     "title": "Common Signals, Spurious Cross-Excitation, and Identification in Multivariate Hawkes Processes",
+     "url": "http://arxiv.org/abs/2610.19428v1"
+    },
     {
      "kind": "arXiv research",
      "title": "The Missile and the Toll: Two-Way Flow Through the Strait of Hormuz",
@@ -36628,39 +36641,59 @@
      "url": "http://arxiv.org/abs/2610.13126v1"
     },
     {
-     "kind": "arXiv research",
-     "title": "FOMO: FLEX Options and Market Outcomes",
-     "url": "http://arxiv.org/abs/2610.13044v1"
+     "kind": "CoinDesk",
+     "title": "Nearly $1 billion in crypto bets liquidated as bitcoin, ether and XRP slide",
+     "url": "https://www.coindesk.com/markets/2026/10/15/nearly-usd1-billion-in-crypto-bets-liquidated-as-bitcoin-ether-and-xrp-slide"
     },
     {
      "kind": "CoinDesk",
-     "title": "Standard Chartered unlocks direct bitcoin and ether trading for affluent UAE clients",
-     "url": "https://www.coindesk.com/business/2026/10/14/standard-chartered-unlocks-direct-bitcoin-and-ether-trading-for-affluent-uae-clients"
+     "title": "Bitcoin mining pool once handling 2.3% of network shuts after hashrate falls 65%",
+     "url": "https://www.coindesk.com/markets/2026/10/15/bitcoin-mining-pool-once-handling-2-3-of-network-shuts-after-hashrate-falls-65"
     },
     {
      "kind": "CoinDesk",
-     "title": "Coinbase, which holds 5% of all bitcoin, wants the quantum fix started now",
-     "url": "https://www.coindesk.com/tech/2026/10/14/coinbase-which-holds-5-of-all-bitcoin-wants-the-quantum-fix-started-now"
+     "title": "Bitcoin wilts as Fed rate uncertainty weighs. Kospi plunges 8%",
+     "url": "https://www.coindesk.com/markets/2026/10/15/bitcoin-is-back-below-usd81-000-as-fed-rate-uncertainty-weighs"
     },
     {
      "kind": "CoinDesk",
-     "title": "Ripple adds Stripe-owned wallets to XRP Ledger as AI payments pass 14 million",
-     "url": "https://www.coindesk.com/tech/2026/10/14/ripple-adds-stripe-owned-wallets-to-xrp-ledger-as-ai-payments-pass-14-million"
+     "title": "Kalshi CEO says state-led oversight of U.S. prediction markets would push them out",
+     "url": "https://www.coindesk.com/policy/2026/10/14/kalshi-ceo-says-state-led-oversight-of-u-s-prediction-markets-would-push-them-out"
     },
     {
      "kind": "CoinDesk",
-     "title": "Solana sets Oct. 21 for Alpenglow upgrade targeting 150-millisecond finality",
-     "url": "https://www.coindesk.com/tech/2026/10/14/solana-sets-oct-21-for-alpenglow-upgrade-targeting-150-millisecond-finality"
+     "title": "AI agents make 138 million crypto payments as U.S. dominates spending on AI models",
+     "url": "https://www.coindesk.com/business/2026/10/14/ai-agents-make-138-million-crypto-payments-as-u-s-dominates-spending-on-ai-models"
     },
     {
      "kind": "CoinDesk",
-     "title": "Bitcoin climbs toward $84,000 after Fed\u2019s Williams sees no rate hikes in 2027",
-     "url": "https://www.coindesk.com/markets/2026/10/14/bitcoin-climbs-toward-usd84-000-after-fed-s-williams-sees-no-rate-hikes-in-2027"
+     "title": "Crypto Long & Short: Why gold and bitcoin belong in the same portfolio",
+     "url": "https://www.coindesk.com/coindesk-indices/2026/10/14/crypto-long-and-short-why-gold-and-bitcoin-belong-in-the-same-portfolio"
     },
     {
-     "kind": "CoinDesk",
-     "title": "Largest Philippines crypto exchange, Coins.ph, said to face central bank regulatory action",
-     "url": "https://www.coindesk.com/policy/2026/10/13/largest-philippines-crypto-exchange-coins-ph-said-to-face-central-bank-regulatory-action"
+     "kind": "Cointelegraph",
+     "title": "Australia seeks feedback on crypto platform rules ahead of 2027 rollout",
+     "url": "https://cointelegraph.com/news/australia-seeks-feedback-on-crypto-platform-rules-ahead-of-2027-rollout?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+    },
+    {
+     "kind": "Cointelegraph",
+     "title": "Bitcoin miners plunge up to 13% in Wall Street\u2019s worst selloff since July",
+     "url": "https://cointelegraph.com/markets/bitcoin-miners-plunge-up-to-13-in-wall-streets-worst-selloff-since-july?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+    },
+    {
+     "kind": "Cointelegraph",
+     "title": "VanEck seeks to withdraw application for Lido staked Ether ETF",
+     "url": "https://cointelegraph.com/news/vaneck-seeks-to-withdraw-application-for-lido-staked-ether-etf?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+    },
+    {
+     "kind": "Cointelegraph",
+     "title": "Polygon gains US payments licenses after closing Coinme deal",
+     "url": "https://cointelegraph.com/news/polygon-gains-us-payments-licenses-after-closing-coinme-deal?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+    },
+    {
+     "kind": "Cointelegraph",
+     "title": "Organizations join forces to fight Illinois crypto tax, after 6-month pause",
+     "url": "https://cointelegraph.com/news/cci-ba-fight-illinois-crypto-tax-pause?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Cointelegraph",
@@ -36668,69 +36701,44 @@
      "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
-     "kind": "Cointelegraph",
-     "title": "Starknet introduces wallet privacy feature for DeFi activity",
-     "url": "https://cointelegraph.com/news/starknet-introduces-wallet-privacy-feature-for-defi-activity?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-    },
-    {
-     "kind": "Cointelegraph",
-     "title": "Fed\u2019s Williams sees AI supply squeeze lasting beyond 2 years",
-     "url": "https://cointelegraph.com/markets/feds-williams-sees-ai-supply-squeeze-lasting-beyond-2-years?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-    },
-    {
-     "kind": "Cointelegraph",
-     "title": "Bitwise\u2019s Hougan says Q3 charts point to \u2018crypto spring\u2019",
-     "url": "https://cointelegraph.com/markets/bitwises-hougan-says-q3-charts-point-to-crypto-spring?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-    },
-    {
-     "kind": "Cointelegraph",
-     "title": "Ledger asks resellers to halt sales in Southeast Asia and Hong Kong",
-     "url": "https://cointelegraph.com/news/ledger-asks-resellers-to-halt-sales-in-southeast-asia-and-hong-kong?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-    },
-    {
-     "kind": "Cointelegraph",
-     "title": "Most tokenized stock trading on Solana, BNB Chain occurs outside US market hours",
-     "url": "https://cointelegraph.com/news/tokenized-stocks-after-hours-trading-solana-bnb-chain?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "kind": "Decrypt",
+     "title": "Godfather of AI and 400 Scientists Want AI Models Cut Off From the Internet",
+     "url": "https://decrypt.co/380998/scientists-want-ai-cut-off-from-internet"
     },
     {
      "kind": "Decrypt",
-     "title": "OpenAI Engineer Arrested for Bugging Office, Company Says AI Caught Him",
-     "url": "https://decrypt.co/380896/openai-engineer-arrested-bugging-office-ai-caught-him"
+     "title": "Developer Who Cloned Photoshop With AI Just Did the Same to Microsoft Office",
+     "url": "https://decrypt.co/380991/developer-cloned-photoshop-ai-just-did-same-microsoft-office"
     },
     {
      "kind": "Decrypt",
-     "title": "Character.AI Files for Bankruptcy as Disney Bids $20 Million\u2014And Users Get Grief Resources",
-     "url": "https://decrypt.co/380894/character-ai-bankruptcy-disney-users-grief-resources"
+     "title": "AI Agents Made 138 Million Crypto Payments in a Year. Most Were Tiny",
+     "url": "https://decrypt.co/380989/ai-agents-138-million-crypto-payments-one-year"
     },
     {
      "kind": "Decrypt",
-     "title": "Binance Is Shutting Down Its Bitcoin Mining Pool After Six Years",
-     "url": "https://decrypt.co/380870/binance-shutting-down-bitcoin-mining-pool"
+     "title": "Russia's Biggest Bank Sberbank Wins Approval to Trade Bitcoin",
+     "url": "https://decrypt.co/380981/sberbank-russia-bank-trade-crypto-bitcoin"
     },
     {
      "kind": "Decrypt",
-     "title": "Bitcoin Whale That Sat Through Every Crash Since 2020 Just Moved $377M",
-     "url": "https://decrypt.co/380867/bitcoin-whale-every-crash-2020-moves-377m"
+     "title": "Solana Sets a Date for Its Next Major Upgrade",
+     "url": "https://decrypt.co/380974/solana-alpenglow-upgrade-date"
     },
     {
      "kind": "Decrypt",
-     "title": "Strive Buys $280 Million in Bitcoin, Its Largest Purchase in Months",
-     "url": "https://decrypt.co/380858/strive-buys-280-million-bitcoin-largest-purchase-months"
-    },
-    {
-     "kind": "Decrypt",
-     "title": "AI Researchers Are Smoking Cigarettes to Prove AI Will Cure Cancer, Says Palantir Exec",
-     "url": "https://decrypt.co/380857/ai-researchers-smoking-cigarettes-prove-ai-cure-cancer"
+     "title": "Standard Chartered Opens Bitcoin and Ethereum Trading to Wealthy UAE Clients",
+     "url": "https://decrypt.co/380967/standard-chartered-bitcoin-ethereum-trading"
     },
     {
      "kind": "Babypips",
-     "title": "FX Watch: AUD/JPY and AUD/NZD Setups for Strong Australian Jobs Data",
-     "url": "https://www.babypips.com/analysis/fx-watch-audjpy-audnzd-setups-strong-australian-jobs-2026-10-14"
+     "title": "USDCAD Analysis for Oct. 15, 2026: Uptrend Staying Intact Ahead of Canada\u2019s CPI",
+     "url": "https://www.babypips.com/analysis/premium-strategy-2026-10-15-usdcad"
     },
     {
      "kind": "Babypips",
-     "title": "FX Watch: AUD/USD and AUD/NZD Could Slip on a Soft Australian Jobs Report",
-     "url": "https://www.babypips.com/analysis/fx-watch-audusd-audnzd-could-slip-on-a-soft-australian-jobs-report-2026-10-14"
+     "title": "Chart Art: EUR/AUD in Correction Mode After Steep Drop",
+     "url": "https://www.babypips.com/trading/chart-art-forex-euraud-correction-mode-steep-drop-2026-10-15"
     },
     {
      "kind": "Babypips",
@@ -36739,30 +36747,30 @@
     },
     {
      "kind": "Babypips",
-     "title": "Event Guide: Australia\u2019s Employment Report (September 2026)",
-     "url": "https://www.babypips.com/analysis/event-guide-forex-australia-employment-september-2026-10-14"
+     "title": "Core Inflation Reaccelerates, Raising Fed Hike Odds as Dollar Gains Fade",
+     "url": "https://www.babypips.com/news/headline-core-inflation-reaccelerates-raising-fed-hike-odds-as-dollar-gains-fade-2026-10-15"
     },
     {
      "kind": "Babypips",
-     "title": "Financial & Forex Market Recap \u2013 Oct. 13, 2026",
-     "url": "https://www.babypips.com/news/financial-forex-market-recap-2026-10-13"
+     "title": "TA Alert of the Day: AUD/USD Selling Pressure Begins to Ease",
+     "url": "https://www.babypips.com/trading/ta-alert-audusd-macd-bullish-crossover-2026-10-14"
     }
    ],
    "ideas": [
     {
-     "name": "Odbicie bez wolumenu = pu\u0142apka",
-     "rule": "r_96 < -0.004 and r_16 < 0.001 and r_4 < 0.0005",
-     "why": "Ten filtr zosta\u0142 ju\u017c odrzucony, wi\u0119c nie powtarzam go. Zamiast niego dodaj\u0119 warunek wolumenu: je\u015bli r_96 jest negatywne, ale r_16 i r_4 nie spadaj\u0105 poni\u017cej 0, to ruch jest s\u0142aby i nie ma potwierdzenia \u2014 sygna\u0142 powinien zosta\u0107 odrzucony."
+     "name": "Wysoka volatylno\u015b\u0107 bez wzrostu Bitcoin",
+     "rule": "vol_ratio > 1 and btc_r96 < -0.01231",
+     "why": "Z CoinDesk: spadek hashrate Bitcoin i wzrost volatylno\u015bci wskazuje na niepewno\u015b\u0107 rynku. W ostatnich b\u0142\u0119dach botu, gdy r_96 < -0.005 i r_16 < -0.001, sygnale by\u0142y zbyt niepewne. Wzgl\u0119dem Bitcoin (btc_r96) i volatylno\u015bci (vol_ratio) z arXiv na temat Hawkes proces\u00f3w, kluczowe jest unikni\u0119cie sygnali w "
     },
     {
-     "name": "Kr\u00f3tkoterminowy spadek bez trendu",
-     "rule": "r_1 < -0.0005 and r_2 < -0.001 and r_4 < -0.002",
-     "why": "Ten filtr r\u00f3wnie\u017c zosta\u0142 odrzucony, wi\u0119c nie go powtarzam. Zamiast niego proponuj\u0119 warunek na kr\u00f3tkoterminowy spadek bez trendu: je\u015bli r_1, r_2 i r_4 s\u0105 negatywne, ale d_ema50 i ema_trend nie s\u0105 negatywne, to ruch jest kr\u00f3tkoterminowy i nie ma trendu \u2014 sygna\u0142 powinien zosta\u0107 odrzucony."
+     "name": "Sygnal tylko w okresie spadku Bitcoin",
+     "rule": "btc_r96 < -0.01231 and rel_r672 < -0.01085",
+     "why": "Z CoinDesk: Bitcoin spada z niepewno\u015bci Federalnej. W b\u0142\u0119dach botu, gdy btc_r96 < -0.01231 i rel_r672 < -0.01085, sygnale by\u0142y zbyt p\u00f3\u017ane. Wzgl\u0119dem analizy Hawkes, kluczowe jest unikni\u0119cie sygnali w okresach wzrostu Bitcoin, aby unikn\u0105\u0107 spadku w p\u0142ynno\u015bci."
     },
     {
-     "name": "Spadek bez wzrostu zmienno\u015bci",
-     "rule": "r_16 < 0.002 and r_4 < 0.001 and vol_ratio < 1",
-     "why": "Ten filtr r\u00f3wnie\u017c zosta\u0142 odrzucony, wi\u0119c nie go powtarzam. Zamiast niego proponuj\u0119 warunek na spadek bez wzrostu zmienno\u015bci: je\u015bli r_16 i r_4 s\u0105 negatywne, ale vol_ratio < 1, to ruch jest s\u0142aby i nie ma wzrostu zmienno\u015bci \u2014 sygna\u0142 powinien zosta\u0107 odrzucony."
+     "name": "Ogranicz sygnale do spadku w kr\u00f3tkim okresie",
+     "rule": "r_96 < -0.005 and r_16 < -0.001",
+     "why": "Z CoinDesk: spadek Bitcoin i wzrost volatylno\u015bci wskazuje na niepewno\u015b\u0107. W b\u0142\u0119dach botu, gdy r_96 < -0.005 i r_16 < -0.001, sygnale by\u0142y zbyt niepewne. Wzgl\u0119dem analizy Hawkes, kluczowe jest unikni\u0119cie sygnali w okresach wysokiej volatylno\u015bci bez wzrostu Bitcoin."
     }
    ]
   }
