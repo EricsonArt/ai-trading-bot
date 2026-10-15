@@ -1,19 +1,21 @@
 {
- "created_at": 1792091349835,
+ "created_at": 1792094985212,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 9.2,
+ "seconds": 10.2,
  "directives": {
-  "risk_level": 0.2,
+  "risk_level": 0.8,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
+   "ETH": "reduce",
+   "XRP": "reduce",
    "DOT": "avoid",
    "AVAX": "avoid",
    "DOGE": "avoid"
   },
   "regime": "sideways"
  },
- "reasoning": "Rynek jest w neutralnym, spokojnym re\u017cimie (Fear & Greed 53, BTC +1.0%), ale model nie zamkn\u0105\u0142 ani jednej transakcji, wi\u0119c edge nie jest udowodniony. Wszystkie symbole maj\u0105 prog\u0119 0.78, a wi\u0119kszo\u015b\u0107 jest poni\u017cej progu, wi\u0119c nie ma powodu do agresywnego wej\u015bcia. DOT i AVAX maj\u0105 najwy\u017csz\u0105 zmienno\u015b\u0107 i negatywne kr\u00f3tkoterminowe trendy, dlatego je omijamy, a DOGE jest dodatkowo blokowane przez regu\u0142\u0119.",
+ "reasoning": "Rynek jest spokojny, ale bez wyra\u017anego trendu. Model ma udowodniony edge w backtestach, ale zero zamkni\u0119tych transakcji, wi\u0119c ryzyko pozostaje wysokie. Wykluczam DOT, AVAX i DOGE ze wzgl\u0119du na wysok\u0105 zmienno\u015b\u0107 i spadki.",
  "new_lessons": [
   "DOT: 24h -1.6%, zmienno\u015b\u0107 7.0% \u2014 najwy\u017csze ryzyko, unika\u0107",
   "AVAX: zmienno\u015b\u0107 6.0%, spadki 7d -32.9% \u2014 unika\u0107",
