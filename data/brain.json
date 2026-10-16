@@ -1,22 +1,19 @@
 {
- "created_at": 1792150656945,
+ "created_at": 1792154294072,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 6.1,
+ "seconds": 7.7,
  "directives": {
   "risk_level": 0.5,
   "min_confidence_adj": 0.08,
   "symbol_bias": {
-   "BTC": "reduce",
-   "ETH": "reduce",
-   "SOL": "reduce",
    "AVAX": "avoid",
-   "DOT": "avoid",
-   "TRX": "avoid"
+   "TRX": "avoid",
+   "DOT": "avoid"
   },
-  "regime": "bull"
+  "regime": "volatile"
  },
- "reasoning": "Regim rynkowy jest umiarkowanie bullish, ale model ma s\u0142ab\u0105 przewag\u0119 i praktycznie \u017cadne dane o skuteczno\u015bci. W raporcie widoczne s\u0105 0 zamkni\u0119tych transakcji na g\u0142\u00f3wnym koncie, a praktyczne konto osi\u0105gn\u0119\u0142o +3.22% bez \u017cadnych zamkni\u0119tych transakcji, co sugeruje, \u017ce dane mog\u0105 by\u0107 niepe\u0142ne lub model jeszcze nie generuje sygna\u0142\u00f3w. Wszystkie symbole maj\u0105 prog\u0119 0.78, a obecne szacunki modela s\u0105 poni\u017cej tej progi, wi\u0119c nie ma \u017cadnych sygna\u0142\u00f3w do wej\u015bcia. Rekomenduj\u0119 zachowa\u0107 ostro\u017cno\u015b\u0107 i nie otwiera\u0107 pozycji.",
+ "reasoning": "Model ma udowodnion\u0105 przewag\u0119 (win rate 50%, avg +0.44%/trade vs always-buy -0.32%/trade), ale pr\u00f3ba 715 handli jest du\u017ca i wynik jest stabilny. Jednak wszystkie 12 symboli maj\u0105 aktualn\u0105 pewno\u015b\u0107 poni\u017cej progu 0.81, wi\u0119c bot nie mo\u017ce wej\u015b\u0107 w \u017cadne pozycje. Dodatkowo strategia championa ma tylko 17 handli z avg +7.33%/trade i edge False, co sugeruje, \u017ce ta konkretna konfiguracja nie jest jeszcze wiarygodna. Rynek jest w umiarkowanym optymizmie (Fear & Greed 63), ale badania wskazuj\u0105, \u017ce sygna\u0142y kupna na spadku bywaj\u0105 pu\u0142apk\u0105. Dlatego utrzymuj\u0119 ostro\u017cny tryb z minimaln\u0105 konfidencj\u0105 podniesion\u0105 o 0.08, unikaj\u0105c najbardziej ryzykownych symbol\u00f3w.",
  "new_lessons": [
   "DOT: zmienno\u015b\u0107 6.3% i spadki 7d -3.0% \u2014 unikaj, zbyt ryzykowny",
   "AVAX: spadki 7d -2.1% i zmienno\u015b\u0107 4.1% \u2014 unikaj, zbyt ryzykowny",
