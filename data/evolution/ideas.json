@@ -1,34 +1,4 @@
 {
- "399dea07c9": {
-  "name": "unikaj r_96 >= 0.013",
-  "source": "own mistakes (auto)",
-  "rule": "r_96 < 0.013",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1791513577091,
-  "model_version": 23,
-  "adopted": false
- },
- "25fb49585e": {
-  "name": "unikaj btc_r96 >= 0.01021",
-  "source": "own mistakes (auto)",
-  "rule": "btc_r96 < 0.01021",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1791557281550,
-  "model_version": 24,
-  "adopted": false
- },
- "03646d6049": {
-  "name": "unikaj btc_r96 >= 0.005244",
-  "source": "own mistakes (auto)",
-  "rule": "btc_r96 < 0.00524",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1791557281550,
-  "model_version": 24,
-  "adopted": false
- },
  "b74d0c97e8": {
   "name": "unikaj r_96 >= 0.01116",
   "source": "own mistakes (auto)",
@@ -796,6 +766,36 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
   "gain": 0.0,
   "tested_at": 1792100987948,
+  "model_version": 35,
+  "adopted": false
+ },
+ "8136ec55bc": {
+  "name": "Filtr RSI + rosn\u0105cej zmienno\u015bci",
+  "source": "internet research: Analiza b\u0142\u0119d\u00f3w botu pokazuje, \u017ce straty koncentruj\u0105 si\u0119 przy wysokich warto\u015bciach kr\u00f3tkoterminowych wska\u017anik\u00f3w (r_96, d_ema200, ema_trend), a dzi\u015b Bitcoin odbi\u0142 od spadku poni\u017cej 80",
+  "rule": "rsi < 0.62 and vol_ratio < 1 and d_ema200 < 0",
+  "why": "Ten filtr odrzuca sygna\u0142y kupna, gdy RSI jest blisko 0,7 (przekupione) i kr\u00f3tkoterminowa zmienno\u015b\u0107 ro\u015bnie szybciej ni\u017c d\u0142ugoterminowa (vol_ratio > 1), co jest klasycznym profilem pu\u0142apki kupna na spadku. Dodatkowo wymagamy, aby cena by\u0142a poni\u017cej \u015bredniej 200-candy (d_ema200 < 0), co chroni przed kup",
+  "gain": 0.0,
+  "tested_at": 1792126221579,
+  "model_version": 35,
+  "adopted": false
+ },
+ "4f1d6dd193": {
+  "name": "Filtr s\u0142abego momentum",
+  "source": "internet research: Bot traci\u0142 pieni\u0105dze przy sygna\u0142ach kupna, gdy kr\u00f3tkoterminowe wska\u017aniki momentum by\u0142y s\u0142abe lub ujemne (r_96, r_16, r_4).",
+  "rule": "r_16 < 0 and r_4 < 0 and r_96 < -0.005",
+  "why": "Ten filtr odrzuca sygna\u0142y kupna, gdy kr\u00f3tkoterminowe wska\u017aniki momentum s\u0105 s\u0142abe lub ujemne (r_16 < 0, r_4 < 0, r_96 < -0.005), co chroni przed kupnem w fazie spadkowej.",
+  "gain": 0.0,
+  "tested_at": 1792126221579,
+  "model_version": 35,
+  "adopted": false
+ },
+ "9456960d80": {
+  "name": "Filtr niskiej pozycji w bandach",
+  "source": "internet research: Bot traci\u0142 pieni\u0105dze przy sygna\u0142ach kupna, gdy cena by\u0142a blisko dolnej kraw\u0119dzi band Bollingera (bb) i przy s\u0142abym trendzie.",
+  "rule": "bb < 0.3 and d_ema50 < 0 and vz < 0.8",
+  "why": "Ten filtr odrzuca sygna\u0142y kupna, gdy cena jest blisko dolnej kraw\u0119dzi band Bollingera (bb < 0.3), cena jest poni\u017cej \u015bredniej 50-candy (d_ema50 < 0) i wolumen jest poni\u017cej \u015bredniej (vz < 0.8), co chroni przed kupnem w fazie spadkowej.",
+  "gain": 0.0,
+  "tested_at": 1792126221579,
   "model_version": 35,
   "adopted": false
  }
