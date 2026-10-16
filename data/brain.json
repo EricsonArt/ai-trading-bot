@@ -1,8 +1,8 @@
 {
- "created_at": 1792143396477,
+ "created_at": 1792147027789,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 6.4,
+ "seconds": 7.2,
  "directives": {
   "risk_level": 0.5,
   "min_confidence_adj": 0.05,
@@ -13,7 +13,7 @@
   },
   "regime": "volatile"
  },
- "reasoning": "Model ma udowodnion\u0105 przewag\u0119 na danych historycznych (54% wygranych, +0.66%/trade vs -0.32% przy zawsze-kupuj), ale na danych testowych (17 transakcji) przewaga nie zosta\u0142a potwierdzona, dlatego obni\u017cam poziom ryzyka i wymagam wy\u017cszego progu wej\u015bcia. Wszystkie symbole maj\u0105 obecnie prawdopodobie\u0144stwo poni\u017cej lub na granicy progu 0.78, wi\u0119c nie ma teraz \u017cadnych kwalifikuj\u0105cych si\u0119 wej\u015b\u0107. Dane z digestu wskazuj\u0105 na pu\u0142apki kupna na spadku, gdy kr\u00f3tkoterminowa zmienno\u015b\u0107 ro\u015bnie szybciej ni\u017c d\u0142ugoterminowa, co dodatkowo uzasadnia ostro\u017cno\u015b\u0107.",
+ "reasoning": "Regim jest umiarkowanie ryzykowny: BTC odbi\u0142 od spadku poni\u017cej 80 tys. do 82,5 tys., a indeks l\u0119k/greedy wynosi 63 (greedy). Model ma udowodnion\u0105 przewag\u0119 na danych historycznych (715 transakcji, \u015brednio +0.44%/transakcja), ale na danych nieprzetestowanych (17 transakcji) przewaga jest fa\u0142szywa (edge: False), wi\u0119c zwi\u0119kszam pr\u00f3g wej\u015bcia o 0.05. Unikam DOT, AVAX i DOGE ze wzgl\u0119du na wysok\u0105 zmienno\u015b\u0107 i spadki 7d. Redukuj\u0119 ryzyko, nie zwi\u0119kszam go, mimo pozytywnego wyniku praktycznego konta (+1.85%), poniewa\u017c to wynik losowy przy 0 zamkni\u0119tych transakcjach.",
  "new_lessons": [
   "DOT: zmienno\u015b\u0107 6.3% i spadki 7d -3.0% \u2014 unikaj, zbyt ryzykowny",
   "AVAX: spadki 7d -2.1% i zmienno\u015b\u0107 4.1% \u2014 unikaj, zbyt ryzykowny",
