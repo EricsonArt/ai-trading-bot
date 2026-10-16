@@ -1,9 +1,9 @@
 {
- "generated_at": 1792175237937,
- "last_candle": 1792173600000,
+ "generated_at": 1792176758796,
+ "last_candle": 1792175400000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
- "benchmark_return": -0.042240000000000055,
+ "benchmark_return": -0.044809999999999905,
  "series": [
   [
    1790508600000,
@@ -11110,6 +11110,18 @@
    1000.0,
    957.76,
    999.9
+  ],
+  [
+   1792174500000,
+   1000.0,
+   958.79,
+   999.72
+  ],
+  [
+   1792175400000,
+   1000.0,
+   955.19,
+   994.8
   ]
  ],
  "main": {
@@ -11158,7 +11170,7 @@
    {
     "name": "Lepiej ni\u017c samo trzymanie BTC",
     "ok": true,
-    "value": "+4.2 pkt"
+    "value": "+4.5 pkt"
    },
    {
     "name": "Najwi\u0119kszy spadek mniejszy ni\u017c 20%",
@@ -11205,8 +11217,8 @@
     "origin": "mutation: sl"
    },
    "joined": 1791184500000,
-   "equity": 999.9,
-   "return": -9.671410344957998e-05,
+   "equity": 994.8,
+   "return": -0.0051971848027527745,
    "trades": 0,
    "avg": 0.0,
    "win_rate": 0.0,
@@ -11400,56 +11412,56 @@
   }
  ],
  "practice": {
-  "equity": 999.9,
-  "return": -9.999999999998899e-05,
+  "equity": 994.8,
+  "return": -0.0052000000000000934,
   "cash": 0.0,
   "positions": [
    {
     "symbol": "ETH",
     "entry_ts": 1792038600000,
     "entry_px": 2380.1194649999998,
-    "price": 2415.87,
-    "value": 304.2,
-    "pnl_pct": 0.015020479234642226,
+    "price": 2407.58,
+    "value": 303.16,
+    "pnl_pct": 0.01153746078875928,
     "tp_px": 2787.827376972791,
     "sl_px": 2040.36287168934,
-    "held": 151,
+    "held": 153,
     "horizon": 288
    },
    {
     "symbol": "SOL",
     "entry_ts": 1792038600000,
     "entry_px": 103.741845,
-    "price": 104.02,
-    "value": 293.53,
-    "pnl_pct": 0.0026812227987655923,
+    "price": 103.28,
+    "value": 291.44,
+    "pnl_pct": -0.004451867999841319,
     "tp_px": 122.97308766525528,
     "sl_px": 87.71580944562061,
-    "held": 151,
+    "held": 153,
     "horizon": 288
    },
    {
     "symbol": "XRP",
     "entry_ts": 1792038600000,
     "entry_px": 1.3193593499999998,
-    "price": 1.3035,
-    "value": 296.1,
-    "pnl_pct": -0.012020493127971377,
+    "price": 1.2967,
+    "value": 294.55,
+    "pnl_pct": -0.017174509734591892,
     "tp_px": 1.5350047290628817,
     "sl_px": 1.1396548674475984,
-    "held": 151,
+    "held": 153,
     "horizon": 288
    },
    {
     "symbol": "DOGE",
     "entry_ts": 1792038600000,
     "entry_px": 0.080690325,
-    "price": 0.0801,
-    "value": 106.07,
-    "pnl_pct": -0.007315932858121377,
+    "price": 0.07978,
+    "value": 105.65,
+    "pnl_pct": -0.011281711902882852,
     "tp_px": 0.09665681750786663,
     "sl_px": 0.0673849145767778,
-    "held": 151,
+    "held": 153,
     "horizon": 288
    }
   ],
@@ -11470,91 +11482,91 @@
  },
  "signals": {
   "BTC": {
-   "p": 0.6048,
+   "p": 0.6464,
    "threshold": 0.77,
    "action": "wait",
-   "ts": 1792173600000
+   "ts": 1792175400000
   },
   "ETH": {
-   "p": 0.7181,
+   "p": 0.747,
    "threshold": 0.77,
    "action": "wait",
-   "ts": 1792173600000
+   "ts": 1792175400000
   },
   "SOL": {
+   "p": 0.815,
+   "threshold": 0.77,
+   "action": "blocked: learned rule 'btc_vol96 > 0.0024'",
+   "ts": 1792175400000
+  },
+  "XRP": {
+   "p": 0.8268,
+   "threshold": 0.77,
+   "action": "blocked: learned rule 'btc_vol96 > 0.0024'",
+   "ts": 1792175400000
+  },
+  "DOGE": {
+   "p": 0.828,
+   "threshold": 0.77,
+   "action": "blocked: learned rule 'btc_vol96 > 0.0024'",
+   "ts": 1792175400000
+  },
+  "ADA": {
+   "p": 0.6962,
+   "threshold": 0.77,
+   "action": "wait",
+   "ts": 1792175400000
+  },
+  "BNB": {
+   "p": 0.7189,
+   "threshold": 0.77,
+   "action": "wait",
+   "ts": 1792175400000
+  },
+  "LINK": {
    "p": 0.7849,
    "threshold": 0.77,
    "action": "blocked: learned rule 'btc_vol96 > 0.0024'",
-   "ts": 1792173600000
-  },
-  "XRP": {
-   "p": 0.8358,
-   "threshold": 0.77,
-   "action": "blocked: learned rule 'btc_vol96 > 0.0024'",
-   "ts": 1792173600000
-  },
-  "DOGE": {
-   "p": 0.7939,
-   "threshold": 0.77,
-   "action": "blocked: learned rule 'btc_vol96 > 0.0024'",
-   "ts": 1792173600000
-  },
-  "ADA": {
-   "p": 0.633,
-   "threshold": 0.77,
-   "action": "wait",
-   "ts": 1792173600000
-  },
-  "BNB": {
-   "p": 0.6666,
-   "threshold": 0.77,
-   "action": "wait",
-   "ts": 1792173600000
-  },
-  "LINK": {
-   "p": 0.7653,
-   "threshold": 0.77,
-   "action": "wait",
-   "ts": 1792173600000
+   "ts": 1792175400000
   },
   "AVAX": {
-   "p": 0.6128,
+   "p": 0.7105,
    "threshold": 0.77,
    "action": "wait",
-   "ts": 1792173600000
+   "ts": 1792175400000
   },
   "LTC": {
-   "p": 0.6673,
+   "p": 0.7441,
    "threshold": 0.77,
    "action": "wait",
-   "ts": 1792173600000
+   "ts": 1792175400000
   },
   "DOT": {
-   "p": 0.7229,
+   "p": 0.6692,
    "threshold": 0.77,
    "action": "wait",
-   "ts": 1792173600000
+   "ts": 1792175400000
   },
   "TRX": {
-   "p": 0.4324,
+   "p": 0.4582,
    "threshold": 0.77,
    "action": "wait",
-   "ts": 1792173600000
+   "ts": 1792175400000
   }
  },
  "prices": {
-  "BTC": 81326.0,
-  "ETH": 2415.87,
-  "SOL": 104.02,
-  "XRP": 1.3035,
-  "DOGE": 0.0801,
-  "ADA": 0.2236,
-  "BNB": 722.47,
-  "LINK": 12.319,
-  "AVAX": 10.045,
-  "LTC": 59.55,
-  "DOT": 1.162,
-  "TRX": 0.3345
+  "BTC": 81107.59,
+  "ETH": 2407.58,
+  "SOL": 103.28,
+  "XRP": 1.2967,
+  "DOGE": 0.07978,
+  "ADA": 0.2227,
+  "BNB": 720.94,
+  "LINK": 12.245,
+  "AVAX": 9.956,
+  "LTC": 59.43,
+  "DOT": 1.147,
+  "TRX": 0.3347
  },
  "model": {
   "version": 36,
@@ -11979,7 +11991,7 @@
   "regime": "bear"
  },
  "brain": {
-  "created_at": 1792172461608,
+  "created_at": 1792176093549,
   "source": "local",
   "model": "mimo2.6:9b",
   "directives": {
@@ -11992,7 +12004,7 @@
    },
    "regime": "bear"
   },
-  "reasoning": "Model ma udowodnion\u0105 przewag\u0119 na danych historycznych, ale na danych testowych tylko 17 transakcji i edge=False, wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka. Wszystkie symbole s\u0105 poni\u017cej progu wej\u015bcia 0.77, a DOT, AVAX i TRX maj\u0105 dane rynkowe wyra\u017anie sprzeczne z moimi wcze\u015bniejszymi ostrze\u017ceniami, dlatego je pomijam. Regim jest umiarkowany: BTC odbija\u0142 od spadku, ale indeks l\u0119k/greedy wynosi 63, co nie jest eufori\u0105, a ryzyko polityczne i korekcyjne pozostaje na poziomie umiarkowanym.",
+  "reasoning": "Rynek jest w fazie spadkowej z wysok\u0105 zmienno\u015bci\u0105, a model ma udowodnion\u0105 kraw\u0119d\u017a tylko w danych historycznych, wi\u0119c nie wolno mu otwiera\u0107 pozycji w obecnych warunkach. Kluczowe jest utrzymanie ostro\u017cnego poziomu ryzyka i unikanie symbol\u00f3w o najwy\u017cszej zmienno\u015bci, aby ograniczy\u0107 potencjalne straty. Rekomendowane jest zwi\u0119kszenie progu pewno\u015bci i unikanie DOT, AVAX oraz TRX, kt\u00f3re maj\u0105 najwy\u017csze ryzyko w obecnych warunkach rynkowych.",
   "new_lessons": [
    "DOT: zmienno\u015b\u0107 6.8% i 24h +6.5% \u2014 unikaj, zbyt ryzykowny",
    "AVAX: 30d +39.8% i zmienno\u015b\u0107 3.5% \u2014 unikaj, zbyt ryzykowny",
@@ -12012,9 +12024,31 @@
    "AVAX: spadki 7d -2.1% i zmienno\u015b\u0107 4.1% \u2014 unikaj, zbyt ryzykowny",
    "TRX: spadki 7d +1.0% i zmienno\u015b\u0107 0.9% \u2014 unikaj, zbyt ryzykowny"
   ],
-  "seconds": 6.5
+  "seconds": 7.0
  },
  "brain_journal": [
+  {
+   "created_at": 1792176093549,
+   "source": "local",
+   "model": "mimo2.6:9b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.04,
+    "symbol_bias": {
+     "DOT": "avoid",
+     "AVAX": "avoid",
+     "TRX": "avoid"
+    },
+    "regime": "bear"
+   },
+   "reasoning": "Rynek jest w fazie spadkowej z wysok\u0105 zmienno\u015bci\u0105, a model ma udowodnion\u0105 kraw\u0119d\u017a tylko w danych historycznych, wi\u0119c nie wolno mu otwiera\u0107 pozycji w obecnych warunkach. Kluczowe jest utrzymanie ostro\u017cnego poziomu ryzyka i unikanie symbol\u00f3w o najwy\u017cszej zmienno\u015bci, aby ograniczy\u0107 potencjalne straty. Rekomendowane jest zwi\u0119kszenie progu pewno\u015bci i unikanie DOT, AVAX oraz TRX, kt\u00f3re maj\u0105 najwy\u017csze ryzyko w obecnych warunkach rynkowych.",
+   "new_lessons": [
+    "DOT: zmienno\u015b\u0107 6.8% i 24h +6.5% \u2014 unikaj, zbyt ryzykowny",
+    "AVAX: 30d +39.8% i zmienno\u015b\u0107 3.5% \u2014 unikaj, zbyt ryzykowny",
+    "TRX: 24h +1.0% i zmienno\u015b\u0107 0.8% \u2014 unikaj, zbyt ryzykowny"
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1792172461608,
    "source": "local",
@@ -12218,28 +12252,6 @@
     "DOT: zmienno\u015b\u0107 6.3% i spadki 7d -3.0% \u2014 unikaj, zbyt ryzykowny",
     "AVAX: spadki 7d -2.1% i zmienno\u015b\u0107 4.1% \u2014 unikaj, zbyt ryzykowny",
     "DOGE: spadki 7d -3.4% i zmienno\u015b\u0107 3.2% \u2014 unikaj, zbyt ryzykowny"
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1792139755009,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.5,
-    "min_confidence_adj": 0.05,
-    "symbol_bias": {
-     "DOT": "avoid",
-     "AVAX": "avoid",
-     "DOGE": "avoid"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "Model ma udowodnion\u0105 przewag\u0119 (54% wygranych, +0.66%/trade vs -0.32% przy zawsze-kupuj), ale praktyczne konto nie zamkn\u0119\u0142o \u017cadnej transakcji, wi\u0119c nie ma jeszcze dowodu, \u017ce ta przewaga przetrwa na \u017cywym rynku. Wszystkie sygna\u0142y s\u0105 poni\u017cej progu 0.78, a badanie wskazuje, \u017ce bot traci\u0142 pieni\u0105dze przy wysokim RSI i rosn\u0105cej kr\u00f3tkoterminowej zmienno\u015bci \u2014 dok\u0142adnie obecny profil, wi\u0119c podnosz\u0119 pr\u00f3g wej\u015bcia. Unikam DOT, AVAX i DOGE, bo to jedyny zestaw symbol\u00f3w, kt\u00f3ry mam w historii wyra\u017anie odradza\u0142, mimo \u017ce ich obecne dane nie potwierdzaj\u0105 moich wcze\u015bniejszych ostrze\u017ce\u0144 co do zmienno\u015bci.",
-   "new_lessons": [
-    "DOT: zmienno\u015b\u0107 6.4% i spadki 7d -0.8% \u2014 unika\u0107, zbyt ryzykowny",
-    "AVAX: spadki 7d -1.8% i zmienno\u015b\u0107 4.3% \u2014 unika\u0107",
-    "DOGE: spadki 7d -4.0% i zmienno\u015b\u0107 3.5% \u2014 unika\u0107"
    ],
    "equity_at": 1000.0
   }
