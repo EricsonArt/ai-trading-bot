@@ -1,24 +1,4 @@
 {
- "1c8205c9a7": {
-  "name": "unikaj btc_r96 >= 0.005722",
-  "source": "own mistakes (auto)",
-  "rule": "btc_r96 < 0.00572",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1791615910190,
-  "model_version": 25,
-  "adopted": false
- },
- "d3fc4f90bd": {
-  "name": "unikaj r_96 >= 0.01222",
-  "source": "own mistakes (auto)",
-  "rule": "r_96 < 0.01222",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1791615910190,
-  "model_version": 25,
-  "adopted": false
- },
  "7e033d1230": {
   "name": "Reject crowded, expanding-volatility signals",
   "source": "internet research: Crypto Fear & Greed index at 70\u201378 'Greed' plus the Decrypt report that Bitcoin ETFs have a seven-day winning streak with nearly $3B of inflows; the Babypips recap noting the week's",
@@ -359,16 +339,6 @@
   "model_version": 33,
   "adopted": false
  },
- "9dfb5c942b": {
-  "name": "unikaj btc_r96 >= 0.01141",
-  "source": "own mistakes (auto)",
-  "rule": "btc_r96 < 0.01141",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1792056397337,
-  "model_version": 34,
-  "adopted": false
- },
  "71afb5b4ac": {
   "name": "Wysokie ryzyko bezpieczno\u015bci",
   "source": "internet research: Cointelegraph: Bitget\u2019s $388M hack pushes Q3 crypto security losses past $1B",
@@ -439,26 +409,6 @@
   "model_version": 35,
   "adopted": false
  },
- "49fcadb334": {
-  "name": "Trend w d\u00f3\u0142 dla BTC",
-  "source": "internet research: arXiv, bot's mistakes",
-  "rule": "btc_r96 < -0.01231",
-  "why": "W ostatnich 18049 stratach botu, sygna\u0142y z BTC_r96 < -0.01231 by\u0142y zbyt cz\u0119sto b\u0142\u0119dne. Z bada\u0144 arXiv o rynku opcji i ryzyku AI, widzimy, \u017ce spadki w BTC mog\u0105 by\u0107 sygna\u0142ami przewidywania zmian w p\u0142ynno\u015bci. Regu\u0142a ta zabezpiecza przed sygna\u0142ami w czasie spadku rynku.",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": true
- },
- "ce5979b152": {
-  "name": "Wzrost p\u0142ynno\u015bci w kr\u00f3tkim terminie",
-  "source": "internet research: arXiv research: MintEval i Shared Models, Selective Trading",
-  "rule": "btc_vol96 < 0.0024",
-  "why": "Z ostatnich b\u0142\u0119d\u00f3w botu wynika, \u017ce sygna\u0142y z nisk\u0105 p\u0142ynno\u015bci\u0105 (btc_vol96 < 0.0024) cz\u0119sto prowadz\u0105 do strat. Badanie arXiv na temat p\u0142ynno\u015bci i rynku wskazuje, \u017ce zmiany w p\u0142ynno\u015bci s\u0105 kluczowe dla precyzji sygna\u0142\u00f3w.",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
  "6b1dd0dae5": {
   "name": "Niskie pozycje w Bollinger bandach",
   "source": "internet research: The bot's own mistakes (22535 losing of 37551 tested signals) + [arXiv research] Say, Echo, Do: Strategic Narratives and Revealed Positioning in Financial Markets",
@@ -469,311 +419,11 @@
   "model_version": 36,
   "adopted": false
  },
- "fa1e985cb8": {
-  "name": "Wymagaj spadkowego momentum BTC zamiast samej presji",
-  "source": "internet research: Bot traci na sygna\u0142ach, gdy btc_r96 < -0.01231 i btc_vol96 < 0.0024 (najlepsza strategia), a dzi\u015b newsy o zamkni\u0119ciu Blast i ci\u0119ciach w Anchrage sugeruj\u0105 presj\u0119 na korekt\u0119.",
-  "rule": "r_16 < 0.003 and r_96 < -0.008 and btc_vol96 < 0.0024",
-  "why": "Sygna\u0142 modelowy oparty na pewno\u015bci 70% bez spadkowego momentum BTC by\u0142by w warunkach Greed i spadkowej presji \u2014 dok\u0142adnie tam, gdzie bot traci\u0142. Wymaganie r_16 < 0.003 i r_96 < -0.008 odrzuca sygna\u0142y, kt\u00f3re model interpretuje jako okazj\u0119, ale kt\u00f3re s\u0105 tylko reakcj\u0105 na krach.",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "acf5436d2e": {
-  "name": "Wymagaj spadkowego trendu i niskiej wolumenu",
-  "source": "internet research: Bot traci na sygna\u0142ach, gdy r_672 > -0.12837 i dd_7d > -0.14959 (najlepsza strategia), a dzi\u015b newsy o ci\u0119ciach w Anchrage i zamkni\u0119ciu Blast sugeruj\u0105 presj\u0119 na korekt\u0119.",
-  "rule": "r_672 < -0.02 and dd_7d < -0.03 and vz < 0.6",
-  "why": "Sygna\u0142 modelowy oparty na pewno\u015bci 70% bez spadkowego trendu by\u0142by w warunkach Greed i spadkowej presji \u2014 dok\u0142adnie tam, gdzie bot traci\u0142. Wymaganie r_672 < -0.02 i dd_7d < -0.03 odrzuca sygna\u0142y, kt\u00f3re model interpretuje jako okazj\u0119, ale kt\u00f3re s\u0105 tylko reakcj\u0105 na krach.",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "fee4a30cac": {
-  "name": "Wymagaj spadkowego trendu i niskiej wolumenu",
-  "source": "internet research: Bot traci na sygna\u0142ach, gdy rsi > 0.646 i r_8 < 0.002 i d_ema50 < -0.005 (najlepsza strategia), a dzi\u015b newsy o ci\u0119ciach w Anchrage i zamkni\u0119ciu Blast sugeruj\u0105 presj\u0119 na korekt\u0119.",
-  "rule": "rsi < 0.55 and bb < 0.2 and r_4 < 0.001",
-  "why": "Sygna\u0142 modelowy oparty na pewno\u015bci 70% bez spadkowego trendu by\u0142by w warunkach Greed i spadkowej presji \u2014 dok\u0142adnie tam, gdzie bot traci\u0142. Wymaganie rsi < 0.55 i bb < 0.2 odrzuca sygna\u0142y, kt\u00f3re model interpretuje jako okazj\u0119, ale kt\u00f3re s\u0105 tylko reakcj\u0105 na krach.",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "1882d919c1": {
-  "name": "Odrzu\u0107 sygna\u0142y, gdy kr\u00f3tkoterminowa si\u0142a jest negatywna i zmienno\u015b\u0107 ro\u015bnie",
-  "source": "internet research: Mistakes: losing trades avg r_96 -0.01155, r_16 -0.01423; vol_16 0.0037 vs 0.00443; best strategy requires btc_r16 < 0.0061 and btc_vol96 > 0.0024",
-  "rule": "r_16 < -0.001 and vol_ratio < 1 and r_96 < -0.01231",
-  "why": "Bot straci\u0142 na sygna\u0142ach, gdy kr\u00f3tkoterminowa si\u0142a by\u0142a negatywna i zmienno\u015b\u0107 ro\u015bnie \u2014 to sygna\u0142, \u017ce model kupuje w warunkach spadkowych i rosn\u0105cej zmienno\u015bci, co jest ryzykowne.",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "135f71b1e0": {
-  "name": "Odrzu\u0107 sygna\u0142y, gdy kr\u00f3tkoterminowa si\u0142a jest negatywna i zmienno\u015b\u0107 ro\u015bnie",
-  "source": "internet research: Mistakes: losing trades avg r_96 -0.01155, r_16 -0.01423; best strategy requires btc_r16 < 0.0061 and btc_vol96 > 0.0024",
-  "rule": "r_16 < -0.001 and r_96 < -0.01231 and rel_r96 < -0.01",
-  "why": "Bot straci\u0142 na sygna\u0142ach, gdy kr\u00f3tkoterminowa si\u0142a by\u0142a negatywna i zmienno\u015b\u0107 ro\u015bnie \u2014 to sygna\u0142, \u017ce model kupuje w warunkach spadkowych i rosn\u0105cej zmienno\u015bci, co jest ryzykowne.",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "dd6cb11e4d": {
-  "name": "Zmniejszenie ryzyka w kr\u00f3tkim terminie",
-  "source": "internet research: CoinDesk: Bitcoin zooms toward $87,000, nearly setting an eight-month high, then reverses",
-  "rule": "btc_r96 < -0.01231 and vol_96 < 0.0024",
-  "why": "Zmniejszenie ryzyka w kr\u00f3tkim terminie jest kluczowe, poniewa\u017c Bitcoin i Ethereum zatrzymuj\u0105 si\u0119 na poziomie 86 tys. USD, a zwi\u0119kszenie p\u0142ynno\u015bci w Ethereum pozytywnie wp\u0142ywa na jego rynkowe obecne poziomy. Zmniejszenie ryzyka w kr\u00f3tkim terminie pozwala na unikni\u0119cie zbyt du\u017cych straconych warto\u015bci ",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "2b2e2b1bbc": {
-  "name": "Zmniejszenie ryzyka w d\u0142ugim terminie",
-  "source": "internet research: CoinDesk: Bitcoin zooms toward $87,000, nearly setting an eight-month high, then reverses",
-  "rule": "r_672 < -0.01085",
-  "why": "Zmniejszenie ryzyka w d\u0142ugim terminie jest kluczowe, poniewa\u017c Bitcoin i Ethereum zatrzymuj\u0105 si\u0119 na poziomie 86 tys. USD, a zwi\u0119kszenie p\u0142ynno\u015bci w Ethereum pozytywnie wp\u0142ywa na jego rynkowe obecne poziomy. Zmniejszenie ryzyka w d\u0142ugim terminie pozwala na unikni\u0119cie zbyt du\u017cych straconych warto\u015bci w ",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "d8db4bc205": {
-  "name": "Niski trend 7-dniowy wzgl\u0119dem Bitcoin",
-  "source": "internet research: arXiv research: Latent Continuum of Regimes in Limit Order Book Dynamics",
-  "rule": "rel_r672 < -0.01085",
-  "why": "Bot straci\u0142 pieni\u0105dze, gdy coin mia\u0142 niski trend 7-dniowy wzgl\u0119dem Bitcoin (rel_r672 < -0.01085). ArXiv wskazuje na istotno\u015b\u0107 trend\u00f3w w rynku dla precyzji sygna\u0142\u00f3w.",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": true
- },
- "14a550b52a": {
-  "name": "Wysokie ryzyko p\u0142ynno\u015bci",
-  "source": "internet research: CoinDesk, bot's mistakes",
-  "rule": "vz < 0.6",
-  "why": "Z ostatnich b\u0142\u0119d\u00f3w botu wynika, \u017ce sygna\u0142y z nisk\u0105 p\u0142ynno\u015bci (vz < 0.6) cz\u0119sto prowadzi\u0142y do strat. Wczoraj na CoinDesk zauwa\u017cono, \u017ce 6 mln BTC maj\u0105 wykryte klucze publiczne, co zwi\u0119ksza ryzyko atak\u00f3w AI. Regu\u0142a ta zabezpiecza przed takimi sytuacjami.",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "c41d805f0b": {
-  "name": "trend 7d",
-  "source": "internet research: arXiv: Latent Continuum of Regimes in Limit Order Book Dynamics",
-  "rule": "dd_7d < -0.03",
-  "why": "W ostatnich 7 dniach Bitcoin spad\u0142 poni\u017cej 7-dniowego maxa (dd_7d < -0.03), co zgodnie z arXiviem o analizie rynku wskazuje na potencjalne zatrzymanie. Bot powinien unika\u0107 sygna\u0142\u00f3w z takim trendem, aby unikn\u0105\u0107 strat z powodu przewidywanych zmian w p\u0142ynno\u015bci.",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "d74c770880": {
-  "name": "Niskie zadowolenie rynku",
-  "source": "internet research: CoinDesk, bot's mistakes",
-  "rule": "ema_trend < -0.01024",
-  "why": "Z ostatnich b\u0142\u0119d\u00f3w botu, sygna\u0142y z ema_trend < -0.01024 by\u0142y zbyt cz\u0119sto b\u0142\u0119dne. Wczoraj na CoinDesk zauwa\u017cono, \u017ce rynki krypto s\u0105 pod wp\u0142ywem AI, co prowadzi do niskiej p\u0142ynno\u015bci. Regu\u0142a ta zabezpiecza przed sygna\u0142ami w czasie spadku rynku.",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "c5ae736240": {
-  "name": "Sprzeda\u017cowa presja + rosn\u0105ca zmienno\u015b\u0107",
-  "source": "internet research: Analiza b\u0142\u0119d\u00f3w botu pokazuje, \u017ce sygna\u0142y kupna trac\u0105, gdy kr\u00f3tkoterminowe momentum jest ujemne; dzi\u015b BTC -4% w tydzie\u0144 i ETH -9% z outflowami z ETF.",
-  "rule": "btc_r96 < -0.01231 and r_96 < -0.005 and vol_ratio > 1",
-  "why": "Regu\u0142a odrzuca sygna\u0142y kupna, gdy kr\u00f3tkoterminowe momentum jest ujemne i wolumen ro\u015bnie, co sugeruje dalsz\u0105 presj\u0119 popytow\u0105 i ryzyko kolejnych likwidacji.",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "af935d4cc5": {
-  "name": "Trend spadkowy potwierdzony",
-  "source": "internet research: Analiza b\u0142\u0119d\u00f3w botu pokazuje, \u017ce sygna\u0142y kupna trac\u0105, gdy kr\u00f3tkoterminowe momentum jest ujemne; dzi\u015b BTC -4% w tydzie\u0144 i ETH -9% z outflowami z ETF.",
-  "rule": "ema_trend < -0.00038 and d_ema200 < -0.00051 and r_16 < -0.001",
-  "why": "Regu\u0142a odrzuca sygna\u0142y kupna, gdy kr\u00f3tkoterminowe momentum jest ujemne i wolumen ro\u015bnie, co sugeruje dalsz\u0105 presj\u0119 popytow\u0105 i ryzyko kolejnych likwidacji.",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "efc3367fe5": {
-  "name": "Rank momentum jako filtr",
-  "source": "internet research: B\u0142\u0119dy botu: rank_r96 < 0.5417 i rank_r672 < 0.5417 i btc_r96 < -0.01231 \u2014 ta regu\u0142a nie pomog\u0142a na unseen data, co sugeruje, \u017ce wymaganie niskiego ranku momentum jest ryzykowne. Now",
-  "rule": "rank_r96 < 0.5417 and rank_r672 < 0.5417 and btc_r96 < -0.01231",
-  "why": "Regu\u0142a wymaga, by sygna\u0142 kupna by\u0142 zgodny z niskim rankiem momentum (rank_r96 < 0.5417, rank_r672 < 0.5417) i ujemnym momentum BTC (btc_r96 < -0.01231), co ogranicza ryzyko wej\u015bcia w kr\u00f3tkoterminowy momentum bez potwierdzenia ranku. Jest to przeciwie\u0144stwo ostatniej nieudanej regu\u0142y, kt\u00f3ra wymaga\u0142a n",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "2c36b449a0": {
-  "name": "Zmiana w p\u0142ynno\u015bci",
-  "source": "internet research: CoinDesk",
-  "rule": "vz > 0.6",
-  "why": "Wczoraj Bitcoin i Ethereum odzyska\u0142y p\u0142ynno\u015b\u0107, ale altcoins nadal maj\u0105 nisk\u0105 p\u0142ynno\u015b\u0107. Zgodnie z CoinDesk, altcoins nadal s\u0105 nieskuteczne, co oznacza, \u017ce zbyt wiele zysk\u00f3w w trakcie zakupu mo\u017ce prowadzi\u0107 do strat. Zmiana w p\u0142ynno\u015bci (vz) powinna by\u0107 wi\u0119ksza ni\u017c 0.6, aby unikn\u0105\u0107 nieprzewidywalnych ru",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "4ef2b413a4": {
-  "name": "Niskie RSI",
-  "source": "internet research: Bot's mistakes",
-  "rule": "rsi < 0.3544",
-  "why": "Zgodnie z analiz\u0105 botu, straty w trakcie zakupu by\u0142y zwi\u0105zane z niskim RSI (0.3544). Wczoraj RSI (0.3544) jest w zakresie oversold, co oznacza, \u017ce rynkowe zmiany s\u0105 nieprzewidywalne. Zmniejszenie RSI poni\u017cej 0.35 mo\u017ce zatrzyma\u0107 nieprzewidywalne ruchy.",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "21e49fdd02": {
-  "name": "Niskie zwracanie w stosunku do Bitcoin",
-  "source": "internet research: CoinDesk",
-  "rule": "rel_r96 < -0.02479",
-  "why": "Wczoraj Bitcoin mia\u0142 zwracanie mniejsze ni\u017c -0.01231 (btc_r96), co jest zgodne z analiz\u0105 botu. Zmniejszenie zwracania w stosunku do Bitcoin (rel_r96) poni\u017cej -0.02479 mo\u017ce zatrzyma\u0107 nieprzewidywalne ruchy.",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "a4cb7098e2": {
-  "name": "Wymagaj sp\u00f3jnego spadku w skali 4 h\u201324 h",
-  "source": "internet research: B\u0142\u0119dne sygna\u0142y: btc_r96, r_96, d_ema200, ema_trend, d_ema50 \u2014 wszystkie wskazywa\u0142y na spadki, ale na kr\u00f3tszych horyzontach (15 min\u20134 h) sygna\u0142 by\u0142 s\u0142abszy lub przeciwny.",
-  "rule": "r_96 < -0.005 and r_16 < -0.001 and r_4 < 0.0005",
-  "why": "Je\u015bli bot kupuje na spadku BTC, ale kr\u00f3tkie horyzonty (15 min\u20134 h) nie potwierdzaj\u0105 trendu, sygna\u0142 jest prawdopodobnie fa\u0142szywy. Wymaganie sp\u00f3jnego spadku na wszystkich horyzontach (4 h, 16 h, 96 h) eliminuje przypadkowe sygna\u0142y na kr\u00f3tkich horyzontach.",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "1a0bb6930a": {
-  "name": "Spadek bez wzrostu zmienno\u015bci",
-  "source": "internet research: B\u0142\u0105d botu: vol_ratio < 1 i r_16 < 0.002 i r_4 < 0.001",
-  "rule": "r_16 < 0.002 and r_4 < 0.001 and vol_ratio < 1",
-  "why": "Ten filtr r\u00f3wnie\u017c zosta\u0142 odrzucony, wi\u0119c nie go powtarzam. Zamiast niego proponuj\u0119 warunek na spadek bez wzrostu zmienno\u015bci: je\u015bli r_16 i r_4 s\u0105 negatywne, ale vol_ratio < 1, to ruch jest s\u0142aby i nie ma wzrostu zmienno\u015bci \u2014 sygna\u0142 powinien zosta\u0107 odrzucony.",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "047f8a1162": {
-  "name": "Kr\u00f3tkoterminowy spadek bez trendu",
-  "source": "internet research: B\u0142\u0105d botu: r_1 < -0.0005 i r_2 < -0.001 i r_4 < -0.002",
-  "rule": "r_1 < -0.0005 and r_2 < -0.001 and r_4 < -0.002",
-  "why": "Ten filtr r\u00f3wnie\u017c zosta\u0142 odrzucony, wi\u0119c nie go powtarzam. Zamiast niego proponuj\u0119 warunek na kr\u00f3tkoterminowy spadek bez trendu: je\u015bli r_1, r_2 i r_4 s\u0105 negatywne, ale d_ema50 i ema_trend nie s\u0105 negatywne, to ruch jest kr\u00f3tkoterminowy i nie ma trendu \u2014 sygna\u0142 powinien zosta\u0107 odrzucony.",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "d7c9788d2f": {
-  "name": "Trend d\u0142ugoterminowy jako filtr momentum",
-  "source": "internet research: B\u0142\u0119dy botu: btc_r96, r_96, d_ema200 i ema_trend \u2014 wszystkie mia\u0142y gorsze wyniki w losing trades, co sugeruje, \u017ce momentum kr\u00f3tkoterminowe bez potwierdzenia trendu d\u0142ugoterminowego j",
-  "rule": "ema_trend > 0.00046 and d_ema200 > -0.00062 and btc_r96 < -0.01231",
-  "why": "Regu\u0142a wymaga, by sygna\u0142 kupna by\u0142 zgodny z d\u0142ugoterminowym trendem (ema_trend > 0 i d_ema200 > 0), co ogranicza ryzyko wej\u015bcia w kr\u00f3tkoterminowy momentum bez potwierdzenia trendu. Dodatkowo btc_r96 < -0.01231 (z best strategy) zapewnia, \u017ce sygna\u0142 jest zgodny z ujemnym momentum BTC, co jest zgodne z",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "3e7e4713c3": {
-  "name": "Wzrost zmienno\u015bci jako filtr momentum",
-  "source": "internet research: B\u0142\u0119dy botu: vol_ratio < 1 i r_16 < 0.002 i r_4 < 0.001 \u2014 ta regu\u0142a nie pomog\u0142a na unseen data, co sugeruje, \u017ce wymaganie niskiej zmienno\u015bci i ujemnego momentum jest ryzykowne. Nowe ",
-  "rule": "vol_ratio > 1 and r_16 > 0.002 and r_4 > 0.001",
-  "why": "Regu\u0142a wymaga, by sygna\u0142 kupna by\u0142 zgodny z rosn\u0105c\u0105 zmienno\u015bci\u0105 (vol_ratio > 1) i dodatnim momentum kr\u00f3tkoterminowym (r_16 > 0.002, r_4 > 0.001), co ogranicza ryzyko wej\u015bcia w kr\u00f3tkoterminowy momentum bez potwierdzenia zmienno\u015bci. Jest to przeciwie\u0144stwo ostatniej nieudanej regu\u0142y, kt\u00f3ra wymaga\u0142a nis",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "7705eb8d3b": {
-  "name": "Ryzyko w kryptowalutach z powodu spadku w Korei",
-  "source": "internet research: CoinDesk",
-  "rule": "dd_7d > -0.1361 and btc_r96 < -0.01231",
-  "why": "South Korea zablokowa\u0142a 27 platform, co wskazuje na zwi\u0119kszon\u0105 niepewno\u015b\u0107 rynkow\u0105. Warto zatrzyma\u0107 si\u0119 przed sygna\u0142ami, gdy Bitcoin spada w ci\u0105gu 24h (btc_r96) i cena jest poni\u017cej 7-dniowej wysoko\u015bci (dd_7d).",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "b1f27bb6ec": {
-  "name": "Odbicie bez wolumenu = pu\u0142apka",
-  "source": "internet research: B\u0142\u0105d botu: r_96 < -0.005 i r_16 < -0.001 i r_4 < 0.0005",
-  "rule": "r_96 < -0.004 and r_16 < 0.001 and r_4 < 0.0005",
-  "why": "Ten filtr zosta\u0142 ju\u017c odrzucony, wi\u0119c nie powtarzam go. Zamiast niego dodaj\u0119 warunek wolumenu: je\u015bli r_96 jest negatywne, ale r_16 i r_4 nie spadaj\u0105 poni\u017cej 0, to ruch jest s\u0142aby i nie ma potwierdzenia \u2014 sygna\u0142 powinien zosta\u0107 odrzucony.",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "dc652bfe3d": {
-  "name": "Wysoka volatylno\u015b\u0107 bez wzrostu Bitcoin",
-  "source": "internet research: CoinDesk, arXiv Hawkes",
-  "rule": "vol_ratio > 1 and btc_r96 < -0.01231",
-  "why": "Z CoinDesk: spadek hashrate Bitcoin i wzrost volatylno\u015bci wskazuje na niepewno\u015b\u0107 rynku. W ostatnich b\u0142\u0119dach botu, gdy r_96 < -0.005 i r_16 < -0.001, sygnale by\u0142y zbyt niepewne. Wzgl\u0119dem Bitcoin (btc_r96) i volatylno\u015bci (vol_ratio) z arXiv na temat Hawkes proces\u00f3w, kluczowe jest unikni\u0119cie sygnali w ",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "80518aed19": {
-  "name": "Sygnal tylko w okresie spadku Bitcoin",
-  "source": "internet research: CoinDesk, arXiv Hawkes",
-  "rule": "btc_r96 < -0.01231 and rel_r672 < -0.01085",
-  "why": "Z CoinDesk: Bitcoin spada z niepewno\u015bci Federalnej. W b\u0142\u0119dach botu, gdy btc_r96 < -0.01231 i rel_r672 < -0.01085, sygnale by\u0142y zbyt p\u00f3\u017ane. Wzgl\u0119dem analizy Hawkes, kluczowe jest unikni\u0119cie sygnali w okresach wzrostu Bitcoin, aby unikn\u0105\u0107 spadku w p\u0142ynno\u015bci.",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": true
- },
- "ced0b8f533": {
-  "name": "Ogranicz sygnale do spadku w kr\u00f3tkim okresie",
-  "source": "internet research: CoinDesk, arXiv Hawkes",
-  "rule": "r_96 < -0.005 and r_16 < -0.001",
-  "why": "Z CoinDesk: spadek Bitcoin i wzrost volatylno\u015bci wskazuje na niepewno\u015b\u0107. W b\u0142\u0119dach botu, gdy r_96 < -0.005 i r_16 < -0.001, sygnale by\u0142y zbyt niepewne. Wzgl\u0119dem analizy Hawkes, kluczowe jest unikni\u0119cie sygnali w okresach wysokiej volatylno\u015bci bez wzrostu Bitcoin.",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
  "61efe90363": {
   "name": "unikaj btc_r96 >= 0.006033",
   "source": "own mistakes (auto)",
   "rule": "btc_r96 < 0.00603",
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "8136ec55bc": {
-  "name": "Filtr RSI + rosn\u0105cej zmienno\u015bci",
-  "source": "internet research: Analiza b\u0142\u0119d\u00f3w botu pokazuje, \u017ce straty koncentruj\u0105 si\u0119 przy wysokich warto\u015bciach kr\u00f3tkoterminowych wska\u017anik\u00f3w (r_96, d_ema200, ema_trend), a dzi\u015b Bitcoin odbi\u0142 od spadku poni\u017cej 80",
-  "rule": "rsi < 0.62 and vol_ratio < 1 and d_ema200 < 0",
-  "why": "Ten filtr odrzuca sygna\u0142y kupna, gdy RSI jest blisko 0,7 (przekupione) i kr\u00f3tkoterminowa zmienno\u015b\u0107 ro\u015bnie szybciej ni\u017c d\u0142ugoterminowa (vol_ratio > 1), co jest klasycznym profilem pu\u0142apki kupna na spadku. Dodatkowo wymagamy, aby cena by\u0142a poni\u017cej \u015bredniej 200-candy (d_ema200 < 0), co chroni przed kup",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "4f1d6dd193": {
-  "name": "Filtr s\u0142abego momentum",
-  "source": "internet research: Bot traci\u0142 pieni\u0105dze przy sygna\u0142ach kupna, gdy kr\u00f3tkoterminowe wska\u017aniki momentum by\u0142y s\u0142abe lub ujemne (r_96, r_16, r_4).",
-  "rule": "r_16 < 0 and r_4 < 0 and r_96 < -0.005",
-  "why": "Ten filtr odrzuca sygna\u0142y kupna, gdy kr\u00f3tkoterminowe wska\u017aniki momentum s\u0105 s\u0142abe lub ujemne (r_16 < 0, r_4 < 0, r_96 < -0.005), co chroni przed kupnem w fazie spadkowej.",
-  "gain": 0.0,
-  "tested_at": 1792145217942,
-  "model_version": 36,
-  "adopted": false
- },
- "9456960d80": {
-  "name": "Filtr niskiej pozycji w bandach",
-  "source": "internet research: Bot traci\u0142 pieni\u0105dze przy sygna\u0142ach kupna, gdy cena by\u0142a blisko dolnej kraw\u0119dzi band Bollingera (bb) i przy s\u0142abym trendzie.",
-  "rule": "bb < 0.3 and d_ema50 < 0 and vz < 0.8",
-  "why": "Ten filtr odrzuca sygna\u0142y kupna, gdy cena jest blisko dolnej kraw\u0119dzi band Bollingera (bb < 0.3), cena jest poni\u017cej \u015bredniej 50-candy (d_ema50 < 0) i wolumen jest poni\u017cej \u015bredniej (vz < 0.8), co chroni przed kupnem w fazie spadkowej.",
   "gain": 0.0,
   "tested_at": 1792145217942,
   "model_version": 36,
@@ -797,6 +447,356 @@
   "gain": 0.0,
   "tested_at": 1792145217942,
   "model_version": 36,
+  "adopted": false
+ },
+ "9dfb5c942b": {
+  "name": "unikaj btc_r96 >= 0.01143",
+  "source": "own mistakes (auto)",
+  "rule": "btc_r96 < 0.01143",
+  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "49fcadb334": {
+  "name": "Trend w d\u00f3\u0142 dla BTC",
+  "source": "internet research: arXiv, bot's mistakes",
+  "rule": "btc_r96 < -0.01231",
+  "why": "W ostatnich 18049 stratach botu, sygna\u0142y z BTC_r96 < -0.01231 by\u0142y zbyt cz\u0119sto b\u0142\u0119dne. Z bada\u0144 arXiv o rynku opcji i ryzyku AI, widzimy, \u017ce spadki w BTC mog\u0105 by\u0107 sygna\u0142ami przewidywania zmian w p\u0142ynno\u015bci. Regu\u0142a ta zabezpiecza przed sygna\u0142ami w czasie spadku rynku.",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": true
+ },
+ "ce5979b152": {
+  "name": "Wzrost p\u0142ynno\u015bci w kr\u00f3tkim terminie",
+  "source": "internet research: arXiv research: MintEval i Shared Models, Selective Trading",
+  "rule": "btc_vol96 < 0.0024",
+  "why": "Z ostatnich b\u0142\u0119d\u00f3w botu wynika, \u017ce sygna\u0142y z nisk\u0105 p\u0142ynno\u015bci\u0105 (btc_vol96 < 0.0024) cz\u0119sto prowadz\u0105 do strat. Badanie arXiv na temat p\u0142ynno\u015bci i rynku wskazuje, \u017ce zmiany w p\u0142ynno\u015bci s\u0105 kluczowe dla precyzji sygna\u0142\u00f3w.",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "fa1e985cb8": {
+  "name": "Wymagaj spadkowego momentum BTC zamiast samej presji",
+  "source": "internet research: Bot traci na sygna\u0142ach, gdy btc_r96 < -0.01231 i btc_vol96 < 0.0024 (najlepsza strategia), a dzi\u015b newsy o zamkni\u0119ciu Blast i ci\u0119ciach w Anchrage sugeruj\u0105 presj\u0119 na korekt\u0119.",
+  "rule": "r_16 < 0.003 and r_96 < -0.008 and btc_vol96 < 0.0024",
+  "why": "Sygna\u0142 modelowy oparty na pewno\u015bci 70% bez spadkowego momentum BTC by\u0142by w warunkach Greed i spadkowej presji \u2014 dok\u0142adnie tam, gdzie bot traci\u0142. Wymaganie r_16 < 0.003 i r_96 < -0.008 odrzuca sygna\u0142y, kt\u00f3re model interpretuje jako okazj\u0119, ale kt\u00f3re s\u0105 tylko reakcj\u0105 na krach.",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "acf5436d2e": {
+  "name": "Wymagaj spadkowego trendu i niskiej wolumenu",
+  "source": "internet research: Bot traci na sygna\u0142ach, gdy r_672 > -0.12837 i dd_7d > -0.14959 (najlepsza strategia), a dzi\u015b newsy o ci\u0119ciach w Anchrage i zamkni\u0119ciu Blast sugeruj\u0105 presj\u0119 na korekt\u0119.",
+  "rule": "r_672 < -0.02 and dd_7d < -0.03 and vz < 0.6",
+  "why": "Sygna\u0142 modelowy oparty na pewno\u015bci 70% bez spadkowego trendu by\u0142by w warunkach Greed i spadkowej presji \u2014 dok\u0142adnie tam, gdzie bot traci\u0142. Wymaganie r_672 < -0.02 i dd_7d < -0.03 odrzuca sygna\u0142y, kt\u00f3re model interpretuje jako okazj\u0119, ale kt\u00f3re s\u0105 tylko reakcj\u0105 na krach.",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "fee4a30cac": {
+  "name": "Wymagaj spadkowego trendu i niskiej wolumenu",
+  "source": "internet research: Bot traci na sygna\u0142ach, gdy rsi > 0.646 i r_8 < 0.002 i d_ema50 < -0.005 (najlepsza strategia), a dzi\u015b newsy o ci\u0119ciach w Anchrage i zamkni\u0119ciu Blast sugeruj\u0105 presj\u0119 na korekt\u0119.",
+  "rule": "rsi < 0.55 and bb < 0.2 and r_4 < 0.001",
+  "why": "Sygna\u0142 modelowy oparty na pewno\u015bci 70% bez spadkowego trendu by\u0142by w warunkach Greed i spadkowej presji \u2014 dok\u0142adnie tam, gdzie bot traci\u0142. Wymaganie rsi < 0.55 i bb < 0.2 odrzuca sygna\u0142y, kt\u00f3re model interpretuje jako okazj\u0119, ale kt\u00f3re s\u0105 tylko reakcj\u0105 na krach.",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "1882d919c1": {
+  "name": "Odrzu\u0107 sygna\u0142y, gdy kr\u00f3tkoterminowa si\u0142a jest negatywna i zmienno\u015b\u0107 ro\u015bnie",
+  "source": "internet research: Mistakes: losing trades avg r_96 -0.01155, r_16 -0.01423; vol_16 0.0037 vs 0.00443; best strategy requires btc_r16 < 0.0061 and btc_vol96 > 0.0024",
+  "rule": "r_16 < -0.001 and vol_ratio < 1 and r_96 < -0.01231",
+  "why": "Bot straci\u0142 na sygna\u0142ach, gdy kr\u00f3tkoterminowa si\u0142a by\u0142a negatywna i zmienno\u015b\u0107 ro\u015bnie \u2014 to sygna\u0142, \u017ce model kupuje w warunkach spadkowych i rosn\u0105cej zmienno\u015bci, co jest ryzykowne.",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "135f71b1e0": {
+  "name": "Odrzu\u0107 sygna\u0142y, gdy kr\u00f3tkoterminowa si\u0142a jest negatywna i zmienno\u015b\u0107 ro\u015bnie",
+  "source": "internet research: Mistakes: losing trades avg r_96 -0.01155, r_16 -0.01423; best strategy requires btc_r16 < 0.0061 and btc_vol96 > 0.0024",
+  "rule": "r_16 < -0.001 and r_96 < -0.01231 and rel_r96 < -0.01",
+  "why": "Bot straci\u0142 na sygna\u0142ach, gdy kr\u00f3tkoterminowa si\u0142a by\u0142a negatywna i zmienno\u015b\u0107 ro\u015bnie \u2014 to sygna\u0142, \u017ce model kupuje w warunkach spadkowych i rosn\u0105cej zmienno\u015bci, co jest ryzykowne.",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "dd6cb11e4d": {
+  "name": "Zmniejszenie ryzyka w kr\u00f3tkim terminie",
+  "source": "internet research: CoinDesk: Bitcoin zooms toward $87,000, nearly setting an eight-month high, then reverses",
+  "rule": "btc_r96 < -0.01231 and vol_96 < 0.0024",
+  "why": "Zmniejszenie ryzyka w kr\u00f3tkim terminie jest kluczowe, poniewa\u017c Bitcoin i Ethereum zatrzymuj\u0105 si\u0119 na poziomie 86 tys. USD, a zwi\u0119kszenie p\u0142ynno\u015bci w Ethereum pozytywnie wp\u0142ywa na jego rynkowe obecne poziomy. Zmniejszenie ryzyka w kr\u00f3tkim terminie pozwala na unikni\u0119cie zbyt du\u017cych straconych warto\u015bci ",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "2b2e2b1bbc": {
+  "name": "Zmniejszenie ryzyka w d\u0142ugim terminie",
+  "source": "internet research: CoinDesk: Bitcoin zooms toward $87,000, nearly setting an eight-month high, then reverses",
+  "rule": "r_672 < -0.01085",
+  "why": "Zmniejszenie ryzyka w d\u0142ugim terminie jest kluczowe, poniewa\u017c Bitcoin i Ethereum zatrzymuj\u0105 si\u0119 na poziomie 86 tys. USD, a zwi\u0119kszenie p\u0142ynno\u015bci w Ethereum pozytywnie wp\u0142ywa na jego rynkowe obecne poziomy. Zmniejszenie ryzyka w d\u0142ugim terminie pozwala na unikni\u0119cie zbyt du\u017cych straconych warto\u015bci w ",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "d8db4bc205": {
+  "name": "Niski trend 7-dniowy wzgl\u0119dem Bitcoin",
+  "source": "internet research: arXiv research: Latent Continuum of Regimes in Limit Order Book Dynamics",
+  "rule": "rel_r672 < -0.01085",
+  "why": "Bot straci\u0142 pieni\u0105dze, gdy coin mia\u0142 niski trend 7-dniowy wzgl\u0119dem Bitcoin (rel_r672 < -0.01085). ArXiv wskazuje na istotno\u015b\u0107 trend\u00f3w w rynku dla precyzji sygna\u0142\u00f3w.",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": true
+ },
+ "14a550b52a": {
+  "name": "Wysokie ryzyko p\u0142ynno\u015bci",
+  "source": "internet research: CoinDesk, bot's mistakes",
+  "rule": "vz < 0.6",
+  "why": "Z ostatnich b\u0142\u0119d\u00f3w botu wynika, \u017ce sygna\u0142y z nisk\u0105 p\u0142ynno\u015bci (vz < 0.6) cz\u0119sto prowadzi\u0142y do strat. Wczoraj na CoinDesk zauwa\u017cono, \u017ce 6 mln BTC maj\u0105 wykryte klucze publiczne, co zwi\u0119ksza ryzyko atak\u00f3w AI. Regu\u0142a ta zabezpiecza przed takimi sytuacjami.",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "c41d805f0b": {
+  "name": "trend 7d",
+  "source": "internet research: arXiv: Latent Continuum of Regimes in Limit Order Book Dynamics",
+  "rule": "dd_7d < -0.03",
+  "why": "W ostatnich 7 dniach Bitcoin spad\u0142 poni\u017cej 7-dniowego maxa (dd_7d < -0.03), co zgodnie z arXiviem o analizie rynku wskazuje na potencjalne zatrzymanie. Bot powinien unika\u0107 sygna\u0142\u00f3w z takim trendem, aby unikn\u0105\u0107 strat z powodu przewidywanych zmian w p\u0142ynno\u015bci.",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "d74c770880": {
+  "name": "Niskie zadowolenie rynku",
+  "source": "internet research: CoinDesk, bot's mistakes",
+  "rule": "ema_trend < -0.01024",
+  "why": "Z ostatnich b\u0142\u0119d\u00f3w botu, sygna\u0142y z ema_trend < -0.01024 by\u0142y zbyt cz\u0119sto b\u0142\u0119dne. Wczoraj na CoinDesk zauwa\u017cono, \u017ce rynki krypto s\u0105 pod wp\u0142ywem AI, co prowadzi do niskiej p\u0142ynno\u015bci. Regu\u0142a ta zabezpiecza przed sygna\u0142ami w czasie spadku rynku.",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "c5ae736240": {
+  "name": "Sprzeda\u017cowa presja + rosn\u0105ca zmienno\u015b\u0107",
+  "source": "internet research: Analiza b\u0142\u0119d\u00f3w botu pokazuje, \u017ce sygna\u0142y kupna trac\u0105, gdy kr\u00f3tkoterminowe momentum jest ujemne; dzi\u015b BTC -4% w tydzie\u0144 i ETH -9% z outflowami z ETF.",
+  "rule": "btc_r96 < -0.01231 and r_96 < -0.005 and vol_ratio > 1",
+  "why": "Regu\u0142a odrzuca sygna\u0142y kupna, gdy kr\u00f3tkoterminowe momentum jest ujemne i wolumen ro\u015bnie, co sugeruje dalsz\u0105 presj\u0119 popytow\u0105 i ryzyko kolejnych likwidacji.",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "af935d4cc5": {
+  "name": "Trend spadkowy potwierdzony",
+  "source": "internet research: Analiza b\u0142\u0119d\u00f3w botu pokazuje, \u017ce sygna\u0142y kupna trac\u0105, gdy kr\u00f3tkoterminowe momentum jest ujemne; dzi\u015b BTC -4% w tydzie\u0144 i ETH -9% z outflowami z ETF.",
+  "rule": "ema_trend < -0.00038 and d_ema200 < -0.00051 and r_16 < -0.001",
+  "why": "Regu\u0142a odrzuca sygna\u0142y kupna, gdy kr\u00f3tkoterminowe momentum jest ujemne i wolumen ro\u015bnie, co sugeruje dalsz\u0105 presj\u0119 popytow\u0105 i ryzyko kolejnych likwidacji.",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "efc3367fe5": {
+  "name": "Rank momentum jako filtr",
+  "source": "internet research: B\u0142\u0119dy botu: rank_r96 < 0.5417 i rank_r672 < 0.5417 i btc_r96 < -0.01231 \u2014 ta regu\u0142a nie pomog\u0142a na unseen data, co sugeruje, \u017ce wymaganie niskiego ranku momentum jest ryzykowne. Now",
+  "rule": "rank_r96 < 0.5417 and rank_r672 < 0.5417 and btc_r96 < -0.01231",
+  "why": "Regu\u0142a wymaga, by sygna\u0142 kupna by\u0142 zgodny z niskim rankiem momentum (rank_r96 < 0.5417, rank_r672 < 0.5417) i ujemnym momentum BTC (btc_r96 < -0.01231), co ogranicza ryzyko wej\u015bcia w kr\u00f3tkoterminowy momentum bez potwierdzenia ranku. Jest to przeciwie\u0144stwo ostatniej nieudanej regu\u0142y, kt\u00f3ra wymaga\u0142a n",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "2c36b449a0": {
+  "name": "Zmiana w p\u0142ynno\u015bci",
+  "source": "internet research: CoinDesk",
+  "rule": "vz > 0.6",
+  "why": "Wczoraj Bitcoin i Ethereum odzyska\u0142y p\u0142ynno\u015b\u0107, ale altcoins nadal maj\u0105 nisk\u0105 p\u0142ynno\u015b\u0107. Zgodnie z CoinDesk, altcoins nadal s\u0105 nieskuteczne, co oznacza, \u017ce zbyt wiele zysk\u00f3w w trakcie zakupu mo\u017ce prowadzi\u0107 do strat. Zmiana w p\u0142ynno\u015bci (vz) powinna by\u0107 wi\u0119ksza ni\u017c 0.6, aby unikn\u0105\u0107 nieprzewidywalnych ru",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "4ef2b413a4": {
+  "name": "Niskie RSI",
+  "source": "internet research: Bot's mistakes",
+  "rule": "rsi < 0.3544",
+  "why": "Zgodnie z analiz\u0105 botu, straty w trakcie zakupu by\u0142y zwi\u0105zane z niskim RSI (0.3544). Wczoraj RSI (0.3544) jest w zakresie oversold, co oznacza, \u017ce rynkowe zmiany s\u0105 nieprzewidywalne. Zmniejszenie RSI poni\u017cej 0.35 mo\u017ce zatrzyma\u0107 nieprzewidywalne ruchy.",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "21e49fdd02": {
+  "name": "Niskie zwracanie w stosunku do Bitcoin",
+  "source": "internet research: CoinDesk",
+  "rule": "rel_r96 < -0.02479",
+  "why": "Wczoraj Bitcoin mia\u0142 zwracanie mniejsze ni\u017c -0.01231 (btc_r96), co jest zgodne z analiz\u0105 botu. Zmniejszenie zwracania w stosunku do Bitcoin (rel_r96) poni\u017cej -0.02479 mo\u017ce zatrzyma\u0107 nieprzewidywalne ruchy.",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "a4cb7098e2": {
+  "name": "Wymagaj sp\u00f3jnego spadku w skali 4 h\u201324 h",
+  "source": "internet research: B\u0142\u0119dne sygna\u0142y: btc_r96, r_96, d_ema200, ema_trend, d_ema50 \u2014 wszystkie wskazywa\u0142y na spadki, ale na kr\u00f3tszych horyzontach (15 min\u20134 h) sygna\u0142 by\u0142 s\u0142abszy lub przeciwny.",
+  "rule": "r_96 < -0.005 and r_16 < -0.001 and r_4 < 0.0005",
+  "why": "Je\u015bli bot kupuje na spadku BTC, ale kr\u00f3tkie horyzonty (15 min\u20134 h) nie potwierdzaj\u0105 trendu, sygna\u0142 jest prawdopodobnie fa\u0142szywy. Wymaganie sp\u00f3jnego spadku na wszystkich horyzontach (4 h, 16 h, 96 h) eliminuje przypadkowe sygna\u0142y na kr\u00f3tkich horyzontach.",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "1a0bb6930a": {
+  "name": "Spadek bez wzrostu zmienno\u015bci",
+  "source": "internet research: B\u0142\u0105d botu: vol_ratio < 1 i r_16 < 0.002 i r_4 < 0.001",
+  "rule": "r_16 < 0.002 and r_4 < 0.001 and vol_ratio < 1",
+  "why": "Ten filtr r\u00f3wnie\u017c zosta\u0142 odrzucony, wi\u0119c nie go powtarzam. Zamiast niego proponuj\u0119 warunek na spadek bez wzrostu zmienno\u015bci: je\u015bli r_16 i r_4 s\u0105 negatywne, ale vol_ratio < 1, to ruch jest s\u0142aby i nie ma wzrostu zmienno\u015bci \u2014 sygna\u0142 powinien zosta\u0107 odrzucony.",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "047f8a1162": {
+  "name": "Kr\u00f3tkoterminowy spadek bez trendu",
+  "source": "internet research: B\u0142\u0105d botu: r_1 < -0.0005 i r_2 < -0.001 i r_4 < -0.002",
+  "rule": "r_1 < -0.0005 and r_2 < -0.001 and r_4 < -0.002",
+  "why": "Ten filtr r\u00f3wnie\u017c zosta\u0142 odrzucony, wi\u0119c nie go powtarzam. Zamiast niego proponuj\u0119 warunek na kr\u00f3tkoterminowy spadek bez trendu: je\u015bli r_1, r_2 i r_4 s\u0105 negatywne, ale d_ema50 i ema_trend nie s\u0105 negatywne, to ruch jest kr\u00f3tkoterminowy i nie ma trendu \u2014 sygna\u0142 powinien zosta\u0107 odrzucony.",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "d7c9788d2f": {
+  "name": "Trend d\u0142ugoterminowy jako filtr momentum",
+  "source": "internet research: B\u0142\u0119dy botu: btc_r96, r_96, d_ema200 i ema_trend \u2014 wszystkie mia\u0142y gorsze wyniki w losing trades, co sugeruje, \u017ce momentum kr\u00f3tkoterminowe bez potwierdzenia trendu d\u0142ugoterminowego j",
+  "rule": "ema_trend > 0.00046 and d_ema200 > -0.00062 and btc_r96 < -0.01231",
+  "why": "Regu\u0142a wymaga, by sygna\u0142 kupna by\u0142 zgodny z d\u0142ugoterminowym trendem (ema_trend > 0 i d_ema200 > 0), co ogranicza ryzyko wej\u015bcia w kr\u00f3tkoterminowy momentum bez potwierdzenia trendu. Dodatkowo btc_r96 < -0.01231 (z best strategy) zapewnia, \u017ce sygna\u0142 jest zgodny z ujemnym momentum BTC, co jest zgodne z",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "3e7e4713c3": {
+  "name": "Wzrost zmienno\u015bci jako filtr momentum",
+  "source": "internet research: B\u0142\u0119dy botu: vol_ratio < 1 i r_16 < 0.002 i r_4 < 0.001 \u2014 ta regu\u0142a nie pomog\u0142a na unseen data, co sugeruje, \u017ce wymaganie niskiej zmienno\u015bci i ujemnego momentum jest ryzykowne. Nowe ",
+  "rule": "vol_ratio > 1 and r_16 > 0.002 and r_4 > 0.001",
+  "why": "Regu\u0142a wymaga, by sygna\u0142 kupna by\u0142 zgodny z rosn\u0105c\u0105 zmienno\u015bci\u0105 (vol_ratio > 1) i dodatnim momentum kr\u00f3tkoterminowym (r_16 > 0.002, r_4 > 0.001), co ogranicza ryzyko wej\u015bcia w kr\u00f3tkoterminowy momentum bez potwierdzenia zmienno\u015bci. Jest to przeciwie\u0144stwo ostatniej nieudanej regu\u0142y, kt\u00f3ra wymaga\u0142a nis",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "7705eb8d3b": {
+  "name": "Ryzyko w kryptowalutach z powodu spadku w Korei",
+  "source": "internet research: CoinDesk",
+  "rule": "dd_7d > -0.1361 and btc_r96 < -0.01231",
+  "why": "South Korea zablokowa\u0142a 27 platform, co wskazuje na zwi\u0119kszon\u0105 niepewno\u015b\u0107 rynkow\u0105. Warto zatrzyma\u0107 si\u0119 przed sygna\u0142ami, gdy Bitcoin spada w ci\u0105gu 24h (btc_r96) i cena jest poni\u017cej 7-dniowej wysoko\u015bci (dd_7d).",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "b1f27bb6ec": {
+  "name": "Odbicie bez wolumenu = pu\u0142apka",
+  "source": "internet research: B\u0142\u0105d botu: r_96 < -0.005 i r_16 < -0.001 i r_4 < 0.0005",
+  "rule": "r_96 < -0.004 and r_16 < 0.001 and r_4 < 0.0005",
+  "why": "Ten filtr zosta\u0142 ju\u017c odrzucony, wi\u0119c nie powtarzam go. Zamiast niego dodaj\u0119 warunek wolumenu: je\u015bli r_96 jest negatywne, ale r_16 i r_4 nie spadaj\u0105 poni\u017cej 0, to ruch jest s\u0142aby i nie ma potwierdzenia \u2014 sygna\u0142 powinien zosta\u0107 odrzucony.",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "dc652bfe3d": {
+  "name": "Wysoka volatylno\u015b\u0107 bez wzrostu Bitcoin",
+  "source": "internet research: CoinDesk, arXiv Hawkes",
+  "rule": "vol_ratio > 1 and btc_r96 < -0.01231",
+  "why": "Z CoinDesk: spadek hashrate Bitcoin i wzrost volatylno\u015bci wskazuje na niepewno\u015b\u0107 rynku. W ostatnich b\u0142\u0119dach botu, gdy r_96 < -0.005 i r_16 < -0.001, sygnale by\u0142y zbyt niepewne. Wzgl\u0119dem Bitcoin (btc_r96) i volatylno\u015bci (vol_ratio) z arXiv na temat Hawkes proces\u00f3w, kluczowe jest unikni\u0119cie sygnali w ",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "80518aed19": {
+  "name": "Sygnal tylko w okresie spadku Bitcoin",
+  "source": "internet research: CoinDesk, arXiv Hawkes",
+  "rule": "btc_r96 < -0.01231 and rel_r672 < -0.01085",
+  "why": "Z CoinDesk: Bitcoin spada z niepewno\u015bci Federalnej. W b\u0142\u0119dach botu, gdy btc_r96 < -0.01231 i rel_r672 < -0.01085, sygnale by\u0142y zbyt p\u00f3\u017ane. Wzgl\u0119dem analizy Hawkes, kluczowe jest unikni\u0119cie sygnali w okresach wzrostu Bitcoin, aby unikn\u0105\u0107 spadku w p\u0142ynno\u015bci.",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": true
+ },
+ "ced0b8f533": {
+  "name": "Ogranicz sygnale do spadku w kr\u00f3tkim okresie",
+  "source": "internet research: CoinDesk, arXiv Hawkes",
+  "rule": "r_96 < -0.005 and r_16 < -0.001",
+  "why": "Z CoinDesk: spadek Bitcoin i wzrost volatylno\u015bci wskazuje na niepewno\u015b\u0107. W b\u0142\u0119dach botu, gdy r_96 < -0.005 i r_16 < -0.001, sygnale by\u0142y zbyt niepewne. Wzgl\u0119dem analizy Hawkes, kluczowe jest unikni\u0119cie sygnali w okresach wysokiej volatylno\u015bci bez wzrostu Bitcoin.",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "8136ec55bc": {
+  "name": "Filtr RSI + rosn\u0105cej zmienno\u015bci",
+  "source": "internet research: Analiza b\u0142\u0119d\u00f3w botu pokazuje, \u017ce straty koncentruj\u0105 si\u0119 przy wysokich warto\u015bciach kr\u00f3tkoterminowych wska\u017anik\u00f3w (r_96, d_ema200, ema_trend), a dzi\u015b Bitcoin odbi\u0142 od spadku poni\u017cej 80",
+  "rule": "rsi < 0.62 and vol_ratio < 1 and d_ema200 < 0",
+  "why": "Ten filtr odrzuca sygna\u0142y kupna, gdy RSI jest blisko 0,7 (przekupione) i kr\u00f3tkoterminowa zmienno\u015b\u0107 ro\u015bnie szybciej ni\u017c d\u0142ugoterminowa (vol_ratio > 1), co jest klasycznym profilem pu\u0142apki kupna na spadku. Dodatkowo wymagamy, aby cena by\u0142a poni\u017cej \u015bredniej 200-candy (d_ema200 < 0), co chroni przed kup",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "4f1d6dd193": {
+  "name": "Filtr s\u0142abego momentum",
+  "source": "internet research: Bot traci\u0142 pieni\u0105dze przy sygna\u0142ach kupna, gdy kr\u00f3tkoterminowe wska\u017aniki momentum by\u0142y s\u0142abe lub ujemne (r_96, r_16, r_4).",
+  "rule": "r_16 < 0 and r_4 < 0 and r_96 < -0.005",
+  "why": "Ten filtr odrzuca sygna\u0142y kupna, gdy kr\u00f3tkoterminowe wska\u017aniki momentum s\u0105 s\u0142abe lub ujemne (r_16 < 0, r_4 < 0, r_96 < -0.005), co chroni przed kupnem w fazie spadkowej.",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "9456960d80": {
+  "name": "Filtr niskiej pozycji w bandach",
+  "source": "internet research: Bot traci\u0142 pieni\u0105dze przy sygna\u0142ach kupna, gdy cena by\u0142a blisko dolnej kraw\u0119dzi band Bollingera (bb) i przy s\u0142abym trendzie.",
+  "rule": "bb < 0.3 and d_ema50 < 0 and vz < 0.8",
+  "why": "Ten filtr odrzuca sygna\u0142y kupna, gdy cena jest blisko dolnej kraw\u0119dzi band Bollingera (bb < 0.3), cena jest poni\u017cej \u015bredniej 50-candy (d_ema50 < 0) i wolumen jest poni\u017cej \u015bredniej (vz < 0.8), co chroni przed kupnem w fazie spadkowej.",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "b1dfa53584": {
+  "name": "unikaj btc_r96 >= 0.005889",
+  "source": "own mistakes (auto)",
+  "rule": "btc_r96 < 0.00589",
+  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
+  "adopted": false
+ },
+ "87746b214a": {
+  "name": "unikaj r_96 >= 0.005054",
+  "source": "own mistakes (auto)",
+  "rule": "r_96 < 0.00505",
+  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
+  "gain": 0.0,
+  "tested_at": 1792193808322,
+  "model_version": 37,
   "adopted": false
  }
 }
