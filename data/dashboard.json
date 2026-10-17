@@ -1,5 +1,5 @@
 {
- "generated_at": 1792200601722,
+ "generated_at": 1792213853239,
  "last_candle": 1792198800000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
@@ -12158,7 +12158,7 @@
   "regime": "volatile"
  },
  "brain": {
-  "created_at": 1792191857935,
+  "created_at": 1792213853232,
   "source": "cloud",
   "model": "qwen3:4b",
   "directives": {
@@ -12172,29 +12172,52 @@
    },
    "regime": "volatile"
   },
-  "reasoning": "Model ma 50% wygranych, ale z przewag\u0105 0.44% na 24h. Wszystkie sygna\u0142y maj\u0105 poni\u017cej 0.78 progu. Ryzyko polityczne i korekcyjne zwi\u0119ksza zmienno\u015b\u0107. Unikaj sygna\u0142\u00f3w z wysok\u0105 zmienno\u015bci\u0105 i RSI bliskim 0.7.",
+  "reasoning": "Model ma 51% wygranych, ale w krytycznych sytuacjach (np. spadki 7d) ryzyko jest zbyt wysokie. Wszystkie sygna\u0142y s\u0105 poni\u017cej 78% pewno\u015bci, wi\u0119c nie trzeba ryzykowa\u0107. Zmniejszono SOL, a DOT/AVAX/TRX unikane z powodu wysokiej zmienno\u015bci i niezgodno\u015bci z modeliem.",
   "new_lessons": [
    "DOT: zmienno\u015b\u0107 6.9% i spadki 7d -3.0% \u2014 unikaj, zbyt ryzykowny",
-   "AVAX: 30d +41.2% i zmienno\u015b\u0107 4.1% \u2014 unikaj, zbyt ryzykowny",
-   "TRX: 24h +1.5% i zmienno\u015b\u0107 0.9% \u2014 unikaj, zbyt ryzykowny"
+   "AVAX: 30d +41.2% i zmienno\u015b\u0107 4.3% \u2014 unikaj, zbyt ryzykowny",
+   "TRX: 24h +1.5% i zmienno\u015b\u0107 0.8% \u2014 unikaj, zbyt ryzykowny"
   ],
   "lessons": [
    "DOT: zmienno\u015b\u0107 6.9% i spadki 7d -3.0% \u2014 unikaj, zbyt ryzykowny",
+   "AVAX: 30d +41.2% i zmienno\u015b\u0107 4.3% \u2014 unikaj, zbyt ryzykowny",
+   "TRX: 24h +1.5% i zmienno\u015b\u0107 0.8% \u2014 unikaj, zbyt ryzykowny",
    "AVAX: 30d +41.2% i zmienno\u015b\u0107 4.1% \u2014 unikaj, zbyt ryzykowny",
    "TRX: 24h +1.5% i zmienno\u015b\u0107 0.9% \u2014 unikaj, zbyt ryzykowny",
    "DOT: zmienno\u015b\u0107 6.8% i 24h +6.5% \u2014 unikaj, zbyt ryzykowny",
    "AVAX: 30d +39.8% i zmienno\u015b\u0107 3.5% \u2014 unikaj, zbyt ryzykowny",
    "TRX: 24h +1.0% i zmienno\u015b\u0107 0.8% \u2014 unikaj, zbyt ryzykowny",
    "DOT: zmienno\u015b\u0107 6.9% i 24h +9.0% \u2014 unikaj, zbyt ryzykowny",
-   "AVAX: 30d +41.2% i zmienno\u015b\u0107 4.3% \u2014 unikaj, zbyt ryzykowny",
-   "TRX: 24h +1.5% i zmienno\u015b\u0107 0.8% \u2014 unikaj, zbyt ryzykowny",
    "DOT: zmienno\u015b\u0107 6.9% i spadki 7d +0.8% \u2014 unikaj, zbyt ryzykowny",
    "AVAX: spadki 7d -0.8% i zmienno\u015b\u0107 4.3% \u2014 unikaj, zbyt ryzykowny",
    "TRX: spadki 7d +0.8% i zmienno\u015b\u0107 0.8% \u2014 unikaj, zbyt ryzykowny"
   ],
-  "seconds": 78.6
+  "seconds": 181.3
  },
  "brain_journal": [
+  {
+   "created_at": 1792213853232,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "directives": {
+    "risk_level": 0.6,
+    "min_confidence_adj": 0.05,
+    "symbol_bias": {
+     "SOL": "reduce",
+     "DOT": "avoid",
+     "AVAX": "avoid",
+     "TRX": "avoid"
+    },
+    "regime": "volatile"
+   },
+   "reasoning": "Model ma 51% wygranych, ale w krytycznych sytuacjach (np. spadki 7d) ryzyko jest zbyt wysokie. Wszystkie sygna\u0142y s\u0105 poni\u017cej 78% pewno\u015bci, wi\u0119c nie trzeba ryzykowa\u0107. Zmniejszono SOL, a DOT/AVAX/TRX unikane z powodu wysokiej zmienno\u015bci i niezgodno\u015bci z modeliem.",
+   "new_lessons": [
+    "DOT: zmienno\u015b\u0107 6.9% i spadki 7d -3.0% \u2014 unikaj, zbyt ryzykowny",
+    "AVAX: 30d +41.2% i zmienno\u015b\u0107 4.3% \u2014 unikaj, zbyt ryzykowny",
+    "TRX: 24h +1.5% i zmienno\u015b\u0107 0.8% \u2014 unikaj, zbyt ryzykowny"
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1792191857935,
    "source": "cloud",
@@ -12393,31 +12416,6 @@
     "regime": "volatile"
    },
    "reasoning": "Model ma udowodnion\u0105 przewag\u0119 (win rate 50%, avg +0.44%/trade vs always-buy -0.32%/trade), ale pr\u00f3ba 715 handli jest du\u017ca i wynik jest stabilny. Jednak wszystkie 12 symboli maj\u0105 aktualn\u0105 pewno\u015b\u0107 poni\u017cej progu 0.81, wi\u0119c bot nie mo\u017ce wej\u015b\u0107 w \u017cadne pozycje. Dodatkowo strategia championa ma tylko 17 handli z avg +7.33%/trade i edge False, co sugeruje, \u017ce ta konkretna konfiguracja nie jest jeszcze wiarygodna. Rynek jest w umiarkowanym optymizmie (Fear & Greed 63), ale badania wskazuj\u0105, \u017ce sygna\u0142y kupna na spadku bywaj\u0105 pu\u0142apk\u0105. Dlatego utrzymuj\u0119 ostro\u017cny tryb z minimaln\u0105 konfidencj\u0105 podniesion\u0105 o 0.08, unikaj\u0105c najbardziej ryzykownych symbol\u00f3w.",
-   "new_lessons": [
-    "DOT: zmienno\u015b\u0107 6.3% i spadki 7d -3.0% \u2014 unikaj, zbyt ryzykowny",
-    "AVAX: spadki 7d -2.1% i zmienno\u015b\u0107 4.1% \u2014 unikaj, zbyt ryzykowny",
-    "TRX: spadki 7d +1.0% i zmienno\u015b\u0107 0.9% \u2014 unikaj, zbyt ryzykowny"
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1792150656945,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.5,
-    "min_confidence_adj": 0.08,
-    "symbol_bias": {
-     "BTC": "reduce",
-     "ETH": "reduce",
-     "SOL": "reduce",
-     "AVAX": "avoid",
-     "DOT": "avoid",
-     "TRX": "avoid"
-    },
-    "regime": "bull"
-   },
-   "reasoning": "Regim rynkowy jest umiarkowanie bullish, ale model ma s\u0142ab\u0105 przewag\u0119 i praktycznie \u017cadne dane o skuteczno\u015bci. W raporcie widoczne s\u0105 0 zamkni\u0119tych transakcji na g\u0142\u00f3wnym koncie, a praktyczne konto osi\u0105gn\u0119\u0142o +3.22% bez \u017cadnych zamkni\u0119tych transakcji, co sugeruje, \u017ce dane mog\u0105 by\u0107 niepe\u0142ne lub model jeszcze nie generuje sygna\u0142\u00f3w. Wszystkie symbole maj\u0105 prog\u0119 0.78, a obecne szacunki modela s\u0105 poni\u017cej tej progi, wi\u0119c nie ma \u017cadnych sygna\u0142\u00f3w do wej\u015bcia. Rekomenduj\u0119 zachowa\u0107 ostro\u017cno\u015b\u0107 i nie otwiera\u0107 pozycji.",
    "new_lessons": [
     "DOT: zmienno\u015b\u0107 6.3% i spadki 7d -3.0% \u2014 unikaj, zbyt ryzykowny",
     "AVAX: spadki 7d -2.1% i zmienno\u015b\u0107 4.1% \u2014 unikaj, zbyt ryzykowny",
@@ -40688,108 +40686,59 @@
    ]
   },
   "research": {
-   "created_at": 1792125235948,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "seconds": 40.7,
-   "digest": "Dzi\u015b Bitcoin odbi\u0142 od spadku poni\u017cej 80 tys. do 82,5 tys. w dw\u00f3ch godzinach, wi\u0119c kr\u00f3tkoterminowe sygna\u0142y kupna na spadku bywaj\u0105 pu\u0142apk\u0105; indeks l\u0119k/greedy oscyluje wok\u00f3\u0142 60-64 (greedy), co sugeruje umiarkowany optymizm, a nie eufori\u0119. Departura doradcy krypto z Bia\u0142ego Domu i presja na wykluczenia z indeks\u00f3w (MSCI, Strategy) zwi\u0119kszaj\u0105 ryzyko polityczne i korekcyjne, wi\u0119c filtrujmy sygna\u0142y na wysokich poziomach RSI i przy s\u0142abym trendzie. Najwa\u017cniejsze: unikajmy sygna\u0142\u00f3w kupna, gdy kr\u00f3tkoterminowa zmienno\u015b\u0107 ro\u015bnie szybciej ni\u017c d\u0142ugoterminowa (vol_ratio > 1) i gdy RSI jest blisko 0,7, bo to dok\u0142adnie profil, w kt\u00f3rym bot traci\u0142 pieni\u0105dze.",
-   "mood": "greed",
+   "created_at": 1792213669613,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "seconds": 365.0,
+   "digest": "Dzi\u015b w krypto: quantum threat zwi\u0119ksza obawy, stablecoins rosn\u0105 w nowych rynkach, a Bitcoin trzyma si\u0119 na $82K. Traders powinni skupi\u0107 si\u0119 na zabezpieczaniu przed quantum atakami i monitorowaniu volatylno\u015bci w sytuacji zbyt wysokiej ryzyka.",
+   "mood": "fear",
    "fng": [
     {
-     "value": 63,
+     "value": 55,
      "label": "Greed",
-     "ts": 1792108800000
+     "ts": 1792195200000
     }
    ],
    "used": [
-    "arXiv (6)",
     "CoinDesk (6)",
     "Cointelegraph (6)",
     "Decrypt (6)",
     "Babypips (5)",
     "Fear & Greed index"
    ],
-   "failed": [],
+   "failed": [
+    "arXiv: HTTPError"
+   ],
    "items": [
     {
-     "kind": "arXiv research",
-     "title": "NEST: Stale-Robust Tokenized-Stock Measurement for a Crypto-Treasury LETF Stack",
-     "url": "http://arxiv.org/abs/2610.21491v1"
-    },
-    {
-     "kind": "arXiv research",
-     "title": "StochLOB: Heavy-Tailed Score Matching for Robust Limit Order Book Trend Prediction",
-     "url": "http://arxiv.org/abs/2610.21081v1"
-    },
-    {
-     "kind": "arXiv research",
-     "title": "Loss-versus-rebalancing with external proportional transaction costs",
-     "url": "http://arxiv.org/abs/2610.21057v1"
-    },
-    {
-     "kind": "arXiv research",
-     "title": "Common Signals, Spurious Cross-Excitation, and Identification in Multivariate Hawkes Processes",
-     "url": "http://arxiv.org/abs/2610.19428v1"
-    },
-    {
-     "kind": "arXiv research",
-     "title": "The Missile and the Toll: Two-Way Flow Through the Strait of Hormuz",
-     "url": "http://arxiv.org/abs/2610.18823v1"
-    },
-    {
-     "kind": "arXiv research",
-     "title": "The Buffett Effect",
-     "url": "http://arxiv.org/abs/2610.17231v1"
+     "kind": "CoinDesk",
+     "title": "Satoshi-era bitcoin faces a bigger quantum threat after Google\u2019s new Willow breakthrough",
+     "url": "https://www.coindesk.com/tech/2026/10/16/satoshi-era-bitcoin-faces-a-bigger-quantum-threat-after-google-s-new-willow-breakthrough"
     },
     {
      "kind": "CoinDesk",
-     "title": "An OpenAI agent ran out of Ethereum funds, and took from a wallet it did not own",
-     "url": "https://www.coindesk.com/tech/2026/10/16/an-openai-agent-ran-out-of-ethereum-funds-and-took-from-a-wallet-it-did-not-own"
+     "title": "Big Tech's AI auditors will only see what they're shown",
+     "url": "https://www.coindesk.com/opinion/2026/10/16/big-tech-s-ai-auditors-will-only-see-what-they-re-shown"
     },
     {
      "kind": "CoinDesk",
-     "title": "Bitcoin buyers snap up a brief drop below $80,000 as Asian stocks rebound",
-     "url": "https://www.coindesk.com/markets/2026/10/16/bitcoin-buyers-snap-up-a-brief-drop-below-usd80-000-as-asian-stocks-rebound"
+     "title": "Traders will soon be able to bet on whether Coinbase, Robinhood and Marathon will hit their targets",
+     "url": "https://www.coindesk.com/daybook-us/2026/10/16/traders-will-soon-be-able-to-bet-on-whether-coinbase-robinhood-and-marathon-will-hit-their-targets"
     },
     {
      "kind": "CoinDesk",
-     "title": "At the White House, crypto policy vacancy looms large",
-     "url": "https://www.coindesk.com/news-analysis/2026/10/15/at-the-white-house-crypto-policy-vacancy-looms-large"
+     "title": "Circle targets 40 new markets as stablecoin demand grows globally",
+     "url": "https://www.coindesk.com/business/2026/10/16/circle-targets-40-new-markets-as-stablecoin-demand-grows-globally"
     },
     {
      "kind": "CoinDesk",
-     "title": "Crypto for Advisors: Wall Street is done waiting on Congress for crypto rules",
-     "url": "https://www.coindesk.com/coindesk-indices/2026/10/15/crypto-for-advisors-wall-street-is-done-waiting-on-congress-for-crypto-rules"
+     "title": "Quantum Alliance forms amid warnings 6.4 million bitcoin face future quantum threat",
+     "url": "https://www.coindesk.com/tech/2026/10/16/experts-agree-quantum-computers-could-put-satoshi-s-bitcoin-at-risk-but-not-on-what-s-next"
     },
     {
      "kind": "CoinDesk",
-     "title": "How Brooklyn prosecutors and the FBI took down a massive crypto fraud network targeting Russian speakers",
-     "url": "https://www.coindesk.com/business/2026/10/15/how-brooklyn-prosecutors-and-the-fbi-took-down-a-massive-crypto-fraud-network-targeting-russian-speakers"
-    },
-    {
-     "kind": "CoinDesk",
-     "title": "Under pressure, Ledger unveils plan to turn its crypto hardware wallet into a smartphone",
-     "url": "https://www.coindesk.com/tech/2026/10/15/under-pressure-ledger-unveils-plan-to-turn-its-crypto-hardware-wallet-into-a-smartphone"
-    },
-    {
-     "kind": "Cointelegraph",
-     "title": "MSCI adopts index exclusion rules that could oust Strategy",
-     "url": "https://cointelegraph.com/news/msci-adopts-index-exclusion-rules-that-could-oust-strategy?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-    },
-    {
-     "kind": "Cointelegraph",
-     "title": "Australia releases draft bill to adopt OECD crypto tax reporting framework",
-     "url": "https://cointelegraph.com/news/australia-releases-draft-bill-to-adopt-oecd-crypto-tax-reporting-framework?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-    },
-    {
-     "kind": "Cointelegraph",
-     "title": "Scammer loses $4.8M stored on tampered Ledgers: Asia Express",
-     "url": "https://cointelegraph.com/magazine/scammer-loses-48m-stored-on-tampered-ledgers-asia-express?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-    },
-    {
-     "kind": "Cointelegraph",
-     "title": "Binance.US seeks $1B valuation in potential $100M funding round: Report",
-     "url": "https://cointelegraph.com/news/binance-us-funding-valuation-billion?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "Tokenized Tesla surges as Elon Musk unveils SpaceX-powered flying Roadster prototype",
+     "url": "https://www.coindesk.com/business/2026/10/16/elon-musk-s-flying-roadster-reveal-sent-tesla-crypto-trading-into-overdrive-while-stock-markets-were-closed"
     },
     {
      "kind": "Cointelegraph",
@@ -40798,38 +40747,73 @@
     },
     {
      "kind": "Cointelegraph",
-     "title": "Ex-Trump crypto adviser profited after helping pass stablecoin bill: WSJ",
-     "url": "https://cointelegraph.com/news/bo-hines-donald-trump-crypto-advisor-nxum-tether-conflict?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "Crypto PACs escalate spending against Sherrod Brown in Ohio Senate race",
+     "url": "https://cointelegraph.com/news/crypto-pac-fairshake-spending-ohio-senate-race-sherrod-brown?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+    },
+    {
+     "kind": "Cointelegraph",
+     "title": "Stablecoin remittances cost 84% less than traditional transfers, report finds",
+     "url": "https://cointelegraph.com/news/stablecoin-remittances-cost-savings-traditional-transfers?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+    },
+    {
+     "kind": "Cointelegraph",
+     "title": "Crypto Biz: Wall Street closes at 4. Tokenized stocks keep trading",
+     "url": "https://cointelegraph.com/news/tokenized-stocks-after-hours-trading-crypto-biz?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+    },
+    {
+     "kind": "Cointelegraph",
+     "title": "Bitcoin price steadies around $82K after Fed\u2019s Warsh avoids rate-hike hints",
+     "url": "https://cointelegraph.com/markets/bitcoin-price-steadies-82k-fed-warsh-avoids-rate-hike-hints?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+    },
+    {
+     "kind": "Cointelegraph",
+     "title": "Strategy conditionally declares daily dividends as STRC hovers below $100",
+     "url": "https://cointelegraph.com/news/strategy-daily-dividends-strc-hovers-below-100?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Decrypt",
-     "title": "Hidden Text, a Fake Mailbox: How Researchers Got Rogue AI Agents to Talk",
-     "url": "https://decrypt.co/381109/researchers-fleet-rouge-ai-agents-talk-alibaba"
+     "title": "Tesla Roadster Rocket Is the Cool 'Flying' Car You Can\u2019t Have",
+     "url": "https://decrypt.co/381184/tesla-roadster-rocket-cool-flying-car-you-cant-have"
     },
     {
      "kind": "Decrypt",
-     "title": "Google Says It Just Cracked One of Quantum Computing's Biggest Bottlenecks",
-     "url": "https://decrypt.co/381102/google-cracked-quantum-computing-biggest-bottlenecks"
+     "title": "Hackers Jailbreak iPhone 18 Pro on Stage, and It Survives a Reboot",
+     "url": "https://decrypt.co/381177/hackers-jailbreak-iphone-18-pro-survives-reboot"
     },
     {
      "kind": "Decrypt",
-     "title": "Russia Will Soon Ban Peer-to-Peer Bitcoin Trading, Central Bank Confirms",
-     "url": "https://decrypt.co/381079/russia-ban-peer-to-peer-bitcoin-trading"
+     "title": "Circle Plans Push Into 40 Emerging Markets as Stablecoins Go Mainstream, CEO Says",
+     "url": "https://decrypt.co/381178/circle-40-emerging-markets-stablecoins-go-mainstream"
     },
     {
      "kind": "Decrypt",
-     "title": "Boom or Bust, Bitcoin Wins the AI Trade, Bitwise CIO Says",
-     "url": "https://decrypt.co/381077/bitwise-cio-bitcoin-wins-ai-boom-or-bust"
+     "title": "Bitcoin Treasury Giant Strategy Faces Index Removal Under Finalized MSCI Rules",
+     "url": "https://decrypt.co/381168/bitcoin-treasury-giant-strategy-faces-index-removal-under-finalized-msci-rules"
     },
     {
      "kind": "Decrypt",
-     "title": "BlackRock\u2019s Larry Fink Warns AI Data Center Halt Could Tip US Into Recession",
-     "url": "https://decrypt.co/381068/blackrock-larry-fink-ai-data-center-halt-recession"
+     "title": "India's Cyber Agency Says AI Agents Read Confidential Business Records Without Authorization",
+     "url": "https://decrypt.co/381165/indias-cyber-agency-ai-agents-read-confidential-business-records"
     },
     {
      "kind": "Decrypt",
-     "title": "Google Says AI Isn't Building Itself Yet\u2014Even Though It Writes 75% of the Code",
-     "url": "https://decrypt.co/381061/google-deepmind-ai-isnt-building-itself-writes-most-code"
+     "title": "CFTC Wants to Drop Gemini\u2019s $5M Settlement. A Judge Just Said No",
+     "url": "https://decrypt.co/381149/cftc-wants-drop-gemini-5m-settlement-judge-said-no"
+    },
+    {
+     "kind": "Babypips",
+     "title": "Financial & Forex Weekly Recap: October 12 \u2013 16, 2026",
+     "url": "https://www.babypips.com/analysis/financial-forex-market-weekly-recap-october-16-2026"
+    },
+    {
+     "kind": "Babypips",
+     "title": "4 Cases When You Should Sit on the Sidelines",
+     "url": "https://www.babypips.com/trading/psychology-4-cases-sit-sidelines-2026-10-16"
+    },
+    {
+     "kind": "Babypips",
+     "title": "What a DIFC or ADGM Forex Broker Licence Tells You Before You Open an Account",
+     "url": "https://www.babypips.com/trading/what-a-difc-or-adgm-forex-broker-licence-tells-you-before-you-open-an-account"
     },
     {
      "kind": "Babypips",
@@ -40840,38 +40824,23 @@
      "kind": "Babypips",
      "title": "Chart Art: Bitcoin (BTC/USD) Ready to Set Sights on $90K Again?",
      "url": "https://www.babypips.com/trading/chart-art-crypto-bitcoin-btcusd-ready-set-sights-90k-2026-10-16"
-    },
-    {
-     "kind": "Babypips",
-     "title": "What a DIFC or ADGM Forex Broker Licence Tells You Before You Open an Account",
-     "url": "https://www.babypips.com/trading/what-a-difc-or-adgm-forex-broker-licence-tells-you-before-you-open-an-account"
-    },
-    {
-     "kind": "Babypips",
-     "title": "Event Guide: Canada\u2019s CPI Report (September 2026)",
-     "url": "https://www.babypips.com/analysis/event-guide-forex-canada-cpi-september-2026-10-16"
-    },
-    {
-     "kind": "Babypips",
-     "title": "Financial & Forex Market Recap \u2013 Oct. 15, 2026",
-     "url": "https://www.babypips.com/news/financial-forex-market-recap-2026-10-15"
     }
    ],
    "ideas": [
     {
-     "name": "Filtr RSI + rosn\u0105cej zmienno\u015bci",
-     "rule": "rsi < 0.62 and vol_ratio < 1 and d_ema200 < 0",
-     "why": "Ten filtr odrzuca sygna\u0142y kupna, gdy RSI jest blisko 0,7 (przekupione) i kr\u00f3tkoterminowa zmienno\u015b\u0107 ro\u015bnie szybciej ni\u017c d\u0142ugoterminowa (vol_ratio > 1), co jest klasycznym profilem pu\u0142apki kupna na spadku. Dodatkowo wymagamy, aby cena by\u0142a poni\u017cej \u015bredniej 200-candy (d_ema200 < 0), co chroni przed kup"
+     "name": "Quantum Threat Filter",
+     "rule": "btc_r96 < -0.01231",
+     "why": "Z CoinDesk: Google's Willow chip zwi\u0119ksza quantum threat dla BTC. Bot przegra\u0142 w sytuacjach, gdy Bitcoin mia\u0142 negatywne zwracanie (btc_r96 < -0.01231), co pokazuje, \u017ce quantum threat jest kluczowy dla filtracji zbyt ryzykownych sygna\u0142\u00f3w."
     },
     {
-     "name": "Filtr s\u0142abego momentum",
-     "rule": "r_16 < 0 and r_4 < 0 and r_96 < -0.005",
-     "why": "Ten filtr odrzuca sygna\u0142y kupna, gdy kr\u00f3tkoterminowe wska\u017aniki momentum s\u0105 s\u0142abe lub ujemne (r_16 < 0, r_4 < 0, r_96 < -0.005), co chroni przed kupnem w fazie spadkowej."
+     "name": "Stablecoin Demand Filter",
+     "rule": "btc_r96 > -0.005",
+     "why": "Z Circle i Cointelegraph: rosn\u0105ca demand stablecoins w nowych rynkach (40 kraj\u00f3w). Bot przegra\u0142 w sytuacjach, gdy Bitcoin mia\u0142 wysoki zwracanie (btc_r96 > -0.005), co pokazuje, \u017ce zbyt wysoka volatylno\u015b\u0107 w stabilnych kryptowalutach jest niebezpieczna."
     },
     {
-     "name": "Filtr niskiej pozycji w bandach",
-     "rule": "bb < 0.3 and d_ema50 < 0 and vz < 0.8",
-     "why": "Ten filtr odrzuca sygna\u0142y kupna, gdy cena jest blisko dolnej kraw\u0119dzi band Bollingera (bb < 0.3), cena jest poni\u017cej \u015bredniej 50-candy (d_ema50 < 0) i wolumen jest poni\u017cej \u015bredniej (vz < 0.8), co chroni przed kupnem w fazie spadkowej."
+     "name": "Volatility Spike Filter",
+     "rule": "vol_ratio > 1 and btc_r96 < -0.01231",
+     "why": "Z CoinDesk i Cointelegraph: quantum threat i volatylno\u015b\u0107 spowodowuj\u0105 wzrost (vol_ratio > 1). Bot przegra\u0142 w sytuacjach, gdy vol_ratio > 1 i Bitcoin mia\u0142 negatywne zwracanie (btc_r96 < -0.01231), co pokazuje, \u017ce wzrost volatylno\u015bci jest kluczowy dla filtracji."
     }
    ]
   }
