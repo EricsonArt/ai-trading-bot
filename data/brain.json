@@ -1,39 +1,37 @@
 {
- "created_at": 1792265160668,
- "source": "local",
- "model": "mimo2.6:9b",
- "seconds": 9.3,
+ "created_at": 1792277102872,
+ "source": "cloud",
+ "model": "qwen3:4b",
+ "seconds": 194.8,
  "directives": {
-  "risk_level": 0.3,
-  "min_confidence_adj": 0.05,
+  "risk_level": 0.2,
+  "min_confidence_adj": -0.02,
   "symbol_bias": {
-   "DOT": "reduce",
-   "AVAX": "reduce",
-   "BTC": "avoid",
-   "ETH": "avoid",
-   "SOL": "avoid"
+   "DOT": "avoid",
+   "AVAX": "avoid",
+   "TRX": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w wyra\u017anym trendzie spadkowym, a model ma zero zamkni\u0119tych transakcji, wi\u0119c nie ma dowodu na przewag\u0119. Wszystkie 12 symbol\u00f3w s\u0105 poni\u017cej progu 0.78, co oznacza brak sygna\u0142u do wej\u015bcia. Zmniejszamy ryzyko i czekamy na potwierdzenie, nie na impuls.",
+ "reasoning": "Rynek jest w spadkowym trybie (BTC 7d -1.6%, ETH 7d -3.0%, SOL 7d -5.4%). Model nie ma zako\u0144czonych transakcji i jego przewaga nie zosta\u0142a potwierdzona. Zmniejszono ryzyko do 0.2, aby unikn\u0105\u0107 d\u017awigni w spadkowym rynku.",
  "new_lessons": [
-  "Wszystkie 12 symboli poni\u017cej progu 0.78 \u2014 brak sygna\u0142u do wej\u015bcia.",
-  "Model ma 0 zamkni\u0119tych transakcji \u2014 brak dowodu na przewag\u0119.",
-  "Rynek spadkowy (BTC 7d -1.9%, ETH 7d -3.7%, SOL 7d -5.7%) \u2014 unikaj d\u017awigni."
+  "Wszystkie symbole poni\u017cej progu 0.78 \u2014 brak sygna\u0142u do wej\u015bcia.",
+  "Rynek spadkowy (BTC 7d -1.6%, ETH 7d -3.0%, SOL 7d -5.4%) \u2014 unikaj d\u017awigni.",
+  "Model ma 0 zamkni\u0119tych transakcji \u2014 brak dowodu na przewag\u0119; nie otwieraj pozycji."
  ],
  "lessons": [
+  "Wszystkie symbole poni\u017cej progu 0.78 \u2014 brak sygna\u0142u do wej\u015bcia.",
+  "Rynek spadkowy (BTC 7d -1.6%, ETH 7d -3.0%, SOL 7d -5.4%) \u2014 unikaj d\u017awigni.",
+  "Model ma 0 zamkni\u0119tych transakcji \u2014 brak dowodu na przewag\u0119; nie otwieraj pozycji.",
   "Wszystkie 12 symboli poni\u017cej progu 0.78 \u2014 brak sygna\u0142u do wej\u015bcia.",
   "Model ma 0 zamkni\u0119tych transakcji \u2014 brak dowodu na przewag\u0119.",
   "Rynek spadkowy (BTC 7d -1.9%, ETH 7d -3.7%, SOL 7d -5.7%) \u2014 unikaj d\u017awigni.",
-  "Model ma 0 zamkni\u0119tych transakcji \u2014 brak dowodu na przewag\u0119; nie otwieraj pozycji.",
-  "Rynek spadkowy (BTC 7d -1.6%, ETH 7d -3.0%, SOL 7d -5.4%) \u2014 unikaj d\u017awigni.",
   "Model ma 0 zamkni\u0119tych transakcji \u2014 brakuje dowodu na przewag\u0119; nie otwieraj pozycji.",
   "Wszystkie symbole poni\u017cej progu 0.78; wej\u015bcie wymaga potwierdzenia, nie impulsu.",
   "Rynek jest w trendzie spadkowym (BTC 7d -1.6%, ETH 7d -3.0%, SOL 7d -5.4%); unikaj d\u017awigni.",
   "DOT: zmienno\u015b\u0107 6.9% i spadki 7d -9.1% \u2014 unikaj, zbyt ryzykowny",
   "AVAX: spadki 7d -5.3% i zmienno\u015b\u0107 3.6% \u2014 unikaj, zbyt ryzykowny",
-  "TRX: spadki 7d +1.6% i zmienno\u015b\u0107 0.6% \u2014 unikaj, zbyt ryzykowny",
-  "DOT: zmienno\u015b\u0107 6.9% i spadki 7d -6.7% \u2014 unikaj, zbyt ryzykowny"
+  "TRX: spadki 7d +1.6% i zmienno\u015b\u0107 0.6% \u2014 unikaj, zbyt ryzykowny"
  ],
  "equity_at": 1000.0
 }
