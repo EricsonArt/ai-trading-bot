@@ -1,25 +1,28 @@
 {
- "created_at": 1792321386745,
+ "created_at": 1792324989095,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 6.0,
+ "seconds": 6.7,
  "directives": {
-  "risk_level": 0.2,
-  "min_confidence_adj": 0.02,
+  "risk_level": 0.3,
+  "min_confidence_adj": 0.05,
   "symbol_bias": {
-   "DOT": "avoid",
    "AVAX": "avoid",
+   "DOT": "avoid",
    "TRX": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w wyra\u017anym spadku \u2014 wi\u0119kszo\u015b\u0107 symboli ma spadki 24h i 7d, a BTC 7d -1.7%. Model ma 0 zamkni\u0119tych transakcji na g\u0142\u00f3wnym koncie i edge nie jest potwierdzony, wi\u0119c nie otwieramy pozycji. Wszystkie 12 symboli s\u0105 poni\u017cej progu 0.75, co oznacza brak sygna\u0142u do wej\u015bcia. Zwi\u0119kszamy min_confidence_adj do 0.02, aby jeszcze bardziej ograniczy\u0107 ryzyko wej\u015bcia.",
+ "reasoning": "Rynek jest wyra\u017anie spadkowy: wi\u0119kszo\u015b\u0107 symboli ma spadki 24h od -0.8% do -3.9%, a wszystkie 12 s\u0105 poni\u017cej progu 0.75. Model ma tylko 4 zamkni\u0119te transakcje na praktycznym koncie, z wynikiem -0.17%, wi\u0119c brak jest dowodu na przewag\u0119. Zalecam ostro\u017cno\u015b\u0107 i unikanie najbardziej ryzykownych symbol\u00f3w.",
  "new_lessons": [
-  "DOT: zmienno\u015b\u0107 4.4% i spadki 24h -5.4% \u2014 unikaj, zbyt ryzykowny",
-  "AVAX: spadki 24h -2.3% i zmienno\u015b\u0107 3.3% \u2014 unikaj, zbyt ryzykowny",
-  "TRX: spadki 24h -0.7% i zmienno\u015b\u0107 0.6% \u2014 unikaj, zbyt ryzykowny"
+  "DOT: zmienno\u015b\u0107 4.4% i spadki 24h -3.9% \u2014 unikaj, zbyt ryzykowny",
+  "AVAX: spadki 24h -2.0% i zmienno\u015b\u0107 3.3% \u2014 unikaj, zbyt ryzykowny",
+  "TRX: spadki 24h -0.9% i zmienno\u015b\u0107 0.6% \u2014 unikaj, zbyt ryzykowny"
  ],
  "lessons": [
+  "DOT: zmienno\u015b\u0107 4.4% i spadki 24h -3.9% \u2014 unikaj, zbyt ryzykowny",
+  "AVAX: spadki 24h -2.0% i zmienno\u015b\u0107 3.3% \u2014 unikaj, zbyt ryzykowny",
+  "TRX: spadki 24h -0.9% i zmienno\u015b\u0107 0.6% \u2014 unikaj, zbyt ryzykowny",
   "DOT: zmienno\u015b\u0107 4.4% i spadki 24h -5.4% \u2014 unikaj, zbyt ryzykowny",
   "AVAX: spadki 24h -2.3% i zmienno\u015b\u0107 3.3% \u2014 unikaj, zbyt ryzykowny",
   "TRX: spadki 24h -0.7% i zmienno\u015b\u0107 0.6% \u2014 unikaj, zbyt ryzykowny",
@@ -28,10 +31,7 @@
   "Wszystkie 12 symboli poni\u017cej progu 0.75 \u2014 brak sygna\u0142u do wej\u015bcia.",
   "DOT: zmienno\u015b\u0107 4.4% i spadki 24h -4.1% \u2014 unikaj, zbyt ryzykowny",
   "AVAX: spadki 24h -2.2% i zmienno\u015b\u0107 2.6% \u2014 unikaj, zbyt ryzykowny",
-  "TRX: spadki 24h +0.1% i zmienno\u015b\u0107 0.6% \u2014 unikaj, zbyt ryzykowny",
-  "Wszystkie symbole poni\u017cej progu 0.78 \u2014 brak sygna\u0142u do wej\u015bcia.",
-  "Rynek spadkowy (BTC 7d -1.6%, ETH 7d -3.0%, SOL 7d -5.4%) \u2014 unikaj d\u017awigni.",
-  "Wszystkie 12 symboli poni\u017cej progu 0.78 \u2014 brak sygna\u0142u do wej\u015bcia."
+  "TRX: spadki 24h +0.1% i zmienno\u015b\u0107 0.6% \u2014 unikaj, zbyt ryzykowny"
  ],
  "equity_at": 1000.0
 }
