@@ -1,9 +1,9 @@
 {
- "generated_at": 1792367096231,
- "last_candle": 1792365300000,
+ "generated_at": 1792368830974,
+ "last_candle": 1792367100000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
- "benchmark_return": -0.03234999999999999,
+ "benchmark_return": -0.032929999999999904,
  "series": [
   [
    1790508600000,
@@ -12388,6 +12388,18 @@
    1000.0,
    967.65,
    998.28
+  ],
+  [
+   1792366200000,
+   1000.0,
+   966.95,
+   998.28
+  ],
+  [
+   1792367100000,
+   1000.0,
+   967.07,
+   998.28
   ]
  ],
  "main": {
@@ -12436,7 +12448,7 @@
    {
     "name": "Lepiej ni\u017c samo trzymanie BTC",
     "ok": true,
-    "value": "+3.2 pkt"
+    "value": "+3.3 pkt"
    },
    {
     "name": "Najwi\u0119kszy spadek mniejszy ni\u017c 20%",
@@ -12921,91 +12933,91 @@
  },
  "signals": {
   "BTC": {
-   "p": 0.2973,
+   "p": 0.3295,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1792365300000
+   "ts": 1792367100000
   },
   "ETH": {
-   "p": 0.2966,
+   "p": 0.292,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1792365300000
+   "ts": 1792367100000
   },
   "SOL": {
-   "p": 0.2943,
+   "p": 0.266,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1792365300000
+   "ts": 1792367100000
   },
   "XRP": {
-   "p": 0.2794,
+   "p": 0.2866,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1792365300000
+   "ts": 1792367100000
   },
   "DOGE": {
-   "p": 0.2891,
+   "p": 0.2828,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1792365300000
+   "ts": 1792367100000
   },
   "ADA": {
-   "p": 0.3459,
+   "p": 0.3168,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1792365300000
+   "ts": 1792367100000
   },
   "BNB": {
-   "p": 0.2346,
+   "p": 0.1892,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1792365300000
+   "ts": 1792367100000
   },
   "LINK": {
-   "p": 0.3134,
+   "p": 0.319,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1792365300000
+   "ts": 1792367100000
   },
   "AVAX": {
-   "p": 0.282,
+   "p": 0.2893,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1792365300000
+   "ts": 1792367100000
   },
   "LTC": {
-   "p": 0.3218,
+   "p": 0.3689,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1792365300000
+   "ts": 1792367100000
   },
   "DOT": {
-   "p": 0.3625,
+   "p": 0.2975,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1792365300000
+   "ts": 1792367100000
   },
   "TRX": {
-   "p": 0.1974,
+   "p": 0.201,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1792365300000
+   "ts": 1792367100000
   }
  },
  "prices": {
-  "BTC": 82165.67,
-  "ETH": 2409.57,
-  "SOL": 104.22,
-  "XRP": 1.3093,
-  "DOGE": 0.07952,
-  "ADA": 0.2211,
-  "BNB": 723.23,
-  "LINK": 12.049,
-  "AVAX": 9.784,
-  "LTC": 59.08,
-  "DOT": 1.12,
-  "TRX": 0.3331
+  "BTC": 82116.0,
+  "ETH": 2410.31,
+  "SOL": 104.11,
+  "XRP": 1.3071,
+  "DOGE": 0.07944,
+  "ADA": 0.2212,
+  "BNB": 723.36,
+  "LINK": 12.041,
+  "AVAX": 9.777,
+  "LTC": 59.12,
+  "DOT": 1.118,
+  "TRX": 0.3327
  },
  "model": {
   "version": 40,
@@ -13463,6 +13475,8 @@
   "risk_level": 0.2,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
+   "ETH": "reduce",
+   "SOL": "reduce",
    "DOT": "avoid",
    "AVAX": "avoid",
    "TRX": "avoid"
@@ -13470,29 +13484,32 @@
   "regime": "bear"
  },
  "brain": {
-  "created_at": 1792364949012,
+  "created_at": 1792368590176,
   "source": "local",
   "model": "mimo2.6:9b",
   "directives": {
    "risk_level": 0.2,
    "min_confidence_adj": 0.05,
    "symbol_bias": {
+    "ETH": "reduce",
+    "SOL": "reduce",
     "DOT": "avoid",
     "AVAX": "avoid",
     "TRX": "avoid"
    },
    "regime": "bear"
   },
-  "reasoning": "Model ma 2/4 na praktycznym koncie i edge: False \u2014 ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka. DOT, AVAX, TRX: spadki 24h i brak dowodu na przewag\u0119 \u2014 unikaj. ETH, SOL, XRP, DOGE: ostatnie 4 sygna\u0142y da\u0142y 2/4 \u2014 utrzymaj ostro\u017cny tryb.",
+  "reasoning": "Rynek jest w fazie neutralnej, ale model ma tylko 2/4 zamkni\u0119tych transakcji na praktycznym koncie, a edge: False. Wszystkie sygna\u0142y maj\u0105 nisk\u0105 pewno\u015b\u0107 i pr\u00f3ba 4 transakcji jest za ma\u0142a, aby uzasadni\u0107 zwi\u0119kszenie ryzyka. DOT, AVAX i TRX maj\u0105 spadki 24h oraz brak dowodu na przewag\u0119, wi\u0119c je unikamy.",
   "new_lessons": [
+   "Model ma 2/4 na praktycznym koncie, edge: False \u2014 ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
    "DOT, AVAX, TRX: spadki 24h i brak dowodu na przewag\u0119 \u2014 unikaj.",
-   "Model ma 2/4 na praktycznym koncie i edge: False \u2014 ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
    "ETH, SOL, XRP, DOGE: ostatnie 4 sygna\u0142y da\u0142y 2/4 \u2014 utrzymaj ostro\u017cny tryb."
   ],
   "lessons": [
+   "Model ma 2/4 na praktycznym koncie, edge: False \u2014 ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
    "DOT, AVAX, TRX: spadki 24h i brak dowodu na przewag\u0119 \u2014 unikaj.",
-   "Model ma 2/4 na praktycznym koncie i edge: False \u2014 ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
    "ETH, SOL, XRP, DOGE: ostatnie 4 sygna\u0142y da\u0142y 2/4 \u2014 utrzymaj ostro\u017cny tryb.",
+   "Model ma 2/4 na praktycznym koncie i edge: False \u2014 ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
    "Model: 2/4 na praktycznym koncie, edge: False \u2014 ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
    "DOT, AVAX, TRX: spadki 24h -5.3%, -3.6%, -1.4% i brak dowodu na przewag\u0119 \u2014 unikaj.",
    "Model ma 2/4 na praktycznym koncie i edge: False \u2014 utrzymaj ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
@@ -13500,12 +13517,35 @@
    "DOT, AVAX, TRX: 24h spadki i brak dowodu na przewag\u0119 \u2014 nie otwieraj pozycji.",
    "Model ma 0 zamkni\u0119tych transakcji na g\u0142\u00f3wnym koncie i 2/4 na praktycznym \u2014 brak dowodu na przewag\u0119.",
    "DOT: zmienno\u015b\u0107 4.4% i spadki 24h -3.9% \u2014 unikaj, zbyt ryzykowny",
-   "AVAX: spadki 24h -2.0% i zmienno\u015b\u0107 3.3% \u2014 unikaj, zbyt ryzykowny",
-   "TRX: spadki 24h -0.9% i zmienno\u015b\u0107 0.6% \u2014 unikaj, zbyt ryzykowny"
+   "AVAX: spadki 24h -2.0% i zmienno\u015b\u0107 3.3% \u2014 unikaj, zbyt ryzykowny"
   ],
-  "seconds": 6.2
+  "seconds": 5.7
  },
  "brain_journal": [
+  {
+   "created_at": 1792368590176,
+   "source": "local",
+   "model": "mimo2.6:9b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.05,
+    "symbol_bias": {
+     "ETH": "reduce",
+     "SOL": "reduce",
+     "DOT": "avoid",
+     "AVAX": "avoid",
+     "TRX": "avoid"
+    },
+    "regime": "bear"
+   },
+   "reasoning": "Rynek jest w fazie neutralnej, ale model ma tylko 2/4 zamkni\u0119tych transakcji na praktycznym koncie, a edge: False. Wszystkie sygna\u0142y maj\u0105 nisk\u0105 pewno\u015b\u0107 i pr\u00f3ba 4 transakcji jest za ma\u0142a, aby uzasadni\u0107 zwi\u0119kszenie ryzyka. DOT, AVAX i TRX maj\u0105 spadki 24h oraz brak dowodu na przewag\u0119, wi\u0119c je unikamy.",
+   "new_lessons": [
+    "Model ma 2/4 na praktycznym koncie, edge: False \u2014 ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
+    "DOT, AVAX, TRX: spadki 24h i brak dowodu na przewag\u0119 \u2014 unikaj.",
+    "ETH, SOL, XRP, DOGE: ostatnie 4 sygna\u0142y da\u0142y 2/4 \u2014 utrzymaj ostro\u017cny tryb."
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1792364949012,
    "source": "local",
@@ -13697,28 +13737,6 @@
     "regime": "bear"
    },
    "reasoning": "Rynek jest w fazie spadkowej i bez wyra\u017anego trendu: wi\u0119kszo\u015b\u0107 symboli ma spadki 24h od -0.5% do -3.9%, a Fear & Greed wynosi 53 (Neutral). Model ma 0 zamkni\u0119tych transakcji na g\u0142\u00f3wnym koncie i 2/4 na praktycznym, wi\u0119c brak dowodu na przewag\u0119. Wszystkie 12 symboli s\u0105 poni\u017cej progu 0.78, wi\u0119c nie ma sygna\u0142u do wej\u015bcia. DOT, AVAX i TRX maj\u0105 dodatkowe negatywne czynniki: spadki 24h, wysok\u0105 zmienno\u015b\u0107 i brak dowodu na przewag\u0119, dlatego je unikam. Utrzymuj\u0119 ostro\u017cny tryb i nie zwi\u0119kszam ryzyka.",
-   "new_lessons": [
-    "DOT, AVAX, TRX: 24h spadki i brak dowodu na przewag\u0119 \u2014 nie otwieraj pozycji.",
-    "Model ma 0 zamkni\u0119tych transakcji na g\u0142\u00f3wnym koncie i 2/4 na praktycznym \u2014 brak dowodu na przewag\u0119.",
-    "ETH, SOL, XRP, DOGE: ostatnie 4 sygna\u0142y da\u0142y 2/4 \u2014 utrzymaj ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka."
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1792332252976,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.3,
-    "min_confidence_adj": 0.05,
-    "symbol_bias": {
-     "DOT": "avoid",
-     "AVAX": "avoid",
-     "TRX": "avoid"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "Rynek jest w fazie spadkowej \u2014 wi\u0119kszo\u015b\u0107 symboli ma spadki 24h od -0.5% do -3.9%, a Fear & Greed wskazuje na neutralno\u015b\u0107 (53). Model ma 0 zamkni\u0119tych transakcji na g\u0142\u00f3wnym koncie i 2/4 na praktycznym, wi\u0119c nie ma jeszcze dowodu na przewag\u0119. Z tego powodu obni\u017cam ryzyko do 0.3, zwi\u0119kszam pr\u00f3g wej\u015bcia o 0.05 i unikam DOT, AVAX i TRX ze wzgl\u0119du na ich spadki i zmienno\u015b\u0107.",
    "new_lessons": [
     "DOT, AVAX, TRX: 24h spadki i brak dowodu na przewag\u0119 \u2014 nie otwieraj pozycji.",
     "Model ma 0 zamkni\u0119tych transakcji na g\u0142\u00f3wnym koncie i 2/4 na praktycznym \u2014 brak dowodu na przewag\u0119.",
