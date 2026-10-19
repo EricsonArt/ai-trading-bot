@@ -1,9 +1,9 @@
 {
- "generated_at": 1792382472179,
- "last_candle": 1792381500000,
+ "generated_at": 1792383977034,
+ "last_candle": 1792382400000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
- "benchmark_return": -0.02804999999999991,
+ "benchmark_return": -0.028529999999999944,
  "series": [
   [
    1790508600000,
@@ -12496,6 +12496,12 @@
    1000.0,
    971.95,
    998.28
+  ],
+  [
+   1792382400000,
+   1000.0,
+   971.47,
+   998.28
   ]
  ],
  "main": {
@@ -12544,7 +12550,7 @@
    {
     "name": "Lepiej ni\u017c samo trzymanie BTC",
     "ok": true,
-    "value": "+2.8 pkt"
+    "value": "+2.9 pkt"
    },
    {
     "name": "Najwi\u0119kszy spadek mniejszy ni\u017c 20%",
@@ -13030,90 +13036,90 @@
  "signals": {
   "BTC": {
    "p": 0.2227,
-   "threshold": 0.78,
+   "threshold": 0.83,
    "action": "wait",
-   "ts": 1792381500000
+   "ts": 1792382400000
   },
   "ETH": {
-   "p": 0.0808,
-   "threshold": 0.78,
+   "p": 0.0785,
+   "threshold": 0.83,
    "action": "wait",
-   "ts": 1792381500000
+   "ts": 1792382400000
   },
   "SOL": {
-   "p": 0.1206,
-   "threshold": 0.78,
+   "p": 0.1165,
+   "threshold": 0.83,
    "action": "wait",
-   "ts": 1792381500000
+   "ts": 1792382400000
   },
   "XRP": {
-   "p": 0.0973,
-   "threshold": 0.78,
+   "p": 0.1011,
+   "threshold": 0.83,
    "action": "wait",
-   "ts": 1792381500000
+   "ts": 1792382400000
   },
   "DOGE": {
-   "p": 0.0878,
-   "threshold": 0.78,
+   "p": 0.0676,
+   "threshold": 0.83,
    "action": "wait",
-   "ts": 1792381500000
+   "ts": 1792382400000
   },
   "ADA": {
-   "p": 0.1222,
-   "threshold": 0.78,
+   "p": 0.1308,
+   "threshold": 0.83,
    "action": "wait",
-   "ts": 1792381500000
+   "ts": 1792382400000
   },
   "BNB": {
    "p": 0.1159,
-   "threshold": 0.78,
+   "threshold": 0.83,
    "action": "wait",
-   "ts": 1792381500000
+   "ts": 1792382400000
   },
   "LINK": {
-   "p": 0.0732,
-   "threshold": 0.78,
+   "p": 0.0867,
+   "threshold": 0.83,
    "action": "wait",
-   "ts": 1792381500000
+   "ts": 1792382400000
   },
   "AVAX": {
-   "p": 0.1735,
-   "threshold": 0.78,
+   "p": 0.1379,
+   "threshold": 0.83,
    "action": "wait",
-   "ts": 1792381500000
+   "ts": 1792382400000
   },
   "LTC": {
-   "p": 0.1054,
-   "threshold": 0.78,
+   "p": 0.0956,
+   "threshold": 0.83,
    "action": "wait",
-   "ts": 1792381500000
+   "ts": 1792382400000
   },
   "DOT": {
-   "p": 0.1771,
-   "threshold": 0.78,
+   "p": 0.1795,
+   "threshold": 0.83,
    "action": "wait",
-   "ts": 1792381500000
+   "ts": 1792382400000
   },
   "TRX": {
-   "p": 0.1491,
-   "threshold": 0.78,
+   "p": 0.1579,
+   "threshold": 0.83,
    "action": "wait",
-   "ts": 1792381500000
+   "ts": 1792382400000
   }
  },
  "prices": {
-  "BTC": 82530.82,
-  "ETH": 2424.51,
-  "SOL": 105.25,
-  "XRP": 1.3102,
-  "DOGE": 0.07966,
-  "ADA": 0.221,
-  "BNB": 726.55,
-  "LINK": 12.173,
-  "AVAX": 9.757,
-  "LTC": 59.34,
-  "DOT": 1.119,
-  "TRX": 0.3317
+  "BTC": 82489.69,
+  "ETH": 2421.27,
+  "SOL": 105.23,
+  "XRP": 1.311,
+  "DOGE": 0.07964,
+  "ADA": 0.2206,
+  "BNB": 726.36,
+  "LINK": 12.149,
+  "AVAX": 9.746,
+  "LTC": 59.32,
+  "DOT": 1.117,
+  "TRX": 0.3314
  },
  "model": {
   "version": 41,
@@ -13569,53 +13575,100 @@
  ],
  "directives": {
   "risk_level": 0.2,
-  "min_confidence_adj": 0.05,
+  "min_confidence_adj": 0.1,
   "symbol_bias": {
-   "DOT": "reduce",
    "BTC": "avoid",
    "ETH": "avoid",
-   "SOL": "avoid"
+   "SOL": "avoid",
+   "XRP": "reduce",
+   "DOGE": "reduce",
+   "ADA": "reduce",
+   "BNB": "reduce",
+   "LINK": "reduce",
+   "AVAX": "reduce",
+   "LTC": "reduce",
+   "DOT": "reduce",
+   "TRX": "reduce"
   },
   "regime": "bear"
  },
  "brain": {
-  "created_at": 1792379454531,
+  "created_at": 1792383090796,
   "source": "local",
   "model": "mimo2.6:9b",
   "directives": {
    "risk_level": 0.2,
-   "min_confidence_adj": 0.05,
+   "min_confidence_adj": 0.1,
    "symbol_bias": {
-    "DOT": "reduce",
     "BTC": "avoid",
     "ETH": "avoid",
-    "SOL": "avoid"
+    "SOL": "avoid",
+    "XRP": "reduce",
+    "DOGE": "reduce",
+    "ADA": "reduce",
+    "BNB": "reduce",
+    "LINK": "reduce",
+    "AVAX": "reduce",
+    "LTC": "reduce",
+    "DOT": "reduce",
+    "TRX": "reduce"
    },
    "regime": "bear"
   },
-  "reasoning": "Rynek jest w fazie spadkowej: wi\u0119kszo\u015b\u0107 altcoin\u00f3w ma 7d spadki od -2.0% do -12.8%, a model ma tylko 2/4 na praktycznym koncie z edge: False. Wszystkie sygna\u0142y modelowe s\u0105 poni\u017cej progu 0.78, wi\u0119c nie ma \u017cadnego otwarcia. CLM ma AUC 0.44, czyli nie ma przewagi.",
+  "reasoning": "Rynek jest w fazie spadkowej: wi\u0119kszo\u015b\u0107 symboli ma spadki 7d od -2.3% do -11.2%, a model daje wszystkie 12 symboli poni\u017cej progu wej\u015bcia 0.78. Praktyczne konto ma 2/4 z ostatnich 4 sygna\u0142\u00f3w i edge: False, wi\u0119c utrzymuj\u0119 ostro\u017cny tryb i nie zwi\u0119kszam ryzyka. CLM ma AUC 0.44, czyli mniej ni\u017c brak umiej\u0119tno\u015bci, wi\u0119c nie ufaj mu przy decyzjach.",
   "new_lessons": [
-   "Model ma 2/4 na praktycznym koncie i edge: False \u2014 ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
-   "DOT, AVAX, TRX: spadki 24h i brak dowodu na przewag\u0119 \u2014 unikaj.",
+   "Wszystkie 12 symboli poni\u017cej progu 0.78 \u2014 zero sygna\u0142\u00f3w do otwarcia, utrzymaj ostro\u017cny tryb.",
+   "Model ma 2/4 na praktycznym koncie i edge: False \u2014 nie zwi\u0119kszaj ryzyka.",
    "CLM ma AUC 0.44, czyli mniej ni\u017c brak umiej\u0119tno\u015bci \u2014 nie ufaj mu przy decyzjach."
   ],
   "lessons": [
+   "Wszystkie 12 symboli poni\u017cej progu 0.78 \u2014 zero sygna\u0142\u00f3w do otwarcia, utrzymaj ostro\u017cny tryb.",
+   "Model ma 2/4 na praktycznym koncie i edge: False \u2014 nie zwi\u0119kszaj ryzyka.",
+   "CLM ma AUC 0.44, czyli mniej ni\u017c brak umiej\u0119tno\u015bci \u2014 nie ufaj mu przy decyzjach.",
    "Model ma 2/4 na praktycznym koncie i edge: False \u2014 ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
    "DOT, AVAX, TRX: spadki 24h i brak dowodu na przewag\u0119 \u2014 unikaj.",
-   "CLM ma AUC 0.44, czyli mniej ni\u017c brak umiej\u0119tno\u015bci \u2014 nie ufaj mu przy decyzjach.",
    "Model ma 2/4 na praktycznym koncie i edge: False \u2014 utrzymaj ostro\u017cny tryb.",
    "Model ma 2/4 na praktycznym koncie, edge: False \u2014 ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
    "ETH, SOL, XRP, DOGE: ostatnie 4 sygna\u0142y da\u0142y 2/4 \u2014 utrzymaj ostro\u017cny tryb.",
    "Model: 2/4 na praktycznym koncie, edge: False \u2014 ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
    "DOT, AVAX, TRX: spadki 24h -5.3%, -3.6%, -1.4% i brak dowodu na przewag\u0119 \u2014 unikaj.",
    "Model ma 2/4 na praktycznym koncie i edge: False \u2014 utrzymaj ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
-   "ETH, SOL, XRP, DOGE: ostatnie 4 sygna\u0142y da\u0142y 2/4 \u2014 utrzymaj ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
-   "DOT, AVAX, TRX: 24h spadki i brak dowodu na przewag\u0119 \u2014 nie otwieraj pozycji.",
-   "Model ma 0 zamkni\u0119tych transakcji na g\u0142\u00f3wnym koncie i 2/4 na praktycznym \u2014 brak dowodu na przewag\u0119."
+   "ETH, SOL, XRP, DOGE: ostatnie 4 sygna\u0142y da\u0142y 2/4 \u2014 utrzymaj ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka."
   ],
-  "seconds": 6.1
+  "seconds": 6.2
  },
  "brain_journal": [
+  {
+   "created_at": 1792383090796,
+   "source": "local",
+   "model": "mimo2.6:9b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.1,
+    "symbol_bias": {
+     "BTC": "avoid",
+     "ETH": "avoid",
+     "SOL": "avoid",
+     "XRP": "reduce",
+     "DOGE": "reduce",
+     "ADA": "reduce",
+     "BNB": "reduce",
+     "LINK": "reduce",
+     "AVAX": "reduce",
+     "LTC": "reduce",
+     "DOT": "reduce",
+     "TRX": "reduce"
+    },
+    "regime": "bear"
+   },
+   "reasoning": "Rynek jest w fazie spadkowej: wi\u0119kszo\u015b\u0107 symboli ma spadki 7d od -2.3% do -11.2%, a model daje wszystkie 12 symboli poni\u017cej progu wej\u015bcia 0.78. Praktyczne konto ma 2/4 z ostatnich 4 sygna\u0142\u00f3w i edge: False, wi\u0119c utrzymuj\u0119 ostro\u017cny tryb i nie zwi\u0119kszam ryzyka. CLM ma AUC 0.44, czyli mniej ni\u017c brak umiej\u0119tno\u015bci, wi\u0119c nie ufaj mu przy decyzjach.",
+   "new_lessons": [
+    "Wszystkie 12 symboli poni\u017cej progu 0.78 \u2014 zero sygna\u0142\u00f3w do otwarcia, utrzymaj ostro\u017cny tryb.",
+    "Model ma 2/4 na praktycznym koncie i edge: False \u2014 nie zwi\u0119kszaj ryzyka.",
+    "CLM ma AUC 0.44, czyli mniej ni\u017c brak umiej\u0119tno\u015bci \u2014 nie ufaj mu przy decyzjach."
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1792379454531,
    "source": "local",
@@ -13818,28 +13871,6 @@
     "DOT, AVAX, TRX: spadki 24h i brak dowodu na przewag\u0119 \u2014 unikaj.",
     "Model: 2/4 na praktycznym koncie, edge: False \u2014 ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
     "ETH, SOL, XRP, DOGE: ostatnie 4 sygna\u0142y da\u0142y 2/4 \u2014 utrzymaj ostro\u017cny tryb."
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1792346796306,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.3,
-    "min_confidence_adj": 0.05,
-    "symbol_bias": {
-     "DOT": "avoid",
-     "AVAX": "avoid",
-     "TRX": "avoid"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "Rynek jest w fazie spadkowej \u2014 wi\u0119kszo\u015b\u0107 aktywnych symboli ma ujemne wyniki 24h i 7d, a Fear & Greed wynosi 53 (Neutral). Model ma 2/4 na praktycznym koncie, a edge: False, wi\u0119c nie zwi\u0119kszam ryzyka. Ostrzegam przed DOT, AVAX i TRX ze wzgl\u0119du na spadki i brak dowodu na przewag\u0119.",
-   "new_lessons": [
-    "DOT, AVAX, TRX: spadki 24h -5.3%, -3.6%, -1.4% i brak dowodu na przewag\u0119 \u2014 unikaj.",
-    "Model ma 2/4 na praktycznym koncie i edge: False \u2014 utrzymaj ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
-    "ETH, SOL, XRP, DOGE: ostatnie 4 sygna\u0142y da\u0142y 2/4 \u2014 utrzymaj ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka."
    ],
    "equity_at": 1000.0
   }
