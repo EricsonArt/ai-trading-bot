@@ -1,34 +1,32 @@
 {
- "created_at": 1792375882639,
+ "created_at": 1792379454531,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 2.9,
+ "seconds": 6.1,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
-   "AVAX": "reduce",
    "DOT": "reduce",
-   "TRX": "reduce",
    "BTC": "avoid",
    "ETH": "avoid",
    "SOL": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w fazie spadkowej: wi\u0119kszo\u015b\u0107 aktywnych symbol\u00f3w ma negatywne 7d i 30d, a model ma tylko 2/4 na praktycznym koncie z edge: False. Wszystkie bie\u017c\u0105ce sygna\u0142y s\u0105 poni\u017cej progu 0.78, wi\u0119c nie ma podstaw do otwierania pozycji. CLM ma AUC 0.44, co oznacza brak umiej\u0119tno\u015bci, wi\u0119c nie powinien wp\u0142ywa\u0107 na decyzje. Rekomenduj\u0119 ostro\u017cny tryb z redukcj\u0105 ryzyka.",
+ "reasoning": "Rynek jest w fazie spadkowej: wi\u0119kszo\u015b\u0107 altcoin\u00f3w ma 7d spadki od -2.0% do -12.8%, a model ma tylko 2/4 na praktycznym koncie z edge: False. Wszystkie sygna\u0142y modelowe s\u0105 poni\u017cej progu 0.78, wi\u0119c nie ma \u017cadnego otwarcia. CLM ma AUC 0.44, czyli nie ma przewagi.",
  "new_lessons": [
-  "Model ma 2/4 na praktycznym koncie i edge: False \u2014 utrzymaj ostro\u017cny tryb.",
+  "Model ma 2/4 na praktycznym koncie i edge: False \u2014 ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
   "DOT, AVAX, TRX: spadki 24h i brak dowodu na przewag\u0119 \u2014 unikaj.",
   "CLM ma AUC 0.44, czyli mniej ni\u017c brak umiej\u0119tno\u015bci \u2014 nie ufaj mu przy decyzjach."
  ],
  "lessons": [
-  "Model ma 2/4 na praktycznym koncie i edge: False \u2014 utrzymaj ostro\u017cny tryb.",
+  "Model ma 2/4 na praktycznym koncie i edge: False \u2014 ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
   "DOT, AVAX, TRX: spadki 24h i brak dowodu na przewag\u0119 \u2014 unikaj.",
   "CLM ma AUC 0.44, czyli mniej ni\u017c brak umiej\u0119tno\u015bci \u2014 nie ufaj mu przy decyzjach.",
+  "Model ma 2/4 na praktycznym koncie i edge: False \u2014 utrzymaj ostro\u017cny tryb.",
   "Model ma 2/4 na praktycznym koncie, edge: False \u2014 ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
   "ETH, SOL, XRP, DOGE: ostatnie 4 sygna\u0142y da\u0142y 2/4 \u2014 utrzymaj ostro\u017cny tryb.",
-  "Model ma 2/4 na praktycznym koncie i edge: False \u2014 ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
   "Model: 2/4 na praktycznym koncie, edge: False \u2014 ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
   "DOT, AVAX, TRX: spadki 24h -5.3%, -3.6%, -1.4% i brak dowodu na przewag\u0119 \u2014 unikaj.",
   "Model ma 2/4 na praktycznym koncie i edge: False \u2014 utrzymaj ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
