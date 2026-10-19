@@ -1,34 +1,4 @@
 {
- "67f85392ba": {
-  "name": "unikaj btc_r96 >= 0.006817",
-  "source": "own mistakes (auto)",
-  "rule": "btc_r96 < 0.00682",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1791862610900,
-  "model_version": 30,
-  "adopted": false
- },
- "d477a99600": {
-  "name": "Ostro\u017cno\u015b\u0107 przy rozszerzaj\u0105cej si\u0119 zmienno\u015bci i s\u0142abym trendzie",
-  "source": "internet research: Analiza b\u0142\u0119d\u00f3w botu pokaza\u0142a, \u017ce przy r_96 < 0.01223 i btc_r96 < 0.02449 straty przewy\u017csza\u0142y zyski; dzi\u015b BTC jest w w\u0105skim zakresie przy wysokim 10-letnim yieldu, co sugeruje, \u017ce kr",
-  "rule": "r_96 < 0.008 and vol_ratio > 1 and d_ema50 < -0.005",
-  "why": "Regu\u0142a odrzuca sygna\u0142y kupna, gdy 24-godzinny zwrot BTC jest s\u0142aby (< 0.8%), zmienno\u015b\u0107 kr\u00f3tkoterminowa ro\u015bnie (vol_ratio > 1) i cena jest poni\u017cej \u015bredniej 50-cz\u0142onkowej. To chroni przed wej\u015bciami w fazie rozszerzania zmienno\u015bci, gdy kr\u00f3tkie sygna\u0142y momentum s\u0105 najs\u0142absze.",
-  "gain": 0.0,
-  "tested_at": 1791862610900,
-  "model_version": 30,
-  "adopted": false
- },
- "38dbb8c4ad": {
-  "name": "Unikaj sygna\u0142\u00f3w kupna z dolnej cz\u0119\u015bci zakresu",
-  "source": "internet research: Analiza b\u0142\u0119d\u00f3w botu pokaza\u0142a, \u017ce przy r_96 < 0.02449 i btc_r96 < 0.02449 straty przewy\u017csza\u0142y zyski; dzi\u015b BTC jest w w\u0105skim zakresie przy wysokim 10-letnim yieldu, co sugeruje, \u017ce kr",
-  "rule": "bb < -0.2 and r_4 < -0.002 and r_16 < -0.006",
-  "why": "Regu\u0142a odrzuca sygna\u0142y kupna, gdy cena znajduje si\u0119 poni\u017cej dolnej \u0107wiartki zakresu 24-godzinnego (bb < -0.2), a kr\u00f3tkoterminowe zwroty (r_4, r_16) s\u0105 ujemne. To chroni przed wej\u015bciami w fazie spadkowej, gdy kr\u00f3tkie sygna\u0142y momentum s\u0105 najs\u0142absze.",
-  "gain": 0.0,
-  "tested_at": 1791862610900,
-  "model_version": 30,
-  "adopted": false
- },
  "6dd8c5796d": {
   "name": "Ostro\u017cno\u015b\u0107 przy s\u0142abym momentum i negatywnym relatywnym zwrocie",
   "source": "internet research: Analiza b\u0142\u0119d\u00f3w botu pokaza\u0142a, \u017ce przy r_96 < 0.01223 i btc_r96 < 0.02449 straty przewy\u017csza\u0142y zyski; dzi\u015b BTC jest w w\u0105skim zakresie przy wysokim 10-letnim yieldu, co sugeruje, \u017ce kr",
@@ -796,6 +766,36 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
   "gain": 0.0,
   "tested_at": 1792419997798,
+  "model_version": 42,
+  "adopted": false
+ },
+ "4052870dfb": {
+  "name": "Odrzu\u0107 sygna\u0142y z niskim momentum BTC",
+  "source": "internet research: Bot traci\u0142 na sygna\u0142ach, gdy r_96 by\u0142 negatywny, a BTC_vol96 by\u0142 niski, co sugeruje, \u017ce w takich warunkach rynek jest zbyt spokojny, by generowa\u0107 zysk.",
+  "rule": "r_96 > -0.005 and r_16 < 0.006 and btc_vol96 < 0.0024",
+  "why": "To filtr odrzuca sygna\u0142y, kt\u00f3re maj\u0105 negatywne momentum BTC, ale nie maj\u0105 wystarczaj\u0105cego wolumenu do generowania zysku. W obecnych warunkach, gdy BTC_vol96 jest niski, rynek jest zbyt spokojny, by generowa\u0107 zysk.",
+  "gain": 0.0,
+  "tested_at": 1792452929419,
+  "model_version": 42,
+  "adopted": false
+ },
+ "bbc48a2799": {
+  "name": "Wymagaj dodatniego momentum kr\u00f3tkoterminowego",
+  "source": "internet research: Bot traci\u0142 na sygna\u0142ach, gdy rel_r672 by\u0142 negatywny, a rank_r96 by\u0142 niski, co sugeruje, \u017ce w takich warunkach rynek jest zbyt spokojny, by generowa\u0107 zysk.",
+  "rule": "rel_r672 > -0.01 and rank_r96 > 0.4 and r_4 > 0",
+  "why": "To filtr odrzuca sygna\u0142y, kt\u00f3re maj\u0105 negatywne momentum kr\u00f3tkoterminowe, ale nie maj\u0105 wystarczaj\u0105cego momentum d\u0142ugoterminowego do generowania zysku. W obecnych warunkach, gdy rank_r96 jest niski, rynek jest zbyt spokojny, by generowa\u0107 zysk.",
+  "gain": 0.0,
+  "tested_at": 1792452929419,
+  "model_version": 42,
+  "adopted": false
+ },
+ "fbae2ec028": {
+  "name": "Odrzu\u0107 sygna\u0142y z niskim momentum BTC",
+  "source": "internet research: Bot traci\u0142 na sygna\u0142ach, gdy vz by\u0142 niski, a r_16 by\u0142 negatywny, co sugeruje, \u017ce w takich warunkach rynek jest zbyt spokojny, by generowa\u0107 zysk.",
+  "rule": "vz < 0.69 and r_16 > 0.005 and d_ema50 < 0",
+  "why": "To filtr odrzuca sygna\u0142y, kt\u00f3re maj\u0105 negatywne momentum BTC, ale nie maj\u0105 wystarczaj\u0105cego momentum d\u0142ugoterminowego do generowania zysku. W obecnych warunkach, gdy rank_r96 jest niski, rynek jest zbyt spokojny, by generowa\u0107 zysk.",
+  "gain": 0.0,
+  "tested_at": 1792452929419,
   "model_version": 42,
   "adopted": false
  }
