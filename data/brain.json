@@ -1,34 +1,30 @@
 {
- "created_at": 1792383090796,
+ "created_at": 1792414987832,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 6.2,
+ "seconds": 10.6,
  "directives": {
   "risk_level": 0.2,
-  "min_confidence_adj": 0.1,
+  "min_confidence_adj": 0.0,
   "symbol_bias": {
-   "BTC": "avoid",
-   "ETH": "avoid",
-   "SOL": "avoid",
    "XRP": "reduce",
    "DOGE": "reduce",
-   "ADA": "reduce",
-   "BNB": "reduce",
-   "LINK": "reduce",
-   "AVAX": "reduce",
-   "LTC": "reduce",
-   "DOT": "reduce",
-   "TRX": "reduce"
+   "BTC": "avoid",
+   "ETH": "avoid",
+   "SOL": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w fazie spadkowej: wi\u0119kszo\u015b\u0107 symboli ma spadki 7d od -2.3% do -11.2%, a model daje wszystkie 12 symboli poni\u017cej progu wej\u015bcia 0.78. Praktyczne konto ma 2/4 z ostatnich 4 sygna\u0142\u00f3w i edge: False, wi\u0119c utrzymuj\u0119 ostro\u017cny tryb i nie zwi\u0119kszam ryzyka. CLM ma AUC 0.44, czyli mniej ni\u017c brak umiej\u0119tno\u015bci, wi\u0119c nie ufaj mu przy decyzjach.",
+ "reasoning": "Rynek jest w trybie ostro\u017cnym: wszystkie 12 symboli maj\u0105 nisk\u0105 pewno\u015b\u0107 modelu (0.06-0.23), a praktyczne konto straci\u0142o 0.17% na 4 sygna\u0142ach (2/4). Model ma edge: False, wi\u0119c nie zwi\u0119kszam ryzyka. BTC, ETH i SOL maj\u0105 najwi\u0119ksz\u0105 zmienno\u015b\u0107 (1.3%, 2.4%, 2.7%) i spadki 7d (-1.3%, -4.8%, -5.8%), wi\u0119c je omijam. Reszta symboli pozostaje w trybie 'wait' bez konkretnych powod\u00f3w.",
  "new_lessons": [
-  "Wszystkie 12 symboli poni\u017cej progu 0.78 \u2014 zero sygna\u0142\u00f3w do otwarcia, utrzymaj ostro\u017cny tryb.",
-  "Model ma 2/4 na praktycznym koncie i edge: False \u2014 nie zwi\u0119kszaj ryzyka.",
-  "CLM ma AUC 0.44, czyli mniej ni\u017c brak umiej\u0119tno\u015bci \u2014 nie ufaj mu przy decyzjach."
+  "Model ma 2/4 na praktycznym koncie \u2014 zero otwartych pozycji, utrzymaj ostro\u017cny tryb.",
+  "Wszystkie 12 symboli poni\u017cej progu 0.78 \u2014 zero sygna\u0142\u00f3w do otwarcia, nie zwi\u0119kszaj ryzyka.",
+  "Edge: False mimo historycznego AUC \u2014 nie ufaj modelowi przy decyzjach."
  ],
  "lessons": [
+  "Model ma 2/4 na praktycznym koncie \u2014 zero otwartych pozycji, utrzymaj ostro\u017cny tryb.",
+  "Wszystkie 12 symboli poni\u017cej progu 0.78 \u2014 zero sygna\u0142\u00f3w do otwarcia, nie zwi\u0119kszaj ryzyka.",
+  "Edge: False mimo historycznego AUC \u2014 nie ufaj modelowi przy decyzjach.",
   "Wszystkie 12 symboli poni\u017cej progu 0.78 \u2014 zero sygna\u0142\u00f3w do otwarcia, utrzymaj ostro\u017cny tryb.",
   "Model ma 2/4 na praktycznym koncie i edge: False \u2014 nie zwi\u0119kszaj ryzyka.",
   "CLM ma AUC 0.44, czyli mniej ni\u017c brak umiej\u0119tno\u015bci \u2014 nie ufaj mu przy decyzjach.",
@@ -37,10 +33,7 @@
   "Model ma 2/4 na praktycznym koncie i edge: False \u2014 utrzymaj ostro\u017cny tryb.",
   "Model ma 2/4 na praktycznym koncie, edge: False \u2014 ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
   "ETH, SOL, XRP, DOGE: ostatnie 4 sygna\u0142y da\u0142y 2/4 \u2014 utrzymaj ostro\u017cny tryb.",
-  "Model: 2/4 na praktycznym koncie, edge: False \u2014 ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
-  "DOT, AVAX, TRX: spadki 24h -5.3%, -3.6%, -1.4% i brak dowodu na przewag\u0119 \u2014 unikaj.",
-  "Model ma 2/4 na praktycznym koncie i edge: False \u2014 utrzymaj ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
-  "ETH, SOL, XRP, DOGE: ostatnie 4 sygna\u0142y da\u0142y 2/4 \u2014 utrzymaj ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka."
+  "Model: 2/4 na praktycznym koncie, edge: False \u2014 ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka."
  ],
  "equity_at": 1000.0
 }
