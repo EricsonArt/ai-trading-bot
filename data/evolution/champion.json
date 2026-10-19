@@ -63,46 +63,13 @@
  },
  "description": "position style, buy when the model is at least 73% sure, target 2.4x / stop 2x the expected move, hold up to 72 h, 25% of equity per trade, only if btc_vol96 > 0.0024 and btc_r96 < -0.01231 and rel_r672 < -0.01085 and btc_r16 < 0.00602",
  "model_version": 41,
- "generation": 62,
+ "generation": 63,
  "reason": "",
  "challengers": [
   {
    "style": "position",
    "threshold": 0.55,
-   "tp": 3.4,
-   "sl": 0.8,
-   "hold": 1.5,
-   "size": 0.25,
-   "rules": [
-    {
-     "feature": "btc_vol96",
-     "op": ">",
-     "value": 0.00228
-    },
-    {
-     "feature": "btc_r96",
-     "op": "<",
-     "value": -0.0137
-    },
-    {
-     "feature": "btc_r16",
-     "op": "<",
-     "value": -0.00296
-    },
-    {
-     "feature": "rel_r672",
-     "op": "<",
-     "value": -0.01038
-    }
-   ],
-   "id": "90867a11ba",
-   "parent": "b0b4657f1c+e14d1161ff",
-   "origin": "crossover"
-  },
-  {
-   "style": "position",
-   "threshold": 0.55,
-   "tp": 3.2,
+   "tp": 2.4,
    "sl": 0.8,
    "hold": 1.5,
    "size": 0.25,
@@ -110,12 +77,7 @@
     {
      "feature": "btc_r16",
      "op": "<",
-     "value": -0.00296
-    },
-    {
-     "feature": "rel_r672",
-     "op": "<",
-     "value": -0.01038
+     "value": -0.00266
     },
     {
      "feature": "btc_vol96",
@@ -123,37 +85,9 @@
      "value": 0.00228
     },
     {
-     "feature": "btc_r96",
-     "op": "<",
-     "value": -0.0137
-    }
-   ],
-   "id": "1314732538",
-   "parent": "f395bfde7e",
-   "origin": "mutation: tweak_rule"
-  },
-  {
-   "style": "position",
-   "threshold": 0.55,
-   "tp": 2.2,
-   "sl": 0.8,
-   "hold": 1.5,
-   "size": 0.25,
-   "rules": [
-    {
-     "feature": "btc_r16",
-     "op": "<",
-     "value": -0.00296
-    },
-    {
      "feature": "rel_r672",
      "op": "<",
-     "value": -0.01038
-    },
-    {
-     "feature": "btc_vol96",
-     "op": ">",
-     "value": 0.00228
+     "value": -0.01359
     },
     {
      "feature": "btc_r96",
@@ -161,8 +95,8 @@
      "value": -0.0137
     }
    ],
-   "id": "e14d1161ff",
-   "parent": "1314732538",
+   "id": "d68f56d477",
+   "parent": "b7132c6aff",
    "origin": "mutation: tp"
   },
   {
@@ -174,29 +108,95 @@
    "size": 0.25,
    "rules": [
     {
-     "feature": "rel_r672",
-     "op": "<",
-     "value": -0.0101
-    },
-    {
-     "feature": "btc_r96",
-     "op": "<",
-     "value": -0.0137
-    },
-    {
      "feature": "btc_r16",
      "op": "<",
-     "value": -0.00257
+     "value": -0.00252
     },
     {
      "feature": "btc_vol96",
      "op": ">",
      "value": 0.00228
+    },
+    {
+     "feature": "rel_r672",
+     "op": "<",
+     "value": -0.01359
+    },
+    {
+     "feature": "btc_r96",
+     "op": "<",
+     "value": -0.0137
     }
    ],
-   "id": "bce7ba3c15",
-   "parent": "cec0675f80",
+   "id": "4b8dedf172",
+   "parent": "44828aac43",
    "origin": "mutation: tp"
+  },
+  {
+   "style": "position",
+   "threshold": 0.55,
+   "tp": 2.4,
+   "sl": 0.8,
+   "hold": 1.5,
+   "size": 0.25,
+   "rules": [
+    {
+     "feature": "btc_r16",
+     "op": "<",
+     "value": -0.00278
+    },
+    {
+     "feature": "btc_vol96",
+     "op": ">",
+     "value": 0.00228
+    },
+    {
+     "feature": "rel_r672",
+     "op": "<",
+     "value": -0.01359
+    },
+    {
+     "feature": "btc_r96",
+     "op": "<",
+     "value": -0.0137
+    }
+   ],
+   "id": "7f1656d358",
+   "parent": "db3b94a96d",
+   "origin": "mutation: tweak_rule"
+  },
+  {
+   "style": "position",
+   "threshold": 0.55,
+   "tp": 2.4,
+   "sl": 0.8,
+   "hold": 1.5,
+   "size": 0.25,
+   "rules": [
+    {
+     "feature": "btc_r16",
+     "op": "<",
+     "value": -0.0026
+    },
+    {
+     "feature": "btc_vol96",
+     "op": ">",
+     "value": 0.00228
+    },
+    {
+     "feature": "rel_r672",
+     "op": "<",
+     "value": -0.01359
+    },
+    {
+     "feature": "btc_r96",
+     "op": "<",
+     "value": -0.0137
+    }
+   ],
+   "id": "9493f83201",
+   "parent": "d68f56d477",
+   "origin": "mutation: tweak_rule"
   }
  ],
  "since": 1791186354886

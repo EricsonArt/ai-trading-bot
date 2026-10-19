@@ -1,34 +1,4 @@
 {
- "c51fcb6c37": {
-  "name": "unikaj btc_r96 >= 0.006341",
-  "source": "own mistakes (auto)",
-  "rule": "btc_r96 < 0.00634",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1791810727643,
-  "model_version": 29,
-  "adopted": false
- },
- "c500c72ca0": {
-  "name": "Spadek Bitcoin w ci\u0105gu 24h",
-  "source": "internet research: CoinDesk, arXiv: How Much Must a Private Mempool Hide?",
-  "rule": "btc_r96 < -0.024",
-  "why": "Losing trades wskazuj\u0105 na spadek Bitcoin (btc_r96 < -0.024). Wczoraj w CoinDesk zauwa\u017cono, \u017ce Bitcoin spada z powodu negatywnych sygna\u0142\u00f3w z Iranu, co zwi\u0119ksza ryzyko sandwich attack\u00f3w zgodnie z arXivem o mempools.",
-  "gain": 0.0,
-  "tested_at": 1791810727643,
-  "model_version": 29,
-  "adopted": false
- },
- "159bf858ac": {
-  "name": "Niski RSI",
-  "source": "internet research: CoinDesk, arXiv: How Much Must a Private Mempool Hide?",
-  "rule": "rsi < 0.5",
-  "why": "Bot straci\u0142 pieni\u0105dze w sytuacjach gdy RSI by\u0142 niski (rsi < 0.5). Wczoraj w CoinDesk zauwa\u017cono, \u017ce Bitcoin spada z powodu negatywnych sygna\u0142\u00f3w z Iranu, co zwi\u0119ksza ryzyko sandwich attack\u00f3w zgodnie z arXivem o mempools.",
-  "gain": 0.0,
-  "tested_at": 1791810727643,
-  "model_version": 29,
-  "adopted": false
- },
  "c31d1e5ab8": {
   "name": "unikaj btc_r96 >= 0.0124",
   "source": "own mistakes (auto)",
@@ -796,6 +766,36 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
   "gain": 0.0,
   "tested_at": 1792375139029,
+  "model_version": 41,
+  "adopted": false
+ },
+ "c01b0908b4": {
+  "name": "Alfa relacyjna tylko z realnego momentum",
+  "source": "internet research: Bot traci na rel_r96 < -0.01085 i rank_r96; dzi\u015b BTC spada, ale alfa relacyjna jest s\u0142absza ni\u017c zwykle",
+  "rule": "rel_r96 < -0.005 and rank_r96 < 0.4 and vz < 0.8",
+  "why": "Wczoraj rel_r96 < -0.01085 i ema_trend < 0 by\u0142o odrzucone, a rel_r96 < -0.005 odrzucone. Dzi\u015b BTC ma negatywny rel_r96, wi\u0119c filtr rank_r96 < 0.4 i vz < 0.8 odrzuci sygna\u0142y, gdzie alfa relacyjna jest s\u0142aba lub brak wolumenu.",
+  "gain": 0.0,
+  "tested_at": 1792376461399,
+  "model_version": 41,
+  "adopted": false
+ },
+ "4c7cc4c56c": {
+  "name": "Kr\u00f3tkoterminowa konfluencja spadk\u00f3w",
+  "source": "internet research: Bot traci na r_96 < -0.005 i r_16 < -0.001 oraz r_16 < 0 i r_4 < 0 i r_96 < -0.005",
+  "rule": "r_96 < -0.005 and r_16 < -0.001 and r_4 < -0.001",
+  "why": "Wczoraj r_96 < -0.005 odrzucone, a r_16 < 0 i r_4 < 0 i r_96 < -0.005 odrzucone. Dzi\u015b BTC ma negatywny rel_r96, wi\u0119c filtr rank_r96 < 0.4 i vz < 0.8 odrzuci sygna\u0142y, gdzie alfa relacyjna jest s\u0142aba lub brak wolumenu.",
+  "gain": 0.0,
+  "tested_at": 1792376461399,
+  "model_version": 41,
+  "adopted": false
+ },
+ "e457770b6a": {
+  "name": "Kr\u00f3tkoterminowa konfluencja spadk\u00f3w",
+  "source": "internet research: Bot traci na r_96 < -0.005 i r_16 < -0.001 oraz r_16 < 0 i r_4 < 0 i r_96 < -0.005",
+  "rule": "d_ema200 < 0 and d_ema50 < 0 and bb < 0.3",
+  "why": "Wczoraj r_96 < -0.005 odrzucone, a r_16 < 0 i r_4 < 0 i r_96 < -0.005 odrzucone. Dzi\u015b BTC ma negatywny rel_r96, wi\u0119c filtr rank_r96 < 0.4 i vz < 0.8 odrzuci sygna\u0142y, gdzie alfa relacyjna jest s\u0142aba lub brak wolumenu.",
+  "gain": 0.0,
+  "tested_at": 1792376461399,
   "model_version": 41,
   "adopted": false
  }
