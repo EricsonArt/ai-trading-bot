@@ -1,11 +1,11 @@
 {
- "created_at": 1792425858946,
+ "created_at": 1792429493914,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 6.4,
+ "seconds": 8.1,
  "directives": {
   "risk_level": 0.2,
-  "min_confidence_adj": 0.05,
+  "min_confidence_adj": 0.1,
   "symbol_bias": {
    "BTC": "avoid",
    "ETH": "avoid",
@@ -22,22 +22,22 @@
   },
   "regime": "bear"
  },
- "reasoning": "Model ma tylko 2 wygrane z 4 na praktycznym koncie, a edge jest oznaczony jako False, wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka. Wszystkie 12 symboli maj\u0105 aktualn\u0105 pewno\u015b\u0107 poni\u017cej progu 0.75, wi\u0119c nie ma \u017cadnego sygna\u0142u do otwarcia pozycji. CLM ma AUC 0.44, czyli mniej ni\u017c brak umiej\u0119tno\u015bci, wi\u0119c jego opinie nie s\u0105 wiarygodne. Rynek jest w trybie Greed (59), ale ETH, SOL, XRP i DOGE spadaj\u0105 w skali 30 dni, co dodatkowo nie sprzyja wej\u015bciom.",
+ "reasoning": "Praktyczne konto straci\u0142o 0.17% na czterech sygna\u0142ach (2 wygrane, 2 przegrane), a edge jest oznaczony jako False, wi\u0119c nie ma podstaw do zwi\u0119kszania ryzyka. Wszystkie 12 symboli s\u0105 poni\u017cej progu wej\u015bcia 0.78, a CLM ma AUC 0.44, czyli mniej ni\u017c brak umiej\u0119tno\u015bci, wi\u0119c nie warto mu ufa\u0107 przy decyzjach. Rynek jest mieszany, ale Fear & Greed na poziomie 59 (Greed) oraz spadki 7d i 30d na wi\u0119kszo\u015bci aktyw\u00f3w sugeruj\u0105 ostro\u017cno\u015b\u0107, wi\u0119c utrzymuj\u0119 ostro\u017cny tryb i zero otwartych pozycji.",
  "new_lessons": [
   "Model ma 2/4 na praktycznym koncie i edge: False \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka.",
   "CLM: AUC 0.44, mniej ni\u017c brak umiej\u0119tno\u015bci \u2014 nie ufaj mu przy decyzjach.",
-  "Wszystkie 12 symboli poni\u017cej progu 0.75 \u2014 zero sygna\u0142\u00f3w do otwarcia, utrzymaj ostro\u017cny tryb."
+  "Wszystkie 12 symboli poni\u017cej progu 0.78 \u2014 zero sygna\u0142\u00f3w do otwarcia, utrzymaj ostro\u017cny tryb."
  ],
  "lessons": [
   "Model ma 2/4 na praktycznym koncie i edge: False \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka.",
   "CLM: AUC 0.44, mniej ni\u017c brak umiej\u0119tno\u015bci \u2014 nie ufaj mu przy decyzjach.",
+  "Wszystkie 12 symboli poni\u017cej progu 0.78 \u2014 zero sygna\u0142\u00f3w do otwarcia, utrzymaj ostro\u017cny tryb.",
   "Wszystkie 12 symboli poni\u017cej progu 0.75 \u2014 zero sygna\u0142\u00f3w do otwarcia, utrzymaj ostro\u017cny tryb.",
   "Wszystkie 12 symboli poni\u017cej progu 0.73 \u2014 zero sygna\u0142\u00f3w do otwarcia, utrzymaj ostro\u017cny tryb.",
   "Model: 2/4 na praktycznym koncie, edge: False \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka.",
   "Model ma 2/4 na praktycznym koncie \u2014 zero otwartych pozycji, utrzymaj ostro\u017cny tryb.",
   "Wszystkie 12 symboli poni\u017cej progu 0.78 \u2014 zero sygna\u0142\u00f3w do otwarcia, nie zwi\u0119kszaj ryzyka.",
   "Edge: False mimo historycznego AUC \u2014 nie ufaj modelowi przy decyzjach.",
-  "Wszystkie 12 symboli poni\u017cej progu 0.78 \u2014 zero sygna\u0142\u00f3w do otwarcia, utrzymaj ostro\u017cny tryb.",
   "Model ma 2/4 na praktycznym koncie i edge: False \u2014 nie zwi\u0119kszaj ryzyka.",
   "CLM ma AUC 0.44, czyli mniej ni\u017c brak umiej\u0119tno\u015bci \u2014 nie ufaj mu przy decyzjach.",
   "Model ma 2/4 na praktycznym koncie i edge: False \u2014 ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka."
