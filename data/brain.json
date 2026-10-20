@@ -1,19 +1,20 @@
 {
- "created_at": 1792502483971,
+ "created_at": 1792509773232,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 5.4,
+ "seconds": 9.3,
  "directives": {
   "risk_level": 0.2,
-  "min_confidence_adj": 0.0,
+  "min_confidence_adj": 0.02,
   "symbol_bias": {
+   "XRP": "reduce",
    "BTC": "avoid",
    "ETH": "avoid",
    "SOL": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w ostro\u017cnym odbiciu, ale model ma 2/4 na praktycznym koncie i edge: False, wi\u0119c nie zwi\u0119kszamy ryzyka. Wszystkie 12 symboli poni\u017cej 0.78 \u2014 zero sygna\u0142\u00f3w, utrzymaj ostro\u017cny tryb. CLM AUC 0.44 < 0.50 \u2014 nie ufaj sygna\u0142om.",
+ "reasoning": "Rynek jest w fazie ostro\u017cnego odbicia, a wszystkie 12 symboli maj\u0105 spadkowe momentum, co sugeruje brak wyra\u017anej przewagi modelu. Na praktycznym koncie model ma 2/4 i edge: False, wi\u0119c utrzymuj\u0119 ostro\u017cny tryb i nie zwi\u0119kszam ryzyka. CLM AUC 0.44 < 0.50 potwierdza, \u017ce nie ufamy mu przy decyzjach.",
  "new_lessons": [
   "Model ma 2/4 na praktycznym koncie i edge: False \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka.",
   "CLM AUC 0.44 < 0.50 \u2014 nie ufaj mu przy decyzjach.",
