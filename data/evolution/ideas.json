@@ -1,24 +1,4 @@
 {
- "d392e548b8": {
-  "name": "unikaj btc_r96 >= 0.01229",
-  "source": "own mistakes (auto)",
-  "rule": "btc_r96 < 0.01229",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1791862610900,
-  "model_version": 30,
-  "adopted": false
- },
- "2a3bd2278c": {
-  "name": "unikaj btc_r96 >= 0.0128",
-  "source": "own mistakes (auto)",
-  "rule": "btc_r96 < 0.0128",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1791907541555,
-  "model_version": 31,
-  "adopted": false
- },
  "64fa5861ab": {
   "name": "unikaj r_96 >= 0.006495",
   "source": "own mistakes (auto)",
@@ -796,6 +776,26 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
   "gain": 0.0,
   "tested_at": 1792482611956,
+  "model_version": 43,
+  "adopted": false
+ },
+ "7601833e33": {
+  "name": "Odrzu\u0107 impulsy kr\u00f3tkoterminowe w fazie odwr\u00f3tu",
+  "source": "internet research: B\u0142\u0119dy botu: r_96, r_16 i r_4 to najgorsze cechy w zestawie (\u015brednie straty -0.00983, -0.0143, -0.00689), a dzi\u015b BTC odwr\u00f3ci\u0142 si\u0119 przy linii trendu po szczytach $83,3K.",
+  "rule": "r_96 < -0.005 and r_16 < 0.001 and r_4 < 0.001",
+  "why": "Sygna\u0142 z kr\u00f3tkiego horyzontu w oknie odwr\u00f3tu to dok\u0142adnie profil, kt\u00f3ry bot przegrywa; filtr powinien wymaga\u0107 potwierdzenia kr\u00f3tkiego spadku, a nie samej pewno\u015bci modelu.",
+  "gain": 0.0,
+  "tested_at": 1792525298480,
+  "model_version": 43,
+  "adopted": false
+ },
+ "e28a7c20fe": {
+  "name": "Wymagaj spadku kr\u00f3tkoterminowego momentum",
+  "source": "internet research: B\u0142\u0119dy botu: rel_r96, rank_r96 i kr\u00f3tkie odchylenia cen; dzi\u015b BTC odwr\u00f3ci\u0142 si\u0119 po szczytach, wi\u0119c momentum kr\u00f3tkoterminowe jest s\u0142abe.",
+  "rule": "vol_ratio < 1 and r_32 < -0.005 and rank_r96 < 0.4",
+  "why": "Filtr wymaga, by kr\u00f3tkoterminowe momentum by\u0142o wyra\u017anie ujemne i by kr\u00f3tkoterminowa zmienno\u015b\u0107 nie rosn\u0119\u0142a; to odr\u00f3\u017cnia realny odwr\u00f3t od impulsu w rosn\u0105cej zmienno\u015bci.",
+  "gain": 0.0,
+  "tested_at": 1792525298480,
   "model_version": 43,
   "adopted": false
  }
