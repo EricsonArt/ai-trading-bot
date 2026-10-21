@@ -1,19 +1,28 @@
 {
- "created_at": 1792601551189,
+ "created_at": 1792605188653,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 2.5,
+ "seconds": 58.4,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.02,
   "symbol_bias": {
    "BTC": "avoid",
    "ETH": "avoid",
-   "SOL": "avoid"
+   "SOL": "avoid",
+   "XRP": "reduce",
+   "DOGE": "reduce",
+   "ADA": "reduce",
+   "BNB": "reduce",
+   "LINK": "reduce",
+   "AVAX": "reduce",
+   "LTC": "reduce",
+   "DOT": "reduce",
+   "TRX": "reduce"
   },
   "regime": "bear"
  },
- "reasoning": "Praktyczne konto straci\u0142o 0.17% na 4 sygna\u0142ach, a model ma edge: False \u2014 to jasny sygna\u0142 do utrzymania ostro\u017cnego trybu. Wszystkie 12 symboli s\u0105 poni\u017cej progu wej\u015bcia, wi\u0119c nie ma \u017cadnego otwarcia; BTC, ETH i SOL dodatkowo maj\u0105 s\u0142absze fundamenty w danych.",
+ "reasoning": "Rynek jest neutralny z lekkim przechy\u0142em do chciwo\u015bci (Fear & Greed 63), ale wszystkie 12 symboli maj\u0105 prawdopodobie\u0144stwo zysku poni\u017cej progu 0.75, wi\u0119c nie ma \u017cadnego sygna\u0142u do otwarcia. Model ma edge: False (2/4 na praktycznym koncie), a CLM ma AUC 0.44, czyli nie ma przewagi nad losowaniem. Trzymam si\u0119 ostro\u017cnego trybu bez otwierania pozycji.",
  "new_lessons": [
   "Model ma 2/4 na praktycznym koncie i edge: False \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka.",
   "CLM: AUC 0.44, mniej ni\u017c brak umiej\u0119tno\u015bci \u2014 nie ufaj mu przy decyzjach.",
