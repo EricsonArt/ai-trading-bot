@@ -1,14 +1,4 @@
 {
- "1b713ef2bd": {
-  "name": "NiskiATR i spokojny BTC jako warunek wej\u015bcia",
-  "source": "internet research: B\u0142\u0105d botu: atr (losing 0.00608 vs winning 0.00741) oraz btc_vol96 > 0.0024 odrzucone; dzi\u015b BTC stoi w okolicy $83k z wysok\u0105 rentowno\u015bci\u0105 30-letni\u0105.",
-  "rule": "atr < 0.00422 and btc_vol96 < 0.0024 and r_4 > 0.001",
-  "why": "Bot wymaga\u0142 dzi\u015b btc_vol96 > 0.0024, ale jego w\u0142asne straty mia\u0142y ni\u017cszy ATR ni\u017c wygrane; dzi\u015b rynek jest spokojny, wi\u0119c wej\u015bcie tylko w wysok\u0105 zmienno\u015b\u0107 BTC zwi\u0119ksza ryzyko fa\u0142szywych sygna\u0142\u00f3w.",
-  "gain": 0.0,
-  "tested_at": 1791960415350,
-  "model_version": 32,
-  "adopted": false
- },
  "e48c73cce1": {
   "name": "RSI nadkupione z odwr\u00f3conym momentum",
   "source": "internet research: B\u0142\u0105d botu: rsi < 0.5 odrzucone, ale RSI 0.646 to 90. percentyl, a dzi\u015b BTC stoi pod presj\u0105 rentowno\u015bci i danych o inflacji.",
@@ -796,6 +786,16 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: coin's 24h return minus Bitcoin's",
   "gain": 0.0,
   "tested_at": 1792585323071,
+  "model_version": 45,
+  "adopted": false
+ },
+ "765bfd152e": {
+  "name": "Kupuj tylko w trendzie kr\u00f3tkoterminowym",
+  "source": "internet research: B\u0142\u0119dy botu: losing trades avg -0.01294 przy d_ema200, -0.01037 przy r_96, -0.0105 przy ema_trend.",
+  "rule": "ema_trend > 0 and d_ema200 > -0.005 and r_96 < -0.005",
+  "why": "Bot kupuje, gdy kr\u00f3tkoterminowy impuls jest ujemny, ale \u015brednie EMA200 i EMA50/200 nie potwierdzaj\u0105 trendu. Wym\u00f3g dodatniego trendu i ceny powy\u017cej EMA200 odrzuci\u0142by sygna\u0142y z kr\u00f3tkoterminowego spadku, kt\u00f3re historycznie przynosi\u0142y straty.",
+  "gain": 0.0,
+  "tested_at": 1792603111154,
   "model_version": 45,
   "adopted": false
  }
