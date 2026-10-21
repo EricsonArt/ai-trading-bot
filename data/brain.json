@@ -1,21 +1,19 @@
 {
- "created_at": 1792588448504,
+ "created_at": 1792592083327,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 8.6,
+ "seconds": 8.3,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.02,
   "symbol_bias": {
-   "DOGE": "reduce",
-   "AVAX": "reduce",
    "BTC": "avoid",
    "ETH": "avoid",
    "SOL": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w fazie euforii (Fear & Greed 55-63), a BTC odwr\u00f3ci\u0142 si\u0119 przy trendzie 21-dniowym. Model ma zero otwartych pozycji i 2/4 na praktycznym koncie, wi\u0119c edge: False. Wszystkie 12 symboli s\u0105 poni\u017cej progu 0.75, wi\u0119c nie ma \u017cadnych sygna\u0142\u00f3w do otwarcia. Utrzymuj\u0119 ostro\u017cny tryb i nie zwi\u0119kszam ryzyka.",
+ "reasoning": "Rynek jest w trybie euforycznym (Fear & Greed 55), ale wszystkie 12 symboli maj\u0105 nisk\u0105 pewno\u015b\u0107 modelu poni\u017cej progu 0.75, wi\u0119c nie ma \u017cadnych sygna\u0142\u00f3w do otwarcia. Model ma tylko 2/4 na praktycznym koncie i edge: False, dlatego utrzymuj\u0119 ostro\u017cny tryb i nie zwi\u0119kszam ryzyka. CLM ma AUC 0.44, co oznacza brak umiej\u0119tno\u015bci, wi\u0119c nie ufam jego prognozom.",
  "new_lessons": [
   "Model ma 2/4 na praktycznym koncie i edge: False \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka.",
   "CLM: AUC 0.44, mniej ni\u017c brak umiej\u0119tno\u015bci \u2014 nie ufaj mu przy decyzjach.",
