@@ -1,5 +1,5 @@
 {
- "generated_at": 1792665224649,
+ "generated_at": 1792678695049,
  "last_candle": 1792664100000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
@@ -15449,22 +15449,21 @@
   "regime": "bear"
  },
  "brain": {
-  "created_at": 1792646896091,
+  "created_at": 1792678695040,
   "source": "cloud",
   "model": "qwen3:4b",
   "directives": {
    "risk_level": 0.2,
-   "min_confidence_adj": 0.05,
+   "min_confidence_adj": -0.02,
    "symbol_bias": {
     "SOL": "reduce",
     "ETH": "reduce",
     "XRP": "avoid",
-    "DOGE": "avoid",
-    "BTC": "avoid"
+    "DOGE": "avoid"
    },
    "regime": "bear"
   },
-  "reasoning": "Model nie ma edge (2/4 na praktycznym koncie), wszystkie sygna\u0142y poni\u017cej 0.78, AUC 0.44 < 0.50. Utrzymanie ostro\u017cnego trybu z redukcj\u0105 ryzyka dla SOL i ETH.",
+  "reasoning": "Model nie ma edge (2/4 na praktycznym koncie), wszystkie sygna\u0142y poni\u017cej 0.78, AUC 0.44 < 0.50. Utrzymaj ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
   "new_lessons": [
    "Model nie ma edge, 2/4 na praktycznym koncie \u2014 nie zwi\u0119kszaj ryzyka",
    "Wszystkie 12 symboli poni\u017cej progu 0.78 \u2014 zero sygna\u0142\u00f3w, utrzymaj ostro\u017cny tryb",
@@ -15484,9 +15483,32 @@
    "CLM: AUC 0.44, mniej ni\u017c brak umiej\u0119tno\u015bci \u2014 nie ufaj mu przy decyzjach.",
    "Wszystkie 12 symboli poni\u017cej 0.73 \u2014 zero sygna\u0142\u00f3w, utrzymaj ostro\u017cny tryb."
   ],
-  "seconds": 194.8
+  "seconds": 185.8
  },
  "brain_journal": [
+  {
+   "created_at": 1792678695040,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": -0.02,
+    "symbol_bias": {
+     "SOL": "reduce",
+     "ETH": "reduce",
+     "XRP": "avoid",
+     "DOGE": "avoid"
+    },
+    "regime": "bear"
+   },
+   "reasoning": "Model nie ma edge (2/4 na praktycznym koncie), wszystkie sygna\u0142y poni\u017cej 0.78, AUC 0.44 < 0.50. Utrzymaj ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
+   "new_lessons": [
+    "Model nie ma edge, 2/4 na praktycznym koncie \u2014 nie zwi\u0119kszaj ryzyka",
+    "Wszystkie 12 symboli poni\u017cej progu 0.78 \u2014 zero sygna\u0142\u00f3w, utrzymaj ostro\u017cny tryb",
+    "CLM AUC 0.44 < 0.50 \u2014 nie ufaj sygna\u0142om"
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1792646896091,
    "source": "cloud",
@@ -15699,30 +15721,6 @@
     "Model ma 2/4 na praktycznym koncie i edge: False \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka.",
     "CLM: AUC 0.44, mniej ni\u017c brak umiej\u0119tno\u015bci \u2014 nie ufaj mu przy decyzjach.",
     "Wszystkie 12 symboli poni\u017cej 0.73 \u2014 zero sygna\u0142\u00f3w, utrzymaj ostro\u017cny tryb."
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1792560159790,
-   "source": "cloud",
-   "model": "qwen3:4b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.0,
-    "symbol_bias": {
-     "SOL": "reduce",
-     "ETH": "reduce",
-     "XRP": "avoid",
-     "DOGE": "avoid",
-     "BTC": "avoid"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "Model nie ma edge (2/4 na praktycznym koncie), wszystkie sygna\u0142y poni\u017cej 0.73, a Fear & Greed w eufrozie (55) sugeruje korekty. Utrzymaj ostro\u017cny tryb z ryzykiem 0.2.",
-   "new_lessons": [
-    "Model nie ma edge, 2/4 na praktycznym koncie \u2014 nie zwi\u0119kszaj ryzyka",
-    "Wszystkie 12 symboli poni\u017cej progu 0.78 \u2014 zero sygna\u0142\u00f3w do otwarcia, utrzymaj ostro\u017cny tryb",
-    "CLM AUC 0.44 < 0.50 \u2014 nie ufaj sygna\u0142om"
    ],
    "equity_at": 1000.0
   }
@@ -47029,17 +47027,17 @@
    ]
   },
   "research": {
-   "created_at": 1792601548050,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "seconds": 28.8,
-   "digest": "Dzi\u015b BTC wycena blisko 84,6 tys. USD, ale bot wci\u0105\u017c traci na sygna\u0142ach z kr\u00f3tkim horyzontem (r_96, d_ema200, ema_trend) \u2014 to sugeruje, \u017ce model kupuje w fazie kr\u00f3tkoterminowego spadku bez kontekstu trendu. Indeks l\u0119ku i chciwo\u015bci oscyluje wok\u00f3\u0142 53-63, czyli neutralny z lekkim przechy\u0142em do chciwo\u015bci; nie jest to moment do agresywnego ryzyka. Wzrosty wolumenu i odchylenia od \u015brednich nie uratowa\u0142y sygna\u0142\u00f3w, wi\u0119c filtr powinien wymaga\u0107 potwierdzenia trendu oraz ograniczenia ekspozycji w warunkach wysokiej zmienno\u015bci. Wzrosty wolumenu i odchylenia od \u015brednich nie uratowa\u0142y sygna\u0142\u00f3w, wi\u0119c filtr powinien wymaga\u0107 potwierdzenia trendu oraz ograniczenia ekspozycji w warunkach wysokiej zmienno\u015bci.",
-   "mood": "greed",
+   "created_at": 1792678506972,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "seconds": 451.1,
+   "digest": "W dzisiejszych warunkach rynku krypto, gdzie Bitcoin spada poni\u017cej $82,000 z powodu w\u0105tpliwo\u015bci AI i spadku aktyw\u00f3w DeFi, kluczowe jest monitorowanie zmian w hashrate i p\u0142ynno\u015bci. Rynki s\u0105 w stanie zr\u00f3wnowa\u017cenia mi\u0119dzy ryzykiem a korzy\u015bci, co sugeruje, \u017ce strategie oparte na kr\u00f3tkoterminowych trendach mog\u0105 by\u0107 bardziej efektywne ni\u017c d\u0142ugoterminowe. Warto zwr\u00f3ci\u0107 uwag\u0119 na wp\u0142ywy na rynki z tytu\u0142u wskaz\u00f3wek politycznych w USA i potencjalnych zmian w regulacji w Thailand.",
+   "mood": "fear",
    "fng": [
     {
-     "value": 63,
+     "value": 68,
      "label": "Greed",
-     "ts": 1792540800000
+     "ts": 1792627200000
     }
    ],
    "used": [
@@ -47052,6 +47050,16 @@
    ],
    "failed": [],
    "items": [
+    {
+     "kind": "arXiv research",
+     "title": "What Prediction-Market Contracts Reveal at Launch: Trading Volume and Dispute Risk",
+     "url": "http://arxiv.org/abs/2610.29578v1"
+    },
+    {
+     "kind": "arXiv research",
+     "title": "Understanding the Inner Workings of a State-Space Foundation Model for Limit Order Books",
+     "url": "http://arxiv.org/abs/2610.28753v1"
+    },
     {
      "kind": "arXiv research",
      "title": "Speculative Imbalance Positions by Non-Physical Traders: Impacts on Electricity System Balancing in Great Britain",
@@ -47073,59 +47081,39 @@
      "url": "http://arxiv.org/abs/2610.26324v1"
     },
     {
-     "kind": "arXiv research",
-     "title": "Amortized Neural Filtering for Calibrated Posteriors in Statistical Arbitrage",
-     "url": "http://arxiv.org/abs/2610.25802v2"
-    },
-    {
-     "kind": "arXiv research",
-     "title": "Optimal Trading Filters and the Value of Predictive Signals",
-     "url": "http://arxiv.org/abs/2610.24558v1"
+     "kind": "CoinDesk",
+     "title": "Crypto is making a splash in U.S. elections \u2014 but chiefly in jabs about industry influence",
+     "url": "https://www.coindesk.com/news-analysis/2026/10/21/crypto-is-making-a-splash-in-u-s-elections-but-chiefly-in-jabs-about-industry-influence"
     },
     {
      "kind": "CoinDesk",
-     "title": "Trump to throw spotlight on overseas crypto abuses at White House event",
-     "url": "https://www.coindesk.com/policy/2026/10/21/trump-to-throw-spotlight-on-overseas-crypto-abuses-in-white-house-event"
+     "title": "Ethereum\u2019s four-minute settlement plan could lower the cost of moving crypto",
+     "url": "https://www.coindesk.com/tech/2026/10/22/ethereum-s-four-minute-settlement-plan-could-lower-the-cost-of-moving-crypto"
     },
     {
      "kind": "CoinDesk",
-     "title": "How a16z-backed DATA is rethinking its blockchain strategy after $30 million Sui deal",
-     "url": "https://www.coindesk.com/business/2026/10/21/how-a16z-backed-data-is-rethinking-its-blockchain-strategy-after-usd30-million-sui-deal"
+     "title": "Crypto traders seek shelter in bitcoin as altcoins slide and ETF flows wobble",
+     "url": "https://www.coindesk.com/daybook-us/2026/10/22/crypto-traders-seek-shelter-in-bitcoin-as-altcoins-slide-and-etf-flows-wobble"
     },
     {
      "kind": "CoinDesk",
-     "title": "Bybit will look for big broker partnerships to take on Robinhood in the U.S.",
-     "url": "https://www.coindesk.com/business/2026/10/16/bybit-will-look-for-big-broker-partnerships-to-take-on-robinhood-in-the-u-s"
+     "title": "Bitcoin slides below $82,000 as AI doubts return, with DeFi tokens leading declines",
+     "url": "https://www.coindesk.com/markets/2026/10/22/bitcoin-slides-below-usd82-000-as-ai-doubts-return-with-defi-tokens-leading-declines"
     },
     {
      "kind": "CoinDesk",
-     "title": "Crypto Long & Short: Why real-world assets need fixed-rate loans onchain",
-     "url": "https://www.coindesk.com/coindesk-indices/2026/10/21/crypto-long-and-short-why-real-world-assets-need-fixed-rate-loans-onchain"
+     "title": "Crypto traders price India telecoms company Reliance Jio's IPO at about $110 billion",
+     "url": "https://www.coindesk.com/markets/2026/10/22/crypto-traders-price-india-telecoms-company-reliance-jio-s-ipo-at-about-usd110-billion"
     },
     {
      "kind": "CoinDesk",
-     "title": "Why centralized exchanges refuse to list legacy crypto tokens without explicit SEC immunity",
-     "url": "https://www.coindesk.com/policy/2026/10/21/why-centralized-exchanges-refuse-to-list-legacy-crypto-tokens-without-explicit-sec-immunity"
-    },
-    {
-     "kind": "CoinDesk",
-     "title": "Japanese visitors may be able to pay with yen stablecoins in South Korea under Shinhan-SBI pact",
-     "url": "https://www.coindesk.com/business/2026/10/21/japanese-visitors-may-be-able-to-pay-with-yen-stablecoins-in-south-korea-under-shinhan-sbi-pact"
+     "title": "Live updates: Bitcoin slumps below $82,000 as markets go risk off on AI selloff, oil surge",
+     "url": "https://www.coindesk.com/business/2026/10/22/live-updates-bitcoin-s-round-trip-to-usd85-000-burns-traders-on-both-sides"
     },
     {
      "kind": "Cointelegraph",
-     "title": "Chainlink, Cardano, other blockchain groups push SEC for clearer crypto rules",
-     "url": "https://cointelegraph.com/news/chainlink-cardano-and-other-blockchain-groups-push-sec-for-clearer-crypto-rules?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-    },
-    {
-     "kind": "Cointelegraph",
-     "title": "Bitcoin price tags $84.6K as US stocks head higher on SpaceX Q3 earnings beat",
-     "url": "https://cointelegraph.com/markets/bitcoin-price-tags-846k-as-us-stocks-head-higher-on-spacex-q3-earnings-beat?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-    },
-    {
-     "kind": "Cointelegraph",
-     "title": "Solana\u2019s Alpenglow launches on mainnet, targets 99% faster finality",
-     "url": "https://cointelegraph.com/news/solanas-alpenglow-launches-mainnet-99-faster-finality?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "CryptoQuant CEO calls rising Bitcoin hashrate \u2018indirect bullish signal\u2019 from institutions",
+     "url": "https://cointelegraph.com/markets/cryptoquant-rising-bitcoin-hashrate-indirect-bullish-signal?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Cointelegraph",
@@ -47134,53 +47122,63 @@
     },
     {
      "kind": "Cointelegraph",
-     "title": "Big Tech\u2019s eMudhra fixes may leave crypto bots exposed, CertiK warns",
-     "url": "https://cointelegraph.com/news/certik-warning-crypto-emudhra-flaw-risks?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "Thailand SEC says several companies eye crypto ETFs, none has applied",
+     "url": "https://cointelegraph.com/news/thailand-sec-crypto-etf-applications?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Cointelegraph",
-     "title": "5 alternatives to Ledger to store your Bitcoin",
-     "url": "https://cointelegraph.com/magazine/5-alternatives-to-ledger-to-store-your-bitcoin?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "SoFi unveils bank-issued tokenized deposit for yield-bearing crypto funds",
+     "url": "https://cointelegraph.com/news/sofi-bank-issued-tokenized-deposit-yield-bearing-crypto-funds?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+    },
+    {
+     "kind": "Cointelegraph",
+     "title": "Bitcoin ETF buyers are trend followers, not setters, DWF Labs says",
+     "url": "https://cointelegraph.com/news/bitcoin-etf-flows-follow-price-trends-dwf-labs?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+    },
+    {
+     "kind": "Cointelegraph",
+     "title": "The UK needs a workable route to regulated DeFi access",
+     "url": "https://cointelegraph.com/opinion/uk-crypto-rules-regulated-defi-access?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Decrypt",
-     "title": "Dogecoin Gets a Dedicated Company to Build Out Its Ecosystem",
-     "url": "https://decrypt.co/381541/dogecoin-gets-dedicated-company-build-ecosystem"
+     "title": "Trade Where You Read: Decrypt Brings Jupiter-Powered Trading to The Information Exchange",
+     "url": "https://decrypt.co/381593/trade-where-you-read-decrypt-brings-jupiter-powered-trading-to-the-information-exchange"
     },
     {
      "kind": "Decrypt",
-     "title": "Musk\u2019s SpaceX-Tesla Merger Would Create a Bitcoin Treasury Behemoth",
-     "url": "https://decrypt.co/381538/musk-spacex-tesla-merger-bitcoin-treasury-behemoth"
+     "title": "SoFi Launches Tokenized Deposit That Earns 4.4% and Converts to a Stablecoin",
+     "url": "https://decrypt.co/381174/sofi-launches-tokenized-deposit-that-earns-4-4-and-moves-like-a-stablecoin"
     },
     {
      "kind": "Decrypt",
-     "title": "What Is a Bitcoin-Backed Loan? Borrowing Against BTC Explained",
-     "url": "https://decrypt.co/resources/what-is-a-bitcoin-backed-loan-borrowing-against-btc-explained"
+     "title": "Italy Busts Mafia 'Secret Bank' That Laundered Money Through Crypto, Seizes $24M",
+     "url": "https://decrypt.co/381589/italy-busts-mafia-secret-bank-that-laundered-money-through-crypto-seizes-24m"
     },
     {
      "kind": "Decrypt",
-     "title": "PHP Panic: Two Critical Bugs Put 70% of the Internet at Risk, and Everyone Is Freaking Out",
-     "url": "https://decrypt.co/381519/php-panic-critical-bugs-70-percent-internet-risk-everyone-freaking-out"
+     "title": "Chinese Prosecutors Seek to Confiscate $5.1B in Bitcoin Seized by UK in Qian Case",
+     "url": "https://decrypt.co/381580/chinese-prosecutors-seek-to-confiscate-5-1b-in-bitcoin-seized-by-uk-in-qian-case"
     },
     {
      "kind": "Decrypt",
-     "title": "Solana Alpenglow Goes Live in 'Most Ambitious' Upgrade Since Ethereum's Merge",
-     "url": "https://decrypt.co/381484/solana-alpenglow-goes-live-in-most-ambitious-upgrade-since-ethereums-merge"
+     "title": "Ken Griffin Says AI Is 'Almost Certainly' in a Bubble\u2014And Compares GPUs to Airline Seats",
+     "url": "https://decrypt.co/381578/ken-griffin-ai-bubble-gpus-airline-seats"
     },
     {
      "kind": "Decrypt",
-     "title": "GTA 6 Trailer Features 'Dacity' Meme Coin\u2014Here's What Traders Think It'll Do",
-     "url": "https://decrypt.co/381511/gta-6-trailer-features-dacity-meme-coin-heres-what-traders-think-itll-do"
+     "title": "Nvidia Unveils Its Full-Stack Blueprint to Contain and Monitor AI Agents",
+     "url": "https://decrypt.co/381570/nvidia-ai-agent-containment-tools-full-stack-blueprint"
     },
     {
      "kind": "Babypips",
-     "title": "What Are Perpetual Futures, and Where Can You Trade Them?",
-     "url": "https://www.babypips.com/news/explainer-perpetual-futures-funding-liquidation-risks"
+     "title": "Chart Art: EUR/AUD Holding Triangle Support Ahead of PMIs",
+     "url": "https://www.babypips.com/trading/chart-art-forex-euraud-holding-triangle-support-ahead-of-pmis-2026-10-22"
     },
     {
      "kind": "Babypips",
-     "title": "UK Inflation Hits Highest Level Since October 2025",
-     "url": "https://www.babypips.com/news/headline-uk-inflation-september-2026-cpi-fuel-prices-boe-rate-hike"
+     "title": "What the Dollar Index Actually Is, and Why Euro Markets Are Running It This Week",
+     "url": "https://www.babypips.com/news/explainer-what-the-dollar-index-actually-is-why-euro-markets-2026-10-22"
     },
     {
      "kind": "Babypips",
@@ -47189,30 +47187,30 @@
     },
     {
      "kind": "Babypips",
-     "title": "Still Stuck At Home? Here Are 2 Tips So You Can Trade Forex AND Have A Life",
-     "url": "https://www.babypips.com/trading/psychology-still-stuck-at-home-here-are-2-tips-so-you-can-trade-forex-and-have-a-life-2026-10-21"
+     "title": "WTI Crude Oil (USOIL) Analysis for Oct. 22, 2026: Bulls Make Another Push Toward $100 as Tensions Worsen",
+     "url": "https://www.babypips.com/trading/premium-strategy-2026-10-22-wti-crude-oil-usoil"
     },
     {
      "kind": "Babypips",
-     "title": "Chart Art: GBP/JPY Tests Key Resistance Ahead of U.K. CPI",
-     "url": "https://www.babypips.com/trading/chart-art-forex-gbpjpy-tests-key-resistance-ahead-of-uk-cpi-2026-10-21"
+     "title": "Event Guide: Euro Area Flash PMIs (October 2026)",
+     "url": "https://www.babypips.com/analysis/event-guide-forex-euro-area-pmi-october-2026-10-22"
     }
    ],
    "ideas": [
     {
-     "name": "Kupuj tylko w trendzie kr\u00f3tkoterminowym",
-     "rule": "ema_trend > 0 and d_ema200 > -0.005 and r_96 < -0.005",
-     "why": "Bot kupuje, gdy kr\u00f3tkoterminowy impuls jest ujemny, ale \u015brednie EMA200 i EMA50/200 nie potwierdzaj\u0105 trendu. Wym\u00f3g dodatniego trendu i ceny powy\u017cej EMA200 odrzuci\u0142by sygna\u0142y z kr\u00f3tkoterminowego spadku, kt\u00f3re historycznie przynosi\u0142y straty."
+     "name": "Wysoka zmiana w hashrate",
+     "rule": "btc_r96 > -0.01231",
+     "why": "CryptoQuant CEO wskazuje, \u017ce wzrost hashrate jest bezpo\u015brednim sygna\u0142em bullisha od instytucji. W ostatnich 24 godzinach Bitcoin spad\u0142 poni\u017cej $82,000, co sugeruje, \u017ce strategie oparte na hashrate mog\u0105 zredukowa\u0107 straty w sytuacji spadku."
     },
     {
-     "name": "Odrzu\u0107 sygna\u0142 przy spadkowym momentum",
-     "rule": "r_16 < -0.001 and r_4 < -0.001 and r_96 < -0.005",
-     "why": "Bot kupuje, gdy kr\u00f3tkoterminowy impuls jest ujemny, ale \u015brednie EMA200 i EMA50/200 nie potwierdzaj\u0105 trendu. Wym\u00f3g dodatniego trendu i ceny powy\u017cej EMA200 odrzuci\u0142by sygna\u0142y z kr\u00f3tkoterminowego spadku, kt\u00f3re historycznie przynosi\u0142y straty."
+     "name": "Niski wska\u017anik p\u0142ynno\u015bci",
+     "rule": "btc_vol96 < 0.0024",
+     "why": "Wczoraj Bitcoin spad\u0142 poni\u017cej $82,000 z powodu spadku aktyw\u00f3w DeFi. Wskaz\u00f3wka z arXiv: 'Speculative Imbalance Positions' sugeruje, \u017ce niskie wska\u017aniki p\u0142ynno\u015bci mog\u0105 by\u0107 powodem dla du\u017cych strat w sytuacji spadku."
     },
     {
-     "name": "Odrzu\u0107 sygna\u0142 przy spadkowym momentum",
-     "rule": "r_96 < -0.005 and r_16 < -0.001 and r_4 < -0.001",
-     "why": "Bot kupuje, gdy kr\u00f3tkoterminowy impuls jest ujemny, ale \u015brednie EMA200 i EMA50/200 nie potwierdzaj\u0105 trendu. Wym\u00f3g dodatniego trendu i ceny powy\u017cej EMA200 odrzuci\u0142by sygna\u0142y z kr\u00f3tkoterminowego spadku, kt\u00f3re historycznie przynosi\u0142y straty."
+     "name": "Wysoki wska\u017anik RSI",
+     "rule": "rsi > 0.6455",
+     "why": "W ostatnich 7 dniach wska\u017anik RSI (14) wynosi 0.6455, co sugeruje nadmiarowe zyski. W przypadku spadku Bitcoinu, wysoki RSI mo\u017ce by\u0107 powodem dla strat w sytuacji spadku."
     }
    ]
   }
