@@ -1,25 +1,29 @@
 {
- "created_at": 1792714393855,
+ "created_at": 1792718022713,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 5.6,
+ "seconds": 6.9,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.1,
   "symbol_bias": {
+   "AVAX": "reduce",
    "BTC": "avoid",
    "ETH": "avoid",
    "SOL": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w wyra\u017anym trendzie spadkowym: BTC -3.7%, ETH -4.0%, SOL -3.8%, a wszystkie 12 symboli maj\u0105 probabily poni\u017cej progu 0.83. Model ma edge: False, AUC 0.44 i 2/4 na praktycznym koncie, wi\u0119c nie zwi\u0119kszam ryzyka. Zostaj\u0119 przy ostrym trybie z minimaln\u0105 pewno\u015bci\u0105 0.90.",
+ "reasoning": "Rynek jest wyra\u017anie w krachu: BTC -3.7%, ETH -4.0%, SOL -3.8%, a wszystkie 12 symboli maj\u0105 spadki 24h. Model ma edge: False, AUC 0.44, 2/4 na praktycznym koncie, wi\u0119c nie zwi\u0119kszamy ryzyka. Wszystkie 12 symboli poni\u017cej progu 0.83, wi\u0119c zero sygna\u0142\u00f3w \u2014 utrzymujemy ostro\u017cny tryb. CLM model r\u00f3wnie\u017c ma AUC 0.44, wi\u0119c nie ufamy mu przy decyzjach.",
  "new_lessons": [
-  "Model AUC 0.44 i 2/4 na praktycznym koncie \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka.",
-  "Rynek w krachu (-3.7% BTC, -4.0% ETH, -3.8% SOL) i Fear & Greed 68 \u2014 nie wchod\u017a w trend spadkowy.",
-  "Model nie ma edge (edge: False) \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka."
+  "Model ma edge: False i AUC 0.44 \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka.",
+  "Rynek w krachu (-3.7% BTC, -4.0% ETH, -3.8% SOL) \u2014 nie wchod\u017a w trend spadkowy.",
+  "CLM AUC 0.44 < 0.50 \u2014 nie ufaj mu przy decyzjach."
  ],
  "lessons": [
+  "Model ma edge: False i AUC 0.44 \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka.",
+  "Rynek w krachu (-3.7% BTC, -4.0% ETH, -3.8% SOL) \u2014 nie wchod\u017a w trend spadkowy.",
+  "CLM AUC 0.44 < 0.50 \u2014 nie ufaj mu przy decyzjach.",
   "Model AUC 0.44 i 2/4 na praktycznym koncie \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka.",
   "Rynek w krachu (-3.7% BTC, -4.0% ETH, -3.8% SOL) i Fear & Greed 68 \u2014 nie wchod\u017a w trend spadkowy.",
   "Model nie ma edge (edge: False) \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka.",
@@ -27,11 +31,8 @@
   "Rynek w krachu (-3.6% BTC, -5.7% XRP, -7.5% AVAX) i Fear & Greed 68 \u2014 nie wchod\u017a w trend spadkowy.",
   "Model nie ma edge (AUC 0.44, 2/4 na praktycznym koncie) \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka.",
   "Model ma edge: False, AUC 0.44 \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka.",
-  "CLM AUC 0.44 < 0.50 \u2014 nie ufaj mu przy decyzjach.",
   "Wszystkie 12 symboli poni\u017cej progu 0.73 \u2014 zero sygna\u0142\u00f3w, utrzymaj ostro\u017cny tryb.",
-  "Model ma edge: False i 2/4 na praktycznym koncie \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka.",
-  "CLM AUC 0.44 < 0.50 \u2014 nie ufaj sygna\u0142om.",
-  "Wszystkie 12 symboli poni\u017cej progu 0.78 \u2014 zero sygna\u0142\u00f3w, utrzymaj ostro\u017cny tryb."
+  "Model ma edge: False i 2/4 na praktycznym koncie \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka."
  ],
  "equity_at": 1000.0
 }
