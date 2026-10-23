@@ -1,19 +1,28 @@
 {
- "created_at": 1792732531181,
+ "created_at": 1792736159160,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 13.0,
+ "seconds": 6.5,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.1,
   "symbol_bias": {
    "BTC": "avoid",
    "ETH": "avoid",
-   "SOL": "avoid"
+   "SOL": "avoid",
+   "XRP": "reduce",
+   "DOGE": "reduce",
+   "ADA": "reduce",
+   "BNB": "reduce",
+   "LINK": "reduce",
+   "AVAX": "reduce",
+   "LTC": "reduce",
+   "DOT": "reduce",
+   "TRX": "reduce"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w krachu: BTC -1.1%, ETH -1.1%, SOL -0.9%, XRP -1.7%, ADA -2.4%, a 30 dni to spadki od -5.3% do -23.0%. Model ma edge: False (AUC 0.44, 2/4 na praktycznym koncie) i zero sygna\u0142\u00f3w \u2014 wszystkie 12 symboli poni\u017cej progu 0.83. Z tego powodu utrzymuj\u0119 zero otwartych pozycji i nie zwi\u0119kszam ryzyka.",
+ "reasoning": "Rynek jest w krachu: BTC -1.1%, XRP -1.7%, ADA -2.4%, a wszystkie 12 symboli s\u0105 poni\u017cej progu 0.83, wi\u0119c zero sygna\u0142\u00f3w. Model ma AUC 0.44 i 2/4 na praktycznym koncie, wi\u0119c nie ma edge i nie zwi\u0119kszaj ryzyka. Fear & Greed 68 sugeruje eufori\u0119, ale dane praktyczne m\u00f3wi\u0105 inaczej \u2014 utrzymaj ostro\u017cny tryb.",
  "new_lessons": [
   "Model AUC 0.44 i 2/4 na praktycznym koncie \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka.",
   "Wszystkie 12 symboli poni\u017cej progu 0.83 \u2014 zero sygna\u0142\u00f3w, utrzymaj ostro\u017cny tryb.",
