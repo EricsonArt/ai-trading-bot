@@ -1,34 +1,4 @@
 {
- "5925342af1": {
-  "name": "Niskie poziomy zatrzymania",
-  "source": "internet research: Bot's own mistakes: Bitcoin return over the last 24 hours (btc_r96): losing trades avg -0.00556, winning trades avg -0.01272",
-  "rule": "btc_r96 < -0.025",
-  "why": "W ostatnich 24h Bitcoin straci\u0142 0.02443, co sugeruje, \u017ce bot powinien unikn\u0105\u0107 transakcji, gdy btc_r96 < -0.025 (niska cena Bitcoin).",
-  "gain": 0.0,
-  "tested_at": 1792056397337,
-  "model_version": 34,
-  "adopted": false
- },
- "0695198194": {
-  "name": "unikaj r_96 >= 0.00491",
-  "source": "own mistakes (auto)",
-  "rule": "r_96 < 0.00491",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1792056397337,
-  "model_version": 34,
-  "adopted": false
- },
- "6491e841b2": {
-  "name": "unikaj r_96 >= 0.01312",
-  "source": "own mistakes (auto)",
-  "rule": "r_96 < 0.01312",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1792100987948,
-  "model_version": 35,
-  "adopted": false
- },
  "6b1dd0dae5": {
   "name": "Niskie pozycje w Bollinger bandach",
   "source": "internet research: The bot's own mistakes (22535 losing of 37551 tested signals) + [arXiv research] Say, Echo, Do: Strategic Narratives and Revealed Positioning in Financial Markets",
@@ -796,6 +766,36 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
   "gain": 0.0,
   "tested_at": 1792726767417,
+  "model_version": 48,
+  "adopted": false
+ },
+ "49538b1b12": {
+  "name": "Filtr \u015bwiec: brak potwierdzenia wzrostu",
+  "source": "internet research: Badanie arXiv o przewidywaniu intraday i p\u0142ynno\u015bci instytucji pokazuje, \u017ce przewidywanie na kr\u00f3tkim horyzoncie bywa iluzj\u0105; CoinDesk/Decrypt opisuj\u0105 BTC w trybie 'wait and see', a C",
+  "rule": "r_1 < 0.001 and r_2 < 0.002 and body < 0.1",
+  "why": "Bot kupuje, gdy BTC spada 24h i ETF-y wyp\u0142acaj\u0105, wi\u0119c kr\u00f3tkoterminowe potwierdzenie wzrostu jest potrzebne. Regu\u0142a odrzuca sygna\u0142y, kt\u00f3re model widzi jako szanse, ale \u015bwiece nie potwierdzaj\u0105 \u2014 to dok\u0142adnie typ b\u0142\u0119du, kt\u00f3ry utkn\u0105\u0142 w oknie spadkowym.",
+  "gain": 0.0,
+  "tested_at": 1792752004657,
+  "model_version": 48,
+  "adopted": false
+ },
+ "f252888531": {
+  "name": "Filtr zmienno\u015bci: wzrost zmienno\u015bci bez odrobienia",
+  "source": "internet research: Badanie arXiv o starzej\u0105cych si\u0119 sygna\u0142ach newsowych pokazuje, \u017ce stary sygna\u0142 mo\u017ce ju\u017c by\u0107 w cenie, a CoinDesk/Cointelegraph opisuj\u0105 wyp\u0142ywy z ETF-\u00f3w i ha\u0142sy z hack\u00f3w (Cysic, Coinb",
+  "rule": "vol_ratio > 1.1 and r_8 < -0.004 and range_pos < 0.3",
+  "why": "Bot wymaga btc_vol96 > 0.0024, wi\u0119c akceptuje wysok\u0105 zmienno\u015b\u0107, ale badanie pokazuje, \u017ce wzrost zmienno\u015bci bez odrobienia to ryzyko, nie przewidywalno\u015b\u0107. Regu\u0142a odrzuca sygna\u0142y w oknie spadkowym, gdy zmienno\u015b\u0107 ro\u015bnie i \u015bwieca nie odrobi\u0142a strat.",
+  "gain": 0.0,
+  "tested_at": 1792752004657,
+  "model_version": 48,
+  "adopted": false
+ },
+ "257d7f867f": {
+  "name": "Filtr trendu: brak struktury wzrostowej",
+  "source": "internet research: Badanie arXiv o przewidywaniu intraday pokazuje, \u017ce przewidywanie na kr\u00f3tkim horyzoncie bywa iluzj\u0105; odrzucone wcze\u015bniej filtry (r_96, rank_r96) nie pomog\u0142y, wi\u0119c filtr musi opiera\u0107",
+  "rule": "r_4 < 0.0005 and r_16 < 0.0005 and d_ema50 < -0.002",
+  "why": "Bot kupuje w oknie spadkowym BTC, wi\u0119c kr\u00f3tkoterminowa struktura wzrostowa jest potrzebna. Regu\u0142a odrzuca sygna\u0142y, kt\u00f3re model widzi jako szanse, ale \u015bwiece nie potwierdzaj\u0105 \u2014 to dok\u0142adnie typ b\u0142\u0119du, kt\u00f3ry utkn\u0105\u0142 w oknie spadkowym.",
+  "gain": 0.0,
+  "tested_at": 1792752004657,
   "model_version": 48,
   "adopted": false
  }

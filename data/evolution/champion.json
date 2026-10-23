@@ -63,78 +63,111 @@
  },
  "description": "position style, buy when the model is at least 73% sure, target 2.4x / stop 2x the expected move, hold up to 72 h, 25% of equity per trade, only if btc_vol96 > 0.0024 and btc_r96 < -0.01231 and rel_r672 < -0.01085 and btc_r16 < 0.00602",
  "model_version": 48,
- "generation": 74,
+ "generation": 75,
  "reason": "",
  "challengers": [
   {
    "style": "position",
-   "threshold": 0.56,
+   "threshold": 0.55,
+   "tp": 2.4,
+   "sl": 0.8,
+   "hold": 1.5,
+   "size": 0.25,
+   "rules": [
+    {
+     "feature": "btc_vol96",
+     "op": ">",
+     "value": 0.0024
+    },
+    {
+     "feature": "rel_r672",
+     "op": "<",
+     "value": -0.01359
+    },
+    {
+     "feature": "btc_r96",
+     "op": "<",
+     "value": -0.01367
+    },
+    {
+     "feature": "r_96",
+     "op": "<",
+     "value": -0.005
+    }
+   ],
+   "id": "d08abf697f",
+   "parent": "51b7d94454",
+   "origin": "mutation: add_rule"
+  },
+  {
+   "style": "position",
+   "threshold": 0.55,
    "tp": 2.8,
    "sl": 0.8,
    "hold": 1.5,
    "size": 0.25,
    "rules": [
+    {
+     "feature": "rel_r672",
+     "op": "<",
+     "value": -0.01359
+    },
+    {
+     "feature": "btc_r96",
+     "op": "<",
+     "value": -0.01367
+    },
+    {
+     "feature": "r_96",
+     "op": "<",
+     "value": -0.005
+    },
+    {
+     "feature": "btc_vol96",
+     "op": ">",
+     "value": 0.0024
+    }
+   ],
+   "id": "ef466b3619",
+   "parent": "d08abf697f+4453861597",
+   "origin": "crossover"
+  },
+  {
+   "style": "position",
+   "threshold": 0.55,
+   "tp": 2.4,
+   "sl": 0.8,
+   "hold": 1.5,
+   "size": 0.25,
+   "rules": [
+    {
+     "feature": "btc_vol96",
+     "op": ">",
+     "value": 0.0024
+    },
     {
      "feature": "btc_r96",
      "op": "<",
      "value": -0.0137
     },
     {
-     "feature": "btc_r16",
-     "op": "<",
-     "value": 0.00565
-    },
-    {
      "feature": "rel_r672",
      "op": "<",
-     "value": -0.01105
+     "value": -0.01359
     },
     {
-     "feature": "btc_vol96",
-     "op": ">",
-     "value": 0.00244
+     "feature": "r_96",
+     "op": "<",
+     "value": 0.00209
     }
    ],
-   "id": "babfc7d4a1",
-   "parent": "527b8f7310",
+   "id": "d6d95957c5",
+   "parent": "f8f4821f67",
    "origin": "mutation: tweak_rule"
   },
   {
    "style": "position",
-   "threshold": 0.56,
-   "tp": 2.8,
-   "sl": 0.8,
-   "hold": 1.5,
-   "size": 0.25,
-   "rules": [
-    {
-     "feature": "btc_r16",
-     "op": "<",
-     "value": 0.00565
-    },
-    {
-     "feature": "rel_r672",
-     "op": "<",
-     "value": -0.01105
-    },
-    {
-     "feature": "btc_r96",
-     "op": "<",
-     "value": -0.01337
-    },
-    {
-     "feature": "btc_vol96",
-     "op": ">",
-     "value": 0.00244
-    }
-   ],
-   "id": "44fe91bb66",
-   "parent": "babfc7d4a1+2026c07531",
-   "origin": "crossover"
-  },
-  {
-   "style": "position",
-   "threshold": 0.56,
+   "threshold": 0.55,
    "tp": 2.4,
    "sl": 0.8,
    "hold": 1.5,
@@ -146,57 +179,24 @@
      "value": -0.0137
     },
     {
-     "feature": "btc_r16",
-     "op": "<",
-     "value": 0.00565
+     "feature": "btc_vol96",
+     "op": ">",
+     "value": 0.0024
     },
     {
      "feature": "rel_r672",
      "op": "<",
-     "value": -0.01105
+     "value": -0.01359
     },
     {
-     "feature": "btc_vol96",
-     "op": ">",
-     "value": 0.00244
+     "feature": "r_96",
+     "op": "<",
+     "value": 0.00575
     }
    ],
-   "id": "57cecd6be9",
-   "parent": "babfc7d4a1",
-   "origin": "mutation: tp"
-  },
-  {
-   "style": "position",
-   "threshold": 0.56,
-   "tp": 2.8,
-   "sl": 0.8,
-   "hold": 1.5,
-   "size": 0.25,
-   "rules": [
-    {
-     "feature": "btc_r96",
-     "op": "<",
-     "value": -0.0137
-    },
-    {
-     "feature": "btc_r16",
-     "op": "<",
-     "value": 0.00726
-    },
-    {
-     "feature": "rel_r672",
-     "op": "<",
-     "value": -0.01105
-    },
-    {
-     "feature": "btc_vol96",
-     "op": ">",
-     "value": 0.00244
-    }
-   ],
-   "id": "3aa2927ac7",
-   "parent": "babfc7d4a1",
-   "origin": "mutation: tweak_rule"
+   "id": "e0153a0038",
+   "parent": "19b998e7f5+c7f66553a5",
+   "origin": "crossover"
   }
  ],
  "since": 1791186354886
