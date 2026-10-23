@@ -1,11 +1,11 @@
 {
- "created_at": 1792761673373,
+ "created_at": 1792765305400,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 21.2,
+ "seconds": 8.4,
  "directives": {
   "risk_level": 0.2,
-  "min_confidence_adj": 0.1,
+  "min_confidence_adj": 0.02,
   "symbol_bias": {
    "BTC": "avoid",
    "ETH": "avoid",
@@ -13,19 +13,19 @@
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w krachu i neutralny \u2014 BTC -0.4%, ETH -0.4%, SOL -0.6%, a wszystkie 12 symboli s\u0105 poni\u017cej progu 0.83. Model ma AUC 0.44 i 2/4 na praktycznym koncie, wi\u0119c nie ma potwierdzonego edge. Zwi\u0119kszam min_confidence_adj do 0.10, aby wej\u015bcia wymaga\u0142y jeszcze wy\u017cszego pewno\u015bci, i utrzymuj\u0119 ostro\u017cny tryb.",
+ "reasoning": "Rynek jest neutralny (Fear & Greed 50), ale wszystkie 12 symboli s\u0105 poni\u017cej progu 0.83, wi\u0119c model nie ma \u017cadnych sygna\u0142\u00f3w. Na praktycznym koncie model osi\u0105gn\u0105\u0142 tylko 2/4 i AUC 0.44, co oznacza brak edge. BTC, ETH i SOL spadaj\u0105 w ostatnich dniach, wi\u0119c nie wchodz\u0119 w trend spadkowy. Utrzymuj\u0119 ostro\u017cny tryb i nie zwi\u0119kszam ryzyka.",
  "new_lessons": [
-  "Model bez edge (AUC 0.44, 2/4) \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka.",
+  "Model bez edge (AUC 0.44, 2/4 na praktycznym koncie) \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka.",
   "Wszystkie 12 symboli poni\u017cej progu 0.83 \u2014 zero sygna\u0142\u00f3w, utrzymaj ostro\u017cny tryb.",
   "Rynek w krachu (-0.4% BTC, -0.4% ETH, -0.6% SOL) \u2014 nie wchod\u017a w trend spadkowy."
  ],
  "lessons": [
-  "Model bez edge (AUC 0.44, 2/4) \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka.",
+  "Model bez edge (AUC 0.44, 2/4 na praktycznym koncie) \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka.",
   "Wszystkie 12 symboli poni\u017cej progu 0.83 \u2014 zero sygna\u0142\u00f3w, utrzymaj ostro\u017cny tryb.",
   "Rynek w krachu (-0.4% BTC, -0.4% ETH, -0.6% SOL) \u2014 nie wchod\u017a w trend spadkowy.",
+  "Model bez edge (AUC 0.44, 2/4) \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka.",
   "Rynek w krachu (-0.6% BTC, -0.9% ETH, -1.9% SOL) \u2014 nie wchod\u017a w trend spadkowy.",
   "CLM AUC 0.44 < 0.50 \u2014 nie ufaj mu przy decyzjach.",
-  "Model bez edge (AUC 0.44, 2/4 na praktycznym koncie) \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka.",
   "Model AUC 0.44 i 2/4 na praktycznym koncie \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka.",
   "Rynek w krachu (-1.1% BTC, -1.7% XRP, -2.4% ADA) \u2014 nie wchod\u017a w trend spadkowy.",
   "Model nie ma edge (AUC 0.44, 2/4 na praktycznym koncie) \u2014 zero otwartych pozycji, nie zwi\u0119kszaj ryzyka.",
