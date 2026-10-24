@@ -1,20 +1,19 @@
 {
- "created_at": 1792834863120,
+ "created_at": 1792838524740,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 7.2,
+ "seconds": 33.2,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.02,
   "symbol_bias": {
-   "XRP": "reduce",
    "BTC": "avoid",
    "ETH": "avoid",
    "SOL": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest wyra\u017anie spadkowy: BTC -1.1%, SOL -2.4%, XRP -2.7%, a 30-dniowe spadki si\u0119gaj\u0105 -17.5% dla DOGE i -16.6% dla LTC. Model nie ma udowodnionej przewagi (AUC 0.44, 2/4 na praktycznym koncie), a jego ostatnie sygna\u0142y przynios\u0142y strat\u0119 -0.17%. Dlatego utrzymuj\u0119 zero pozycji, minimalne ryzyko i blokuj\u0119 BTC, ETH oraz SOL jako najgorsze warunki wej\u015bcia.",
+ "reasoning": "Rynek jest wyra\u017anie spadkowy: BTC -1.1%, SOL -2.4%, XRP -2.7%, a praktyczne konto straci\u0142o 0.17% na czterech sygna\u0142ach. Model ma AUC 0.44 i 2/4 na praktycznym koncie, wi\u0119c nie ma udowodnionej przewagi \u2014 zero pozycji jest w\u0142a\u015bciw\u0105 decyzj\u0105. Wszystkie 12 symboli s\u0105 poni\u017cej progu 0.83, a kluczowe filtry s\u0105 zablokowane, wi\u0119c nie ma \u017cadnego sygna\u0142u do wej\u015bcia.",
  "new_lessons": [
   "Model bez edge (AUC 0.44, 2/4) \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
   "Rynek spadkowy (-1.1% BTC, -2.4% SOL, -2.7% XRP) \u2014 nie wchod\u017a w trend spadkowy.",
