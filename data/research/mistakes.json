@@ -1,57 +1,57 @@
 {
- "created_at": 1792912787737,
- "model_version": 53,
- "signals": 34783,
- "losers": 19975,
+ "created_at": 1792956965736,
+ "model_version": 54,
+ "signals": 35336,
+ "losers": 19984,
  "patterns": [
   {
    "feature": "d_ema200",
    "meaning": "price vs its 200-candle (50 h) average",
-   "strength": 0.35,
-   "losers_avg": -0.01208,
-   "winners_avg": -0.02427
-  },
-  {
-   "feature": "r_96",
-   "meaning": "return over the last 24 hours",
-   "strength": 0.347,
-   "losers_avg": -0.01003,
-   "winners_avg": -0.02833
+   "strength": 0.37,
+   "losers_avg": -0.01148,
+   "winners_avg": -0.02448
   },
   {
    "feature": "ema_trend",
    "meaning": "50-candle average vs 200-candle average (positive = uptrend)",
-   "strength": 0.331,
-   "losers_avg": -0.00971,
-   "winners_avg": -0.01717
+   "strength": 0.364,
+   "losers_avg": -0.00909,
+   "winners_avg": -0.01734
+  },
+  {
+   "feature": "r_96",
+   "meaning": "return over the last 24 hours",
+   "strength": 0.341,
+   "losers_avg": -0.0097,
+   "winners_avg": -0.02754
   },
   {
    "feature": "btc_r96",
    "meaning": "Bitcoin return over the last 24 hours",
-   "strength": 0.315,
-   "losers_avg": -0.00514,
-   "winners_avg": -0.01629
+   "strength": 0.305,
+   "losers_avg": -0.0053,
+   "winners_avg": -0.01605
   },
   {
-   "feature": "d_ema50",
-   "meaning": "price vs its 50-candle (12.5 h) average",
-   "strength": 0.267,
-   "losers_avg": -0.0025,
-   "winners_avg": -0.00753
+   "feature": "r_288",
+   "meaning": "return over the last 3 days",
+   "strength": 0.272,
+   "losers_avg": -0.03951,
+   "winners_avg": -0.05946
   }
  ],
  "candidates": [
   {
-   "name": "unikaj r_96 >= 0.005253",
-   "gain_on_old_data": 0.00406
+   "name": "unikaj r_96 >= 0.005516",
+   "gain_on_old_data": 0.00347
   },
   {
-   "name": "unikaj r_96 >= 0.01328",
-   "gain_on_old_data": 0.00353
+   "name": "unikaj btc_r96 >= 0.01156",
+   "gain_on_old_data": 0.00293
   },
   {
-   "name": "unikaj rel_r96 >= 0.00214",
-   "gain_on_old_data": 0.00351
+   "name": "unikaj r_96 >= 0.01372",
+   "gain_on_old_data": 0.00281
   }
  ]
 }
