@@ -1,34 +1,4 @@
 {
- "3c3b9eefa5": {
-  "name": "unikaj btc_r96 >= 0.006241",
-  "source": "own mistakes (auto)",
-  "rule": "btc_r96 < 0.00624",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1792286521128,
-  "model_version": 39,
-  "adopted": false
- },
- "b1dfa53584": {
-  "name": "unikaj btc_r96 >= 0.005918",
-  "source": "own mistakes (auto)",
-  "rule": "btc_r96 < 0.00592",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1792330530314,
-  "model_version": 40,
-  "adopted": false
- },
- "87746b214a": {
-  "name": "unikaj r_96 >= 0.004974",
-  "source": "own mistakes (auto)",
-  "rule": "r_96 < 0.00497",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1792375139029,
-  "model_version": 41,
-  "adopted": false
- },
  "dd6cb11e4d": {
   "name": "Zmniejszenie ryzyka w kr\u00f3tkim terminie",
   "source": "internet research: CoinDesk: Bitcoin zooms toward $87,000, nearly setting an eight-month high, then reverses",
@@ -796,6 +766,36 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
   "gain": 0.0,
   "tested_at": 1792867129796,
+  "model_version": 52,
+  "adopted": false
+ },
+ "8b84ca97e7": {
+  "name": "Odrzu\u0107 sygna\u0142y, gdy kr\u00f3tkoterminowe momentum jest dodatnie, a d\u0142ugoterminowe neg",
+  "source": "internet research: Analiza b\u0142\u0119d\u00f3w botu pokazuje, \u017ce r_96 i r_16 mia\u0142y dodatnie \u015brednie w przegranych transakcjach, co sugeruje, \u017ce kr\u00f3tkoterminowe momentum by\u0142o fa\u0142szywie pozytywne.",
+  "rule": "rel_r672 < -0.005 and btc_r96 < -0.01231 and r_96 < -0.0003",
+  "why": "Kombinacja negatywnego rel_r672 i negatywnego btc_r96 oznacza, \u017ce coin s\u0142abnie wzgl\u0119dem BTC, a BTC sam traci \u2014 to klasyczny scenariusz paniki, w kt\u00f3rym kr\u00f3tkoterminowe sygna\u0142y kupna s\u0105 pu\u0142apk\u0105.",
+  "gain": 0.0,
+  "tested_at": 1792902606329,
+  "model_version": 52,
+  "adopted": false
+ },
+ "e0b40e13d5": {
+  "name": "Wymagaj wyra\u017anego spadku trendu 200h, aby potwierdzi\u0107 sygna\u0142",
+  "source": "internet research: Bot ju\u017c u\u017cywa btc_r96 < -0.01231 jako filtra, ale nie wymaga negatywnego trendu 200h.",
+  "rule": "d_ema200 < -0.005 and btc_r96 < -0.01231 and r_96 < -0.0003",
+  "why": "D_ema200 < -0.005 oznacza, \u017ce cena jest wyra\u017anie poni\u017cej \u015bredniej 200h \u2014 to warunek, kt\u00f3ry odr\u00f3\u017cnia realny trend spadkowy od kr\u00f3tkoterminowej paniki.",
+  "gain": 0.0,
+  "tested_at": 1792902606329,
+  "model_version": 52,
+  "adopted": false
+ },
+ "1337818c90": {
+  "name": "Wymagaj sp\u00f3jnego negatywnego momentum na wszystkich horyzontach",
+  "source": "internet research: Bot traci\u0142 na sygna\u0142ach, gdy kr\u00f3tkoterminowe momentum by\u0142o dodatnie lub bliskie zera, mimo negatywnego trendu.",
+  "rule": "r_96 < -0.0003 and r_16 < -0.0003 and rel_r672 < -0.005",
+  "why": "Wymaganie negatywnego momentum na 24h i 4h, a nie tylko na 24h, eliminuje sygna\u0142y, kt\u00f3re s\u0105 pozytywne tylko w bardzo kr\u00f3tkim horyzoncie.",
+  "gain": 0.0,
+  "tested_at": 1792902606329,
   "model_version": 52,
   "adopted": false
  }
