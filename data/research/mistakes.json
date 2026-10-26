@@ -1,57 +1,57 @@
 {
- "created_at": 1793001032174,
- "model_version": 55,
- "signals": 34036,
- "losers": 19064,
+ "created_at": 1793045963647,
+ "model_version": 56,
+ "signals": 34431,
+ "losers": 19450,
  "patterns": [
-  {
-   "feature": "d_ema200",
-   "meaning": "price vs its 200-candle (50 h) average",
-   "strength": 0.373,
-   "losers_avg": -0.01268,
-   "winners_avg": -0.02601
-  },
   {
    "feature": "ema_trend",
    "meaning": "50-candle average vs 200-candle average (positive = uptrend)",
-   "strength": 0.371,
-   "losers_avg": -0.00992,
-   "winners_avg": -0.01866
+   "strength": 0.382,
+   "losers_avg": -0.00967,
+   "winners_avg": -0.01832
+  },
+  {
+   "feature": "d_ema200",
+   "meaning": "price vs its 200-candle (50 h) average",
+   "strength": 0.378,
+   "losers_avg": -0.01254,
+   "winners_avg": -0.02577
   },
   {
    "feature": "r_96",
    "meaning": "return over the last 24 hours",
-   "strength": 0.355,
-   "losers_avg": -0.01141,
-   "winners_avg": -0.03066
+   "strength": 0.368,
+   "losers_avg": -0.01099,
+   "winners_avg": -0.02997
   },
   {
    "feature": "btc_r96",
    "meaning": "Bitcoin return over the last 24 hours",
-   "strength": 0.333,
-   "losers_avg": -0.00561,
-   "winners_avg": -0.01755
+   "strength": 0.336,
+   "losers_avg": -0.00568,
+   "winners_avg": -0.01761
   },
   {
    "feature": "r_288",
    "meaning": "return over the last 3 days",
-   "strength": 0.269,
-   "losers_avg": -0.04107,
-   "winners_avg": -0.06123
+   "strength": 0.293,
+   "losers_avg": -0.04022,
+   "winners_avg": -0.06189
   }
  ],
  "candidates": [
   {
-   "name": "unikaj btc_r96 >= 0.01095",
-   "gain_on_old_data": 0.00346
+   "name": "unikaj r_96 >= 0.003774",
+   "gain_on_old_data": 0.00388
   },
   {
-   "name": "unikaj r_96 >= 0.00448",
-   "gain_on_old_data": 0.0033
+   "name": "unikaj r_96 >= 0.01165",
+   "gain_on_old_data": 0.00362
   },
   {
-   "name": "unikaj r_96 >= 0.01254",
-   "gain_on_old_data": 0.00304
+   "name": "unikaj btc_r96 >= 0.009933",
+   "gain_on_old_data": 0.00356
   }
  ]
 }
