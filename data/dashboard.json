@@ -1,9 +1,9 @@
 {
- "generated_at": 1793028191448,
- "last_candle": 1793026800000,
+ "generated_at": 1793029733960,
+ "last_candle": 1793028600000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
- "benchmark_return": -0.0519400000000001,
+ "benchmark_return": -0.04961000000000004,
  "series": [
   [
    1790508600000,
@@ -16798,6 +16798,18 @@
    1000.0,
    948.06,
    998.28
+  ],
+  [
+   1793027700000,
+   1000.0,
+   949.0,
+   998.28
+  ],
+  [
+   1793028600000,
+   1000.0,
+   950.39,
+   998.28
   ]
  ],
  "main": {
@@ -16846,7 +16858,7 @@
    {
     "name": "Lepiej ni\u017c samo trzymanie BTC",
     "ok": true,
-    "value": "+5.2 pkt"
+    "value": "+5.0 pkt"
    },
    {
     "name": "Najwi\u0119kszy spadek mniejszy ni\u017c 20%",
@@ -17325,91 +17337,91 @@
  },
  "signals": {
   "BTC": {
-   "p": 0.3791,
+   "p": 0.4331,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1793026800000
+   "ts": 1793028600000
   },
   "ETH": {
-   "p": 0.4217,
+   "p": 0.4337,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1793026800000
+   "ts": 1793028600000
   },
   "SOL": {
-   "p": 0.5634,
+   "p": 0.5508,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1793026800000
+   "ts": 1793028600000
   },
   "XRP": {
-   "p": 0.3166,
+   "p": 0.2549,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1793026800000
+   "ts": 1793028600000
   },
   "DOGE": {
-   "p": 0.4989,
+   "p": 0.4677,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1793026800000
+   "ts": 1793028600000
   },
   "ADA": {
-   "p": 0.716,
+   "p": 0.7123,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1793026800000
+   "ts": 1793028600000
   },
   "BNB": {
-   "p": 0.6565,
+   "p": 0.5982,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1793026800000
+   "ts": 1793028600000
   },
   "LINK": {
-   "p": 0.7177,
+   "p": 0.7265,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1793026800000
+   "ts": 1793028600000
   },
   "AVAX": {
-   "p": 0.5047,
+   "p": 0.4754,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1793026800000
+   "ts": 1793028600000
   },
   "LTC": {
-   "p": 0.6694,
+   "p": 0.5068,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1793026800000
+   "ts": 1793028600000
   },
   "DOT": {
-   "p": 0.632,
+   "p": 0.6003,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1793026800000
+   "ts": 1793028600000
   },
   "TRX": {
-   "p": 0.1348,
+   "p": 0.1344,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1793026800000
+   "ts": 1793028600000
   }
  },
  "prices": {
-  "BTC": 80501.7,
-  "ETH": 2330.46,
-  "SOL": 102.23,
-  "XRP": 1.3006,
-  "DOGE": 0.07785,
-  "ADA": 0.207,
-  "BNB": 744.42,
-  "LINK": 11.572,
-  "AVAX": 9.013,
-  "LTC": 57.1,
-  "DOT": 1.031,
-  "TRX": 0.3312
+  "BTC": 80700.0,
+  "ETH": 2338.53,
+  "SOL": 102.26,
+  "XRP": 1.3024,
+  "DOGE": 0.07797,
+  "ADA": 0.2075,
+  "BNB": 745.33,
+  "LINK": 11.581,
+  "AVAX": 9.018,
+  "LTC": 57.07,
+  "DOT": 1.028,
+  "TRX": 0.3315
  },
  "model": {
   "version": 55,
@@ -17867,6 +17879,8 @@
   "risk_level": 0.2,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
+   "DOT": "reduce",
+   "LTC": "reduce",
    "BTC": "avoid",
    "ETH": "avoid",
    "SOL": "avoid"
@@ -17874,28 +17888,31 @@
   "regime": "bear"
  },
  "brain": {
-  "created_at": 1793025436969,
+  "created_at": 1793029070563,
   "source": "local",
   "model": "mimo2.6:9b",
   "directives": {
    "risk_level": 0.2,
    "min_confidence_adj": 0.05,
    "symbol_bias": {
+    "DOT": "reduce",
+    "LTC": "reduce",
     "BTC": "avoid",
     "ETH": "avoid",
     "SOL": "avoid"
    },
    "regime": "bear"
   },
-  "reasoning": "Rynek jest wyra\u017anie spadkowy: wi\u0119kszo\u015b\u0107 symboli ma negatywne 30-dniowe trendy, a BTC ma negatywny momentum 24h. Model nie ma potwierdzonej przewagi (AUC 0.44, 2/4), a praktyczne konto straci\u0142o 0.17%. Wszystkie 12 symboli s\u0105 poni\u017cej progu 0.8, wi\u0119c zero sygna\u0142\u00f3w. Utrzymuj\u0119 ostro\u017cny tryb i nie zwi\u0119kszam ryzyka.",
+  "reasoning": "Rynek jest wyra\u017anie spadkowy: wi\u0119kszo\u015b\u0107 symboli ma negatywne momentum 7-dniowe, a praktyczne konto straci\u0142o 0.17% na czterech sygna\u0142ach. Model nie ma potwierdzonej przewagi (AUC 0.44, 2/4), wi\u0119c utrzymuj\u0119 ostro\u017cny tryb i zero pozycji. Zero sygna\u0142\u00f3w: wszystkie 12 symboli poni\u017cej progu 0.8 \u2014 utrzymaj ostro\u017cny tryb.",
   "new_lessons": [
    "Model bez edge (AUC 0.44, 2/4) i praktyczne konto -0.17% \u2014 zero sygna\u0142\u00f3w, nie zwi\u0119kszaj ryzyka.",
    "Wszystkie 12 symboli poni\u017cej progu 0.8 \u2014 zero sygna\u0142\u00f3w, utrzymaj ostro\u017cny tryb.",
-   "Rynek spadkowy (DOT -23.6%, LTC -23.6%, SOL -15.3% 7d) \u2014 nie wchod\u017a w trend spadkowy."
+   "Rynek spadkowy (DOT -9.9%, LTC -5.4%, SOL -2.6% 7d) \u2014 nie wchod\u017a w trend spadkowy."
   ],
   "lessons": [
    "Model bez edge (AUC 0.44, 2/4) i praktyczne konto -0.17% \u2014 zero sygna\u0142\u00f3w, nie zwi\u0119kszaj ryzyka.",
    "Wszystkie 12 symboli poni\u017cej progu 0.8 \u2014 zero sygna\u0142\u00f3w, utrzymaj ostro\u017cny tryb.",
+   "Rynek spadkowy (DOT -9.9%, LTC -5.4%, SOL -2.6% 7d) \u2014 nie wchod\u017a w trend spadkowy.",
    "Rynek spadkowy (DOT -23.6%, LTC -23.6%, SOL -15.3% 7d) \u2014 nie wchod\u017a w trend spadkowy.",
    "Zero sygna\u0142\u00f3w: wszystkie 12 symboli poni\u017cej progu 0.83 \u2014 utrzymaj ostro\u017cny tryb.",
    "Model bez edge (AUC 0.44, 2/4) i praktyczne konto -0.17% \u2014 nie zwi\u0119kszaj ryzyka.",
@@ -17904,12 +17921,35 @@
    "Model bez edge (AUC 0.44, 2/4) i praktyczne konto -0.17% \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
    "Wszystkie 12 symboli poni\u017cej progu 0.83 \u2014 zero sygna\u0142\u00f3w, utrzymaj ostro\u017cny tryb.",
    "Rynek spadkowy (DOT -3.8%, ETH -12.5%, SOL -16.1% 30d) \u2014 nie wchod\u017a w trend spadkowy.",
-   "Kluczowe jest odrzucenie sygna\u0142\u00f3w w oknie, gdy BTC ma negatywny momentum 24h, a coin ma dodatni momentum 7-dniowy \u2014 to dok\u0142adnie kombinacja, w kt\u00f3rej bot traci\u0142 najwi\u0119cej.",
-   "Rynek spadkowy (DOT -3.8%, ETH -12.5%, SOL -16.1% 30d) \u2014 unikaj trendu spadkowego."
+   "Kluczowe jest odrzucenie sygna\u0142\u00f3w w oknie, gdy BTC ma negatywny momentum 24h, a coin ma dodatni momentum 7-dniowy \u2014 to dok\u0142adnie kombinacja, w kt\u00f3rej bot traci\u0142 najwi\u0119cej."
   ],
-  "seconds": 9.8
+  "seconds": 35.7
  },
  "brain_journal": [
+  {
+   "created_at": 1793029070563,
+   "source": "local",
+   "model": "mimo2.6:9b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.05,
+    "symbol_bias": {
+     "DOT": "reduce",
+     "LTC": "reduce",
+     "BTC": "avoid",
+     "ETH": "avoid",
+     "SOL": "avoid"
+    },
+    "regime": "bear"
+   },
+   "reasoning": "Rynek jest wyra\u017anie spadkowy: wi\u0119kszo\u015b\u0107 symboli ma negatywne momentum 7-dniowe, a praktyczne konto straci\u0142o 0.17% na czterech sygna\u0142ach. Model nie ma potwierdzonej przewagi (AUC 0.44, 2/4), wi\u0119c utrzymuj\u0119 ostro\u017cny tryb i zero pozycji. Zero sygna\u0142\u00f3w: wszystkie 12 symboli poni\u017cej progu 0.8 \u2014 utrzymaj ostro\u017cny tryb.",
+   "new_lessons": [
+    "Model bez edge (AUC 0.44, 2/4) i praktyczne konto -0.17% \u2014 zero sygna\u0142\u00f3w, nie zwi\u0119kszaj ryzyka.",
+    "Wszystkie 12 symboli poni\u017cej progu 0.8 \u2014 zero sygna\u0142\u00f3w, utrzymaj ostro\u017cny tryb.",
+    "Rynek spadkowy (DOT -9.9%, LTC -5.4%, SOL -2.6% 7d) \u2014 nie wchod\u017a w trend spadkowy."
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1793025436969,
    "source": "local",
@@ -18118,30 +18158,6 @@
     "Model bez edge (AUC 0.44, 2/4) i praktyczne konto -0.17% \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
     "Wszystkie 12 symboli poni\u017cej progu 0.83 \u2014 zero sygna\u0142\u00f3w, utrzymaj ostro\u017cny tryb.",
     "Kluczowe jest odrzucenie sygna\u0142\u00f3w w oknie, gdy BTC ma negatywny momentum 24h, a coin ma dodatni momentum 7-dniowy \u2014 to dok\u0142adnie kombinacja, w kt\u00f3rej bot traci\u0142 najwi\u0119cej."
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1792992800034,
-   "source": "cloud",
-   "model": "qwen3:4b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": -0.02,
-    "symbol_bias": {
-     "ETH": "reduce",
-     "SOL": "reduce",
-     "XRP": "avoid",
-     "DOGE": "avoid",
-     "TRX": "avoid"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "Model nie ma udowodnionego edge (AUC 0.44, 2/4) i praktyczne konto straci\u0142o 0.17%. Rynek jest spadkowy (DOT -3.8%, ETH -12.5%, SOL -16.1% 30d). Wszystkie sygna\u0142y maj\u0105 poni\u017cej 0.78 progu, wi\u0119c nie ma aktywnych pozycji. Utrzymaj ostro\u017cny tryb, nie zwi\u0119kszaj ryzyka.",
-   "new_lessons": [
-    "Model bez edge (AUC 0.44, 2/4) i praktyczne konto -0.17% \u2014 nie zwi\u0119kszaj ryzyka.",
-    "Rynek spadkowy (DOT -3.8%, ETH -12.5%, SOL -16.1% 30d) \u2014 unikaj trendu spadkowego.",
-    "Wszystkie 12 symboli poni\u017cej progu 0.83 \u2014 zero sygna\u0142\u00f3w, utrzymaj ostro\u017cny tryb."
    ],
    "equity_at": 1000.0
   }
