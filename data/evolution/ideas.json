@@ -1,14 +1,4 @@
 {
- "a256dd9655": {
-  "name": "unikaj btc_r96 >= 0.005426",
-  "source": "own mistakes (auto)",
-  "rule": "btc_r96 < 0.00543",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1792375139029,
-  "model_version": 41,
-  "adopted": false
- },
  "1c8205c9a7": {
   "name": "unikaj btc_r96 >= 0.00572",
   "source": "own mistakes (auto)",
@@ -38,16 +28,6 @@
   "tested_at": 1792482611956,
   "model_version": 43,
   "adopted": false
- },
- "d8db4bc205": {
-  "name": "Niski trend 7-dniowy wzgl\u0119dem Bitcoin",
-  "source": "internet research: arXiv research: Latent Continuum of Regimes in Limit Order Book Dynamics",
-  "rule": "rel_r672 < -0.01085",
-  "why": "Bot straci\u0142 pieni\u0105dze, gdy coin mia\u0142 niski trend 7-dniowy wzgl\u0119dem Bitcoin (rel_r672 < -0.01085). ArXiv wskazuje na istotno\u015b\u0107 trend\u00f3w w rynku dla precyzji sygna\u0142\u00f3w.",
-  "gain": 0.0,
-  "tested_at": 1792482611956,
-  "model_version": 43,
-  "adopted": true
  },
  "9e1d3a9d7a": {
   "name": "unikaj btc_r96 >= 0.01059",
@@ -798,5 +778,25 @@
   "tested_at": 1792957087504,
   "model_version": 54,
   "adopted": false
+ },
+ "d8db4bc205": {
+  "name": "Ryzyko z AI",
+  "source": "internet research: CoinDesk: Elon Musk issues a warning for 'AI neoclouds' as SpaceX borrows $40 billion for chips",
+  "rule": "rel_r672 < -0.01085",
+  "why": "Wczoraj SpaceX zwi\u0119kszy\u0142 kredyt na $40 mln dla GPU, co mo\u017ce prowadzi\u0107 do wycieczki AI w kryptowalutach. Wskazuje to na potencjalne ryzyko w sytuacji, gdy bot generuje sygna\u0142y bez uwzgl\u0119dnienia zmian w AI.",
+  "gain": 0.0,
+  "tested_at": 1792994656125,
+  "model_version": 54,
+  "adopted": true
+ },
+ "8746444e80": {
+  "name": "Wysokie ryzyko p\u0142ynno\u015bci",
+  "source": "internet research: CoinDesk: Bitcoin wallet bug let rogue servers steal funds when users tried to speed up payments",
+  "rule": "btc_vol96 > 0.0024",
+  "why": "Wczoraj Bitcoin straci\u0142 24h w cenie, a wczoraj te\u017c by\u0142o zauwa\u017cone, \u017ce Bitcoin wallet bug pozwala\u0142 na kradzie\u017c. Wskazuje to na wysokie ryzyko p\u0142ynno\u015bci w kr\u00f3tkim czasie, co zwi\u0119ksza szanse na straty w sytuacji, gdy bot generuje sygna\u0142y bez odpowiedniego testu p\u0142ynno\u015bci.",
+  "gain": 0.0,
+  "tested_at": 1792994656125,
+  "model_version": 54,
+  "adopted": true
  }
 }
