@@ -1,22 +1,19 @@
 {
- "created_at": 1793036314241,
+ "created_at": 1793039950295,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 5.6,
+ "seconds": 6.4,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
-   "DOT": "reduce",
-   "LTC": "reduce",
-   "AVAX": "reduce",
    "BTC": "avoid",
    "ETH": "avoid",
    "SOL": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest wyra\u017anie spadkowy: wi\u0119kszo\u015b\u0107 symboli ma negatywny momentum 30-dniowy, a model nie ma potwierdzonej przewagi (AUC 0.44). Wszystkie 12 symboli s\u0105 poni\u017cej progu 0.8, wi\u0119c zero sygna\u0142\u00f3w do wchodzenia. Utrzymuj\u0119 ostro\u017cny tryb i nie zwi\u0119kszam ryzyka.",
+ "reasoning": "Rynek jest wyra\u017anie spadkowy: wi\u0119kszo\u015b\u0107 symboli ma negatywny momentum 7- i 30-dniowy, a Fear & Greed wynosi 50 (Neutral). Model nie ma potwierdzonego edge (AUC 0.44, 2/4), a praktyczne konto straci\u0142o 0.17%, wi\u0119c utrzymuj\u0119 ostro\u017cny tryb i nie zwi\u0119kszam ryzyka. Wszystkie 12 symboli s\u0105 poni\u017cej progu 0.8, wi\u0119c nie ma \u017cadnych sygna\u0142\u00f3w do wej\u015bcia; BTC, ETH i SOL maj\u0105 najgorsze momentum 30-dniowe (-13.9%, -16.2%, -16.2%), wi\u0119c je pomijam.",
  "new_lessons": [
   "Model bez edge (AUC 0.44, 2/4) i praktyczne konto -0.17% \u2014 zero sygna\u0142\u00f3w, nie zwi\u0119kszaj ryzyka.",
   "Wszystkie 12 symboli poni\u017cej progu 0.8 \u2014 zero sygna\u0142\u00f3w, utrzymaj ostro\u017cny tryb.",
