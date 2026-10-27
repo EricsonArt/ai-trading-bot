@@ -1,34 +1,4 @@
 {
- "9dfb5c942b": {
-  "name": "unikaj btc_r96 >= 0.01143",
-  "source": "own mistakes (auto)",
-  "rule": "btc_r96 < 0.01143",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1792532397443,
-  "model_version": 44,
-  "adopted": false
- },
- "b3d406aa07": {
-  "name": "unikaj r_96 >= 0.01398",
-  "source": "own mistakes (auto)",
-  "rule": "r_96 < 0.01398",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1792585323071,
-  "model_version": 45,
-  "adopted": false
- },
- "c41d805f0b": {
-  "name": "trend 7d",
-  "source": "internet research: arXiv: Latent Continuum of Regimes in Limit Order Book Dynamics",
-  "rule": "dd_7d < -0.03",
-  "why": "W ostatnich 7 dniach Bitcoin spad\u0142 poni\u017cej 7-dniowego maxa (dd_7d < -0.03), co zgodnie z arXiviem o analizie rynku wskazuje na potencjalne zatrzymanie. Bot powinien unika\u0107 sygna\u0142\u00f3w z takim trendem, aby unikn\u0105\u0107 strat z powodu przewidywanych zmian w p\u0142ynno\u015bci.",
-  "gain": 0.0,
-  "tested_at": 1792585323071,
-  "model_version": 45,
-  "adopted": false
- },
  "215f2fd467": {
   "name": "unikaj rel_r96 >= 0.002332",
   "source": "own mistakes (auto)",
@@ -796,6 +766,36 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
   "gain": 0.0,
   "tested_at": 1793046056670,
+  "model_version": 56,
+  "adopted": false
+ },
+ "496608e4fe": {
+  "name": "wyczerpywanie gasu",
+  "source": "internet research: arXiv: Fuji: The Shape, Composition, and Spread of Demand Bursts on Robinhood Chain",
+  "rule": "vol_96 > 0.003",
+  "why": "Z bada\u0144 Fuji na Robinhood Chain, wyczerpywanie zasob\u00f3w blockchain (gas) jest kluczowe dla burst\u00f3w demand. Bot powinien unika\u0107 sygna\u0142\u00f3w w okresie wysokiej volatylno\u015bci gasu, co zwi\u0119ksza ryzyko strat w badanych losach.",
+  "gain": 0.0,
+  "tested_at": 1793081531933,
+  "model_version": 56,
+  "adopted": false
+ },
+ "2b84105c19": {
+  "name": "weekendowa volatylno\u015b\u0107",
+  "source": "internet research: arXiv: Weekend Crypto Volatility and Monday Market Risk",
+  "rule": "r_96 < -0.01",
+  "why": "Badania pokazuj\u0105, \u017ce weekendowa volatylno\u015b\u0107 kryptowalut przewiduje wy\u017csz\u0105 volatylno\u015b\u0107 w poniedzia\u0142ek. Bot powinien unika\u0107 sygna\u0142\u00f3w w dniach po weekendzie, aby unikn\u0105\u0107 zbyt wysokich ryzyk w poniedzia\u0142ek.",
+  "gain": 0.0,
+  "tested_at": 1793081531933,
+  "model_version": 56,
+  "adopted": false
+ },
+ "88fe08fb56": {
+  "name": "AI wp\u0142ywy",
+  "source": "internet research: Decrypt: AI Agents Found a Way Into Anthropic's Business Systems in Under 12 Hours",
+  "rule": "vol_ratio > 1.2",
+  "why": "Z report\u00f3w na Decrypt, AI wp\u0142ywa na rynki, np. atak na systemy Anthropic. Bot powinien unika\u0107 sygna\u0142\u00f3w w okresie, gdy AI jest aktywny, aby unikn\u0105\u0107 nieprzewidywalnych zmian.",
+  "gain": 0.0,
+  "tested_at": 1793081531933,
   "model_version": 56,
   "adopted": false
  }
