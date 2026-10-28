@@ -1,34 +1,4 @@
 {
- "3fd2111a48": {
-  "name": "unikaj r_96 >= 0.005398",
-  "source": "own mistakes (auto)",
-  "rule": "r_96 < 0.0054",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1792682153241,
-  "model_version": 47,
-  "adopted": false
- },
- "14a550b52a": {
-  "name": "Wysokie ryzyko p\u0142ynno\u015bci",
-  "source": "internet research: CoinDesk, bot's mistakes",
-  "rule": "vz < 0.6",
-  "why": "Z ostatnich b\u0142\u0119d\u00f3w botu wynika, \u017ce sygna\u0142y z nisk\u0105 p\u0142ynno\u015bci (vz < 0.6) cz\u0119sto prowadzi\u0142y do strat. Wczoraj na CoinDesk zauwa\u017cono, \u017ce 6 mln BTC maj\u0105 wykryte klucze publiczne, co zwi\u0119ksza ryzyko atak\u00f3w AI. Regu\u0142a ta zabezpiecza przed takimi sytuacjami.",
-  "gain": 0.0,
-  "tested_at": 1792682153241,
-  "model_version": 47,
-  "adopted": false
- },
- "d74c770880": {
-  "name": "Niskie zadowolenie rynku",
-  "source": "internet research: CoinDesk, bot's mistakes",
-  "rule": "ema_trend < -0.01024",
-  "why": "Z ostatnich b\u0142\u0119d\u00f3w botu, sygna\u0142y z ema_trend < -0.01024 by\u0142y zbyt cz\u0119sto b\u0142\u0119dne. Wczoraj na CoinDesk zauwa\u017cono, \u017ce rynki krypto s\u0105 pod wp\u0142ywem AI, co prowadzi do niskiej p\u0142ynno\u015bci. Regu\u0142a ta zabezpiecza przed sygna\u0142ami w czasie spadku rynku.",
-  "gain": 0.0,
-  "tested_at": 1792682153241,
-  "model_version": 47,
-  "adopted": false
- },
  "5275a16751": {
   "name": "unikaj r_96 >= 0.01375",
   "source": "own mistakes (auto)",
@@ -796,6 +766,36 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
   "gain": 0.0,
   "tested_at": 1793148051505,
+  "model_version": 58,
+  "adopted": false
+ },
+ "1de7827ba3": {
+  "name": "Odrzu\u0107 sygna\u0142y kupna przy kr\u00f3tkim momentum i s\u0142abym wolumenie",
+  "source": "internet research: B\u0142\u0119dy botu: r_96 i rel_r96 to g\u0142\u00f3wne cechy, kt\u00f3re r\u00f3\u017cnicuj\u0105 przegrane od wygranych (losing avg -0.01164 vs winning -0.03203 dla r_96; losing -0.0047 vs winning -0.01283 dla rel_r96)",
+  "rule": "r_96 < -0.00034 and rel_r96 < 0.00768 and vz < 0.5408",
+  "why": "Bot systematycznie kupowa\u0142 przy negatywnym r_96 i dodatnim rel_r96, co w 21135 przegranych sygna\u0142ach da\u0142o \u015brednio gorsze wyniki. Dodanie warunku s\u0142abego wolumenu (vz < 0.5408) odrzuca sygna\u0142y bez potwierdzenia p\u0142ynno\u015bci, gdy retail traci zainteresowanie kryptowalutami.",
+  "gain": 0.0,
+  "tested_at": 1793156264524,
+  "model_version": 58,
+  "adopted": false
+ },
+ "76119916b1": {
+  "name": "Odrzu\u0107 sygna\u0142y kupna przy dodatnim momentum wzgl\u0119dem Bitcoina",
+  "source": "internet research: B\u0142\u0119dy botu: rel_r96 (losing avg -0.0047 vs winning -0.01283) i rank_r96 s\u0105 kluczowe \u2014 dodatnie rel_r96 to sygna\u0142, \u017ce koin wyprzedza Bitcoina, co w ostatnich testach by\u0142o b\u0142\u0119dem.",
+  "rule": "rel_r96 > 0.00768 and rank_r96 < 0.5417",
+  "why": "W ostatnich testach dodatnie rel_r96 i s\u0142aby rank_r96 to kombinacja, kt\u00f3ra nie przynios\u0142a zysk\u00f3w. Odrzucenie sygna\u0142\u00f3w, gdzie koin wyprzedza Bitcoina w kr\u00f3tkim horyzoncie, ogranicza ryzyko kupna w fazie korekty.",
+  "gain": 0.0,
+  "tested_at": 1793156264524,
+  "model_version": 58,
+  "adopted": false
+ },
+ "3406b53d45": {
+  "name": "Odrzu\u0107 sygna\u0142y kupna przy spadkowym trendzie Bitcoina",
+  "source": "internet research: B\u0142\u0119dy botu: d_ema200 i btc_r96 to cechy, kt\u00f3re r\u00f3\u017cnicuj\u0105 przegrane od wygranych (losing avg -0.02726 vs winning -0.00084 dla d_ema200; losing -0.00695 vs winning 0.00045 dla btc_r96",
+  "rule": "btc_r96 < -0.01231 and btc_vol96 > 0.0024 and d_ema200 < -0.00084",
+  "why": "Bot kupowa\u0142 przy spadkowym trendzie Bitcoina (d_ema200 < 0), co w 21135 przegranych sygna\u0142ach da\u0142o \u015brednio gorsze wyniki. Odrzucenie sygna\u0142\u00f3w przy spadkowym trendzie Bitcoina ogranicza ryzyko kupna w fazie korekty.",
+  "gain": 0.0,
+  "tested_at": 1793156264524,
   "model_version": 58,
   "adopted": false
  }
