@@ -1,11 +1,11 @@
 {
- "created_at": 1793216564872,
+ "created_at": 1793220137586,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 41.6,
+ "seconds": 5.9,
  "directives": {
   "risk_level": 0.2,
-  "min_confidence_adj": -0.02,
+  "min_confidence_adj": 0.1,
   "symbol_bias": {
    "BTC": "avoid",
    "ETH": "avoid",
@@ -13,7 +13,7 @@
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest neutralny (Fear & Greed 51), ale wszystkie 12 symboli maj\u0105 nisk\u0105 pewno\u015b\u0107 modelu poni\u017cej 0.83, wi\u0119c nie ma \u017cadnego sygna\u0142u do wej\u015bcia. Model ma AUC 0.44 i win rate 48%, co oznacza brak dowod\u00f3w na przewag\u0119. Praktyczne konto straci\u0142o 0.17% po 4 sygna\u0142ach, co potwierdza, \u017ce nie nale\u017cy zwi\u0119ksza\u0107 ryzyka. Wszystkie 12 symboli poni\u017cej progu 0.83 \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
+ "reasoning": "Rynek jest neutralny (Fear & Greed 51), ale wszystkie 12 symboli maj\u0105 nisk\u0105 pewno\u015b\u0107 modelu (0.04\u20130.29), wi\u0119c zero sygna\u0142\u00f3w powy\u017cej progu 0.83. Praktyczne konto straci\u0142o 0.17% po 4 sygna\u0142ach, a model ma AUC 0.44 i win rate 48%, co potwierdza brak edge. Dlatego utrzymuj\u0119 zero pozycji i podnosz\u0119 pr\u00f3g wej\u015bcia o 0.10, aby unikn\u0105\u0107 fa\u0142szywych sygna\u0142\u00f3w.",
  "new_lessons": [
   "Zero sygna\u0142\u00f3w powy\u017cej progu 0.83 \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
   "Model bez edge (AUC 0.44, 48% win rate) \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
