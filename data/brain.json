@@ -1,19 +1,28 @@
 {
- "created_at": 1793209247311,
+ "created_at": 1793212953194,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 11.1,
+ "seconds": 74.8,
  "directives": {
   "risk_level": 0.2,
-  "min_confidence_adj": 0.1,
+  "min_confidence_adj": -0.02,
   "symbol_bias": {
    "BTC": "avoid",
    "ETH": "avoid",
-   "SOL": "avoid"
+   "SOL": "avoid",
+   "XRP": "reduce",
+   "DOGE": "reduce",
+   "ADA": "reduce",
+   "BNB": "reduce",
+   "LINK": "reduce",
+   "AVAX": "reduce",
+   "LTC": "reduce",
+   "DOT": "reduce",
+   "TRX": "reduce"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest neutralny (strach/greed 51), ale wszystkie 12 symboli maj\u0105 probabily poni\u017cej progu 0.83, wi\u0119c model nie ma \u017cadnego sygna\u0142u do wej\u015bcia. Praktyczne konto straci\u0142o 0.17% po 4 sygna\u0142ach, co potwierdza brak edge. Bezpieczne jest utrzymanie zero pozycji i zero ryzyka.",
+ "reasoning": "Rynek jest neutralny (Fear & Greed 51), ale wszystkie 12 symboli maj\u0105 probabilit\u0119 poni\u017cej progu 0.83, a model nie ma udowodnionej przewagi (AUC 0.44, win rate 48%). Praktyczne konto straci\u0142o 0.17% po 4 sygna\u0142ach, co potwierdza brak edge. Zgodnie z moimi wcze\u015bniejszymi decyzjami utrzymuj\u0119 zero pozycji i minimalizuj\u0119 ryzyko.",
  "new_lessons": [
   "Model bez edge (AUC 0.44, 48% win rate) - zero pozycji, nie zwi\u0119kszaj ryzyka.",
   "Praktyczne konto -0.17% po 4 sygna\u0142ach - utrzymaj zero pozycji.",
