@@ -1,19 +1,19 @@
 {
- "created_at": 1793223762035,
- "source": "local",
- "model": "mimo2.6:9b",
- "seconds": 11.6,
+ "created_at": 1793255951125,
+ "source": "cloud",
+ "model": "qwen3:4b",
+ "seconds": 137.4,
  "directives": {
   "risk_level": 0.2,
-  "min_confidence_adj": 0.1,
+  "min_confidence_adj": 0.05,
   "symbol_bias": {
    "BTC": "avoid",
    "ETH": "avoid",
    "SOL": "avoid"
   },
-  "regime": "sideways"
+  "regime": "bear"
  },
- "reasoning": "Rynek jest neutralny (Fear & Greed 51), ale wszystkie 12 symboli s\u0105 poni\u017cej progu 0.83, wi\u0119c model nie ma \u017cadnego aktywnego sygna\u0142u. Praktyczne konto straci\u0142o 0.17% po 4 sygna\u0142ach, co potwierdza brak przewagi. Poniewa\u017c model ma AUC 0.44 i win rate 48%, utrzymuj\u0119 zero pozycji i nie zwi\u0119kszam ryzyka.",
+ "reasoning": "Model nie ma edge (48% win rate, AUC 0.44), praktyczne konto straci\u0142o 0.17% w 4 sygna\u0142ach, wszystkie sygna\u0142y poni\u017cej 0.83. Rynek w stanie zatrzymywania si\u0119, brak pewno\u015bci w modelu. Bez aktyw\u00f3w, ryzyko nie zwi\u0119kszamy.",
  "new_lessons": [
   "Model bez edge (AUC 0.44, 48% win rate) \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
   "Praktyczne konto -0.17% po 4 sygna\u0142ach \u2014 utrzymaj zero pozycji.",
