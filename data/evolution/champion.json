@@ -63,17 +63,22 @@
  },
  "description": "position style, buy when the model is at least 73% sure, target 2.4x / stop 2x the expected move, hold up to 72 h, 25% of equity per trade, only if btc_vol96 > 0.0024 and btc_r96 < -0.01231 and rel_r672 < -0.01085 and btc_r16 < 0.00602",
  "model_version": 60,
- "generation": 92,
+ "generation": 93,
  "reason": "",
  "challengers": [
   {
    "style": "position",
-   "threshold": 0.56,
-   "tp": 3.0,
+   "threshold": 0.57,
+   "tp": 2.8,
    "sl": 0.8,
    "hold": 1.5,
    "size": 0.25,
    "rules": [
+    {
+     "feature": "btc_r16",
+     "op": "<",
+     "value": -0.00054
+    },
     {
      "feature": "btc_r96",
      "op": "<",
@@ -85,98 +90,32 @@
      "value": 0.0023
     },
     {
-     "feature": "btc_r16",
-     "op": "<",
-     "value": -0.00181
-    },
-    {
      "feature": "rel_r672",
      "op": "<",
-     "value": -0.00036
+     "value": -0.01175
     }
    ],
-   "id": "d0f39a7fa7",
-   "parent": "2db393cc5d",
-   "origin": "mutation: threshold"
-  },
-  {
-   "style": "position",
-   "threshold": 0.55,
-   "tp": 3.4,
-   "sl": 0.8,
-   "hold": 1.5,
-   "size": 0.25,
-   "rules": [
-    {
-     "feature": "btc_r96",
-     "op": "<",
-     "value": -0.0137
-    },
-    {
-     "feature": "btc_r16",
-     "op": "<",
-     "value": -0.00143
-    },
-    {
-     "feature": "rel_r672",
-     "op": "<",
-     "value": -0.00036
-    },
-    {
-     "feature": "btc_vol96",
-     "op": ">",
-     "value": 0.0023
-    }
-   ],
-   "id": "da37034640",
-   "parent": "a306f1ef20+3bca1307a0",
-   "origin": "crossover"
-  },
-  {
-   "style": "position",
-   "threshold": 0.55,
-   "tp": 3.6,
-   "sl": 0.8,
-   "hold": 1.5,
-   "size": 0.25,
-   "rules": [
-    {
-     "feature": "btc_r96",
-     "op": "<",
-     "value": -0.0137
-    },
-    {
-     "feature": "btc_vol96",
-     "op": ">",
-     "value": 0.0023
-    },
-    {
-     "feature": "btc_r16",
-     "op": "<",
-     "value": -0.00143
-    },
-    {
-     "feature": "rel_r672",
-     "op": "<",
-     "value": -0.00036
-    }
-   ],
-   "id": "76559c07b5",
-   "parent": "67b80b9fe9",
+   "id": "4420de0ebc",
+   "parent": "4016a98931",
    "origin": "mutation: tp"
   },
   {
    "style": "position",
-   "threshold": 0.55,
-   "tp": 3.6,
+   "threshold": 0.57,
+   "tp": 2.4,
    "sl": 0.8,
    "hold": 1.5,
    "size": 0.25,
    "rules": [
     {
+     "feature": "btc_r16",
+     "op": "<",
+     "value": -0.00054
+    },
+    {
      "feature": "btc_r96",
      "op": "<",
-     "value": -0.0138
+     "value": -0.0137
     },
     {
      "feature": "btc_vol96",
@@ -184,19 +123,80 @@
      "value": 0.0023
     },
     {
+     "feature": "rel_r672",
+     "op": "<",
+     "value": -0.01175
+    }
+   ],
+   "id": "4016a98931",
+   "parent": "1438474422",
+   "origin": "mutation: tweak_rule"
+  },
+  {
+   "style": "position",
+   "threshold": 0.57,
+   "tp": 3.2,
+   "sl": 0.8,
+   "hold": 1.5,
+   "size": 0.25,
+   "rules": [
+    {
      "feature": "btc_r16",
      "op": "<",
-     "value": -0.00143
+     "value": -0.00054
+    },
+    {
+     "feature": "btc_r96",
+     "op": "<",
+     "value": -0.0137
+    },
+    {
+     "feature": "btc_vol96",
+     "op": ">",
+     "value": 0.0023
     },
     {
      "feature": "rel_r672",
      "op": "<",
-     "value": -0.00036
+     "value": -0.01175
     }
    ],
-   "id": "2049aee049",
-   "parent": "b6be8618f6",
+   "id": "727c04aba3",
+   "parent": "4420de0ebc",
    "origin": "mutation: tp"
+  },
+  {
+   "style": "position",
+   "threshold": 0.57,
+   "tp": 2.8,
+   "sl": 0.8,
+   "hold": 1.5,
+   "size": 0.25,
+   "rules": [
+    {
+     "feature": "btc_r16",
+     "op": "<",
+     "value": -0.00054
+    },
+    {
+     "feature": "btc_r96",
+     "op": "<",
+     "value": -0.00706
+    },
+    {
+     "feature": "btc_vol96",
+     "op": ">",
+     "value": 0.0023
+    },
+    {
+     "feature": "rel_r672",
+     "op": "<",
+     "value": -0.01175
+    }
+   ],
+   "id": "97b9cf2608",
+   "parent": "4420de0ebc",
+   "origin": "mutation: tweak_rule"
   }
  ],
  "since": 1791186354886
