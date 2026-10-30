@@ -1,19 +1,28 @@
 {
- "created_at": 1793346619253,
+ "created_at": 1793350246436,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 5.4,
+ "seconds": 5.7,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.1,
   "symbol_bias": {
    "BTC": "avoid",
    "ETH": "avoid",
-   "SOL": "avoid"
+   "SOL": "avoid",
+   "XRP": "reduce",
+   "DOGE": "reduce",
+   "ADA": "reduce",
+   "BNB": "reduce",
+   "LINK": "reduce",
+   "AVAX": "reduce",
+   "LTC": "reduce",
+   "DOT": "reduce",
+   "TRX": "reduce"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w panice: BTC -2.0%, Fear 30, a wszystkie sygna\u0142y modela s\u0105 poni\u017cej progu 0.83. Model ma edge False i praktyczne konto +0.71% po 4 sygna\u0142ach z 2 stratami. Utrzymuj\u0119 zero pozycji i nie zwi\u0119kszam ryzyka.",
+ "reasoning": "Rynek jest w panice: BTC spad\u0142 2.0%, Fear & Greed to 30, a wszystkie 12 symboli maj\u0105 niskie prawdopodobie\u0144stwo zysku poni\u017cej progu 0.83. Model ma edge False (win rate 47%, avg +0.05%/trade vs always-buy -0.38%), wi\u0119c zero pozycji. Konto praktyczne +0.65% po 4 sygna\u0142ach, ale 2 z 4 straty \u2014 utrzymaj zero pozycji.",
  "new_lessons": [
   "Zero sygna\u0142\u00f3w powy\u017cej progu 0.83 \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
   "Model bez edge (win rate 47%, avg +0.05%/trade vs always-buy -0.38%) \u2014 zero pozycji.",
