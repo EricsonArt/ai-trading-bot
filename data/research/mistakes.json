@@ -1,57 +1,57 @@
 {
- "created_at": 1793428324096,
- "model_version": 64,
- "signals": 35353,
- "losers": 20831,
+ "created_at": 1793472343531,
+ "model_version": 65,
+ "signals": 36829,
+ "losers": 21527,
  "patterns": [
   {
    "feature": "r_96",
    "meaning": "return over the last 24 hours",
-   "strength": 0.224,
-   "losers_avg": -0.01372,
-   "winners_avg": -0.02513
+   "strength": 0.207,
+   "losers_avg": -0.01263,
+   "winners_avg": -0.02306
   },
   {
    "feature": "rel_r96",
    "meaning": "coin's 24h return minus Bitcoin's",
-   "strength": 0.194,
-   "losers_avg": -0.00587,
-   "winners_avg": -0.01134
+   "strength": 0.187,
+   "losers_avg": -0.00503,
+   "winners_avg": -0.01036
   },
   {
    "feature": "d_ema200",
    "meaning": "price vs its 200-candle (50 h) average",
-   "strength": 0.19,
-   "losers_avg": -0.01497,
-   "winners_avg": -0.02152
+   "strength": 0.178,
+   "losers_avg": -0.01393,
+   "winners_avg": -0.02008
+  },
+  {
+   "feature": "ema_trend",
+   "meaning": "50-candle average vs 200-candle average (positive = uptrend)",
+   "strength": 0.158,
+   "losers_avg": -0.01091,
+   "winners_avg": -0.01449
   },
   {
    "feature": "d_ema50",
    "meaning": "price vs its 50-candle (12.5 h) average",
-   "strength": 0.182,
-   "losers_avg": -0.00326,
-   "winners_avg": -0.00668
-  },
-  {
-   "feature": "btc_r96",
-   "meaning": "Bitcoin return over the last 24 hours",
-   "strength": 0.167,
-   "losers_avg": -0.00786,
-   "winners_avg": -0.01379
+   "strength": 0.151,
+   "losers_avg": -0.00316,
+   "winners_avg": -0.00596
   }
  ],
  "candidates": [
   {
-   "name": "unikaj rel_r96 >= 0.001371",
-   "gain_on_old_data": 0.00202
+   "name": "unikaj rel_r96 >= 0.002238",
+   "gain_on_old_data": 0.00431
   },
   {
-   "name": "unikaj vol_16 >= 0.004527",
-   "gain_on_old_data": 0.00181
+   "name": "unikaj rel_r96 >= 0.008805",
+   "gain_on_old_data": 0.0038
   },
   {
-   "name": "unikaj rel_r96 >= 0.007381",
-   "gain_on_old_data": 0.00169
+   "name": "unikaj vol_16 >= 0.00452",
+   "gain_on_old_data": 0.00277
   }
  ]
 }
