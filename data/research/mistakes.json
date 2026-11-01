@@ -1,57 +1,57 @@
 {
- "created_at": 1793500894070,
- "model_version": 65,
- "signals": 36829,
- "losers": 21527,
+ "created_at": 1793516428038,
+ "model_version": 66,
+ "signals": 35216,
+ "losers": 20548,
  "patterns": [
   {
    "feature": "r_96",
    "meaning": "return over the last 24 hours",
-   "strength": 0.207,
-   "losers_avg": -0.01263,
-   "winners_avg": -0.02306
+   "strength": 0.176,
+   "losers_avg": -0.01084,
+   "winners_avg": -0.01981
   },
   {
-   "feature": "rel_r96",
-   "meaning": "coin's 24h return minus Bitcoin's",
-   "strength": 0.187,
-   "losers_avg": -0.00503,
-   "winners_avg": -0.01036
+   "feature": "vol_16",
+   "meaning": "volatility of 15-min returns over the last 4 hours",
+   "strength": 0.17,
+   "losers_avg": 0.00366,
+   "winners_avg": 0.00464
   },
   {
-   "feature": "d_ema200",
-   "meaning": "price vs its 200-candle (50 h) average",
-   "strength": 0.178,
-   "losers_avg": -0.01393,
-   "winners_avg": -0.02008
+   "feature": "atr",
+   "meaning": "average true range as a fraction of price",
+   "strength": 0.166,
+   "losers_avg": 0.00578,
+   "winners_avg": 0.00673
   },
   {
-   "feature": "ema_trend",
-   "meaning": "50-candle average vs 200-candle average (positive = uptrend)",
-   "strength": 0.158,
-   "losers_avg": -0.01091,
-   "winners_avg": -0.01449
+   "feature": "btc_r96",
+   "meaning": "Bitcoin return over the last 24 hours",
+   "strength": 0.146,
+   "losers_avg": -0.0064,
+   "winners_avg": -0.01161
   },
   {
    "feature": "d_ema50",
    "meaning": "price vs its 50-candle (12.5 h) average",
-   "strength": 0.151,
-   "losers_avg": -0.00316,
-   "winners_avg": -0.00596
+   "strength": 0.143,
+   "losers_avg": -0.00281,
+   "winners_avg": -0.00551
   }
  ],
  "candidates": [
   {
-   "name": "unikaj rel_r96 >= 0.002238",
-   "gain_on_old_data": 0.00431
+   "name": "unikaj rel_r96 >= 0.003118",
+   "gain_on_old_data": 0.00224
   },
   {
-   "name": "unikaj rel_r96 >= 0.008805",
-   "gain_on_old_data": 0.0038
+   "name": "unikaj rel_r96 >= 0.009354",
+   "gain_on_old_data": 0.00193
   },
   {
-   "name": "unikaj vol_16 >= 0.00452",
-   "gain_on_old_data": 0.00277
+   "name": "unikaj btc_r96 <= -0.01481",
+   "gain_on_old_data": 0.00155
   }
  ]
 }
