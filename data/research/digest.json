@@ -1,15 +1,15 @@
 {
- "created_at": 1793426292067,
+ "created_at": 1793499449699,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 17.2,
- "digest": "Dzi\u015b rynek krypto jest w panice: Binance straci\u0142 6,3 mld USD, a Bitcoin spad\u0142 tylko o ~3%, co sugeruje, \u017ce strach jest lokalny, nie systemowy. Fear & Greed siedzi na 30, a BTC ma negatywny 24h i wysok\u0105 zmienno\u015b\u0107 \u2014 to dok\u0142adnie kontekst, w kt\u00f3rym bot kupuje na dnie. Badania weekendowej zmienno\u015bci pokazuj\u0105, \u017ce weekendowe ruchy krypto realnie podnosz\u0105 ryzyko poniedzia\u0142kowe, wi\u0119c sygna\u0142 z weekendu nie jest czystym szumem. Nowe arXiv sugeruj\u0105, \u017ce w kr\u00f3tkich oknach (1-24h) korelacja z BTC i momentum s\u0105 s\u0142absze ni\u017c w d\u0142u\u017cszych (7-21 dni), wi\u0119c warto filtrowa\u0107 na rel_r672 i rank_r672. Kluczowe wnioski: unikaj sygna\u0142\u00f3w na bardzo niskim BTC, bo to panika, a nie okazja; sprawdzaj weekendow\u0105 zmienno\u015b\u0107 jako kontekst ryzyka; i nie ufaj kr\u00f3tkoterminowym momentum w oknie 24h, bo jest ono s\u0142absze ni\u017c 7-dniowe.",
+ "seconds": 11.9,
+ "digest": "Dzi\u015b rynek krypto jest w panice (strach 34) po kradzie\u017cy Binance na ~6,4 mld USD \u2014 to nie jest sygna\u0142 do kupna, tylko okno, w kt\u00f3rym bot mo\u017ce \u0142apa\u0107 panik\u0119. Bot systematycznie traci na sygna\u0142ach, kt\u00f3re przychodz\u0105 po d\u0142ugim spadku (r_96, rel_r96, d_ema200, ema_trend) \u2014 czyli kupuje w d\u00f3\u0142, a nie w g\u00f3r\u0119. Nowe filtry powinny odrzuca\u0107 sygna\u0142y, gdy kr\u00f3tkoterminowa si\u0142a jest przeciwko trendowi i gdy rynek jest ju\u017c w panice. Weekendowe wahania krypto (od 2024 r.) realnie podnosz\u0105 ryzyko poniedzia\u0142kowe, wi\u0119c sygna\u0142 kupna w poniedzia\u0142ek po silnym weekendzie powinien by\u0107 filtrowany.",
  "mood": "fear",
  "fng": [
   {
-   "value": 30,
+   "value": 34,
    "label": "Fear",
-   "ts": 1793404800000
+   "ts": 1793491200000
   }
  ],
  "used": [
@@ -54,63 +54,73 @@
   },
   {
    "kind": "CoinDesk",
-   "title": "Bitcoin stolen from Binance tops Tesla\u2019s holdings and is over twice El Salvador\u2019s reserve",
-   "url": "https://www.coindesk.com/markets/2026/10/31/bitcoin-stolen-from-binance-tops-tesla-s-holdings-and-is-over-twice-el-salvador-s-reserve"
+   "title": "FBI confirms North Korea's role in $6 billion Binance hack, asks DeFi community to block BTC, ETH, SOL addresses",
+   "url": "https://www.coindesk.com/policy/2026/10/31/fbi-confirms-north-korea-s-role-in-usd6-billion-binance-hack-asks-defi-community-to-block-btc-eth-sol-addresses"
   },
   {
    "kind": "CoinDesk",
-   "title": "OpenAI reportedly cuts fundraising and valuation targets amid AI jitters",
-   "url": "https://www.coindesk.com/business/2026/10/30/openai-reportedly-cuts-fundraising-target-amid-ai-jitters"
+   "title": "Bitcoin's white paper turns 18, and small businesses are still paying for the bailouts it answered",
+   "url": "https://www.coindesk.com/opinion/2026/10/31/bitcoin-s-white-paper-turns-18-and-small-businesses-are-still-paying-for-the-bailouts-it-answered"
   },
   {
    "kind": "CoinDesk",
-   "title": "Experts divided over Binance hack asset freezes, warn recovery is another matter",
-   "url": "https://www.coindesk.com/business/2026/10/30/experts-divided-over-binance-hack-asset-freezes-warn-recovery-is-another-matter"
+   "title": "A stolen iPhone, $14,000 in losses and London's crypto theft problem",
+   "url": "https://www.coindesk.com/business/2026/11/01/a-stolen-iphone-usd14-000-in-losses-and-london-s-crypto-theft-problem"
   },
   {
    "kind": "CoinDesk",
-   "title": "Binance uncovers wider breach in $6.3 billion exploit, targets Sunday withdrawal restart",
-   "url": "https://www.coindesk.com/tech/2026/10/30/binance-uncovers-wider-breach-in-usd6-3-billion-exploit-targets-sunday-withdrawal-restart"
+   "title": "Traders are already placing leveraged bets on Anthropic\u2019s IPO using crypto contracts",
+   "url": "https://www.coindesk.com/business/2026/10/31/traders-are-already-placing-leveraged-bets-on-anthropic-s-ipo-using-crypto-contracts"
   },
   {
    "kind": "CoinDesk",
-   "title": "Wall Street analysts urge investors to buy crypto stocks after $6.3 billion Binance hack",
-   "url": "https://www.coindesk.com/markets/2026/10/30/wall-street-analysts-urge-investors-to-buy-crypto-stocks-on-weakness-after-usd6-3-billion-binance-hack"
+   "title": "Binance says it has replaced 90% of stolen crypto after massive $6.3 billion breach",
+   "url": "https://www.coindesk.com/business/2026/10/31/binance-says-it-has-replaced-90-of-stolen-crypto-after-massive-usd6-3-billion-breach"
   },
   {
    "kind": "CoinDesk",
-   "title": "Binance arranges $6.34 billion to cover losses from record crypto hack",
-   "url": "https://www.coindesk.com/business/2026/10/30/binance-arranges-usd6-34-billion-to-cover-losses-from-record-crypto-hack"
+   "title": "Institutions embrace crypto staking despite shrinking yields",
+   "url": "https://www.coindesk.com/business/2026/10/26/institutions-embrace-crypto-staking-despite-shrinking-yields"
   },
   {
    "kind": "Cointelegraph",
-   "title": "Binance hackers raced to move billions before it could be frozen",
-   "url": "https://cointelegraph.com/magazine/binance-hackers-raced-to-move-billions-before-could-be-frozen?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+   "title": "Binance says 90% of stolen assets replenished, targets Sunday withdrawals",
+   "url": "https://cointelegraph.com/news/binance-hack-90-percent-replenished?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
   },
   {
    "kind": "Cointelegraph",
-   "title": "Tether\u2019s excess reserves nearly double to $8B as Q3 profit hits $1.5B",
-   "url": "https://cointelegraph.com/news/tethers-excess-reserves-nearly-double-to-8b-as-q3-profit-hits-15b?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+   "title": "Bitcoin held up better than expected after Binance hack, Strive CEO says",
+   "url": "https://cointelegraph.com/markets/bitcoin-binance-hack-strive-ceo?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
   },
   {
    "kind": "Cointelegraph",
-   "title": "Coinbase leads crypto stock selloff following $6.3B Binance hack",
-   "url": "https://cointelegraph.com/markets/coinbase-leads-crypto-stock-selloff-shares-tumble?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+   "title": "Here\u2019s what happened in crypto today",
+   "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
   },
   {
    "kind": "Cointelegraph",
-   "title": "Crypto Biz: Bitcoin\u2019s quantum threat is becoming an economic problem",
-   "url": "https://cointelegraph.com/news/bitcoin-quantum-threat-ripple-bank-usdc-vaneck-crypto-biz?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+   "title": "Bitcoin turns 18: Has the original rebel grown up?",
+   "url": "https://cointelegraph.com/magazine/bitcoin-turns-18-has-the-original-rebel-grown-up?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
   },
   {
    "kind": "Cointelegraph",
-   "title": "Recap: How Binance\u2019s record $6.3B hack unfolded",
-   "url": "https://cointelegraph.com/news/recap-binances-record-63b-hack-unfolded?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+   "title": "Texas brothers sentenced to 15 years in prison for armed crypto robbery, kidnapping",
+   "url": "https://cointelegraph.com/news/texas-brothers-sentenced-to-15-years-in-prison-for-armed-crypto-robbery-kidnapping?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
   },
   {
    "kind": "Cointelegraph",
-   "title": "As it happened: Binance\u2019s record $6.3B crypto hack",
-   "url": "https://cointelegraph.com/news/live-updates-binance-63b-hack-linked-to-north-koreas-tradertraitor?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+   "title": "Blockchain investigator Chainalysis hit by cybersecurity incident",
+   "url": "https://cointelegraph.com/news/blockchain-investigator-chainalysis-hit-by-cybersecurity-incident?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
+   "kind": "Decrypt",
+   "title": "Binance Hack: Everything You Need to Know About the Biggest Crypto Heist in History",
+   "url": "https://decrypt.co/382306/binance-hack-everything-you-need-to-know"
+  },
+  {
+   "kind": "Decrypt",
+   "title": "Why AI Models Cheat: Reward Hacking, Explained",
+   "url": "https://decrypt.co/382274/why-ai-models-cheat-reward-hacking-explained"
   },
   {
    "kind": "Decrypt",
@@ -133,24 +143,14 @@
    "url": "https://decrypt.co/382276/reddit-stock-plunges-30-googles-ai-search"
   },
   {
-   "kind": "Decrypt",
-   "title": "Binance Hack: Why Bitcoin Didn't Crash Like It Did in 2018",
-   "url": "https://decrypt.co/382257/binance-hack-why-bitcoin-didnt-crash"
-  },
-  {
-   "kind": "Decrypt",
-   "title": "$8 Million Crypto Kidnapping Lands Texas Brothers 15-Year Prison Terms",
-   "url": "https://decrypt.co/382269/crypto-kidnapping-texas-brothers-15-year-prison"
+   "kind": "Babypips",
+   "title": "Fundies Cheat Sheet Recap: Oct. 26\u201330, 2026",
+   "url": "https://www.babypips.com/analysis/fundies-cheat-sheet-recap-2026-10-26-30-big-tech-gold-fed-graded"
   },
   {
    "kind": "Babypips",
    "title": "Financial & Forex Weekly Recap: October 26 \u2013 30, 2026",
    "url": "https://www.babypips.com/analysis/financial-forex-market-weekly-recap-october-30-2026"
-  },
-  {
-   "kind": "Babypips",
-   "title": "3 Unusual Tips for Newbie Forex Traders",
-   "url": "https://www.babypips.com/trading/psychology-3-unusual-tips-trading-newbies-2026-10-30"
   },
   {
    "kind": "Babypips",
@@ -164,25 +164,25 @@
   },
   {
    "kind": "Babypips",
-   "title": "Chart Art: GBP/JPY Holds Above the Pivot Point with 212.00 in Sight",
-   "url": "https://www.babypips.com/trading/chart-art-forex-gbpjpy-holds-above-pivot-point-212-00-in-sight-2026-10-30"
+   "title": "3 Unusual Tips for Newbie Forex Traders",
+   "url": "https://www.babypips.com/trading/psychology-3-unusual-tips-trading-newbies-2026-10-30"
   }
  ],
  "ideas": [
   {
-   "name": "Panika na Binance to nie okazja",
-   "rule": "btc_r96 > -0.005 and btc_vol96 < 0.0024 and rank_r672 > 0.5",
-   "why": "Bot kupuje tylko, gdy BTC jest w panice (btc_r96 < -0.01231, btc_vol96 > 0.0024) \u2014 to dok\u0142adnie moment, gdy strach jest lokalny, a nie systemowy. Badania pokazuj\u0105, \u017ce weekendowa zmienno\u015b\u0107 krypto realnie podnosi poniedzia\u0142kowe ryzyko, wi\u0119c sygna\u0142 z weekendu nie jest czystym szumem. Nowe arXiv sugeruj"
+   "name": "Odrzu\u0107 sygna\u0142, gdy kr\u00f3tkoterminowy impuls jest przeciwko d\u0142ugoterminowemu trendo",
+   "rule": "r_96 > -0.005 and d_ema200 < -0.005 and ema_trend < -0.005",
+   "why": "Kupno na kr\u00f3tkoterminowym impulsie, gdy cena jest daleko poni\u017cej \u015bredniej 200-cz\u0142onkowej i trend 50/200 jest spadkowy, to dok\u0142adnie schemat, w kt\u00f3rym bot traci. Regu\u0142a odrzuca sygna\u0142, gdy kr\u00f3tkoterminowa si\u0142a jest przeciwko d\u0142ugoterminowemu trendowi."
   },
   {
-   "name": "D\u0142ugoterminowy momentum zamiast 24h",
-   "rule": "rank_r672 > 0.5 and rel_r672 > -0.005 and r_672 > -0.02",
-   "why": "Bot kupuje tylko, gdy BTC jest w panice (btc_r96 < -0.01231, btc_vol96 > 0.0024) \u2014 to dok\u0142adnie moment, gdy strach jest lokalny, a nie systemowy. Badania pokazuj\u0105, \u017ce weekendowa zmienno\u015b\u0107 krypto realnie podnosi poniedzia\u0142kowe ryzyko, wi\u0119c sygna\u0142 z weekendu nie jest czystym szumem. Nowe arXiv sugeruj"
+   "name": "Odrzu\u0107 sygna\u0142, gdy rynek krypto i Bitcoin spadaj\u0105 razem",
+   "rule": "r_96 < -0.005 and rel_r96 < -0.005 and btc_r96 < -0.012",
+   "why": "Kupno, gdy rynek krypto i Bitcoin spadaj\u0105 razem, to kupno w d\u00f3\u0142. Regu\u0142a odrzuca sygna\u0142, gdy rynek krypto i Bitcoin spadaj\u0105 razem."
   },
   {
-   "name": "Trend d\u0142ugoterminowy, nie panika",
-   "rule": "d_ema200 > -0.005 and ema_trend > -0.005 and vz > 0.6",
-   "why": "Bot kupuje tylko, gdy BTC jest w panice (btc_r96 < -0.01231, btc_vol96 > 0.0024) \u2014 to dok\u0142adnie moment, gdy strach jest lokalny, a nie systemowy. Badania pokazuj\u0105, \u017ce weekendowa zmienno\u015b\u0107 krypto realnie podnosi poniedzia\u0142kowe ryzyko, wi\u0119c sygna\u0142 z weekendu nie jest czystym szumem. Nowe arXiv sugeruj"
+   "name": "Odrzu\u0107 sygna\u0142, gdy rynek jest w panice i momentum jest s\u0142abe",
+   "rule": "r_96 < -0.005 and rank_r96 < 0.5 and vol_96 < 0.0035",
+   "why": "Kupno, gdy rynek jest w panice i momentum jest s\u0142abe, to kupno w d\u00f3\u0142. Regu\u0142a odrzuca sygna\u0142, gdy rynek jest w panice i momentum jest s\u0142abe."
   }
  ]
 }
