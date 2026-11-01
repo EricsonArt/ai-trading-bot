@@ -1,29 +1,30 @@
 {
- "created_at": 1793503084356,
+ "created_at": 1793506714467,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 6.7,
+ "seconds": 5.7,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
+   "TRX": "reduce",
    "BTC": "avoid",
    "ETH": "avoid",
    "SOL": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w panice (Fear 34) po kradzie\u017cy Binance, a wszystkie sygna\u0142y modelowe s\u0105 poni\u017cej progu 0.78 \u2014 bot ma zero pozycji. Model ma 49% win rate i 0.36%/trade vs always-buy -0.40%, czyli zero edge. CLM ma AUC 0.44, wi\u0119c nie ma skillu. Trzymam zero pozycji i obni\u017cam ryzyko.",
+ "reasoning": "Rynek jest w panice (Fear 34) po kradzie\u017cy Binance, a wszystkie sygna\u0142y modelu s\u0105 poni\u017cej progu 0.78 \u2014 model nie ma \u017cadnego udowodnionego edge (49% win rate, 0.36%/trade vs always-buy -0.40%). Ostatnie 4 sygna\u0142y praktyczne da\u0142y 2 straty, a champion z ligi agent\u00f3w ma 4 trades przy -0.40%/trade. Nie zwi\u0119kszam ryzyka, zero pozycji.",
  "new_lessons": [
-  "Model bez edge: 49% win rate, 0.36%/trade vs always-buy -0.40% \u2014 zero pozycji.",
+  "Model bez edge: 49% win rate, 0.36%/trade vs always-buy -0.40% \u2014 zero edge, zero pozycji.",
   "Panika (BTC -0.8%, Fear 30): zero pozycji, nie zwi\u0119kszaj ryzyka.",
   "CLM AUC 0.44 \u2014 bez skillu, nie ufaj drugiej opinii."
  ],
  "lessons": [
-  "Model bez edge: 49% win rate, 0.36%/trade vs always-buy -0.40% \u2014 zero pozycji.",
+  "Model bez edge: 49% win rate, 0.36%/trade vs always-buy -0.40% \u2014 zero edge, zero pozycji.",
   "Panika (BTC -0.8%, Fear 30): zero pozycji, nie zwi\u0119kszaj ryzyka.",
   "CLM AUC 0.44 \u2014 bez skillu, nie ufaj drugiej opinii.",
-  "Model bez edge: 49% win rate, 0.36%/trade vs always-buy -0.40% \u2014 zero edge, zero pozycji.",
+  "Model bez edge: 49% win rate, 0.36%/trade vs always-buy -0.40% \u2014 zero pozycji.",
   "Zero pozycji: 4 sygna\u0142y praktyczne = 2 straty, 0.58% vs always-buy -0.40% \u2014 model bez edge, zero pozycji.",
   "Model: 48% win rate, 0.29%/trade vs always-buy -0.40% \u2014 zero edge, zero pozycji.",
   "Model bez edge: 49% win rate, 0.36%/trade vs always-buy -0.40% \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
