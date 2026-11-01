@@ -1,24 +1,4 @@
 {
- "23349b9811": {
-  "name": "unikaj btc_r96 >= 0.009933",
-  "source": "own mistakes (auto)",
-  "rule": "btc_r96 < 0.00993",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1793046056670,
-  "model_version": 56,
-  "adopted": false
- },
- "4f5606cf23": {
-  "name": "unikaj r_96 >= 0.004291",
-  "source": "own mistakes (auto)",
-  "rule": "r_96 < 0.00429",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1793104455433,
-  "model_version": 57,
-  "adopted": false
- },
  "354b634e15": {
   "name": "unikaj rel_r96 >= 0.001961",
   "source": "own mistakes (auto)",
@@ -796,6 +776,26 @@
   "why": "Kupno, gdy rynek jest w panice i momentum jest s\u0142abe, to kupno w d\u00f3\u0142. Regu\u0142a odrzuca sygna\u0142, gdy rynek jest w panice i momentum jest s\u0142abe.",
   "gain": 0.0,
   "tested_at": 1793560571138,
+  "model_version": 67,
+  "adopted": false
+ },
+ "2df855b0d6": {
+  "name": "Nie kupuj, gdy rynek krypto i BTC spadaj\u0105 razem",
+  "source": "internet research: Badanie o weekendowej zmienno\u015bci krypto pokazuje, \u017ce weekendowe ruchy krypto dzi\u015b (sobota) mog\u0105 podnie\u015b\u0107 ryzyko poniedzia\u0142kowe o 27-54%, a atak na Binance ($6,4 mld) wywo\u0142a\u0142 $643 ml",
+  "rule": "btc_r96 < -0.01231 and btc_vol96 > 0.0024 and rel_r96 < -0.005",
+  "why": "Dzi\u015b rynek krypto i BTC spadaj\u0105 razem (strach 34, atak na Binance), wi\u0119c sygna\u0142 kupna na spadkach bywa pu\u0142apk\u0105. Dodanie rel_r96 < -0.005 wyklucza sygna\u0142y, gdy krypto spada razem z BTC \u2014 to dok\u0142adnie okno, w kt\u00f3rym bot kupuje dzi\u015b, a poniedzia\u0142kowy rynek mo\u017ce by\u0107 bardziej ryzykowny. To nowe regu\u0142a, b",
+  "gain": 0.0,
+  "tested_at": 1793572389631,
+  "model_version": 67,
+  "adopted": false
+ },
+ "f68cc51fdf": {
+  "name": "Nie kupuj, gdy token jest s\u0142aby w rankingu i ma nisk\u0105 wolumen",
+  "source": "internet research: Badanie o grupach portfeli i rozstrzygni\u0119ciu o rozproszeniu sugeruje, \u017ce dzi\u015b warto ogranicza\u0107 ekspozycj\u0119 na pojedyncze aktywne tokeny i dywersyfikowa\u0107. Bot kupuje tylko w oknie, gd",
+  "rule": "rank_r96 < 0.5 and rank_r672 < 0.5 and vz < 0.6",
+  "why": "Dzi\u015b rynek krypto i BTC spadaj\u0105 razem (strach 34, atak na Binance), wi\u0119c sygna\u0142 kupna na spadkach bywa pu\u0142apk\u0105. Dodanie rank_r96 < 0.5 i rank_r672 < 0.5 wyklucza sygna\u0142y, gdy token jest s\u0142aby w rankingu \u2014 to dok\u0142adnie okno, w kt\u00f3rym bot kupuje dzi\u015b, a poniedzia\u0142kowy rynek mo\u017ce by\u0107 bardziej ryzykowny",
+  "gain": 0.0,
+  "tested_at": 1793572389631,
   "model_version": 67,
   "adopted": false
  }
