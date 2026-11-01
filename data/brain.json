@@ -1,19 +1,21 @@
 {
- "created_at": 1793546648214,
+ "created_at": 1793550288200,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 6.8,
+ "seconds": 10.3,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
+   "DOGE": "reduce",
+   "TRX": "reduce",
    "BTC": "avoid",
    "ETH": "avoid",
    "SOL": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w panice (Fear 34) po kradzie\u017cy Binance, a wszystkie sygna\u0142y modelowe s\u0105 poni\u017cej progu 0.78 \u2014 zero pozycji. Model ma zero edge (48% win rate, 0.11%/trade vs always-buy -0.40%), wi\u0119c nie zwi\u0119kszam ryzyka. CLM ma AUC 0.44, czyli bez skillu \u2014 nie ufam drugiej opinii.",
+ "reasoning": "Rynek jest w panice (Fear 34) po kradzie\u017cy Binance, a wszystkie sygna\u0142y modelowe s\u0105 poni\u017cej progu 0.78. Model ma zero edge (48% win rate, 0.11%/trade vs always-buy -0.40%), a agent league przegrywa z always-buy. Zgodnie z moimi zasadami redukcji ryzyka po losing streakach i przy braku edge, obni\u017cam risk_level do 0.2 i ustawiam min_confidence_adj na +0.05. BTC, ETH i SOL s\u0105 do unikni\u0119cia ze wzgl\u0119du na s\u0142abe sygna\u0142y i wysok\u0105 zmienno\u015b\u0107.",
  "new_lessons": [
   "Model bez edge: 48% win rate, 0.11%/trade vs always-buy -0.40% \u2014 zero edge, zero pozycji.",
   "Panika (Fear 34, BTC -0.4%): zero pozycji, nie zwi\u0119kszaj ryzyka.",
