@@ -1,11 +1,11 @@
 {
- "created_at": 1793637576077,
+ "created_at": 1793641213361,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 10.6,
+ "seconds": 9.2,
  "directives": {
   "risk_level": 0.2,
-  "min_confidence_adj": 0.02,
+  "min_confidence_adj": 0.05,
   "symbol_bias": {
    "BTC": "avoid",
    "ETH": "avoid",
@@ -13,16 +13,17 @@
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w panice (Fear 34) po ataku na Binance, a wszystkie sygna\u0142y modelowe s\u0105 poni\u017cej progu 0.75, wi\u0119c bot nie ma \u017cadnego uzasadnienia do wej\u015bcia. Zero pozycji i historyczne wyniki praktycznego konta (+0.79% z 5 sygna\u0142\u00f3w) nie potwierdzaj\u0105 przewagi, dlatego utrzymuj\u0119 niskie ryzyko i zero pozycji. Weekendowy rynek dodatkowo podnosi ryzyko poniedzia\u0142kowe o 27-54%, wi\u0119c unikam BTC, ETH i SOL jako najsilniejszych spadk\u00f3w i najwi\u0119kszej zmienno\u015bci.",
+ "reasoning": "Rynek jest w panice (Fear 34), wszystkie aktywa spadaj\u0105, a model ma zero edge (49% win rate, 0.19%/trade vs always-buy -0.39%). Zero pozycji, nie zwi\u0119kszaj ryzyka. Weekendowy rynek: ruchy dzi\u015b mog\u0105 podnie\u015b\u0107 poniedzia\u0142kowe ryzyko o 27-54% \u2014 ogranicz ekspozycj\u0119.",
  "new_lessons": [
   "Model bez edge: 49% win rate, 0.19%/trade vs always-buy -0.39% \u2014 zero edge, zero pozycji.",
-  "Panika (Fear 34, BTC -0.2%): zero pozycji, nie zwi\u0119kszaj ryzyka.",
+  "Panika (Fear 34, BTC -1.0%): zero pozycji, nie zwi\u0119kszaj ryzyka.",
   "Weekendowy rynek: ruchy dzi\u015b mog\u0105 podnie\u015b\u0107 poniedzia\u0142kowe ryzyko o 27-54% \u2014 ogranicz ekspozycj\u0119."
  ],
  "lessons": [
   "Model bez edge: 49% win rate, 0.19%/trade vs always-buy -0.39% \u2014 zero edge, zero pozycji.",
-  "Panika (Fear 34, BTC -0.2%): zero pozycji, nie zwi\u0119kszaj ryzyka.",
+  "Panika (Fear 34, BTC -1.0%): zero pozycji, nie zwi\u0119kszaj ryzyka.",
   "Weekendowy rynek: ruchy dzi\u015b mog\u0105 podnie\u015b\u0107 poniedzia\u0142kowe ryzyko o 27-54% \u2014 ogranicz ekspozycj\u0119.",
+  "Panika (Fear 34, BTC -0.2%): zero pozycji, nie zwi\u0119kszaj ryzyka.",
   "CLM AUC 0.44 \u2014 bez skillu, nie ufaj drugiej opinii.",
   "Zero pozycji: 4 sygna\u0142y praktyczne = 2 straty, 0.58% vs always-buy -0.40% \u2014 model bez edge, zero pozycji.",
   "Model bez edge: 48% win rate, 0.19%/trade vs always-buy -0.39% \u2014 zero edge, zero pozycji.",
@@ -30,8 +31,7 @@
   "Panika (Fear 34, BTC -0.5%): zero pozycji, nie zwi\u0119kszaj ryzyka.",
   "Model bez edge: 48% win rate, 0.11%/trade vs always-buy -0.40% \u2014 zero edge, zero pozycji.",
   "Panika (Fear 34, BTC -0.4%): zero pozycji, nie zwi\u0119kszaj ryzyka.",
-  "Model bez edge: 49% win rate, 0.36%/trade vs always-buy -0.40% \u2014 zero edge, zero pozycji.",
-  "Panika (Fear 34, BTC -0.7%): zero pozycji, nie zwi\u0119kszaj ryzyka."
+  "Model bez edge: 49% win rate, 0.36%/trade vs always-buy -0.40% \u2014 zero edge, zero pozycji."
  ],
  "equity_at": 1000.0
 }
