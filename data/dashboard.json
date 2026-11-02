@@ -1,9 +1,9 @@
 {
- "generated_at": 1793582923414,
- "last_candle": 1793581200000,
+ "generated_at": 1793584450771,
+ "last_candle": 1793583000000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
- "benchmark_return": -0.07569000000000004,
+ "benchmark_return": -0.07447999999999999,
  "series": [
   [
    1790508600000,
@@ -10252,6 +10252,12 @@
    1000.0,
    924.31,
    1007.94
+  ],
+  [
+   1793583000000,
+   1000.0,
+   925.52,
+   1007.94
   ]
  ],
  "main": {
@@ -10300,7 +10306,7 @@
    {
     "name": "Lepiej ni\u017c samo trzymanie BTC",
     "ok": true,
-    "value": "+7.6 pkt"
+    "value": "+7.4 pkt"
    },
    {
     "name": "Najwi\u0119kszy spadek mniejszy ni\u017c 20%",
@@ -10838,90 +10844,90 @@
  },
  "signals": {
   "BTC": {
-   "p": 0.2421,
+   "p": 0.2473,
    "threshold": 0.73,
    "action": "wait",
-   "ts": 1793581200000
+   "ts": 1793583000000
   },
   "ETH": {
-   "p": 0.3044,
+   "p": 0.287,
    "threshold": 0.73,
    "action": "wait",
-   "ts": 1793581200000
+   "ts": 1793583000000
   },
   "SOL": {
-   "p": 0.275,
+   "p": 0.3158,
    "threshold": 0.73,
    "action": "wait",
-   "ts": 1793581200000
+   "ts": 1793583000000
   },
   "XRP": {
-   "p": 0.2192,
+   "p": 0.2348,
    "threshold": 0.73,
    "action": "wait",
-   "ts": 1793581200000
+   "ts": 1793583000000
   },
   "DOGE": {
-   "p": 0.1387,
+   "p": 0.1438,
    "threshold": 0.73,
    "action": "wait",
-   "ts": 1793581200000
+   "ts": 1793583000000
   },
   "ADA": {
-   "p": 0.2566,
+   "p": 0.2582,
    "threshold": 0.73,
    "action": "wait",
-   "ts": 1793581200000
+   "ts": 1793583000000
   },
   "BNB": {
-   "p": 0.212,
+   "p": 0.2121,
    "threshold": 0.73,
    "action": "wait",
-   "ts": 1793581200000
+   "ts": 1793583000000
   },
   "LINK": {
-   "p": 0.3899,
+   "p": 0.3683,
    "threshold": 0.73,
    "action": "wait",
-   "ts": 1793581200000
+   "ts": 1793583000000
   },
   "AVAX": {
-   "p": 0.4289,
+   "p": 0.3632,
    "threshold": 0.73,
    "action": "wait",
-   "ts": 1793581200000
+   "ts": 1793583000000
   },
   "LTC": {
-   "p": 0.194,
+   "p": 0.1992,
    "threshold": 0.73,
    "action": "wait",
-   "ts": 1793581200000
+   "ts": 1793583000000
   },
   "DOT": {
-   "p": 0.3143,
+   "p": 0.3583,
    "threshold": 0.73,
    "action": "wait",
-   "ts": 1793581200000
+   "ts": 1793583000000
   },
   "TRX": {
-   "p": 0.2621,
+   "p": 0.2714,
    "threshold": 0.73,
    "action": "wait",
-   "ts": 1793581200000
+   "ts": 1793583000000
   }
  },
  "prices": {
-  "BTC": 78485.44,
-  "ETH": 2289.25,
+  "BTC": 78588.0,
+  "ETH": 2295.86,
   "SOL": 95.15,
-  "XRP": 1.2571,
-  "DOGE": 0.07587,
-  "ADA": 0.1946,
-  "BNB": 714.58,
-  "LINK": 11.433,
-  "AVAX": 8.731,
-  "LTC": 55.91,
-  "DOT": 0.955,
+  "XRP": 1.2593,
+  "DOGE": 0.07597,
+  "ADA": 0.194,
+  "BNB": 714.6,
+  "LINK": 11.398,
+  "AVAX": 8.681,
+  "LTC": 55.84,
+  "DOT": 0.951,
   "TRX": 0.3135
  },
  "model": {
@@ -11380,6 +11386,9 @@
   "risk_level": 0.2,
   "min_confidence_adj": 0.0,
   "symbol_bias": {
+   "XRP": "reduce",
+   "DOGE": "reduce",
+   "ADA": "reduce",
    "BTC": "avoid",
    "ETH": "avoid",
    "SOL": "avoid"
@@ -11387,20 +11396,23 @@
   "regime": "bear"
  },
  "brain": {
-  "created_at": 1793579370761,
+  "created_at": 1793583001087,
   "source": "local",
   "model": "mimo2.6:9b",
   "directives": {
    "risk_level": 0.2,
    "min_confidence_adj": 0.0,
    "symbol_bias": {
+    "XRP": "reduce",
+    "DOGE": "reduce",
+    "ADA": "reduce",
     "BTC": "avoid",
     "ETH": "avoid",
     "SOL": "avoid"
    },
    "regime": "bear"
   },
-  "reasoning": "Rynek jest w panice (Fear 34) po ataku na Binance, a wszystkie sygna\u0142y modelowe s\u0105 poni\u017cej progu 0.78 \u2014 zero pozycji. Model ma 48% win rate i 0.19%/trade vs always-buy -0.39%, czyli zero edge. CLM ma AUC 0.44, co oznacza brak skillu. Wszystkie sygna\u0142y praktyczne to 2 straty, wi\u0119c utrzymuj\u0119 zero pozycji i zero ryzyka.",
+  "reasoning": "Rynek jest w panice (Fear 34) po ataku na Binance, a wszystkie sygna\u0142y modelowe s\u0105 poni\u017cej progu 0.73 \u2014 zero pozycji. Model ma zero edge (48% win rate, 0.19%/trade vs always-buy -0.39%), wi\u0119c nie zwi\u0119kszamy ryzyka. Druga opinia (CLM) ma AUC 0.44, czyli bez skillu, wi\u0119c jej nie uwzgl\u0119dniamy. Trzymamy si\u0119 ostro\u017cnej postawy.",
   "new_lessons": [
    "Model bez edge: 48% win rate, 0.19%/trade vs always-buy -0.39% \u2014 zero edge, zero pozycji.",
    "CLM AUC 0.44 \u2014 bez skillu, nie ufaj drugiej opinii.",
@@ -11420,9 +11432,34 @@
    "Panika (BTC -0.8%, Fear 30): zero pozycji, nie zwi\u0119kszaj ryzyka.",
    "Model bez edge: 49% win rate, 0.36%/trade vs always-buy -0.40% \u2014 zero pozycji."
   ],
-  "seconds": 5.9
+  "seconds": 9.5
  },
  "brain_journal": [
+  {
+   "created_at": 1793583001087,
+   "source": "local",
+   "model": "mimo2.6:9b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.0,
+    "symbol_bias": {
+     "XRP": "reduce",
+     "DOGE": "reduce",
+     "ADA": "reduce",
+     "BTC": "avoid",
+     "ETH": "avoid",
+     "SOL": "avoid"
+    },
+    "regime": "bear"
+   },
+   "reasoning": "Rynek jest w panice (Fear 34) po ataku na Binance, a wszystkie sygna\u0142y modelowe s\u0105 poni\u017cej progu 0.73 \u2014 zero pozycji. Model ma zero edge (48% win rate, 0.19%/trade vs always-buy -0.39%), wi\u0119c nie zwi\u0119kszamy ryzyka. Druga opinia (CLM) ma AUC 0.44, czyli bez skillu, wi\u0119c jej nie uwzgl\u0119dniamy. Trzymamy si\u0119 ostro\u017cnej postawy.",
+   "new_lessons": [
+    "Model bez edge: 48% win rate, 0.19%/trade vs always-buy -0.39% \u2014 zero edge, zero pozycji.",
+    "CLM AUC 0.44 \u2014 bez skillu, nie ufaj drugiej opinii.",
+    "Zero pozycji: 4 sygna\u0142y praktyczne = 2 straty, 0.58% vs always-buy -0.40% \u2014 model bez edge, zero pozycji."
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1793579370761,
    "source": "local",
@@ -11616,28 +11653,6 @@
     "regime": "bear"
    },
    "reasoning": "Rynek jest w panice (Fear 34) po kradzie\u017cy Binance, a wszystkie sygna\u0142y modelowe s\u0105 poni\u017cej progu 0.78. Model ma zero edge (48% win rate, 0.11%/trade vs always-buy -0.40%), a agent league przegrywa z always-buy. Zgodnie z moimi zasadami redukcji ryzyka po losing streakach i przy braku edge, obni\u017cam risk_level do 0.2 i ustawiam min_confidence_adj na +0.05. BTC, ETH i SOL s\u0105 do unikni\u0119cia ze wzgl\u0119du na s\u0142abe sygna\u0142y i wysok\u0105 zmienno\u015b\u0107.",
-   "new_lessons": [
-    "Model bez edge: 48% win rate, 0.11%/trade vs always-buy -0.40% \u2014 zero edge, zero pozycji.",
-    "Panika (Fear 34, BTC -0.4%): zero pozycji, nie zwi\u0119kszaj ryzyka.",
-    "CLM AUC 0.44 \u2014 bez skillu, nie ufaj drugiej opinii."
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1793546648214,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.05,
-    "symbol_bias": {
-     "BTC": "avoid",
-     "ETH": "avoid",
-     "SOL": "avoid"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "Rynek jest w panice (Fear 34) po kradzie\u017cy Binance, a wszystkie sygna\u0142y modelowe s\u0105 poni\u017cej progu 0.78 \u2014 zero pozycji. Model ma zero edge (48% win rate, 0.11%/trade vs always-buy -0.40%), wi\u0119c nie zwi\u0119kszam ryzyka. CLM ma AUC 0.44, czyli bez skillu \u2014 nie ufam drugiej opinii.",
    "new_lessons": [
     "Model bez edge: 48% win rate, 0.11%/trade vs always-buy -0.40% \u2014 zero edge, zero pozycji.",
     "Panika (Fear 34, BTC -0.4%): zero pozycji, nie zwi\u0119kszaj ryzyka.",
