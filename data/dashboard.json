@@ -1,9 +1,9 @@
 {
- "generated_at": 1793578393347,
- "last_candle": 1793576700000,
+ "generated_at": 1793579893539,
+ "last_candle": 1793578500000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
- "benchmark_return": -0.07723999999999998,
+ "benchmark_return": -0.07907000000000008,
  "series": [
   [
    1790508600000,
@@ -10236,10 +10236,16 @@
    1008.55
   ],
   [
-   1793576700000,
+   1793577600000,
    1000.0,
-   922.76,
-   1008.85
+   920.5,
+   1008.54
+  ],
+  [
+   1793578500000,
+   1000.0,
+   920.93,
+   1007.94
   ]
  ],
  "main": {
@@ -10288,7 +10294,7 @@
    {
     "name": "Lepiej ni\u017c samo trzymanie BTC",
     "ok": true,
-    "value": "+7.7 pkt"
+    "value": "+7.9 pkt"
    },
    {
     "name": "Najwi\u0119kszy spadek mniejszy ni\u017c 20%",
@@ -10335,15 +10341,39 @@
     "origin": "mutation: sl"
    },
    "joined": 1791184500000,
-   "equity": 1008.85,
-   "return": 0.00885303214093236,
-   "trades": 4,
-   "avg": -0.0039925,
-   "win_rate": 0.5,
-   "open": [
-    "BNB"
-   ],
+   "equity": 1007.94,
+   "return": 0.007935256913404798,
+   "trades": 5,
+   "avg": 0.004168,
+   "win_rate": 0.6,
+   "open": [],
    "recent": [
+    {
+     "symbol": "BNB",
+     "entry_ts": 1793320200000,
+     "exit_ts": 1793578500000,
+     "entry_px": 684.392025,
+     "exit_px": 711.00432,
+     "cost": 262.34,
+     "proceeds": 272.0,
+     "pnl": 9.66,
+     "net": 0.03681,
+     "reason": "time-limit",
+     "held": 288,
+     "prob": 0.8085,
+     "variant": "position",
+     "threshold": 0.73,
+     "mode": "practice",
+     "ctx": {
+      "rsi": 0.234,
+      "d_ema200": -0.0768,
+      "vol_ratio": 2.2559,
+      "range_pos": 0.0501,
+      "r_96": -0.1065,
+      "btc_r16": -0.0429
+     },
+     "recipe": "00dba0b899"
+    },
     {
      "symbol": "DOGE",
      "entry_ts": 1792038600000,
@@ -10632,25 +10662,38 @@
   }
  ],
  "practice": {
-  "equity": 1008.85,
-  "return": 0.008850000000000025,
-  "cash": 735.94,
-  "positions": [
+  "equity": 1007.94,
+  "return": 0.007940000000000058,
+  "cash": 1007.94,
+  "positions": [],
+  "pending": [],
+  "trades": [
    {
     "symbol": "BNB",
     "entry_ts": 1793320200000,
-    "entry_px": 684.3920249999999,
-    "price": 712.69,
-    "value": 272.91,
-    "pnl_pct": 0.04134761067679027,
-    "tp_px": 878.0257420488412,
-    "sl_px": 523.0305941259654,
-    "held": 286,
-    "horizon": 288
-   }
-  ],
-  "pending": [],
-  "trades": [
+    "exit_ts": 1793578500000,
+    "entry_px": 684.392025,
+    "exit_px": 711.00432,
+    "cost": 262.34,
+    "proceeds": 272.0,
+    "pnl": 9.66,
+    "net": 0.03681,
+    "reason": "time-limit",
+    "held": 288,
+    "prob": 0.8085,
+    "variant": "position",
+    "threshold": 0.73,
+    "mode": "practice",
+    "ctx": {
+     "rsi": 0.234,
+     "d_ema200": -0.0768,
+     "vol_ratio": 2.2559,
+     "range_pos": 0.0501,
+     "r_96": -0.1065,
+     "btc_r16": -0.0429
+    },
+    "recipe": "00dba0b899"
+   },
    {
     "symbol": "DOGE",
     "entry_ts": 1792038600000,
@@ -10758,23 +10801,30 @@
   ],
   "stats": {
    "all": {
-    "trades": 4,
-    "win_rate": 0.5,
-    "avg_net": -0.0039925,
-    "pnl": -1.72,
-    "profit_factor": 0.75,
-    "best": 0.01529,
+    "trades": 5,
+    "win_rate": 0.6,
+    "avg_net": 0.004168,
+    "pnl": 7.94,
+    "profit_factor": 2.15,
+    "best": 0.03681,
     "worst": -0.01728
    },
    "week": {
-    "trades": 0
+    "trades": 1,
+    "win_rate": 1.0,
+    "avg_net": 0.03681,
+    "pnl": 9.66,
+    "profit_factor": null,
+    "best": 0.03681,
+    "worst": 0.03681
    }
   },
   "trust": {
    "ETH": 1.045,
    "SOL": 1.045,
    "XRP": 0.909,
-   "DOGE": 0.909
+   "DOGE": 0.909,
+   "BNB": 1.045
   },
   "benched_until": {},
   "paused_until": 0,
@@ -10782,91 +10832,91 @@
  },
  "signals": {
   "BTC": {
-   "p": 0.2189,
-   "threshold": 0.83,
+   "p": 0.2039,
+   "threshold": 0.73,
    "action": "wait",
-   "ts": 1793576700000
+   "ts": 1793578500000
   },
   "ETH": {
-   "p": 0.2496,
-   "threshold": 0.83,
+   "p": 0.2465,
+   "threshold": 0.73,
    "action": "wait",
-   "ts": 1793576700000
+   "ts": 1793578500000
   },
   "SOL": {
-   "p": 0.2953,
-   "threshold": 0.83,
+   "p": 0.2173,
+   "threshold": 0.73,
    "action": "wait",
-   "ts": 1793576700000
+   "ts": 1793578500000
   },
   "XRP": {
-   "p": 0.256,
-   "threshold": 0.83,
+   "p": 0.2195,
+   "threshold": 0.73,
    "action": "wait",
-   "ts": 1793576700000
+   "ts": 1793578500000
   },
   "DOGE": {
-   "p": 0.1537,
-   "threshold": 0.83,
+   "p": 0.1275,
+   "threshold": 0.73,
    "action": "wait",
-   "ts": 1793576700000
+   "ts": 1793578500000
   },
   "ADA": {
-   "p": 0.1706,
-   "threshold": 0.83,
+   "p": 0.1556,
+   "threshold": 0.73,
    "action": "wait",
-   "ts": 1793576700000
+   "ts": 1793578500000
   },
   "BNB": {
-   "p": 0.185,
-   "threshold": 0.83,
+   "p": 0.1678,
+   "threshold": 0.73,
    "action": "wait",
-   "ts": 1793576700000
+   "ts": 1793578500000
   },
   "LINK": {
-   "p": 0.3756,
-   "threshold": 0.83,
+   "p": 0.3054,
+   "threshold": 0.73,
    "action": "wait",
-   "ts": 1793576700000
+   "ts": 1793578500000
   },
   "AVAX": {
-   "p": 0.3127,
-   "threshold": 0.83,
+   "p": 0.2967,
+   "threshold": 0.73,
    "action": "wait",
-   "ts": 1793576700000
+   "ts": 1793578500000
   },
   "LTC": {
-   "p": 0.2655,
-   "threshold": 0.83,
+   "p": 0.2012,
+   "threshold": 0.73,
    "action": "wait",
-   "ts": 1793576700000
+   "ts": 1793578500000
   },
   "DOT": {
-   "p": 0.3497,
-   "threshold": 0.83,
+   "p": 0.2496,
+   "threshold": 0.73,
    "action": "wait",
-   "ts": 1793576700000
+   "ts": 1793578500000
   },
   "TRX": {
-   "p": 0.2186,
-   "threshold": 0.83,
+   "p": 0.2132,
+   "threshold": 0.73,
    "action": "wait",
-   "ts": 1793576700000
+   "ts": 1793578500000
   }
  },
  "prices": {
-  "BTC": 78354.0,
-  "ETH": 2275.31,
-  "SOL": 94.53,
-  "XRP": 1.2507,
-  "DOGE": 0.07552,
+  "BTC": 78198.01,
+  "ETH": 2276.8,
+  "SOL": 94.36,
+  "XRP": 1.2461,
+  "DOGE": 0.07549,
   "ADA": 0.1931,
-  "BNB": 712.69,
-  "LINK": 11.392,
-  "AVAX": 8.697,
-  "LTC": 55.63,
-  "DOT": 0.953,
-  "TRX": 0.3132
+  "BNB": 711.36,
+  "LINK": 11.362,
+  "AVAX": 8.685,
+  "LTC": 55.68,
+  "DOT": 0.951,
+  "TRX": 0.313
  },
  "model": {
   "version": 67,
@@ -11322,7 +11372,7 @@
  ],
  "directives": {
   "risk_level": 0.2,
-  "min_confidence_adj": 0.1,
+  "min_confidence_adj": 0.0,
   "symbol_bias": {
    "BTC": "avoid",
    "ETH": "avoid",
@@ -11331,12 +11381,12 @@
   "regime": "bear"
  },
  "brain": {
-  "created_at": 1793575738171,
+  "created_at": 1793579370761,
   "source": "local",
   "model": "mimo2.6:9b",
   "directives": {
    "risk_level": 0.2,
-   "min_confidence_adj": 0.1,
+   "min_confidence_adj": 0.0,
    "symbol_bias": {
     "BTC": "avoid",
     "ETH": "avoid",
@@ -11344,7 +11394,7 @@
    },
    "regime": "bear"
   },
-  "reasoning": "Rynek jest w panice (Fear 34) po ataku na Binance, a wszystkie sygna\u0142y modelowe s\u0105 poni\u017cej progu 0.83 \u2014 zero pozycji. Model ma zero edge (48% win rate, 0.19%/trade vs always-buy -0.39%), wi\u0119c nie zwi\u0119kszam ryzyka. Druga opinia (CLM) ma AUC 0.44 \u2014 bez skillu, nie ufam jej. Weekendowy rynek podnosi ryzyko poniedzia\u0142kowe o 27-54%, wi\u0119c pozostaj\u0119 ostro\u017cny.",
+  "reasoning": "Rynek jest w panice (Fear 34) po ataku na Binance, a wszystkie sygna\u0142y modelowe s\u0105 poni\u017cej progu 0.78 \u2014 zero pozycji. Model ma 48% win rate i 0.19%/trade vs always-buy -0.39%, czyli zero edge. CLM ma AUC 0.44, co oznacza brak skillu. Wszystkie sygna\u0142y praktyczne to 2 straty, wi\u0119c utrzymuj\u0119 zero pozycji i zero ryzyka.",
   "new_lessons": [
    "Model bez edge: 48% win rate, 0.19%/trade vs always-buy -0.39% \u2014 zero edge, zero pozycji.",
    "CLM AUC 0.44 \u2014 bez skillu, nie ufaj drugiej opinii.",
@@ -11364,9 +11414,31 @@
    "Panika (BTC -0.8%, Fear 30): zero pozycji, nie zwi\u0119kszaj ryzyka.",
    "Model bez edge: 49% win rate, 0.36%/trade vs always-buy -0.40% \u2014 zero pozycji."
   ],
-  "seconds": 6.0
+  "seconds": 5.9
  },
  "brain_journal": [
+  {
+   "created_at": 1793579370761,
+   "source": "local",
+   "model": "mimo2.6:9b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.0,
+    "symbol_bias": {
+     "BTC": "avoid",
+     "ETH": "avoid",
+     "SOL": "avoid"
+    },
+    "regime": "bear"
+   },
+   "reasoning": "Rynek jest w panice (Fear 34) po ataku na Binance, a wszystkie sygna\u0142y modelowe s\u0105 poni\u017cej progu 0.78 \u2014 zero pozycji. Model ma 48% win rate i 0.19%/trade vs always-buy -0.39%, czyli zero edge. CLM ma AUC 0.44, co oznacza brak skillu. Wszystkie sygna\u0142y praktyczne to 2 straty, wi\u0119c utrzymuj\u0119 zero pozycji i zero ryzyka.",
+   "new_lessons": [
+    "Model bez edge: 48% win rate, 0.19%/trade vs always-buy -0.39% \u2014 zero edge, zero pozycji.",
+    "CLM AUC 0.44 \u2014 bez skillu, nie ufaj drugiej opinii.",
+    "Zero pozycji: 4 sygna\u0142y praktyczne = 2 straty, 0.58% vs always-buy -0.40% \u2014 model bez edge, zero pozycji."
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1793575738171,
    "source": "local",
@@ -11566,52 +11638,30 @@
     "CLM AUC 0.44 \u2014 bez skillu, nie ufaj drugiej opinii."
    ],
    "equity_at": 1000.0
-  },
-  {
-   "created_at": 1793543016396,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.05,
-    "symbol_bias": {
-     "BTC": "avoid",
-     "ETH": "avoid",
-     "SOL": "avoid"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "Rynek jest w panice (Fear 34) po kradzie\u017cy Binance, a model ma zero edge: 48% win rate, 0.11%/trade vs always-buy -0.40%. Wszystkie sygna\u0142y s\u0105 poni\u017cej progu 0.78, wi\u0119c zero pozycji jest w\u0142a\u015bciw\u0105 decyzj\u0105. BTC, ETH i SOL maj\u0105 najgorsze trendy 30d i niskie prawdopodobie\u0144stwa, wi\u0119c je omijamy.",
-   "new_lessons": [
-    "Model bez edge: 48% win rate, 0.11%/trade vs always-buy -0.40% \u2014 zero edge, zero pozycji.",
-    "Panika (Fear 34, BTC -0.4%): zero pozycji, nie zwi\u0119kszaj ryzyka.",
-    "Model bez edge: 49% win rate, 0.36%/trade vs always-buy -0.40% \u2014 zero edge, zero pozycji."
-   ],
-   "equity_at": 1000.0
   }
  ],
  "clm": {
-  "updated_at": 1793564933127,
+  "updated_at": 1793579478952,
   "latest": {
-   "BTC": 0.129,
-   "ETH": 0.0986,
-   "SOL": 0.1772,
-   "XRP": 0.4126,
-   "DOGE": 0.3648,
-   "ADA": 0.3523,
-   "BNB": 0.1947,
-   "LINK": 0.2632,
-   "AVAX": 0.2407,
-   "LTC": 0.2679,
-   "DOT": 0.1863,
-   "TRX": 0.3159
+   "BTC": 0.1158,
+   "ETH": 0.0985,
+   "SOL": 0.1675,
+   "XRP": 0.3981,
+   "DOGE": 0.2776,
+   "ADA": 0.2839,
+   "BNB": 0.192,
+   "LINK": 0.2473,
+   "AVAX": 0.2418,
+   "LTC": 0.2132,
+   "DOT": 0.1495,
+   "TRX": 0.2425
   },
-  "seconds": 49.7,
+  "seconds": 35.9,
   "question": "Buying {sym} now and holding it for about two days will end in a profit.",
   "track_record": {
-   "n": 1140,
-   "accuracy": 0.6780701754385965,
-   "base_rate": 0.312280701754386
+   "n": 1152,
+   "accuracy": 0.6762152777777778,
+   "base_rate": 0.3142361111111111
   }
  },
  "clm_test": {
