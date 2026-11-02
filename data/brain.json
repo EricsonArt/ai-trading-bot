@@ -1,28 +1,29 @@
 {
- "created_at": 1793604779961,
+ "created_at": 1793608441051,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 5.9,
+ "seconds": 10.5,
  "directives": {
   "risk_level": 0.2,
-  "min_confidence_adj": 0.05,
+  "min_confidence_adj": 0.1,
   "symbol_bias": {
+   "SOL": "avoid",
    "BTC": "avoid",
-   "ETH": "avoid",
-   "SOL": "avoid"
+   "ETH": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Model ma zero edge (48% win rate, 0.19%/trade vs always-buy -0.39%), wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka. Rynek jest w panice (Fear 34) po ataku na Binance, a weekendowa zmienno\u015b\u0107 podnosi ryzyko poniedzia\u0142kowe. Wszystkie sygna\u0142y praktyczne to 2 straty i 0 wygranych, wi\u0119c zero pozycji jest w\u0142a\u015bciw\u0105 decyzj\u0105.",
+ "reasoning": "Rynek jest w panice (Fear 34) po ataku na Binance, a wszystkie aktywa maj\u0105 negatywne 30-dniowe wyniki, wi\u0119c nie ma dowodu na przewag\u0119 modelu. Bot ma zero pozycji i historyczne wyniki praktyczne (+0.79% na 5 sygna\u0142ach, 2 straty), wi\u0119c obni\u017cam ryzyko i wstrzymuj\u0119 wej\u015bcia. SOL ma najwy\u017csz\u0105 pewno\u015b\u0107 (0.86), ale jest zablokowane przez regu\u0142\u0119 zmienno\u015bci BTC, a BTC i ETH maj\u0105 niskie pewno\u015bci, wi\u0119c unika je.",
  "new_lessons": [
-  "Model bez edge: 48% win rate, 0.19%/trade vs always-buy -0.39% \u2014 zero edge, zero pozycji.",
+  "Model bez edge: 49% win rate, 0.19%/trade vs always-buy -0.39% \u2014 zero edge, zero pozycji.",
   "Panika (Fear 34, BTC -0.2%): zero pozycji, nie zwi\u0119kszaj ryzyka.",
   "CLM AUC 0.44 \u2014 bez skillu, nie ufaj drugiej opinii."
  ],
  "lessons": [
-  "Model bez edge: 48% win rate, 0.19%/trade vs always-buy -0.39% \u2014 zero edge, zero pozycji.",
+  "Model bez edge: 49% win rate, 0.19%/trade vs always-buy -0.39% \u2014 zero edge, zero pozycji.",
   "Panika (Fear 34, BTC -0.2%): zero pozycji, nie zwi\u0119kszaj ryzyka.",
   "CLM AUC 0.44 \u2014 bez skillu, nie ufaj drugiej opinii.",
+  "Model bez edge: 48% win rate, 0.19%/trade vs always-buy -0.39% \u2014 zero edge, zero pozycji.",
   "Zero pozycji: 4 sygna\u0142y praktyczne = 2 straty, 0.58% vs always-buy -0.40% \u2014 model bez edge, zero pozycji.",
   "Model bez edge: 48% win rate, 0.19%/trade vs always-buy -0.39%/trade \u2014 zero edge, zero pozycji.",
   "Panika (Fear 34, BTC -0.5%): zero pozycji, nie zwi\u0119kszaj ryzyka.",
@@ -30,8 +31,7 @@
   "Panika (Fear 34, BTC -0.4%): zero pozycji, nie zwi\u0119kszaj ryzyka.",
   "Model bez edge: 49% win rate, 0.36%/trade vs always-buy -0.40% \u2014 zero edge, zero pozycji.",
   "Panika (Fear 34, BTC -0.7%): zero pozycji, nie zwi\u0119kszaj ryzyka.",
-  "Panika (BTC -0.8%, Fear 34): zero pozycji, nie zwi\u0119kszaj ryzyka.",
-  "Panika (BTC -0.8%, Fear 30): zero pozycji, nie zwi\u0119kszaj ryzyka."
+  "Panika (BTC -0.8%, Fear 34): zero pozycji, nie zwi\u0119kszaj ryzyka."
  ],
  "equity_at": 1000.0
 }
