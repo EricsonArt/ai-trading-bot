@@ -1,5 +1,5 @@
 {
- "generated_at": 1793670781764,
+ "generated_at": 1793673850550,
  "last_candle": 1793669400000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
@@ -11681,20 +11681,22 @@
   "regime": "bear"
  },
  "brain": {
-  "created_at": 1793652069550,
-  "source": "local",
-  "model": "mimo2.6:9b",
+  "created_at": 1793673850542,
+  "source": "cloud",
+  "model": "qwen3:4b",
   "directives": {
    "risk_level": 0.2,
-   "min_confidence_adj": 0.05,
+   "min_confidence_adj": -0.02,
    "symbol_bias": {
+    "XRP": "reduce",
+    "DOGE": "reduce",
     "BTC": "avoid",
     "ETH": "avoid",
     "SOL": "avoid"
    },
    "regime": "bear"
   },
-  "reasoning": "Rynek jest w panice (Fear 37, BTC -1.0%, wszystkie aktywa spadkowe), a model ma zero edge (47% win rate, +0.15%/trade vs always-buy -0.40%). Zero pozycji w g\u0142\u00f3wnym koncie i 2 straty z 5 sygna\u0142\u00f3w praktycznych w accountie treningowym potwierdzaj\u0105 brak przewagi. Nie zwi\u0119kszam ryzyka, nie otwieram pozycji, wszystkie sygna\u0142y s\u0105 poni\u017cej progu 0.71.",
+  "reasoning": "Model nie ma edge (47% win rate, +0.15%/trade vs always-buy -0.40%), 5 ostatnich sygna\u0142\u00f3w dawa\u0142y 2 straty. Rynkowy strach wynosi 37, BTC spada o 1.0%. Zdecydowano na zero pozycji, zmniejszenie ryzyka dla XRP i DOGE.",
   "new_lessons": [
    "Model bez edge: 47% win rate, +0.15%/trade vs always-buy -0.40% \u2014 zero edge, zero pozycji.",
    "Panika (Fear 37, BTC -1.0%): zero pozycji, nie zwi\u0119kszaj ryzyka.",
@@ -11714,9 +11716,33 @@
    "Model bez edge: 48% win rate, 0.19%/trade vs always-buy -0.39%/trade \u2014 zero edge, zero pozycji.",
    "Panika (Fear 34, BTC -0.5%): zero pozycji, nie zwi\u0119kszaj ryzyka."
   ],
-  "seconds": 9.9
+  "seconds": 217.8
  },
  "brain_journal": [
+  {
+   "created_at": 1793673850542,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": -0.02,
+    "symbol_bias": {
+     "XRP": "reduce",
+     "DOGE": "reduce",
+     "BTC": "avoid",
+     "ETH": "avoid",
+     "SOL": "avoid"
+    },
+    "regime": "bear"
+   },
+   "reasoning": "Model nie ma edge (47% win rate, +0.15%/trade vs always-buy -0.40%), 5 ostatnich sygna\u0142\u00f3w dawa\u0142y 2 straty. Rynkowy strach wynosi 37, BTC spada o 1.0%. Zdecydowano na zero pozycji, zmniejszenie ryzyka dla XRP i DOGE.",
+   "new_lessons": [
+    "Model bez edge: 47% win rate, +0.15%/trade vs always-buy -0.40% \u2014 zero edge, zero pozycji.",
+    "Panika (Fear 37, BTC -1.0%): zero pozycji, nie zwi\u0119kszaj ryzyka.",
+    "Zero pozycji: 5 sygna\u0142y praktyczne = 2 straty, +0.79% vs always-buy -0.40% \u2014 model bez edge, zero pozycji."
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1793652069550,
    "source": "local",
@@ -11915,28 +11941,6 @@
     "Model bez edge: 49% win rate, 0.19%/trade vs always-buy -0.39% \u2014 zero edge, zero pozycji.",
     "CLM AUC 0.44 \u2014 bez skillu, nie ufaj drugiej opinii.",
     "Zero pozycji: 4 sygna\u0142y praktyczne = 2 straty, 0.58% vs always-buy -0.40% \u2014 model bez edge, zero pozycji."
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1793608441051,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.1,
-    "symbol_bias": {
-     "SOL": "avoid",
-     "BTC": "avoid",
-     "ETH": "avoid"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "Rynek jest w panice (Fear 34) po ataku na Binance, a wszystkie aktywa maj\u0105 negatywne 30-dniowe wyniki, wi\u0119c nie ma dowodu na przewag\u0119 modelu. Bot ma zero pozycji i historyczne wyniki praktyczne (+0.79% na 5 sygna\u0142ach, 2 straty), wi\u0119c obni\u017cam ryzyko i wstrzymuj\u0119 wej\u015bcia. SOL ma najwy\u017csz\u0105 pewno\u015b\u0107 (0.86), ale jest zablokowane przez regu\u0142\u0119 zmienno\u015bci BTC, a BTC i ETH maj\u0105 niskie pewno\u015bci, wi\u0119c unika je.",
-   "new_lessons": [
-    "Model bez edge: 49% win rate, 0.19%/trade vs always-buy -0.39% \u2014 zero edge, zero pozycji.",
-    "Panika (Fear 34, BTC -0.2%): zero pozycji, nie zwi\u0119kszaj ryzyka.",
-    "CLM AUC 0.44 \u2014 bez skillu, nie ufaj drugiej opinii."
    ],
    "equity_at": 1000.0
   }
