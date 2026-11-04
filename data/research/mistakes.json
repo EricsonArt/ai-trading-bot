@@ -1,57 +1,57 @@
 {
- "created_at": 1793744925472,
- "model_version": 71,
- "signals": 34194,
- "losers": 20332,
+ "created_at": 1793813261465,
+ "model_version": 72,
+ "signals": 36994,
+ "losers": 21712,
  "patterns": [
   {
    "feature": "atr",
    "meaning": "average true range as a fraction of price",
-   "strength": 0.173,
-   "losers_avg": 0.00581,
-   "winners_avg": 0.00681
-  },
-  {
-   "feature": "r_96",
-   "meaning": "return over the last 24 hours",
-   "strength": 0.172,
-   "losers_avg": -0.01372,
-   "winners_avg": -0.02242
+   "strength": 0.196,
+   "losers_avg": 0.0058,
+   "winners_avg": 0.00696
   },
   {
    "feature": "vol_16",
    "meaning": "volatility of 15-min returns over the last 4 hours",
-   "strength": 0.17,
-   "losers_avg": 0.00374,
-   "winners_avg": 0.0047
+   "strength": 0.183,
+   "losers_avg": 0.00371,
+   "winners_avg": 0.00481
   },
   {
-   "feature": "btc_r96",
-   "meaning": "Bitcoin return over the last 24 hours",
-   "strength": 0.149,
-   "losers_avg": -0.00864,
-   "winners_avg": -0.01399
+   "feature": "vol_96",
+   "meaning": "volatility of 15-min returns over 24 hours",
+   "strength": 0.183,
+   "losers_avg": 0.00418,
+   "winners_avg": 0.00504
+  },
+  {
+   "feature": "r_96",
+   "meaning": "return over the last 24 hours",
+   "strength": 0.16,
+   "losers_avg": -0.01394,
+   "winners_avg": -0.02249
   },
   {
    "feature": "btc_vol96",
    "meaning": "Bitcoin 24h volatility",
-   "strength": 0.145,
-   "losers_avg": 0.00262,
-   "winners_avg": 0.00288
+   "strength": 0.155,
+   "losers_avg": 0.00263,
+   "winners_avg": 0.00291
   }
  ],
  "candidates": [
   {
-   "name": "unikaj btc_vol96 >= 0.003235",
-   "gain_on_old_data": 0.0018
+   "name": "unikaj rel_r96 >= 0.003179",
+   "gain_on_old_data": 0.00158
   },
   {
-   "name": "unikaj btc_r96 <= -0.03429",
+   "name": "unikaj btc_r96 <= -0.01872",
+   "gain_on_old_data": 0.00157
+  },
+  {
+   "name": "unikaj rel_r96 >= 0.009801",
    "gain_on_old_data": 0.0014
-  },
-  {
-   "name": "unikaj d_ema50 <= -0.008246",
-   "gain_on_old_data": 0.00103
   }
  ]
 }
