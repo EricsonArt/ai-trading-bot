@@ -1,5 +1,5 @@
 {
- "generated_at": 1793744980951,
+ "generated_at": 1793753878127,
  "last_candle": 1793743200000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
@@ -10825,7 +10825,7 @@
    {
     "name": "Konto g\u0142\u00f3wne handlowa\u0142o na papierze 90+ dni",
     "ok": false,
-    "value": "37 dni"
+    "value": "38 dni"
    },
    {
     "name": "Co najmniej 100 zamkni\u0119tych transakcji",
@@ -11929,7 +11929,7 @@
   "regime": "bear"
  },
  "brain": {
-  "created_at": 1793736106726,
+  "created_at": 1793753878122,
   "source": "cloud",
   "model": "qwen3:4b",
   "directives": {
@@ -11944,7 +11944,7 @@
    },
    "regime": "bear"
   },
-  "reasoning": "Model nie ma edge (48% win rate, 0.19%/trade vs always-buy -0.39%), 5 ostatnich sygna\u0142\u00f3w dawa\u0142y 2 straty. Rynek w panic (Fear 34), BTC spada. Zmniejsz ryzyko dla XRP i DOGE, unikaj BTC, ETH, SOL.",
+  "reasoning": "Model nie ma edge (48% win rate, 0.19%/trade vs always-buy -0.39%), a rynki s\u0105 niepewne (fear 34, BTC -1.0%). Bez ryzyka, nie zwi\u0119kszaj ekspozycji. Zmniejsz ryzyko dla XRP i DOGE, unikaj BTC, ETH, SOL.",
   "new_lessons": [
    "Model bez edge: 48% win rate, 0.19%/trade vs always-buy -0.39% \u2014 zero edge, zero pozycji.",
    "Panika (Fear 34, BTC -1.0%): zero pozycji, nie zwi\u0119kszaj ryzyka.",
@@ -11964,9 +11964,33 @@
    "CLM AUC 0.44 \u2014 bez skillu, nie ufaj drugiej opinii.",
    "Model bez edge: 48% win rate, 0.19%/trade vs always-buy -0.39%/trade \u2014 zero edge, zero pozycji."
   ],
-  "seconds": 194.1
+  "seconds": 131.2
  },
  "brain_journal": [
+  {
+   "created_at": 1793753878122,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": -0.02,
+    "symbol_bias": {
+     "XRP": "reduce",
+     "DOGE": "reduce",
+     "BTC": "avoid",
+     "ETH": "avoid",
+     "SOL": "avoid"
+    },
+    "regime": "bear"
+   },
+   "reasoning": "Model nie ma edge (48% win rate, 0.19%/trade vs always-buy -0.39%), a rynki s\u0105 niepewne (fear 34, BTC -1.0%). Bez ryzyka, nie zwi\u0119kszaj ekspozycji. Zmniejsz ryzyko dla XRP i DOGE, unikaj BTC, ETH, SOL.",
+   "new_lessons": [
+    "Model bez edge: 48% win rate, 0.19%/trade vs always-buy -0.39% \u2014 zero edge, zero pozycji.",
+    "Panika (Fear 34, BTC -1.0%): zero pozycji, nie zwi\u0119kszaj ryzyka.",
+    "Zero pozycji: 5 sygna\u0142\u00f3w praktycznych = 2 straty, +0.79% vs always-buy -0.40% \u2014 model bez edge, zero pozycji."
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1793736106726,
    "source": "cloud",
@@ -12167,28 +12191,6 @@
     "regime": "bear"
    },
    "reasoning": "Rynek jest w panice (Fear 34) po ataku na Binance, a wszystkie sygna\u0142y modelowe s\u0105 poni\u017cej progu 0.75. Model ma zero edge (49% win rate, 0.19%/trade vs always-buy -0.39%), wi\u0119c nie zwi\u0119kszam ryzyka. Trzymam zero pozycji na BTC, ETH i SOL, bo to najwi\u0119ksze spadki 30d i najwy\u017csza zmienno\u015b\u0107.",
-   "new_lessons": [
-    "Model bez edge: 49% win rate, 0.19%/trade vs always-buy -0.39% \u2014 zero edge, zero pozycji.",
-    "Panika (Fear 34, BTC -0.2%): zero pozycji, nie zwi\u0119kszaj ryzyka.",
-    "Weekendowy rynek: ruchy dzi\u015b mog\u0105 podnie\u015b\u0107 poniedzia\u0142kowe ryzyko o 27-54% \u2014 ogranicz ekspozycj\u0119."
-   ],
-   "equity_at": 1000.0
-  },
-  {
-   "created_at": 1793626648337,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.02,
-    "symbol_bias": {
-     "BTC": "avoid",
-     "ETH": "avoid",
-     "SOL": "avoid"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "Rynek jest w panice (Fear 34) po ataku na Binance, a wszystkie sygna\u0142y modelowe s\u0105 poni\u017cej progu 0.75, wi\u0119c nie ma \u017cadnego potwierdzonego edge. Model ma 49% win rate i 0.19%/trade vs always-buy -0.39%, co oznacza brak skillu; praktyczne sygna\u0142y da\u0142y 2 straty. Z tego powodu utrzymuj\u0119 zero pozycji i nie zwi\u0119kszam ryzyka, ale nie rezygnuj\u0119 z symbol\u00f3w bez konkretnego powodu z danych.",
    "new_lessons": [
     "Model bez edge: 49% win rate, 0.19%/trade vs always-buy -0.39% \u2014 zero edge, zero pozycji.",
     "Panika (Fear 34, BTC -0.2%): zero pozycji, nie zwi\u0119kszaj ryzyka.",
