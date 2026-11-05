@@ -1,8 +1,8 @@
 {
- "created_at": 1793889266544,
+ "created_at": 1793892889832,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 7.0,
+ "seconds": 10.0,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.05,
@@ -13,17 +13,17 @@
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w ostro\u017cnym odbiciu po krachu z pa\u017adziernika, Fear & Greed na 50 (neutral). Wszystkie sygna\u0142y modelowe s\u0105 poni\u017cej progu 0.78, wi\u0119c bot nie ma \u017cadnych pozycji. Model ma zero edge (46% win rate, -0.00%/trade vs always-buy -0.39%/trade). Nie zwi\u0119kszaj ryzyka, nie zwi\u0119kszaj min_confidence_adj, nie otwieraj pozycji.",
+ "reasoning": "Rynek jest w ostro\u017cnym odbiciu po krachu z pa\u017adziernika, a model nie ma potwierdzonej przewagi (46% win rate, -0.00%/trade vs always-buy -0.39%/trade). Zero pozycji jest s\u0142uszne, wi\u0119c nie zwi\u0119kszam ryzyka, ale podnosz\u0119 pr\u00f3g wej\u015bcia o 0.05 i omijam BTC, ETH i SOL, kt\u00f3re maj\u0105 najgorsze szanse wed\u0142ug CLM i s\u0142absze momentum.",
  "new_lessons": [
   "Model bez edge: 46% win rate, -0.00%/trade vs always-buy -0.39%/trade \u2014 zero edge, zero pozycji.",
   "Panika (Fear 50): zero pozycji, nie zwi\u0119kszaj ryzyka.",
-  "CLM bez skill: AUC 0.44 vs 0.50 \u2014 ignoruj drugie zdanie."
+  "Zero pozycji: 5 sygna\u0142\u00f3w praktycznych = 2 straty, +0.79% vs always-buy -0.40% \u2014 model bez edge, zero pozycji."
  ],
  "lessons": [
   "Model bez edge: 46% win rate, -0.00%/trade vs always-buy -0.39%/trade \u2014 zero edge, zero pozycji.",
   "Panika (Fear 50): zero pozycji, nie zwi\u0119kszaj ryzyka.",
-  "CLM bez skill: AUC 0.44 vs 0.50 \u2014 ignoruj drugie zdanie.",
   "Zero pozycji: 5 sygna\u0142\u00f3w praktycznych = 2 straty, +0.79% vs always-buy -0.40% \u2014 model bez edge, zero pozycji.",
+  "CLM bez skill: AUC 0.44 vs 0.50 \u2014 ignoruj drugie zdanie.",
   "Panika (Fear 34): zero pozycji, nie zwi\u0119kszaj ryzyka.",
   "Model bez edge: 48% win rate, -0.03%/trade vs always-buy -0.50% \u2014 zero edge, zero pozycji.",
   "Model bez edge: 48% win rate, -0.03%/trade vs always-buy -0.01% \u2014 zero edge, zero pozycji.",
