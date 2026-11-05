@@ -1,34 +1,4 @@
 {
- "9456960d80": {
-  "name": "Filtr niskiej pozycji w bandach",
-  "source": "internet research: Bot traci\u0142 pieni\u0105dze przy sygna\u0142ach kupna, gdy cena by\u0142a blisko dolnej kraw\u0119dzi band Bollingera (bb) i przy s\u0142abym trendzie.",
-  "rule": "bb < 0.3 and d_ema50 < 0 and vz < 0.8",
-  "why": "Ten filtr odrzuca sygna\u0142y kupna, gdy cena jest blisko dolnej kraw\u0119dzi band Bollingera (bb < 0.3), cena jest poni\u017cej \u015bredniej 50-candy (d_ema50 < 0) i wolumen jest poni\u017cej \u015bredniej (vz < 0.8), co chroni przed kupnem w fazie spadkowej.",
-  "gain": 0.0,
-  "tested_at": 1793287412358,
-  "model_version": 61,
-  "adopted": false
- },
- "8a2ccbca7a": {
-  "name": "unikaj rel_r96 >= 0.001738",
-  "source": "own mistakes (auto)",
-  "rule": "rel_r96 < 0.00174",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: coin's 24h return minus Bitcoin's",
-  "gain": 0.0,
-  "tested_at": 1793287412358,
-  "model_version": 61,
-  "adopted": false
- },
- "1998a38a9f": {
-  "name": "unikaj btc_r96 >= 0.009141",
-  "source": "own mistakes (auto)",
-  "rule": "btc_r96 < 0.00914",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1793287412358,
-  "model_version": 61,
-  "adopted": false
- },
  "4a75b9d1c7": {
   "name": "unikaj rel_r96 >= 0.001491",
   "source": "own mistakes (auto)",
@@ -796,6 +766,36 @@
   "why": "Niski wolumen (vz < 0.69) oznacza s\u0142ab\u0105 p\u0142ynno\u015b\u0107 \u2014 dzi\u015b rynek jest w Fear, a niski wolumen zwi\u0119ksza ryzyko zablokowania pozycji.",
   "gain": 0.0,
   "tested_at": 1793857015248,
+  "model_version": 73,
+  "adopted": false
+ },
+ "c455ce65ad": {
+  "name": "RSI + wolumen + trend",
+  "source": "internet research: Badanie 'Beyond Anonymous Order Flow' (wallet identity jako predyktor kr\u00f3tkoterminowych zwrot\u00f3w) oraz obserwacje z digestu o s\u0142abym leverage i ostro\u017cnym odbiciu; bot traci\u0142 na sygna",
+  "rule": "rsi < 0.6 and vz > 0.75 and d_ema200 > 0.005",
+  "why": "RSI poni\u017cej 0.6 ogranicza ryzyko wyprzedania i fa\u0142szywych sygna\u0142\u00f3w, vz powy\u017cej 0.75 wymaga potwierdzenia wolumenem (bot traci\u0142 na niskiej vz), a d_ema200 powy\u017cej 0.005 wymaga trendu d\u0142ugoterminowego, co jest zgodne z obserwacj\u0105, \u017ce BTC trzyma si\u0119, ale leverage brakuje.",
+  "gain": 0.0,
+  "tested_at": 1793886217301,
+  "model_version": 73,
+  "adopted": false
+ },
+ "7a3ccf0af8": {
+  "name": "Rising volatility + momentum",
+  "source": "internet research: Badanie 'How market volatility responds to a preceding price trend' (asymetria zmienno\u015bci po trendzie) oraz obserwacje z digestu o ostro\u017cnym odbiciu po krachu.",
+  "rule": "vol_ratio > 1 and r_16 > 0.002 and rank_r96 > 0.6",
+  "why": "vol_ratio powy\u017cej 1 oznacza rosn\u0105c\u0105 zmienno\u015b\u0107, co jest zgodne z obserwacj\u0105, \u017ce sygna\u0142y w okresach powracaj\u0105cego stresu s\u0105 najs\u0142absze; r_16 powy\u017cej 0.002 wymaga kr\u00f3tkoterminowego momentum, a rank_r96 powy\u017cej 0.6 ogranicza ryzyko fa\u0142szywych sygna\u0142\u00f3w.",
+  "gain": 0.0,
+  "tested_at": 1793886217301,
+  "model_version": 73,
+  "adopted": false
+ },
+ "b4fbef77f7": {
+  "name": "Trend + Bollinger",
+  "source": "internet research: Badanie o kalibracji prognoz w okresach powracaj\u0105cego stresu oraz obserwacje z digestu o ostro\u017cnym odbiciu po krachu.",
+  "rule": "d_ema50 > 0.003 and d_ema200 > 0.008 and bb < 0.3",
+  "why": "d_ema50 i d_ema200 powy\u017cej progu wymagaj\u0105 trendu d\u0142ugoterminowego, a bb poni\u017cej 0.3 ogranicza ryzyko sygna\u0142\u00f3w w g\u00f3rnej cz\u0119\u015bci zakresu zmienno\u015bci, co jest zgodne z obserwacj\u0105, \u017ce bot traci\u0142 na sygna\u0142ach bez trendu (ema_trend, d_ema200).",
+  "gain": 0.0,
+  "tested_at": 1793886217301,
   "model_version": 73,
   "adopted": false
  }
