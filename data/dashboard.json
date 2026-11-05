@@ -1,9 +1,9 @@
 {
- "generated_at": 1793857015276,
- "last_candle": 1793854800000,
+ "generated_at": 1793858120358,
+ "last_candle": 1793856600000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
- "benchmark_return": -0.052100000000000035,
+ "benchmark_return": -0.052139999999999964,
  "series": [
   [
    1790508600000,
@@ -11164,6 +11164,12 @@
    1000.0,
    947.9,
    1007.94
+  ],
+  [
+   1793856600000,
+   1000.0,
+   947.86,
+   1007.94
   ]
  ],
  "main": {
@@ -11750,90 +11756,90 @@
  },
  "signals": {
   "BTC": {
-   "p": 0.5688,
+   "p": 0.305,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1793854800000
+   "ts": 1793856600000
   },
   "ETH": {
-   "p": 0.5758,
+   "p": 0.3389,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1793854800000
+   "ts": 1793856600000
   },
   "SOL": {
-   "p": 0.4871,
+   "p": 0.326,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1793854800000
+   "ts": 1793856600000
   },
   "XRP": {
-   "p": 0.6112,
+   "p": 0.3144,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1793854800000
+   "ts": 1793856600000
   },
   "DOGE": {
-   "p": 0.5602,
+   "p": 0.2721,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1793854800000
+   "ts": 1793856600000
   },
   "ADA": {
-   "p": 0.4097,
+   "p": 0.2284,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1793854800000
+   "ts": 1793856600000
   },
   "BNB": {
-   "p": 0.6021,
+   "p": 0.3582,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1793854800000
+   "ts": 1793856600000
   },
   "LINK": {
-   "p": 0.4978,
+   "p": 0.3047,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1793854800000
+   "ts": 1793856600000
   },
   "AVAX": {
-   "p": 0.5325,
+   "p": 0.2391,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1793854800000
+   "ts": 1793856600000
   },
   "LTC": {
-   "p": 0.6508,
+   "p": 0.4884,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1793854800000
+   "ts": 1793856600000
   },
   "DOT": {
-   "p": 0.6529,
+   "p": 0.59,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1793854800000
+   "ts": 1793856600000
   },
   "TRX": {
-   "p": 0.4674,
+   "p": 0.2568,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1793854800000
+   "ts": 1793856600000
   }
  },
  "prices": {
-  "BTC": 80488.0,
-  "ETH": 2426.38,
-  "SOL": 95.96,
-  "XRP": 1.3085,
-  "DOGE": 0.07666,
-  "ADA": 0.1975,
-  "BNB": 714.39,
-  "LINK": 11.537,
-  "AVAX": 8.758,
-  "LTC": 55.83,
-  "DOT": 0.95,
+  "BTC": 80485.0,
+  "ETH": 2423.96,
+  "SOL": 96.04,
+  "XRP": 1.3094,
+  "DOGE": 0.0766,
+  "ADA": 0.197,
+  "BNB": 713.95,
+  "LINK": 11.538,
+  "AVAX": 8.749,
+  "LTC": 55.78,
+  "DOT": 0.942,
   "TRX": 0.3198
  },
  "model": {
@@ -12299,7 +12305,7 @@
   "regime": "bear"
  },
  "brain": {
-  "created_at": 1793852918798,
+  "created_at": 1793856550538,
   "source": "local",
   "model": "mimo2.6:9b",
   "directives": {
@@ -12312,18 +12318,18 @@
    },
    "regime": "bear"
   },
-  "reasoning": "Rynek jest w Fear (34), a model ma zero edge: 48% win rate i -0.03%/trade vs always-buy -0.50%. Wszystkie 12 symboli s\u0105 poni\u017cej progu wej\u015bcia 0.78, wi\u0119c zero pozycji jest w\u0142a\u015bciw\u0105 decyzj\u0105. Nie zwi\u0119kszam ryzyka ani nie wybieram symbolu do unikni\u0119cia bez konkretnego powodu z danych.",
+  "reasoning": "Rynek jest w Fear (34), BTC +4.7% po 30 dniach -6.4%, a wszystkie sygna\u0142y modela s\u0105 poni\u017cej progu 0.83. Model ma zero edge (48% win rate, -0.03%/trade vs always-buy -0.50%), wi\u0119c zero pozycji. CLM ma AUC 0.44 vs 0.50 \u2014 ignoruj drugie zdanie. Zero pozycji: 5 sygna\u0142\u00f3w praktycznych = 2 straty, +0.79% vs always-buy -0.40% \u2014 model bez edge, zero pozycji.",
   "new_lessons": [
    "Model bez edge: 48% win rate, -0.03%/trade vs always-buy -0.50% \u2014 zero edge, zero pozycji.",
    "Panika (Fear 34): zero pozycji, nie zwi\u0119kszaj ryzyka.",
-   "CLM bez skill: AUC 0.44 vs 0.50 \u2014 ignoruj drugie zdanie."
+   "Zero pozycji: 5 sygna\u0142\u00f3w praktycznych = 2 straty, +0.79% vs always-buy -0.40% \u2014 model bez edge, zero pozycji."
   ],
   "lessons": [
    "Model bez edge: 48% win rate, -0.03%/trade vs always-buy -0.50% \u2014 zero edge, zero pozycji.",
    "Panika (Fear 34): zero pozycji, nie zwi\u0119kszaj ryzyka.",
+   "Zero pozycji: 5 sygna\u0142\u00f3w praktycznych = 2 straty, +0.79% vs always-buy -0.40% \u2014 model bez edge, zero pozycji.",
    "CLM bez skill: AUC 0.44 vs 0.50 \u2014 ignoruj drugie zdanie.",
    "Model bez edge: 48% win rate, -0.03%/trade vs always-buy -0.01% \u2014 zero edge, zero pozycji.",
-   "Zero pozycji: 5 sygna\u0142\u00f3w praktycznych = 2 straty, +0.79% vs always-buy -0.40% \u2014 model bez edge, zero pozycji.",
    "Model bez edge: 48% win rate, -0.03%/trade vs always-buy -0.50%/trade \u2014 zero edge, zero pozycji.",
    "Model bez edge: 46% win rate, -0.11%/trade vs always-buy -0.40% \u2014 zero edge, zero pozycji.",
    "Model bez edge: 48% win rate, 0.19%/trade vs always-buy -0.39% \u2014 zero edge, zero pozycji.",
@@ -12332,9 +12338,31 @@
    "Model bez edge: 47% win rate, +0.15%/trade vs always-buy -0.40% \u2014 zero edge, zero pozycji.",
    "Zero pozycji: 5 sygna\u0142y praktyczne = 2 straty, +0.79% vs always-buy -0.40% \u2014 model bez edge, zero pozycji."
   ],
-  "seconds": 5.3
+  "seconds": 6.0
  },
  "brain_journal": [
+  {
+   "created_at": 1793856550538,
+   "source": "local",
+   "model": "mimo2.6:9b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.1,
+    "symbol_bias": {
+     "BTC": "avoid",
+     "ETH": "avoid",
+     "SOL": "avoid"
+    },
+    "regime": "bear"
+   },
+   "reasoning": "Rynek jest w Fear (34), BTC +4.7% po 30 dniach -6.4%, a wszystkie sygna\u0142y modela s\u0105 poni\u017cej progu 0.83. Model ma zero edge (48% win rate, -0.03%/trade vs always-buy -0.50%), wi\u0119c zero pozycji. CLM ma AUC 0.44 vs 0.50 \u2014 ignoruj drugie zdanie. Zero pozycji: 5 sygna\u0142\u00f3w praktycznych = 2 straty, +0.79% vs always-buy -0.40% \u2014 model bez edge, zero pozycji.",
+   "new_lessons": [
+    "Model bez edge: 48% win rate, -0.03%/trade vs always-buy -0.50% \u2014 zero edge, zero pozycji.",
+    "Panika (Fear 34): zero pozycji, nie zwi\u0119kszaj ryzyka.",
+    "Zero pozycji: 5 sygna\u0142\u00f3w praktycznych = 2 straty, +0.79% vs always-buy -0.40% \u2014 model bez edge, zero pozycji."
+   ],
+   "equity_at": 1000.0
+  },
   {
    "created_at": 1793852918798,
    "source": "local",
@@ -12550,47 +12578,25 @@
     "Zero pozycji: 5 sygna\u0142\u00f3w praktycznych = 2 straty, +0.79% vs always-buy -0.40% \u2014 model bez edge, zero pozycji."
    ],
    "equity_at": 1000.0
-  },
-  {
-   "created_at": 1793820163952,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.05,
-    "symbol_bias": {
-     "BTC": "avoid",
-     "ETH": "avoid",
-     "SOL": "avoid"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "Rynek jest w Fear (34), wszystkie sygna\u0142y modela s\u0105 poni\u017cej progu 0.83, a model ma zero edge. Nie zwi\u0119kszamy ryzyka \u2014 zero pozycji, tylko obserwacja.",
-   "new_lessons": [
-    "Model bez edge: 48% win rate, -0.03%/trade vs always-buy -0.50% \u2014 zero edge, zero pozycji.",
-    "Panika (Fear 34): zero pozycji, nie zwi\u0119kszaj ryzyka.",
-    "Zero pozycji: 5 sygna\u0142\u00f3w praktycznych = 2 straty, +0.79% vs always-buy -0.40% \u2014 model bez edge, zero pozycji."
-   ],
-   "equity_at": 1000.0
   }
  ],
  "clm": {
-  "updated_at": 1793842138379,
+  "updated_at": 1793856679412,
   "latest": {
-   "BTC": 0.2325,
-   "ETH": 0.2357,
-   "SOL": 0.2075,
-   "XRP": 0.5582,
-   "DOGE": 0.3751,
-   "ADA": 0.4365,
-   "BNB": 0.2859,
-   "LINK": 0.3398,
-   "AVAX": 0.3496,
-   "LTC": 0.3359,
-   "DOT": 0.1721,
-   "TRX": 0.2509
+   "BTC": 0.2569,
+   "ETH": 0.2409,
+   "SOL": 0.2257,
+   "XRP": 0.5661,
+   "DOGE": 0.391,
+   "ADA": 0.4587,
+   "BNB": 0.2225,
+   "LINK": 0.3192,
+   "AVAX": 0.3392,
+   "LTC": 0.3331,
+   "DOT": 0.2169,
+   "TRX": 0.2497
   },
-  "seconds": 65.5,
+  "seconds": 66.5,
   "question": "Buying {sym} now and holding it for about two days will end in a profit.",
   "track_record": {
    "n": 1344,
