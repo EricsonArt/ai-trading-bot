@@ -1,8 +1,8 @@
 {
- "created_at": 1793969734098,
+ "created_at": 1793973363502,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 6.0,
+ "seconds": 6.8,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.05,
@@ -13,7 +13,7 @@
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w wyra\u017anym strachu (Fear 28) i wszystkie 12 symboli maj\u0105 prawdopodobie\u0144stwo poni\u017cej 0.58, a pr\u00f3g wej\u015bcia to 0.83 \u2014 model nie ma \u017cadnego sygna\u0142u do wej\u015bcia. Model ma zero edge: 47% win rate i +0.00%/trade wobec always-buy -0.38%/trade, wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka. Trzy symbole (BTC, ETH, SOL) maj\u0105 najwi\u0119ksze spadki 24h i 30d, wi\u0119c je pomijamy. CLM ma AUC 0.44, czyli nie ma przewagi, wi\u0119c jego prognozy nie s\u0105 wiarygodne.",
+ "reasoning": "Rynek jest w strachu (Fear 28), BTC spad\u0142 30 dni o 9.1%, a wszystkie 12 symboli maj\u0105 prawdopodobie\u0144stwo poni\u017cej 0.78 \u2014 model nie ma potwierdzonego edge, wi\u0119c zero pozycji. Przepisy, kt\u00f3re historycznie przegrywa\u0142y, mia\u0142y wsp\u00f3ln\u0105 cech\u0119: du\u017c\u0105 zmienno\u015b\u0107, g\u0142\u0119bokie spadki i s\u0142ab\u0105 relacj\u0119 do Bitcoina, dlatego filtry musz\u0105 odrzuca\u0107 sygna\u0142y w warunkach spadkowych. Zwi\u0119kszam pr\u00f3g wej\u015bcia o 0.05 i unikam BTC, ETH oraz SOL, bo maj\u0105 najwi\u0119ksze spadki 24h i 30d, a ryzyko w obecnych warunkach nie jest uzasadnione.",
  "new_lessons": [
   "Model bez edge: 47% win rate, +0.00%/trade vs always-buy -0.38%/trade \u2014 zero edge, zero pozycji.",
   "Rynek spadkowy (BTC 30d -9.1%) + Fear 28 \u2014 nie zwi\u0119kszaj ryzyka.",
