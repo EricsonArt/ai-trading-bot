@@ -1,11 +1,11 @@
 {
- "created_at": 1793962467893,
+ "created_at": 1793966102347,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 5.0,
+ "seconds": 9.6,
  "directives": {
   "risk_level": 0.2,
-  "min_confidence_adj": 0.05,
+  "min_confidence_adj": 0.1,
   "symbol_bias": {
    "BTC": "avoid",
    "ETH": "avoid",
@@ -13,7 +13,7 @@
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w silnym strachu (Fear 28), wszystkie 12 symboli maj\u0105 prob < 0.32 vs threshold 0.78, a model ma zero edge. Nie zwi\u0119kszam ryzyka w warunkach spadkowych.",
+ "reasoning": "Rynek jest w wyra\u017anym strachu (Fear 28), wszystkie 12 symboli maj\u0105 prob < 0.32 vs threshold 0.78, wi\u0119c model nie ma \u017cadnego edge. Wypr\u00f3bowany champion ma +5.91%/trade na 16 trades, ale agent league osi\u0105ga tylko +0.42%/trade i zero pozycji, co sugeruje, \u017ce przepisy nie dzia\u0142aj\u0105 w obecnych warunkach. Wobec spadk\u00f3w BTC 30d -9.1% i ETH 30d -13.8%, utrzymuj\u0119 zero pozycji i obni\u017cam ryzyko.",
  "new_lessons": [
   "Model bez edge: 47% win rate, +0.00%/trade vs always-buy -0.38%/trade \u2014 zero edge, zero pozycji.",
   "Rynek spadkowy (BTC 30d -9.1%) + Fear 28 \u2014 nie zwi\u0119kszaj ryzyka.",
