@@ -1,34 +1,4 @@
 {
- "4a75b9d1c7": {
-  "name": "unikaj rel_r96 >= 0.001491",
-  "source": "own mistakes (auto)",
-  "rule": "rel_r96 < 0.00149",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: coin's 24h return minus Bitcoin's",
-  "gain": 0.0,
-  "tested_at": 1793339882161,
-  "model_version": 62,
-  "adopted": false
- },
- "54ff2feb6c": {
-  "name": "unikaj rel_r96 >= 0.007288",
-  "source": "own mistakes (auto)",
-  "rule": "rel_r96 < 0.00729",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: coin's 24h return minus Bitcoin's",
-  "gain": 0.0,
-  "tested_at": 1793339882161,
-  "model_version": 62,
-  "adopted": false
- },
- "9c446c3d86": {
-  "name": "unikaj r_96 >= 0.01112",
-  "source": "own mistakes (auto)",
-  "rule": "r_96 < 0.01112",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1793339882161,
-  "model_version": 62,
-  "adopted": false
- },
  "dc652bfe3d": {
   "name": "Volatility Spike Filter",
   "source": "internet research: CoinDesk, Cointelegraph",
@@ -796,6 +766,36 @@
   "why": "d_ema50 i d_ema200 powy\u017cej progu wymagaj\u0105 trendu d\u0142ugoterminowego, a bb poni\u017cej 0.3 ogranicza ryzyko sygna\u0142\u00f3w w g\u00f3rnej cz\u0119\u015bci zakresu zmienno\u015bci, co jest zgodne z obserwacj\u0105, \u017ce bot traci\u0142 na sygna\u0142ach bez trendu (ema_trend, d_ema200).",
   "gain": 0.0,
   "tested_at": 1793946405073,
+  "model_version": 75,
+  "adopted": false
+ },
+ "ba2720a692": {
+  "name": "Odrzu\u0107 sygna\u0142y w fazie spadkowego momentum",
+  "source": "internet research: B\u0142\u0105d botu: losing trades mia\u0142y r_96 = -0.01418 i r_16 = -0.01425, czyli \u015brednio gorsze ni\u017c winning trades (-0.024, -0.024); badania o asymetrii zmienno\u015bci (trend \u2192 20-minutowy lag) ",
+  "rule": "r_16 < -0.002 and r_96 < -0.008 and vol_96 > 0.0024",
+  "why": "Bot kupuje w oknie, gdzie BTC ju\u017c spad\u0142 4h i 24h, a jego w\u0142asne dane pokazuj\u0105, \u017ce strata w tym oknie jest systematyczna. Filtr odrzuca sygna\u0142y, gdy kr\u00f3tkoterminowe momentum jest ju\u017c negatywne, co chroni przed wej\u015bciem w trend spadkowy.",
+  "gain": 0.0,
+  "tested_at": 1793959704340,
+  "model_version": 75,
+  "adopted": false
+ },
+ "bb0b97da5e": {
+  "name": "Odrzu\u0107 sygna\u0142y w s\u0142abych momentum rank",
+  "source": "internet research: B\u0142\u0105d botu: losing trades mia\u0142y rank_r96 = 0.1667 (najgorszy kwartyl) i rel_r96 = -0.02463; badanie o to\u017csamo\u015bci portfeli pokazuje, \u017ce przewaga kr\u00f3tkoterminowa jest realna, ale tylko",
+  "rule": "rank_r96 < 0.4 and rel_r96 < -0.005 and r_4 < -0.001",
+  "why": "Bot kupuje w oknie, gdzie coin jest w dolnej \u0107wiartce momentum i wyra\u017anie s\u0142abszy od Bitcoina; filtr odrzuca sygna\u0142y, gdy coin nie ma przewagi wzgl\u0119dem BTC.",
+  "gain": 0.0,
+  "tested_at": 1793959704340,
+  "model_version": 75,
+  "adopted": false
+ },
+ "76b9b480a9": {
+  "name": "Odrzu\u0107 sygna\u0142y w \u015bwiecach spadkowych",
+  "source": "internet research: B\u0142\u0105d botu: losing trades mia\u0142y r_4 = -0.00683 i r_1 = -0.00346, czyli \u015brednio gorsze ni\u017c winning trades (-0.024, -0.024); badanie o to\u017csamo\u015bci portfeli pokazuje, \u017ce przewaga kr\u00f3tkot",
+  "rule": "r_4 < -0.001 and r_1 < -0.0005 and body < -0.2",
+  "why": "Bot kupuje w oknie, gdzie \u015bwieca jest spadkowa i momentum 15-minutowe jest negatywne; filtr odrzuca sygna\u0142y, gdy \u015bwieca jest spadkowa, co chroni przed wej\u015bciem w trend spadkowy.",
+  "gain": 0.0,
+  "tested_at": 1793959704340,
   "model_version": 75,
   "adopted": false
  }
