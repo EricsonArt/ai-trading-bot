@@ -1,34 +1,4 @@
 {
- "dc652bfe3d": {
-  "name": "Volatility Spike Filter",
-  "source": "internet research: CoinDesk, Cointelegraph",
-  "rule": "vol_ratio > 1 and btc_r96 < -0.01231",
-  "why": "Z CoinDesk i Cointelegraph: quantum threat i volatylno\u015b\u0107 spowodowuj\u0105 wzrost (vol_ratio > 1). Bot przegra\u0142 w sytuacjach, gdy vol_ratio > 1 i Bitcoin mia\u0142 negatywne zwracanie (btc_r96 < -0.01231), co pokazuje, \u017ce wzrost volatylno\u015bci jest kluczowy dla filtracji.",
-  "gain": 0.0,
-  "tested_at": 1793383902338,
-  "model_version": 63,
-  "adopted": false
- },
- "9241861a22": {
-  "name": "Stablecoin Demand Filter",
-  "source": "internet research: Circle, Cointelegraph",
-  "rule": "btc_r96 > -0.005",
-  "why": "Z Circle i Cointelegraph: rosn\u0105ca demand stablecoins w nowych rynkach (40 kraj\u00f3w). Bot przegra\u0142 w sytuacjach, gdy Bitcoin mia\u0142 wysoki zwracanie (btc_r96 > -0.005), co pokazuje, \u017ce zbyt wysoka volatylno\u015b\u0107 w stabilnych kryptowalutach jest niebezpieczna.",
-  "gain": 0.0,
-  "tested_at": 1793383902338,
-  "model_version": 63,
-  "adopted": false
- },
- "51b9b7a9db": {
-  "name": "unikaj rel_r96 >= 0.007566",
-  "source": "own mistakes (auto)",
-  "rule": "rel_r96 < 0.00757",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: coin's 24h return minus Bitcoin's",
-  "gain": 0.0,
-  "tested_at": 1793383902338,
-  "model_version": 63,
-  "adopted": false
- },
  "22a3ed6881": {
   "name": "unikaj r_96 >= 0.01178",
   "source": "own mistakes (auto)",
@@ -796,6 +766,36 @@
   "why": "Bot kupuje w oknie, gdzie \u015bwieca jest spadkowa i momentum 15-minutowe jest negatywne; filtr odrzuca sygna\u0142y, gdy \u015bwieca jest spadkowa, co chroni przed wej\u015bciem w trend spadkowy.",
   "gain": 0.0,
   "tested_at": 1793994871311,
+  "model_version": 76,
+  "adopted": false
+ },
+ "d8a6941552": {
+  "name": "Wysoka zmienno\u015b\u0107 w kr\u00f3tkim terminie",
+  "source": "internet research: arXiv research: How market volatility responds to a preceding price trend",
+  "rule": "vol_96 < 0.0035 and btc_r96 < -0.00038",
+  "why": "W ostatnich 24 godzinach Bitcoin straci\u0142 2,493% (btc_r96 < -0.00038), a wyceny wskazuj\u0105 na silne obecne obni\u017canie. Zgodnie z arXiviem 'How market volatility responds to a preceding price trend', w krypty w pierwszych 20 minutach po tendencji obni\u017cania zmienno\u015b\u0107 wzrasta, co zwi\u0119ksza ryzyko strat dla ",
+  "gain": 0.0,
+  "tested_at": 1794036766230,
+  "model_version": 76,
+  "adopted": false
+ },
+ "b51b05bb84": {
+  "name": "Niski wska\u017anik RSI w kr\u00f3tkim terminie",
+  "source": "internet research: arXiv research: Beyond Anonymous Order Flow",
+  "rule": "rsi < 0.6 and vol_96 < 0.0035",
+  "why": "W ostatnich 24 godzinach RSI(14) wynosi 0.35 (0.3528), co jest zbyt niski dla stabilnego rynku. Zgodnie z arXiviem 'Beyond Anonymous Order Flow', niskie wska\u017aniki RSI w po\u0142\u0105czeniu z wysok\u0105 zmienno\u015bci\u0105 mog\u0105 wskazywa\u0107 na nieprzewidywalne ruchy. W 22% strat bot\u00f3w RSI < 0.6 (0.3528).",
+  "gain": 0.0,
+  "tested_at": 1794036766230,
+  "model_version": 76,
+  "adopted": false
+ },
+ "9a5bb0f06c": {
+  "name": "Wysoka zmienno\u015b\u0107 w d\u0142ugim terminie",
+  "source": "internet research: arXiv research: Aggregate Calibration Can Mask Stress-State Undercoverage",
+  "rule": "r_672 < -0.0108",
+  "why": "W ostatnich 7 dniach Bitcoin straci\u0142 10,8% (r_672 < -0.0108), co wskazuje na silne obni\u017canie. Zgodnie z arXiviem 'Aggregate Calibration Can Mask Stress-State Undercoverage', w sytuacjach wysokiego ryzyka zmienno\u015b\u0107 w d\u0142ugim terminie mo\u017ce by\u0107 nieprzewidywalna. W 22% strat bot\u00f3w r_672 < -0.0108.",
+  "gain": 0.0,
+  "tested_at": 1794036766230,
   "model_version": 76,
   "adopted": false
  }
