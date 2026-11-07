@@ -1,11 +1,11 @@
 {
- "created_at": 1794036792696,
+ "created_at": 1794040346255,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 45.0,
+ "seconds": 12.8,
  "directives": {
   "risk_level": 0.2,
-  "min_confidence_adj": 0.1,
+  "min_confidence_adj": 0.0,
   "symbol_bias": {
    "BTC": "avoid",
    "ETH": "avoid",
@@ -13,13 +13,16 @@
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w silnym spadku (BTC 30d -8.8%, Fear 25) i model nie ma potwierdzonej przewagi (45% win rate, \u015brednia -0.11%/trade vs always-buy -0.39%/trade). Wszystkie sygna\u0142y maj\u0105 prawdopodobie\u0144stwo poni\u017cej threshold 0.71, wi\u0119c zero edge i zero pozycji. Trzymam si\u0119 zalecenia zero pozycji i nie zwi\u0119kszam ryzyka.",
+ "reasoning": "Model nie ma udowodnionej przewagi: 46% win rate i \u015brednia -0.13%/trade, gorsza ni\u017c always-buy -0.39%/trade. Rynek jest w wyra\u017anym spadku (BTC 30d -8.6%, Fear 25), wi\u0119c nie zwi\u0119kszam ryzyka. Wszystkie sygna\u0142y s\u0105 poni\u017cej progu 0.83, wi\u0119c zero pozycji i zero edge.",
  "new_lessons": [
-  "Model bez edge: 45% win rate, avg -0.11%/trade vs always-buy -0.39%/trade \u2014 zero edge, zero pozycji.",
-  "Rynek spadkowy (BTC 30d -8.8%) + Fear 25 \u2014 nie zwi\u0119kszaj ryzyka.",
-  "Zero edge: wszystkie sygna\u0142y < 0.71 vs threshold 0.71 \u2014 zero edge, zero pozycji."
+  "Model bez edge: 46% win rate, avg -0.13%/trade vs always-buy -0.39%/trade \u2014 zero edge, zero pozycji.",
+  "Rynek spadkowy (BTC 30d -8.6%) + Fear 25 \u2014 nie zwi\u0119kszaj ryzyka.",
+  "Zero edge: wszystkie sygna\u0142y < 0.83 vs threshold 0.83 \u2014 zero edge, zero pozycji."
  ],
  "lessons": [
+  "Model bez edge: 46% win rate, avg -0.13%/trade vs always-buy -0.39%/trade \u2014 zero edge, zero pozycji.",
+  "Rynek spadkowy (BTC 30d -8.6%) + Fear 25 \u2014 nie zwi\u0119kszaj ryzyka.",
+  "Zero edge: wszystkie sygna\u0142y < 0.83 vs threshold 0.83 \u2014 zero edge, zero pozycji.",
   "Model bez edge: 45% win rate, avg -0.11%/trade vs always-buy -0.39%/trade \u2014 zero edge, zero pozycji.",
   "Rynek spadkowy (BTC 30d -8.8%) + Fear 25 \u2014 nie zwi\u0119kszaj ryzyka.",
   "Zero edge: wszystkie sygna\u0142y < 0.71 vs threshold 0.71 \u2014 zero edge, zero pozycji.",
@@ -28,10 +31,7 @@
   "Wszystkie sygna\u0142y maj\u0105 prawdopodobie\u0144stwo < 0.71 vs threshold 0.71 \u2014 zero edge",
   "Rynek spadkowy (BTC 30d -11.2%) + strach (Fear 28) \u2014 nie zwi\u0119kszaj ryzyka",
   "Wszystkie 12 sygna\u0142\u00f3w maj\u0105 prawdopodobie\u0144stwo < 0.32 vs threshold 0.78 \u2014 zero edge",
-  "Model bez edge: +0.00%/trade vs always-buy -0.38%/trade \u2014 zero pozycji.",
-  "Rynek spadkowy (BTC 30d -8.8%) + Fear 28 \u2014 nie zwi\u0119kszaj ryzyka.",
-  "Zero edge: model bez edge, zero pozycji.",
-  "Model bez edge: 47% win rate, +0.00%/trade vs always-buy -0.38%/trade \u2014 zero edge, zero pozycji."
+  "Model bez edge: +0.00%/trade vs always-buy -0.38%/trade \u2014 zero pozycji."
  ],
- "equity_at": 999.38
+ "equity_at": 999.64
 }
