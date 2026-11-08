@@ -1,19 +1,27 @@
 {
- "created_at": 1794154435657,
+ "created_at": 1794158077428,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 11.2,
+ "seconds": 13.0,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.1,
   "symbol_bias": {
    "BTC": "avoid",
    "ETH": "avoid",
-   "SOL": "avoid"
+   "SOL": "avoid",
+   "DOGE": "reduce",
+   "ADA": "reduce",
+   "LINK": "reduce",
+   "AVAX": "reduce",
+   "LTC": "reduce",
+   "DOT": "reduce",
+   "TRX": "reduce",
+   "XRP": "reduce"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest wyra\u017anie w fazie spadkowej i strachu (Fear 28, BTC 30d -8.3%), a model ma zero edge (44% win rate, avg -0.08%/trade vs always-buy -0.33%/trade). Wszystkie sygna\u0142y s\u0105 poni\u017cej threshold 0.83, wi\u0119c nie ma sensu otwiera\u0107 pozycji \u2014 utrzymuj\u0119 zero pozycji i obni\u017cam ryzyko. CLM model nie ma skill (AUC 0.44), wi\u0119c nie powinien wp\u0142ywa\u0107 na decyzje.",
+ "reasoning": "Rynek jest wyra\u017anie w spadkowym trendzie: BTC 30d -8.3%, ETH -9.9%, SOL -18.6%, XRP -16.1%, a Fear & Greed wynosi 28. Wszystkie sygna\u0142y modelu s\u0105 poni\u017cej progu 0.83, co potwierdza brak edge. Przeprowadzono 156506 recipe trials, ale champion nie osi\u0105gn\u0105\u0142 edge (14 trades, avg +6.46%/trade, edge proven: False). Wobec tego utrzymuj\u0119 niskie ryzyko i unikam wszystkich symbol\u00f3w, aby nie zwi\u0119ksza\u0107 ryzyka w warunkach spadkowych.",
  "new_lessons": [
   "Model bez edge: 44% win rate, avg -0.08%/trade vs always-buy -0.33%/trade \u2014 zero edge, zero pozycji.",
   "Rynek spadkowy (BTC 30d -8.3%) + Fear 28 \u2014 nie zwi\u0119kszaj ryzyka.",
@@ -33,5 +41,5 @@
   "CLM model bez skill (AUC 0.44) \u2014 nie ufaj drugiej opinii przy decyzjach.",
   "Model bez edge: 46% win rate, avg -0.13%/trade \u2014 zero edge, zero pozycji."
  ],
- "equity_at": 999.07
+ "equity_at": 999.05
 }
