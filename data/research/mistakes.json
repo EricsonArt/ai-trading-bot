@@ -1,49 +1,57 @@
 {
- "created_at": 1794083580552,
- "model_version": 78,
- "signals": 35337,
- "losers": 21192,
+ "created_at": 1794140500915,
+ "model_version": 79,
+ "signals": 34832,
+ "losers": 20754,
  "patterns": [
   {
    "feature": "atr",
    "meaning": "average true range as a fraction of price",
-   "strength": 0.174,
-   "losers_avg": 0.00575,
-   "winners_avg": 0.00674
-  },
-  {
-   "feature": "vol_16",
-   "meaning": "volatility of 15-min returns over the last 4 hours",
-   "strength": 0.167,
-   "losers_avg": 0.00366,
-   "winners_avg": 0.00461
+   "strength": 0.202,
+   "losers_avg": 0.00574,
+   "winners_avg": 0.00695
   },
   {
    "feature": "r_96",
    "meaning": "return over the last 24 hours",
-   "strength": 0.166,
-   "losers_avg": -0.01368,
-   "winners_avg": -0.02193
+   "strength": 0.199,
+   "losers_avg": -0.01439,
+   "winners_avg": -0.02457
   },
   {
-   "feature": "btc_vol96",
-   "meaning": "Bitcoin 24h volatility",
-   "strength": 0.147,
-   "losers_avg": 0.00265,
-   "winners_avg": 0.00291
+   "feature": "vol_16",
+   "meaning": "volatility of 15-min returns over the last 4 hours",
+   "strength": 0.184,
+   "losers_avg": 0.00368,
+   "winners_avg": 0.0048
   },
   {
-   "feature": "btc_r96",
-   "meaning": "Bitcoin return over the last 24 hours",
-   "strength": 0.143,
-   "losers_avg": -0.00907,
-   "winners_avg": -0.0141
+   "feature": "rel_r96",
+   "meaning": "coin's 24h return minus Bitcoin's",
+   "strength": 0.175,
+   "losers_avg": -0.00485,
+   "winners_avg": -0.01002
+  },
+  {
+   "feature": "d_ema200",
+   "meaning": "price vs its 200-candle (50 h) average",
+   "strength": 0.175,
+   "losers_avg": -0.01465,
+   "winners_avg": -0.0209
   }
  ],
  "candidates": [
   {
-   "name": "unikaj r_96 <= -0.03121",
-   "gain_on_old_data": 0.00161
+   "name": "unikaj rel_r96 >= 0.002805",
+   "gain_on_old_data": 0.00243
+  },
+  {
+   "name": "unikaj rel_r96 >= 0.008859",
+   "gain_on_old_data": 0.00235
+  },
+  {
+   "name": "unikaj rel_r96 >= 0.01942",
+   "gain_on_old_data": 0.00104
   }
  ]
 }
