@@ -1,9 +1,9 @@
 {
- "generated_at": 1794165303566,
- "last_candle": 1794163500000,
+ "generated_at": 1794166841658,
+ "last_candle": 1794165300000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
- "benchmark_return": -0.10563,
+ "benchmark_return": -0.10632000000000008,
  "series": [
   [
    1790508600000,
@@ -12192,27 +12192,33 @@
    988.18
   ],
   [
-   1794163500000,
-   999.12,
-   894.37,
+   1794164400000,
+   999.0,
+   893.23,
+   988.18
+  ],
+  [
+   1794165300000,
+   999.04,
+   893.68,
    988.18
   ]
  ],
  "main": {
-  "equity": 999.12,
-  "return": -0.0008799999999999919,
+  "equity": 999.04,
+  "return": -0.0009600000000000719,
   "cash": 969.54,
   "positions": [
    {
     "symbol": "XRP",
     "entry_ts": 1793978100000,
     "entry_px": 1.19149545,
-    "price": 1.1581,
-    "value": 29.58,
-    "pnl_pct": -0.028028180888143517,
+    "price": 1.1551,
+    "value": 29.5,
+    "pnl_pct": -0.030546025165265944,
     "tp_px": 1.3684191477103422,
     "sl_px": 1.0440590352413812,
-    "held": 207,
+    "held": 209,
     "horizon": 288
    }
   ],
@@ -12929,90 +12935,90 @@
  },
  "signals": {
   "BTC": {
-   "p": 0.1235,
+   "p": 0.1484,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1794163500000
+   "ts": 1794165300000
   },
   "ETH": {
-   "p": 0.2259,
+   "p": 0.291,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1794163500000
+   "ts": 1794165300000
   },
   "SOL": {
-   "p": 0.106,
+   "p": 0.1162,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1794163500000
+   "ts": 1794165300000
   },
   "XRP": {
-   "p": 0.2262,
+   "p": 0.4449,
    "threshold": 0.83,
    "action": "holding",
-   "ts": 1794163500000
+   "ts": 1794165300000
   },
   "DOGE": {
-   "p": 0.1837,
+   "p": 0.2168,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1794163500000
+   "ts": 1794165300000
   },
   "ADA": {
-   "p": 0.0802,
+   "p": 0.0994,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1794163500000
+   "ts": 1794165300000
   },
   "BNB": {
-   "p": 0.1651,
+   "p": 0.1975,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1794163500000
+   "ts": 1794165300000
   },
   "LINK": {
-   "p": 0.1693,
+   "p": 0.2266,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1794163500000
+   "ts": 1794165300000
   },
   "AVAX": {
-   "p": 0.2051,
+   "p": 0.1904,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1794163500000
+   "ts": 1794165300000
   },
   "LTC": {
-   "p": 0.1582,
+   "p": 0.1866,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1794163500000
+   "ts": 1794165300000
   },
   "DOT": {
-   "p": 0.0863,
+   "p": 0.1318,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1794163500000
+   "ts": 1794165300000
   },
   "TRX": {
-   "p": 0.0731,
+   "p": 0.09,
    "threshold": 0.83,
    "action": "wait",
-   "ts": 1794163500000
+   "ts": 1794165300000
   }
  },
  "prices": {
-  "BTC": 75943.12,
-  "ETH": 2236.47,
-  "SOL": 89.56,
-  "XRP": 1.1581,
-  "DOGE": 0.07142,
-  "ADA": 0.1804,
-  "BNB": 698.35,
-  "LINK": 10.716,
-  "AVAX": 8.214,
-  "LTC": 51.73,
-  "DOT": 0.894,
+  "BTC": 75884.42,
+  "ETH": 2232.94,
+  "SOL": 89.54,
+  "XRP": 1.1551,
+  "DOGE": 0.07125,
+  "ADA": 0.1801,
+  "BNB": 697.71,
+  "LINK": 10.691,
+  "AVAX": 8.186,
+  "LTC": 51.62,
+  "DOT": 0.891,
   "TRX": 0.3204
  },
  "model": {
@@ -13473,12 +13479,20 @@
   "symbol_bias": {
    "BTC": "avoid",
    "ETH": "avoid",
-   "SOL": "avoid"
+   "SOL": "avoid",
+   "XRP": "reduce",
+   "DOGE": "reduce",
+   "ADA": "reduce",
+   "LINK": "reduce",
+   "AVAX": "reduce",
+   "LTC": "reduce",
+   "DOT": "reduce",
+   "TRX": "reduce"
   },
   "regime": "bear"
  },
  "brain": {
-  "created_at": 1794161713875,
+  "created_at": 1794165337705,
   "source": "local",
   "model": "mimo2.6:9b",
   "directives": {
@@ -13487,18 +13501,28 @@
    "symbol_bias": {
     "BTC": "avoid",
     "ETH": "avoid",
-    "SOL": "avoid"
+    "SOL": "avoid",
+    "XRP": "reduce",
+    "DOGE": "reduce",
+    "ADA": "reduce",
+    "LINK": "reduce",
+    "AVAX": "reduce",
+    "LTC": "reduce",
+    "DOT": "reduce",
+    "TRX": "reduce"
    },
    "regime": "bear"
   },
-  "reasoning": "Rynek jest wyra\u017anie w fazie spadkowej: BTC -8.3% na 30 dni, ETH -9.9%, SOL -18.6%, XRP -16.1%, a Fear & Greed wynosi 28. Model ma zero edge: 44% win rate i \u015brednia -0.08%/trade wobec always-buy -0.33%/trade, a wszystkie sygna\u0142y s\u0105 poni\u017cej threshold 0.83. Dlatego utrzymuj\u0119 zero pozycji, nie zwi\u0119kszam ryzyka i nie zwi\u0119kszam min_confidence_adj powy\u017cej 0.10. XRP pozostaje w holdingu, ale jego stop 1.04406 jest ju\u017c blisko ceny 1.1589, wi\u0119c nie zwi\u0119kszam ryzyka.",
+  "reasoning": "Model ma zero edge \u2014 44% win rate i \u015brednia -0.08%/trade, a wszystkie sygna\u0142y s\u0105 poni\u017cej progu 0.83. Rynek jest w wyra\u017anym spadku (BTC 30d -8.2%, Fear 28), wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka. CLM model nie ma skillu (AUC 0.44), wi\u0119c nie mo\u017ce zmienia\u0107 decyzji. Rekomenduj\u0119 zero pozycji i zero ryzyka.",
   "new_lessons": [
    "Model bez edge: 44% win rate, avg -0.08%/trade vs always-buy -0.33%/trade \u2014 zero edge, zero pozycji.",
-   "Rynek spadkowy (BTC 30d -8.3%) + Fear 28 \u2014 nie zwi\u0119kszaj ryzyka.",
-   "Zero edge: wszystkie sygna\u0142y < 0.33 vs threshold 0.83 \u2014 zero edge, zero pozycji."
+   "Rynek spadkowy (BTC 30d -8.2%) + Fear 28 \u2014 nie zwi\u0119kszaj ryzyka.",
+   "Zero edge: wszystkie sygna\u0142y < 0.83 vs threshold 0.83 \u2014 zero edge, zero pozycji."
   ],
   "lessons": [
    "Model bez edge: 44% win rate, avg -0.08%/trade vs always-buy -0.33%/trade \u2014 zero edge, zero pozycji.",
+   "Rynek spadkowy (BTC 30d -8.2%) + Fear 28 \u2014 nie zwi\u0119kszaj ryzyka.",
+   "Zero edge: wszystkie sygna\u0142y < 0.83 vs threshold 0.83 \u2014 zero edge, zero pozycji.",
    "Rynek spadkowy (BTC 30d -8.3%) + Fear 28 \u2014 nie zwi\u0119kszaj ryzyka.",
    "Zero edge: wszystkie sygna\u0142y < 0.33 vs threshold 0.83 \u2014 zero edge, zero pozycji.",
    "Rynek spadkowy (BTC 30d -6.8%) + Fear 28 \u2014 nie zwi\u0119kszaj ryzyka.",
@@ -13507,13 +13531,41 @@
    "Model bez edge: 46% win rate, avg -0.13%/trade \u2014 zero edge, zero pozycji",
    "Wszystkie sygna\u0142y < 0.83 vs threshold 0.83 \u2014 zero edge, zero pozycji",
    "Zero edge: 46% win rate, avg -0.13%/trade vs always-buy -0.39% \u2014 zero edge, zero pozycji.",
-   "Rynek spadkowy (BTC 30d -6.8%) + Fear 25 \u2014 nie zwi\u0119kszaj ryzyka.",
-   "CLM model bez skill (AUC 0.44) \u2014 nie ufaj drugiej opinii przy decyzjach.",
-   "Model bez edge: 46% win rate, avg -0.13%/trade \u2014 zero edge, zero pozycji."
+   "Rynek spadkowy (BTC 30d -6.8%) + Fear 25 \u2014 nie zwi\u0119kszaj ryzyka."
   ],
-  "seconds": 12.7
+  "seconds": 11.4
  },
  "brain_journal": [
+  {
+   "created_at": 1794165337705,
+   "source": "local",
+   "model": "mimo2.6:9b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.1,
+    "symbol_bias": {
+     "BTC": "avoid",
+     "ETH": "avoid",
+     "SOL": "avoid",
+     "XRP": "reduce",
+     "DOGE": "reduce",
+     "ADA": "reduce",
+     "LINK": "reduce",
+     "AVAX": "reduce",
+     "LTC": "reduce",
+     "DOT": "reduce",
+     "TRX": "reduce"
+    },
+    "regime": "bear"
+   },
+   "reasoning": "Model ma zero edge \u2014 44% win rate i \u015brednia -0.08%/trade, a wszystkie sygna\u0142y s\u0105 poni\u017cej progu 0.83. Rynek jest w wyra\u017anym spadku (BTC 30d -8.2%, Fear 28), wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka. CLM model nie ma skillu (AUC 0.44), wi\u0119c nie mo\u017ce zmienia\u0107 decyzji. Rekomenduj\u0119 zero pozycji i zero ryzyka.",
+   "new_lessons": [
+    "Model bez edge: 44% win rate, avg -0.08%/trade vs always-buy -0.33%/trade \u2014 zero edge, zero pozycji.",
+    "Rynek spadkowy (BTC 30d -8.2%) + Fear 28 \u2014 nie zwi\u0119kszaj ryzyka.",
+    "Zero edge: wszystkie sygna\u0142y < 0.83 vs threshold 0.83 \u2014 zero edge, zero pozycji."
+   ],
+   "equity_at": 999.12
+  },
   {
    "created_at": 1794161713875,
    "source": "local",
@@ -13755,28 +13807,6 @@
     "CLM model bez skill (AUC 0.44) \u2014 nie ufaj drugiej opinii przy decyzjach."
    ],
    "equity_at": 999.2
-  },
-  {
-   "created_at": 1794069408102,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.1,
-    "symbol_bias": {
-     "BTC": "avoid",
-     "SOL": "avoid",
-     "XRP": "avoid"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "Rynek jest w silnym spadku (BTC 30d -6.8%, Fear 25), a model ma zero edge: 46% win rate i \u015bredni wynik -0.13%/trade, co jest gorsze ni\u017c always-buy. Wszystkie sygna\u0142y s\u0105 poni\u017cej threshold 0.83, wi\u0119c nie ma podstaw do zwi\u0119kszania ryzyka. XRP jest ju\u017c w pozycji, ale jego sygna\u0142 (0.80) jest poni\u017cej threshold, wi\u0119c warto go rozwa\u017cy\u0107 do zamkni\u0119cia.",
-   "new_lessons": [
-    "Model bez edge: 46% win rate, avg -0.13%/trade vs always-buy -0.39%/trade \u2014 zero edge, zero pozycji.",
-    "Rynek spadkowy (BTC 30d -6.8%) + Fear 25 \u2014 nie zwi\u0119kszaj ryzyka.",
-    "Zero edge: wszystkie sygna\u0142y < 0.83 vs threshold 0.83 \u2014 zero edge, zero pozycji."
-   ],
-   "equity_at": 999.13
   }
  ],
  "clm": {
