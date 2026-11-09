@@ -63,7 +63,7 @@
  },
  "description": "position style, buy when the model is at least 73% sure, target 2.4x / stop 2x the expected move, hold up to 72 h, 25% of equity per trade, only if btc_vol96 > 0.0024 and btc_r96 < -0.01231 and rel_r672 < -0.01085 and btc_r16 < 0.00602",
  "model_version": 80,
- "generation": 123,
+ "generation": 124,
  "reason": "",
  "challengers": [
   {
@@ -75,28 +75,28 @@
    "size": 0.25,
    "rules": [
     {
-     "feature": "btc_r96",
-     "op": "<",
-     "value": -0.0138
-    },
-    {
-     "feature": "btc_r16",
-     "op": "<",
-     "value": -0.00173
+     "feature": "btc_vol96",
+     "op": ">",
+     "value": 0.0031
     },
     {
      "feature": "rel_r672",
      "op": "<",
-     "value": -0.03887
+     "value": -0.03137
     },
     {
-     "feature": "btc_vol96",
-     "op": ">",
-     "value": 0.00229
+     "feature": "btc_r96",
+     "op": "<",
+     "value": -0.01371
+    },
+    {
+     "feature": "rsi",
+     "op": "<",
+     "value": 0.6441
     }
    ],
-   "id": "1a11737caa",
-   "parent": "4ac216ec8b",
+   "id": "c45394708d",
+   "parent": "6b2d4c2424",
    "origin": "mutation: threshold"
   },
   {
@@ -108,95 +108,95 @@
    "size": 0.25,
    "rules": [
     {
-     "feature": "rel_r672",
-     "op": "<",
-     "value": -0.03887
-    },
-    {
      "feature": "btc_vol96",
      "op": ">",
-     "value": 0.0023
-    },
-    {
-     "feature": "btc_r16",
-     "op": "<",
-     "value": -0.00173
-    },
-    {
-     "feature": "btc_r96",
-     "op": "<",
-     "value": -0.0138
-    }
-   ],
-   "id": "6c75da82db",
-   "parent": "4c87b170b2+45c02f4bdd",
-   "origin": "crossover"
-  },
-  {
-   "style": "position",
-   "threshold": 0.57,
-   "tp": 2.4,
-   "sl": 0.8,
-   "hold": 1.5,
-   "size": 0.25,
-   "rules": [
-    {
-     "feature": "rel_r672",
-     "op": "<",
-     "value": -0.03887
-    },
-    {
-     "feature": "btc_vol96",
-     "op": ">",
-     "value": 0.0023
-    },
-    {
-     "feature": "btc_r96",
-     "op": "<",
-     "value": -0.0138
-    },
-    {
-     "feature": "btc_r16",
-     "op": "<",
-     "value": -0.00179
-    }
-   ],
-   "id": "90d392b46f",
-   "parent": "6c75da82db+6346177a60",
-   "origin": "crossover"
-  },
-  {
-   "style": "position",
-   "threshold": 0.57,
-   "tp": 2.4,
-   "sl": 0.8,
-   "hold": 1.5,
-   "size": 0.25,
-   "rules": [
-    {
-     "feature": "btc_r16",
-     "op": "<",
-     "value": -0.00173
-    },
-    {
-     "feature": "btc_r96",
-     "op": "<",
-     "value": -0.0137
+     "value": 0.0031
     },
     {
      "feature": "rel_r672",
      "op": "<",
-     "value": -0.03887
+     "value": -0.03137
     },
     {
-     "feature": "btc_vol96",
-     "op": ">",
-     "value": 0.0023
+     "feature": "btc_r96",
+     "op": "<",
+     "value": -0.01371
+    },
+    {
+     "feature": "rsi",
+     "op": "<",
+     "value": 0.62031
     }
    ],
-   "id": "38a60a42e1",
-   "parent": "de93496bd9",
+   "id": "f07a49799b",
+   "parent": "2f39529e49",
    "origin": "mutation: threshold"
+  },
+  {
+   "style": "position",
+   "threshold": 0.57,
+   "tp": 2.4,
+   "sl": 0.8,
+   "hold": 1.5,
+   "size": 0.25,
+   "rules": [
+    {
+     "feature": "btc_vol96",
+     "op": ">",
+     "value": 0.0031
+    },
+    {
+     "feature": "rel_r672",
+     "op": "<",
+     "value": -0.03137
+    },
+    {
+     "feature": "btc_r96",
+     "op": "<",
+     "value": -0.01371
+    },
+    {
+     "feature": "vol_96",
+     "op": ">",
+     "value": 0.00325
+    }
+   ],
+   "id": "09f67bb577",
+   "parent": "451b7eebc1",
+   "origin": "mutation: threshold"
+  },
+  {
+   "style": "position",
+   "threshold": 0.56,
+   "tp": 2.4,
+   "sl": 0.8,
+   "hold": 1.5,
+   "size": 0.25,
+   "rules": [
+    {
+     "feature": "btc_r96",
+     "op": "<",
+     "value": -0.01371
+    },
+    {
+     "feature": "rsi",
+     "op": "<",
+     "value": 0.6
+    },
+    {
+     "feature": "btc_vol96",
+     "op": ">",
+     "value": 0.0031
+    },
+    {
+     "feature": "rel_r672",
+     "op": "<",
+     "value": -0.03137
+    }
+   ],
+   "id": "ca5dc2c857",
+   "parent": "058a7efcd3+9a99657c56",
+   "origin": "crossover"
   }
  ],
  "since": 1791186354886

@@ -1,34 +1,4 @@
 {
- "66a054c75f": {
-  "name": "unikaj rel_r96 >= 0.002238",
-  "source": "own mistakes (auto)",
-  "rule": "rel_r96 < 0.00224",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: coin's 24h return minus Bitcoin's",
-  "gain": 0.0,
-  "tested_at": 1793472387625,
-  "model_version": 65,
-  "adopted": false
- },
- "d6727d6380": {
-  "name": "unikaj rel_r96 >= 0.008805",
-  "source": "own mistakes (auto)",
-  "rule": "rel_r96 < 0.0088",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: coin's 24h return minus Bitcoin's",
-  "gain": 0.0,
-  "tested_at": 1793472387625,
-  "model_version": 65,
-  "adopted": false
- },
- "569feebfb9": {
-  "name": "unikaj rel_r96 >= 0.003118",
-  "source": "own mistakes (auto)",
-  "rule": "rel_r96 < 0.00312",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: coin's 24h return minus Bitcoin's",
-  "gain": 0.0,
-  "tested_at": 1793516464016,
-  "model_version": 66,
-  "adopted": false
- },
  "ad03e31ffe": {
   "name": "unikaj rel_r96 >= 0.009354",
   "source": "own mistakes (auto)",
@@ -796,6 +766,36 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: coin's 24h return minus Bitcoin's",
   "gain": 0.0,
   "tested_at": 1794188688402,
+  "model_version": 80,
+  "adopted": false
+ },
+ "6b7494e4a1": {
+  "name": "Panika BTC + cisza + oversold",
+  "source": "internet research: Bot's mistakes: r_96, vol_96, rsi; CoinDesk/Cointelegraph news on BTC drops and market fear.",
+  "rule": "r_96 < -0.01231 and vol_96 < 0.0035 and rsi < 0.45",
+  "why": "Wszystkie trzy cechy z listy b\u0142\u0119d\u00f3w botu (r_96, vol_96, rsi) mia\u0142y \u015brednio gorsze wyniki w przegranych transakcjach. Dodanie niskiego RSI przy spadkowym BTC i niskiej zmienno\u015bci odrzuca sygna\u0142y kupna w panice, gdy rynek jeszcze nie odrobi\u0142 strat.",
+  "gain": 0.0,
+  "tested_at": 1794207181280,
+  "model_version": 80,
+  "adopted": false
+ },
+ "bb3f5ddf56": {
+  "name": "Trend spadkowy + brak momentum",
+  "source": "internet research: Bot's mistakes: ema_trend, d_ema200, r_16; arXiv research on factor portfolios and Boolean rules.",
+  "rule": "d_ema200 < -0.00106 and ema_trend < -0.00081 and r_16 < 0.00602",
+  "why": "Sygna\u0142 kupna z dodatnim momentum przy spadkowym trendzie 50/200 to klasyczny b\u0142\u0105d. Regu\u0142a wymaga spadkowego trendu i s\u0142abego kr\u00f3tkoterminowego momentum, aby odrzuci\u0107 sygna\u0142y w trendzie spadkowym.",
+  "gain": 0.0,
+  "tested_at": 1794207181280,
+  "model_version": 80,
+  "adopted": false
+ },
+ "c4ef9f80d5": {
+  "name": "BTC spada + alfa ujemna + niska wolumen",
+  "source": "internet research: Bot's mistakes: rel_r96, vz; CoinDesk news on BTC drops and Binance shutdown.",
+  "rule": "btc_r96 < -0.01231 and rel_r96 < -0.005 and vz < 0.8",
+  "why": "Sygna\u0142 kupna przy spadaj\u0105cym BTC i ujemnej alfie wzgl\u0119dem BTC to sygna\u0142, kt\u00f3ry bot ju\u017c \u017ale realizuje. Niska wolumen dodatkowo sugeruje brak potwierdzenia i s\u0142ab\u0105 p\u0142ynno\u015b\u0107.",
+  "gain": 0.0,
+  "tested_at": 1794207181280,
   "model_version": 80,
   "adopted": false
  }
