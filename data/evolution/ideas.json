@@ -1,34 +1,4 @@
 {
- "4ec6e6a1d2": {
-  "name": "unikaj rel_r96 >= 0.003486",
-  "source": "own mistakes (auto)",
-  "rule": "rel_r96 < 0.00349",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: coin's 24h return minus Bitcoin's",
-  "gain": 0.0,
-  "tested_at": 1793604922170,
-  "model_version": 68,
-  "adopted": false
- },
- "deae531b07": {
-  "name": "unikaj rel_r96 >= 0.009934",
-  "source": "own mistakes (auto)",
-  "rule": "rel_r96 < 0.00993",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: coin's 24h return minus Bitcoin's",
-  "gain": 0.0,
-  "tested_at": 1793604922170,
-  "model_version": 68,
-  "adopted": false
- },
- "4052870dfb": {
-  "name": "Odrzu\u0107 sygna\u0142y z niskim momentum BTC",
-  "source": "internet research: Bot traci\u0142 na sygna\u0142ach, gdy r_96 by\u0142 negatywny, a BTC_vol96 by\u0142 niski, co sugeruje, \u017ce w takich warunkach rynek jest zbyt spokojny, by generowa\u0107 zysk.",
-  "rule": "r_96 > -0.005 and r_16 < 0.006 and btc_vol96 < 0.0024",
-  "why": "To filtr odrzuca sygna\u0142y, kt\u00f3re maj\u0105 negatywne momentum BTC, ale nie maj\u0105 wystarczaj\u0105cego wolumenu do generowania zysku. W obecnych warunkach, gdy BTC_vol96 jest niski, rynek jest zbyt spokojny, by generowa\u0107 zysk.",
-  "gain": 0.0,
-  "tested_at": 1793649402446,
-  "model_version": 69,
-  "adopted": false
- },
  "bbc48a2799": {
   "name": "Wymagaj dodatniego momentum kr\u00f3tkoterminowego",
   "source": "internet research: Bot traci\u0142 na sygna\u0142ach, gdy rel_r672 by\u0142 negatywny, a rank_r96 by\u0142 niski, co sugeruje, \u017ce w takich warunkach rynek jest zbyt spokojny, by generowa\u0107 zysk.",
@@ -796,6 +766,36 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
   "gain": 0.0,
   "tested_at": 1794276588235,
+  "model_version": 82,
+  "adopted": false
+ },
+ "1772662b7e": {
+  "name": "Odrzu\u0107 sygna\u0142y w rosn\u0105cej zmienno\u015bci i spadkowym Bitcoinie",
+  "source": "internet research: Bot's mistakes: losing trades average -0.0126 on r_96, -0.008 on btc_r96, and 0.0057 on atr vs 0.00655 on winning trades; vol_ratio below 0.95 means short-term volatility is rising ",
+  "rule": "vol_ratio < 0.95 and r_16 < 0.002 and btc_r96 < -0.008",
+  "why": "This rule removes the bot's most consistent losing pattern: short-term momentum, rising volatility and a negative BTC correlation. It keeps only signals where the short-term volatility is not expanding, momentum is positive and Bitcoin is not in a sharp downtrend.",
+  "gain": 0.0,
+  "tested_at": 1794278643181,
+  "model_version": 82,
+  "adopted": false
+ },
+ "e7d290a194": {
+  "name": "Wymu\u015b potwierdzenie przez Bitcoin, relacj\u0119 7 dni i wolumen",
+  "source": "internet research: Bot's mistakes: losing trades average -0.0126 on r_96, -0.008 on btc_r96, and 0.0057 on atr vs 0.00655 on winning trades; vol_ratio below 0.95 means short-term volatility is rising ",
+  "rule": "rank_r96 > 0.6 and rel_r672 > -0.005 and vz > 0.8",
+  "why": "This rule requires the coin to be in the top 60% of 24h momentum, to be outperforming Bitcoin over 7 days, and to have volume above the 24h average. It removes the pattern of chasing weak, low-volume coins that are falling with Bitcoin.",
+  "gain": 0.0,
+  "tested_at": 1794278643181,
+  "model_version": 82,
+  "adopted": false
+ },
+ "73d15b0edd": {
+  "name": "Odrzu\u0107 sygna\u0142y z nadmiernie rozci\u0105gni\u0119tych i wyczerpanych trend\u00f3w",
+  "source": "internet research: Bot's mistakes: losing trades average -0.0126 on r_96, -0.008 on btc_r96, and 0.0057 on atr vs 0.00655 on winning trades; vol_ratio below 0.95 means short-term volatility is rising ",
+  "rule": "rsi > 0.62 and bb > 0.2 and r_4 > 0.0005",
+  "why": "This rule removes the pattern of chasing weak, low-volume coins that are falling with Bitcoin.",
+  "gain": 0.0,
+  "tested_at": 1794278643181,
   "model_version": 82,
   "adopted": false
  }
