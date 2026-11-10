@@ -1,19 +1,20 @@
 {
- "created_at": 1794274598288,
+ "created_at": 1794278246148,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 5.4,
+ "seconds": 3.5,
  "directives": {
   "risk_level": 0.2,
-  "min_confidence_adj": 0.05,
+  "min_confidence_adj": 0.03,
   "symbol_bias": {
+   "BTC": "reduce",
    "XRP": "avoid",
    "ETH": "avoid",
    "SOL": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w panice (Fear 29), BTC spad\u0142 o 9.6% w 30 dni, a model ma zero edge (46% win rate, avg -0.03%/trade). Wszystkie sygna\u0142y modela s\u0105 poni\u017cej progu 0.78, wi\u0119c nie otwieramy \u017cadnych pozycji. XRP, ETH i SOL maj\u0105 najgorsze wyniki historyczne, dlatego je omijamy.",
+ "reasoning": "Rynek jest wyra\u017anie w fazie spadkowej i l\u0119kowej \u2014 BTC spad\u0142 o 9.6% w 30 dni, ETH o 15.1%, SOL o 21.5%, a indeks Fear & Greed wskazuje na 32 (Fear). Model ma zero edge: 46% win rate, avg -0.03%/trade vs always-buy -0.39%/trade, a champion na danych unseen to 23 trades, avg +5.27%/trade, edge proven: False. Wszystkie sygna\u0142y modela s\u0105 poni\u017cej threshold 0.78, wi\u0119c nie ma \u017cadnego sygna\u0142u do wej\u015bcia. Zwi\u0119kszam min_confidence_adj do 0.03, aby wej\u015bcia wymaga\u0142y jeszcze wy\u017cszego pewno\u015bci, i unikam XRP, ETH, SOL na podstawie mojej wcze\u015bniejszej rekomendacji oraz danych.",
  "new_lessons": [
   "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji.",
   "Model bez edge: 46% win rate, avg -0.03%/trade vs always-buy -0.39%/trade.",
