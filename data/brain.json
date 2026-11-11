@@ -1,28 +1,19 @@
 {
- "created_at": 1794388962858,
+ "created_at": 1794392597012,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 6.1,
+ "seconds": 6.3,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.08,
   "symbol_bias": {
-   "BTC": "reduce",
-   "ETH": "avoid",
-   "SOL": "avoid",
    "XRP": "avoid",
-   "DOGE": "reduce",
-   "ADA": "reduce",
-   "BNB": "reduce",
-   "LINK": "reduce",
-   "AVAX": "reduce",
-   "LTC": "reduce",
-   "DOT": "reduce",
-   "TRX": "reduce"
+   "ETH": "avoid",
+   "SOL": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest wyra\u017anie spadkowy: BTC 30d -12.7%, ETH 30d -20.3%, SOL 30d -27.0%, XRP 30d -25.7%, a Fear & Greed wynosi 29 (Fear). Model ma zero edge (46% win rate vs always-buy -0.41%/trade), wi\u0119c nie zwi\u0119kszamy ryzyka. Wszystkie symbole maj\u0105 obecn\u0105 pewno\u015b\u0107 poni\u017cej threshold 0.73, wi\u0119c zero pozycji; utrzymujemy risk_level 0.2 i min_confidence_adj 0.08.",
+ "reasoning": "Rynek jest wyra\u017anie spadkowy: BTC -12.7% w 30 dni, ETH -20.3%, SOL -27.0%, XRP -25.7%, a Fear & Greed wynosi 29. Wszystkie 12 symboli maj\u0105 prog\u0119 wej\u015bcia 0.81, a model daje obecnie maksymalnie 0.72 (TRX), wi\u0119c zero symbol\u00f3w spe\u0142nia warunek wej\u015bcia. Model ma zero edge (46% win rate vs always-buy -0.41%), a praktyczne konto straci\u0142o $19.76 z 5 zamykanych transakcji. Ostatni trade XRP straci\u0142 8.11% przy 0.83. Trzymam risk_level 0.2, zero pozycji i zero symbol\u00f3w do redukcji, bo nie ma \u017cadnego konkretnego sygna\u0142u do redukcji poza og\u00f3lnym spadkiem rynku.",
  "new_lessons": [
   "Model bez edge: 46% win rate, avg +0.17%/trade vs always-buy -0.41%/trade \u2014 zero edge, zero pozycji.",
   "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji.",
