@@ -1,21 +1,19 @@
 {
- "created_at": 1794403512691,
+ "created_at": 1794407147988,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 7.3,
+ "seconds": 8.8,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.08,
   "symbol_bias": {
-   "ETH": "reduce",
-   "SOL": "reduce",
    "XRP": "avoid",
    "ADA": "avoid",
    "AVAX": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest wyra\u017anie spadkowy (BTC 30d -11.2%, ETH -19.2%, SOL -24.6%) i Fear & Greed wynosi 29, co oznacza panik\u0119. Model ma zero edge (46% win rate vs always-buy -0.41%/trade), wi\u0119c nie zwi\u0119kszamy ryzyka. Portfolio straci\u0142o 0.25% w g\u0142\u00f3wnym koncie i 1.36% w praktycznym, a praktyczne konto ma 1 win z 10 trades, wi\u0119c utrzymujemy niskie ryzyko i unikamy symboli z najgorsz\u0105 histori\u0105.",
+ "reasoning": "Rynek jest wyra\u017anie spadkowy: BTC spad\u0142 o 11.2% w 30 dni, a indeks Fear & Greed wskazuje na 29 (Fear). Model nie ma udowodnionej przewagi (46% win rate, avg +0.17%/trade vs always-buy -0.41%/trade), a praktyczny rachunek straci\u0142 19.76$ na 10 transakcjach. Dlatego obni\u017cam poziom ryzyka do 0.2, wstrzymuj\u0119 si\u0119 od XRP, ADA i AVAX, a wszystkie wej\u015bcia wymagaj\u0105 wy\u017cszego progu pewno\u015bci modelu.",
  "new_lessons": [
   "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji.",
   "Model bez edge: 46% win rate, avg +0.17%/trade vs always-buy -0.41%/trade \u2014 nie zwi\u0119kszaj ryzyka.",
