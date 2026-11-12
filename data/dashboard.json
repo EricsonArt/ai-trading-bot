@@ -1,5 +1,5 @@
 {
- "generated_at": 1794457381295,
+ "generated_at": 1794470318051,
  "last_candle": 1794456000000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
@@ -14610,28 +14610,31 @@
   "regime": "bear"
  },
  "brain": {
-  "created_at": 1794429988438,
-  "source": "local",
-  "model": "mimo2.6:9b",
+  "created_at": 1794470318042,
+  "source": "cloud",
+  "model": "qwen3:4b",
   "directives": {
    "risk_level": 0.2,
-   "min_confidence_adj": 0.05,
+   "min_confidence_adj": -0.02,
    "symbol_bias": {
-    "ETH": "reduce",
     "SOL": "reduce",
+    "LTC": "reduce",
     "XRP": "avoid",
     "ADA": "avoid",
     "AVAX": "avoid"
    },
    "regime": "bear"
   },
-  "reasoning": "Model ma zero edge: 43% win rate i \u015brednia -0.01%/trade, gorsza ni\u017c kupowanie zawsze (-0.42%/trade). Rynek jest wyra\u017anie spadkowy (BTC 30d -10.1%, ETH -17.4%, SOL -21.7%) przy Fear 29, wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka. Kluczowe dane: praktyczny portfel straci\u0142 19.76$ na 10 tradeach, a XRP straci\u0142 8.11% przy 0.83 \u2014 zero edge, zero pozycji.",
+  "reasoning": "Rynek jest w trybie bear (BTC 30d -10.1%, wolumen spadkowy). Model nie ma edge (43% win rate, avg -0.01%/trade vs always-buy). Zmniejsz ryzyko po utracie 0.25% w g\u0142\u00f3wnej konta. Unikaj sygna\u0142\u00f3w z nisk\u0105 pewno\u015bci\u0105 (XRP, ADA, AVAX).",
   "new_lessons": [
-   "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji.",
-   "Model bez edge: 43% win rate, avg -0.01%/trade vs always-buy -0.42%/trade \u2014 nie zwi\u0119kszaj ryzyka.",
-   "Rynek spadkowy (BTC 30d -10.1%) + Fear 29 \u2014 nie zwi\u0119kszaj ryzyka."
+   "XRP straci\u0142 8.11% przy 0.83 \u2014 zero edge, zero pozycji",
+   "Model bez edge: 43% win rate, avg -0.01%/trade vs always-buy -0.42%/trade \u2014 nie zwi\u0119kszaj ryzyka",
+   "Rynek spadkowy (BTC 30d -10.1%) + Fear 29 \u2014 nie zwi\u0119kszaj ryzyka"
   ],
   "lessons": [
+   "XRP straci\u0142 8.11% przy 0.83 \u2014 zero edge, zero pozycji",
+   "Model bez edge: 43% win rate, avg -0.01%/trade vs always-buy -0.42%/trade \u2014 nie zwi\u0119kszaj ryzyka",
+   "Rynek spadkowy (BTC 30d -10.1%) + Fear 29 \u2014 nie zwi\u0119kszaj ryzyka",
    "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji.",
    "Model bez edge: 43% win rate, avg -0.01%/trade vs always-buy -0.42%/trade \u2014 nie zwi\u0119kszaj ryzyka.",
    "Rynek spadkowy (BTC 30d -10.1%) + Fear 29 \u2014 nie zwi\u0119kszaj ryzyka.",
@@ -14640,14 +14643,35 @@
    "Rynek spadkowy (BTC 30d -11.2%) + Fear 29 \u2014 nie zwi\u0119kszaj ryzyka.",
    "Model bez edge: 46% win rate, avg +0.17%/trade vs always-buy -0.41%/trade \u2014 zero edge, zero pozycji.",
    "Rynek spadkowy (BTC 30d -12.7%) + Fear 29 \u2014 nie zwi\u0119kszaj ryzyka.",
-   "XRP straci\u0142 8.11% przy 0.83 \u2014 zero edge, zero pozycji",
-   "Model bez edge: 46% win rate, avg +0.13%/trade vs always-buy -0.40%/trade",
-   "Rynek spadkowy (BTC 30d -11.2%) + Fear 29 \u2014 nie zwi\u0119kszaj ryzyka",
-   "Model bez edge: 46% win rate, avg +0.13%/trade vs always-buy -0.40%/trade."
+   "Model bez edge: 46% win rate, avg +0.13%/trade vs always-buy -0.40%/trade"
   ],
-  "seconds": 13.8
+  "seconds": 222.1
  },
  "brain_journal": [
+  {
+   "created_at": 1794470318042,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": -0.02,
+    "symbol_bias": {
+     "SOL": "reduce",
+     "LTC": "reduce",
+     "XRP": "avoid",
+     "ADA": "avoid",
+     "AVAX": "avoid"
+    },
+    "regime": "bear"
+   },
+   "reasoning": "Rynek jest w trybie bear (BTC 30d -10.1%, wolumen spadkowy). Model nie ma edge (43% win rate, avg -0.01%/trade vs always-buy). Zmniejsz ryzyko po utracie 0.25% w g\u0142\u00f3wnej konta. Unikaj sygna\u0142\u00f3w z nisk\u0105 pewno\u015bci\u0105 (XRP, ADA, AVAX).",
+   "new_lessons": [
+    "XRP straci\u0142 8.11% przy 0.83 \u2014 zero edge, zero pozycji",
+    "Model bez edge: 43% win rate, avg -0.01%/trade vs always-buy -0.42%/trade \u2014 nie zwi\u0119kszaj ryzyka",
+    "Rynek spadkowy (BTC 30d -10.1%) + Fear 29 \u2014 nie zwi\u0119kszaj ryzyka"
+   ],
+   "equity_at": 997.53
+  },
   {
    "created_at": 1794429988438,
    "source": "local",
@@ -14867,28 +14891,6 @@
    "reasoning": "Rynek jest wyra\u017anie spadkowy: BTC 30d -12.7%, ETH 30d -20.3%, SOL 30d -27.0%, XRP 30d -25.7%, a Fear & Greed wynosi 29 (Fear). Model ma zero edge (46% win rate vs always-buy -0.41%/trade), wi\u0119c nie zwi\u0119kszamy ryzyka. Wszystkie symbole maj\u0105 obecn\u0105 pewno\u015b\u0107 poni\u017cej threshold 0.73, wi\u0119c zero pozycji; utrzymujemy risk_level 0.2 i min_confidence_adj 0.08.",
    "new_lessons": [
     "Model bez edge: 46% win rate, avg +0.17%/trade vs always-buy -0.41%/trade \u2014 zero edge, zero pozycji.",
-    "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji.",
-    "Rynek spadkowy (BTC 30d -12.7%) + Fear 29 \u2014 nie zwi\u0119kszaj ryzyka."
-   ],
-   "equity_at": 997.53
-  },
-  {
-   "created_at": 1794385330746,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.0,
-    "symbol_bias": {
-     "XRP": "avoid",
-     "ETH": "avoid",
-     "SOL": "avoid"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "Rynek jest wyra\u017anie spadkowy \u2014 BTC -12.7% w 30 dni, ETH -20.3%, SOL -27.0%, XRP -25.7%, a Fear & Greed wskazuje 29 (Fear). Model ma zero edge: 46% win rate, avg +0.17%/trade vs always-buy -0.41%/trade, wi\u0119c nie zwi\u0119kszamy ryzyka. Trzy symbole (XRP, ETH, SOL) maj\u0105 najgorsze spadki 30d i najni\u017csze 24h, wi\u0119c je omijamy. Trzymamy risk_level 0.2 i min_confidence_adj 0.0, bo model nie ma udowodnionej przewagi.",
-   "new_lessons": [
-    "Model bez edge: 46% win rate, avg +0.17%/trade vs always-buy -0.41%/trade \u2014 nie zwi\u0119kszaj ryzyka.",
     "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji.",
     "Rynek spadkowy (BTC 30d -12.7%) + Fear 29 \u2014 nie zwi\u0119kszaj ryzyka."
    ],
@@ -50893,17 +50895,17 @@
    ]
   },
   "research": {
-   "created_at": 1794381571166,
+   "created_at": 1794470093785,
    "source": "cloud",
    "model": "qwen3:4b",
-   "seconds": 483.7,
-   "digest": "Wczoraj w USA wzrost cen towar\u00f3w konsumpcyjnych zwi\u0119kszy\u0142 oczekiwania na kolejn\u0105 podwy\u017ck\u0119 stawek procentowych Fed, co wp\u0142ywa na kursy walut. W crypto, Bitcoin odnotowa\u0142 spadek w ci\u0105gu 24 godzin, a Initia straci\u0142 $3,27M w wyniku ataku. Najwa\u017cniejsze dla trader\u00f3w: zabezpieczenie kont i monitorowanie zmian w cenie w kr\u00f3tkim terminie.",
+   "seconds": 567.1,
+   "digest": "W dzisiejszych warunkach rynku kryptowalut, gdzie Bitcoin jest w stanie spadku i wolumen maleje, kluczowe jest monitorowanie stabilno\u015bci cen i ryzyka p\u0142ynno\u015bci. Najlepsze strategie powinny unikn\u0105\u0107 sytuacji, gdzie cena Bitcoinu spada szybko i wolumen jest niski, aby unikn\u0105\u0107 zbyt du\u017cych strat.",
    "mood": "fear",
    "fng": [
     {
-     "value": 29,
+     "value": 28,
      "label": "Fear",
-     "ts": 1794355200000
+     "ts": 1794441600000
     }
    ],
    "used": [
@@ -50948,33 +50950,33 @@
     },
     {
      "kind": "CoinDesk",
-     "title": "Warren: What is White House doing to prevent a repeat of teleprompter's Trump bets?",
-     "url": "https://www.coindesk.com/policy/2026/11/10/warren-what-is-white-house-doing-to-prevent-a-repeat-of-teleprompter-s-trump-bets"
+     "title": "Canaan may sell more bitcoin for stock buybacks as mining-rig revenue falls 96%",
+     "url": "https://www.coindesk.com/markets/2026/11/12/canaan-may-sell-more-bitcoin-for-stock-buybacks-as-mining-rig-revenue-falls-96"
     },
     {
      "kind": "CoinDesk",
-     "title": "Former NYSE president says stock issuers hold the key to tokenization as Bullish builds its platform",
-     "url": "https://www.coindesk.com/business/2026/11/10/former-nyse-president-says-stock-issuers-hold-the-key-to-tokenization-as-bullish-builds-its-platform"
+     "title": "MSCI is dropping Strategy from its index, and the exclusion could hit its bitcoin-buying machine",
+     "url": "https://www.coindesk.com/markets/2026/11/12/msci-is-dropping-strategy-from-its-index-and-the-exclusion-could-hit-its-bitcoin-buying-machine"
     },
     {
      "kind": "CoinDesk",
-     "title": "Goldman Sachs, Citi among banks said to commit $270 million to stablecoin venture",
-     "url": "https://www.coindesk.com/business/2026/11/10/goldman-sachs-citi-among-banks-said-to-commit-usd270-million-to-stablecoin-venture"
+     "title": "Zcash holders to vote on pulling 50,000 ZEC, worth $50 million, from grants treasury",
+     "url": "https://www.coindesk.com/tech/2026/11/12/zcash-holders-to-vote-on-pulling-50-000-zec-from-grants-treasury"
     },
     {
      "kind": "CoinDesk",
-     "title": "Crypto is now teamed up with U.S. government in two legal battles over perps",
-     "url": "https://www.coindesk.com/news-analysis/2026/11/10/crypto-teams-up-with-u-s-government-to-defend-stock-perps-in-legal-fight"
+     "title": "Bitcoin Core reveals bug that made thousands of nodes trust any stranger on Tor",
+     "url": "https://www.coindesk.com/tech/2026/11/12/bitcoin-core-reveals-bug-that-made-thousands-of-nodes-trust-any-stranger-on-tor"
     },
     {
      "kind": "CoinDesk",
-     "title": "Plume affiliate lands broker-dealer license to bring real U.S. assets onchain",
-     "url": "https://www.coindesk.com/markets/2026/11/10/emb-10-am-et-plume-affiliate-gets-the-legal-green-light-to-trade-regulated-security-entitlements-onchain"
+     "title": "Ripple\u2019s bank-lending system moves closer to launch on the XRP Ledger",
+     "url": "https://www.coindesk.com/tech/2026/11/12/ripple-s-bank-lending-system-moves-closer-to-launch-on-the-xrp-ledger"
     },
     {
      "kind": "CoinDesk",
-     "title": "Will stablecoins survive once the banks catch up?",
-     "url": "https://www.coindesk.com/opinion/2026/11/10/will-stablecoins-survive-once-the-banks-catch-up"
+     "title": "Nvidia perps crash 7% as CEO Jensen Huang reportedly faces the axe",
+     "url": "https://www.coindesk.com/markets/2026/11/12/bitcoin-listless-nvidia-perps-crash-7-as-ceo-jensen-huang-reportedly-faces-the-axe"
     },
     {
      "kind": "Cointelegraph",
@@ -50983,68 +50985,68 @@
     },
     {
      "kind": "Cointelegraph",
-     "title": "Initia confirms second exploit in 3 weeks, $3.27M stolen in latest attack",
-     "url": "https://cointelegraph.com/news/initia-second-crypto-exploit-three-weeks?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "South Korea to permit crypto withdrawal freezes during hacking threats",
+     "url": "https://cointelegraph.com/news/south-korea-crypto-withdrawal-freezes-suspected-hacks?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Cointelegraph",
-     "title": "Across Protocol restores website after hackers hijack domain",
-     "url": "https://cointelegraph.com/news/across-protocol-restores-website-after-hackers-hijack-domain?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "Binance CSO unwittingly foreshadowed $6.3B hack tactic months before attack",
+     "url": "https://cointelegraph.com/news/binance-cso-foreshadowed-6b-hack-tactic-months-before-attack?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Cointelegraph",
-     "title": "Crypto ally Tom Emmer elected House GOP minority whip",
-     "url": "https://cointelegraph.com/news/crypto-ally-tom-emmer-elected-house-gop-minority-whip?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "MSCI confirms Strategy\u2019s removal from indexes at end of November",
+     "url": "https://cointelegraph.com/news/msci-confirms-strategys-removal-from-indexes-end-november?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Cointelegraph",
-     "title": "LNbits rushes emergency patch after reported Bitcoin wallet thefts",
-     "url": "https://cointelegraph.com/news/lnbits-rushes-emergency-patch-after-reported-bitcoin-wallet-thefts?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "Suiet wallet to shut down in latest exit from Sui ecosystem",
+     "url": "https://cointelegraph.com/news/suiet-wallet-shut-down-latest-exit-sui-ecosystem?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Cointelegraph",
-     "title": "CFTC warns Kalshi of imminent charges over notification of contracts: Politico",
-     "url": "https://cointelegraph.com/news/cftc-warns-kalshi-imminent-charges-over-contracts?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "Nvidia preparing to oust CEO Jensen Huang after affairs: WSJ",
+     "url": "https://cointelegraph.com/news/nvidia-preparing-to-oust-ceo-jensen-huang-reports?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Decrypt",
-     "title": "Bitcoin Miner HIVE Eyes $45 Million in Annual Revenue From AI Deal",
-     "url": "https://decrypt.co/382982/bitcoin-miner-hive-eyes-45-million-ai-data-center"
+     "title": "Nvidia-Backed CoreWeave Is Surging: Here\u2019s What It Means for the AI Boom",
+     "url": "https://decrypt.co/383099/nvidia-backed-coreweave-surging-what-means-for-ai-boom"
     },
     {
      "kind": "Decrypt",
-     "title": "Trump Media Posts $410 Million Profit. Bitcoin Gains Did the Heavy Lifting",
-     "url": "https://decrypt.co/382967/trump-media-posts-410-million-profit-bitcoin-gains"
+     "title": "Stablecoin Drain, ETF Outflows Leave Bitcoin 'Running on Empty'",
+     "url": "https://decrypt.co/383094/stablecoin-drain-etf-outflows-bitcoin-running-empty"
     },
     {
      "kind": "Decrypt",
-     "title": "Nvidia Erases 2026 Gains as Republicans Threaten Jensen Huang With Subpoena",
-     "url": "https://decrypt.co/382974/nvidia-erases-2026-gains-republicans-threaten-ceo-subpoena"
+     "title": "Bitcoin Short-Term Holders Send $3.6 Billion in BTC to Exchanges at a Loss",
+     "url": "https://decrypt.co/383077/bitcoin-short-term-holders-send-3-illion-btc-exchanges-loss"
     },
     {
      "kind": "Decrypt",
-     "title": "Near AI Breach Exposes User Details and Data From 18 AI Agents",
-     "url": "https://decrypt.co/382965/near-ai-breach-exposes-user-details-data-ai-agents"
+     "title": "This New AI Music Model Is Already Better Than Suno\u2014We Put ACE to the Test",
+     "url": "https://decrypt.co/383070/new-ai-music-model-already-better-than-suno-ace-review"
     },
     {
      "kind": "Decrypt",
-     "title": "Elon Musk Calls Claude Opus 5.5 a 'Masterpiece', Admits Grok 4.8 Won't Match It",
-     "url": "https://decrypt.co/382956/elon-musk-calls-claude-opus-5-5-masterpiece-grok-wont-match"
+     "title": "Tether's Tiny AI Agent Beats Models 2.5 Times Its Size at Controlling Your Phone",
+     "url": "https://decrypt.co/383066/tether-tiny-ai-agent-beats-models-phone"
     },
     {
      "kind": "Decrypt",
-     "title": "Grayscale Bets $1 Million on Zcash as Privacy Coin Tumbles",
-     "url": "https://decrypt.co/382962/grayscale-bets-1-million-on-zcash-as-privacy-coin-tumbles"
+     "title": "Deutsche Bank Goes Live With Crypto Custody After a Five-Year Buildup",
+     "url": "https://decrypt.co/383067/deutsche-bank-goes-live-with-crypto-custody-after-a-five-year-buildup"
     },
     {
      "kind": "Babypips",
-     "title": "Hot October CPI Puts a Bigger Fed Hike on the Table",
-     "url": "https://www.babypips.com/analysis/headline-us-cpi-october-fed-hike-december-2026-11-11"
+     "title": "Hawkish Fed Meets Stock Market Surge: Can The Rallies Last?",
+     "url": "https://www.babypips.com/analysis/headline-hawkish-fed-stock-market-surge-rallies-last-2026-11-12"
     },
     {
      "kind": "Babypips",
-     "title": "Chart Art: EUR/GBP Long-Term Trend Correction Taking Place?",
-     "url": "https://www.babypips.com/trading/chart-art-forex-eurgbp-long-term-trend-correction-taking-place-2026-11-11"
+     "title": "Chart Art: AUD/CAD Trend Correction Approaches Confluence at .9800",
+     "url": "https://www.babypips.com/trading/chart-art-audcad-trend-correction-approaches-9800-2026-11-12"
     },
     {
      "kind": "Babypips",
@@ -51053,30 +51055,30 @@
     },
     {
      "kind": "Babypips",
-     "title": "FX Watch: GBP/AUD Breakout and GBP/CHF Trend Setups for a U.K. GDP Miss",
-     "url": "https://www.babypips.com/analysis/fx-watch-gbpaud-gbpchf-breakout-trend-plays-uk-gdp-miss-2026-11-11"
+     "title": "USD/JPY Analysis for Nov. 12, 2026: Bullish Breakout Faces Japan\u2019s Intervention Threat",
+     "url": "https://www.babypips.com/analysis/premium-strategy-2026-11-12-usdjpy"
     },
     {
      "kind": "Babypips",
-     "title": "FX Watch: GBP/JPY and GBP/AUD Bulls Look for a U.K. GDP Boost",
-     "url": "https://www.babypips.com/analysis/fx-watch-gbpjpy-gbpaud-look-for-a-uk-gdp-boost-2026-11-11"
+     "title": "Rate Divergence Explained: Why Not All Rate Hikes Are Equal",
+     "url": "https://www.babypips.com/analysis/explainer-rate-divergence-why-not-all-rate-hikes-are-equal-2026-11-12"
     }
    ],
    "ideas": [
     {
-     "name": "Zmiana w cenie w ci\u0105gu 24h",
-     "rule": "btc_r96 < -0.01231",
-     "why": "Losing trades had avg -0.01205 vs winning -0.02362; Bitcoin's 24h return (btc_r96) was negative for most losing trades, indicating short-term price weakness. CoinDesk reports Bitcoin's decline and recent exploits in crypto, so filtering out signals when BTC is down sharply helps avoid bad trades."
+     "name": "Wzrost wolumenu Bitcoinu",
+     "rule": "vz > 0.8",
+     "why": "Wczoraj Bitcoin spad\u0142 o 2.5% i wolumen spad\u0142 o 96% w ci\u0105gu ostatnich 24h, co sugeruje, \u017ce klienci s\u0105 zbyt aktywni w kr\u00f3tkim terminie. Wzrost wolumenu mo\u017ce pom\u00f3c w unikni\u0119ciu b\u0142\u0119dnych sygna\u0142\u00f3w z botem, kt\u00f3re cz\u0119sto wyst\u0119puj\u0105 w sytuacjach spadku wolumenu."
     },
     {
-     "name": "Wolne rynkowe zmiany",
+     "name": "Stabilno\u015b\u0107 cenowa w kr\u00f3tkim terminie",
+     "rule": "btc_r96 > -0.01231",
+     "why": "Wczoraj Bitcoin spad\u0142 o 2.5% w ci\u0105gu 24h i wolumen spad\u0142 o 96%, co sugeruje, \u017ce cena jest w stanie spadku i ryzyko p\u0142ynno\u015bci jest wysokie. Stabilno\u015b\u0107 cenowa w kr\u00f3tkim terminie mo\u017ce pom\u00f3c w unikni\u0119ciu b\u0142\u0119dnych sygna\u0142\u00f3w z botem, kt\u00f3re cz\u0119sto wyst\u0119puj\u0105 w sytuacjach spadku wolumenu."
+    },
+    {
+     "name": "Niskie ryzyko p\u0142ynno\u015bci",
      "rule": "vol_96 < 0.0035",
-     "why": "Losing trades had higher volatility (atr 0.00577 vs winning 0.0069); high volatility often indicates false signals. Recent exploits (Initia) and crypto news show increased risk, so filtering by low volatility (vol_96 < 0.0035) avoids noisy signals."
-    },
-    {
-     "name": "Rynkowe korekty",
-     "rule": "d_ema200 < -0.00109",
-     "why": "Losing trades had price below 200-candle average (d_ema200 avg -0.01306); this suggests bearish trends. Recent news on crypto exploits and Bitcoin's decline align with this, so filtering for price below 200-candle average prevents entering downtrends."
+     "why": "Wczoraj Bitcoin spad\u0142 o 2.5% w ci\u0105gu 24h i wolumen spad\u0142 o 96%, co sugeruje, \u017ce cena jest w stanie spadku i ryzyko p\u0142ynno\u015bci jest wysokie. Niskie ryzyko p\u0142ynno\u015bci mo\u017ce pom\u00f3c w unikni\u0119ciu b\u0142\u0119dnych sygna\u0142\u00f3w z botem, kt\u00f3re cz\u0119sto wyst\u0119puj\u0105 w sytuacjach spadku wolumenu."
     }
    ]
   }
