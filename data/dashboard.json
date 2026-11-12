@@ -1,9 +1,9 @@
 {
- "generated_at": 1794513416445,
- "last_candle": 1794511800000,
+ "generated_at": 1794514942395,
+ "last_candle": 1794513600000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
- "benchmark_return": -0.15713,
+ "benchmark_return": -0.15694000000000008,
  "series": [
   [
    1790508600000,
@@ -13354,6 +13354,12 @@
    997.53,
    842.87,
    975.42
+  ],
+  [
+   1794513600000,
+   997.53,
+   843.06,
+   975.42
   ]
  ],
  "main": {
@@ -13443,7 +13449,7 @@
    {
     "name": "Lepiej ni\u017c samo trzymanie BTC",
     "ok": true,
-    "value": "+15.5 pkt"
+    "value": "+15.4 pkt"
    },
    {
     "name": "Najwi\u0119kszy spadek mniejszy ni\u017c 20%",
@@ -14245,91 +14251,91 @@
  },
  "signals": {
   "BTC": {
-   "p": 0.3985,
+   "p": 0.3931,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794511800000
+   "ts": 1794513600000
   },
   "ETH": {
-   "p": 0.3965,
+   "p": 0.428,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794511800000
+   "ts": 1794513600000
   },
   "SOL": {
-   "p": 0.3877,
+   "p": 0.4266,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794511800000
+   "ts": 1794513600000
   },
   "XRP": {
-   "p": 0.2753,
+   "p": 0.3191,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794511800000
+   "ts": 1794513600000
   },
   "DOGE": {
-   "p": 0.2841,
+   "p": 0.2897,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794511800000
+   "ts": 1794513600000
   },
   "ADA": {
-   "p": 0.2087,
+   "p": 0.2416,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794511800000
+   "ts": 1794513600000
   },
   "BNB": {
-   "p": 0.5276,
+   "p": 0.553,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794511800000
+   "ts": 1794513600000
   },
   "LINK": {
-   "p": 0.3374,
+   "p": 0.3726,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794511800000
+   "ts": 1794513600000
   },
   "AVAX": {
-   "p": 0.1287,
+   "p": 0.2337,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794511800000
+   "ts": 1794513600000
   },
   "LTC": {
-   "p": 0.3959,
+   "p": 0.3855,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794511800000
+   "ts": 1794513600000
   },
   "DOT": {
-   "p": 0.2326,
+   "p": 0.2616,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794511800000
+   "ts": 1794513600000
   },
   "TRX": {
-   "p": 0.3053,
+   "p": 0.3151,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794511800000
+   "ts": 1794513600000
   }
  },
  "prices": {
-  "BTC": 71570.01,
-  "ETH": 2011.21,
-  "SOL": 81.58,
-  "XRP": 1.0304,
+  "BTC": 71585.93,
+  "ETH": 2019.24,
+  "SOL": 81.51,
+  "XRP": 1.0315,
   "DOGE": 0.06588,
-  "ADA": 0.1717,
-  "BNB": 654.52,
-  "LINK": 10.023,
-  "AVAX": 8.329,
-  "LTC": 49.89,
-  "DOT": 0.827,
-  "TRX": 0.3159
+  "ADA": 0.172,
+  "BNB": 654.73,
+  "LINK": 10.028,
+  "AVAX": 8.32,
+  "LTC": 49.92,
+  "DOT": 0.826,
+  "TRX": 0.3158
  },
  "model": {
   "version": 86,
@@ -14787,29 +14793,45 @@
   "risk_level": 0.2,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
+   "BTC": "reduce",
    "ETH": "reduce",
-   "XRP": "avoid",
    "SOL": "avoid",
-   "DOGE": "avoid"
+   "XRP": "avoid",
+   "DOGE": "avoid",
+   "ADA": "reduce",
+   "BNB": "reduce",
+   "LINK": "reduce",
+   "AVAX": "reduce",
+   "LTC": "reduce",
+   "DOT": "reduce",
+   "TRX": "reduce"
   },
   "regime": "bear"
  },
  "brain": {
-  "created_at": 1794510091904,
+  "created_at": 1794513733411,
   "source": "local",
   "model": "mimo2.6:9b",
   "directives": {
    "risk_level": 0.2,
    "min_confidence_adj": 0.05,
    "symbol_bias": {
+    "BTC": "reduce",
     "ETH": "reduce",
-    "XRP": "avoid",
     "SOL": "avoid",
-    "DOGE": "avoid"
+    "XRP": "avoid",
+    "DOGE": "avoid",
+    "ADA": "reduce",
+    "BNB": "reduce",
+    "LINK": "reduce",
+    "AVAX": "reduce",
+    "LTC": "reduce",
+    "DOT": "reduce",
+    "TRX": "reduce"
    },
    "regime": "bear"
   },
-  "reasoning": "Rynek jest wyra\u017anie w spadku: BTC 30d -13.9%, ETH -20.1%, SOL -24.3%, XRP -25.1%, a Fear & Greed wynosi 28. Model ma zero edge (46% win rate vs always-buy -0.43%/trade), wi\u0119c nie zwi\u0119kszamy ryzyka. Ostatnie 10 zamykanych sygna\u0142\u00f3w da\u0142o 2 wins z 10 i -32.53$, a wszystkie wej\u015bcia mia\u0142y wysok\u0105 pewno\u015b\u0107 (0.73-0.83), co sugeruje, \u017ce wysokie pewno\u015b\u0107 nie gwarantuje zysku. CLM AUC 0.44 potwierdza brak przewagi w ocenie tekstowej.",
+  "reasoning": "Rynek jest wyra\u017anie w spadku: BTC 30d -13.9%, ETH -20.1%, SOL -24.3%, XRP -25.1%, a Fear & Greed wynosi 28. Model ma zero edge (46% win rate, avg +0.13%/trade vs always-buy -0.43%/trade), wi\u0119c nie zwi\u0119kszamy ryzyka. Practice account straci\u0142 2.46% przy 10 trades, 2 wins, co potwierdza brak przewagi. CLM model ma AUC 0.44, co oznacza brak skillu, wi\u0119c nie ufamy mu przy wej\u015bciach. Bior\u0105c pod uwag\u0119 wszystkie te czynniki, ustawiamy risk_level na 0.2 i min_confidence_adj na 0.05, aby ograniczy\u0107 ryzyko. Avoid: XRP, SOL, DOGE. Reduce: BTC, ETH, SOL, XRP, DOGE, ADA, BNB, LINK, AVAX, LTC, DOT, TRX. Lessons: XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji; Model bez edge: 46% win rate, avg +0.13%/trade vs always-buy -0.43%/trade \u2014 nie zwi\u0119kszaj ryzyka; CLM AUC 0.44 \u2014 tekstowy model bez przewagi, nie ufaj mu przy wej\u015bciach.",
   "new_lessons": [
    "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
    "Model bez edge: 46% win rate, avg +0.13%/trade vs always-buy -0.43%/trade \u2014 nie zwi\u0119kszaj ryzyka",
@@ -14829,9 +14851,40 @@
    "Rynek spadkowy (BTC 30d -10.1%) + Fear 29 \u2014 nie zwi\u0119kszaj ryzyka",
    "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji."
   ],
-  "seconds": 8.4
+  "seconds": 10.1
  },
  "brain_journal": [
+  {
+   "created_at": 1794513733411,
+   "source": "local",
+   "model": "mimo2.6:9b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.05,
+    "symbol_bias": {
+     "BTC": "reduce",
+     "ETH": "reduce",
+     "SOL": "avoid",
+     "XRP": "avoid",
+     "DOGE": "avoid",
+     "ADA": "reduce",
+     "BNB": "reduce",
+     "LINK": "reduce",
+     "AVAX": "reduce",
+     "LTC": "reduce",
+     "DOT": "reduce",
+     "TRX": "reduce"
+    },
+    "regime": "bear"
+   },
+   "reasoning": "Rynek jest wyra\u017anie w spadku: BTC 30d -13.9%, ETH -20.1%, SOL -24.3%, XRP -25.1%, a Fear & Greed wynosi 28. Model ma zero edge (46% win rate, avg +0.13%/trade vs always-buy -0.43%/trade), wi\u0119c nie zwi\u0119kszamy ryzyka. Practice account straci\u0142 2.46% przy 10 trades, 2 wins, co potwierdza brak przewagi. CLM model ma AUC 0.44, co oznacza brak skillu, wi\u0119c nie ufamy mu przy wej\u015bciach. Bior\u0105c pod uwag\u0119 wszystkie te czynniki, ustawiamy risk_level na 0.2 i min_confidence_adj na 0.05, aby ograniczy\u0107 ryzyko. Avoid: XRP, SOL, DOGE. Reduce: BTC, ETH, SOL, XRP, DOGE, ADA, BNB, LINK, AVAX, LTC, DOT, TRX. Lessons: XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji; Model bez edge: 46% win rate, avg +0.13%/trade vs always-buy -0.43%/trade \u2014 nie zwi\u0119kszaj ryzyka; CLM AUC 0.44 \u2014 tekstowy model bez przewagi, nie ufaj mu przy wej\u015bciach.",
+   "new_lessons": [
+    "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
+    "Model bez edge: 46% win rate, avg +0.13%/trade vs always-buy -0.43%/trade \u2014 nie zwi\u0119kszaj ryzyka",
+    "CLM AUC 0.44 \u2014 tekstowy model bez przewagi, nie ufaj mu przy wej\u015bciach"
+   ],
+   "equity_at": 997.53
+  },
   {
    "created_at": 1794510091904,
    "source": "local",
@@ -15032,29 +15085,6 @@
    "new_lessons": [
     "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji | Model bez edge: 46% win rate, avg +0.13%/trade vs always-buy -0.43%/trade \u2014 nie zwi\u0119kszaj ryzyka",
     "Model bez edge: 46% win rate, avg +0.13%/trade vs always-buy -0.43%/trade \u2014 nie zwi\u0119kszaj ryzyka",
-    "Rynek spadkowy (BTC 30d -12.3%) + Fear 28 \u2014 nie zwi\u0119kszaj ryzyka"
-   ],
-   "equity_at": 997.53
-  },
-  {
-   "created_at": 1794477317727,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.05,
-    "symbol_bias": {
-     "SOL": "reduce",
-     "XRP": "avoid",
-     "ADA": "avoid",
-     "LTC": "avoid"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "Rynek jest wyra\u017anie w trendzie spadkowym (BTC 30d -12.3%, ETH -19.0%, SOL -23.4%), a Fear & Greed wskazuje na silny strach. Model ma zero edge (proven edge: False), a praktyczny portfel straci\u0142 2.46% na 10 transakcjach. Wszystkie obecne sygna\u0142y modelowe s\u0105 poni\u017cej progu wej\u015bcia, wi\u0119c nie ma \u017cadnego powodu do zwi\u0119kszania ryzyka. Zalecam utrzymanie niskiego ryzyka i unikanie najs\u0142abszych aktyw\u00f3w.",
-   "new_lessons": [
-    "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
-    "Model bez edge: 46% win rate, avg +0.17%/trade vs always-buy -0.41%/trade \u2014 nie zwi\u0119kszaj ryzyka",
     "Rynek spadkowy (BTC 30d -12.3%) + Fear 28 \u2014 nie zwi\u0119kszaj ryzyka"
    ],
    "equity_at": 997.53
