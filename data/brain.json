@@ -1,8 +1,8 @@
 {
- "created_at": 1794502807427,
+ "created_at": 1794506452639,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 21.2,
+ "seconds": 9.9,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.05,
@@ -11,19 +11,20 @@
    "ETH": "reduce",
    "XRP": "avoid",
    "SOL": "avoid",
-   "AVAX": "avoid"
+   "DOGE": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest wyra\u017anie w spadku: BTC spad\u0142 o 12.4% w 30 dni, a indeks Fear & Greed wskazuje na 28 (Fear). Model ma brak udowodnionej przewagi (46% win rate, avg +0.13%/trade vs always-buy -0.43%/trade), a praktyczny rachunek straci\u0142 2.46% na 10 transakcjach. Dlatego utrzymuj\u0119 niskie ryzyko i nie zwi\u0119kszam pozycji.",
+ "reasoning": "Rynek jest wyra\u017anie w spadku: BTC 30d -13.9%, ETH 30d -20.1%, SOL 30d -24.3%, XRP 30d -25.1%, a Fear & Greed wynosi 28 (Fear). Wszystkie 12 symboli maj\u0105 prog\u0119 wej\u015bcia 0.78, a model podaje aktualne prawdopodobie\u0144stwa zaledwie 0.27-0.55, wi\u0119c zero sygna\u0142\u00f3w spe\u0142nia warunek wej\u015bcia. Praktyczny rachunek ma 10 z 10 zamykanych transakcji z 2 wygranymi i strat\u0105 -32.53$, co jest wyra\u017anym sygna\u0142em braku przewagi. Model ma udowodnion\u0105 przewag\u0119: False, a jego wynik 46% win rate i avg +0.13%/trade vs always-buy -0.43%/trade nie przekracza progu. Z tego powodu obni\u017cam ryzyko do 0.2, podnosz\u0119 min_confidence_adj do 0.05 i unikam XRP, SOL i DOGE, kt\u00f3re maj\u0105 najgorsze wyniki i najwi\u0119ksz\u0105 zmienno\u015b\u0107.",
  "new_lessons": [
   "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
   "Model bez edge: 46% win rate, avg +0.13%/trade vs always-buy -0.43%/trade \u2014 nie zwi\u0119kszaj ryzyka",
-  "Rynek spadkowy (BTC 30d -12.4%) + Fear 28 \u2014 nie zwi\u0119kszaj ryzyka"
+  "CLM AUC 0.44 \u2014 tekstowy model bez przewagi, nie ufaj mu przy wej\u015bciach"
  ],
  "lessons": [
   "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
   "Model bez edge: 46% win rate, avg +0.13%/trade vs always-buy -0.43%/trade \u2014 nie zwi\u0119kszaj ryzyka",
+  "CLM AUC 0.44 \u2014 tekstowy model bez przewagi, nie ufaj mu przy wej\u015bciach",
   "Rynek spadkowy (BTC 30d -12.4%) + Fear 28 \u2014 nie zwi\u0119kszaj ryzyka",
   "Rynek spadkowy (BTC 30d -12.3%) + Fear 28 \u2014 nie zwi\u0119kszaj ryzyka",
   "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji | Model bez edge: 46% win rate, avg +0.13%/trade vs always-buy -0.43%/trade \u2014 nie zwi\u0119kszaj ryzyka",
@@ -32,8 +33,7 @@
   "Rynek spadkowy (BTC 30d -10.1%) + Fear 28 \u2014 nie zwi\u0119kszaj ryzyka",
   "XRP straci\u0142 8.11% przy 0.83 \u2014 zero edge, zero pozycji",
   "Rynek spadkowy (BTC 30d -10.1%) + Fear 29 \u2014 nie zwi\u0119kszaj ryzyka",
-  "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji.",
-  "Model bez edge: 43% win rate, avg -0.01%/trade vs always-buy -0.42%/trade \u2014 nie zwi\u0119kszaj ryzyka."
+  "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji."
  ],
  "equity_at": 997.53
 }
