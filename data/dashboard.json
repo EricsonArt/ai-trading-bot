@@ -1,5 +1,5 @@
 {
- "generated_at": 1794519051921,
+ "generated_at": 1794533473324,
  "last_candle": 1794517200000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
@@ -13446,7 +13446,7 @@
    {
     "name": "Konto g\u0142\u00f3wne handlowa\u0142o na papierze 90+ dni",
     "ok": false,
-    "value": "46 dni"
+    "value": "47 dni"
    },
    {
     "name": "Co najmniej 100 zamkni\u0119tych transakcji",
@@ -14814,28 +14814,32 @@
   "regime": "bear"
  },
  "brain": {
-  "created_at": 1794517376923,
-  "source": "local",
-  "model": "mimo2.6:9b",
+  "created_at": 1794533473316,
+  "source": "cloud",
+  "model": "qwen3:4b",
   "directives": {
    "risk_level": 0.2,
-   "min_confidence_adj": 0.05,
+   "min_confidence_adj": -0.02,
    "symbol_bias": {
     "BTC": "reduce",
     "ETH": "reduce",
+    "SOL": "reduce",
     "XRP": "avoid",
     "DOGE": "avoid",
     "ADA": "avoid"
    },
    "regime": "bear"
   },
-  "reasoning": "Rynek jest wyra\u017anie spadkowy: BTC 30d -13.9%, ETH -20.1%, SOL -24.3%, XRP -25.1%, a Fear & Greed wynosi 28. Model ma zero edge: 46% win rate i avg +0.13%/trade vs always-buy -0.43%/trade, wi\u0119c nie zwi\u0119kszamy ryzyka. Practice account straci\u0142 2.46% przy 2 winach z 10, a main account -0.25% \u2014 utrzymujemy niskie ryzyko i unikamy symboli z najgorsz\u0105 histori\u0105.",
+  "reasoning": "Rynek jest w stanie spadku (BTC 30d -14.3%), model nie ma przewagi (44% wygranych, avg +0.25%/trade vs always-buy -0.41%/trade). W ostatnich 7 dniach 0 wygranych transakcji. Zmniejsz ryzyko po utracie 0.25% i braku edge. Model nie ma wystarczaj\u0105cej przewagi do wej\u015bcia.",
   "new_lessons": [
-   "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
-   "Model bez edge: 46% win rate, avg +0.13%/trade vs always-buy -0.43%/trade \u2014 nie zwi\u0119kszaj ryzyka",
-   "CLM AUC 0.44 \u2014 tekstowy model bez przewagi, nie ufaj mu przy wej\u015bciach"
+   "XRP straci\u0142 8.11% przy 0.83 \u2014 zero edge, zero pozycji",
+   "Model bez edge: 43% win rate, avg -0.01%/trade vs always-buy -0.42%/trade \u2014 nie zwi\u0119kszaj ryzyka",
+   "Rynek spadkowy (BTC 30d -10.1%) + Fear 28 \u2014 nie zwi\u0119kszaj ryzyka"
   ],
   "lessons": [
+   "XRP straci\u0142 8.11% przy 0.83 \u2014 zero edge, zero pozycji",
+   "Model bez edge: 43% win rate, avg -0.01%/trade vs always-buy -0.42%/trade \u2014 nie zwi\u0119kszaj ryzyka",
+   "Rynek spadkowy (BTC 30d -10.1%) + Fear 28 \u2014 nie zwi\u0119kszaj ryzyka",
    "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
    "Model bez edge: 46% win rate, avg +0.13%/trade vs always-buy -0.43%/trade \u2014 nie zwi\u0119kszaj ryzyka",
    "CLM AUC 0.44 \u2014 tekstowy model bez przewagi, nie ufaj mu przy wej\u015bciach",
@@ -14843,15 +14847,37 @@
    "Rynek spadkowy (BTC 30d -12.3%) + Fear 28 \u2014 nie zwi\u0119kszaj ryzyka",
    "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji | Model bez edge: 46% win rate, avg +0.13%/trade vs always-buy -0.43%/trade \u2014 nie zwi\u0119kszaj ryzyka",
    "Model bez edge: 46% win rate, avg +0.17%/trade vs always-buy -0.41%/trade \u2014 nie zwi\u0119kszaj ryzyka",
-   "Model bez edge: 43% win rate, avg -0.01%/trade vs always-buy -0.42%/trade \u2014 nie zwi\u0119kszaj ryzyka",
-   "Rynek spadkowy (BTC 30d -10.1%) + Fear 28 \u2014 nie zwi\u0119kszaj ryzyka",
-   "XRP straci\u0142 8.11% przy 0.83 \u2014 zero edge, zero pozycji",
    "Rynek spadkowy (BTC 30d -10.1%) + Fear 29 \u2014 nie zwi\u0119kszaj ryzyka",
    "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji."
   ],
-  "seconds": 11.6
+  "seconds": 96.1
  },
  "brain_journal": [
+  {
+   "created_at": 1794533473316,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": -0.02,
+    "symbol_bias": {
+     "BTC": "reduce",
+     "ETH": "reduce",
+     "SOL": "reduce",
+     "XRP": "avoid",
+     "DOGE": "avoid",
+     "ADA": "avoid"
+    },
+    "regime": "bear"
+   },
+   "reasoning": "Rynek jest w stanie spadku (BTC 30d -14.3%), model nie ma przewagi (44% wygranych, avg +0.25%/trade vs always-buy -0.41%/trade). W ostatnich 7 dniach 0 wygranych transakcji. Zmniejsz ryzyko po utracie 0.25% i braku edge. Model nie ma wystarczaj\u0105cej przewagi do wej\u015bcia.",
+   "new_lessons": [
+    "XRP straci\u0142 8.11% przy 0.83 \u2014 zero edge, zero pozycji",
+    "Model bez edge: 43% win rate, avg -0.01%/trade vs always-buy -0.42%/trade \u2014 nie zwi\u0119kszaj ryzyka",
+    "Rynek spadkowy (BTC 30d -10.1%) + Fear 28 \u2014 nie zwi\u0119kszaj ryzyka"
+   ],
+   "equity_at": 997.53
+  },
   {
    "created_at": 1794517376923,
    "source": "local",
@@ -15063,28 +15089,6 @@
    "new_lessons": [
     "Model bez edge: 46% win rate, avg +0.13%/trade vs always-buy -0.43%/trade \u2014 nie zwi\u0119kszaj ryzyka",
     "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
-    "Rynek spadkowy (BTC 30d -12.3%) + Fear 28 \u2014 nie zwi\u0119kszaj ryzyka"
-   ],
-   "equity_at": 997.53
-  },
-  {
-   "created_at": 1794484607708,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.05,
-    "symbol_bias": {
-     "XRP": "avoid",
-     "SOL": "avoid",
-     "LTC": "avoid"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "Rynek jest wyra\u017anie w spadku: BTC 30d -12.3%, ETH -19.0%, SOL -23.4%, XRP -24.2%, a Fear & Greed wynosi 28. Model ma zero edge (46% win rate vs always-buy -0.43%), wi\u0119c nie zwi\u0119kszamy ryzyka. Practice account straci\u0142 2.46% na 10 trades, a main account -0.25%, co potwierdza brak przewagi. Wszystkie symbole maj\u0105 probabilyty poni\u017cej threshold 0.78, wi\u0119c nie ma podstaw do wej\u015bcia.",
-   "new_lessons": [
-    "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
-    "Model bez edge: 46% win rate, avg +0.13%/trade vs always-buy -0.43%/trade \u2014 nie zwi\u0119kszaj ryzyka",
     "Rynek spadkowy (BTC 30d -12.3%) + Fear 28 \u2014 nie zwi\u0119kszaj ryzyka"
    ],
    "equity_at": 997.53
