@@ -1,14 +1,4 @@
 {
- "08180488b9": {
-  "name": "Wysoki wska\u017anik RSI",
-  "source": "internet research: arXiv research",
-  "rule": "rsi > 0.6455",
-  "why": "W ostatnich 7 dniach wska\u017anik RSI (14) wynosi 0.6455, co sugeruje nadmiarowe zyski. W przypadku spadku Bitcoinu, wysoki RSI mo\u017ce by\u0107 powodem dla strat w sytuacji spadku.",
-  "gain": 0.0,
-  "tested_at": 1793857015248,
-  "model_version": 73,
-  "adopted": false
- },
  "49538b1b12": {
   "name": "Filtr \u015bwiec: brak potwierdzenia wzrostu",
   "source": "internet research: Badanie arXiv o przewidywaniu intraday i p\u0142ynno\u015bci instytucji pokazuje, \u017ce przewidywanie na kr\u00f3tkim horyzoncie bywa iluzj\u0105; CoinDesk/Decrypt opisuj\u0105 BTC w trybie 'wait and see', a C",
@@ -796,6 +786,16 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: position inside the last 24h high-low range (0 = at the low, 1 = at the high)",
   "gain": 0.0,
   "tested_at": 1794648518427,
+  "model_version": 89,
+  "adopted": false
+ },
+ "8711b53766": {
+  "name": "Wysoka zmienno\u015b\u0107 Bitcoinu",
+  "source": "internet research: CoinDesk: Bitcoin plunges to $68,000 as Anthropic IPO frenzy adds to market jitters",
+  "rule": "btc_vol96 > 0.00313",
+  "why": "Bot straci\u0142 pieni\u0105dze w sytuacji, gdy Bitcoin by\u0142 bardzo zmieniony (btc_vol96 > 0.00313). Wczoraj na rynku Bitcoin spad\u0142 do $68k z powodu spadku kapita\u0142u w AI, co sugeruje, \u017ce zbyt du\u017ca zmienno\u015b\u0107 jest nieprzydatna dla strategii kupna.",
+  "gain": 0.0,
+  "tested_at": 1794671676470,
   "model_version": 89,
   "adopted": false
  }
