@@ -1,57 +1,57 @@
 {
- "created_at": 1794671632420,
- "model_version": 89,
- "signals": 28920,
- "losers": 16512,
+ "created_at": 1794692020362,
+ "model_version": 90,
+ "signals": 29619,
+ "losers": 16752,
  "patterns": [
-  {
-   "feature": "btc_vol96",
-   "meaning": "Bitcoin 24h volatility",
-   "strength": 0.247,
-   "losers_avg": 0.0024,
-   "winners_avg": 0.00283
-  },
   {
    "feature": "btc_r96",
    "meaning": "Bitcoin return over the last 24 hours",
-   "strength": 0.221,
-   "losers_avg": -0.006,
-   "winners_avg": -0.01353
+   "strength": 0.238,
+   "losers_avg": -0.00597,
+   "winners_avg": -0.01422
   },
   {
-   "feature": "range_pos",
-   "meaning": "position inside the last 24h high-low range (0 = at the low, 1 = at the high)",
-   "strength": 0.183,
-   "losers_avg": 0.41393,
-   "winners_avg": 0.4654
+   "feature": "btc_vol96",
+   "meaning": "Bitcoin 24h volatility",
+   "strength": 0.196,
+   "losers_avg": 0.00251,
+   "winners_avg": 0.00286
+  },
+  {
+   "feature": "ema_trend",
+   "meaning": "50-candle average vs 200-candle average (positive = uptrend)",
+   "strength": 0.185,
+   "losers_avg": -0.01085,
+   "winners_avg": -0.015
+  },
+  {
+   "feature": "r_96",
+   "meaning": "return over the last 24 hours",
+   "strength": 0.184,
+   "losers_avg": -0.01415,
+   "winners_avg": -0.02323
   },
   {
    "feature": "atr",
    "meaning": "average true range as a fraction of price",
-   "strength": 0.177,
-   "losers_avg": 0.00563,
+   "strength": 0.159,
+   "losers_avg": 0.00575,
    "winners_avg": 0.00667
-  },
-  {
-   "feature": "vol_96",
-   "meaning": "volatility of 15-min returns over 24 hours",
-   "strength": 0.169,
-   "losers_avg": 0.00386,
-   "winners_avg": 0.00451
   }
  ],
  "candidates": [
   {
-   "name": "unikaj range_pos <= 0.2258",
-   "gain_on_old_data": 0.00247
+   "name": "unikaj btc_vol96 >= 0.00308",
+   "gain_on_old_data": 0.00159
   },
   {
-   "name": "unikaj rsi <= 0.4082",
-   "gain_on_old_data": 0.00126
+   "name": "unikaj vol_16 >= 0.004405",
+   "gain_on_old_data": 0.00152
   },
   {
-   "name": "unikaj range_pos <= 0.1529",
-   "gain_on_old_data": 0.00111
+   "name": "unikaj atr >= 0.007015",
+   "gain_on_old_data": 0.00122
   }
  ]
 }
