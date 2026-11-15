@@ -1,9 +1,9 @@
 {
- "generated_at": 1794748317269,
- "last_candle": 1794746700000,
+ "generated_at": 1794749960694,
+ "last_candle": 1794748500000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
- "benchmark_return": -0.22851,
+ "benchmark_return": -0.22784000000000004,
  "series": [
   [
    1790508600000,
@@ -9426,10 +9426,16 @@
    984.27
   ],
   [
-   1794746700000,
+   1794747600000,
    997.53,
-   771.49,
-   984.28
+   771.97,
+   984.9
+  ],
+  [
+   1794748500000,
+   997.53,
+   772.16,
+   985.82
   ]
  ],
  "main": {
@@ -9519,7 +9525,7 @@
    {
     "name": "Lepiej ni\u017c samo trzymanie BTC",
     "ok": true,
-    "value": "+22.6 pkt"
+    "value": "+22.5 pkt"
    },
    {
     "name": "Najwi\u0119kszy spadek mniejszy ni\u017c 20%",
@@ -9566,8 +9572,8 @@
     "origin": "mutation: sl"
    },
    "joined": 1791184500000,
-   "equity": 984.28,
-   "return": -0.01572255448614568,
+   "equity": 985.82,
+   "return": -0.014180879660060097,
    "trades": 15,
    "avg": -0.010022000000000001,
    "win_rate": 0.3333333333333333,
@@ -9712,6 +9718,150 @@
    ]
   },
   {
+   "id": "2e42be5182",
+   "role": "challenger",
+   "recipe": {
+    "style": "position",
+    "threshold": 0.73,
+    "tp": 2.4,
+    "sl": 2.0,
+    "hold": 1.5,
+    "size": 0.25,
+    "rules": [
+     {
+      "feature": "btc_vol96",
+      "op": ">",
+      "value": 0.00243
+     },
+     {
+      "feature": "btc_r96",
+      "op": "<",
+      "value": -0.01231
+     },
+     {
+      "feature": "rel_r672",
+      "op": "<",
+      "value": -0.01085
+     },
+     {
+      "feature": "btc_r16",
+      "op": "<",
+      "value": 0.00602
+     }
+    ],
+    "id": "2e42be5182",
+    "parent": "6fce84a9fb",
+    "origin": "mutation: sl"
+   },
+   "joined": 1794737700000,
+   "equity": 1000.55,
+   "return": 0.0005475702662984805,
+   "trades": 0,
+   "avg": 0.0,
+   "win_rate": 0.0,
+   "open": [
+    "DOGE",
+    "XRP"
+   ],
+   "recent": []
+  },
+  {
+   "id": "6cf7109b9f",
+   "role": "challenger",
+   "recipe": {
+    "style": "position",
+    "threshold": 0.73,
+    "tp": 2.4,
+    "sl": 1.2,
+    "hold": 1.5,
+    "size": 0.25,
+    "rules": [
+     {
+      "feature": "btc_vol96",
+      "op": ">",
+      "value": 0.0024
+     },
+     {
+      "feature": "rel_r672",
+      "op": "<",
+      "value": -0.01085
+     },
+     {
+      "feature": "btc_r16",
+      "op": "<",
+      "value": 0.00704
+     },
+     {
+      "feature": "btc_r96",
+      "op": "<",
+      "value": -0.01231
+     }
+    ],
+    "id": "6cf7109b9f",
+    "parent": "51e910de63+b178b5b743",
+    "origin": "crossover"
+   },
+   "joined": 1794737700000,
+   "equity": 1000.55,
+   "return": 0.0005475702662984805,
+   "trades": 0,
+   "avg": 0.0,
+   "win_rate": 0.0,
+   "open": [
+    "DOGE",
+    "XRP"
+   ],
+   "recent": []
+  },
+  {
+   "id": "84cd7a2e95",
+   "role": "challenger",
+   "recipe": {
+    "style": "position",
+    "threshold": 0.73,
+    "tp": 2.4,
+    "sl": 1.6,
+    "hold": 1.5,
+    "size": 0.25,
+    "rules": [
+     {
+      "feature": "btc_vol96",
+      "op": ">",
+      "value": 0.0024
+     },
+     {
+      "feature": "btc_r96",
+      "op": "<",
+      "value": -0.01231
+     },
+     {
+      "feature": "rel_r672",
+      "op": "<",
+      "value": -0.01085
+     },
+     {
+      "feature": "btc_r16",
+      "op": "<",
+      "value": 0.00602
+     }
+    ],
+    "id": "84cd7a2e95",
+    "parent": "00dba0b899",
+    "origin": "mutation: sl"
+   },
+   "joined": 1794737700000,
+   "equity": 1000.55,
+   "return": 0.0005475702662984805,
+   "trades": 0,
+   "avg": 0.0,
+   "win_rate": 0.0,
+   "open": [
+    "DOGE",
+    "XRP"
+   ],
+   "recent": []
+  },
+  {
    "id": "8389c79091",
    "role": "challenger",
    "recipe": {
@@ -9755,206 +9905,71 @@
    "win_rate": 0.0,
    "open": [],
    "recent": []
-  },
-  {
-   "id": "2e42be5182",
-   "role": "challenger",
-   "recipe": {
-    "style": "position",
-    "threshold": 0.73,
-    "tp": 2.4,
-    "sl": 2.0,
-    "hold": 1.5,
-    "size": 0.25,
-    "rules": [
-     {
-      "feature": "btc_vol96",
-      "op": ">",
-      "value": 0.00243
-     },
-     {
-      "feature": "btc_r96",
-      "op": "<",
-      "value": -0.01231
-     },
-     {
-      "feature": "rel_r672",
-      "op": "<",
-      "value": -0.01085
-     },
-     {
-      "feature": "btc_r16",
-      "op": "<",
-      "value": 0.00602
-     }
-    ],
-    "id": "2e42be5182",
-    "parent": "6fce84a9fb",
-    "origin": "mutation: sl"
-   },
-   "joined": 1794737700000,
-   "equity": 1000.0,
-   "return": 0.0,
-   "trades": 0,
-   "avg": 0.0,
-   "win_rate": 0.0,
-   "open": [],
-   "recent": []
-  },
-  {
-   "id": "6cf7109b9f",
-   "role": "challenger",
-   "recipe": {
-    "style": "position",
-    "threshold": 0.73,
-    "tp": 2.4,
-    "sl": 1.2,
-    "hold": 1.5,
-    "size": 0.25,
-    "rules": [
-     {
-      "feature": "btc_vol96",
-      "op": ">",
-      "value": 0.0024
-     },
-     {
-      "feature": "rel_r672",
-      "op": "<",
-      "value": -0.01085
-     },
-     {
-      "feature": "btc_r16",
-      "op": "<",
-      "value": 0.00704
-     },
-     {
-      "feature": "btc_r96",
-      "op": "<",
-      "value": -0.01231
-     }
-    ],
-    "id": "6cf7109b9f",
-    "parent": "51e910de63+b178b5b743",
-    "origin": "crossover"
-   },
-   "joined": 1794737700000,
-   "equity": 1000.0,
-   "return": 0.0,
-   "trades": 0,
-   "avg": 0.0,
-   "win_rate": 0.0,
-   "open": [],
-   "recent": []
-  },
-  {
-   "id": "84cd7a2e95",
-   "role": "challenger",
-   "recipe": {
-    "style": "position",
-    "threshold": 0.73,
-    "tp": 2.4,
-    "sl": 1.6,
-    "hold": 1.5,
-    "size": 0.25,
-    "rules": [
-     {
-      "feature": "btc_vol96",
-      "op": ">",
-      "value": 0.0024
-     },
-     {
-      "feature": "btc_r96",
-      "op": "<",
-      "value": -0.01231
-     },
-     {
-      "feature": "rel_r672",
-      "op": "<",
-      "value": -0.01085
-     },
-     {
-      "feature": "btc_r16",
-      "op": "<",
-      "value": 0.00602
-     }
-    ],
-    "id": "84cd7a2e95",
-    "parent": "00dba0b899",
-    "origin": "mutation: sl"
-   },
-   "joined": 1794737700000,
-   "equity": 1000.0,
-   "return": 0.0,
-   "trades": 0,
-   "avg": 0.0,
-   "win_rate": 0.0,
-   "open": [],
-   "recent": []
   }
  ],
  "practice": {
-  "equity": 984.28,
-  "return": -0.015720000000000067,
+  "equity": 985.82,
+  "return": -0.01417999999999997,
   "cash": 0.0,
   "positions": [
    {
     "symbol": "LINK",
     "entry_ts": 1794666600000,
     "entry_px": 9.3336645,
-    "price": 9.33,
-    "value": 205.93,
-    "pnl_pct": -0.00039261106931787193,
+    "price": 9.356,
+    "value": 206.51,
+    "pnl_pct": 0.0023930043767912412,
     "tp_px": 10.915878068475138,
     "sl_px": 8.015153192937383,
-    "held": 90,
+    "held": 92,
     "horizon": 288
    },
    {
     "symbol": "BNB",
     "entry_ts": 1794672900000,
     "entry_px": 590.295,
-    "price": 597.94,
-    "value": 279.19,
-    "pnl_pct": 0.012951151542872852,
+    "price": 597.05,
+    "value": 278.78,
+    "pnl_pct": 0.011443430826959311,
     "tp_px": 670.5147665368077,
     "sl_px": 523.4451945526602,
-    "held": 83,
+    "held": 85,
     "horizon": 288
    },
    {
     "symbol": "DOGE",
     "entry_ts": 1794675600000,
     "entry_px": 0.05998998,
-    "price": 0.05935,
-    "value": 185.91,
-    "pnl_pct": -0.010668114908523041,
+    "price": 0.05951,
+    "value": 186.41,
+    "pnl_pct": -0.008001002834139959,
     "tp_px": 0.07067158649785679,
     "sl_px": 0.051088641251786,
-    "held": 80,
+    "held": 82,
     "horizon": 288
    },
    {
     "symbol": "ADA",
     "entry_ts": 1794680100000,
     "entry_px": 0.15517754999999997,
-    "price": 0.1563,
-    "value": 180.9,
-    "pnl_pct": 0.007233327243534982,
+    "price": 0.1562,
+    "value": 180.78,
+    "pnl_pct": 0.006588904129495754,
     "tp_px": 0.18246137213505267,
     "sl_px": 0.13244103155412273,
-    "held": 75,
+    "held": 77,
     "horizon": 288
    },
    {
     "symbol": "XRP",
     "entry_ts": 1794690900000,
     "entry_px": 0.91655805,
-    "price": 0.9681,
-    "value": 132.34,
-    "pnl_pct": 0.05623424506500152,
+    "price": 0.9754,
+    "value": 133.34,
+    "pnl_pct": 0.0641988251589738,
     "tp_px": 1.0766216590582995,
     "sl_px": 0.7831717091180836,
-    "held": 63,
+    "held": 65,
     "horizon": 288
    }
   ],
@@ -10388,91 +10403,91 @@
  },
  "signals": {
   "BTC": {
-   "p": 0.3354,
+   "p": 0.3018,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794746700000
+   "ts": 1794748500000
   },
   "ETH": {
-   "p": 0.4873,
+   "p": 0.4886,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794746700000
+   "ts": 1794748500000
   },
   "SOL": {
-   "p": 0.3969,
+   "p": 0.4384,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794746700000
+   "ts": 1794748500000
   },
   "XRP": {
-   "p": 0.72,
+   "p": 0.6907,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794746700000
+   "ts": 1794748500000
   },
   "DOGE": {
-   "p": 0.7515,
+   "p": 0.711,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794746700000
+   "ts": 1794748500000
   },
   "ADA": {
-   "p": 0.3949,
+   "p": 0.4227,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794746700000
+   "ts": 1794748500000
   },
   "BNB": {
-   "p": 0.5368,
+   "p": 0.526,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794746700000
+   "ts": 1794748500000
   },
   "LINK": {
-   "p": 0.4395,
+   "p": 0.4451,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794746700000
+   "ts": 1794748500000
   },
   "AVAX": {
-   "p": 0.6765,
+   "p": 0.6777,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794746700000
+   "ts": 1794748500000
   },
   "LTC": {
-   "p": 0.2577,
+   "p": 0.3975,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794746700000
+   "ts": 1794748500000
   },
   "DOT": {
-   "p": 0.4173,
+   "p": 0.4144,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794746700000
+   "ts": 1794748500000
   },
   "TRX": {
-   "p": 0.5738,
+   "p": 0.5876,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794746700000
+   "ts": 1794748500000
   }
  },
  "prices": {
-  "BTC": 65509.24,
-  "ETH": 1835.93,
-  "SOL": 72.88,
-  "XRP": 0.9681,
-  "DOGE": 0.05935,
-  "ADA": 0.1563,
-  "BNB": 597.94,
-  "LINK": 9.33,
-  "AVAX": 7.299,
-  "LTC": 45.53,
-  "DOT": 0.74,
-  "TRX": 0.3072
+  "BTC": 65566.0,
+  "ETH": 1836.1,
+  "SOL": 72.94,
+  "XRP": 0.9754,
+  "DOGE": 0.05951,
+  "ADA": 0.1562,
+  "BNB": 597.05,
+  "LINK": 9.356,
+  "AVAX": 7.329,
+  "LTC": 45.41,
+  "DOT": 0.739,
+  "TRX": 0.307
  },
  "model": {
   "version": 91,
@@ -10938,7 +10953,7 @@
   "regime": "bear"
  },
  "brain": {
-  "created_at": 1794745478410,
+  "created_at": 1794749118558,
   "source": "local",
   "model": "mimo2.6:9b",
   "directives": {
@@ -10952,7 +10967,7 @@
    },
    "regime": "bear"
   },
-  "reasoning": "Rynek jest w panice: BTC spad\u0142 30 dni o 19.9%, Fear & Greed to 10 (Extreme Fear), a praktyczny rachunek straci\u0142 6.95% na 10 transakcjach. Model ma zero edge (45% win rate, avg +0.11%/trade vs always-buy -0.43%/trade), wi\u0119c nie zwi\u0119kszamy ryzyka. XRP, DOGE i LTC maj\u0105 najgorsze wyniki i spadaj\u0105 najszybciej, wi\u0119c ich omijamy.",
+  "reasoning": "Rynek krypto jest w panice: BTC spad\u0142 poni\u017cej 3-miesi\u0119cznego minimuma, a Fear & Greed to 10 (Extreme Fear). Model ma zero edge (proven edge: False), a practice account straci\u0142 6.95% na 10 transakcjach, wi\u0119c nie zwi\u0119kszamy ryzyka. XRP, DOGE i LTC maj\u0105 najgorsze wyniki i spadkowe trendy, wi\u0119c je pomijamy.",
   "new_lessons": [
    "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
    "Practice account: 10 trades, 2 wins, -6.95% \u2014 model bez edge, zero pozycji",
@@ -10972,9 +10987,32 @@
    "XRP straci\u0142 8.11% przy 0.83 \u2014 zero edge, zero pozycji",
    "Model bez edge: 44% wygranych, \u015brednio +0.11% na transakcji vs zawsze kupowa\u0107 -0.41% \u2014 nie zwi\u0119kszaj ryzyka"
   ],
-  "seconds": 14.5
+  "seconds": 9.1
  },
  "brain_journal": [
+  {
+   "created_at": 1794749118558,
+   "source": "local",
+   "model": "mimo2.6:9b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.05,
+    "symbol_bias": {
+     "ETH": "reduce",
+     "XRP": "avoid",
+     "DOGE": "avoid",
+     "LTC": "avoid"
+    },
+    "regime": "bear"
+   },
+   "reasoning": "Rynek krypto jest w panice: BTC spad\u0142 poni\u017cej 3-miesi\u0119cznego minimuma, a Fear & Greed to 10 (Extreme Fear). Model ma zero edge (proven edge: False), a practice account straci\u0142 6.95% na 10 transakcjach, wi\u0119c nie zwi\u0119kszamy ryzyka. XRP, DOGE i LTC maj\u0105 najgorsze wyniki i spadkowe trendy, wi\u0119c je pomijamy.",
+   "new_lessons": [
+    "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
+    "Practice account: 10 trades, 2 wins, -6.95% \u2014 model bez edge, zero pozycji",
+    "Rynek spadkowy (BTC 30d -19.9%, Fear 10) \u2014 nie zwi\u0119kszaj ryzyka"
+   ],
+   "equity_at": 997.53
+  },
   {
    "created_at": 1794745478410,
    "source": "local",
@@ -11180,48 +11218,25 @@
     "Rynek spadkowy (BTC 30d -20.5%, Fear 13) \u2014 nie zwi\u0119kszaj ryzyka"
    ],
    "equity_at": 997.53
-  },
-  {
-   "created_at": 1794695885297,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.05,
-    "symbol_bias": {
-     "AVAX": "reduce",
-     "XRP": "avoid",
-     "DOGE": "avoid",
-     "LTC": "avoid"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "Rynek jest wyra\u017anie w fazie spadkowej \u2014 BTC spad\u0142 o 20.5% w 30 dni, a indeks Fear & Greed wynosi 13 (Extreme Fear). Model nie ma udowodnionej przewagi: 43% win rate i \u015brednio +0.01%/trade wobec always-buy -0.41%/trade, wi\u0119c nie zwi\u0119kszamy ryzyka. Practice account pokaza\u0142 10 trades, 2 wins, -6.86%, co potwierdza brak edge. Obni\u017camy ryzyko do 0.2, zwi\u0119kszamy pr\u00f3g wej\u015bcia o 0.05 i unikamy XRP, DOGE, LTC na podstawie danych.",
-   "new_lessons": [
-    "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
-    "Model bez edge: 43% win rate, avg +0.01%/trade vs always-buy -0.41%/trade \u2014 zero edge, zero pozycji",
-    "Rynek spadkowy (BTC 30d -20.5%, Fear 13) \u2014 nie zwi\u0119kszaj ryzyka"
-   ],
-   "equity_at": 997.53
   }
  ],
  "clm": {
-  "updated_at": 1794714119576,
+  "updated_at": 1794749239100,
   "latest": {
-   "BTC": 0.1588,
-   "ETH": 0.1185,
-   "SOL": 0.1939,
-   "XRP": 0.3989,
-   "DOGE": 0.3199,
-   "ADA": 0.3333,
-   "BNB": 0.2007,
-   "LINK": 0.2537,
-   "AVAX": 0.2615,
-   "LTC": 0.2395,
-   "DOT": 0.151,
-   "TRX": 0.2771
+   "BTC": 0.1423,
+   "ETH": 0.1159,
+   "SOL": 0.1959,
+   "XRP": 0.4346,
+   "DOGE": 0.34,
+   "ADA": 0.3202,
+   "BNB": 0.2278,
+   "LINK": 0.2452,
+   "AVAX": 0.2788,
+   "LTC": 0.3184,
+   "DOT": 0.1992,
+   "TRX": 0.3169
   },
-  "seconds": 47.0,
+  "seconds": 57.4,
   "question": "Buying {sym} now and holding it for about two days will end in a profit.",
   "track_record": {
    "n": 1740,
