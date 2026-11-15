@@ -1,34 +1,4 @@
 {
- "257d7f867f": {
-  "name": "Filtr trendu: brak struktury wzrostowej",
-  "source": "internet research: Badanie arXiv o przewidywaniu intraday pokazuje, \u017ce przewidywanie na kr\u00f3tkim horyzoncie bywa iluzj\u0105; odrzucone wcze\u015bniej filtry (r_96, rank_r96) nie pomog\u0142y, wi\u0119c filtr musi opiera\u0107",
-  "rule": "r_4 < 0.0005 and r_16 < 0.0005 and d_ema50 < -0.002",
-  "why": "Bot kupuje w oknie spadkowym BTC, wi\u0119c kr\u00f3tkoterminowa struktura wzrostowa jest potrzebna. Regu\u0142a odrzuca sygna\u0142y, kt\u00f3re model widzi jako szanse, ale \u015bwiece nie potwierdzaj\u0105 \u2014 to dok\u0142adnie typ b\u0142\u0119du, kt\u00f3ry utkn\u0105\u0142 w oknie spadkowym.",
-  "gain": 0.0,
-  "tested_at": 1793946405073,
-  "model_version": 75,
-  "adopted": false
- },
- "155a7490bc": {
-  "name": "Wymagaj kr\u00f3tkoterminowej si\u0142y, nie spadkowej presji",
-  "source": "internet research: B\u0142\u0119dy bota: wszystkie cechy kr\u00f3tkoterminowe (d_ema200, r_96, ema_trend, btc_r96, d_ema50) mia\u0142y gorsze wyniki w handlu przegranym, co sugeruje, \u017ce sygna\u0142y kupna w warunkach spadku n",
-  "rule": "r_1 > 0.0005 and r_4 > 0.0005 and r_16 > 0.0005",
-  "why": "To proste odwr\u00f3cenie dominuj\u0105cego wzorca b\u0142\u0119d\u00f3w: bot kupowa\u0142, gdy kr\u00f3tkoterminowe trendy by\u0142y negatywne, a te sygna\u0142y przegrywa\u0142y. Wymaganie dodatnich kr\u00f3tkoterminowych zwrot\u00f3w (15 min, 1h, 4h) odrzuca sygna\u0142y generowane w spadkowej presji, zanim wejd\u0105 w pozycj\u0119.",
-  "gain": 0.0,
-  "tested_at": 1793994871311,
-  "model_version": 76,
-  "adopted": false
- },
- "33c0115634": {
-  "name": "Wymagaj stabilizacji zmienno\u015bci po spadku",
-  "source": "internet research: Odrzucony wcze\u015bniej pomys\u0142 'vol_ratio < 1 and r_32 < -0.005 and rank_r96 < 0.4' nie pom\u00f3g\u0142, ale jego komponent 'vol_ratio < 1' jest zgodny z lekcj\u0105 o unikaniu rosn\u0105cej zmienno\u015bci; d",
-  "rule": "vol_ratio < 1 and r_32 > -0.005",
-  "why": "Wzrost kr\u00f3tkoterminowej zmienno\u015bci wzgl\u0119dem d\u0142ugoterminowej (vol_ratio > 1) oznacza, \u017ce rynek staje si\u0119 bardziej chaotyczny i sygna\u0142 mo\u017ce by\u0107 fa\u0142szywy. Wymaganie vol_ratio < 1 (spadaj\u0105cej zmienno\u015bci) w po\u0142\u0105czeniu z nieza\u0142amuj\u0105cym si\u0119 spadkiem r_32 odrzuca sygna\u0142y z rosn\u0105cej niepewno\u015bci.",
-  "gain": 0.0,
-  "tested_at": 1793994871311,
-  "model_version": 76,
-  "adopted": false
- },
  "f34b74b240": {
   "name": "Wymagaj utrzymania pozycji wzgl\u0119dem \u015bredniej 200h",
   "source": "internet research: B\u0142\u0119dne sygna\u0142y mia\u0142y \u015brednio negatywne d_ema200 i btc_r96; 'btc_r96 > -0.01231' by\u0142o odrzucone jako zbyt s\u0142abe, ale 'd_ema200 > -0.005' nie by\u0142o odrzucone.",
@@ -796,6 +766,36 @@
   "why": "Bot straci\u0142 pieni\u0105dze w sytuacji, gdy Bitcoin by\u0142 bardzo zmieniony (btc_vol96 > 0.00313). Wczoraj na rynku Bitcoin spad\u0142 do $68k z powodu spadku kapita\u0142u w AI, co sugeruje, \u017ce zbyt du\u017ca zmienno\u015b\u0107 jest nieprzydatna dla strategii kupna.",
   "gain": 0.0,
   "tested_at": 1794736599773,
+  "model_version": 91,
+  "adopted": false
+ },
+ "466889a22b": {
+  "name": "Brak odskoku w 15-60 min",
+  "source": "internet research: B\u0142\u0105d botu: losing trades mia\u0142y r_96 avg -0.01347 i r_4; dzi\u015b BTC jest w krachu (3-miesi\u0119czne minimum, ETF outflows)",
+  "rule": "r_1 < 0.0005 and r_2 < 0.0005 and r_4 < 0.0005",
+  "why": "Je\u015bli \u015bwiece 15-minutowe i 1-godzinne nie odzyskuj\u0105 warto\u015bci, sygna\u0142 kupna w trendzie spadkowym jest najprawdopodobniej z\u0142ym \u2014 filtruje to najgorsze wej\u015bcia w d\u00f3\u0142.",
+  "gain": 0.0,
+  "tested_at": 1794739237087,
+  "model_version": 91,
+  "adopted": false
+ },
+ "15d8e3c07e": {
+  "name": "Cena u do\u0142u dzisiejszego zakresu",
+  "source": "internet research: B\u0142\u0105d botu: losing trades mia\u0142y ema_trend avg -0.01021 i d_ema200; dzi\u015b BTC jest poni\u017cej 3-miesi\u0119cznego minimuma",
+  "rule": "bb < 0 and range_pos < 0.3 and body < 0",
+  "why": "Kupno w dolnej cz\u0119\u015bci dzisiejszego zakresu \u015bwiec przy spadkowej \u015bwiecy zwi\u0119ksza ryzyko wej\u015bcia w d\u00f3\u0142, zamiast w odskoku.",
+  "gain": 0.0,
+  "tested_at": 1794739237087,
+  "model_version": 91,
+  "adopted": false
+ },
+ "431269ff58": {
+  "name": "Kr\u00f3tki i \u015bredni trend spadkowy",
+  "source": "internet research: B\u0142\u0105d botu: losing trades mia\u0142y ema_trend avg -0.01021 i d_ema200; dzi\u015b BTC jest w krachu",
+  "rule": "d_ema50 < -0.005 and d_ema800 < -0.01 and ema_trend < 0",
+  "why": "Bot ju\u017c filtruje na ema_trend, ale dodanie d_ema50 i d_ema800 odrzuca sygna\u0142y, gdy kr\u00f3tki i \u015bredni trend s\u0105 wyra\u017anie spadkowe \u2014 filtruje to wej\u015bcia w d\u00f3\u0142.",
+  "gain": 0.0,
+  "tested_at": 1794739237087,
   "model_version": 91,
   "adopted": false
  }

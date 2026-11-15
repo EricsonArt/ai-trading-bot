@@ -1,9 +1,9 @@
 {
- "generated_at": 1794737675098,
- "last_candle": 1794735900000,
+ "generated_at": 1794739237413,
+ "last_candle": 1794737700000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
- "benchmark_return": -0.23038000000000003,
+ "benchmark_return": -0.22865000000000002,
  "series": [
   [
    1790508600000,
@@ -9402,10 +9402,16 @@
    978.86
   ],
   [
-   1794735900000,
+   1794736800000,
    997.53,
-   769.62,
-   974.26
+   772.9,
+   980.47
+  ],
+  [
+   1794737700000,
+   997.53,
+   771.35,
+   977.92
   ]
  ],
  "main": {
@@ -9495,7 +9501,7 @@
    {
     "name": "Lepiej ni\u017c samo trzymanie BTC",
     "ok": true,
-    "value": "+22.8 pkt"
+    "value": "+22.6 pkt"
    },
    {
     "name": "Najwi\u0119kszy spadek mniejszy ni\u017c 20%",
@@ -9542,8 +9548,8 @@
     "origin": "mutation: sl"
    },
    "joined": 1791184500000,
-   "equity": 974.26,
-   "return": -0.025743701323320156,
+   "equity": 977.92,
+   "return": -0.022075897485859364,
    "trades": 15,
    "avg": -0.010022000000000001,
    "win_rate": 0.3333333333333333,
@@ -9688,42 +9694,42 @@
    ]
   },
   {
-   "id": "a586262604",
+   "id": "8389c79091",
    "role": "challenger",
    "recipe": {
     "style": "position",
-    "threshold": 0.73,
-    "tp": 2.0,
-    "sl": 2.0,
+    "threshold": 0.64,
+    "tp": 2.4,
+    "sl": 0.6,
     "hold": 1.5,
     "size": 0.25,
     "rules": [
      {
-      "feature": "btc_vol96",
-      "op": ">",
-      "value": 0.00282
-     },
-     {
-      "feature": "btc_r96",
+      "feature": "btc_r16",
       "op": "<",
-      "value": -0.00947
+      "value": -0.00081
      },
      {
       "feature": "rel_r672",
       "op": "<",
-      "value": -0.00224
+      "value": -0.03883
      },
      {
-      "feature": "btc_r16",
+      "feature": "btc_vol96",
+      "op": ">",
+      "value": 0.0023
+     },
+     {
+      "feature": "btc_r96",
       "op": "<",
-      "value": 0.00713
+      "value": -0.0137
      }
     ],
-    "id": "a586262604",
-    "parent": "c69003dfc9+be22ac9780",
-    "origin": "crossover"
+    "id": "8389c79091",
+    "parent": "206de96a92",
+    "origin": "mutation: threshold"
    },
-   "joined": 1794735000000,
+   "joined": 1794737700000,
    "equity": 1000.0,
    "return": 0.0,
    "trades": 0,
@@ -9733,12 +9739,12 @@
    "recent": []
   },
   {
-   "id": "c8d4487dc5",
+   "id": "2e42be5182",
    "role": "challenger",
    "recipe": {
     "style": "position",
     "threshold": 0.73,
-    "tp": 2.0,
+    "tp": 2.4,
     "sl": 2.0,
     "hold": 1.5,
     "size": 0.25,
@@ -9746,29 +9752,29 @@
      {
       "feature": "btc_vol96",
       "op": ">",
-      "value": 0.00282
+      "value": 0.00243
      },
      {
       "feature": "btc_r96",
       "op": "<",
-      "value": -0.00947
+      "value": -0.01231
      },
      {
       "feature": "rel_r672",
       "op": "<",
-      "value": -0.00224
+      "value": -0.01085
      },
      {
       "feature": "btc_r16",
       "op": "<",
-      "value": 0.0061
+      "value": 0.00602
      }
     ],
-    "id": "c8d4487dc5",
-    "parent": "7f8c3235cd",
+    "id": "2e42be5182",
+    "parent": "6fce84a9fb",
     "origin": "mutation: sl"
    },
-   "joined": 1794735000000,
+   "joined": 1794737700000,
    "equity": 1000.0,
    "return": 0.0,
    "trades": 0,
@@ -9778,42 +9784,42 @@
    "recent": []
   },
   {
-   "id": "0bde408280",
+   "id": "6cf7109b9f",
    "role": "challenger",
    "recipe": {
     "style": "position",
     "threshold": 0.73,
-    "tp": 2.0,
-    "sl": 2.0,
+    "tp": 2.4,
+    "sl": 1.2,
     "hold": 1.5,
     "size": 0.25,
     "rules": [
      {
-      "feature": "btc_r96",
-      "op": "<",
-      "value": -0.00947
+      "feature": "btc_vol96",
+      "op": ">",
+      "value": 0.0024
      },
      {
       "feature": "rel_r672",
       "op": "<",
-      "value": -0.00224
-     },
-     {
-      "feature": "btc_vol96",
-      "op": ">",
-      "value": 0.00282
+      "value": -0.01085
      },
      {
       "feature": "btc_r16",
       "op": "<",
-      "value": 0.00702
+      "value": 0.00704
+     },
+     {
+      "feature": "btc_r96",
+      "op": "<",
+      "value": -0.01231
      }
     ],
-    "id": "0bde408280",
-    "parent": "a586262604+1725f38f98",
+    "id": "6cf7109b9f",
+    "parent": "51e910de63+b178b5b743",
     "origin": "crossover"
    },
-   "joined": 1794735000000,
+   "joined": 1794737700000,
    "equity": 1000.0,
    "return": 0.0,
    "trades": 0,
@@ -9823,12 +9829,12 @@
    "recent": []
   },
   {
-   "id": "dd115357df",
+   "id": "84cd7a2e95",
    "role": "challenger",
    "recipe": {
     "style": "position",
     "threshold": 0.73,
-    "tp": 2.0,
+    "tp": 2.4,
     "sl": 1.6,
     "hold": 1.5,
     "size": 0.25,
@@ -9836,29 +9842,29 @@
      {
       "feature": "btc_vol96",
       "op": ">",
-      "value": 0.00282
+      "value": 0.0024
      },
      {
       "feature": "btc_r96",
       "op": "<",
-      "value": -0.00947
+      "value": -0.01231
      },
      {
       "feature": "rel_r672",
       "op": "<",
-      "value": -0.00224
+      "value": -0.01085
      },
      {
       "feature": "btc_r16",
       "op": "<",
-      "value": 0.00525
+      "value": 0.00602
      }
     ],
-    "id": "dd115357df",
-    "parent": "8c334f6fd5",
+    "id": "84cd7a2e95",
+    "parent": "00dba0b899",
     "origin": "mutation: sl"
    },
-   "joined": 1794735000000,
+   "joined": 1794737700000,
    "equity": 1000.0,
    "return": 0.0,
    "trades": 0,
@@ -9869,68 +9875,68 @@
   }
  ],
  "practice": {
-  "equity": 974.26,
-  "return": -0.025739999999999985,
+  "equity": 977.92,
+  "return": -0.02207999999999999,
   "cash": 0.0,
   "positions": [
    {
     "symbol": "LINK",
     "entry_ts": 1794666600000,
     "entry_px": 9.3336645,
-    "price": 9.218,
-    "value": 203.46,
-    "pnl_pct": -0.01239218529871089,
+    "price": 9.253,
+    "value": 204.23,
+    "pnl_pct": -0.008642318352025558,
     "tp_px": 10.915878068475138,
     "sl_px": 8.015153192937383,
-    "held": 78,
+    "held": 80,
     "horizon": 288
    },
    {
     "symbol": "BNB",
     "entry_ts": 1794672900000,
     "entry_px": 590.295,
-    "price": 595.68,
-    "value": 278.14,
-    "pnl_pct": 0.009122557365385031,
+    "price": 597.72,
+    "value": 279.09,
+    "pnl_pct": 0.01257845653444467,
     "tp_px": 670.5147665368077,
     "sl_px": 523.4451945526602,
-    "held": 71,
+    "held": 73,
     "horizon": 288
    },
    {
     "symbol": "DOGE",
     "entry_ts": 1794675600000,
     "entry_px": 0.05998998,
-    "price": 0.05866,
-    "value": 183.75,
-    "pnl_pct": -0.022170035729300097,
+    "price": 0.05895,
+    "value": 184.65,
+    "pnl_pct": -0.017335895094480747,
     "tp_px": 0.07067158649785679,
     "sl_px": 0.051088641251786,
-    "held": 68,
+    "held": 70,
     "horizon": 288
    },
    {
     "symbol": "ADA",
     "entry_ts": 1794680100000,
     "entry_px": 0.15517754999999997,
-    "price": 0.1531,
-    "value": 177.2,
-    "pnl_pct": -0.013388212405724631,
+    "price": 0.1541,
+    "value": 178.35,
+    "pnl_pct": -0.006943981265331134,
     "tp_px": 0.18246137213505267,
     "sl_px": 0.13244103155412273,
-    "held": 63,
+    "held": 65,
     "horizon": 288
    },
    {
     "symbol": "XRP",
     "entry_ts": 1794690900000,
     "entry_px": 0.91655805,
-    "price": 0.9635,
-    "value": 131.71,
-    "pnl_pct": 0.05121546856742998,
+    "price": 0.9626,
+    "value": 131.59,
+    "pnl_pct": 0.0502335340352964,
     "tp_px": 1.0766216590582995,
     "sl_px": 0.7831717091180836,
-    "held": 51,
+    "held": 53,
     "horizon": 288
    }
   ],
@@ -10364,91 +10370,91 @@
  },
  "signals": {
   "BTC": {
-   "p": 0.36,
+   "p": 0.3813,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794735900000
+   "ts": 1794737700000
   },
   "ETH": {
-   "p": 0.569,
+   "p": 0.5112,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794735900000
+   "ts": 1794737700000
   },
   "SOL": {
-   "p": 0.5361,
+   "p": 0.5483,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794735900000
+   "ts": 1794737700000
   },
   "XRP": {
-   "p": 0.772,
+   "p": 0.743,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794735900000
+   "ts": 1794737700000
   },
   "DOGE": {
-   "p": 0.7996,
+   "p": 0.7966,
    "threshold": 0.78,
    "action": "blocked: learned rule 'btc_r16 < 0.00602'",
-   "ts": 1794735900000
+   "ts": 1794737700000
   },
   "ADA": {
-   "p": 0.6276,
+   "p": 0.6262,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794735900000
+   "ts": 1794737700000
   },
   "BNB": {
-   "p": 0.651,
+   "p": 0.6062,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794735900000
+   "ts": 1794737700000
   },
   "LINK": {
-   "p": 0.7271,
+   "p": 0.6212,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794735900000
+   "ts": 1794737700000
   },
   "AVAX": {
-   "p": 0.7024,
+   "p": 0.6859,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794735900000
+   "ts": 1794737700000
   },
   "LTC": {
-   "p": 0.2923,
+   "p": 0.2903,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794735900000
+   "ts": 1794737700000
   },
   "DOT": {
-   "p": 0.4434,
+   "p": 0.4559,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794735900000
+   "ts": 1794737700000
   },
   "TRX": {
-   "p": 0.5832,
+   "p": 0.5592,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1794735900000
+   "ts": 1794737700000
   }
  },
  "prices": {
-  "BTC": 65350.51,
-  "ETH": 1822.5,
-  "SOL": 71.72,
-  "XRP": 0.9635,
-  "DOGE": 0.05866,
-  "ADA": 0.1531,
-  "BNB": 595.68,
-  "LINK": 9.218,
-  "AVAX": 7.23,
-  "LTC": 45.53,
-  "DOT": 0.731,
-  "TRX": 0.3077
+  "BTC": 65496.98,
+  "ETH": 1829.42,
+  "SOL": 71.91,
+  "XRP": 0.9626,
+  "DOGE": 0.05895,
+  "ADA": 0.1541,
+  "BNB": 597.72,
+  "LINK": 9.253,
+  "AVAX": 7.281,
+  "LTC": 45.69,
+  "DOT": 0.734,
+  "TRX": 0.3082
  },
  "model": {
   "version": 91,
@@ -10906,7 +10912,6 @@
   "risk_level": 0.2,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
-   "BTC": "reduce",
    "ETH": "reduce",
    "XRP": "avoid",
    "DOGE": "avoid",
@@ -10915,14 +10920,13 @@
   "regime": "bear"
  },
  "brain": {
-  "created_at": 1794717638664,
+  "created_at": 1794738290423,
   "source": "local",
   "model": "mimo2.6:9b",
   "directives": {
    "risk_level": 0.2,
    "min_confidence_adj": 0.05,
    "symbol_bias": {
-    "BTC": "reduce",
     "ETH": "reduce",
     "XRP": "avoid",
     "DOGE": "avoid",
@@ -10930,7 +10934,7 @@
    },
    "regime": "bear"
   },
-  "reasoning": "Rynek jest w silnym trendzie spadkowym: BTC 30d -20.8%, ETH -25.4%, SOL -32.3%, a Fear & Greed wynosi 13 (Extreme Fear). Model ma zero edge: 43% win rate, avg +0.01%/trade vs always-buy -0.41%/trade, a practice account pokazuje 10 trades, 2 wins, -6.95%. Dlatego nie zwi\u0119kszamy ryzyka, tylko go obni\u017camy. XRP, DOGE i LTC maj\u0105 najgorsze wyniki w praktyce i najni\u017csze obecnego prawdopodobie\u0144stwa zapyta\u0144, wi\u0119c je omijamy.",
+  "reasoning": "Rynek jest w panice: BTC spad\u0142 poni\u017cej 3-miesi\u0119cznego minimuma, a Fear & Greed wynosi 10 (Extreme Fear). Model ma zero edge \u2014 45% win rate i avg +0.11%/trade, wi\u0119c nie zwi\u0119kszamy ryzyka. Ostatnie straty XRP -8.11% przy 0.83 i DOGE -2.10% przy 0.75 potwierdzaj\u0105 brak przewagi.",
   "new_lessons": [
    "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
    "Practice account: 10 trades, 2 wins, -6.95% \u2014 model bez edge, zero pozycji",
@@ -10950,9 +10954,32 @@
    "Model bez edge: 44% wygranych, \u015brednio +0.11% na transakcji vs zawsze kupowa\u0107 -0.41% \u2014 nie zwi\u0119kszaj ryzyka",
    "Rynek spadkowy (BTC 30d -17.5%) + Fear 13 \u2014 nie zwi\u0119kszaj ryzyka"
   ],
-  "seconds": 5.5
+  "seconds": 2.8
  },
  "brain_journal": [
+  {
+   "created_at": 1794738290423,
+   "source": "local",
+   "model": "mimo2.6:9b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.05,
+    "symbol_bias": {
+     "ETH": "reduce",
+     "XRP": "avoid",
+     "DOGE": "avoid",
+     "LTC": "avoid"
+    },
+    "regime": "bear"
+   },
+   "reasoning": "Rynek jest w panice: BTC spad\u0142 poni\u017cej 3-miesi\u0119cznego minimuma, a Fear & Greed wynosi 10 (Extreme Fear). Model ma zero edge \u2014 45% win rate i avg +0.11%/trade, wi\u0119c nie zwi\u0119kszamy ryzyka. Ostatnie straty XRP -8.11% przy 0.83 i DOGE -2.10% przy 0.75 potwierdzaj\u0105 brak przewagi.",
+   "new_lessons": [
+    "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
+    "Practice account: 10 trades, 2 wins, -6.95% \u2014 model bez edge, zero pozycji",
+    "Rynek spadkowy (BTC 30d -20.8%, Fear 13) \u2014 nie zwi\u0119kszaj ryzyka"
+   ],
+   "equity_at": 997.53
+  },
   {
    "created_at": 1794717638664,
    "source": "local",
@@ -11158,29 +11185,6 @@
     "XRP straci\u0142 8.11% przy 0.83 \u2014 zero edge, zero pozycji"
    ],
    "equity_at": 997.53
-  },
-  {
-   "created_at": 1794685108691,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.03,
-    "symbol_bias": {
-     "AVAX": "reduce",
-     "XRP": "avoid",
-     "DOGE": "avoid",
-     "LTC": "avoid"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "Rynek jest w silnym trendzie spadkowym (BTC 30d -20.5%, Fear 13), a model ma zero edge: 44% win rate, avg +0.11%/trade vs always-buy -0.41%. Ostatnie 10 zamykanych transakcji na practice account da\u0142o 2 wins z -32.53$, wi\u0119c nie zwi\u0119kszamy ryzyka. XRP, DOGE i LTC maj\u0105 najgorsze dane: XRP -8.11% przy 0.83, DOGE -2.99% przy 0.73, LTC -1.19% przy 0.74, wi\u0119c je omijamy. Pozosta\u0142e symbole maj\u0105 modelowe szanse powy\u017cej 0.71, ale bez edge nie zwi\u0119kszamy ryzyka.",
-   "new_lessons": [
-    "Model bez edge: 44% win rate, avg +0.11%/trade vs always-buy -0.41% \u2014 nie zwi\u0119kszaj ryzyka",
-    "Rynek spadkowy (BTC 30d -20.5%) + Fear 13 \u2014 nie zwi\u0119kszaj ryzyka",
-    "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji"
-   ],
-   "equity_at": 997.53
   }
  ],
  "clm": {
@@ -11285,108 +11289,12 @@
     "select": -0.00569,
     "holdout": -0.00194
    },
-   "generation": 139,
+   "generation": 140,
    "since": 1791186354886,
    "model_version": 91
   },
-  "total_evaluated": 180134,
+  "total_evaluated": 180491,
   "generations": [
-   {
-    "gen": 20,
-    "ts": 1791051019541,
-    "model_version": 14,
-    "evaluated": 1517,
-    "rounds": 40,
-    "sample": [
-     -0.02583,
-     -0.01814,
-     -0.01628,
-     -0.01507,
-     -0.01457,
-     -0.01456,
-     -0.01406,
-     -0.01318,
-     -0.01271,
-     -0.0124,
-     -0.01176,
-     -0.01148,
-     -0.01124,
-     -0.0099,
-     -0.00912,
-     -0.00871,
-     -0.00871,
-     -0.00851,
-     -0.00798,
-     -0.00794,
-     -0.00709,
-     -0.00681,
-     -0.00664,
-     -0.00648,
-     -0.00637,
-     -0.00635,
-     -0.00635,
-     -0.00626,
-     -0.00617,
-     -0.00586,
-     -0.00577,
-     -0.0057,
-     -0.00565,
-     -0.0055,
-     -0.0055,
-     -0.00547,
-     -0.00547,
-     -0.00533,
-     -0.00533,
-     -0.00523,
-     -0.00522,
-     -0.00522,
-     -0.00522,
-     -0.00522,
-     -0.00456,
-     -0.00451,
-     -0.00423,
-     -0.00423,
-     -0.00403,
-     -0.00349,
-     -0.00347,
-     -0.00339,
-     -0.00339,
-     -0.00335,
-     -0.00313,
-     -0.00177,
-     -0.00172,
-     -0.00157,
-     -0.00154,
-     -0.00153,
-     -0.00126,
-     -0.0011,
-     -0.00109,
-     -0.00107,
-     -0.00094,
-     -0.00094,
-     -0.00094,
-     -0.00094,
-     -0.00078,
-     -0.00037,
-     -6e-05,
-     0.00011,
-     0.00038,
-     0.00059,
-     0.00084,
-     0.00166,
-     0.00166,
-     0.0028,
-     0.00304,
-     0.02767
-    ],
-    "seconds": 46.4,
-    "best_search_avg": 0.03815,
-    "challenger_select_avg": -0.00094,
-    "champion_holdout_avg": 0.03842,
-    "champion_id": "63e98ffd39",
-    "deployed": false,
-    "edge": false
-   },
    {
     "gen": 21,
     "ts": 1791095689742,
@@ -22810,6 +22718,102 @@
     "champion_id": "00dba0b899",
     "deployed": false,
     "edge": false
+   },
+   {
+    "gen": 140,
+    "ts": 1794739237087,
+    "model_version": 91,
+    "evaluated": 357,
+    "rounds": 6,
+    "sample": [
+     -0.01824,
+     -0.01796,
+     -0.0161,
+     -0.01302,
+     -0.0129,
+     -0.01251,
+     -0.01218,
+     -0.01179,
+     -0.01118,
+     -0.00989,
+     -0.00948,
+     -0.00868,
+     -0.00776,
+     -0.00763,
+     -0.00722,
+     -0.00714,
+     -0.00637,
+     -0.00626,
+     -0.00613,
+     -0.00504,
+     -0.00498,
+     -0.00471,
+     -0.00453,
+     -0.00326,
+     -0.00222,
+     -0.00218,
+     -0.00208,
+     -0.0018,
+     -0.00122,
+     -0.00016,
+     0.0001,
+     0.0011,
+     0.00159,
+     0.00177,
+     0.00276,
+     0.00324,
+     0.00324,
+     0.00357,
+     0.00365,
+     0.0042,
+     0.00425,
+     0.00425,
+     0.00458,
+     0.00461,
+     0.00479,
+     0.00496,
+     0.00555,
+     0.00811,
+     0.00813,
+     0.00813,
+     0.00837,
+     0.00854,
+     0.00861,
+     0.00889,
+     0.00889,
+     0.00915,
+     0.0097,
+     0.00972,
+     0.00983,
+     0.0099,
+     0.0099,
+     0.0099,
+     0.0099,
+     0.0099,
+     0.00999,
+     0.01016,
+     0.01038,
+     0.01076,
+     0.01124,
+     0.01135,
+     0.0118,
+     0.01203,
+     0.01478,
+     0.01535,
+     0.01549,
+     0.01647,
+     0.017,
+     0.017,
+     0.01759,
+     0.01763
+    ],
+    "seconds": 45.0,
+    "best_search_avg": 0.03836,
+    "challenger_select_avg": 0.00461,
+    "champion_holdout_avg": 0.03096,
+    "champion_id": "00dba0b899",
+    "deployed": false,
+    "edge": false
    }
   ],
   "deployments": [
@@ -22968,406 +22972,6 @@
    }
   ],
   "points": [
-   [
-    80,
-    -0.01474,
-    0
-   ],
-   [
-    80,
-    -0.01337,
-    0
-   ],
-   [
-    80,
-    -0.01158,
-    0
-   ],
-   [
-    80,
-    -0.01123,
-    0
-   ],
-   [
-    80,
-    -0.01101,
-    0
-   ],
-   [
-    80,
-    -0.01018,
-    0
-   ],
-   [
-    80,
-    -0.01012,
-    0
-   ],
-   [
-    80,
-    -0.00968,
-    0
-   ],
-   [
-    80,
-    -0.00968,
-    0
-   ],
-   [
-    80,
-    -0.00966,
-    0
-   ],
-   [
-    80,
-    -0.00965,
-    0
-   ],
-   [
-    80,
-    -0.00959,
-    0
-   ],
-   [
-    80,
-    -0.00942,
-    0
-   ],
-   [
-    80,
-    -0.00936,
-    0
-   ],
-   [
-    80,
-    -0.00923,
-    0
-   ],
-   [
-    80,
-    -0.00921,
-    0
-   ],
-   [
-    80,
-    -0.00914,
-    0
-   ],
-   [
-    80,
-    -0.00881,
-    0
-   ],
-   [
-    80,
-    -0.00879,
-    0
-   ],
-   [
-    80,
-    -0.00879,
-    0
-   ],
-   [
-    80,
-    -0.00875,
-    0
-   ],
-   [
-    80,
-    -0.00874,
-    0
-   ],
-   [
-    80,
-    -0.00868,
-    0
-   ],
-   [
-    80,
-    -0.00864,
-    0
-   ],
-   [
-    80,
-    -0.00862,
-    0
-   ],
-   [
-    80,
-    -0.00862,
-    0
-   ],
-   [
-    80,
-    -0.0086,
-    0
-   ],
-   [
-    80,
-    -0.0086,
-    0
-   ],
-   [
-    80,
-    -0.0086,
-    0
-   ],
-   [
-    80,
-    -0.0086,
-    0
-   ],
-   [
-    80,
-    -0.00859,
-    0
-   ],
-   [
-    80,
-    -0.00856,
-    0
-   ],
-   [
-    80,
-    -0.00851,
-    0
-   ],
-   [
-    80,
-    -0.00838,
-    0
-   ],
-   [
-    80,
-    -0.00816,
-    0
-   ],
-   [
-    80,
-    -0.00796,
-    0
-   ],
-   [
-    80,
-    -0.00795,
-    0
-   ],
-   [
-    80,
-    -0.00786,
-    0
-   ],
-   [
-    80,
-    -0.00761,
-    0
-   ],
-   [
-    80,
-    -0.0076,
-    0
-   ],
-   [
-    80,
-    -0.00743,
-    0
-   ],
-   [
-    80,
-    -0.00701,
-    0
-   ],
-   [
-    80,
-    -0.00698,
-    0
-   ],
-   [
-    80,
-    -0.00653,
-    0
-   ],
-   [
-    80,
-    -0.00645,
-    0
-   ],
-   [
-    80,
-    -0.0064,
-    0
-   ],
-   [
-    80,
-    -0.00635,
-    0
-   ],
-   [
-    80,
-    -0.00601,
-    0
-   ],
-   [
-    80,
-    -0.00597,
-    0
-   ],
-   [
-    80,
-    -0.00597,
-    0
-   ],
-   [
-    80,
-    -0.00567,
-    0
-   ],
-   [
-    80,
-    -0.00558,
-    0
-   ],
-   [
-    80,
-    -0.00557,
-    0
-   ],
-   [
-    80,
-    -0.00555,
-    0
-   ],
-   [
-    80,
-    -0.00548,
-    0
-   ],
-   [
-    80,
-    -0.00533,
-    0
-   ],
-   [
-    80,
-    -0.00529,
-    0
-   ],
-   [
-    80,
-    -0.00529,
-    0
-   ],
-   [
-    80,
-    -0.00522,
-    0
-   ],
-   [
-    80,
-    -0.00519,
-    0
-   ],
-   [
-    80,
-    -0.00515,
-    0
-   ],
-   [
-    80,
-    -0.00492,
-    0
-   ],
-   [
-    80,
-    -0.00492,
-    0
-   ],
-   [
-    80,
-    -0.00487,
-    0
-   ],
-   [
-    80,
-    -0.00425,
-    0
-   ],
-   [
-    80,
-    -0.00411,
-    0
-   ],
-   [
-    80,
-    -0.00383,
-    0
-   ],
-   [
-    80,
-    -0.00376,
-    0
-   ],
-   [
-    80,
-    -0.00365,
-    0
-   ],
-   [
-    80,
-    -0.00365,
-    0
-   ],
-   [
-    80,
-    -0.00364,
-    0
-   ],
-   [
-    80,
-    -0.00321,
-    0
-   ],
-   [
-    80,
-    -0.00277,
-    0
-   ],
-   [
-    80,
-    -0.00196,
-    0
-   ],
-   [
-    80,
-    -0.0018,
-    0
-   ],
-   [
-    80,
-    -0.00173,
-    0
-   ],
-   [
-    80,
-    -0.00146,
-    0
-   ],
-   [
-    80,
-    -0.0008,
-    0
-   ],
-   [
-    80,
-    -0.00077,
-    0
-   ],
-   [
-    80,
-    0.00296,
-    0
-   ],
    [
     81,
     -0.01131,
@@ -46969,6 +46573,406 @@
     0
    ],
    [
+    140,
+    -0.01824,
+    0
+   ],
+   [
+    140,
+    -0.01796,
+    0
+   ],
+   [
+    140,
+    -0.0161,
+    0
+   ],
+   [
+    140,
+    -0.01302,
+    0
+   ],
+   [
+    140,
+    -0.0129,
+    0
+   ],
+   [
+    140,
+    -0.01251,
+    0
+   ],
+   [
+    140,
+    -0.01218,
+    0
+   ],
+   [
+    140,
+    -0.01179,
+    0
+   ],
+   [
+    140,
+    -0.01118,
+    0
+   ],
+   [
+    140,
+    -0.00989,
+    0
+   ],
+   [
+    140,
+    -0.00948,
+    0
+   ],
+   [
+    140,
+    -0.00868,
+    0
+   ],
+   [
+    140,
+    -0.00776,
+    0
+   ],
+   [
+    140,
+    -0.00763,
+    0
+   ],
+   [
+    140,
+    -0.00722,
+    0
+   ],
+   [
+    140,
+    -0.00714,
+    0
+   ],
+   [
+    140,
+    -0.00637,
+    0
+   ],
+   [
+    140,
+    -0.00626,
+    0
+   ],
+   [
+    140,
+    -0.00613,
+    0
+   ],
+   [
+    140,
+    -0.00504,
+    0
+   ],
+   [
+    140,
+    -0.00498,
+    0
+   ],
+   [
+    140,
+    -0.00471,
+    0
+   ],
+   [
+    140,
+    -0.00453,
+    0
+   ],
+   [
+    140,
+    -0.00326,
+    0
+   ],
+   [
+    140,
+    -0.00222,
+    0
+   ],
+   [
+    140,
+    -0.00218,
+    0
+   ],
+   [
+    140,
+    -0.00208,
+    0
+   ],
+   [
+    140,
+    -0.0018,
+    0
+   ],
+   [
+    140,
+    -0.00122,
+    0
+   ],
+   [
+    140,
+    -0.00016,
+    0
+   ],
+   [
+    140,
+    0.0001,
+    0
+   ],
+   [
+    140,
+    0.0011,
+    0
+   ],
+   [
+    140,
+    0.00159,
+    0
+   ],
+   [
+    140,
+    0.00177,
+    0
+   ],
+   [
+    140,
+    0.00276,
+    0
+   ],
+   [
+    140,
+    0.00324,
+    0
+   ],
+   [
+    140,
+    0.00324,
+    0
+   ],
+   [
+    140,
+    0.00357,
+    0
+   ],
+   [
+    140,
+    0.00365,
+    0
+   ],
+   [
+    140,
+    0.0042,
+    0
+   ],
+   [
+    140,
+    0.00425,
+    0
+   ],
+   [
+    140,
+    0.00425,
+    0
+   ],
+   [
+    140,
+    0.00458,
+    0
+   ],
+   [
+    140,
+    0.00461,
+    0
+   ],
+   [
+    140,
+    0.00479,
+    0
+   ],
+   [
+    140,
+    0.00496,
+    0
+   ],
+   [
+    140,
+    0.00555,
+    0
+   ],
+   [
+    140,
+    0.00811,
+    0
+   ],
+   [
+    140,
+    0.00813,
+    0
+   ],
+   [
+    140,
+    0.00813,
+    0
+   ],
+   [
+    140,
+    0.00837,
+    0
+   ],
+   [
+    140,
+    0.00854,
+    0
+   ],
+   [
+    140,
+    0.00861,
+    0
+   ],
+   [
+    140,
+    0.00889,
+    0
+   ],
+   [
+    140,
+    0.00889,
+    0
+   ],
+   [
+    140,
+    0.00915,
+    0
+   ],
+   [
+    140,
+    0.0097,
+    0
+   ],
+   [
+    140,
+    0.00972,
+    0
+   ],
+   [
+    140,
+    0.00983,
+    0
+   ],
+   [
+    140,
+    0.0099,
+    0
+   ],
+   [
+    140,
+    0.0099,
+    0
+   ],
+   [
+    140,
+    0.0099,
+    0
+   ],
+   [
+    140,
+    0.0099,
+    0
+   ],
+   [
+    140,
+    0.0099,
+    0
+   ],
+   [
+    140,
+    0.00999,
+    0
+   ],
+   [
+    140,
+    0.01016,
+    0
+   ],
+   [
+    140,
+    0.01038,
+    0
+   ],
+   [
+    140,
+    0.01076,
+    0
+   ],
+   [
+    140,
+    0.01124,
+    0
+   ],
+   [
+    140,
+    0.01135,
+    0
+   ],
+   [
+    140,
+    0.0118,
+    0
+   ],
+   [
+    140,
+    0.01203,
+    0
+   ],
+   [
+    140,
+    0.01478,
+    0
+   ],
+   [
+    140,
+    0.01535,
+    0
+   ],
+   [
+    140,
+    0.01549,
+    0
+   ],
+   [
+    140,
+    0.01647,
+    0
+   ],
+   [
+    140,
+    0.017,
+    0
+   ],
+   [
+    140,
+    0.017,
+    0
+   ],
+   [
+    140,
+    0.01759,
+    0
+   ],
+   [
+    140,
+    0.01763,
+    0
+   ],
+   [
     1,
     0.00374,
     1
@@ -46990,6 +46994,36 @@
    ]
   ],
   "ideas": [
+   {
+    "name": "Brak odskoku w 15-60 min",
+    "source": "internet research: B\u0142\u0105d botu: losing trades mia\u0142y r_96 avg -0.01347 i r_4; dzi\u015b BTC jest w krachu (3-miesi\u0119czne minimum, ETF outflows)",
+    "rule": "r_1 < 0.0005 and r_2 < 0.0005 and r_4 < 0.0005",
+    "why": "Je\u015bli \u015bwiece 15-minutowe i 1-godzinne nie odzyskuj\u0105 warto\u015bci, sygna\u0142 kupna w trendzie spadkowym jest najprawdopodobniej z\u0142ym \u2014 filtruje to najgorsze wej\u015bcia w d\u00f3\u0142.",
+    "gain": 0.0,
+    "tested_at": 1794739237087,
+    "model_version": 91,
+    "adopted": false
+   },
+   {
+    "name": "Cena u do\u0142u dzisiejszego zakresu",
+    "source": "internet research: B\u0142\u0105d botu: losing trades mia\u0142y ema_trend avg -0.01021 i d_ema200; dzi\u015b BTC jest poni\u017cej 3-miesi\u0119cznego minimuma",
+    "rule": "bb < 0 and range_pos < 0.3 and body < 0",
+    "why": "Kupno w dolnej cz\u0119\u015bci dzisiejszego zakresu \u015bwiec przy spadkowej \u015bwiecy zwi\u0119ksza ryzyko wej\u015bcia w d\u00f3\u0142, zamiast w odskoku.",
+    "gain": 0.0,
+    "tested_at": 1794739237087,
+    "model_version": 91,
+    "adopted": false
+   },
+   {
+    "name": "Kr\u00f3tki i \u015bredni trend spadkowy",
+    "source": "internet research: B\u0142\u0105d botu: losing trades mia\u0142y ema_trend avg -0.01021 i d_ema200; dzi\u015b BTC jest w krachu",
+    "rule": "d_ema50 < -0.005 and d_ema800 < -0.01 and ema_trend < 0",
+    "why": "Bot ju\u017c filtruje na ema_trend, ale dodanie d_ema50 i d_ema800 odrzuca sygna\u0142y, gdy kr\u00f3tki i \u015bredni trend s\u0105 wyra\u017anie spadkowe \u2014 filtruje to wej\u015bcia w d\u00f3\u0142.",
+    "gain": 0.0,
+    "tested_at": 1794739237087,
+    "model_version": 91,
+    "adopted": false
+   },
    {
     "name": "Niski zysk Bitcoinu w ci\u0105gu 24h",
     "source": "internet research: CoinDesk: Bitcoin plunges to $68,000 as Anthropic IPO frenzy adds to market jitters",
@@ -47099,40 +47133,10 @@
     "tested_at": 1794736599773,
     "model_version": 91,
     "adopted": false
-   },
-   {
-    "name": "Odrzu\u0107 sygna\u0142y w trendzie spadkowym",
-    "source": "internet research: Bot's mistakes: losing trades had r_96 avg -0.01372 vs winning -0.02242; rank_r96 < 0.5 was previously rejected as a filter.",
-    "rule": "r_96 < -0.00054 and btc_r96 < -0.00864 and rank_r96 < 0.5",
-    "why": "Kr\u00f3tkoterminowe spadki (r_96 poni\u017cej mediana) s\u0105 dzi\u015b cz\u0119ste \u2014 Bitcoin wr\u00f3ci\u0142 po nocnej panice, wi\u0119c momentum 24h jest zanieczyszczone i nie warto kupowa\u0107 w trendzie spadkowym.",
-    "gain": 0.0,
-    "tested_at": 1794736599773,
-    "model_version": 91,
-    "adopted": false
-   },
-   {
-    "name": "Odrzu\u0107 sygna\u0142y w niskim wolumenie",
-    "source": "internet research: Bot's mistakes: losing trades had lower vz (0.69 median) than winning; recent rejected idea vz < 0.5 was too broad.",
-    "rule": "vz < 0.69 and r_4 < 0.003 and r_1 < 0.001",
-    "why": "Niski wolumen (vz < 0.69) oznacza s\u0142ab\u0105 p\u0142ynno\u015b\u0107 \u2014 dzi\u015b rynek jest w Fear, a niski wolumen zwi\u0119ksza ryzyko zablokowania pozycji.",
-    "gain": 0.0,
-    "tested_at": 1794736599773,
-    "model_version": 91,
-    "adopted": false
-   },
-   {
-    "name": "RSI + wolumen + trend",
-    "source": "internet research: Badanie 'Beyond Anonymous Order Flow' (wallet identity jako predyktor kr\u00f3tkoterminowych zwrot\u00f3w) oraz obserwacje z digestu o s\u0142abym leverage i ostro\u017cnym odbiciu; bot traci\u0142 na sygna",
-    "rule": "rsi < 0.6 and vz > 0.75 and d_ema200 > 0.005",
-    "why": "RSI poni\u017cej 0.6 ogranicza ryzyko wyprzedania i fa\u0142szywych sygna\u0142\u00f3w, vz powy\u017cej 0.75 wymaga potwierdzenia wolumenem (bot traci\u0142 na niskiej vz), a d_ema200 powy\u017cej 0.005 wymaga trendu d\u0142ugoterminowego, co jest zgodne z obserwacj\u0105, \u017ce BTC trzyma si\u0119, ale leverage brakuje.",
-    "gain": 0.0,
-    "tested_at": 1794736599773,
-    "model_version": 91,
-    "adopted": false
    }
   ],
   "mistakes": {
-   "created_at": 1794736479529,
+   "created_at": 1794739192960,
    "model_version": 91,
    "signals": 28918,
    "losers": 16419,
@@ -47176,17 +47180,17 @@
    "candidates": []
   },
   "research": {
-   "created_at": 1794657248757,
-   "source": "cloud",
-   "model": "qwen3:4b",
-   "seconds": 431.4,
-   "digest": "Dzi\u015b w krypty w domenie AI i Bitcoinu wyst\u0119puj\u0105 silne wibracje rynkowe. Wysokie oczekiwania na IPO Anthropic i zmiany w sektorze minera\u0142\u00f3w bitcoina powoduj\u0105 spadek cen, podczas gdy regulacje w USA i krytyczne analizy rynku wskazuj\u0105 na zwi\u0119kszone ryzyko. Warto skupi\u0107 si\u0119 na optymalizacji strategii z uwzgl\u0119dnieniem zmian w strukturze rynku i zabezpieczeniach.",
+   "created_at": 1794738286756,
+   "source": "local",
+   "model": "mimo2.6:9b",
+   "seconds": 59.4,
+   "digest": "Dzi\u015b rynek krypto jest w panice: BTC spad\u0142 poni\u017cej 3-miesi\u0119cznego minimuma (poni\u017cej 63 000 USD), a ETF-y wyp\u0142aca\u0142y 2,35 mld USD w 2 tygodnie \u2014 to silny sygna\u0142, by nie kupowa\u0107 w trendzie spadkowym. Fear & Greed siedzi na poziomie 10-29 (Extreme Fear), co potwierdza obni\u017cenie ryzyka i brak presji kupna. Bot ju\u017c filtruje na BTC_r96 < -0.01231 i rel_r672 < -0.01085, ale te same warunki wci\u0105\u017c daj\u0105 straty, wi\u0119c potrzebne s\u0105 dodatkowe filtry na kr\u00f3tkoterminow\u0105 struktur\u0119 \u015bwiec.",
    "mood": "fear",
    "fng": [
     {
-     "value": 13,
+     "value": 10,
      "label": "Extreme Fear",
-     "ts": 1794614400000
+     "ts": 1794700800000
     }
    ],
    "used": [
@@ -47231,33 +47235,43 @@
     },
     {
      "kind": "CoinDesk",
-     "title": "Satoshi-era wallet served in a $260 billion lawsuit moves 75 BTC it held since 2011",
-     "url": "https://www.coindesk.com/markets/2026/11/13/satoshi-era-wallet-served-in-a-usd260-billion-lawsuit-moves-75-btc-it-held-since-2011"
+     "title": "XRP crashes to its lowest since November 2024 as money leaves crypto",
+     "url": "https://www.coindesk.com/markets/2026/11/15/xrp-crashes-to-its-lowest-since-november-2024-as-money-leaves-crypto"
     },
     {
      "kind": "CoinDesk",
-     "title": "Bitcoin miners pay Paraguay $350 million a year, but AI is pushing them out",
-     "url": "https://www.coindesk.com/tech/2026/11/13/bitcoin-miners-pay-paraguay-usd350-million-a-year-but-ai-is-pushing-them-out"
+     "title": "Bitcoin crashes to 3-month low below $63,000 as analyst flags fourth capitulation wave",
+     "url": "https://www.coindesk.com/markets/2026/11/14/bitcoin-drifts-back-to-usd65-000-deep-value-zone-says-analyst"
     },
     {
      "kind": "CoinDesk",
-     "title": "Bitcoin plunges to $68,000 as Anthropic IPO frenzy adds to market jitters",
-     "url": "https://www.coindesk.com/markets/2026/11/13/bitcoin-slides-to-usd68k-as-nvidia-turmoil-anthropic-ipo-fuel-broader-market-sell-off"
+     "title": "Ethereum scaling project MegaETH slashes staff by 20% as it pursues AI business",
+     "url": "https://www.coindesk.com/business/2026/11/14/ethereum-scaling-project-megaeth-slashes-staff-by-20-as-it-pursues-ai-business"
     },
     {
      "kind": "CoinDesk",
-     "title": "U.S. Senate Banking Committee races toward hearing on new SEC nominations",
-     "url": "https://www.coindesk.com/policy/2026/11/13/u-s-senate-banking-committee-races-toward-hearing-on-new-sec-nominations"
+     "title": "Kazakhstan plans tokenized government bonds in first quarter after $22 million note sale",
+     "url": "https://www.coindesk.com/business/2026/11/14/kazakhstan-plans-tokenized-government-bonds-in-first-quarter-after-usd22-million-note-sale"
     },
     {
      "kind": "CoinDesk",
-     "title": "Bitcoin heads for sixth weekly loss as Anthropic\u2019s blockbuster IPO looms",
-     "url": "https://www.coindesk.com/markets/2026/11/13/bitcoin-heads-for-sixth-weekly-loss-as-anthropic-s-blockbuster-ipo-looms"
+     "title": "UK, Singapore, and Thailand central banks test cross-border FX settlement as stablecoins gain ground",
+     "url": "https://www.coindesk.com/policy/2026/11/14/uk-singapore-and-thailand-central-banks-test-cross-border-fx-settlement-as-stablecoins-gain-ground"
     },
     {
      "kind": "CoinDesk",
-     "title": "Kraken parent Payward says expansion outside crypto trading helps cushion revenue decline",
-     "url": "https://www.coindesk.com/business/2026/11/13/kraken-parent-payward-says-expansion-outside-crypto-trading-helps-cushion-revenue-decline"
+     "title": "Britain could turn wasted Scottish wind power into bitcoin to cut its $1.3 billion grid bill",
+     "url": "https://www.coindesk.com/policy/2026/11/13/britain-could-turn-wasted-scottish-wind-power-into-bitcoin-to-cut-its-usd1-3-billion-grid-bill"
+    },
+    {
+     "kind": "Cointelegraph",
+     "title": "Coinone warns of phishing, identity theft after customer data breach",
+     "url": "https://cointelegraph.com/news/coinone-data-breach-phishing-identity-theft-customer-information?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+    },
+    {
+     "kind": "Cointelegraph",
+     "title": "RWA protocol stUSDT winds down three years after $2.3B TVL peak",
+     "url": "https://cointelegraph.com/news/rwa-protocol-stusdt-winds-down-three-years-after-23b-tvl-peak?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Cointelegraph",
@@ -47280,14 +47294,24 @@
      "url": "https://cointelegraph.com/markets/bitcoin-etf-outflows-2-35-billion-blackrock-11-session-streak?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
-     "kind": "Cointelegraph",
-     "title": "OpenAI launches AI payments in ChatGPT with Visa, Mastercard and Amex",
-     "url": "https://cointelegraph.com/news/openai-ai-payments-chatgpt-wallet-visa-mastercard-amex?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "kind": "Decrypt",
+     "title": "The Week Jensen Huang Fell: How a Spy Scandal Toppled Nvidia\u2019s CEO",
+     "url": "https://decrypt.co/383280/the-week-jensen-huang-fell-how-spy-scandal-toppled-nvidia-ceo"
     },
     {
-     "kind": "Cointelegraph",
-     "title": "Adam Back makes case for simpler security as Blockstream launches Bitcoin custody system",
-     "url": "https://cointelegraph.com/news/adam-back-simpler-security-blockstream-bitcoin-custody-system?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "kind": "Decrypt",
+     "title": "OpenAI, Anthropic, Google and Other AI Giants Face Lawsuit Demanding Development Freeze",
+     "url": "https://decrypt.co/383270/openai-anthropic-google-ai-giants-lawsuit-development-freeze"
+    },
+    {
+     "kind": "Decrypt",
+     "title": "What Is Canton Network? The Privacy Blockchain Built for Wall Street",
+     "url": "https://decrypt.co/resources/what-is-canton-network-the-privacy-blockchain-built-for-wall-street"
+    },
+    {
+     "kind": "Decrypt",
+     "title": "OpenAI Launches ChatGPT Wallet to Let AI Agents Shop\u2014Without Crypto",
+     "url": "https://decrypt.co/383278/openai-chatgpt-wallet-ai-agents-shop-without-crypto"
     },
     {
      "kind": "Decrypt",
@@ -47298,26 +47322,6 @@
      "kind": "Decrypt",
      "title": "Should Government Officials Be Banned From Prediction Markets? House Oversight Says Maybe",
      "url": "https://decrypt.co/383271/government-officials-banned-prediction-markets-house-oversight"
-    },
-    {
-     "kind": "Decrypt",
-     "title": "China\u2019s $3.2 Billion AI Pipeline Still Calls for Nvidia Chips Washington Restricts",
-     "url": "https://decrypt.co/383266/china-ai-pipeline-nvidia-chips-washington-restricts"
-    },
-    {
-     "kind": "Decrypt",
-     "title": "JPMorgan\u2019s Bitcoin and Crypto-Linked Holdings Approach $1 Billion",
-     "url": "https://decrypt.co/383267/jpmorgan-bitcoin-crypto-linked-holdings-approach-1-billion"
-    },
-    {
-     "kind": "Decrypt",
-     "title": "Dormant Bitcoin Wallets Wake Up After 16 Years, Moving $6.9 Million",
-     "url": "https://decrypt.co/383264/dormant-bitcoin-wallets-wake-up-after-16-years"
-    },
-    {
-     "kind": "Decrypt",
-     "title": "Fed Chair Warsh Wants Answers on AI Inflation\u2014and Bitcoin May Feel the Impact",
-     "url": "https://decrypt.co/383259/fed-chair-warsh-wants-answers-ai-inflation-bitcoin"
     },
     {
      "kind": "Babypips",
@@ -47331,8 +47335,8 @@
     },
     {
      "kind": "Babypips",
-     "title": "Plus500 in the US: Futures and Prediction Markets in One App",
-     "url": "https://www.babypips.com/trading/plus500-in-the-us-futures-and-prediction-markets-in-one-app"
+     "title": "Why Trade with Plus500? 24/7 Trading, Daily Options & More",
+     "url": "https://www.babypips.com/trading/why-trade-with-plus500-24-7-trading-daily-options-more"
     },
     {
      "kind": "Babypips",
@@ -47347,19 +47351,19 @@
    ],
    "ideas": [
     {
-     "name": "Wysoka zmienno\u015b\u0107 Bitcoinu",
-     "rule": "btc_vol96 > 0.00313",
-     "why": "Bot straci\u0142 pieni\u0105dze w sytuacji, gdy Bitcoin by\u0142 bardzo zmieniony (btc_vol96 > 0.00313). Wczoraj na rynku Bitcoin spad\u0142 do $68k z powodu spadku kapita\u0142u w AI, co sugeruje, \u017ce zbyt du\u017ca zmienno\u015b\u0107 jest nieprzydatna dla strategii kupna."
+     "name": "Brak odskoku w 15-60 min",
+     "rule": "r_1 < 0.0005 and r_2 < 0.0005 and r_4 < 0.0005",
+     "why": "Je\u015bli \u015bwiece 15-minutowe i 1-godzinne nie odzyskuj\u0105 warto\u015bci, sygna\u0142 kupna w trendzie spadkowym jest najprawdopodobniej z\u0142ym \u2014 filtruje to najgorsze wej\u015bcia w d\u00f3\u0142."
     },
     {
-     "name": "Niski zysk Bitcoinu w ci\u0105gu 24h",
-     "rule": "btc_r96 < -0.01231",
-     "why": "Losing trades mia\u0142y \u015brednio -0.006, podczas gdy wygrywaj\u0105ce by\u0142y -0.01353. Wskazuje to na to, \u017ce bot nie powinien kupowa\u0107, gdy Bitcoin spada\u0142 bardzo mocno w ci\u0105gu 24h (btc_r96 < -0.01231)."
+     "name": "Cena u do\u0142u dzisiejszego zakresu",
+     "rule": "bb < 0 and range_pos < 0.3 and body < 0",
+     "why": "Kupno w dolnej cz\u0119\u015bci dzisiejszego zakresu \u015bwiec przy spadkowej \u015bwiecy zwi\u0119ksza ryzyko wej\u015bcia w d\u00f3\u0142, zamiast w odskoku."
     },
     {
-     "name": "Niski rynkowy ranking Bitcoinu",
-     "rule": "rel_r672 < -0.01085",
-     "why": "W ostatnich 7 dniach Bitcoin mia\u0142 rel_r672 < -0.01085, co oznacza, \u017ce spada\u0142 wzgl\u0119dem innych kryptow. To jest kluczowe, poniewa\u017c bot straci\u0142 pieni\u0105dze, gdy Bitcoin by\u0142 w tym zakresie."
+     "name": "Kr\u00f3tki i \u015bredni trend spadkowy",
+     "rule": "d_ema50 < -0.005 and d_ema800 < -0.01 and ema_trend < 0",
+     "why": "Bot ju\u017c filtruje na ema_trend, ale dodanie d_ema50 i d_ema800 odrzuca sygna\u0142y, gdy kr\u00f3tki i \u015bredni trend s\u0105 wyra\u017anie spadkowe \u2014 filtruje to wej\u015bcia w d\u00f3\u0142."
     }
    ]
   }
