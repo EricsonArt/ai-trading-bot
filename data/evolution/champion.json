@@ -48,11 +48,11 @@
    "score": -0.00456
   },
   "holdout": {
-   "trades": 25,
-   "avg": 0.0275,
-   "win_rate": 0.48,
-   "growth": 0.16723,
-   "score": 0.07581
+   "trades": 26,
+   "avg": 0.02411,
+   "win_rate": 0.4615,
+   "growth": 0.15197,
+   "score": 0.05802
   }
  },
  "edge": false,
@@ -63,140 +63,135 @@
  },
  "description": "position style, buy when the model is at least 73% sure, target 2.4x / stop 2x the expected move, hold up to 72 h, 25% of equity per trade, only if btc_vol96 > 0.0024 and btc_r96 < -0.01231 and rel_r672 < -0.01085 and btc_r16 < 0.00602",
  "model_version": 94,
- "generation": 144,
+ "generation": 145,
  "reason": "",
  "challengers": [
   {
    "style": "position",
-   "threshold": 0.64,
-   "tp": 2.8,
-   "sl": 0.8,
+   "threshold": 0.65,
+   "tp": 2.4,
+   "sl": 0.6,
    "hold": 1.5,
    "size": 0.25,
    "rules": [
     {
-     "feature": "btc_r96",
-     "op": "<",
-     "value": -0.01336
-    },
-    {
-     "feature": "btc_vol96",
-     "op": ">",
-     "value": 0.00245
-    },
-    {
      "feature": "rel_r672",
      "op": "<",
-     "value": -0.01143
+     "value": -0.04146
     },
     {
      "feature": "btc_r16",
      "op": "<",
-     "value": -0.00571
+     "value": -0.00258
+    },
+    {
+     "feature": "rsi",
+     "op": "<",
+     "value": 0.6
+    },
+    {
+     "feature": "btc_r96",
+     "op": "<",
+     "value": -0.0214
     }
    ],
-   "id": "973651635a",
-   "parent": "797b6b2b61",
-   "origin": "mutation: threshold"
+   "id": "dee694fe7e",
+   "parent": "a47374df67+4c15191041",
+   "origin": "crossover"
   },
   {
    "style": "position",
    "threshold": 0.65,
-   "tp": 2.8,
-   "sl": 0.8,
+   "tp": 2.4,
+   "sl": 0.6,
    "hold": 1.5,
    "size": 0.25,
    "rules": [
     {
-     "feature": "btc_r96",
-     "op": "<",
-     "value": -0.0132
-    },
-    {
-     "feature": "btc_vol96",
-     "op": ">",
-     "value": 0.00245
-    },
-    {
      "feature": "rel_r672",
      "op": "<",
-     "value": -0.01143
+     "value": -0.04146
+    },
+    {
+     "feature": "btc_r96",
+     "op": "<",
+     "value": -0.0214
+    },
+    {
+     "feature": "r_96",
+     "op": "<",
+     "value": 0.00678
     },
     {
      "feature": "btc_r16",
      "op": "<",
-     "value": -0.00539
+     "value": -0.00258
     }
    ],
-   "id": "ee049dc887",
-   "parent": "da89777594",
-   "origin": "mutation: tp"
+   "id": "94c8e1ce28",
+   "parent": "dee694fe7e+4e9f4d3b17",
+   "origin": "crossover"
   },
   {
    "style": "position",
    "threshold": 0.65,
-   "tp": 2.8,
-   "sl": 0.8,
+   "tp": 2.4,
+   "sl": 0.6,
    "hold": 1.5,
    "size": 0.25,
    "rules": [
     {
-     "feature": "btc_r96",
-     "op": "<",
-     "value": -0.01336
-    },
-    {
-     "feature": "btc_vol96",
-     "op": ">",
-     "value": 0.00245
-    },
-    {
      "feature": "rel_r672",
      "op": "<",
-     "value": -0.01143
+     "value": -0.04146
+    },
+    {
+     "feature": "r_672",
+     "op": "<",
+     "value": 0.06771
+    },
+    {
+     "feature": "btc_r96",
+     "op": "<",
+     "value": -0.0214
     },
     {
      "feature": "btc_r16",
      "op": "<",
-     "value": -0.00539
+     "value": -0.00266
     }
    ],
-   "id": "a4e553159a",
-   "parent": "d9e04ff2d9",
-   "origin": "mutation: tp"
+   "id": "8ce9447e39",
+   "parent": "2554729961+d36fec624d",
+   "origin": "crossover"
   },
   {
    "style": "position",
    "threshold": 0.65,
-   "tp": 2.8,
-   "sl": 0.8,
+   "tp": 2.4,
+   "sl": 0.6,
    "hold": 1.5,
    "size": 0.25,
    "rules": [
     {
-     "feature": "btc_r96",
-     "op": "<",
-     "value": -0.01336
-    },
-    {
-     "feature": "btc_vol96",
-     "op": ">",
-     "value": 0.00245
-    },
-    {
      "feature": "rel_r672",
      "op": "<",
-     "value": -0.01143
+     "value": -0.04146
+    },
+    {
+     "feature": "btc_r96",
+     "op": "<",
+     "value": -0.0214
     },
     {
      "feature": "btc_r16",
      "op": "<",
-     "value": -0.00535
+     "value": -0.00266
     }
    ],
-   "id": "225e405ccb",
-   "parent": "a4e553159a",
-   "origin": "mutation: tweak_rule"
+   "id": "fc8eab7d49",
+   "parent": "a6cee72917+8ce9447e39",
+   "origin": "crossover"
   }
  ],
  "since": 1791186354886

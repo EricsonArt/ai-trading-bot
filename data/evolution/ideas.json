@@ -1,34 +1,4 @@
 {
- "e0b40e13d5": {
-  "name": "Wymagaj wyra\u017anego spadku trendu 200h, aby potwierdzi\u0107 sygna\u0142",
-  "source": "internet research: Bot ju\u017c u\u017cywa btc_r96 < -0.01231 jako filtra, ale nie wymaga negatywnego trendu 200h.",
-  "rule": "d_ema200 < -0.005 and btc_r96 < -0.01231 and r_96 < -0.0003",
-  "why": "D_ema200 < -0.005 oznacza, \u017ce cena jest wyra\u017anie poni\u017cej \u015bredniej 200h \u2014 to warunek, kt\u00f3ry odr\u00f3\u017cnia realny trend spadkowy od kr\u00f3tkoterminowej paniki.",
-  "gain": 0.0,
-  "tested_at": 1794083595425,
-  "model_version": 78,
-  "adopted": false
- },
- "1337818c90": {
-  "name": "Wymagaj sp\u00f3jnego negatywnego momentum na wszystkich horyzontach",
-  "source": "internet research: Bot traci\u0142 na sygna\u0142ach, gdy kr\u00f3tkoterminowe momentum by\u0142o dodatnie lub bliskie zera, mimo negatywnego trendu.",
-  "rule": "r_96 < -0.0003 and r_16 < -0.0003 and rel_r672 < -0.005",
-  "why": "Wymaganie negatywnego momentum na 24h i 4h, a nie tylko na 24h, eliminuje sygna\u0142y, kt\u00f3re s\u0105 pozytywne tylko w bardzo kr\u00f3tkim horyzoncie.",
-  "gain": 0.0,
-  "tested_at": 1794083595425,
-  "model_version": 78,
-  "adopted": false
- },
- "ea6657b97a": {
-  "name": "unikaj rel_r96 >= 0.002805",
-  "source": "own mistakes (auto)",
-  "rule": "rel_r96 < 0.0028",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: coin's 24h return minus Bitcoin's",
-  "gain": 0.0,
-  "tested_at": 1794140545100,
-  "model_version": 79,
-  "adopted": false
- },
  "1b6b07ddb5": {
   "name": "unikaj rel_r96 >= 0.008859",
   "source": "own mistakes (auto)",
@@ -796,6 +766,36 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: coin's 7-day return minus Bitcoin's",
   "gain": 0.0,
   "tested_at": 1794899836349,
+  "model_version": 94,
+  "adopted": false
+ },
+ "5c08ed4f89": {
+  "name": "Odrzu\u0107 sygna\u0142y w oknie 24h, gdy kr\u00f3tkoterminowy impuls jest jeszcze ujemny",
+  "source": "internet research: Analiza b\u0142\u0119d\u00f3w: btc_r96 i r_96 to najgorsze cechy botu; r_4 < 0.0005 odrzucone jako odr\u0119bne regu\u0142y, ale w po\u0142\u0105czeniu z trendem 24h tworzy silniejszy filtr.",
+  "rule": "r_96 < -0.01231 and r_16 < 0.00602 and r_4 < 0.0005",
+  "why": "Bot traci\u0142 na sygna\u0142ach, gdy kr\u00f3tkoterminowe odskoki (r_1, r_2, r_4) by\u0142y ujemne, co sugeruje, \u017ce model kupuje w dalszym spadku. Nowa regu\u0142a wymaga dodatniego kr\u00f3tkoterminowego impulsu, \u017ceby odrzuci\u0107 sygna\u0142y w oknie 24h.",
+  "gain": 0.0,
+  "tested_at": 1794900905465,
+  "model_version": 94,
+  "adopted": false
+ },
+ "30263d0391": {
+  "name": "Odrzu\u0107 sygna\u0142y, gdy Bitcoin i aktywa krypto spadaj\u0105 razem w oknie 24h",
+  "source": "internet research: Analiza b\u0142\u0119d\u00f3w: btc_r96 i rel_r96 to najgorsze cechy botu; dzi\u015b BTC spada w okolice 62 tys. USD, a ETH 28% w dw\u00f3ch tygodniach.",
+  "rule": "btc_r16 < 0.00602 and btc_r96 < -0.01231 and r_16 < 0.0005",
+  "why": "Ryzyko wsp\u00f3lnej wyprzeda\u017cy BTC i altcoin\u00f3w jest dzi\u015b najwi\u0119ksze; regu\u0142a odrzuca sygna\u0142y, gdy kr\u00f3tkoterminowy impuls BTC jest ujemny.",
+  "gain": 0.0,
+  "tested_at": 1794900905465,
+  "model_version": 94,
+  "adopted": false
+ },
+ "969efdf190": {
+  "name": "Odrzu\u0107 sygna\u0142y, gdy kr\u00f3tkoterminowe odskoki s\u0105 ujemne",
+  "source": "internet research: Analiza b\u0142\u0119d\u00f3w: r_1 < 0.0005, r_2 < 0.0005 i r_4 < 0.0005 odrzucone jako odr\u0119bne regu\u0142y, ale w po\u0142\u0105czeniu tworz\u0105 silniejszy filtr.",
+  "rule": "r_16 < 0.0005 and r_4 < 0.0005 and r_2 < 0.0005",
+  "why": "Bot traci\u0142 na sygna\u0142ach, gdy kr\u00f3tkoterminowe odskoki (r_1, r_2, r_4) by\u0142y ujemne, co sugeruje, \u017ce model kupuje w dalszym spadku. Nowa regu\u0142a wymaga dodatniego kr\u00f3tkoterminowego impulsu, \u017ceby odrzuci\u0107 sygna\u0142y w oknie 24h.",
+  "gain": 0.0,
+  "tested_at": 1794900905465,
   "model_version": 94,
   "adopted": false
  }
