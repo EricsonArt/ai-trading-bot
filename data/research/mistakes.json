@@ -1,49 +1,57 @@
 {
- "created_at": 1794835858767,
- "model_version": 93,
- "signals": 27353,
- "losers": 15809,
+ "created_at": 1794899759112,
+ "model_version": 94,
+ "signals": 27074,
+ "losers": 15771,
  "patterns": [
   {
    "feature": "btc_r96",
    "meaning": "Bitcoin return over the last 24 hours",
-   "strength": 0.256,
-   "losers_avg": -0.00581,
-   "winners_avg": -0.01477
-  },
-  {
-   "feature": "btc_vol96",
-   "meaning": "Bitcoin 24h volatility",
-   "strength": 0.217,
-   "losers_avg": 0.00241,
-   "winners_avg": 0.00281
-  },
-  {
-   "feature": "atr",
-   "meaning": "average true range as a fraction of price",
-   "strength": 0.209,
-   "losers_avg": 0.0056,
-   "winners_avg": 0.00692
-  },
-  {
-   "feature": "vol_16",
-   "meaning": "volatility of 15-min returns over the last 4 hours",
-   "strength": 0.196,
-   "losers_avg": 0.00357,
-   "winners_avg": 0.00479
+   "strength": 0.254,
+   "losers_avg": -0.00551,
+   "winners_avg": -0.0145
   },
   {
    "feature": "r_96",
    "meaning": "return over the last 24 hours",
-   "strength": 0.173,
-   "losers_avg": -0.01546,
-   "winners_avg": -0.02427
+   "strength": 0.18,
+   "losers_avg": -0.01389,
+   "winners_avg": -0.02299
+  },
+  {
+   "feature": "atr",
+   "meaning": "average true range as a fraction of price",
+   "strength": 0.171,
+   "losers_avg": 0.00569,
+   "winners_avg": 0.00671
+  },
+  {
+   "feature": "vol_16",
+   "meaning": "volatility of 15-min returns over the last 4 hours",
+   "strength": 0.165,
+   "losers_avg": 0.00367,
+   "winners_avg": 0.00463
+  },
+  {
+   "feature": "btc_vol96",
+   "meaning": "Bitcoin 24h volatility",
+   "strength": 0.162,
+   "losers_avg": 0.00243,
+   "winners_avg": 0.00271
   }
  ],
  "candidates": [
   {
-   "name": "unikaj btc_vol96 >= 0.002845",
-   "gain_on_old_data": 0.0021
+   "name": "unikaj btc_vol96 >= 0.002837",
+   "gain_on_old_data": 0.00498
+  },
+  {
+   "name": "unikaj rel_r672 <= -0.04928",
+   "gain_on_old_data": 0.00435
+  },
+  {
+   "name": "unikaj rel_r672 <= -0.07432",
+   "gain_on_old_data": 0.00264
   }
  ]
 }
