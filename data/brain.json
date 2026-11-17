@@ -1,19 +1,20 @@
 {
- "created_at": 1794917493733,
+ "created_at": 1794921066821,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 46.3,
+ "seconds": 7.6,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.06,
   "symbol_bias": {
+   "BTC": "reduce",
    "XRP": "avoid",
    "SOL": "avoid",
    "DOGE": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w panice: BTC spada 30 dni o 21.9%, Fear & Greed na 12, a model ma zero edge (46% win rate, avg +0.12%/trade vs always-buy -0.45%/trade). Practice account straci\u0142 2.10% na 10 trades z 1 winem, wi\u0119c nie zwi\u0119kszamy ryzyka i utrzymujemy zero pozycji. CLM model ma AUC 0.44, czyli brak skillu, wi\u0119c nie zwi\u0119kszamy ryzyka.",
+ "reasoning": "Rynek jest w panice: BTC spad\u0142 21.9% w 30 dni, Fear & Greed na 12. Model ma zero edge (46% win rate, avg +0.12%/trade vs always-buy -0.45%/trade). Practice account straci\u0142 2.02% na 10 trades. Wszystkie symbole maj\u0105 nisk\u0105 pewno\u015b\u0107 poni\u017cej threshold 0.79. Trzymam zero pozycji, obni\u017cam ryzyko i utrzymuj\u0119 ostro\u017cne filtry.",
  "new_lessons": [
   "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
   "Practice: 10 trades, 1 win, -2.97% \u2014 model bez edge, zero pozycji",
