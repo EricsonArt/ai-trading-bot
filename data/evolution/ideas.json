@@ -1,34 +1,4 @@
 {
- "a76d77c931": {
-  "name": "unikaj rel_r96 >= 0.01942",
-  "source": "own mistakes (auto)",
-  "rule": "rel_r96 < 0.01942",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: coin's 24h return minus Bitcoin's",
-  "gain": 0.0,
-  "tested_at": 1794140545100,
-  "model_version": 79,
-  "adopted": false
- },
- "8220d457b7": {
-  "name": "unikaj rel_r96 >= 0.01031",
-  "source": "own mistakes (auto)",
-  "rule": "rel_r96 < 0.01031",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: coin's 24h return minus Bitcoin's",
-  "gain": 0.0,
-  "tested_at": 1794188688402,
-  "model_version": 80,
-  "adopted": false
- },
- "ef7cbab683": {
-  "name": "unikaj rel_r96 >= 0.003614",
-  "source": "own mistakes (auto)",
-  "rule": "rel_r96 < 0.00361",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: coin's 24h return minus Bitcoin's",
-  "gain": 0.0,
-  "tested_at": 1794188688402,
-  "model_version": 80,
-  "adopted": false
- },
  "f916e0e72a": {
   "name": "unikaj r_96 <= -0.02875",
   "source": "own mistakes (auto)",
@@ -796,6 +766,36 @@
   "why": "W ostatnich 24 godzinach Bitcoin spad\u0142 o 2.5% (btc_r96 = -0.02576) i jego wolumen jest stabilny (btc_vol96 = 0.00104). W botach, niskie zmiany w 24h (r_96 < -0.01231) mog\u0105 by\u0107 sygna\u0142ami dla nieprzewidywalnych ruch\u00f3w, kt\u00f3re s\u0105 brane pod uwag\u0119 w analizie b\u0142\u0119d\u00f3w.",
   "gain": 0.0,
   "tested_at": 1795071975703,
+  "model_version": 97,
+  "adopted": false
+ },
+ "2cfbd3a255": {
+  "name": "Brak kr\u00f3tkoterminowego potwierdzenia",
+  "source": "internet research: B\u0142\u0119dy botu: r_96, r_16, d_ema200, ema_trend \u2014 wszystkie trac\u0105 na spadkach; newsy o spadkach BTC i outflowach ETF.",
+  "rule": "r_1 < -0.0002 and r_2 < -0.0002 and r_4 < -0.0002",
+  "why": "Bot kupuje na spadkach BTC, ale kr\u00f3tkie spadki (r_1, r_2, r_4 ujemne) to dok\u0142adnie moment, gdy momentum si\u0119 nie odwraca. To odr\u00f3\u017cnia prawdziwy odwr\u00f3t od kr\u00f3tkoterminowego spadku.",
+  "gain": 0.0,
+  "tested_at": 1795076346288,
+  "model_version": 97,
+  "adopted": false
+ },
+ "3cdd7053a6": {
+  "name": "Zbyt spokojny rynek",
+  "source": "internet research: B\u0142\u0119dy botu: atr \u2014 losing trades avg 0.00573 vs winning 0.00703; newsy o haku sBOLD i spadkach BTC.",
+  "rule": "vol_ratio < 0.7 and atr < 0.003",
+  "why": "Bot kupuje tylko przy btc_vol96 > 0.0024, ale to za ma\u0142o. Niska vol_ratio i ma\u0142y ATR oznaczaj\u0105, \u017ce rynek nie ma ruchu \u2014 sygna\u0142 nie ma miejsca, gdzie si\u0119 rozwinie.",
+  "gain": 0.0,
+  "tested_at": 1795076346288,
+  "model_version": 97,
+  "adopted": false
+ },
+ "f55186784f": {
+  "name": "Coin s\u0142abnie wzgl\u0119dem BTC",
+  "source": "internet research: B\u0142\u0119dy botu: rel_r96, rank_r96 \u2014 brak filtr\u00f3w na relatywnym momentum; newsy o spadkach BTC i outflowach ETF.",
+  "rule": "rel_r96 < -0.01 and rank_r96 < 0.3",
+  "why": "Bot kupuje na spadkach BTC, ale je\u015bli coin spada szybciej ni\u017c BTC i ma s\u0142aby rank, to to nie jest okazja \u2014 to tylko korekta sektora.",
+  "gain": 0.0,
+  "tested_at": 1795076346288,
   "model_version": 97,
   "adopted": false
  }
