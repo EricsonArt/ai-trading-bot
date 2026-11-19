@@ -1,9 +1,9 @@
 {
- "generated_at": 1795096820331,
- "last_candle": 1795091400000,
+ "generated_at": 1795097843617,
+ "last_candle": 1795096800000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
- "benchmark_return": -0.24869000000000008,
+ "benchmark_return": -0.24695,
  "series": [
   [
    1790508600000,
@@ -10194,9 +10194,21 @@
    968.72
   ],
   [
-   1795091400000,
+   1795093200000,
    997.53,
-   751.31,
+   751.21,
+   968.72
+  ],
+  [
+   1795095900000,
+   997.53,
+   754.17,
+   968.72
+  ],
+  [
+   1795096800000,
+   997.53,
+   753.05,
    968.72
   ]
  ],
@@ -10281,7 +10293,7 @@
    {
     "name": "Lepiej ni\u017c samo trzymanie BTC",
     "ok": true,
-    "value": "+24.6 pkt"
+    "value": "+24.4 pkt"
    },
    {
     "name": "Najwi\u0119kszy spadek mniejszy ni\u017c 20%",
@@ -11213,91 +11225,91 @@
  },
  "signals": {
   "BTC": {
-   "p": 0.0734,
-   "threshold": 0.83,
+   "p": 0.0784,
+   "threshold": 0.71,
    "action": "wait",
-   "ts": 1795091400000
+   "ts": 1795096800000
   },
   "ETH": {
-   "p": 0.0918,
-   "threshold": 0.83,
+   "p": 0.0821,
+   "threshold": 0.71,
    "action": "wait",
-   "ts": 1795091400000
+   "ts": 1795096800000
   },
   "SOL": {
-   "p": 0.2692,
-   "threshold": 0.83,
+   "p": 0.2967,
+   "threshold": 0.71,
    "action": "wait",
-   "ts": 1795091400000
+   "ts": 1795096800000
   },
   "XRP": {
-   "p": 0.3105,
-   "threshold": 0.83,
+   "p": 0.2737,
+   "threshold": 0.71,
    "action": "wait",
-   "ts": 1795091400000
+   "ts": 1795096800000
   },
   "DOGE": {
-   "p": 0.0969,
-   "threshold": 0.83,
+   "p": 0.2389,
+   "threshold": 0.71,
    "action": "wait",
-   "ts": 1795091400000
+   "ts": 1795096800000
   },
   "ADA": {
-   "p": 0.1196,
-   "threshold": 0.83,
+   "p": 0.1181,
+   "threshold": 0.71,
    "action": "wait",
-   "ts": 1795091400000
+   "ts": 1795096800000
   },
   "BNB": {
-   "p": 0.0805,
-   "threshold": 0.83,
+   "p": 0.0899,
+   "threshold": 0.71,
    "action": "wait",
-   "ts": 1795091400000
+   "ts": 1795096800000
   },
   "LINK": {
-   "p": 0.1442,
-   "threshold": 0.83,
+   "p": 0.0865,
+   "threshold": 0.71,
    "action": "wait",
-   "ts": 1795091400000
+   "ts": 1795096800000
   },
   "AVAX": {
-   "p": 0.0968,
-   "threshold": 0.83,
+   "p": 0.1083,
+   "threshold": 0.71,
    "action": "wait",
-   "ts": 1795091400000
+   "ts": 1795096800000
   },
   "LTC": {
-   "p": 0.2054,
-   "threshold": 0.83,
+   "p": 0.303,
+   "threshold": 0.71,
    "action": "wait",
-   "ts": 1795091400000
+   "ts": 1795096800000
   },
   "DOT": {
-   "p": 0.1255,
-   "threshold": 0.83,
+   "p": 0.1341,
+   "threshold": 0.71,
    "action": "wait",
-   "ts": 1795091400000
+   "ts": 1795096800000
   },
   "TRX": {
-   "p": 0.2027,
-   "threshold": 0.83,
+   "p": 0.184,
+   "threshold": 0.71,
    "action": "wait",
-   "ts": 1795091400000
+   "ts": 1795096800000
   }
  },
  "prices": {
-  "BTC": 63795.43,
-  "ETH": 1798.19,
-  "SOL": 74.49,
-  "XRP": 0.9809,
-  "DOGE": 0.05936,
-  "ADA": 0.1542,
-  "BNB": 592.0,
-  "LINK": 9.199,
-  "AVAX": 7.093,
-  "LTC": 44.32,
-  "DOT": 0.715,
-  "TRX": 0.3126
+  "BTC": 63943.13,
+  "ETH": 1811.0,
+  "SOL": 75.1,
+  "XRP": 0.9909,
+  "DOGE": 0.05965,
+  "ADA": 0.1554,
+  "BNB": 592.81,
+  "LINK": 9.255,
+  "AVAX": 7.152,
+  "LTC": 44.42,
+  "DOT": 0.722,
+  "TRX": 0.3127
  },
  "model": {
   "version": 97,
@@ -11753,8 +11765,11 @@
  ],
  "directives": {
   "risk_level": 0.2,
-  "min_confidence_adj": 0.1,
+  "min_confidence_adj": -0.02,
   "symbol_bias": {
+   "XRP": "reduce",
+   "DOGE": "reduce",
+   "ADA": "reduce",
    "BTC": "avoid",
    "ETH": "avoid",
    "SOL": "avoid"
