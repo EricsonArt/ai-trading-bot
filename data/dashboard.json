@@ -1,9 +1,9 @@
 {
- "generated_at": 1795111489479,
- "last_candle": 1795110300000,
+ "generated_at": 1795113012390,
+ "last_candle": 1795111200000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
- "benchmark_return": -0.26100999999999996,
+ "benchmark_return": -0.2613,
  "series": [
   [
    1790508600000,
@@ -10236,9 +10236,9 @@
    968.72
   ],
   [
-   1795110300000,
+   1795111200000,
    997.53,
-   738.99,
+   738.7,
    968.72
   ]
  ],
@@ -11255,91 +11255,91 @@
  },
  "signals": {
   "BTC": {
-   "p": 0.1335,
+   "p": 0.1132,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1795110300000
+   "ts": 1795111200000
   },
   "ETH": {
-   "p": 0.2589,
+   "p": 0.2367,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1795110300000
+   "ts": 1795111200000
   },
   "SOL": {
-   "p": 0.3219,
+   "p": 0.3239,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1795110300000
+   "ts": 1795111200000
   },
   "XRP": {
-   "p": 0.2233,
+   "p": 0.2008,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1795110300000
+   "ts": 1795111200000
   },
   "DOGE": {
-   "p": 0.2624,
+   "p": 0.2251,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1795110300000
+   "ts": 1795111200000
   },
   "ADA": {
-   "p": 0.126,
+   "p": 0.1186,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1795110300000
+   "ts": 1795111200000
   },
   "BNB": {
-   "p": 0.1851,
+   "p": 0.1676,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1795110300000
+   "ts": 1795111200000
   },
   "LINK": {
-   "p": 0.2131,
+   "p": 0.2002,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1795110300000
+   "ts": 1795111200000
   },
   "AVAX": {
-   "p": 0.1999,
+   "p": 0.1994,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1795110300000
+   "ts": 1795111200000
   },
   "LTC": {
-   "p": 0.2681,
+   "p": 0.2288,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1795110300000
+   "ts": 1795111200000
   },
   "DOT": {
-   "p": 0.1097,
+   "p": 0.0873,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1795110300000
+   "ts": 1795111200000
   },
   "TRX": {
-   "p": 0.1971,
+   "p": 0.1779,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1795110300000
+   "ts": 1795111200000
   }
  },
  "prices": {
-  "BTC": 62748.96,
-  "ETH": 1771.28,
-  "SOL": 73.83,
-  "XRP": 0.9695,
-  "DOGE": 0.05852,
-  "ADA": 0.1528,
-  "BNB": 585.11,
-  "LINK": 9.01,
-  "AVAX": 7.022,
-  "LTC": 42.61,
-  "DOT": 0.715,
-  "TRX": 0.3105
+  "BTC": 62724.4,
+  "ETH": 1772.38,
+  "SOL": 73.75,
+  "XRP": 0.9685,
+  "DOGE": 0.05848,
+  "ADA": 0.1527,
+  "BNB": 585.1,
+  "LINK": 9.095,
+  "AVAX": 7.091,
+  "LTC": 42.95,
+  "DOT": 0.722,
+  "TRX": 0.3111
  },
  "model": {
   "version": 97,
@@ -11797,6 +11797,7 @@
   "risk_level": 0.2,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
+   "XRP": "reduce",
    "BTC": "avoid",
    "ETH": "avoid",
    "SOL": "avoid"
@@ -11804,29 +11805,30 @@
   "regime": "bear"
  },
  "brain": {
-  "created_at": 1795108719159,
+  "created_at": 1795112356445,
   "source": "local",
   "model": "mimo2.6:9b",
   "directives": {
    "risk_level": 0.2,
    "min_confidence_adj": 0.05,
    "symbol_bias": {
+    "XRP": "reduce",
     "BTC": "avoid",
     "ETH": "avoid",
     "SOL": "avoid"
    },
    "regime": "bear"
   },
-  "reasoning": "Model ma zero edge: 47% win rate, avg +0.06%/trade vs always-buy -0.44% \u2014 zero edge, zero pozycji. Practice: 10 trades, 1 win, -3.13% \u2014 model bez edge, zero pozycji. Rynek spadkowy (BTC 30d -23.2%, Fear 10) \u2014 nie zwi\u0119kszaj ryzyka.",
+  "reasoning": "Rynek jest w wyra\u017anym trendzie spadkowym \u2014 BTC spad\u0142 o 23.2% w 30 dni, a Fear & Greed wskazuje na ekstremalny strach. Model nie ma potwierdzonej przewagi: 47% win rate i \u015brednio +0.06%/trade, co nie przekracza progu. Practice pokazuje 10 trades, 1 win, -3.13%, co potwierdza brak edge. Dlatego obni\u017cam ryzyko i unika\u0144 BTC, ETH, SOL.",
   "new_lessons": [
    "Model bez edge: 47% win rate, avg +0.06%/trade vs always-buy -0.44% \u2014 zero edge, zero pozycji",
-   "Practice: 10 trades, 1 win, -3.13% \u2014 model bez edge, zero pozycji",
-   "Rynek spadkowy (BTC 30d -23.2%, Fear 10) \u2014 nie zwi\u0119kszaj ryzyka"
+   "Rynek spadkowy (BTC 30d -23.2%, Fear 10) \u2014 nie zwi\u0119kszaj ryzyka",
+   "Practice: 10 trades, 1 win, -3.13% \u2014 model bez edge, zero pozycji"
   ],
   "lessons": [
    "Model bez edge: 47% win rate, avg +0.06%/trade vs always-buy -0.44% \u2014 zero edge, zero pozycji",
-   "Practice: 10 trades, 1 win, -3.13% \u2014 model bez edge, zero pozycji",
    "Rynek spadkowy (BTC 30d -23.2%, Fear 10) \u2014 nie zwi\u0119kszaj ryzyka",
+   "Practice: 10 trades, 1 win, -3.13% \u2014 model bez edge, zero pozycji",
    "Model bez edge: 45% win rate, avg +0.01%/trade vs always-buy -0.45% \u2014 zero edge, zero pozycji",
    "Rynek spadkowy (BTC 30d -23.5%, Fear 10) \u2014 nie zwi\u0119kszaj ryzyka",
    "XRP straci\u0142 8.11% przy 0.83 \u2014 zero edge, zero pozycji",
@@ -11837,9 +11839,32 @@
    "Practice: 10 trades, 2 wins, -3.13% \u2014 model bez edge, zero pozycji",
    "Model bez edge: 46% win rate, avg +0.12%/trade vs always-buy -0.45% \u2014 zero edge, zero pozycji"
   ],
-  "seconds": 5.9
+  "seconds": 11.5
  },
  "brain_journal": [
+  {
+   "created_at": 1795112356445,
+   "source": "local",
+   "model": "mimo2.6:9b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.05,
+    "symbol_bias": {
+     "XRP": "reduce",
+     "BTC": "avoid",
+     "ETH": "avoid",
+     "SOL": "avoid"
+    },
+    "regime": "bear"
+   },
+   "reasoning": "Rynek jest w wyra\u017anym trendzie spadkowym \u2014 BTC spad\u0142 o 23.2% w 30 dni, a Fear & Greed wskazuje na ekstremalny strach. Model nie ma potwierdzonej przewagi: 47% win rate i \u015brednio +0.06%/trade, co nie przekracza progu. Practice pokazuje 10 trades, 1 win, -3.13%, co potwierdza brak edge. Dlatego obni\u017cam ryzyko i unika\u0144 BTC, ETH, SOL.",
+   "new_lessons": [
+    "Model bez edge: 47% win rate, avg +0.06%/trade vs always-buy -0.44% \u2014 zero edge, zero pozycji",
+    "Rynek spadkowy (BTC 30d -23.2%, Fear 10) \u2014 nie zwi\u0119kszaj ryzyka",
+    "Practice: 10 trades, 1 win, -3.13% \u2014 model bez edge, zero pozycji"
+   ],
+   "equity_at": 997.53
+  },
   {
    "created_at": 1795108719159,
    "source": "local",
@@ -12043,52 +12068,30 @@
     "Practice: 10 trades, 2 wins, -3.13% \u2014 model bez edge, zero pozycji"
    ],
    "equity_at": 997.53
-  },
-  {
-   "created_at": 1795026176038,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.05,
-    "symbol_bias": {
-     "BTC": "avoid",
-     "ETH": "avoid",
-     "SOL": "avoid"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "Rynek jest g\u0142\u0119boko w spadku \u2014 BTC spad\u0142 23.5% w 30 dni, a Fear & Greed wynosi 11 (Extreme Fear). Model ma 48% win rate i \u015brednio +0.15%/trade, ale zawsze-kupuj daje -0.45%/trade, wi\u0119c nie ma udowodnionej przewagi. Na 12 symboli model wskazuje tylko 0.17-0.37 pewno\u015bci, wobec progu 0.71, wi\u0119c \u017cadna pozycja nie jest uzasadniona. Zalecam zero pozycji i utrzymanie niskiego ryzyka do stabilizacji rynku.",
-   "new_lessons": [
-    "Model bez edge: 48% win rate, avg +0.15%/trade vs always-buy -0.45% \u2014 zero edge, zero pozycji",
-    "Rynek spadkowy (BTC 30d -23.5%, Fear 11) \u2014 nie zwi\u0119kszaj ryzyka",
-    "Practice: 10 trades, 2 wins, -3.13% \u2014 model bez edge, zero pozycji"
-   ],
-   "equity_at": 997.53
   }
  ],
  "clm": {
-  "updated_at": 1795037204214,
+  "updated_at": 1795112586936,
   "latest": {
-   "BTC": 0.1558,
-   "ETH": 0.1389,
-   "SOL": 0.205,
-   "XRP": 0.4401,
-   "DOGE": 0.3361,
-   "ADA": 0.3027,
-   "BNB": 0.2436,
-   "LINK": 0.2482,
-   "AVAX": 0.2681,
-   "LTC": 0.236,
-   "DOT": 0.2062,
-   "TRX": 0.2694
+   "BTC": 0.134,
+   "ETH": 0.1154,
+   "SOL": 0.174,
+   "XRP": 0.4866,
+   "DOGE": 0.3213,
+   "ADA": 0.3188,
+   "BNB": 0.1855,
+   "LINK": 0.2393,
+   "AVAX": 0.2637,
+   "LTC": 0.2676,
+   "DOT": 0.1702,
+   "TRX": 0.3105
   },
-  "seconds": 23.6,
+  "seconds": 154.8,
   "question": "Buying {sym} now and holding it for about two days will end in a profit.",
   "track_record": {
-   "n": 1836,
-   "accuracy": 0.7211328976034859,
-   "base_rate": 0.2701525054466231
+   "n": 1860,
+   "accuracy": 0.7204301075268817,
+   "base_rate": 0.2709677419354839
   }
  },
  "clm_test": {
