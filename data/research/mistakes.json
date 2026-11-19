@@ -1,49 +1,44 @@
 {
- "created_at": 1795019989094,
- "model_version": 96,
- "signals": 26469,
- "losers": 15226,
+ "created_at": 1795071944533,
+ "model_version": 97,
+ "signals": 26413,
+ "losers": 15643,
  "patterns": [
   {
    "feature": "btc_r96",
    "meaning": "Bitcoin return over the last 24 hours",
-   "strength": 0.284,
-   "losers_avg": -0.00412,
-   "winners_avg": -0.01433
+   "strength": 0.301,
+   "losers_avg": -0.0038,
+   "winners_avg": -0.01451
   },
   {
    "feature": "r_96",
    "meaning": "return over the last 24 hours",
-   "strength": 0.229,
-   "losers_avg": -0.01232,
-   "winners_avg": -0.02433
+   "strength": 0.253,
+   "losers_avg": -0.01116,
+   "winners_avg": -0.02382
+  },
+  {
+   "feature": "d_ema200",
+   "meaning": "price vs its 200-candle (50 h) average",
+   "strength": 0.21,
+   "losers_avg": -0.01397,
+   "winners_avg": -0.02137
   },
   {
    "feature": "atr",
    "meaning": "average true range as a fraction of price",
-   "strength": 0.215,
+   "strength": 0.209,
    "losers_avg": 0.00573,
-   "winners_avg": 0.00715
+   "winners_avg": 0.00703
   },
   {
-   "feature": "vol_16",
-   "meaning": "volatility of 15-min returns over the last 4 hours",
+   "feature": "ema_trend",
+   "meaning": "50-candle average vs 200-candle average (positive = uptrend)",
    "strength": 0.204,
-   "losers_avg": 0.00366,
-   "winners_avg": 0.00508
-  },
-  {
-   "feature": "vol_96",
-   "meaning": "volatility of 15-min returns over 24 hours",
-   "strength": 0.18,
-   "losers_avg": 0.00398,
-   "winners_avg": 0.0047
+   "losers_avg": -0.01,
+   "winners_avg": -0.01449
   }
  ],
- "candidates": [
-  {
-   "name": "unikaj btc_vol96 >= 0.002806",
-   "gain_on_old_data": 0.00138
-  }
- ]
+ "candidates": []
 }
