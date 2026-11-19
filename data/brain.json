@@ -1,28 +1,30 @@
 {
- "created_at": 1795115997907,
+ "created_at": 1795119638731,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 19.9,
+ "seconds": 9.0,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
+   "XRP": "reduce",
    "BTC": "avoid",
    "ETH": "avoid",
    "SOL": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest wyra\u017anie w krachu: BTC spad\u0142 24.1% w 30 dni, Fear & Greed wynosi 10, a praktyczny rachunek straci\u0142 3.13% na 10 transakcjach. Model nie ma udowodnionej przewagi (avg +0.06%/trade vs always-buy -0.44%), wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka ani otwiera\u0107 pozycji. Wszystkie sygna\u0142y modela s\u0105 poni\u017cej progu 0.78, wi\u0119c zero pozycji jest w\u0142a\u015bciwym dzia\u0142aniem.",
+ "reasoning": "Rynek jest wyra\u017anie w krachu: BTC spad\u0142 24.1% w 30 dni, ETH 27.5%, SOL 30.7%, a Fear & Greed wynosi 10 (Extreme Fear). Model ma 47% win rate i \u015brednio +0.43%/trade, co jest lepsze ni\u017c always-buy -0.44%, ale to wci\u0105\u017c bardzo s\u0142aby edge. Practice account straci\u0142 3.13% na 10 trades z 1 winem. Wszystkie symbole maj\u0105 nisk\u0105 aktualn\u0105 pewno\u015b\u0107 modelu (0.12-0.37), wi\u0119c nie ma sensu otwiera\u0107 pozycji.",
  "new_lessons": [
-  "Model bez edge: 47% win rate, avg +0.06%/trade vs always-buy -0.44% \u2014 zero edge, zero pozycji",
+  "Model bez edge: 47% win rate, avg +0.43%/trade vs always-buy -0.44% \u2014 zero edge, zero pozycji",
   "Rynek spadkowy (BTC 30d -24.1%, Fear 10) \u2014 nie zwi\u0119kszaj ryzyka",
   "Practice: 10 trades, 1 win, -3.13% \u2014 model bez edge, zero pozycji"
  ],
  "lessons": [
-  "Model bez edge: 47% win rate, avg +0.06%/trade vs always-buy -0.44% \u2014 zero edge, zero pozycji",
+  "Model bez edge: 47% win rate, avg +0.43%/trade vs always-buy -0.44% \u2014 zero edge, zero pozycji",
   "Rynek spadkowy (BTC 30d -24.1%, Fear 10) \u2014 nie zwi\u0119kszaj ryzyka",
   "Practice: 10 trades, 1 win, -3.13% \u2014 model bez edge, zero pozycji",
+  "Model bez edge: 47% win rate, avg +0.06%/trade vs always-buy -0.44% \u2014 zero edge, zero pozycji",
   "Rynek spadkowy (BTC 30d -23.2%, Fear 10) \u2014 nie zwi\u0119kszaj ryzyka",
   "Model bez edge: 45% win rate, avg +0.01%/trade vs always-buy -0.45% \u2014 zero edge, zero pozycji",
   "Rynek spadkowy (BTC 30d -23.5%, Fear 10) \u2014 nie zwi\u0119kszaj ryzyka",
@@ -30,8 +32,7 @@
   "Rynek spadkowy (BTC 30d -22.1%, Fear 10) \u2014 nie zwi\u0119kszaj ryzyka",
   "Rynek spadkowy (BTC 30d -20.1%, Fear 11) \u2014 nie zwi\u0119kszaj ryzyka",
   "Model bez edge: 48% win rate, avg +0.15%/trade vs always-buy -0.45% \u2014 zero edge, zero pozycji",
-  "Rynek spadkowy (BTC 30d -23.5%, Fear 11) \u2014 nie zwi\u0119kszaj ryzyka",
-  "Practice: 10 trades, 2 wins, -3.13% \u2014 model bez edge, zero pozycji"
+  "Rynek spadkowy (BTC 30d -23.5%, Fear 11) \u2014 nie zwi\u0119kszaj ryzyka"
  ],
  "equity_at": 997.53
 }
