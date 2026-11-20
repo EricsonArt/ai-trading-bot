@@ -1,9 +1,9 @@
 {
- "generated_at": 1795185504345,
- "last_candle": 1795184100000,
+ "generated_at": 1795187046354,
+ "last_candle": 1795185900000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
- "benchmark_return": -0.2685599999999999,
+ "benchmark_return": -0.27254,
  "series": [
   [
    1790508600000,
@@ -10398,9 +10398,15 @@
    968.72
   ],
   [
-   1795184100000,
+   1795185000000,
    997.53,
-   731.44,
+   723.82,
+   968.72
+  ],
+  [
+   1795185900000,
+   997.53,
+   727.46,
    968.72
   ]
  ],
@@ -10485,7 +10491,7 @@
    {
     "name": "Lepiej ni\u017c samo trzymanie BTC",
     "ok": true,
-    "value": "+26.6 pkt"
+    "value": "+27.0 pkt"
    },
    {
     "name": "Najwi\u0119kszy spadek mniejszy ni\u017c 20%",
@@ -11417,91 +11423,91 @@
  },
  "signals": {
   "BTC": {
-   "p": 0.1802,
+   "p": 0.2337,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1795184100000
+   "ts": 1795185900000
   },
   "ETH": {
-   "p": 0.1289,
+   "p": 0.2187,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1795184100000
+   "ts": 1795185900000
   },
   "SOL": {
-   "p": 0.1863,
+   "p": 0.2414,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1795184100000
+   "ts": 1795185900000
   },
   "XRP": {
-   "p": 0.5535,
+   "p": 0.6164,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1795184100000
+   "ts": 1795185900000
   },
   "DOGE": {
-   "p": 0.1762,
+   "p": 0.2635,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1795184100000
+   "ts": 1795185900000
   },
   "ADA": {
-   "p": 0.2106,
+   "p": 0.345,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1795184100000
+   "ts": 1795185900000
   },
   "BNB": {
-   "p": 0.1521,
+   "p": 0.2167,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1795184100000
+   "ts": 1795185900000
   },
   "LINK": {
-   "p": 0.2149,
+   "p": 0.3114,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1795184100000
+   "ts": 1795185900000
   },
   "AVAX": {
-   "p": 0.1403,
+   "p": 0.241,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1795184100000
+   "ts": 1795185900000
   },
   "LTC": {
-   "p": 0.3095,
+   "p": 0.3525,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1795184100000
+   "ts": 1795185900000
   },
   "DOT": {
-   "p": 0.2431,
+   "p": 0.3244,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1795184100000
+   "ts": 1795185900000
   },
   "TRX": {
-   "p": 0.2858,
+   "p": 0.4441,
    "threshold": 0.78,
    "action": "wait",
-   "ts": 1795184100000
+   "ts": 1795185900000
   }
  },
  "prices": {
-  "BTC": 62108.37,
-  "ETH": 1757.37,
-  "SOL": 71.61,
-  "XRP": 0.9509,
-  "DOGE": 0.05685,
-  "ADA": 0.1472,
-  "BNB": 571.56,
-  "LINK": 8.832,
-  "AVAX": 6.869,
-  "LTC": 41.8,
-  "DOT": 0.694,
-  "TRX": 0.3061
+  "BTC": 61770.01,
+  "ETH": 1743.24,
+  "SOL": 71.07,
+  "XRP": 0.9443,
+  "DOGE": 0.05637,
+  "ADA": 0.1465,
+  "BNB": 569.54,
+  "LINK": 8.766,
+  "AVAX": 6.788,
+  "LTC": 41.64,
+  "DOT": 0.692,
+  "TRX": 0.3056
  },
  "model": {
   "version": 99,
@@ -11959,6 +11965,7 @@
   "risk_level": 0.2,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
+   "DOGE": "reduce",
    "XRP": "avoid",
    "LTC": "avoid",
    "BTC": "avoid"
@@ -11966,28 +11973,30 @@
   "regime": "bear"
  },
  "brain": {
-  "created_at": 1795179628459,
+  "created_at": 1795186677777,
   "source": "local",
   "model": "mimo2.6:9b",
   "directives": {
    "risk_level": 0.2,
    "min_confidence_adj": 0.05,
    "symbol_bias": {
+    "DOGE": "reduce",
     "XRP": "avoid",
     "LTC": "avoid",
     "BTC": "avoid"
    },
    "regime": "bear"
   },
-  "reasoning": "Rynek jest w ekstremalnym strachu (Fear 12), BTC spad\u0142 o 26.1% w 30 dni, a praktyczny rachunek straci\u0142 3.13% przy 1 wygranej z 10 transakcji. Model ma oznaczony edge, ale jego wynik na nowych danych (28 trades, +2.67%/trade) nie jest jeszcze potwierdzony, wi\u0119c nie zwi\u0119ksz\u0119 ryzyka. Wobec tego utrzymuj\u0119 niskie ryzyko, podnosz\u0119 pr\u00f3g wej\u015bcia i unikam symboli, kt\u00f3re ju\u017c przynios\u0142y najwi\u0119ksze straty.",
+  "reasoning": "Rynek jest w ekstremalnym strachu (Fear 12), a wszystkie aktywa spadaj\u0105 w skali 24h i 30d, wi\u0119c nie ma warunk\u00f3w do zwi\u0119kszania ryzyka. Model ma zero edge: 1 wygrana z 10 transakcji na praktycznym koncie i \u015brednia +0.37%/trade przy always-buy -0.42%/trade, a champion recipe na nowych danych ma edge: False. Wszystkie sygna\u0142y modelowe s\u0105 poni\u017cej progu 0.78, wi\u0119c zero pozycji jest poprawn\u0105 decyzj\u0105.",
   "new_lessons": [
    "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
    "Practice: 10 trades, 1 win, -3.13% \u2014 model bez edge, zero pozycji",
-   "Rynek spadkowy (BTC 30d -26.1%, Fear 12) \u2014 nie zwi\u0119kszaj ryzyka"
+   "Rynek spadkowy (BTC 30d -26.5%, Fear 12) \u2014 nie zwi\u0119kszaj ryzyka"
   ],
   "lessons": [
    "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
    "Practice: 10 trades, 1 win, -3.13% \u2014 model bez edge, zero pozycji",
+   "Rynek spadkowy (BTC 30d -26.5%, Fear 12) \u2014 nie zwi\u0119kszaj ryzyka",
    "Rynek spadkowy (BTC 30d -26.1%, Fear 12) \u2014 nie zwi\u0119kszaj ryzyka",
    "Rynek spadkowy (BTC 30d -25.4%, Fear 12) \u2014 nie zwi\u0119kszaj ryzyka",
    "Rynek spadkowy (BTC 30d -24.1%, Fear 10) \u2014 nie zwi\u0119kszaj ryzyka",
@@ -11996,12 +12005,34 @@
    "Rynek spadkowy (BTC 30d -23.2%, Fear 10) \u2014 nie zwi\u0119kszaj ryzyka",
    "Model bez edge: 45% win rate, avg +0.01%/trade vs always-buy -0.45% \u2014 zero edge, zero pozycji",
    "Rynek spadkowy (BTC 30d -23.5%, Fear 10) \u2014 nie zwi\u0119kszaj ryzyka",
-   "XRP straci\u0142 8.11% przy 0.83 \u2014 zero edge, zero pozycji",
-   "Rynek spadkowy (BTC 30d -22.1%, Fear 10) \u2014 nie zwi\u0119kszaj ryzyka"
+   "XRP straci\u0142 8.11% przy 0.83 \u2014 zero edge, zero pozycji"
   ],
-  "seconds": 221.6
+  "seconds": 15.2
  },
  "brain_journal": [
+  {
+   "created_at": 1795186677777,
+   "source": "local",
+   "model": "mimo2.6:9b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.05,
+    "symbol_bias": {
+     "DOGE": "reduce",
+     "XRP": "avoid",
+     "LTC": "avoid",
+     "BTC": "avoid"
+    },
+    "regime": "bear"
+   },
+   "reasoning": "Rynek jest w ekstremalnym strachu (Fear 12), a wszystkie aktywa spadaj\u0105 w skali 24h i 30d, wi\u0119c nie ma warunk\u00f3w do zwi\u0119kszania ryzyka. Model ma zero edge: 1 wygrana z 10 transakcji na praktycznym koncie i \u015brednia +0.37%/trade przy always-buy -0.42%/trade, a champion recipe na nowych danych ma edge: False. Wszystkie sygna\u0142y modelowe s\u0105 poni\u017cej progu 0.78, wi\u0119c zero pozycji jest poprawn\u0105 decyzj\u0105.",
+   "new_lessons": [
+    "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
+    "Practice: 10 trades, 1 win, -3.13% \u2014 model bez edge, zero pozycji",
+    "Rynek spadkowy (BTC 30d -26.5%, Fear 12) \u2014 nie zwi\u0119kszaj ryzyka"
+   ],
+   "equity_at": 997.53
+  },
   {
    "created_at": 1795179628459,
    "source": "local",
@@ -12201,28 +12232,6 @@
     "Model bez edge: 47% win rate, avg +0.06%/trade vs always-buy -0.44% \u2014 zero edge, zero pozycji",
     "Rynek spadkowy (BTC 30d -23.2%, Fear 10) \u2014 nie zwi\u0119kszaj ryzyka",
     "Practice: 10 trades, 1 win, -3.13% \u2014 model bez edge, zero pozycji"
-   ],
-   "equity_at": 997.53
-  },
-  {
-   "created_at": 1795108719159,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.05,
-    "symbol_bias": {
-     "BTC": "avoid",
-     "ETH": "avoid",
-     "SOL": "avoid"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "Model ma zero edge: 47% win rate, avg +0.06%/trade vs always-buy -0.44% \u2014 zero edge, zero pozycji. Practice: 10 trades, 1 win, -3.13% \u2014 model bez edge, zero pozycji. Rynek spadkowy (BTC 30d -23.2%, Fear 10) \u2014 nie zwi\u0119kszaj ryzyka.",
-   "new_lessons": [
-    "Model bez edge: 47% win rate, avg +0.06%/trade vs always-buy -0.44% \u2014 zero edge, zero pozycji",
-    "Practice: 10 trades, 1 win, -3.13% \u2014 model bez edge, zero pozycji",
-    "Rynek spadkowy (BTC 30d -23.2%, Fear 10) \u2014 nie zwi\u0119kszaj ryzyka"
    ],
    "equity_at": 997.53
   }
