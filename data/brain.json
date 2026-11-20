@@ -1,20 +1,20 @@
 {
- "created_at": 1795186677777,
+ "created_at": 1795190324828,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 15.2,
+ "seconds": 12.6,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
-   "DOGE": "reduce",
+   "SOL": "reduce",
    "XRP": "avoid",
    "LTC": "avoid",
-   "BTC": "avoid"
+   "DOGE": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w ekstremalnym strachu (Fear 12), a wszystkie aktywa spadaj\u0105 w skali 24h i 30d, wi\u0119c nie ma warunk\u00f3w do zwi\u0119kszania ryzyka. Model ma zero edge: 1 wygrana z 10 transakcji na praktycznym koncie i \u015brednia +0.37%/trade przy always-buy -0.42%/trade, a champion recipe na nowych danych ma edge: False. Wszystkie sygna\u0142y modelowe s\u0105 poni\u017cej progu 0.78, wi\u0119c zero pozycji jest poprawn\u0105 decyzj\u0105.",
+ "reasoning": "Rynek jest w ekstremalnym strachu (Fear 12), a BTC spad\u0142 26.5% w 30 dni i 11.9% w 7 dni, wi\u0119c zmienno\u015b\u0107 i brak trendu sprzyjaj\u0105 stratom. Model ma 49% win rate i avg +0.37%/trade, co jest s\u0142abym edge, a practice account straci\u0142 3.13% w 10 trades (1 win), wi\u0119c nie zwi\u0119kszamy ryzyka. XRP, LTC i DOGE maj\u0105 nisk\u0105 konfidencj\u0119 i historyczne straty, wi\u0119c je omijamy, aby ograniczy\u0107 ekspozycj\u0119.",
  "new_lessons": [
   "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
   "Practice: 10 trades, 1 win, -3.13% \u2014 model bez edge, zero pozycji",
