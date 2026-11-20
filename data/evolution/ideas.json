@@ -1,34 +1,4 @@
 {
- "9f4cff9b1b": {
-  "name": "unikaj btc_vol96 >= 0.003287",
-  "source": "own mistakes (auto)",
-  "rule": "btc_vol96 < 0.00329",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin 24h volatility",
-  "gain": 0.0,
-  "tested_at": 1794232827761,
-  "model_version": 81,
-  "adopted": false
- },
- "88fe08fb56": {
-  "name": "AI wp\u0142ywy",
-  "source": "internet research: Decrypt: AI Agents Found a Way Into Anthropic's Business Systems in Under 12 Hours",
-  "rule": "vol_ratio > 1.2",
-  "why": "Z report\u00f3w na Decrypt, AI wp\u0142ywa na rynki, np. atak na systemy Anthropic. Bot powinien unika\u0107 sygna\u0142\u00f3w w okresie, gdy AI jest aktywny, aby unikn\u0105\u0107 nieprzewidywalnych zmian.",
-  "gain": 0.0,
-  "tested_at": 1794276588235,
-  "model_version": 82,
-  "adopted": false
- },
- "abff79ed34": {
-  "name": "unikaj r_96 <= -0.02995",
-  "source": "own mistakes (auto)",
-  "rule": "r_96 > -0.02995",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1794276588235,
-  "model_version": 82,
-  "adopted": false
- },
  "1de7827ba3": {
   "name": "Odrzu\u0107 sygna\u0142y kupna przy kr\u00f3tkim momentum i s\u0142abym wolumenie",
   "source": "internet research: B\u0142\u0119dy botu: r_96 i rel_r96 to g\u0142\u00f3wne cechy, kt\u00f3re r\u00f3\u017cnicuj\u0105 przegrane od wygranych (losing avg -0.01164 vs winning -0.03203 dla r_96; losing -0.0047 vs winning -0.01283 dla rel_r96)",
@@ -796,6 +766,36 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
   "gain": 0.0,
   "tested_at": 1795116431596,
+  "model_version": 98,
+  "adopted": false
+ },
+ "c1fd214228": {
+  "name": "Odbicie z ekstremalnego przetykania",
+  "source": "internet research: Dane b\u0142\u0119d\u00f3w botu: losing trades mia\u0142y atr 0.00578 i vol_16 0.00369, a rsi 0.352; dzi\u015b Fear & Greed 10-13 i BTC w death cross",
+  "rule": "rsi < 0.35 and vol_ratio < 0.7 and atr < 0.003",
+  "why": "Sygna\u0142 kupna przy RSI poni\u017cej 0.35, spadaj\u0105cej zmienno\u015bci i niskim ATR sugeruje, \u017ce rynek jest ekstremalnie przetykany, ale nie ma jeszcze potwierdzenia odrodzenia si\u0119 trendu. Bot wcze\u015bniej testowa\u0142 podobne filtry (vol_ratio < 0.7 i atr < 0.003), ale odrzuci\u0142 je; ta wersja dodaje RSI jako warunek, a",
+  "gain": 0.0,
+  "tested_at": 1795158721042,
+  "model_version": 98,
+  "adopted": false
+ },
+ "71dc298051": {
+  "name": "Wykluczenie g\u0142\u0119bokiego trendu spadkowego",
+  "source": "internet research: Dane b\u0142\u0119d\u00f3w botu: losing trades mia\u0142y ema_trend -0.01012 i d_ema50 -0.01012; dzi\u015b BTC w death cross",
+  "rule": "d_ema50 < -0.005 and d_ema800 < -0.01 and r_96 < -0.01231",
+  "why": "Sygna\u0142 kupna przy g\u0142\u0119boko ujemnym odst\u0119pie od \u015brednich 50 i 800 godzin oraz spadku 24h sugeruje, \u017ce rynek jest w g\u0142\u0119bokim trendzie spadkowym. Bot wcze\u015bniej testowa\u0142 podobne filtry (d_ema50 < -0.005 i d_ema800 < -0.01), ale odrzuci\u0142 je; ta wersja dodaje r_96 jako warunek, aby wykluczy\u0107 sygna\u0142y przy s",
+  "gain": 0.0,
+  "tested_at": 1795158721042,
+  "model_version": 98,
+  "adopted": false
+ },
+ "aff4728bb0": {
+  "name": "Wykluczenie niskiej zmienno\u015bci przy spadku",
+  "source": "internet research: Dane b\u0142\u0119d\u00f3w botu: losing trades mia\u0142y btc_r96 -0.00213 i btc_vol96 0.00187; dzi\u015b BTC w death cross",
+  "rule": "btc_r16 < 0.00602 and btc_r96 < -0.01231 and btc_vol96 < 0.0024",
+  "why": "Sygna\u0142 kupna przy niskiej zmienno\u015bci BTC i spadaj\u0105cej cenie sugeruje, \u017ce rynek jest w g\u0142\u0119bokim trendzie spadkowym z nisk\u0105 zmienno\u015bci\u0105. Bot wcze\u015bniej testowa\u0142 podobne filtry (btc_r16 < 0.00602 i btc_r96 < -0.01231), ale odrzuci\u0142 je; ta wersja dodaje btc_vol96 jako warunek, aby wykluczy\u0107 sygna\u0142y przy ",
+  "gain": 0.0,
+  "tested_at": 1795158721042,
   "model_version": 98,
   "adopted": false
  }
