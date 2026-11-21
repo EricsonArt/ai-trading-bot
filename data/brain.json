@@ -1,19 +1,20 @@
 {
- "created_at": 1795293751903,
+ "created_at": 1795297389399,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 6.3,
+ "seconds": 12.9,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
+   "SOL": "reduce",
    "XRP": "avoid",
    "DOGE": "avoid",
    "AVAX": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w g\u0142\u0119bokiej panice: BTC spad\u0142 poni\u017cej 57 000 USD po raz pierwszy w dw\u00f3ch latach, Fear & Greed na 12 (Extreme Fear), a 30-dniowe spadki BTC wynosz\u0105 -29.2%. Model ma 47% win rate i avg +0.40%/trade, ale to wci\u0105\u017c nie udowadnia edge, a praktyczny account straci\u0142 3.13% na 10 trades. Wszystkie sygna\u0142y modelowe s\u0105 poni\u017cej progu 0.83, wi\u0119c nie ma \u017cadnego otwarcia. Zalecam utrzymanie risk_level 0.2, zero pozycji i unikanie XRP, DOGE, AVAX.",
+ "reasoning": "Rynek jest w g\u0142\u0119bokiej panice: BTC spad\u0142 poni\u017cej 57 000 USD po raz pierwszy w dw\u00f3ch latach, a indeks Fear & Greed siedzi na 12 (Extreme Fear) przez siedem dni. Model ma 47% win rate i \u015brednio +0.40%/trade, ale tylko przy warunkach spadkowych; w obecnej fazie paniki jego sygna\u0142y generuj\u0105 straty, wi\u0119c nie zwi\u0119kszam ryzyka. Ostatnie 10 zamkni\u0119tych transakcji na practice account to 1 wygrana i -2.22%, co potwierdza brak udowodnionej przewagi w tym re\u017cimie.",
  "new_lessons": [
   "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
   "Practice: 10 trades, 1 win, -3.13% \u2014 model bez edge, zero pozycji",
