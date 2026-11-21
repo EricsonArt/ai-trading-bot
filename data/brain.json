@@ -1,19 +1,21 @@
 {
- "created_at": 1795264679919,
+ "created_at": 1795268319437,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 6.2,
+ "seconds": 9.9,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
-   "AVAX": "avoid",
+   "SOL": "reduce",
+   "LTC": "reduce",
    "XRP": "avoid",
-   "DOGE": "avoid"
+   "DOGE": "avoid",
+   "AVAX": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w g\u0142\u0119bokiej panice: BTC spad\u0142 29.2% w 30 dni, Fear & Greed na 12, a praktyczny rachunek straci\u0142 4.06% przy 1 wygranej z 10 transakcji. Model ma nominowany edge, ale na danych historycznych, a na danych testowych 47% win rate i avg +0.40%/trade \u2014 to wci\u0105\u017c nieudowodnione w warunkach obecnej paniki. Dlatego obni\u017cam ryzyko do 0.2, podnosz\u0119 pr\u00f3g wej\u015bcia o 0.05 i unikam XRP, DOGE i AVAX, kt\u00f3re straci\u0142y najwi\u0119cej.",
+ "reasoning": "Rynek jest w wyra\u017anej panice: BTC spad\u0142 29.2% w 30 dni, Fear & Greed na 12, a praktyczny rachunek straci\u0142 2.90% na 10 transakcjach. Model ma udowodniony edge w danych historycznych, ale jego ostatnie decyzje w tym spadkowym rynku generuj\u0105 straty, dlatego obni\u017cam ryzyko i wstrzymuj\u0119 pozycje w najbardziej najs\u0142abszych symbolach.",
  "new_lessons": [
   "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
   "Practice: 10 trades, 1 win, -3.13% \u2014 model bez edge, zero pozycji",
