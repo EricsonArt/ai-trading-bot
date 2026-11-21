@@ -1,11 +1,11 @@
 {
- "created_at": 1795275596265,
+ "created_at": 1795279226702,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 11.9,
+ "seconds": 5.7,
  "directives": {
   "risk_level": 0.2,
-  "min_confidence_adj": 0.05,
+  "min_confidence_adj": 0.1,
   "symbol_bias": {
    "XRP": "avoid",
    "DOGE": "avoid",
@@ -13,7 +13,7 @@
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w g\u0142\u0119bokim spadku \u2014 BTC 30d -26.1%, ETH -29.6%, SOL -32.6%, Fear & Greed 12 (Extreme Fear). Model ma zero edge: 47% win rate, avg +0.40%/trade vs always-buy -0.44%/trade, a champion recipe na nowych danych: 26 trades, avg +2.02%/trade, edge proven: False. Practice account: 10 trades, 1 win, -3.13%. Wszystkie 11 symboli poni\u017cej threshold 0.78, wi\u0119c zero pozycji. XRP straci\u0142 8.11% przy 0.83, DOGE i AVAX to ostatnie stratne sygna\u0142y. Nie zwi\u0119kszaj ryzyka w panice.",
+ "reasoning": "Rynek jest w g\u0142\u0119bokim spadku: BTC 30d -26.1%, Fear 12, a model ma 47% win rate i avg +0.40%/trade vs always-buy -0.44%/trade, co sugeruje brak udowodnionej przewagi. Ostatnie 10 closed trades practice: 1 win, -3.13%, co potwierdza, \u017ce model nie ma edge. Wobec tego utrzymuj\u0119 niskie ryzyko i unikam symboli z najwi\u0119kszymi stratami: XRP, DOGE, AVAX. Zwi\u0119kszam min_confidence_adj do 0.1, aby ograniczy\u0107 ryzyko wej\u015b\u0107 przy niskiej pewno\u015bci modelu.",
  "new_lessons": [
   "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
   "Practice: 10 trades, 1 win, -3.13% \u2014 model bez edge, zero pozycji",
