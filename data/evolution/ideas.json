@@ -1,34 +1,4 @@
 {
- "3d15b7f347": {
-  "name": "Panika na Binance to nie okazja",
-  "source": "internet research: CoinDesk: Binance hack $6.3B, BTC -3% vs 11% w 2018; arXiv: Weekend Crypto Volatility and Monday Market Risk",
-  "rule": "btc_r96 > -0.005 and btc_vol96 < 0.0024 and rank_r672 > 0.5",
-  "why": "Bot kupuje tylko, gdy BTC jest w panice (btc_r96 < -0.01231, btc_vol96 > 0.0024) \u2014 to dok\u0142adnie moment, gdy strach jest lokalny, a nie systemowy. Badania pokazuj\u0105, \u017ce weekendowa zmienno\u015b\u0107 krypto realnie podnosi poniedzia\u0142kowe ryzyko, wi\u0119c sygna\u0142 z weekendu nie jest czystym szumem. Nowe arXiv sugeruj",
-  "gain": 0.0,
-  "tested_at": 1794588906697,
-  "model_version": 88,
-  "adopted": false
- },
- "696bcf27c5": {
-  "name": "D\u0142ugoterminowy momentum zamiast 24h",
-  "source": "internet research: arXiv: Weekend Crypto Volatility and Monday Market Risk; arXiv: Sparse Autoencoders as Implicit Diversification Regularisers",
-  "rule": "rank_r672 > 0.5 and rel_r672 > -0.005 and r_672 > -0.02",
-  "why": "Bot kupuje tylko, gdy BTC jest w panice (btc_r96 < -0.01231, btc_vol96 > 0.0024) \u2014 to dok\u0142adnie moment, gdy strach jest lokalny, a nie systemowy. Badania pokazuj\u0105, \u017ce weekendowa zmienno\u015b\u0107 krypto realnie podnosi poniedzia\u0142kowe ryzyko, wi\u0119c sygna\u0142 z weekendu nie jest czystym szumem. Nowe arXiv sugeruj",
-  "gain": 0.0,
-  "tested_at": 1794588906697,
-  "model_version": 88,
-  "adopted": false
- },
- "afaa311ebb": {
-  "name": "Trend d\u0142ugoterminowy, nie panika",
-  "source": "internet research: arXiv: Weekend Crypto Volatility and Monday Market Risk; arXiv: Sparse Autoencoders as Implicit Diversification Regularisers",
-  "rule": "d_ema200 > -0.005 and ema_trend > -0.005 and vz > 0.6",
-  "why": "Bot kupuje tylko, gdy BTC jest w panice (btc_r96 < -0.01231, btc_vol96 > 0.0024) \u2014 to dok\u0142adnie moment, gdy strach jest lokalny, a nie systemowy. Badania pokazuj\u0105, \u017ce weekendowa zmienno\u015b\u0107 krypto realnie podnosi poniedzia\u0142kowe ryzyko, wi\u0119c sygna\u0142 z weekendu nie jest czystym szumem. Nowe arXiv sugeruj",
-  "gain": 0.0,
-  "tested_at": 1794588906697,
-  "model_version": 88,
-  "adopted": false
- },
  "792fd5f626": {
   "name": "unikaj range_pos <= 0.2258",
   "source": "own mistakes (auto)",
@@ -796,6 +766,36 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 21 days",
   "gain": 0.0,
   "tested_at": 1795310210542,
+  "model_version": 102,
+  "adopted": false
+ },
+ "957ef6a3b3": {
+  "name": "Filtr paniki relacyjnej",
+  "source": "internet research: B\u0142\u0119dne sygna\u0142y: btc_r96, r_96, d_ema200, ema_trend; dzi\u015b BTC <57k, rel_r96 ujemne, rank_r96 niski",
+  "rule": "rsi < 0.35 and rel_r96 < -0.005 and rank_r96 < 0.4",
+  "why": "Bot kupowa\u0142 w obni\u017caj\u0105cych si\u0119 warunkach, gdy kr\u00f3tkoterminowa si\u0142a (r_96, btc_r96) i relacyjna si\u0142a do Bitcoina (rel_r96) by\u0142y ujemne; dzi\u015b to dok\u0142adnie ta konfiguracja. Dodanie rel_r96 < -0.005 i rank_r96 < 0.4 odrzuca sygna\u0142y, kt\u00f3re model myli za odwr\u00f3cenie trendu, a kt\u00f3re s\u0105 tylko panik\u0105.",
+  "gain": 0.0,
+  "tested_at": 1795338258530,
+  "model_version": 102,
+  "adopted": false
+ },
+ "49758b7feb": {
+  "name": "Wym\u00f3g trendu wzrostowego",
+  "source": "internet research: B\u0142\u0119dne sygna\u0142y: d_ema50, d_ema200, ema_trend; dzi\u015b BTC poni\u017cej dwuletniego minimum",
+  "rule": "d_ema50 < -0.005 and d_ema200 < -0.005 and ema_trend < 0",
+  "why": "Bot kupowa\u0142 na spadaj\u0105cej trendzie (EMA 50 pod EMA 200). W warunkach paniki i dwuletniego minimum BTC nie ma \u017cadnego potwierdzenia odwr\u00f3cenia trendu, wi\u0119c sygna\u0142 kupna na ujemnym ema_trend jest sygna\u0142em przeciw trendowi.",
+  "gain": 0.0,
+  "tested_at": 1795338258530,
+  "model_version": 102,
+  "adopted": false
+ },
+ "edc56d0330": {
+  "name": "Filtr paniki i niskiej p\u0142ynno\u015bci",
+  "source": "internet research: B\u0142\u0119dne sygna\u0142y: r_2016, r_96; dzi\u015b BTC -48% w AI, strach 10-12, BTC <57k",
+  "rule": "r_2016 < -0.15 and r_96 < -0.01 and vz < 0.7",
+  "why": "Bot kupowa\u0142 w warunkach g\u0142\u0119bokiej paniki (r_2016 < -0.15) i niskiej p\u0142ynno\u015bci (vz < 0.7), gdy rynek jest w fazie likwidacji. W takich warunkach sygna\u0142 kupna jest sygna\u0142em wej\u015bcia w d\u00f3\u0142, a nie odwr\u00f3cenia trendu.",
+  "gain": 0.0,
+  "tested_at": 1795338258530,
   "model_version": 102,
   "adopted": false
  }
