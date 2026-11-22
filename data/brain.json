@@ -1,34 +1,32 @@
 {
- "created_at": 1795365737011,
+ "created_at": 1795369386825,
  "source": "local",
  "model": "mimo2.6:9b",
- "seconds": 6.7,
+ "seconds": 19.0,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.05,
   "symbol_bias": {
-   "SOL": "reduce",
-   "AVAX": "reduce",
    "XRP": "avoid",
-   "ADA": "avoid",
-   "DOT": "avoid"
+   "SOL": "avoid",
+   "AVAX": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Praktyczny rachunek straci\u0142 1.06% na 10 zamykanych transakcjach, a champion ma 38 trades przy avg +1.52%/trade, ale edge nie jest udowodniony. Wszystkie sygna\u0142y s\u0105 poni\u017cej progu 0.78, a rynek jest w panice (BTC 30d -25.3%, Fear 11), wi\u0119c nie zwi\u0119kszamy ryzyka. XRP, ADA i DOT maj\u0105 najni\u017csze prawdopodobie\u0144stwa i najgorsze wyniki historyczne, wi\u0119c ich unikamy.",
+ "reasoning": "Rynek jest w g\u0142\u0119bokim spadku: BTC 30d -25.3%, ETH -28.5%, SOL -32.7%, XRP -29.4%, Fear 11 (Extreme Fear). Model ma zero edge (45% win rate, avg +0.12%/trade vs always-buy -0.44%/trade), wi\u0119c nie wolno zwi\u0119ksza\u0107 ryzyka. Ostatni closed trade XRP straci\u0142 8.11% przy 0.83, a practice account straci\u0142 1.15% w 10 trades (1 win). Wszystkie symbole s\u0105 poni\u017cej threshold 0.78, wi\u0119c model nie ma \u017cadnych sygna\u0142\u00f3w do wej\u015bcia. Utrzymuj\u0119 risk_level 0.2, min_confidence_adj 0.05 i unikam XRP, SOL, AVAX.",
  "new_lessons": [
-  "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
+  "XRP straci\u0142 8.11% przy 0.83 \u2014 zero edge, zero pozycji",
   "Model bez edge: 46% win rate, avg +0.12%/trade vs always-buy -0.44% \u2014 zero edge, zero pozycji",
   "Rynek spadkowy (BTC 30d -25.3%, Fear 11) \u2014 nie zwi\u0119kszaj ryzyka"
  ],
  "lessons": [
-  "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
+  "XRP straci\u0142 8.11% przy 0.83 \u2014 zero edge, zero pozycji",
   "Model bez edge: 46% win rate, avg +0.12%/trade vs always-buy -0.44% \u2014 zero edge, zero pozycji",
   "Rynek spadkowy (BTC 30d -25.3%, Fear 11) \u2014 nie zwi\u0119kszaj ryzyka",
+  "XRP -8.11% przy 0.83 \u2014 zero edge, zero pozycji",
   "Model bez edge: 46% win rate, avg +0.03%/trade vs always-buy -0.45% \u2014 zero edge, zero pozycji",
   "Model bez edge: 47% win rate, avg +0.03%/trade vs always-buy -0.45% \u2014 zero edge, zero pozycji",
   "Rynek spadkowy (BTC 30d -27.7%, Fear 11) \u2014 nie zwi\u0119kszaj ryzyka",
-  "XRP straci\u0142 8.11% przy 0.83 \u2014 zero edge, zero pozycji",
   "Model bez edge: 47% win rate, avg +0.06%/trade vs always-buy -0.44% \u2014 zero edge, zero pozycji",
   "Rynek spadkowy (BTC 30d -26.1%, Fear 12) \u2014 nie zwi\u0119kszaj ryzyka",
   "Practice: 10 trades, 1 win, -3.13% \u2014 model bez edge, zero pozycji",
