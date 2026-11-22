@@ -1,57 +1,57 @@
 {
- "created_at": 1795262248919,
- "model_version": 101,
- "signals": 28156,
- "losers": 16861,
+ "created_at": 1795310153664,
+ "model_version": 102,
+ "signals": 27724,
+ "losers": 17058,
  "patterns": [
   {
    "feature": "btc_r96",
    "meaning": "Bitcoin return over the last 24 hours",
-   "strength": 0.34,
-   "losers_avg": -0.0008,
-   "winners_avg": -0.01281
+   "strength": 0.298,
+   "losers_avg": -0.00131,
+   "winners_avg": -0.01195
   },
   {
    "feature": "r_96",
    "meaning": "return over the last 24 hours",
-   "strength": 0.261,
-   "losers_avg": -0.00913,
-   "winners_avg": -0.02187
+   "strength": 0.226,
+   "losers_avg": -0.00904,
+   "winners_avg": -0.02018
+  },
+  {
+   "feature": "r_2016",
+   "meaning": "return over the last 21 days",
+   "strength": 0.182,
+   "losers_avg": -0.16751,
+   "winners_avg": -0.1337
   },
   {
    "feature": "d_ema200",
    "meaning": "price vs its 200-candle (50 h) average",
-   "strength": 0.187,
-   "losers_avg": -0.01336,
-   "winners_avg": -0.01971
+   "strength": 0.143,
+   "losers_avg": -0.01299,
+   "winners_avg": -0.01787
   },
   {
    "feature": "ema_trend",
    "meaning": "50-candle average vs 200-candle average (positive = uptrend)",
-   "strength": 0.184,
-   "losers_avg": -0.00996,
-   "winners_avg": -0.01402
-  },
-  {
-   "feature": "btc_vol96",
-   "meaning": "Bitcoin 24h volatility",
-   "strength": 0.178,
-   "losers_avg": 0.00259,
-   "winners_avg": 0.0029
+   "strength": 0.142,
+   "losers_avg": -0.00965,
+   "winners_avg": -0.01278
   }
  ],
  "candidates": [
   {
-   "name": "unikaj btc_r96 >= 0.007654",
-   "gain_on_old_data": 0.0023
+   "name": "unikaj btc_r96 >= 0.008159",
+   "gain_on_old_data": 0.00219
   },
   {
-   "name": "unikaj btc_r96 >= 0.01496",
-   "gain_on_old_data": 0.00222
+   "name": "unikaj btc_r96 >= 0.01629",
+   "gain_on_old_data": 0.0018
   },
   {
-   "name": "unikaj r_96 >= 0.01351",
-   "gain_on_old_data": 0.00153
+   "name": "unikaj r_2016 <= -0.2741",
+   "gain_on_old_data": 0.00117
   }
  ]
 }
