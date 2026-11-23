@@ -1,34 +1,4 @@
 {
- "112f2324f5": {
-  "name": "Odrzu\u0107 sygna\u0142, gdy rynek jest w panice i momentum jest s\u0142abe",
-  "source": "internet research: Bota w\u0142asne b\u0142\u0119dy: r_96, rank_r96 i vol_96 to cechy, na kt\u00f3rych przegrane transakcje maj\u0105 \u015brednio najgorsze wyniki (-0.01263, -0.01263 i -0.01263).",
-  "rule": "r_96 < -0.005 and rank_r96 < 0.5 and vol_96 < 0.0035",
-  "why": "Kupno, gdy rynek jest w panice i momentum jest s\u0142abe, to kupno w d\u00f3\u0142. Regu\u0142a odrzuca sygna\u0142, gdy rynek jest w panice i momentum jest s\u0142abe.",
-  "gain": 0.0,
-  "tested_at": 1794692044700,
-  "model_version": 90,
-  "adopted": false
- },
- "0d3c490169": {
-  "name": "unikaj vol_16 >= 0.004405",
-  "source": "own mistakes (auto)",
-  "rule": "vol_16 < 0.0044",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: volatility of 15-min returns over the last 4 hours",
-  "gain": 0.0,
-  "tested_at": 1794692044700,
-  "model_version": 90,
-  "adopted": false
- },
- "82a84ffad1": {
-  "name": "unikaj atr >= 0.007015",
-  "source": "own mistakes (auto)",
-  "rule": "atr < 0.00701",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: average true range as a fraction of price",
-  "gain": 0.0,
-  "tested_at": 1794692044700,
-  "model_version": 90,
-  "adopted": false
- },
  "2df855b0d6": {
   "name": "Nie kupuj, gdy rynek krypto i BTC spadaj\u0105 razem",
   "source": "internet research: Badanie o weekendowej zmienno\u015bci krypto pokazuje, \u017ce weekendowe ruchy krypto dzi\u015b (sobota) mog\u0105 podnie\u015b\u0107 ryzyko poniedzia\u0142kowe o 27-54%, a atak na Binance ($6,4 mld) wywo\u0142a\u0142 $643 ml",
@@ -796,6 +766,36 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
   "gain": 0.0,
   "tested_at": 1795401459108,
+  "model_version": 104,
+  "adopted": false
+ },
+ "d8a804f33d": {
+  "name": "Panika bez trendu",
+  "source": "internet research: B\u0142\u0119dy bota: r_2016 < -0.15 + r_96 < -0.01 + vz < 0.7; dzi\u015b Bitcoin spad\u0142 poni\u017cej $60 tys. i Fed przesta\u0142 by\u0107 oczekiwany.",
+  "rule": "r_96 < -0.01231 and r_2016 < -0.05 and ema_trend < 0",
+  "why": "Bot kupuje w panice, ale je\u015bli d\u0142ugoterminowy trend (ema_trend) jest ujemny, to panika mo\u017ce by\u0107 tylko kontynuacj\u0105 spadku, a nie do\u0142em.",
+  "gain": 0.0,
+  "tested_at": 1795413607702,
+  "model_version": 104,
+  "adopted": false
+ },
+ "5cb488415a": {
+  "name": "Panika bez wzrostu zmienno\u015bci",
+  "source": "internet research: B\u0142\u0119dy bota: d_ema200 > 0.02389 + ema_trend > 0.01603 + vz > 1.1; dzi\u015b BTC spad\u0142 poni\u017cej $60 tys. i Fed przesta\u0142 by\u0107 oczekiwany.",
+  "rule": "btc_r96 < -0.01231 and d_ema200 < -0.02389 and vol_ratio < 1",
+  "why": "Bot kupuje w panice, ale je\u015bli d_ema200 jest ujemne i vol_ratio < 1, to panika mo\u017ce by\u0107 tylko kontynuacj\u0105 spadku, a nie do\u0142em.",
+  "gain": 0.0,
+  "tested_at": 1795413607702,
+  "model_version": 104,
+  "adopted": false
+ },
+ "c0a8ea1e46": {
+  "name": "Panika bez momentum",
+  "source": "internet research: B\u0142\u0119dy bota: r_96 < -0.01231 + rel_r672 < -0.01085; dzi\u015b BTC spad\u0142 poni\u017cej $60 tys. i Fed przesta\u0142 by\u0107 oczekiwany.",
+  "rule": "r_96 < -0.01231 and rel_r96 < -0.005 and rank_r96 < 0.4",
+  "why": "Bot kupuje w panice, ale je\u015bli rel_r96 jest ujemne i rank_r96 < 0.4, to panika mo\u017ce by\u0107 tylko kontynuacj\u0105 spadku, a nie do\u0142em.",
+  "gain": 0.0,
+  "tested_at": 1795413607702,
   "model_version": 104,
   "adopted": false
  }
