@@ -1,24 +1,4 @@
 {
- "c6f2b09651": {
-  "name": "Zmniejszanie ryzyka poprzez analiz\u0119 zmian w 24h",
-  "source": "internet research: arXiv: Penalize the Common Trade",
-  "rule": "r_96 < -0.01231 and btc_r96 < -0.01231",
-  "why": "Z botem b\u0142\u0119dami w 24h (r_96) i Bitcoinem (btc_r96) widzimy, \u017ce straty s\u0105 wi\u0119ksze w czasie, co jest zgodne z arXivem na kolizje sygna\u0142\u00f3w. Wprowadzenie warunku r_96 < -0.01231 i btc_r96 < -0.01231 zabezpiecza przed zbyt du\u017cym ryzykiem w kr\u00f3tkim czasie.",
-  "gain": 0.0,
-  "tested_at": 1794943422382,
-  "model_version": 95,
-  "adopted": false
- },
- "49b98f9215": {
-  "name": "Ograniczanie p\u0142ynno\u015bci przy wzrostach wolumenu",
-  "source": "internet research: arXiv: AIDA",
-  "rule": "vz > 0.6 and vol_96 < 0.0035",
-  "why": "Wczoraj w Binance zauwa\u017cono ataki poprzez AI, co zwi\u0119ksza ryzyko. Wprowadzenie warunku vz > 0.6 i vol_96 < 0.0035 zabezpiecza przed niepewno\u015bci\u0105 w czasie, co jest zgodne z arXivem na AI i MEV.",
-  "gain": 0.0,
-  "tested_at": 1794943422382,
-  "model_version": 95,
-  "adopted": false
- },
  "ab13b2af81": {
   "name": "unikaj btc_vol96 >= 0.002806",
   "source": "own mistakes (auto)",
@@ -796,6 +776,26 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
   "gain": 0.0,
   "tested_at": 1795545794569,
+  "model_version": 107,
+  "adopted": false
+ },
+ "8b61d484a5": {
+  "name": "Filtr na stabilno\u015bci rynku",
+  "source": "internet research: arXiv",
+  "rule": "vol_ratio < 1",
+  "why": "W poprzednich b\u0142\u0119dach bot nie uwzgl\u0119dnia\u0142 zmian w vol_ratio (wzrostu volatylno\u015bci). Zgodnie z [arXiv] Neckpinches in a Positively Curved Market, wzrost volatylno\u015bci mo\u017ce powodowa\u0107 'neckpinches' w rynku. Dodanie warunku vol_ratio < 1 zabezpiecza przed nieprzewidywalnymi ruchami.",
+  "gain": 0.0,
+  "tested_at": 1795585888516,
+  "model_version": 107,
+  "adopted": false
+ },
+ "90b23337df": {
+  "name": "Filtr na zabezpieczenie przed spadkami",
+  "source": "internet research: Cointelegraph",
+  "rule": "d_ema200 < -0.02389",
+  "why": "W poprzednich b\u0142\u0119dach bot nie uwzgl\u0119dnia\u0142 d_ema200 < -0.02389, co sugeruje silny spadek. Zgodnie z [Cointelegraph] Bitcoin sell-off driven by weak demand, spadek d_ema200 jest kluczowy dla zabezpieczenia przed d\u0142ugimi spadkami.",
+  "gain": 0.0,
+  "tested_at": 1795585888516,
   "model_version": 107,
   "adopted": false
  }
