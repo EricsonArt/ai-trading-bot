@@ -1,34 +1,4 @@
 {
- "c455ce65ad": {
-  "name": "RSI + wolumen + trend",
-  "source": "internet research: Badanie 'Beyond Anonymous Order Flow' (wallet identity jako predyktor kr\u00f3tkoterminowych zwrot\u00f3w) oraz obserwacje z digestu o s\u0142abym leverage i ostro\u017cnym odbiciu; bot traci\u0142 na sygna",
-  "rule": "rsi < 0.6 and vz > 0.75 and d_ema200 > 0.005",
-  "why": "RSI poni\u017cej 0.6 ogranicza ryzyko wyprzedania i fa\u0142szywych sygna\u0142\u00f3w, vz powy\u017cej 0.75 wymaga potwierdzenia wolumenem (bot traci\u0142 na niskiej vz), a d_ema200 powy\u017cej 0.005 wymaga trendu d\u0142ugoterminowego, co jest zgodne z obserwacj\u0105, \u017ce BTC trzyma si\u0119, ale leverage brakuje.",
-  "gain": 0.0,
-  "tested_at": 1795071975703,
-  "model_version": 97,
-  "adopted": false
- },
- "7a3ccf0af8": {
-  "name": "Rising volatility + momentum",
-  "source": "internet research: Badanie 'How market volatility responds to a preceding price trend' (asymetria zmienno\u015bci po trendzie) oraz obserwacje z digestu o ostro\u017cnym odbiciu po krachu.",
-  "rule": "vol_ratio > 1 and r_16 > 0.002 and rank_r96 > 0.6",
-  "why": "vol_ratio powy\u017cej 1 oznacza rosn\u0105c\u0105 zmienno\u015b\u0107, co jest zgodne z obserwacj\u0105, \u017ce sygna\u0142y w okresach powracaj\u0105cego stresu s\u0105 najs\u0142absze; r_16 powy\u017cej 0.002 wymaga kr\u00f3tkoterminowego momentum, a rank_r96 powy\u017cej 0.6 ogranicza ryzyko fa\u0142szywych sygna\u0142\u00f3w.",
-  "gain": 0.0,
-  "tested_at": 1795071975703,
-  "model_version": 97,
-  "adopted": false
- },
- "b4fbef77f7": {
-  "name": "Trend + Bollinger",
-  "source": "internet research: Badanie o kalibracji prognoz w okresach powracaj\u0105cego stresu oraz obserwacje z digestu o ostro\u017cnym odbiciu po krachu.",
-  "rule": "d_ema50 > 0.003 and d_ema200 > 0.008 and bb < 0.3",
-  "why": "d_ema50 i d_ema200 powy\u017cej progu wymagaj\u0105 trendu d\u0142ugoterminowego, a bb poni\u017cej 0.3 ogranicza ryzyko sygna\u0142\u00f3w w g\u00f3rnej cz\u0119\u015bci zakresu zmienno\u015bci, co jest zgodne z obserwacj\u0105, \u017ce bot traci\u0142 na sygna\u0142ach bez trendu (ema_trend, d_ema200).",
-  "gain": 0.0,
-  "tested_at": 1795071975703,
-  "model_version": 97,
-  "adopted": false
- },
  "bc6ea06a73": {
   "name": "unikaj btc_r96 >= 0.01313",
   "source": "own mistakes (auto)",
@@ -796,6 +766,36 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
   "gain": 0.0,
   "tested_at": 1795635357720,
+  "model_version": 109,
+  "adopted": false
+ },
+ "7503514513": {
+  "name": "Wolumen Bitcoin vs 24h",
+  "source": "internet research: arXiv: Neckpinches in a Positively Curved Market + CoinDesk: Braiins warns of Bitcoin mining attacks",
+  "rule": "btc_vol96 > 0.0015 and btc_r96 < -0.025",
+  "why": "Wczoraj Bitcoin spad\u0142 o 2.6% (btc_r96 = -0.02605), a jego wolumen (btc_vol96) jest niski (0.00104). Zgodnie z arXiviem o 'Neckpinches' w rynku, spadek wolumenu w po\u0142\u0105czeniu z spadkiem ceny mo\u017ce wskazywa\u0107 na 'hashrate hijacking' (atak na minowanie), co jest krytyczne dla stabilno\u015bci. W poprzednich b\u0142",
+  "gain": 0.0,
+  "tested_at": 1795662889291,
+  "model_version": 109,
+  "adopted": false
+ },
+ "7715df8d6a": {
+  "name": "Trend 50 vs 200-candle",
+  "source": "internet research: arXiv: Gated Payoff-Weighted Net Profit Maximization + bot's mistakes",
+  "rule": "d_ema200 < -0.023 and ema_trend < -0.001",
+  "why": "W poprzednich b\u0142\u0119dach botu, gdy trend 50-candle vs 200-candle (ema_trend) by\u0142 ujemny (avg -0.01922), straty by\u0142y wi\u0119ksze. Zgodnie z arXiviem 'Gated Payoff-Weighted Net Profit Maximization', spadek w trendzie mo\u017ce by\u0107 zbyt przewidywalny bez uwzgl\u0119dnienia koszt\u00f3w transakcyjnych. W dzisiejszych warunka",
+  "gain": 0.0,
+  "tested_at": 1795662889291,
+  "model_version": 109,
+  "adopted": false
+ },
+ "ac96245cef": {
+  "name": "Rynek kryptowalut w strachu",
+  "source": "internet research: CoinDesk: 'This time actually seems different' + bot's mistakes",
+  "rule": "r_96 < -0.01231 and rel_r96 < -0.005 and vz < 0.7",
+  "why": "Wczoraj kryptowaluty by\u0142y w ekstremalnym strachu (Crypto Fear & Greed index: 11 Extreme Fear). Zgodnie z CoinDesk, Bitcoin spada, a inwestorzy s\u0105 niepewni z powodu AI i quantum computing. W poprzednich b\u0142\u0119dach, gdy r_96 < -0.01231 i rel_r96 < -0.005, bot straci\u0142 wi\u0119cej ni\u017c 1.4% na transakcji. W tym ",
+  "gain": 0.0,
+  "tested_at": 1795662889291,
   "model_version": 109,
   "adopted": false
  }

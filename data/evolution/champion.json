@@ -63,59 +63,26 @@
  },
  "description": "position style, buy when the model is at least 73% sure, target 2.4x / stop 2x the expected move, hold up to 72 h, 25% of equity per trade, only if btc_vol96 > 0.0024 and btc_r96 < -0.01231 and rel_r672 < -0.01085 and btc_r16 < 0.00602",
  "model_version": 109,
- "generation": 167,
+ "generation": 168,
  "reason": "",
  "challengers": [
   {
    "style": "position",
-   "threshold": 0.55,
-   "tp": 1.4,
-   "sl": 1.2,
+   "threshold": 0.58,
+   "tp": 2.8,
+   "sl": 0.8,
    "hold": 1.5,
    "size": 0.25,
    "rules": [
-    {
-     "feature": "btc_vol96",
-     "op": ">",
-     "value": 0.00308
-    },
-    {
-     "feature": "body",
-     "op": ">",
-     "value": -0.50405
-    },
-    {
-     "feature": "btc_r96",
-     "op": "<",
-     "value": -0.00806
-    },
     {
      "feature": "rel_r672",
      "op": "<",
-     "value": -0.00695
-    }
-   ],
-   "id": "cdac6498d2",
-   "parent": "f3e922c5bc",
-   "origin": "mutation: tweak_rule"
-  },
-  {
-   "style": "position",
-   "threshold": 0.55,
-   "tp": 1.4,
-   "sl": 1.0,
-   "hold": 1.5,
-   "size": 0.25,
-   "rules": [
+     "value": -0.03843
+    },
     {
      "feature": "btc_vol96",
      "op": ">",
-     "value": 0.00308
-    },
-    {
-     "feature": "body",
-     "op": ">",
-     "value": -0.50405
+     "value": 0.0023
     },
     {
      "feature": "btc_r96",
@@ -123,65 +90,98 @@
      "value": -0.0137
     },
     {
-     "feature": "rel_r672",
+     "feature": "rel_r96",
      "op": "<",
-     "value": -0.00695
+     "value": 0.00581
     }
    ],
-   "id": "99b7f38ba7",
-   "parent": "ef1a2e0d23",
+   "id": "b4aaf72686",
+   "parent": "06520f4fb6",
    "origin": "mutation: tp"
   },
   {
    "style": "position",
-   "threshold": 0.55,
+   "threshold": 0.58,
+   "tp": 3.2,
+   "sl": 0.8,
+   "hold": 1.5,
+   "size": 0.25,
+   "rules": [
+    {
+     "feature": "rel_r672",
+     "op": "<",
+     "value": -0.03843
+    },
+    {
+     "feature": "btc_vol96",
+     "op": ">",
+     "value": 0.0023
+    },
+    {
+     "feature": "btc_r96",
+     "op": "<",
+     "value": -0.0137
+    },
+    {
+     "feature": "rel_r96",
+     "op": "<",
+     "value": 0.00581
+    }
+   ],
+   "id": "06520f4fb6",
+   "parent": "33f3e8a941",
+   "origin": "mutation: sl"
+  },
+  {
+   "style": "position",
+   "threshold": 0.58,
    "tp": 2.0,
-   "sl": 1.0,
+   "sl": 0.8,
    "hold": 1.5,
    "size": 0.25,
    "rules": [
     {
-     "feature": "btc_vol96",
-     "op": ">",
-     "value": 0.00308
+     "feature": "rel_r672",
+     "op": "<",
+     "value": -0.03843
     },
     {
-     "feature": "body",
+     "feature": "btc_vol96",
      "op": ">",
-     "value": -0.50405
+     "value": 0.0023
+    },
+    {
+     "feature": "rel_r96",
+     "op": "<",
+     "value": 0.00581
     },
     {
      "feature": "btc_r96",
      "op": "<",
-     "value": -0.0137
-    },
-    {
-     "feature": "rel_r672",
-     "op": "<",
-     "value": -0.00695
+     "value": -0.0138
     }
    ],
-   "id": "ef1a2e0d23",
-   "parent": "08a6a0160a",
-   "origin": "mutation: tp"
+   "id": "c88c80ac9e",
+   "parent": "598e3669fc",
+   "origin": "mutation: sl"
   },
   {
    "style": "position",
-   "threshold": 0.56,
-   "tp": 1.4,
+   "threshold": 0.59,
+   "tp": 3.2,
    "sl": 1.2,
    "hold": 1.5,
    "size": 0.25,
    "rules": [
     {
-     "feature": "btc_vol96",
-     "op": ">",
-     "value": 0.00308
+     "feature": "rel_r672",
+     "op": "<",
+     "value": -0.03843
     },
     {
-     "feature": "body",
+     "feature": "btc_vol96",
      "op": ">",
-     "value": -0.50405
+     "value": 0.0023
     },
     {
      "feature": "btc_r96",
@@ -189,13 +189,13 @@
      "value": -0.0137
     },
     {
-     "feature": "rel_r672",
+     "feature": "rel_r96",
      "op": "<",
-     "value": -0.00695
+     "value": 0.00581
     }
    ],
-   "id": "ba7a802783",
-   "parent": "f3e922c5bc",
+   "id": "04e22af5b4",
+   "parent": "33f3e8a941",
    "origin": "mutation: threshold"
   }
  ],
