@@ -1,31 +1,34 @@
 {
- "created_at": 1795640348920,
- "source": "local",
- "model": "mimo2.6:9b",
- "seconds": 9.1,
+ "created_at": 1795654465775,
+ "source": "cloud",
+ "model": "qwen3:4b",
+ "seconds": 145.6,
  "directives": {
   "risk_level": 0.2,
   "min_confidence_adj": 0.02,
   "symbol_bias": {
+   "XRP": "reduce",
+   "DOGE": "reduce",
+   "ADA": "reduce",
    "BTC": "avoid",
    "ETH": "avoid",
    "SOL": "avoid"
   },
   "regime": "bear"
  },
- "reasoning": "Rynek krypto jest w ekstremalnym strachu (Fear 13), BTC spad\u0142 o 25.5% w 30 dni, a model ma zero edge (50% win rate, avg +0.33%/trade vs always-buy -0.43%). Wszystkie sygna\u0142y modela s\u0105 poni\u017cej progu 0.75, wi\u0119c nie ma \u017cadnego kandydata do wej\u015bcia. Practice account pokazuje +5.33%, ale to za ma\u0142o danych, by uzna\u0107 model za maj\u0105cy edge.",
+ "reasoning": "Rynek krypto w panice (BTC 30d -26.9%, Fear 13). Model nie ma edge (50% win rate, avg +0.33%/trade vs always-buy -0.43%). Practice account 10 trades, 6 wins, +$77.36 \u2014 sample zbyt ma\u0142y. Zero edge, zero pozycji. Nie zwi\u0119kszaj ryzyka.",
  "new_lessons": [
   "Model bez edge: 50% win rate, avg +0.33%/trade vs always-buy -0.43% \u2014 zero edge, zero pozycji.",
-  "Rynek w panice (BTC 30d -25.5%, Fear 13) \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
+  "Rynek krypto w panice (BTC 30d -26.9%, Fear 13) \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
   "Practice 10 trades, 6 wins, +$77.36 \u2014 sample too small, still no proven edge."
  ],
  "lessons": [
   "Model bez edge: 50% win rate, avg +0.33%/trade vs always-buy -0.43% \u2014 zero edge, zero pozycji.",
-  "Rynek w panice (BTC 30d -25.5%, Fear 13) \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
+  "Rynek krypto w panice (BTC 30d -26.9%, Fear 13) \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
   "Practice 10 trades, 6 wins, +$77.36 \u2014 sample too small, still no proven edge.",
+  "Rynek w panice (BTC 30d -25.5%, Fear 13) \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
   "Model bez edge: 46% win rate, avg +0.17%/trade vs always-buy -0.44% \u2014 zero edge, zero pozycji.",
   "Rynek krypto w panice (BTC 30d -25.5%, Fear 13) \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
-  "Rynek krypto w panice (BTC 30d -26.9%, Fear 13) \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
   "Model bez edge: 46% win rate, avg +0.17%/trade vs always-buy -0.44% \u2014 zero pozycji.",
   "Rynek w ekstremalnym strachu (Fear 13) \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
   "Zero edge: 46% win rate, avg +0.17%/trade vs always-buy -0.44% \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",

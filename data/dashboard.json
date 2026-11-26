@@ -1,5 +1,5 @@
 {
- "generated_at": 1795642408515,
+ "generated_at": 1795654465783,
  "last_candle": 1795641300000,
  "start_ts": 1790508600000,
  "start_cash": 1000.0,
@@ -11484,7 +11484,7 @@
    {
     "name": "Konto g\u0142\u00f3wne handlowa\u0142o na papierze 90+ dni",
     "ok": false,
-    "value": "59 dni"
+    "value": "60 dni"
    },
    {
     "name": "Co najmniej 100 zamkni\u0119tych transakcji",
@@ -13178,32 +13178,35 @@
   "regime": "bear"
  },
  "brain": {
-  "created_at": 1795640348920,
-  "source": "local",
-  "model": "mimo2.6:9b",
+  "created_at": 1795654465775,
+  "source": "cloud",
+  "model": "qwen3:4b",
   "directives": {
    "risk_level": 0.2,
    "min_confidence_adj": 0.02,
    "symbol_bias": {
+    "XRP": "reduce",
+    "DOGE": "reduce",
+    "ADA": "reduce",
     "BTC": "avoid",
     "ETH": "avoid",
     "SOL": "avoid"
    },
    "regime": "bear"
   },
-  "reasoning": "Rynek krypto jest w ekstremalnym strachu (Fear 13), BTC spad\u0142 o 25.5% w 30 dni, a model ma zero edge (50% win rate, avg +0.33%/trade vs always-buy -0.43%). Wszystkie sygna\u0142y modela s\u0105 poni\u017cej progu 0.75, wi\u0119c nie ma \u017cadnego kandydata do wej\u015bcia. Practice account pokazuje +5.33%, ale to za ma\u0142o danych, by uzna\u0107 model za maj\u0105cy edge.",
+  "reasoning": "Rynek krypto w panice (BTC 30d -26.9%, Fear 13). Model nie ma edge (50% win rate, avg +0.33%/trade vs always-buy -0.43%). Practice account 10 trades, 6 wins, +$77.36 \u2014 sample zbyt ma\u0142y. Zero edge, zero pozycji. Nie zwi\u0119kszaj ryzyka.",
   "new_lessons": [
    "Model bez edge: 50% win rate, avg +0.33%/trade vs always-buy -0.43% \u2014 zero edge, zero pozycji.",
-   "Rynek w panice (BTC 30d -25.5%, Fear 13) \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
+   "Rynek krypto w panice (BTC 30d -26.9%, Fear 13) \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
    "Practice 10 trades, 6 wins, +$77.36 \u2014 sample too small, still no proven edge."
   ],
   "lessons": [
    "Model bez edge: 50% win rate, avg +0.33%/trade vs always-buy -0.43% \u2014 zero edge, zero pozycji.",
-   "Rynek w panice (BTC 30d -25.5%, Fear 13) \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
+   "Rynek krypto w panice (BTC 30d -26.9%, Fear 13) \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
    "Practice 10 trades, 6 wins, +$77.36 \u2014 sample too small, still no proven edge.",
+   "Rynek w panice (BTC 30d -25.5%, Fear 13) \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
    "Model bez edge: 46% win rate, avg +0.17%/trade vs always-buy -0.44% \u2014 zero edge, zero pozycji.",
    "Rynek krypto w panice (BTC 30d -25.5%, Fear 13) \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
-   "Rynek krypto w panice (BTC 30d -26.9%, Fear 13) \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
    "Model bez edge: 46% win rate, avg +0.17%/trade vs always-buy -0.44% \u2014 zero pozycji.",
    "Rynek w ekstremalnym strachu (Fear 13) \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
    "Zero edge: 46% win rate, avg +0.17%/trade vs always-buy -0.44% \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
@@ -13211,9 +13214,34 @@
    "Rynek krypto w panice (BTC 30d -26.4%, Fear 13) \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
    "Practice 10 trades, 1 win, +2.79% \u2014 model bez edge, zero pozycji."
   ],
-  "seconds": 9.1
+  "seconds": 145.6
  },
  "brain_journal": [
+  {
+   "created_at": 1795654465775,
+   "source": "cloud",
+   "model": "qwen3:4b",
+   "directives": {
+    "risk_level": 0.2,
+    "min_confidence_adj": 0.02,
+    "symbol_bias": {
+     "XRP": "reduce",
+     "DOGE": "reduce",
+     "ADA": "reduce",
+     "BTC": "avoid",
+     "ETH": "avoid",
+     "SOL": "avoid"
+    },
+    "regime": "bear"
+   },
+   "reasoning": "Rynek krypto w panice (BTC 30d -26.9%, Fear 13). Model nie ma edge (50% win rate, avg +0.33%/trade vs always-buy -0.43%). Practice account 10 trades, 6 wins, +$77.36 \u2014 sample zbyt ma\u0142y. Zero edge, zero pozycji. Nie zwi\u0119kszaj ryzyka.",
+   "new_lessons": [
+    "Model bez edge: 50% win rate, avg +0.33%/trade vs always-buy -0.43% \u2014 zero edge, zero pozycji.",
+    "Rynek krypto w panice (BTC 30d -26.9%, Fear 13) \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
+    "Practice 10 trades, 6 wins, +$77.36 \u2014 sample too small, still no proven edge."
+   ],
+   "equity_at": 997.53
+  },
   {
    "created_at": 1795640348920,
    "source": "local",
@@ -13425,28 +13453,6 @@
     "regime": "bear"
    },
    "reasoning": "Rynek jest w ekstremalnym strachu (Fear 13), wszystkie aktywa spadaj\u0105 24h i 30d, a model ma zero edge (46% win rate, avg +0.17%/trade vs always-buy -0.44%). Zero pozycji, nie zwi\u0119kszaj ryzyka. Practice 10 trades, 6 wins, +$77.36 \u2014 sample too small, still no proven edge.",
-   "new_lessons": [
-    "Model bez edge: 46% win rate, avg +0.17%/trade vs always-buy -0.44% \u2014 zero edge, zero pozycji.",
-    "Rynek krypto w panice (BTC 30d -26.9%, Fear 13) \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
-    "Practice 10 trades, 6 wins, +$77.36 \u2014 sample too small, still no proven edge."
-   ],
-   "equity_at": 997.53
-  },
-  {
-   "created_at": 1795607626575,
-   "source": "local",
-   "model": "mimo2.6:9b",
-   "directives": {
-    "risk_level": 0.2,
-    "min_confidence_adj": 0.05,
-    "symbol_bias": {
-     "BTC": "avoid",
-     "ETH": "avoid",
-     "SOL": "avoid"
-    },
-    "regime": "bear"
-   },
-   "reasoning": "Rynek jest w ekstremalnym strachu (Fear 13), wszystkie aktywa spadaj\u0105 24-30%, a model ma zero edge. Zero pozycji, nie zwi\u0119kszaj ryzyka.",
    "new_lessons": [
     "Model bez edge: 46% win rate, avg +0.17%/trade vs always-buy -0.44% \u2014 zero edge, zero pozycji.",
     "Rynek krypto w panice (BTC 30d -26.9%, Fear 13) \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
@@ -49461,17 +49467,17 @@
    ]
   },
   "research": {
-   "created_at": 1795578776626,
+   "created_at": 1795654318609,
    "source": "cloud",
    "model": "qwen3:4b",
-   "seconds": 398.8,
-   "digest": "Dzi\u015b na rynku kryptowalut jest silny obawy z powodu spadku bitcoina poni\u017cej $60k i zwi\u0119kszonego ryzyka zwi\u0105zanego z AI. Rynki s\u0105 w stanie 'ekstremalnego strachu' (13/10), co sugeruje, \u017ce trudno jest znale\u017a\u0107 wra\u017cliwe sygna\u0142y bez dodatkowych filtr\u00f3w. Najlepsze sygna\u0142y powinny uwzgl\u0119dnia\u0107 stabilno\u015b\u0107 rynku i zabezpieczenie przed spadkami.",
+   "seconds": 568.6,
+   "digest": "W dzisiejszych warunkach rynku kryptowalut, gdzie Bitcoin spada i emocje s\u0105 w ekstremalnym strachu, kluczowe jest monitorowanie dynamicznych zmian w p\u0142ynno\u015bci i tendencji cenowej. Warto skupi\u0107 si\u0119 na zabezpieczeniu przed nieprzewidywalnymi ruchami poprzez analiz\u0119 wolumenu i wska\u017anik\u00f3w trendu.",
    "mood": "fear",
    "fng": [
     {
-     "value": 13,
+     "value": 11,
      "label": "Extreme Fear",
-     "ts": 1795564800000
+     "ts": 1795651200000
     }
    ],
    "used": [
@@ -49516,43 +49522,33 @@
     },
     {
      "kind": "CoinDesk",
-     "title": "Trump says he's willing to give Nvidia's Huang a pardon, doesn't think he needs one",
-     "url": "https://www.coindesk.com/policy/2026/11/24/trump-says-he-s-willing-to-give-nvidia-s-huang-a-pardon-doesn-t-think-he-needs-one"
+     "title": "French Senate blocks new crypto tax and wallet list critics called a kidnapping risk",
+     "url": "https://www.coindesk.com/business/2026/11/25/french-senate-blocks-new-crypto-tax-and-wallet-list-critics-called-a-kidnapping-risk"
     },
     {
      "kind": "CoinDesk",
-     "title": "Utah moves to drop criminal pursuit of Kalshi after the firm halted services there",
-     "url": "https://www.coindesk.com/policy/2026/11/24/utah-moves-to-drop-criminal-pursuit-of-kalshi-after-the-firm-halted-services-there"
+     "title": "'This time actually seems different': Crypto veterans brace for more pain as bitcoin tumbles",
+     "url": "https://www.coindesk.com/markets/2026/11/25/this-time-actually-seems-different-crypto-veterans-brace-for-more-pain-as-bitcoin-tumbles"
     },
     {
      "kind": "CoinDesk",
-     "title": "'AI trade never died': Traders see room for market recovery, but bitcoin's participation is another story",
-     "url": "https://www.coindesk.com/markets/2026/11/24/ai-trade-never-died-traders-see-room-for-market-recovery-despite-bitcoin-s-weakness"
+     "title": "EU bank watchdog seeks European Commission rules for crypto firms offering DeFi lending",
+     "url": "https://www.coindesk.com/policy/2026/11/25/eu-bank-watchdog-seeks-european-commission-rules-for-crypto-firms-offering-defi-lending"
     },
     {
      "kind": "CoinDesk",
-     "title": "Anchorage Digital to unveil new asset-management subsidiary",
-     "url": "https://www.coindesk.com/business/2026/11/24/anchorage-digital-to-unveil-new-asset-management-subsidiary"
+     "title": "Ukrainian lawmakers pass crypto tax and regulation bill expected to bring in $330 million",
+     "url": "https://www.coindesk.com/business/2026/11/25/ukrainian-lawmakers-pass-crypto-tax-and-regulation-bill-expected-to-bring-in-usd330-million"
     },
     {
      "kind": "CoinDesk",
-     "title": "South Korea proposes ending 2017 ICO ban to boost jobs and onshore crypto investment",
-     "url": "https://www.coindesk.com/policy/2026/11/24/south-korea-proposes-ending-2017-ico-ban-to-boost-jobs-and-onshore-crypto-investment"
+     "title": "Crypto Long & Short: Bitcoin investors can\u2019t keep ignoring Japan",
+     "url": "https://www.coindesk.com/coindesk-indices/2026/11/25/crypto-long-and-short-bitcoin-investors-can-t-keep-ignoring-japan"
     },
     {
      "kind": "CoinDesk",
-     "title": "Crypto trader Ansem says his wallet was hacked as $2 million in memecoins were sold",
-     "url": "https://www.coindesk.com/markets/2026/11/24/a-wallet-linked-to-popular-crypto-trader-ansem-sold-usd2-million-in-memecoins-as-his-namesake-token-cratered"
-    },
-    {
-     "kind": "Cointelegraph",
-     "title": "CleanSpark weighs selling more Bitcoin than it mines to de-risk books",
-     "url": "https://cointelegraph.com/news/cleanspark-weighs-selling-more-bitcoin-than-it-mines-to-de-risk-books?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-    },
-    {
-     "kind": "Cointelegraph",
-     "title": "Hackers breach CIA intelligence network in latest US cyberattack",
-     "url": "https://cointelegraph.com/news/hackers-breach-cia-intelligence-network-in-latest-us-cyberattack?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "South Korean crypto exchange Bithumb warns of phishing after deeper October breach probe",
+     "url": "https://www.coindesk.com/tech/2026/11/25/south-korean-crypto-exchange-bithumb-warns-of-phishing-after-deeper-october-breach-probe"
     },
     {
      "kind": "Cointelegraph",
@@ -49561,58 +49557,68 @@
     },
     {
      "kind": "Cointelegraph",
-     "title": "Europol follows $28.5M crypto trail in streaming piracy crackdown",
-     "url": "https://cointelegraph.com/news/europol-crypto-trail-streaming-piracy-crackdown?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "Switzerland clears 57 jurisdictions for crypto tax data sharing",
+     "url": "https://cointelegraph.com/news/switzerland-clears-57-jurisdictions-crypto-tax-data-sharing?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Cointelegraph",
-     "title": "Utah moves to dismiss criminal charges against Kalshi after trading halt",
-     "url": "https://cointelegraph.com/news/utah-moves-to-dismiss-criminal-charges-against-kalshi-after-trading-halt?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "Braiins warns of Bitcoin mining attacks affecting over 1,000 sites",
+     "url": "https://cointelegraph.com/news/braiins-warns-bitcoin-mining-attacks-affecting-1000-sites?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Cointelegraph",
-     "title": "Bitcoin sell-off driven by weak demand, forced liquidations: 21Shares",
-     "url": "https://cointelegraph.com/news/bitcoin-selloff-weak-demand-forced-liquidations-21shares?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+     "title": "Why ECB collateral eligibility could boost demand for tokenized bonds",
+     "url": "https://cointelegraph.com/news/why-ecb-collateral-eligibility-could-boost-demand-tokenized-bonds?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+    },
+    {
+     "kind": "Cointelegraph",
+     "title": "Ethereum Foundation backs Keccak-256 to counter quantum, AI threats",
+     "url": "https://cointelegraph.com/news/ethereum-foundation-keccak-256-counter-quantum-ai-threats?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+    },
+    {
+     "kind": "Cointelegraph",
+     "title": "US inflation rises to 3.8% ahead of December Fed meeting, clouding crypto outlook",
+     "url": "https://cointelegraph.com/news/us-inflation-rises-december-fed-meeting-clouding-crypto-outlook?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
      "kind": "Decrypt",
-     "title": "OpenAI and Anthropic Insiders Fear Their Next AI Models Are Too Dangerous to Release",
-     "url": "https://decrypt.co/383933/openai-and-anthropic-insiders-fear-next-ai-models-too-dangerous"
+     "title": "China's Google Just Released Its Fast New AI Model for Free",
+     "url": "https://decrypt.co/384015/china-google-released-fast-new-ai-model-free-baidu-ernie"
     },
     {
      "kind": "Decrypt",
-     "title": "Anthropic\u2019s Claude Ship Lets AI Write, Review and Approve Its Own Code",
-     "url": "https://decrypt.co/383929/anthropic-claude-ship-ai-write-review-approve-own-code"
+     "title": "What Happened to Alice Huang, the Woman at the Center of Nvidia\u2019s Scandal?",
+     "url": "https://decrypt.co/384001/what-happened-alice-huang-nvidia-spy-scandal"
     },
     {
      "kind": "Decrypt",
-     "title": "Coldcard Bitcoin Exploit, Revisited: How a Hidden Flaw Survived Years of Audits",
-     "url": "https://decrypt.co/383930/coldcard-bitcoin-exploit-how-hidden-flaw-survived-years-audits"
+     "title": "The 1Password Breach Didn\u2019t Touch Your Vault. The Phishing Emails Might",
+     "url": "https://decrypt.co/384002/1password-breach-vaults-phishing-emails"
     },
     {
      "kind": "Decrypt",
-     "title": "Ethereum Foundation Says AI Is a More Urgent Threat Than Quantum Computing",
-     "url": "https://decrypt.co/383927/ethereum-foundation-ai-more-urgent-threat-quantum-computing"
+     "title": "Another Bitcoin Mining Firm Flags 'Hashrate Hijacking' Attacks That Reroute Rewards",
+     "url": "https://decrypt.co/383999/another-bitcoin-mining-firm-hashrate-hijacking-attacks"
     },
     {
      "kind": "Decrypt",
-     "title": "Bitcoin Losses Are the Worst Since FTX. Is the Bottom Near?",
-     "url": "https://decrypt.co/383909/bitcoin-losses-worst-since-ftx-is-bottom-near"
+     "title": "What Is Artex? The AI Hacking Tool Linked to the US Spy Agency Breach",
+     "url": "https://decrypt.co/383997/what-is-artex-ai-hacking-tool-us-spy-agency-breach"
     },
     {
      "kind": "Decrypt",
-     "title": "What the CFTC\u2019s New Crypto Reserves Guidance Actually Allows\u2014And What It Doesn\u2019t",
-     "url": "https://decrypt.co/383906/cftc-new-crypto-reserves-guidance-actually-allows-what-it-doesnt"
+     "title": "Nvidia to Pay $290 Million to Settle Long-Running Crypto Mining Revenue Lawsuit",
+     "url": "https://decrypt.co/383994/nvidia-290-million-settle-crypto-mining-disclosure-lawsuit"
     },
     {
      "kind": "Babypips",
-     "title": "Event Guide: U.S. Preliminary GDP for Q3 2026",
-     "url": "https://www.babypips.com/analysis/event-guide-forex-us-preliminary-gdp-q3-2026-11-25"
+     "title": "Forex Is Open on Thanksgiving, So Why Can\u2019t I Trade My US500 CFD?",
+     "url": "https://www.babypips.com/news/explainer-thanksgiving-cfd-trading-hours"
     },
     {
      "kind": "Babypips",
-     "title": "Event Guide: U.S. Core PCE Price Index (October 2026)",
-     "url": "https://www.babypips.com/analysis/event-guide-forex-us-core-pce-price-index-october-2026-11-25"
+     "title": "Financial & Forex Market Recap: Nov. 25, 2026",
+     "url": "https://www.babypips.com/news/daily-financial-forex-market-recap-2026-11-25"
     },
     {
      "kind": "Babypips",
@@ -49621,30 +49627,30 @@
     },
     {
      "kind": "Babypips",
-     "title": "U.S. Eyes New Tariffs on 16 Trading Partners: What Forex Traders Need to Know",
-     "url": "https://www.babypips.com/news/headline-us-eyes-new-tariffs-on-16-trading-partners-what-forex-traders-need-to-know-2026-11-25"
+     "title": "What is Forced Selling? Is It Happening in Bitcoin & Gold?",
+     "url": "https://www.babypips.com/news/explainer-forced-selling-margin-calls-safe-havens-2026-11-25"
     },
     {
      "kind": "Babypips",
-     "title": "Chart Art: USD/CHF Tests Former Resistance Ahead of U.S. PCE",
-     "url": "https://www.babypips.com/trading/chart-art-forex-usdchf-tests-former-resistance-ahead-of-us-pce-2026-11-25"
+     "title": "5 Non-Trading Activities That Could Improve Your Trading Performance",
+     "url": "https://www.babypips.com/trading/psychology-5-non-trade-activities-that-could-improve-your-performance-2026-11-25"
     }
    ],
    "ideas": [
     {
-     "name": "Filtr na spadku bitcoina",
-     "rule": "btc_r96 < -0.01231",
-     "why": "Bitcoina spad\u0142 poni\u017cej $60k, co zwi\u0119ksza ryzyko spadk\u00f3w. W poprzednich b\u0142\u0119dach bot wykrywa\u0142 sygna\u0142y z negatywnym r_96, ale nie uwzgl\u0119dnia\u0142 silnego spadku bitcoina. Zgodnie z [Decrypt] Bitcoin Losses Are the Worst Since FTX, spadek bitcoina jest kluczowy dla bezpiecze\u0144stwa sygna\u0142\u00f3w."
+     "name": "Wolumen Bitcoin vs 24h",
+     "rule": "btc_vol96 > 0.0015 and btc_r96 < -0.025",
+     "why": "Wczoraj Bitcoin spad\u0142 o 2.6% (btc_r96 = -0.02605), a jego wolumen (btc_vol96) jest niski (0.00104). Zgodnie z arXiviem o 'Neckpinches' w rynku, spadek wolumenu w po\u0142\u0105czeniu z spadkiem ceny mo\u017ce wskazywa\u0107 na 'hashrate hijacking' (atak na minowanie), co jest krytyczne dla stabilno\u015bci. W poprzednich b\u0142"
     },
     {
-     "name": "Filtr na stabilno\u015bci rynku",
-     "rule": "vol_ratio < 1",
-     "why": "W poprzednich b\u0142\u0119dach bot nie uwzgl\u0119dnia\u0142 zmian w vol_ratio (wzrostu volatylno\u015bci). Zgodnie z [arXiv] Neckpinches in a Positively Curved Market, wzrost volatylno\u015bci mo\u017ce powodowa\u0107 'neckpinches' w rynku. Dodanie warunku vol_ratio < 1 zabezpiecza przed nieprzewidywalnymi ruchami."
+     "name": "Trend 50 vs 200-candle",
+     "rule": "d_ema200 < -0.023 and ema_trend < -0.001",
+     "why": "W poprzednich b\u0142\u0119dach botu, gdy trend 50-candle vs 200-candle (ema_trend) by\u0142 ujemny (avg -0.01922), straty by\u0142y wi\u0119ksze. Zgodnie z arXiviem 'Gated Payoff-Weighted Net Profit Maximization', spadek w trendzie mo\u017ce by\u0107 zbyt przewidywalny bez uwzgl\u0119dnienia koszt\u00f3w transakcyjnych. W dzisiejszych warunka"
     },
     {
-     "name": "Filtr na zabezpieczenie przed spadkami",
-     "rule": "d_ema200 < -0.02389",
-     "why": "W poprzednich b\u0142\u0119dach bot nie uwzgl\u0119dnia\u0142 d_ema200 < -0.02389, co sugeruje silny spadek. Zgodnie z [Cointelegraph] Bitcoin sell-off driven by weak demand, spadek d_ema200 jest kluczowy dla zabezpieczenia przed d\u0142ugimi spadkami."
+     "name": "Rynek kryptowalut w strachu",
+     "rule": "r_96 < -0.01231 and rel_r96 < -0.005 and vz < 0.7",
+     "why": "Wczoraj kryptowaluty by\u0142y w ekstremalnym strachu (Crypto Fear & Greed index: 11 Extreme Fear). Zgodnie z CoinDesk, Bitcoin spada, a inwestorzy s\u0105 niepewni z powodu AI i quantum computing. W poprzednich b\u0142\u0119dach, gdy r_96 < -0.01231 i rel_r96 < -0.005, bot straci\u0142 wi\u0119cej ni\u017c 1.4% na transakcji. W tym "
     }
    ]
   }
