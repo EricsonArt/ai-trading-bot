@@ -1,14 +1,4 @@
 {
- "bc6ea06a73": {
-  "name": "unikaj btc_r96 >= 0.01313",
-  "source": "own mistakes (auto)",
-  "rule": "btc_r96 < 0.01313",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1795116431596,
-  "model_version": 98,
-  "adopted": false
- },
  "ba2720a692": {
   "name": "Odrzu\u0107 sygna\u0142y w fazie spadkowego momentum",
   "source": "internet research: B\u0142\u0105d botu: losing trades mia\u0142y r_96 = -0.01418 i r_16 = -0.01425, czyli \u015brednio gorsze ni\u017c winning trades (-0.024, -0.024); badania o asymetrii zmienno\u015bci (trend \u2192 20-minutowy lag) ",
@@ -97,16 +87,6 @@
   "gain": 0.0,
   "tested_at": 1795204141267,
   "model_version": 100,
-  "adopted": false
- },
- "e23e2b414c": {
-  "name": "unikaj btc_r96 >= 0.007654",
-  "source": "own mistakes (auto)",
-  "rule": "btc_r96 < 0.00765",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1795257886194,
-  "model_version": 101,
   "adopted": false
  },
  "dc2e4433c5": {
@@ -389,46 +369,6 @@
   "model_version": 108,
   "adopted": false
  },
- "384b7b9580": {
-  "name": "unikaj btc_r96 >= 0.01505",
-  "source": "own mistakes (auto)",
-  "rule": "btc_r96 < 0.01505",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "49fcadb334": {
-  "name": "Filtr na spadku bitcoina",
-  "source": "internet research: Decrypt",
-  "rule": "btc_r96 < -0.01231",
-  "why": "Bitcoina spad\u0142 poni\u017cej $60k, co zwi\u0119ksza ryzyko spadk\u00f3w. W poprzednich b\u0142\u0119dach bot wykrywa\u0142 sygna\u0142y z negatywnym r_96, ale nie uwzgl\u0119dnia\u0142 silnego spadku bitcoina. Zgodnie z [Decrypt] Bitcoin Losses Are the Worst Since FTX, spadek bitcoina jest kluczowy dla bezpiecze\u0144stwa sygna\u0142\u00f3w.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": true
- },
- "d8db4bc205": {
-  "name": "Niskie rynkowe zyski",
-  "source": "internet research: arXiv research: Gated Payoff-Weighted Net Profit Maximization For Online Portfolio Selection With Transaction Costs",
-  "rule": "rel_r672 < -0.01085",
-  "why": "Zgodnie z analiz\u0105 arXiv o ryzyku w kr\u00f3tkim terminie, zyski w ci\u0105gu 7 dni (rel_r672) powinny by\u0107 mniejsze ni\u017c -0.01085, aby unikn\u0105\u0107 strat. W ostatnich b\u0142\u0119dach botu zauwa\u017cono, \u017ce rel_r672 < -0.01085 prowadzi\u0142o do strat.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": true
- },
- "8746444e80": {
-  "name": "Wysoka zmienno\u015b\u0107 Bitcoin",
-  "source": "internet research: arXiv research: Gated Payoff-Weighted Net Profit Maximization For Online Portfolio Selection With Transaction Costs",
-  "rule": "btc_vol96 > 0.0024",
-  "why": "Zmniejszenie ryzyka w kr\u00f3tkim terminie poprzez ograniczenie transakcji z du\u017c\u0105 zmienno\u015bci\u0105 (btc_vol96 > 0.0024) zgodnie z analiz\u0105 arXiv o transakcjach i kosztach. W ostatnich b\u0142\u0119dach botu zauwa\u017cono, \u017ce Bitcoin zyski w ci\u0105gu 24h (btc_r96) by\u0142y zbyt niskie, co prowadzi\u0142o do strat.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": true
- },
  "4d1d42ad02": {
   "name": "Niskie ryzyko p\u0142ynno\u015bci",
   "source": "internet research: CoinDesk: Stablecoin Drain, ETF Outflows Leave Bitcoin 'Running on Empty'",
@@ -444,306 +384,6 @@
   "source": "internet research: CoinDesk: Bitcoin Short-Term Holders Send $3.6 Billion in BTC to Exchanges at a Loss",
   "rule": "btc_r96 > -0.01231",
   "why": "Wczoraj Bitcoin spad\u0142 o 2.5% w ci\u0105gu 24h i wolumen spad\u0142 o 96%, co sugeruje, \u017ce cena jest w stanie spadku i ryzyko p\u0142ynno\u015bci jest wysokie. Stabilno\u015b\u0107 cenowa w kr\u00f3tkim terminie mo\u017ce pom\u00f3c w unikni\u0119ciu b\u0142\u0119dnych sygna\u0142\u00f3w z botem, kt\u00f3re cz\u0119sto wyst\u0119puj\u0105 w sytuacjach spadku wolumenu.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "48b6d9b45e": {
-  "name": "Wysokie zmiany wolumenu",
-  "source": "internet research: CoinDesk: Bitcoin stuck near $65,000 as popular 'basis trade' returns dry up; XRP whales moved $270 million during the selloff",
-  "rule": "vz > 0.8",
-  "why": "Wczoraj Bitcoin spad\u0142 o 12% i XRP przeprowadzi\u0142 du\u017c\u0105 przep\u0142yw, co sugeruje, \u017ce wolumen jest kluczowy w identyfikacji nieprzewidywalnych ruch\u00f3w. W botach, wysokie wolumeny (vz > 0.8) mog\u0105 wskazywa\u0107 na nieprzewidywalne zmiany, kt\u00f3re s\u0105 brane pod uwag\u0119 w analizie b\u0142\u0119d\u00f3w.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "71afb5b4ac": {
-  "name": "Wysoka volatylno\u015b\u0107 Bitcoin",
-  "source": "internet research: CoinDesk, Cointelegraph",
-  "rule": "btc_vol96 > 0.003",
-  "why": "W ostatnich 24 godzinach Bitcoin spad\u0142 poni\u017cej $70,000, a liquidacje przekroczy\u0142y $1,6 miliarda. Bot straci\u0142 wi\u0119cej przy zyskach ni\u017c przy stratach, co sugeruje, \u017ce wysoka volatylno\u015b\u0107 (btc_vol96 > 0.003) jest kluczowa dla unikni\u0119cia b\u0142\u0119dnych sygna\u0142\u00f3w.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "78f0c38e41": {
-  "name": "Niski rynkowy trend",
-  "source": "internet research: CoinDesk, bot's mistakes",
-  "rule": "d_ema200 < -0.001",
-  "why": "Analiza b\u0142\u0119d\u00f3w botu pokazuje, \u017ce straty wyst\u0119puj\u0105 w sytuacjach, gdy Bitcoin spada poni\u017cej 200-dniowego \u015bredniego (d_ema200 < -0.001). To zgodne z ostatnimi danymi z CoinDesk, kt\u00f3re wskazuj\u0105 na spadek w cenie BTC.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "3c43e2da95": {
-  "name": "Zmniejszanie ryzyka na podstawie RSI",
-  "source": "internet research: arXiv: Conformal Risk Certificates for Portfolio Optimization Under Uncertainty",
-  "rule": "rsi < 0.4",
-  "why": "W b\u0142\u0119dach botu, RSI by\u0142 zbyt wysoki (0.4) dla spadk\u00f3w, co sugeruje, \u017ce bot nie uwzgl\u0119dnia wystarczaj\u0105co du\u017cych oscylacji. Zgodnie z arXivem na temat RSI, warto\u015bci poni\u017cej 0.4 oznaczaj\u0105 zbyt du\u017ce ryzyko dla spadk\u00f3w.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "8711b53766": {
-  "name": "Wysoka zmienno\u015b\u0107 Bitcoinu",
-  "source": "internet research: CoinDesk: Bitcoin plunges to $68,000 as Anthropic IPO frenzy adds to market jitters",
-  "rule": "btc_vol96 > 0.00313",
-  "why": "Bot straci\u0142 pieni\u0105dze w sytuacji, gdy Bitcoin by\u0142 bardzo zmieniony (btc_vol96 > 0.00313). Wczoraj na rynku Bitcoin spad\u0142 do $68k z powodu spadku kapita\u0142u w AI, co sugeruje, \u017ce zbyt du\u017ca zmienno\u015b\u0107 jest nieprzydatna dla strategii kupna.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "466889a22b": {
-  "name": "Brak odskoku w 15-60 min",
-  "source": "internet research: B\u0142\u0105d botu: losing trades mia\u0142y r_96 avg -0.01347 i r_4; dzi\u015b BTC jest w krachu (3-miesi\u0119czne minimum, ETF outflows)",
-  "rule": "r_1 < 0.0005 and r_2 < 0.0005 and r_4 < 0.0005",
-  "why": "Je\u015bli \u015bwiece 15-minutowe i 1-godzinne nie odzyskuj\u0105 warto\u015bci, sygna\u0142 kupna w trendzie spadkowym jest najprawdopodobniej z\u0142ym \u2014 filtruje to najgorsze wej\u015bcia w d\u00f3\u0142.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "15d8e3c07e": {
-  "name": "Cena u do\u0142u dzisiejszego zakresu",
-  "source": "internet research: B\u0142\u0105d botu: losing trades mia\u0142y ema_trend avg -0.01021 i d_ema200; dzi\u015b BTC jest poni\u017cej 3-miesi\u0119cznego minimuma",
-  "rule": "bb < 0 and range_pos < 0.3 and body < 0",
-  "why": "Kupno w dolnej cz\u0119\u015bci dzisiejszego zakresu \u015bwiec przy spadkowej \u015bwiecy zwi\u0119ksza ryzyko wej\u015bcia w d\u00f3\u0142, zamiast w odskoku.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "431269ff58": {
-  "name": "Kr\u00f3tki i \u015bredni trend spadkowy",
-  "source": "internet research: B\u0142\u0105d botu: losing trades mia\u0142y ema_trend avg -0.01021 i d_ema200; dzi\u015b BTC jest w krachu",
-  "rule": "d_ema50 < -0.005 and d_ema800 < -0.01 and ema_trend < 0",
-  "why": "Bot ju\u017c filtruje na ema_trend, ale dodanie d_ema50 i d_ema800 odrzuca sygna\u0142y, gdy kr\u00f3tki i \u015bredni trend s\u0105 wyra\u017anie spadkowe \u2014 filtruje to wej\u015bcia w d\u00f3\u0142.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "6849ace9bf": {
-  "name": "Ograniczanie do stabilnych trend\u00f3w",
-  "source": "internet research: arXiv: Dynamic Scenario-Based Portfolio Optimization for Multi-Asset ETFs",
-  "rule": "d_ema50 < -0.005 and d_ema800 < -0.01",
-  "why": "W b\u0142\u0119dach botu, trzymanie si\u0119 w trendach (d_ema50 < -0.005 i d_ema800 < -0.01) by\u0142o zbyt cz\u0119sto, co prowadzi\u0142o do spadk\u00f3w. Zgodnie z arXivem na temat dynamicznych portfeli, stabilne trendy s\u0105 kluczowe dla unikania ryzyka.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "5c08ed4f89": {
-  "name": "Odrzu\u0107 sygna\u0142y w oknie 24h, gdy kr\u00f3tkoterminowy impuls jest jeszcze ujemny",
-  "source": "internet research: Analiza b\u0142\u0119d\u00f3w: btc_r96 i r_96 to najgorsze cechy botu; r_4 < 0.0005 odrzucone jako odr\u0119bne regu\u0142y, ale w po\u0142\u0105czeniu z trendem 24h tworzy silniejszy filtr.",
-  "rule": "r_96 < -0.01231 and r_16 < 0.00602 and r_4 < 0.0005",
-  "why": "Bot traci\u0142 na sygna\u0142ach, gdy kr\u00f3tkoterminowe odskoki (r_1, r_2, r_4) by\u0142y ujemne, co sugeruje, \u017ce model kupuje w dalszym spadku. Nowa regu\u0142a wymaga dodatniego kr\u00f3tkoterminowego impulsu, \u017ceby odrzuci\u0107 sygna\u0142y w oknie 24h.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "30263d0391": {
-  "name": "Odrzu\u0107 sygna\u0142y, gdy Bitcoin i aktywa krypto spadaj\u0105 razem w oknie 24h",
-  "source": "internet research: Analiza b\u0142\u0119d\u00f3w: btc_r96 i rel_r96 to najgorsze cechy botu; dzi\u015b BTC spada w okolice 62 tys. USD, a ETH 28% w dw\u00f3ch tygodniach.",
-  "rule": "btc_r16 < 0.00602 and btc_r96 < -0.01231 and r_16 < 0.0005",
-  "why": "Ryzyko wsp\u00f3lnej wyprzeda\u017cy BTC i altcoin\u00f3w jest dzi\u015b najwi\u0119ksze; regu\u0142a odrzuca sygna\u0142y, gdy kr\u00f3tkoterminowy impuls BTC jest ujemny.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "969efdf190": {
-  "name": "Odrzu\u0107 sygna\u0142y, gdy kr\u00f3tkoterminowe odskoki s\u0105 ujemne",
-  "source": "internet research: Analiza b\u0142\u0119d\u00f3w: r_1 < 0.0005, r_2 < 0.0005 i r_4 < 0.0005 odrzucone jako odr\u0119bne regu\u0142y, ale w po\u0142\u0105czeniu tworz\u0105 silniejszy filtr.",
-  "rule": "r_16 < 0.0005 and r_4 < 0.0005 and r_2 < 0.0005",
-  "why": "Bot traci\u0142 na sygna\u0142ach, gdy kr\u00f3tkoterminowe odskoki (r_1, r_2, r_4) by\u0142y ujemne, co sugeruje, \u017ce model kupuje w dalszym spadku. Nowa regu\u0142a wymaga dodatniego kr\u00f3tkoterminowego impulsu, \u017ceby odrzuci\u0107 sygna\u0142y w oknie 24h.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "e36b502023": {
-  "name": "Niskie zmiany w 24h",
-  "source": "internet research: CoinDesk: Bitcoin's 12% slide through key support looks scary, but history says give it 3 months",
-  "rule": "r_96 < -0.01231",
-  "why": "W ostatnich 24 godzinach Bitcoin spad\u0142 o 2.5% (btc_r96 = -0.02576) i jego wolumen jest stabilny (btc_vol96 = 0.00104). W botach, niskie zmiany w 24h (r_96 < -0.01231) mog\u0105 by\u0107 sygna\u0142ami dla nieprzewidywalnych ruch\u00f3w, kt\u00f3re s\u0105 brane pod uwag\u0119 w analizie b\u0142\u0119d\u00f3w.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "2cfbd3a255": {
-  "name": "Brak kr\u00f3tkoterminowego potwierdzenia",
-  "source": "internet research: B\u0142\u0119dy botu: r_96, r_16, d_ema200, ema_trend \u2014 wszystkie trac\u0105 na spadkach; newsy o spadkach BTC i outflowach ETF.",
-  "rule": "r_1 < -0.0002 and r_2 < -0.0002 and r_4 < -0.0002",
-  "why": "Bot kupuje na spadkach BTC, ale kr\u00f3tkie spadki (r_1, r_2, r_4 ujemne) to dok\u0142adnie moment, gdy momentum si\u0119 nie odwraca. To odr\u00f3\u017cnia prawdziwy odwr\u00f3t od kr\u00f3tkoterminowego spadku.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "3cdd7053a6": {
-  "name": "Zbyt spokojny rynek",
-  "source": "internet research: B\u0142\u0119dy botu: atr \u2014 losing trades avg 0.00573 vs winning 0.00703; newsy o haku sBOLD i spadkach BTC.",
-  "rule": "vol_ratio < 0.7 and atr < 0.003",
-  "why": "Bot kupuje tylko przy btc_vol96 > 0.0024, ale to za ma\u0142o. Niska vol_ratio i ma\u0142y ATR oznaczaj\u0105, \u017ce rynek nie ma ruchu \u2014 sygna\u0142 nie ma miejsca, gdzie si\u0119 rozwinie.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "f55186784f": {
-  "name": "Coin s\u0142abnie wzgl\u0119dem BTC",
-  "source": "internet research: B\u0142\u0119dy botu: rel_r96, rank_r96 \u2014 brak filtr\u00f3w na relatywnym momentum; newsy o spadkach BTC i outflowach ETF.",
-  "rule": "rel_r96 < -0.01 and rank_r96 < 0.3",
-  "why": "Bot kupuje na spadkach BTC, ale je\u015bli coin spada szybciej ni\u017c BTC i ma s\u0142aby rank, to to nie jest okazja \u2014 to tylko korekta sektora.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "c1fd214228": {
-  "name": "Odbicie z ekstremalnego przetykania",
-  "source": "internet research: Dane b\u0142\u0119d\u00f3w botu: losing trades mia\u0142y atr 0.00578 i vol_16 0.00369, a rsi 0.352; dzi\u015b Fear & Greed 10-13 i BTC w death cross",
-  "rule": "rsi < 0.35 and vol_ratio < 0.7 and atr < 0.003",
-  "why": "Sygna\u0142 kupna przy RSI poni\u017cej 0.35, spadaj\u0105cej zmienno\u015bci i niskim ATR sugeruje, \u017ce rynek jest ekstremalnie przetykany, ale nie ma jeszcze potwierdzenia odrodzenia si\u0119 trendu. Bot wcze\u015bniej testowa\u0142 podobne filtry (vol_ratio < 0.7 i atr < 0.003), ale odrzuci\u0142 je; ta wersja dodaje RSI jako warunek, a",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "71dc298051": {
-  "name": "Wykluczenie g\u0142\u0119bokiego trendu spadkowego",
-  "source": "internet research: Dane b\u0142\u0119d\u00f3w botu: losing trades mia\u0142y ema_trend -0.01012 i d_ema50 -0.01012; dzi\u015b BTC w death cross",
-  "rule": "d_ema50 < -0.005 and d_ema800 < -0.01 and r_96 < -0.01231",
-  "why": "Sygna\u0142 kupna przy g\u0142\u0119boko ujemnym odst\u0119pie od \u015brednich 50 i 800 godzin oraz spadku 24h sugeruje, \u017ce rynek jest w g\u0142\u0119bokim trendzie spadkowym. Bot wcze\u015bniej testowa\u0142 podobne filtry (d_ema50 < -0.005 i d_ema800 < -0.01), ale odrzuci\u0142 je; ta wersja dodaje r_96 jako warunek, aby wykluczy\u0107 sygna\u0142y przy s",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "aff4728bb0": {
-  "name": "Wykluczenie niskiej zmienno\u015bci przy spadku",
-  "source": "internet research: Dane b\u0142\u0119d\u00f3w botu: losing trades mia\u0142y btc_r96 -0.00213 i btc_vol96 0.00187; dzi\u015b BTC w death cross",
-  "rule": "btc_r16 < 0.00602 and btc_r96 < -0.01231 and btc_vol96 < 0.0024",
-  "why": "Sygna\u0142 kupna przy niskiej zmienno\u015bci BTC i spadaj\u0105cej cenie sugeruje, \u017ce rynek jest w g\u0142\u0119bokim trendzie spadkowym z nisk\u0105 zmienno\u015bci\u0105. Bot wcze\u015bniej testowa\u0142 podobne filtry (btc_r16 < 0.00602 i btc_r96 < -0.01231), ale odrzuci\u0142 je; ta wersja dodaje btc_vol96 jako warunek, aby wykluczy\u0107 sygna\u0142y przy ",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "1e9708934d": {
-  "name": "Panika, nie panika: kupuj tylko przy spadku BTC",
-  "source": "internet research: CoinDesk: BTC poni\u017cej 57 000 USD, XRP -10%, Fear & Greed 10-12 Extreme Fear; b\u0142\u0119dy bota: btc_r96, btc_vol96, rel_r672",
-  "rule": "r_96 < -0.01231 and btc_vol96 > 0.0024 and rel_r672 < -0.01085",
-  "why": "Bot kupowa\u0142 na g\u0142\u0119bokiej hossie BTC (r_96 > 0) i przy bardzo niskiej zmienno\u015bci, co w obecnej panice generuje straty; filtr wymaga spadku BTC poni\u017cej -1,23% i wzrostu zmienno\u015bci powy\u017cej 0,24%.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "3eb1ee767e": {
-  "name": "Nie kupuj na szczytach z d\u0142ugim cieniem",
-  "source": "internet research: Babypips: 'The Time Stop' \u2014 czasowe zatrzymanie, gdy ruch idzie w g\u00f3r\u0119 bez potwierdzenia; b\u0142\u0119dy bota: rsi, range_pos, upper_wick",
-  "rule": "rsi > 0.7 and range_pos > 0.8851 and upper_wick > 0.5766",
-  "why": "RSI powy\u017cej 0,7, cena blisko g\u00f3ry zakresu i d\u0142ugi g\u00f3rny cie\u0144 oznaczaj\u0105, \u017ce ruch jest wyczerpany; filtr odrzuca sygna\u0142y kupna na szczytach.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "b80ffb49ac": {
-  "name": "Wymagaj potwierdzenia trendu i wolumenu",
-  "source": "internet research: Babypips: 'Premium Weekly Recap' \u2014 strach o AI zni\u017cy\u0142 BTC, z\u0142oto i akcje, a USD utrzyma\u0142 si\u0119 blisko 19-miesi\u0119cznego rekordu; b\u0142\u0119dy bota: d_ema200, ema_trend, vz",
-  "rule": "d_ema200 > 0.02389 and ema_trend > 0.01603 and vz > 1.1",
-  "why": "Bot kupowa\u0142 na g\u0142\u0119bokiej hossie BTC (r_96 > 0) i przy bardzo niskiej zmienno\u015bci, co w obecnej panice generuje straty; filtr wymaga potwierdzenia trendu i wolumenu.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "957ef6a3b3": {
-  "name": "Filtr paniki relacyjnej",
-  "source": "internet research: B\u0142\u0119dne sygna\u0142y: btc_r96, r_96, d_ema200, ema_trend; dzi\u015b BTC <57k, rel_r96 ujemne, rank_r96 niski",
-  "rule": "rsi < 0.35 and rel_r96 < -0.005 and rank_r96 < 0.4",
-  "why": "Bot kupowa\u0142 w obni\u017caj\u0105cych si\u0119 warunkach, gdy kr\u00f3tkoterminowa si\u0142a (r_96, btc_r96) i relacyjna si\u0142a do Bitcoina (rel_r96) by\u0142y ujemne; dzi\u015b to dok\u0142adnie ta konfiguracja. Dodanie rel_r96 < -0.005 i rank_r96 < 0.4 odrzuca sygna\u0142y, kt\u00f3re model myli za odwr\u00f3cenie trendu, a kt\u00f3re s\u0105 tylko panik\u0105.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "49758b7feb": {
-  "name": "Wym\u00f3g trendu wzrostowego",
-  "source": "internet research: B\u0142\u0119dne sygna\u0142y: d_ema50, d_ema200, ema_trend; dzi\u015b BTC poni\u017cej dwuletniego minimum",
-  "rule": "d_ema50 < -0.005 and d_ema200 < -0.005 and ema_trend < 0",
-  "why": "Bot kupowa\u0142 na spadaj\u0105cej trendzie (EMA 50 pod EMA 200). W warunkach paniki i dwuletniego minimum BTC nie ma \u017cadnego potwierdzenia odwr\u00f3cenia trendu, wi\u0119c sygna\u0142 kupna na ujemnym ema_trend jest sygna\u0142em przeciw trendowi.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "edc56d0330": {
-  "name": "Filtr paniki i niskiej p\u0142ynno\u015bci",
-  "source": "internet research: B\u0142\u0119dne sygna\u0142y: r_2016, r_96; dzi\u015b BTC -48% w AI, strach 10-12, BTC <57k",
-  "rule": "r_2016 < -0.15 and r_96 < -0.01 and vz < 0.7",
-  "why": "Bot kupowa\u0142 w warunkach g\u0142\u0119bokiej paniki (r_2016 < -0.15) i niskiej p\u0142ynno\u015bci (vz < 0.7), gdy rynek jest w fazie likwidacji. W takich warunkach sygna\u0142 kupna jest sygna\u0142em wej\u015bcia w d\u00f3\u0142, a nie odwr\u00f3cenia trendu.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "d8a804f33d": {
-  "name": "Panika bez trendu",
-  "source": "internet research: B\u0142\u0119dy bota: r_2016 < -0.15 + r_96 < -0.01 + vz < 0.7; dzi\u015b Bitcoin spad\u0142 poni\u017cej $60 tys. i Fed przesta\u0142 by\u0107 oczekiwany.",
-  "rule": "r_96 < -0.01231 and r_2016 < -0.05 and ema_trend < 0",
-  "why": "Bot kupuje w panice, ale je\u015bli d\u0142ugoterminowy trend (ema_trend) jest ujemny, to panika mo\u017ce by\u0107 tylko kontynuacj\u0105 spadku, a nie do\u0142em.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "5cb488415a": {
-  "name": "Panika bez wzrostu zmienno\u015bci",
-  "source": "internet research: B\u0142\u0119dy bota: d_ema200 > 0.02389 + ema_trend > 0.01603 + vz > 1.1; dzi\u015b BTC spad\u0142 poni\u017cej $60 tys. i Fed przesta\u0142 by\u0107 oczekiwany.",
-  "rule": "btc_r96 < -0.01231 and d_ema200 < -0.02389 and vol_ratio < 1",
-  "why": "Bot kupuje w panice, ale je\u015bli d_ema200 jest ujemne i vol_ratio < 1, to panika mo\u017ce by\u0107 tylko kontynuacj\u0105 spadku, a nie do\u0142em.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "c0a8ea1e46": {
-  "name": "Panika bez momentum",
-  "source": "internet research: B\u0142\u0119dy bota: r_96 < -0.01231 + rel_r672 < -0.01085; dzi\u015b BTC spad\u0142 poni\u017cej $60 tys. i Fed przesta\u0142 by\u0107 oczekiwany.",
-  "rule": "r_96 < -0.01231 and rel_r96 < -0.005 and rank_r96 < 0.4",
-  "why": "Bot kupuje w panice, ale je\u015bli rel_r96 jest ujemne i rank_r96 < 0.4, to panika mo\u017ce by\u0107 tylko kontynuacj\u0105 spadku, a nie do\u0142em.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "8b61d484a5": {
-  "name": "Filtr na stabilno\u015bci rynku",
-  "source": "internet research: arXiv",
-  "rule": "vol_ratio < 1",
-  "why": "W poprzednich b\u0142\u0119dach bot nie uwzgl\u0119dnia\u0142 zmian w vol_ratio (wzrostu volatylno\u015bci). Zgodnie z [arXiv] Neckpinches in a Positively Curved Market, wzrost volatylno\u015bci mo\u017ce powodowa\u0107 'neckpinches' w rynku. Dodanie warunku vol_ratio < 1 zabezpiecza przed nieprzewidywalnymi ruchami.",
-  "gain": 0.0,
-  "tested_at": 1795635357720,
-  "model_version": 109,
-  "adopted": false
- },
- "90b23337df": {
-  "name": "Filtr na zabezpieczenie przed spadkami",
-  "source": "internet research: Cointelegraph",
-  "rule": "d_ema200 < -0.02389",
-  "why": "W poprzednich b\u0142\u0119dach bot nie uwzgl\u0119dnia\u0142 d_ema200 < -0.02389, co sugeruje silny spadek. Zgodnie z [Cointelegraph] Bitcoin sell-off driven by weak demand, spadek d_ema200 jest kluczowy dla zabezpieczenia przed d\u0142ugimi spadkami.",
   "gain": 0.0,
   "tested_at": 1795635357720,
   "model_version": 109,
@@ -769,14 +409,364 @@
   "model_version": 109,
   "adopted": false
  },
+ "e23e2b414c": {
+  "name": "unikaj btc_r96 >= 0.007628",
+  "source": "own mistakes (auto)",
+  "rule": "btc_r96 < 0.00763",
+  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "384b7b9580": {
+  "name": "unikaj btc_r96 >= 0.01505",
+  "source": "own mistakes (auto)",
+  "rule": "btc_r96 < 0.01505",
+  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "49fcadb334": {
+  "name": "Filtr na spadku bitcoina",
+  "source": "internet research: Decrypt",
+  "rule": "btc_r96 < -0.01231",
+  "why": "Bitcoina spad\u0142 poni\u017cej $60k, co zwi\u0119ksza ryzyko spadk\u00f3w. W poprzednich b\u0142\u0119dach bot wykrywa\u0142 sygna\u0142y z negatywnym r_96, ale nie uwzgl\u0119dnia\u0142 silnego spadku bitcoina. Zgodnie z [Decrypt] Bitcoin Losses Are the Worst Since FTX, spadek bitcoina jest kluczowy dla bezpiecze\u0144stwa sygna\u0142\u00f3w.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": true
+ },
+ "d8db4bc205": {
+  "name": "Niskie rynkowe zyski",
+  "source": "internet research: arXiv research: Gated Payoff-Weighted Net Profit Maximization For Online Portfolio Selection With Transaction Costs",
+  "rule": "rel_r672 < -0.01085",
+  "why": "Zgodnie z analiz\u0105 arXiv o ryzyku w kr\u00f3tkim terminie, zyski w ci\u0105gu 7 dni (rel_r672) powinny by\u0107 mniejsze ni\u017c -0.01085, aby unikn\u0105\u0107 strat. W ostatnich b\u0142\u0119dach botu zauwa\u017cono, \u017ce rel_r672 < -0.01085 prowadzi\u0142o do strat.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": true
+ },
+ "8746444e80": {
+  "name": "Wysoka zmienno\u015b\u0107 Bitcoin",
+  "source": "internet research: arXiv research: Gated Payoff-Weighted Net Profit Maximization For Online Portfolio Selection With Transaction Costs",
+  "rule": "btc_vol96 > 0.0024",
+  "why": "Zmniejszenie ryzyka w kr\u00f3tkim terminie poprzez ograniczenie transakcji z du\u017c\u0105 zmienno\u015bci\u0105 (btc_vol96 > 0.0024) zgodnie z analiz\u0105 arXiv o transakcjach i kosztach. W ostatnich b\u0142\u0119dach botu zauwa\u017cono, \u017ce Bitcoin zyski w ci\u0105gu 24h (btc_r96) by\u0142y zbyt niskie, co prowadzi\u0142o do strat.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": true
+ },
+ "48b6d9b45e": {
+  "name": "Wysokie zmiany wolumenu",
+  "source": "internet research: CoinDesk: Bitcoin stuck near $65,000 as popular 'basis trade' returns dry up; XRP whales moved $270 million during the selloff",
+  "rule": "vz > 0.8",
+  "why": "Wczoraj Bitcoin spad\u0142 o 12% i XRP przeprowadzi\u0142 du\u017c\u0105 przep\u0142yw, co sugeruje, \u017ce wolumen jest kluczowy w identyfikacji nieprzewidywalnych ruch\u00f3w. W botach, wysokie wolumeny (vz > 0.8) mog\u0105 wskazywa\u0107 na nieprzewidywalne zmiany, kt\u00f3re s\u0105 brane pod uwag\u0119 w analizie b\u0142\u0119d\u00f3w.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "71afb5b4ac": {
+  "name": "Wysoka volatylno\u015b\u0107 Bitcoin",
+  "source": "internet research: CoinDesk, Cointelegraph",
+  "rule": "btc_vol96 > 0.003",
+  "why": "W ostatnich 24 godzinach Bitcoin spad\u0142 poni\u017cej $70,000, a liquidacje przekroczy\u0142y $1,6 miliarda. Bot straci\u0142 wi\u0119cej przy zyskach ni\u017c przy stratach, co sugeruje, \u017ce wysoka volatylno\u015b\u0107 (btc_vol96 > 0.003) jest kluczowa dla unikni\u0119cia b\u0142\u0119dnych sygna\u0142\u00f3w.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "78f0c38e41": {
+  "name": "Niski rynkowy trend",
+  "source": "internet research: CoinDesk, bot's mistakes",
+  "rule": "d_ema200 < -0.001",
+  "why": "Analiza b\u0142\u0119d\u00f3w botu pokazuje, \u017ce straty wyst\u0119puj\u0105 w sytuacjach, gdy Bitcoin spada poni\u017cej 200-dniowego \u015bredniego (d_ema200 < -0.001). To zgodne z ostatnimi danymi z CoinDesk, kt\u00f3re wskazuj\u0105 na spadek w cenie BTC.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "3c43e2da95": {
+  "name": "Zmniejszanie ryzyka na podstawie RSI",
+  "source": "internet research: arXiv: Conformal Risk Certificates for Portfolio Optimization Under Uncertainty",
+  "rule": "rsi < 0.4",
+  "why": "W b\u0142\u0119dach botu, RSI by\u0142 zbyt wysoki (0.4) dla spadk\u00f3w, co sugeruje, \u017ce bot nie uwzgl\u0119dnia wystarczaj\u0105co du\u017cych oscylacji. Zgodnie z arXivem na temat RSI, warto\u015bci poni\u017cej 0.4 oznaczaj\u0105 zbyt du\u017ce ryzyko dla spadk\u00f3w.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "8711b53766": {
+  "name": "Wysoka zmienno\u015b\u0107 Bitcoinu",
+  "source": "internet research: CoinDesk: Bitcoin plunges to $68,000 as Anthropic IPO frenzy adds to market jitters",
+  "rule": "btc_vol96 > 0.00313",
+  "why": "Bot straci\u0142 pieni\u0105dze w sytuacji, gdy Bitcoin by\u0142 bardzo zmieniony (btc_vol96 > 0.00313). Wczoraj na rynku Bitcoin spad\u0142 do $68k z powodu spadku kapita\u0142u w AI, co sugeruje, \u017ce zbyt du\u017ca zmienno\u015b\u0107 jest nieprzydatna dla strategii kupna.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "466889a22b": {
+  "name": "Brak odskoku w 15-60 min",
+  "source": "internet research: B\u0142\u0105d botu: losing trades mia\u0142y r_96 avg -0.01347 i r_4; dzi\u015b BTC jest w krachu (3-miesi\u0119czne minimum, ETF outflows)",
+  "rule": "r_1 < 0.0005 and r_2 < 0.0005 and r_4 < 0.0005",
+  "why": "Je\u015bli \u015bwiece 15-minutowe i 1-godzinne nie odzyskuj\u0105 warto\u015bci, sygna\u0142 kupna w trendzie spadkowym jest najprawdopodobniej z\u0142ym \u2014 filtruje to najgorsze wej\u015bcia w d\u00f3\u0142.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "15d8e3c07e": {
+  "name": "Cena u do\u0142u dzisiejszego zakresu",
+  "source": "internet research: B\u0142\u0105d botu: losing trades mia\u0142y ema_trend avg -0.01021 i d_ema200; dzi\u015b BTC jest poni\u017cej 3-miesi\u0119cznego minimuma",
+  "rule": "bb < 0 and range_pos < 0.3 and body < 0",
+  "why": "Kupno w dolnej cz\u0119\u015bci dzisiejszego zakresu \u015bwiec przy spadkowej \u015bwiecy zwi\u0119ksza ryzyko wej\u015bcia w d\u00f3\u0142, zamiast w odskoku.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "431269ff58": {
+  "name": "Kr\u00f3tki i \u015bredni trend spadkowy",
+  "source": "internet research: B\u0142\u0105d botu: losing trades mia\u0142y ema_trend avg -0.01021 i d_ema200; dzi\u015b BTC jest w krachu",
+  "rule": "d_ema50 < -0.005 and d_ema800 < -0.01 and ema_trend < 0",
+  "why": "Bot ju\u017c filtruje na ema_trend, ale dodanie d_ema50 i d_ema800 odrzuca sygna\u0142y, gdy kr\u00f3tki i \u015bredni trend s\u0105 wyra\u017anie spadkowe \u2014 filtruje to wej\u015bcia w d\u00f3\u0142.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "6849ace9bf": {
+  "name": "Ograniczanie do stabilnych trend\u00f3w",
+  "source": "internet research: arXiv: Dynamic Scenario-Based Portfolio Optimization for Multi-Asset ETFs",
+  "rule": "d_ema50 < -0.005 and d_ema800 < -0.01",
+  "why": "W b\u0142\u0119dach botu, trzymanie si\u0119 w trendach (d_ema50 < -0.005 i d_ema800 < -0.01) by\u0142o zbyt cz\u0119sto, co prowadzi\u0142o do spadk\u00f3w. Zgodnie z arXivem na temat dynamicznych portfeli, stabilne trendy s\u0105 kluczowe dla unikania ryzyka.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "5c08ed4f89": {
+  "name": "Odrzu\u0107 sygna\u0142y w oknie 24h, gdy kr\u00f3tkoterminowy impuls jest jeszcze ujemny",
+  "source": "internet research: Analiza b\u0142\u0119d\u00f3w: btc_r96 i r_96 to najgorsze cechy botu; r_4 < 0.0005 odrzucone jako odr\u0119bne regu\u0142y, ale w po\u0142\u0105czeniu z trendem 24h tworzy silniejszy filtr.",
+  "rule": "r_96 < -0.01231 and r_16 < 0.00602 and r_4 < 0.0005",
+  "why": "Bot traci\u0142 na sygna\u0142ach, gdy kr\u00f3tkoterminowe odskoki (r_1, r_2, r_4) by\u0142y ujemne, co sugeruje, \u017ce model kupuje w dalszym spadku. Nowa regu\u0142a wymaga dodatniego kr\u00f3tkoterminowego impulsu, \u017ceby odrzuci\u0107 sygna\u0142y w oknie 24h.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "30263d0391": {
+  "name": "Odrzu\u0107 sygna\u0142y, gdy Bitcoin i aktywa krypto spadaj\u0105 razem w oknie 24h",
+  "source": "internet research: Analiza b\u0142\u0119d\u00f3w: btc_r96 i rel_r96 to najgorsze cechy botu; dzi\u015b BTC spada w okolice 62 tys. USD, a ETH 28% w dw\u00f3ch tygodniach.",
+  "rule": "btc_r16 < 0.00602 and btc_r96 < -0.01231 and r_16 < 0.0005",
+  "why": "Ryzyko wsp\u00f3lnej wyprzeda\u017cy BTC i altcoin\u00f3w jest dzi\u015b najwi\u0119ksze; regu\u0142a odrzuca sygna\u0142y, gdy kr\u00f3tkoterminowy impuls BTC jest ujemny.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "969efdf190": {
+  "name": "Odrzu\u0107 sygna\u0142y, gdy kr\u00f3tkoterminowe odskoki s\u0105 ujemne",
+  "source": "internet research: Analiza b\u0142\u0119d\u00f3w: r_1 < 0.0005, r_2 < 0.0005 i r_4 < 0.0005 odrzucone jako odr\u0119bne regu\u0142y, ale w po\u0142\u0105czeniu tworz\u0105 silniejszy filtr.",
+  "rule": "r_16 < 0.0005 and r_4 < 0.0005 and r_2 < 0.0005",
+  "why": "Bot traci\u0142 na sygna\u0142ach, gdy kr\u00f3tkoterminowe odskoki (r_1, r_2, r_4) by\u0142y ujemne, co sugeruje, \u017ce model kupuje w dalszym spadku. Nowa regu\u0142a wymaga dodatniego kr\u00f3tkoterminowego impulsu, \u017ceby odrzuci\u0107 sygna\u0142y w oknie 24h.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "e36b502023": {
+  "name": "Niskie zmiany w 24h",
+  "source": "internet research: CoinDesk: Bitcoin's 12% slide through key support looks scary, but history says give it 3 months",
+  "rule": "r_96 < -0.01231",
+  "why": "W ostatnich 24 godzinach Bitcoin spad\u0142 o 2.5% (btc_r96 = -0.02576) i jego wolumen jest stabilny (btc_vol96 = 0.00104). W botach, niskie zmiany w 24h (r_96 < -0.01231) mog\u0105 by\u0107 sygna\u0142ami dla nieprzewidywalnych ruch\u00f3w, kt\u00f3re s\u0105 brane pod uwag\u0119 w analizie b\u0142\u0119d\u00f3w.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "2cfbd3a255": {
+  "name": "Brak kr\u00f3tkoterminowego potwierdzenia",
+  "source": "internet research: B\u0142\u0119dy botu: r_96, r_16, d_ema200, ema_trend \u2014 wszystkie trac\u0105 na spadkach; newsy o spadkach BTC i outflowach ETF.",
+  "rule": "r_1 < -0.0002 and r_2 < -0.0002 and r_4 < -0.0002",
+  "why": "Bot kupuje na spadkach BTC, ale kr\u00f3tkie spadki (r_1, r_2, r_4 ujemne) to dok\u0142adnie moment, gdy momentum si\u0119 nie odwraca. To odr\u00f3\u017cnia prawdziwy odwr\u00f3t od kr\u00f3tkoterminowego spadku.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "3cdd7053a6": {
+  "name": "Zbyt spokojny rynek",
+  "source": "internet research: B\u0142\u0119dy botu: atr \u2014 losing trades avg 0.00573 vs winning 0.00703; newsy o haku sBOLD i spadkach BTC.",
+  "rule": "vol_ratio < 0.7 and atr < 0.003",
+  "why": "Bot kupuje tylko przy btc_vol96 > 0.0024, ale to za ma\u0142o. Niska vol_ratio i ma\u0142y ATR oznaczaj\u0105, \u017ce rynek nie ma ruchu \u2014 sygna\u0142 nie ma miejsca, gdzie si\u0119 rozwinie.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "f55186784f": {
+  "name": "Coin s\u0142abnie wzgl\u0119dem BTC",
+  "source": "internet research: B\u0142\u0119dy botu: rel_r96, rank_r96 \u2014 brak filtr\u00f3w na relatywnym momentum; newsy o spadkach BTC i outflowach ETF.",
+  "rule": "rel_r96 < -0.01 and rank_r96 < 0.3",
+  "why": "Bot kupuje na spadkach BTC, ale je\u015bli coin spada szybciej ni\u017c BTC i ma s\u0142aby rank, to to nie jest okazja \u2014 to tylko korekta sektora.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "c1fd214228": {
+  "name": "Odbicie z ekstremalnego przetykania",
+  "source": "internet research: Dane b\u0142\u0119d\u00f3w botu: losing trades mia\u0142y atr 0.00578 i vol_16 0.00369, a rsi 0.352; dzi\u015b Fear & Greed 10-13 i BTC w death cross",
+  "rule": "rsi < 0.35 and vol_ratio < 0.7 and atr < 0.003",
+  "why": "Sygna\u0142 kupna przy RSI poni\u017cej 0.35, spadaj\u0105cej zmienno\u015bci i niskim ATR sugeruje, \u017ce rynek jest ekstremalnie przetykany, ale nie ma jeszcze potwierdzenia odrodzenia si\u0119 trendu. Bot wcze\u015bniej testowa\u0142 podobne filtry (vol_ratio < 0.7 i atr < 0.003), ale odrzuci\u0142 je; ta wersja dodaje RSI jako warunek, a",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "71dc298051": {
+  "name": "Wykluczenie g\u0142\u0119bokiego trendu spadkowego",
+  "source": "internet research: Dane b\u0142\u0119d\u00f3w botu: losing trades mia\u0142y ema_trend -0.01012 i d_ema50 -0.01012; dzi\u015b BTC w death cross",
+  "rule": "d_ema50 < -0.005 and d_ema800 < -0.01 and r_96 < -0.01231",
+  "why": "Sygna\u0142 kupna przy g\u0142\u0119boko ujemnym odst\u0119pie od \u015brednich 50 i 800 godzin oraz spadku 24h sugeruje, \u017ce rynek jest w g\u0142\u0119bokim trendzie spadkowym. Bot wcze\u015bniej testowa\u0142 podobne filtry (d_ema50 < -0.005 i d_ema800 < -0.01), ale odrzuci\u0142 je; ta wersja dodaje r_96 jako warunek, aby wykluczy\u0107 sygna\u0142y przy s",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "aff4728bb0": {
+  "name": "Wykluczenie niskiej zmienno\u015bci przy spadku",
+  "source": "internet research: Dane b\u0142\u0119d\u00f3w botu: losing trades mia\u0142y btc_r96 -0.00213 i btc_vol96 0.00187; dzi\u015b BTC w death cross",
+  "rule": "btc_r16 < 0.00602 and btc_r96 < -0.01231 and btc_vol96 < 0.0024",
+  "why": "Sygna\u0142 kupna przy niskiej zmienno\u015bci BTC i spadaj\u0105cej cenie sugeruje, \u017ce rynek jest w g\u0142\u0119bokim trendzie spadkowym z nisk\u0105 zmienno\u015bci\u0105. Bot wcze\u015bniej testowa\u0142 podobne filtry (btc_r16 < 0.00602 i btc_r96 < -0.01231), ale odrzuci\u0142 je; ta wersja dodaje btc_vol96 jako warunek, aby wykluczy\u0107 sygna\u0142y przy ",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "1e9708934d": {
+  "name": "Panika, nie panika: kupuj tylko przy spadku BTC",
+  "source": "internet research: CoinDesk: BTC poni\u017cej 57 000 USD, XRP -10%, Fear & Greed 10-12 Extreme Fear; b\u0142\u0119dy bota: btc_r96, btc_vol96, rel_r672",
+  "rule": "r_96 < -0.01231 and btc_vol96 > 0.0024 and rel_r672 < -0.01085",
+  "why": "Bot kupowa\u0142 na g\u0142\u0119bokiej hossie BTC (r_96 > 0) i przy bardzo niskiej zmienno\u015bci, co w obecnej panice generuje straty; filtr wymaga spadku BTC poni\u017cej -1,23% i wzrostu zmienno\u015bci powy\u017cej 0,24%.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "3eb1ee767e": {
+  "name": "Nie kupuj na szczytach z d\u0142ugim cieniem",
+  "source": "internet research: Babypips: 'The Time Stop' \u2014 czasowe zatrzymanie, gdy ruch idzie w g\u00f3r\u0119 bez potwierdzenia; b\u0142\u0119dy bota: rsi, range_pos, upper_wick",
+  "rule": "rsi > 0.7 and range_pos > 0.8851 and upper_wick > 0.5766",
+  "why": "RSI powy\u017cej 0,7, cena blisko g\u00f3ry zakresu i d\u0142ugi g\u00f3rny cie\u0144 oznaczaj\u0105, \u017ce ruch jest wyczerpany; filtr odrzuca sygna\u0142y kupna na szczytach.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "b80ffb49ac": {
+  "name": "Wymagaj potwierdzenia trendu i wolumenu",
+  "source": "internet research: Babypips: 'Premium Weekly Recap' \u2014 strach o AI zni\u017cy\u0142 BTC, z\u0142oto i akcje, a USD utrzyma\u0142 si\u0119 blisko 19-miesi\u0119cznego rekordu; b\u0142\u0119dy bota: d_ema200, ema_trend, vz",
+  "rule": "d_ema200 > 0.02389 and ema_trend > 0.01603 and vz > 1.1",
+  "why": "Bot kupowa\u0142 na g\u0142\u0119bokiej hossie BTC (r_96 > 0) i przy bardzo niskiej zmienno\u015bci, co w obecnej panice generuje straty; filtr wymaga potwierdzenia trendu i wolumenu.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "957ef6a3b3": {
+  "name": "Filtr paniki relacyjnej",
+  "source": "internet research: B\u0142\u0119dne sygna\u0142y: btc_r96, r_96, d_ema200, ema_trend; dzi\u015b BTC <57k, rel_r96 ujemne, rank_r96 niski",
+  "rule": "rsi < 0.35 and rel_r96 < -0.005 and rank_r96 < 0.4",
+  "why": "Bot kupowa\u0142 w obni\u017caj\u0105cych si\u0119 warunkach, gdy kr\u00f3tkoterminowa si\u0142a (r_96, btc_r96) i relacyjna si\u0142a do Bitcoina (rel_r96) by\u0142y ujemne; dzi\u015b to dok\u0142adnie ta konfiguracja. Dodanie rel_r96 < -0.005 i rank_r96 < 0.4 odrzuca sygna\u0142y, kt\u00f3re model myli za odwr\u00f3cenie trendu, a kt\u00f3re s\u0105 tylko panik\u0105.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "49758b7feb": {
+  "name": "Wym\u00f3g trendu wzrostowego",
+  "source": "internet research: B\u0142\u0119dne sygna\u0142y: d_ema50, d_ema200, ema_trend; dzi\u015b BTC poni\u017cej dwuletniego minimum",
+  "rule": "d_ema50 < -0.005 and d_ema200 < -0.005 and ema_trend < 0",
+  "why": "Bot kupowa\u0142 na spadaj\u0105cej trendzie (EMA 50 pod EMA 200). W warunkach paniki i dwuletniego minimum BTC nie ma \u017cadnego potwierdzenia odwr\u00f3cenia trendu, wi\u0119c sygna\u0142 kupna na ujemnym ema_trend jest sygna\u0142em przeciw trendowi.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "edc56d0330": {
+  "name": "Filtr paniki i niskiej p\u0142ynno\u015bci",
+  "source": "internet research: B\u0142\u0119dne sygna\u0142y: r_2016, r_96; dzi\u015b BTC -48% w AI, strach 10-12, BTC <57k",
+  "rule": "r_2016 < -0.15 and r_96 < -0.01 and vz < 0.7",
+  "why": "Bot kupowa\u0142 w warunkach g\u0142\u0119bokiej paniki (r_2016 < -0.15) i niskiej p\u0142ynno\u015bci (vz < 0.7), gdy rynek jest w fazie likwidacji. W takich warunkach sygna\u0142 kupna jest sygna\u0142em wej\u015bcia w d\u00f3\u0142, a nie odwr\u00f3cenia trendu.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "d8a804f33d": {
+  "name": "Panika bez trendu",
+  "source": "internet research: B\u0142\u0119dy bota: r_2016 < -0.15 + r_96 < -0.01 + vz < 0.7; dzi\u015b Bitcoin spad\u0142 poni\u017cej $60 tys. i Fed przesta\u0142 by\u0107 oczekiwany.",
+  "rule": "r_96 < -0.01231 and r_2016 < -0.05 and ema_trend < 0",
+  "why": "Bot kupuje w panice, ale je\u015bli d\u0142ugoterminowy trend (ema_trend) jest ujemny, to panika mo\u017ce by\u0107 tylko kontynuacj\u0105 spadku, a nie do\u0142em.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "5cb488415a": {
+  "name": "Panika bez wzrostu zmienno\u015bci",
+  "source": "internet research: B\u0142\u0119dy bota: d_ema200 > 0.02389 + ema_trend > 0.01603 + vz > 1.1; dzi\u015b BTC spad\u0142 poni\u017cej $60 tys. i Fed przesta\u0142 by\u0107 oczekiwany.",
+  "rule": "btc_r96 < -0.01231 and d_ema200 < -0.02389 and vol_ratio < 1",
+  "why": "Bot kupuje w panice, ale je\u015bli d_ema200 jest ujemne i vol_ratio < 1, to panika mo\u017ce by\u0107 tylko kontynuacj\u0105 spadku, a nie do\u0142em.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "c0a8ea1e46": {
+  "name": "Panika bez momentum",
+  "source": "internet research: B\u0142\u0119dy bota: r_96 < -0.01231 + rel_r672 < -0.01085; dzi\u015b BTC spad\u0142 poni\u017cej $60 tys. i Fed przesta\u0142 by\u0107 oczekiwany.",
+  "rule": "r_96 < -0.01231 and rel_r96 < -0.005 and rank_r96 < 0.4",
+  "why": "Bot kupuje w panice, ale je\u015bli rel_r96 jest ujemne i rank_r96 < 0.4, to panika mo\u017ce by\u0107 tylko kontynuacj\u0105 spadku, a nie do\u0142em.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "8b61d484a5": {
+  "name": "Filtr na stabilno\u015bci rynku",
+  "source": "internet research: arXiv",
+  "rule": "vol_ratio < 1",
+  "why": "W poprzednich b\u0142\u0119dach bot nie uwzgl\u0119dnia\u0142 zmian w vol_ratio (wzrostu volatylno\u015bci). Zgodnie z [arXiv] Neckpinches in a Positively Curved Market, wzrost volatylno\u015bci mo\u017ce powodowa\u0107 'neckpinches' w rynku. Dodanie warunku vol_ratio < 1 zabezpiecza przed nieprzewidywalnymi ruchami.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "90b23337df": {
+  "name": "Filtr na zabezpieczenie przed spadkami",
+  "source": "internet research: Cointelegraph",
+  "rule": "d_ema200 < -0.02389",
+  "why": "W poprzednich b\u0142\u0119dach bot nie uwzgl\u0119dnia\u0142 d_ema200 < -0.02389, co sugeruje silny spadek. Zgodnie z [Cointelegraph] Bitcoin sell-off driven by weak demand, spadek d_ema200 jest kluczowy dla zabezpieczenia przed d\u0142ugimi spadkami.",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
  "7503514513": {
   "name": "Wolumen Bitcoin vs 24h",
   "source": "internet research: arXiv: Neckpinches in a Positively Curved Market + CoinDesk: Braiins warns of Bitcoin mining attacks",
   "rule": "btc_vol96 > 0.0015 and btc_r96 < -0.025",
   "why": "Wczoraj Bitcoin spad\u0142 o 2.6% (btc_r96 = -0.02605), a jego wolumen (btc_vol96) jest niski (0.00104). Zgodnie z arXiviem o 'Neckpinches' w rynku, spadek wolumenu w po\u0142\u0105czeniu z spadkiem ceny mo\u017ce wskazywa\u0107 na 'hashrate hijacking' (atak na minowanie), co jest krytyczne dla stabilno\u015bci. W poprzednich b\u0142",
   "gain": 0.0,
-  "tested_at": 1795662889291,
-  "model_version": 109,
+  "tested_at": 1795680167385,
+  "model_version": 110,
   "adopted": false
  },
  "7715df8d6a": {
@@ -785,8 +775,8 @@
   "rule": "d_ema200 < -0.023 and ema_trend < -0.001",
   "why": "W poprzednich b\u0142\u0119dach botu, gdy trend 50-candle vs 200-candle (ema_trend) by\u0142 ujemny (avg -0.01922), straty by\u0142y wi\u0119ksze. Zgodnie z arXiviem 'Gated Payoff-Weighted Net Profit Maximization', spadek w trendzie mo\u017ce by\u0107 zbyt przewidywalny bez uwzgl\u0119dnienia koszt\u00f3w transakcyjnych. W dzisiejszych warunka",
   "gain": 0.0,
-  "tested_at": 1795662889291,
-  "model_version": 109,
+  "tested_at": 1795680167385,
+  "model_version": 110,
   "adopted": false
  },
  "ac96245cef": {
@@ -795,8 +785,18 @@
   "rule": "r_96 < -0.01231 and rel_r96 < -0.005 and vz < 0.7",
   "why": "Wczoraj kryptowaluty by\u0142y w ekstremalnym strachu (Crypto Fear & Greed index: 11 Extreme Fear). Zgodnie z CoinDesk, Bitcoin spada, a inwestorzy s\u0105 niepewni z powodu AI i quantum computing. W poprzednich b\u0142\u0119dach, gdy r_96 < -0.01231 i rel_r96 < -0.005, bot straci\u0142 wi\u0119cej ni\u017c 1.4% na transakcji. W tym ",
   "gain": 0.0,
-  "tested_at": 1795662889291,
-  "model_version": 109,
+  "tested_at": 1795680167385,
+  "model_version": 110,
+  "adopted": false
+ },
+ "67b4a5cd9f": {
+  "name": "unikaj r_96 >= 0.005627",
+  "source": "own mistakes (auto)",
+  "rule": "r_96 < 0.00563",
+  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
+  "gain": 0.0,
+  "tested_at": 1795680167385,
+  "model_version": 110,
   "adopted": false
  }
 }
