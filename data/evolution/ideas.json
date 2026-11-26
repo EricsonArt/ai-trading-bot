@@ -1,24 +1,4 @@
 {
- "1e3a4c2324": {
-  "name": "unikaj vz <= 0.4029",
-  "source": "own mistakes (auto)",
-  "rule": "vz > 0.40286",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: trading volume vs 24h average (0.69 = normal, higher = busier)",
-  "gain": 0.0,
-  "tested_at": 1795160563746,
-  "model_version": 99,
-  "adopted": false
- },
- "b682e76963": {
-  "name": "unikaj vz <= 0.3376",
-  "source": "own mistakes (auto)",
-  "rule": "vz > 0.33764",
-  "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: trading volume vs 24h average (0.69 = normal, higher = busier)",
-  "gain": 0.0,
-  "tested_at": 1795160563746,
-  "model_version": 99,
-  "adopted": false
- },
  "6e7c435889": {
   "name": "unikaj btc_vol96 >= 0.003",
   "source": "own mistakes (auto)",
@@ -796,6 +776,26 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: return over the last 24 hours",
   "gain": 0.0,
   "tested_at": 1795723765326,
+  "model_version": 111,
+  "adopted": false
+ },
+ "9534fd2758": {
+  "name": "Odrzu\u0107 sygna\u0142y w oknie paniki i spadku",
+  "source": "internet research: Bot kupuje w oknie, w kt\u00f3rym BTC spad\u0142 24h i relatywnie 7 dni; badania pokazuj\u0105, \u017ce r\u0119czne wska\u017aniki techniczne maj\u0105 ma\u0142\u0105 warto\u015b\u0107 dodan\u0105 wzgl\u0119dem \u015bwiec OHLCV, wi\u0119c nie warto polega\u0107",
+  "rule": "r_96 < -0.005 and r_2016 < -0.05 and vz < 0.7",
+  "why": "W oknie paniki i spadku bot kupuje w oknie, w kt\u00f3rym BTC spad\u0142 24h i relatywnie 7 dni; badania pokazuj\u0105, \u017ce r\u0119czne wska\u017aniki techniczne maj\u0105 ma\u0142\u0105 warto\u015b\u0107 dodan\u0105 wzgl\u0119dem \u015bwiec OHLCV, wi\u0119c nie warto polega\u0107 na pojedynczych sygna\u0142ach.",
+  "gain": 0.0,
+  "tested_at": 1795730398588,
+  "model_version": 111,
+  "adopted": false
+ },
+ "9755cc9d12": {
+  "name": "Odrzu\u0107 sygna\u0142y w oknie niskiej p\u0142ynno\u015bci i strachu",
+  "source": "internet research: Badania pokazuj\u0105, \u017ce r\u0119czne wska\u017aniki techniczne maj\u0105 ma\u0142\u0105 warto\u015b\u0107 dodan\u0105 wzgl\u0119dem \u015bwiec OHLCV, wi\u0119c nie warto polega\u0107 na pojedynczych sygna\u0142ach.",
+  "rule": "vol_ratio < 0.8 and rsi < 0.45 and vz < 0.6",
+  "why": "W oknie niskiej p\u0142ynno\u015bci i strachu bot kupuje w oknie, w kt\u00f3rym BTC spad\u0142 24h i relatywnie 7 dni; badania pokazuj\u0105, \u017ce wska\u017aniki techniczne maj\u0105 ma\u0142\u0105 warto\u015b\u0107 dodan\u0105 wzgl\u0119dem \u015bwiec OHLCV, wi\u0119c nie warto polega\u0107 na pojedynczych sygna\u0142ach.",
+  "gain": 0.0,
+  "tested_at": 1795730398588,
   "model_version": 111,
   "adopted": false
  }
