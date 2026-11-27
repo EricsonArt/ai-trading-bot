@@ -1,14 +1,4 @@
 {
- "b51b05bb84": {
-  "name": "Niski wska\u017anik RSI w kr\u00f3tkim terminie",
-  "source": "internet research: arXiv research: Beyond Anonymous Order Flow",
-  "rule": "rsi < 0.6 and vol_96 < 0.0035",
-  "why": "W ostatnich 24 godzinach RSI(14) wynosi 0.35 (0.3528), co jest zbyt niski dla stabilnego rynku. Zgodnie z arXiviem 'Beyond Anonymous Order Flow', niskie wska\u017aniki RSI w po\u0142\u0105czeniu z wysok\u0105 zmienno\u015bci\u0105 mog\u0105 wskazywa\u0107 na nieprzewidywalne ruchy. W 22% strat bot\u00f3w RSI < 0.6 (0.3528).",
-  "gain": 0.0,
-  "tested_at": 1795204141267,
-  "model_version": 100,
-  "adopted": false
- },
  "9a5bb0f06c": {
   "name": "Wysoka zmienno\u015b\u0107 w d\u0142ugim terminie",
   "source": "internet research: arXiv research: Aggregate Calibration Can Mask Stress-State Undercoverage",
@@ -796,6 +786,16 @@
   "why": "Stratne sygna\u0142y najbardziej r\u00f3\u017cni\u0142y si\u0119 tym: Bitcoin return over the last 24 hours",
   "gain": 0.0,
   "tested_at": 1795787475932,
+  "model_version": 112,
+  "adopted": false
+ },
+ "7511e3a689": {
+  "name": "Odbicie BTC bez przewagi alfa",
+  "source": "internet research: CoinDesk: 'Bitcoin on course to end seven-week losing streak while trailing stock rebound'; 'Bitcoin price drops below $59K as Anthropic joins tech stock rebound'; 'Live updates: Bi",
+  "rule": "rel_r96 < -0.005 and rank_r96 < 0.4 and r_96 < -0.005",
+  "why": "Dzi\u015b BTC odbija, ale tylko pod\u0105\u017ca za sp\u00f3\u0142kami (rel_r96 < 0), a kr\u00f3tkie odroki (r_96) s\u0105 dzi\u015b nieprzewidywalne. Bot systematycznie traci\u0142 na sygna\u0142ach opartych na kr\u00f3tkich horyzontach i na odbiciu BTC bez w\u0142asnej przewagi (rel_r96 < -0.005, rank_r96 < 0.4, r_96 < -0.005).",
+  "gain": 0.0,
+  "tested_at": 1795803562495,
   "model_version": 112,
   "adopted": false
  }
