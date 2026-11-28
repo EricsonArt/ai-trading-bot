@@ -1,11 +1,11 @@
 {
- "created_at": 1795838917750,
+ "created_at": 1795842551970,
  "source": "local",
  "model": "mimo2.6:9b",
  "seconds": 5.7,
  "directives": {
   "risk_level": 0.2,
-  "min_confidence_adj": 0.02,
+  "min_confidence_adj": 0.05,
   "symbol_bias": {
    "TRX": "avoid",
    "XRP": "avoid",
@@ -13,16 +13,17 @@
   },
   "regime": "bear"
  },
- "reasoning": "Rynek jest w panice (Fear 12, BTC 30d -26.1%), a wszystkie 12 symboli s\u0105 poni\u017cej progu 0.8, wi\u0119c model nie ma \u017cadnego aktywnego sygna\u0142u. Main straci\u0142 0.26% i jedyna zamkni\u0119ta transakcja to strata XRP -8.11%, co obni\u017ca poziom ryzyka do 0.2. Practice +8.57% na 10 transakcjach to sample za ma\u0142e, wi\u0119c edge nadal nie jest udowodniony.",
+ "reasoning": "Main account is down 0.26% with one -8.11% XRP loss, while the practice account shows +8.57% on only 10 trades \u2014 too small a sample to prove an edge. The market is in extreme fear (Fear 12) with BTC 30d -26.1%, so short-term signals are weak and the model's current probabilities are mostly below the 0.8 threshold. I keep risk at 0.2, tighten entries by 0.05, and avoid TRX, XRP and LTC; the TRX position stays held because it is already open.",
  "new_lessons": [
-  "TRX 12 \u015bwiec bez zysku przy 0.64 \u2014 zero ryzyka, nie zwi\u0119kszaj ryzyka.",
+  "TRX 17 \u015bwiec bez zysku \u2014 zero ryzyka, nie zwi\u0119kszaj ryzyka.",
   "XRP -8.11% na main i Fear 12 \u2014 zero ryzyka, nie zwi\u0119kszaj poziomu.",
   "Practice +8.57% na 10 transakcjach \u2014 sample za ma\u0142e, edge nadal nie udowodniony."
  ],
  "lessons": [
-  "TRX 12 \u015bwiec bez zysku przy 0.64 \u2014 zero ryzyka, nie zwi\u0119kszaj ryzyka.",
+  "TRX 17 \u015bwiec bez zysku \u2014 zero ryzyka, nie zwi\u0119kszaj ryzyka.",
   "XRP -8.11% na main i Fear 12 \u2014 zero ryzyka, nie zwi\u0119kszaj poziomu.",
   "Practice +8.57% na 10 transakcjach \u2014 sample za ma\u0142e, edge nadal nie udowodniony.",
+  "TRX 12 \u015bwiec bez zysku przy 0.64 \u2014 zero ryzyka, nie zwi\u0119kszaj ryzyka.",
   "TRX 9 \u015bwiec bez zysku przy 0.73 \u2014 zero ryzyka, nie zwi\u0119kszaj ryzyka.",
   "Practice +8.61% na 10 transakcjach \u2014 sample za ma\u0142e, edge nadal nie udowodniony.",
   "TRX 0.81 z 4 \u015bwiec bez zysku \u2014 nie zwi\u0119kszaj ryzyka, czekaj na potwierdzenie.",
@@ -30,8 +31,7 @@
   "Rynek krypto w panice (Fear 12) i BTC 30d -26.1% \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
   "Main -0.25% i strata XRP -8.11% \u2014 zero ryzyka, nie zwi\u0119kszaj poziomu.",
   "Practice +8.65% na 10 transakcjach \u2014 sample za ma\u0142e, edge nadal nie udowodniony.",
-  "Fear 12 i BTC 30d -26.5% \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka.",
-  "Main account -0.25% i jedna strata XRP -8.11% \u2014 zero ryzyka, nie zwi\u0119kszaj poziomu."
+  "Fear 12 i BTC 30d -26.5% \u2014 zero pozycji, nie zwi\u0119kszaj ryzyka."
  ],
  "equity_at": 997.35
 }
